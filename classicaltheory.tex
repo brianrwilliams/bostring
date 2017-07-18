@@ -1,0 +1,64 @@
+\section{The classical holomorphic bosonic string}
+
+\brian{First define the holomorphic theory we will work with. Then show how it's related to more familiar models for the string, eg the Polyakov action. Level of detail depending on the space we have.
+}
+
+\subsection{The theory} 
+
+\subsection{From the second order Polyakov action}
+
+Let us fix a 2-dimensional Riemannian manifold $(\Sigma, g_0)$ and a Hermitian vector space~$(V,h)$. In this section we start with a description of the classical Polyakov model for the bosonic string as a classical BV theory. This is the ordinary $\sigma$-model of maps $\Sigma \to V$ coupled to a metric on $\Sigma$. More precisely, this is a perturbative model for the Polyakov string, since we only look at deformations of the fixed metric $g_0$. We will show that after a reparametrization of the space of fields that it makes sense to take a certain ``infinite volume limit" as $h \to \infty$. In this limit we will show that the Polyakov model splits into a certain holomorphic theory plus its complex conjugate. The holomorphic theory is what we call the {\em holomorphic bosonic string}.
+
+\begin{rmk} A similar analysis has appeared in \cite{GGW} where one does not consider deformations of the metric: the infinite volume limit of the bare $\sigma$-model of maps $\Sigma \to V$ splits into the free $\beta\gamma$ system plus its complex conjugate. In the case of the string we find an interacting theory that can be thought of as a deformation of a $\beta\gamma$ system. 
+\end{rmk}
+
+\owen{Give explanation of what this section will be about: writing down a holomorphic theory that appears as the chiral part of a large volume limit of the usual bosonic string. We should advertise that we start with conventional ways of writing a theory and explain the algorithm by which one extracts a BV action.}
+
+\owen{After looking at Wikipedia, I feel like Polyakov may not be enough, since it seems just like the action for the sigma model. Part of it may be the way that standard expositions go (and that is followed below). Anyway, I'd like to verify this stuff. Related issue: this is for the {\em critical} string, and Liouville action seems to be for {\em noncritical} string.}
+
+We recall the most familiar form of the classical Polyakov string and show how to write it down in terms of a classical BV theory. The fields of the Polyakov model consist of a $C^\infty$ function $\varphi : \Sigma \to V$ and a metric $g$ on $\Sigma$. Since we are doing perturbation theory, we assume that $g$ is infinitesimally close to the fixed metric $g_0$ in the space of all metrics on $\Sigma$. There is an identification of the tangent space of the space of all metrics $T_{[g_0]} {\rm Met}(\Sigma) \cong \Sym^2(T_\Sigma)$. Thus, we can take the metric $g$ to be of the form $g = g_0 + \alpha$ where $\alpha \in \Sym^2(T_\Sigma)$. \owen{Should we include comments about "formal (derived) spaces"?}
+ 
+The naive action functional, before accounting for any gauge symmetries, is of the form
+\ben
+S^{naive} (\varphi, \alpha) = \int_\Sigma h(\varphi, \Delta_{g_0 + \alpha} \varphi)\, \dvol_h
+\een
+where $\Delta_g : C^\infty(\Sigma ; V) \to \Omega^2(\Sigma ; V)$ is the $2$-form valued operator equal to the ordinary Laplacian on functions times metric the top form $\dvol_g$. \owen{I think this redefinition of the Laplacian might be more confusing than the savings we recover in typing. At the very least, I'd use a different symbol than the usual Laplace symbol.}
+
+The functional $S^{naive}$ is invariant under the group of diffeomorphisms ${\rm Diff}(\Sigma)$. Infinitesimally, this means that if $X$ is a vector field on $\Sigma$ the action is left invariant under the transformation $(\varphi,\alpha) \mapsto (\varphi + X \cdot \varphi, \alpha + L_X \alpha)$, where $L_X(-)$ denotes the Lie derivative on tensors. 
+
+There is another symmetry, namely Weyl rescalings of the metric, which reflects the fact that the theory is classically conformal. Infinitesimally, this means that for an arbitrary function $f \in C^\infty(\Sigma)$ the action is left invariant under the transformation $\alpha \mapsto \alpha + f \alpha$. In fact this symmetry is compatible with the symmetry by vector fields in an obvious way: if $f \in C^\infty(\Sigma)$ and $X$ is a vector field on $\Sigma$ then $L_{X} (f \alpha) = X(f) \alpha + f L_X \alpha$ for any $\alpha \in \Sym^2(T_\Sigma)$. 
+
+The BRST operator for the gauge symmetries can be summarized via the following elliptic complex, that we denote $\cE^{Polyakov}$:
+
+\ben
+\xymatrix{
+\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
+& \Omega^{0}(\Sigma) \tensor V \ar[r]^-{\Delta_{g_0}} & \Omega^2(\Sigma) \tensor V & \\
+{\rm Vect}(\Sigma) \oplus C^\infty(\Sigma) \ar[r]^-{\d_{g_0}} & \Sym^2(T_\Sigma) & & \\
+& & \Omega^2(\Sigma ; \Sym^{2}(T^*_\Sigma)) \ar[r]^-{\d_{g_0}} & \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma) .
+}
+\een 
+In the definition of a classical BV theory we must prescribe the data of a $(-1)$-shifted symplectic pairing on the BRST complex together with an interaction which is a local functional on the complex. The pairing can be described as follows. If $\varphi \in \Omega^0(\Sigma ; V)$ and $\psi \in \Omega^2(\Sigma ; V)$ then
+\ben
+\<\varphi, \psi \> = \int h(\varphi, \psi) .
+\een 
+The fields $(X, f) \in \Vect(\Sigma) \oplus C^\infty(\Sigma)$ pair with the conjugate fields $(X', f') \in  \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma)$ via
+\ben
+\<(X,f), (X',f')\> = \int \ev(X, X') + \int f f' 
+\een
+where $\ev$ denotes the evaluation pairing between the tangent and cotangent bundles. 
+
+\brian{Start with Polyakov action and explain how the chiral theory emerges in the infinite volume limit. There should also be an explanation for the theory we write down as a twist of 2d supergravity (in the same way that CDO's are a twist of a $(0,2)$ theory), not sure if you want to get into that.}
+\owen{I don't know anything about the supergravity thing you mention. It sounds interesting.}
+
+\owen{When we write out the whole BV shebang, we should point out how it relates to the usual physics description. Namely, the physicists do the following:
+\begin{itemize}
+\item write a free $bc\beta\gamma$ system as a $\ZZ/2$-graded theory
+\item lift to a $\ZZ$-grading such that the $bc$ fields are ghosts/antighosts for holomorphic vector fields (with no action on $\beta\gamma$ fields or themselves)
+\item deform the action to encode the action of vector fields on functions etc.
+\end{itemize}
+We should then see our BV action on the nose.
+(I think this is correct, but we should double-check, of course.)
+One nice thing about this observation is that it verifies the identification with semi-infinite homology, which is often explained in these kinds of terms. 
+(See the nice, short, readable Voronov note I've put in our folder.)}
+
