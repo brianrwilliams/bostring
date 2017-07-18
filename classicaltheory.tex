@@ -1,15 +1,169 @@
 \section{The classical holomorphic bosonic string}
 
-\brian{First define the holomorphic theory we will work with. Then show how it's related to more familiar models for the string, eg the Polyakov action. Level of detail depending on the space we have.
-}
+\brian{First define the holomorphic theory we will work with. Then show how it's related to more familiar models for the string, eg the Polyakov action. Level of detail depending on the space we have.}
 
-\subsection{The theory} 
+There is a basic format for a string theory, at least in the perturbative approach. 
+One starts with a nonlinear $\sigma$-model, 
+whose fields are smooth maps from a Riemann surface to a target manifold $X$;
+in this setting we want the theory to make sense for an arbitrary Riemann surface as the source manifold.
+In the usual bosonic string theory, 
+this nonlinear $\sigma$-model picks out the harmonic maps from a Riemannian 2-manifold to a Riemannian manifold.
+In our holomorphic setting,
+the nonlinear $\sigma$-model picks out holomorphic maps from a Riemann surface to a complex manifold.
+One then quotients the space of fields (and solutions to the equations of motion) with respect to reparametrization.
+\owen{This description is a bit opaque. We should find a better one.}
+In the usual bosonic string,
+one quotients by diffeomorphisms, which can thus change the metric on the source.
+In our setting,
+we quotient by diffeomorphisms as well, which can thus change the complex structure on the source.
 
-\subsection{From the second order Polyakov action}
+In this section we begin by describing our theory in the BV formalism.
+We do not expect the reader to find the action functional immediately clear,
+so we devote some time to analyzing what it means and how it arises from concrete questions.
+We then turn to interpreting this classical BV theory using dg Lie algebras and derived geometry
+(i.e., we identify the moduli space it encodes).
+Finally, we conclude by sketching how our theory appears as the chiral sector of a degeneration of the usual bosonic string when the target is a complex manifold with a Hermitian metric.
+Our theory thus does provide insights into the usual bosonic string;
+moreover, it clarifies why so many aspects of the bosonic string,
+like the anomalies or $B$-fields, 
+have holomorphic analogues.
 
-Let us fix a 2-dimensional Riemannian manifold $(\Sigma, g_0)$ and a Hermitian vector space~$(V,h)$. In this section we start with a description of the classical Polyakov model for the bosonic string as a classical BV theory. This is the ordinary $\sigma$-model of maps $\Sigma \to V$ coupled to a metric on $\Sigma$. More precisely, this is a perturbative model for the Polyakov string, since we only look at deformations of the fixed metric $g_0$. We will show that after a reparametrization of the space of fields that it makes sense to take a certain ``infinite volume limit" as $h \to \infty$. In this limit we will show that the Polyakov model splits into a certain holomorphic theory plus its complex conjugate. The holomorphic theory is what we call the {\em holomorphic bosonic string}.
+\subsection{The theory we study} 
 
-\begin{rmk} A similar analysis has appeared in \cite{GGW} where one does not consider deformations of the metric: the infinite volume limit of the bare $\sigma$-model of maps $\Sigma \to V$ splits into the free $\beta\gamma$ system plus its complex conjugate. In the case of the string we find an interacting theory that can be thought of as a deformation of a $\beta\gamma$ system. 
+Let $V$ denote a complex vector space (the target),
+and let $\langle-,-\rangle_V$ denote the evaluation pairing between $V$ and its linear dual~$V^\vee$.
+Let $\Sigma$ denote a Riemann surface (the source).
+Let $T_\Sigma^{1,0}$ denote the holomorphic tangent bundle on $\Sigma$, 
+let $\langle-,-\rangle_T$ denote the evaluation pairing between $T_\Sigma^{1,0}$ and its vector bundle dual~$T_\Sigma^{1,0*}$. 
+\owen{Correct terminology?}
+These are the key geometric inputs.
+
+In a BV theory, the fields are $\ZZ$-graded;
+we call this the {\em cohomological grading}.
+We have four kinds of fields:
+\[
+\begin{array}{ccccc}
+\text{field} & -1 & 0 & 1 & 2\\
+\hline
+\gamma & & \Omega^{0,0}(\Sigma) \otimes V & \Omega^{0,1}(\Sigma) \otimes V & \\
+\beta & & \Omega^{1,0}(\Sigma) \otimes V^\vee & \Omega^{1,1}(\Sigma) \otimes V^\vee & \\
+c & \Omega^{0,0}(\Sigma, T^{1,0}_\Sigma) & \Omega^{0,1}(\Sigma, T^{1,0}_\Sigma) & \\
+b & & & \Omega^{1,0}(\Sigma, T^{1,0 *}_\Sigma) & \Omega^{1,1}(\Sigma, T^{1,0 *}_\Sigma)
+\end{array}
+\]
+More accurately, we have eight different kinds of fields, 
+but we view each row as constituting a single type 
+since each given row consists of the Dolbeault forms of a holomorphic vector bundle.
+For instance, the field $\gamma$ is a $(0,*)$-form with values in the trivial bundle with fiber~$V$,
+and the field $b$ is a $(0,*)$-form with values in the bundle $T^{1,0 *} \otimes~T^{1,0 *}$.
+
+To orient oneself it is helpful to start by examining the fields of cohomological degree zero,
+since these typically have a manifest physical meaning.
+For instance, the degree zero $\gamma$ field is a smooth $V$-valued function
+and hence the natural field for the nonlinear $\sigma$-model into~$V$.
+The degree zero $c$ field is a smooth $(0,1)$-form with values in vector field ``in the holomorphic direction,''
+and hence encodes an infinitesimal change of complex structure of~$\Sigma$.
+They thus constitute the obvious fields to introduce for a holomorphic version of the bosonic string.
+The fields a$\beta$ and $b$ are less obvious but appear as ``partners'' (or antifields)
+whose role is clearest once we have the action functional and hence equations of motion.
+
+The action functional is
+\begin{equation}
+S(\gamma,\beta,c,b) = 
+\int_\Sigma \langle \beta, \dbar \gamma \rangle_V 
++ \int_\Sigma \langle b, \dbar c \rangle_T 
++ \int_\Sigma \langle \beta, [c,\gamma] \rangle_V 
++ \int_\Sigma \langle b, [c,c] \rangle_T.
+\end{equation}
+(We discuss below how to think about fields with nonzero cohomological degrees as inputs.)
+The equations of motion are thus
+\begin{alignat*}{2}
+0 &= \dbar \gamma + [c,\gamma] & \quad\quad  0 &= \dbar \beta + [c,\beta] \\
+0  &= \dbar c + \tfrac{1}{2} [c,c] & \quad\quad  0 &= \dbar b + [c,b] 
+\end{alignat*}
+Note that these equations are familiar in complex geometry.
+For instance, the equation purely for $c$ encodes a deformation of complex structure on $\Sigma$, concretely by modifying the $\dbar$ operator to $\dbar + c$.
+The other equations then amount to solving for holomorphic sections (of the relevant bundle) withe respect to this deformed complex structure.
+For instance, the equation in $\gamma$ picks out holomorphic maps from $\Sigma$,
+with the $c$-deformed complex structure, to~$V$.
+
+\owen{Add something about the funny degrees. E.g., does $b$ ever appear?}
+
+\begin{rmk}
+\label{rmk:bcbg}
+Just looking at this action functional, one might notice that if one drops the last two terms,
+which are cubic in the fields, then one obtains a free theory
+\[
+S_{free}(\gamma,\beta,c,b) = 
+\int_\Sigma \langle \beta, \dbar \gamma \rangle_V 
++ \int_\Sigma \langle b, \dbar c \rangle_T,
+\]
+which is known as the {\em free $bc\beta\gamma$ system}.
+Thus, one may view the holomorphic bosonic string as a deformation of this free theory
+by ``turning on'' those interaction terms.
+We will repeatedly try a construction first with this free theory before tackling the string itself,
+as it often captures important information with minimal work.
+For instance, we will see that the anomaly can be identified already at the level of the free theory.
+\end{rmk}
+
+\subsection{From the perspective of derived geometry}
+
+We would like to explain what this theory is about in more conceptual terms,
+rather than simply by formulas and equations.
+Thankfully this theory is amenable to such a description.
+We will be informal in this section and not specify a particular geometric context (e.g., derived analytic stacks),
+except when we specialize to the deformation-theoretic situation (i.e., perturbative setting) that is our main arena.
+
+\def\Maps{\operatorname{Maps}}
+
+Let $\cM$ denote the moduli space of Riemann surfaces,
+so that a surface $\Sigma$ determines a point in~$\cM$.
+Let $\Maps_{\dbar}(\Sigma,V)$ denote the space of holomorphic maps from $\Sigma$ to $V$,
+and hence a bundle $\Maps_{\dbar}(-,V)$ over $\cM$ by varying~$\Sigma$.
+For our equations of motion, the $\gamma$ and $c$ fields of a solution determine a point in this bundle~$\Maps_{\dbar}(-,V)$.
+
+It is better to work with the derived version of these spaces.
+One important feature of derived geometry is that the appropriate version of a tangent space at a point is, in fact, a cochain complex.
+In our setting, the tangent complex of $\Maps_{\dbar}(-,V)$ at a point $(c,\gamma)$---so that $\dbar +c$ is a complex structure and $\gamma$ is a holomorphic map---is precisely 
+\[
+\Omega^{0,*}(\Sigma_c,T^{1,0})[1] \oplus \Omega^{0,*}(\Sigma_c,V).
+\]
+The first summand is the usual answer from the theory of the moduli of surfaces 
+(recall, for example, that the ordinary tangent space is the sheaf cohomology $H^1(\Sigma,\cT_\Sigma)$ of the holomorphic tangent sheaf),
+and the second is usual elliptic complex encoding holomorphic maps.
+
+\begin{rmk}
+It is useful to bear in mind that the degree zero cohomology of the tangent complex will recover the ``naive'' tangent space.
+The negative degree cohomology detects infinitesimal automorphisms (and automorphisms of automorphisms, etc) of the space.
+For instance, we see $H^0(\Sigma,\cT_\Sigma)$ appear in degree -1, 
+since a holomorphic vector field is an infinitesimal automorphism of a complex curve.
+The positive degree cohomology detects \owen{finish}
+\end{rmk}
+
+Note that the underlying graded spaces of this tangent complex are the $c$ and $\gamma$ fields from the BV theory described above.
+We emphasize that the tangent complex is only specified up to quasi-isomorphism,
+but it is compelling that a natural representative is the BV theory produced by the usual physical arguments.
+This behavior, however, is typical of the relationship between derived geometry and BV theories:
+when physicists write down a classical BV theory, 
+the underlying free theory is essentially always the tangent complex of a nice derived stack.
+
+The reader has probably noticed that, yet again, we have postponed discussing the $\beta$ and $b$ fields.
+From a derived perspective, the full BV theory describes the shifted cotangent bundle~$\TT^*[-1]\Maps_{\dbar}(-,V)$.
+At the level of a tangent complex, the shifted cotangent direction contributes
+\[
+\Omega^{1,*}(\Sigma_c,T^{1,0*})[-1] \oplus \Omega^{1,*}(\Sigma_c,V^\vee),
+\]
+whose underlying graded spaces are the $\beta$ and $b$ fields.
+
+\subsection{Relationship to the Polyakov action functional}
+
+Let us fix a 2-dimensional Riemannian manifold $(\Sigma, g_0)$ and a Hermitian vector space~$(V,h)$. 
+In this section we start with a description of the classical Polyakov model for the bosonic string as a classical BV theory. 
+This is the ordinary $\sigma$-model of maps $\Sigma \to V$ coupled to a metric on $\Sigma$. 
+More precisely, this is a perturbative model for the Polyakov string, since we only look at deformations of the fixed metric $g_0$. We will show that after a reparametrization of the space of fields that it makes sense to take a certain ``infinite volume limit" as $h \to \infty$. In this limit we will show that the Polyakov model splits into a certain holomorphic theory plus its complex conjugate. The holomorphic theory is what we call the {\em holomorphic bosonic string}.
+
+\begin{rmk} 
+A similar analysis has appeared in \cite{GGW} where one does not consider deformations of the metric: the infinite volume limit of the bare $\sigma$-model of maps $\Sigma \to V$ splits into the free $\beta\gamma$ system plus its complex conjugate. In the case of the string we find an interacting theory that can be thought of as a deformation of a $\beta\gamma$ system. 
 \end{rmk}
 
 \owen{Give explanation of what this section will be about: writing down a holomorphic theory that appears as the chiral part of a large volume limit of the usual bosonic string. We should advertise that we start with conventional ways of writing a theory and explain the algorithm by which one extracts a BV action.}
