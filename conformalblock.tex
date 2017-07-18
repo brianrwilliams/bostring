@@ -1,0 +1,55 @@
+\section{Quantization on arbitrary Riemann surfaces} 
+
+\subsection{Global sections of the factorization algebra}
+
+\brian{Discuss relationship to conformal blocks}
+
+We wish to write the global observables of the holomorphic string in terms of the cohomology of natural holomorphic vector bundles on the Riemann surface. 
+
+We introduce a simpler theory defined for any (graded) holomorphic vector bundle $\cV$ on $\Sigma$. First, consider the elliptic complex
+\ben
+\Omega^{0,*}(\Sigma ; \cV)
+\een
+of $(0,*)$-forms with values in $\cV$. The differential is simply the $\dbar$ operator. We consider its shift $\Omega^{0,*}(\Sigma ; \cV)[-1]$ as an abelian local dg Lie algebra. In this way, the associated cotangent theory of the elliptic complex is defined as 
+\ben
+T^{*}[-1] (\Omega^{0,*}(\Sigma ; \cV)) = \Omega^{0,*}(\Sigma ; \cV) \oplus \Omega^{1,*}(\Sigma ; \cV^\vee) .
+\een 
+We write the fields as $\gamma \in \Omega^{0,*}(\Sigma ; \cV)$ for the base direction and $\beta \in \Omega^{1,*}(\Sigma ; \cV^\vee)$ for the fiber direction. With this notation, the action functional is defined as
+\ben
+S (\beta, \gamma) = \int_\Sigma \<\beta, \dbar \gamma\>_\cV
+\een
+where $\<-,-\>_\cV$ denotes the evaluation pairing between $\cV$ and its dual. This theory is called the $\beta\gamma$ (or sometimes $\beta \gamma-bc$ \owen{what are the $bc$ fields?}) system with values in $\cV$. This is a free field theory and hence has a natural quantization. We will denote the factorization algebra of quantum observables on $\Sigma$ by $\Obs^{q}_{\cV}$. 
+
+\begin{lem}
+\label{lem bg global obs} 
+The cohomology of the global observables of the $\beta\gamma$ system with values in $\cV$ is given by
+\ben
+H^*\left(\Obs^q_{\cV}(\Sigma)\right) \cong \det \left(H^*(\Sigma ; \cV) \right) [d(\cV)] 
+\een
+where $d(\cV) = ...$. 
+\end{lem}
+
+\owen{It would be good here to point out the GRR argument for identifying the first Chern class of this determinant line bundle. We can then point out that it resonates with our computation on the formal disk and give a reminder that this is a manifestation of ``Virasoro uniformization.'' This then leads into the string case: the holomorphic vector fields (rather the free $bc$ system) also contribute a determinant line (we should include that computation) and we can ask when those determinant lines tensor to a trivial line. Note that deforming the action from free $bc\beta\gamma$ system to holomorphic bosonic string doesn't affect the line bundles, since those are continuous parameters and Chern classes are discrete.}
+
+Now, consider the global observables of the bosonic string $\Obs^q(\Sigma)$. There is a spectral sequence converging to the cohomology of the global observables $H^*\Obs^q(\Sigma)$ with $E_2$ page given by the cohomology of the global observables of the $\beta \gamma$ system with values in the holomorphic vector bundle $\cV = \cT_\Sigma [1] \oplus \CC^{13}$. By Lemma \ref{lem bg global obs} this $E_2$ page is concentrated in a single degree and is given by
+\bestar
+E_2 & \cong & \det\left(H^*(\Sigma ; \cT_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
+& \cong & \det \left(H^1(\Sigma ; \cT_\Sigma) \right) \tensor \det \left(H^0(\Sigma ; \cT_\Sigma)\right)^{-1} \tensor \det \left(H^0(\Sigma ; K_{\Sigma}) \right)^{-13}
+\eestar
+where we have used the fact that $H^0(\Sigma ; \cO) \cong \CC$ for any $\Sigma$. 
+
+Let $\Sigma_{g}$ be a surface of genus $g$. Then for $g=1$ the above simplifies to
+\ben
+\det \left(H^1(\Sigma_1 ; \cT_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-14} .
+\een 
+If $g \geq 2$ one has
+\ben
+\det \left(H^1(\Sigma_1 ; \cT_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-13} .
+\een
+It is clear that the spectral sequence degenerates at this page. Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
+
+\section{The string partition function on an elliptic curve}
+
+\brian{Sketch how to see the mumford form}
+
+\owen{If possible, it would be cool to explain how one can extract the differential equations (=flat connection) governing the partition function from our construction. This might be too hard right now \dots}
