@@ -82,12 +82,14 @@ The equations of motion are thus
 0  &= \dbar c + \tfrac{1}{2} [c,c] & \quad\quad  0 &= \dbar b + [c,b] 
 \end{alignat*}
 Note that these equations are familiar in complex geometry.
-For instance, the equation purely for $c$ encodes a deformation of complex structure on $\Sigma$, concretely by modifying the $\dbar$ operator to $\dbar + c$.
+For instance, the equation purely for $c$ encodes a deformation of complex structure on $\Sigma$; concretely, it modifies the $\dbar$ operator to $\dbar + c$.
 The other equations then amount to solving for holomorphic sections (of the relevant bundle) withe respect to this deformed complex structure.
 For instance, the equation in $\gamma$ picks out holomorphic maps from $\Sigma$,
 with the $c$-deformed complex structure, to~$V$.
 
-\owen{Add something about the funny degrees. E.g., does $b$ ever appear?}
+\owen{Add something about how to understand the degrees. E.g., does $b$ ever appear?}
+
+\owen{Add explanation of writing BV theory from ordinary action.}
 
 \begin{rmk}
 \label{rmk:bcbg}
@@ -103,7 +105,26 @@ Thus, one may view the holomorphic bosonic string as a deformation of this free 
 by ``turning on'' those interaction terms.
 We will repeatedly try a construction first with this free theory before tackling the string itself,
 as it often captures important information with minimal work.
-For instance, we will see that the anomaly can be identified already at the level of the free theory.
+For instance, we will examine the vertex algebra for the free theory before seeing how the interaction affects the operator products.
+Similarly, one can identify the anomaly already at the level of the free theory.
+\end{rmk}
+
+\begin{rmk}
+\label{rmk:curved}
+It is easy to modify this action functional to allow a curved target,
+i.e., one can replace the complex vector space $V$ with an arbitrary complex manifold~$X$. 
+The fields $b,c$ remain the same.
+The degree 0 field $\gamma$ still encodes smooth maps into $X$, but now the degree 1 field is a section of $\Omega^{0,1}(\Sigma, \gamma^*T^{1,0}_X)$.
+Similarly, $\beta$ is now a section of $\Omega^{1,*}(\Sigma, \gamma^*T^{1,0*}_X)$.
+The action is then
+\begin{equation}
+S(\gamma,\beta,c,b) = 
+\int_\Sigma \langle \beta, \dbar \gamma \rangle_{T_X}
++ \int_\Sigma \langle b, \dbar c \rangle_{T_\Sigma} 
++ \int_\Sigma \langle \beta, [c,\gamma] \rangle_{T_X}
++ \int_\Sigma \langle b, [c,c] \rangle_{T_\Sigma}.
+\end{equation}
+In Section \ref{sec:curved} we will indicate how the results with linear target generalize to this situation.
 \end{rmk}
 
 \subsection{From the perspective of derived geometry}
@@ -122,9 +143,19 @@ Let $\Maps_{\dbar}(\Sigma,V)$ denote the space of holomorphic maps from $\Sigma$
 and hence a bundle $\Maps_{\dbar}(-,V)$ over $\cM$ by varying~$\Sigma$.
 For our equations of motion, the $\gamma$ and $c$ fields of a solution determine a point in this bundle~$\Maps_{\dbar}(-,V)$.
 
-It is better to work with the derived version of these spaces.
+\def\RS{{\mathcal RS}}
+
+This construction makes sense on noncompact Riemann surfaces as well.
+Let $\RS$ denote the category whose objects are Riemann surfaces and whose morphisms are holomorphic embeddings.
+There is a natural site structure: a cover is a collection of maps $\{S_i \to \Sigma\}_i$ such that the union of the images is all of~$\Sigma$.
+Then $\Maps_{\dbar}(-,V)$ defines a sheaf of spaces over~$\RS$.
+The observables for the classical theory is, in essence, the {\em co}\/sheaf of commutative algebras~$\cO(\Maps_{\dbar}(-,V))$,
+and hence provides a factorization algebra.
+
+In fact, it is better to work with the derived version of these spaces.
 One important feature of derived geometry is that the appropriate version of a tangent space at a point is, in fact, a cochain complex.
-In our setting, the tangent complex of $\Maps_{\dbar}(-,V)$ at a point $(c,\gamma)$---so that $\dbar +c$ is a complex structure and $\gamma$ is a holomorphic map---is precisely 
+In our setting, a point $(c,\gamma)$ in $\Maps_{\dbar}(-,V)$ determines a a complex structure $\dbar + c$ on $\Sigma$---we denote this Riemann surface by $\Sigma_c$---and $\gamma$ a $V$-valued holomorphic function on~$\Sigma_c$.
+The tangent complex of $\Maps_{\dbar}(-,V)$ at $(c,\gamma)$ is precisely 
 \[
 \Omega^{0,*}(\Sigma_c,T^{1,0})[1] \oplus \Omega^{0,*}(\Sigma_c,V).
 \]
@@ -133,11 +164,18 @@ The first summand is the usual answer from the theory of the moduli of surfaces
 and the second is usual elliptic complex encoding holomorphic maps.
 
 \begin{rmk}
-It is useful to bear in mind that the degree zero cohomology of the tangent complex will recover the ``naive'' tangent space.
-The negative degree cohomology detects infinitesimal automorphisms (and automorphisms of automorphisms, etc) of the space.
-For instance, we see $H^0(\Sigma,\cT_\Sigma)$ appear in degree -1, 
+It is useful to bear in mind that the degree zero cohomology of the tangent complex will recover the ``naive'' tangent space. 
+In our case, we have 
+\[
+H^1(\Sigma_c,\cT_{\Sigma_c}) \oplus H^0(\Sigma_c,V),
+\]
+which encodes deformations of complex structure and holomorphic maps.
+Negative degree cohomology of the tangent complex detects infinitesimal automorphisms (and automorphisms of automorphisms, etc) of the space.
+For instance, here we see $H^0(\Sigma_c,\cT_{\Sigma_c})$ appear in degree -1, 
 since a holomorphic vector field is an infinitesimal automorphism of a complex curve.
-The positive degree cohomology detects \owen{finish}
+These negative directions are called ``ghosts'' (or ghosts for ghosts, etc) in physics.
+The positive degree cohomology detects infinitesimal relations (and relations of relations, etc).
+For instance, here we see $H^1(\Sigma_c,V)$, the cokernel of~$\dbar+c$. \owen{???}
 \end{rmk}
 
 Note that the underlying graded spaces of this tangent complex are the $c$ and $\gamma$ fields from the BV theory described above.
@@ -148,16 +186,80 @@ when physicists write down a classical BV theory,
 the underlying free theory is essentially always the tangent complex of a nice derived stack.
 
 The reader has probably noticed that, yet again, we have postponed discussing the $\beta$ and $b$ fields.
-From a derived perspective, the full BV theory describes the shifted cotangent bundle~$\TT^*[-1]\Maps_{\dbar}(-,V)$.
+From a derived perspective, the full BV theory describes the shifted cotangent bundle $\TT^*[-1]\Maps_{\dbar}(-,V)$.
 At the level of a tangent complex, the shifted cotangent direction contributes
 \[
 \Omega^{1,*}(\Sigma_c,T^{1,0*})[-1] \oplus \Omega^{1,*}(\Sigma_c,V^\vee),
 \]
 whose underlying graded spaces are the $\beta$ and $b$ fields.
+These ``antifields'' are added so that the overall space of fields has a 1-shifted symplectic structure  when $\Sigma$ is closed, and a shifted Poisson structure when $\Sigma$ is open.
 
 \subsection{Relationship to the Polyakov action functional}
 
-Let us fix a 2-dimensional Riemannian manifold $(\Sigma, g_0)$ and a Hermitian vector space~$(V,h)$. 
+This holomorphic bosonic string has a natural relationship with the usual bosonic string.
+We sketch it briefly, only considering a linear target.
+
+We begin with a bosonic string theory where the source is a 2-dimensional smooth oriented manifold $\Sigma$ and the target is a Hermitian vector space~$(V,h)$. 
+The ``naive'' action functional is
+\ben
+S^{naive}_{Poly}(\varphi, g) = \int_\Sigma h(\varphi, \Delta_{g} \varphi)\, \dvol_g
+\een
+where the field $g$ is a Riemannian metric on $\Sigma$ and the field $\varphi$ is a smooth map from $\Sigma$ to~$V$.
+The notation $\Delta_g$ denotes the Laplace-Beltrami operator on~$\Sigma$. 
+
+Note that $S^{naive}_{Poly}$ is invariant under the diffeomorphism group ${\rm Diff}(\Sigma)$ and under rescalings of the metric
+(i.e., the theory is classically conformal).
+Typically we express rescaling as $g \mapsto e^{f} g$ with $f \in~C^\infty(\Sigma)$.
+As we are interested in a string theory, we want to gauge these symmetries.
+In geometric language, we want to think about the quotient stack 
+obtained by taking solutions to the equations of motion and quotienting by these symmetry groups.
+
+\owen{It might be better to explain the first-order description of sigma model before entering into the perturbative \& BV discussion.}
+
+Our focus is perturbative, so that we want to study the behavior of this action near a fixed solution to the equations of motion
+(e.g., the Taylor expansion of the true action near some solution).
+\owen{Might be good here to leverage the derived discussion earlier:
+it's easy to see what the tangent complex looks like \dots which leads to fields we work with.}
+Hence, we fix a metric $g_0$ on $\Sigma$ and substitute for the field $g$,
+the term $g_0+\alpha$ where $\alpha \in \Gamma(\Sigma,\Sym^2(T_\Sigma))$.
+That is, we simply consider deformations of~$g_0$.
+As $\varphi$ is linear, we just consider expanding around the zero map.
+Thus our initial fields are $\varphi \in C^\infty(\Sigma,V)$ and $\alpha \in \Gamma(\Sigma,\Sym^2(T_\Sigma))$.
+
+There are also ghost fields associated to the symmetries we gauge.
+First, there are infinitesimal diffeomorphisms,  which are described by vector fields on~$\Sigma$.
+We denote this ghost field by $X \in \Gamma(\Sigma,T_\Sigma))$.
+It acts on the initial fields by the transformation 
+\[
+(\varphi,\alpha) \mapsto (\varphi + X \cdot \varphi, \alpha + L_X \alpha), 
+\]
+where $L_X$ denotes the Lie derivative on tensors.
+Second, there are infinitesimal rescalings such as $\alpha \mapsto \alpha + f \alpha$, 
+with ghost field $f \in~C^\infty(\Sigma)$.
+The rescaling does not affect $\varphi$.
+The two symmetries are compatible: 
+given $f$ and $X$, then $L_{X} (f \alpha) = X(f) \alpha + f L_X \alpha$ for any $\alpha \in \Sym^2(T_\Sigma)$.
+
+To summarize, we have the following fields:
+\[
+\begin{array}{cccc}
+-1 &0 & 1 & 2\\
+\hline \\
+& \Omega^{0}(\Sigma) \tensor V & \Omega^2(\Sigma) \tensor V & \\
+{\rm Vect}(\Sigma) \oplus C^\infty(\Sigma) & \Sym^2(T_\Sigma) & & \\
+& & \Omega^2(\Sigma ; \Sym^{2}(T^*_\Sigma)) & \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma) .
+\end{array}
+\]
+The BV action functional is then
+\[
+S_{Poly}(\phi,\alpha,X,f) = \int_\Sigma h(\varphi, \Delta_{g_0 + \alpha} \varphi)\, \dvol_{g_0+\alpha} + \text{MORE STUFF}
+\]
+\owen{Finish writing action}
+This situation is quite a bit more complicated than our holomorphic bosonic string,
+but it admits a succinct description in geometric terms \owen{add statement about quotient of mapping stack} 
+
+***********
+
 In this section we start with a description of the classical Polyakov model for the bosonic string as a classical BV theory. 
 This is the ordinary $\sigma$-model of maps $\Sigma \to V$ coupled to a metric on $\Sigma$. 
 More precisely, this is a perturbative model for the Polyakov string, since we only look at deformations of the fixed metric $g_0$. We will show that after a reparametrization of the space of fields that it makes sense to take a certain ``infinite volume limit" as $h \to \infty$. In this limit we will show that the Polyakov model splits into a certain holomorphic theory plus its complex conjugate. The holomorphic theory is what we call the {\em holomorphic bosonic string}.
@@ -168,31 +270,9 @@ A similar analysis has appeared in \cite{GGW} where one does not consider deform
 
 \owen{Give explanation of what this section will be about: writing down a holomorphic theory that appears as the chiral part of a large volume limit of the usual bosonic string. We should advertise that we start with conventional ways of writing a theory and explain the algorithm by which one extracts a BV action.}
 
-\owen{After looking at Wikipedia, I feel like Polyakov may not be enough, since it seems just like the action for the sigma model. Part of it may be the way that standard expositions go (and that is followed below). Anyway, I'd like to verify this stuff. Related issue: this is for the {\em critical} string, and Liouville action seems to be for {\em noncritical} string.}
 
 We recall the most familiar form of the classical Polyakov string and show how to write it down in terms of a classical BV theory. The fields of the Polyakov model consist of a $C^\infty$ function $\varphi : \Sigma \to V$ and a metric $g$ on $\Sigma$. Since we are doing perturbation theory, we assume that $g$ is infinitesimally close to the fixed metric $g_0$ in the space of all metrics on $\Sigma$. There is an identification of the tangent space of the space of all metrics $T_{[g_0]} {\rm Met}(\Sigma) \cong \Sym^2(T_\Sigma)$. Thus, we can take the metric $g$ to be of the form $g = g_0 + \alpha$ where $\alpha \in \Sym^2(T_\Sigma)$. \owen{Should we include comments about "formal (derived) spaces"?}
- 
-The naive action functional, before accounting for any gauge symmetries, is of the form
-\ben
-S^{naive} (\varphi, \alpha) = \int_\Sigma h(\varphi, \Delta_{g_0 + \alpha} \varphi)\, \dvol_h
-\een
-where $\Delta_g : C^\infty(\Sigma ; V) \to \Omega^2(\Sigma ; V)$ is the $2$-form valued operator equal to the ordinary Laplacian on functions times metric the top form $\dvol_g$. \owen{I think this redefinition of the Laplacian might be more confusing than the savings we recover in typing. At the very least, I'd use a different symbol than the usual Laplace symbol.}
-
-The functional $S^{naive}$ is invariant under the group of diffeomorphisms ${\rm Diff}(\Sigma)$. Infinitesimally, this means that if $X$ is a vector field on $\Sigma$ the action is left invariant under the transformation $(\varphi,\alpha) \mapsto (\varphi + X \cdot \varphi, \alpha + L_X \alpha)$, where $L_X(-)$ denotes the Lie derivative on tensors. 
-
-There is another symmetry, namely Weyl rescalings of the metric, which reflects the fact that the theory is classically conformal. Infinitesimally, this means that for an arbitrary function $f \in C^\infty(\Sigma)$ the action is left invariant under the transformation $\alpha \mapsto \alpha + f \alpha$. In fact this symmetry is compatible with the symmetry by vector fields in an obvious way: if $f \in C^\infty(\Sigma)$ and $X$ is a vector field on $\Sigma$ then $L_{X} (f \alpha) = X(f) \alpha + f L_X \alpha$ for any $\alpha \in \Sym^2(T_\Sigma)$. 
-
-The BRST operator for the gauge symmetries can be summarized via the following elliptic complex, that we denote $\cE^{Polyakov}$:
-
-\ben
-\xymatrix{
-\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
-& \Omega^{0}(\Sigma) \tensor V \ar[r]^-{\Delta_{g_0}} & \Omega^2(\Sigma) \tensor V & \\
-{\rm Vect}(\Sigma) \oplus C^\infty(\Sigma) \ar[r]^-{\d_{g_0}} & \Sym^2(T_\Sigma) & & \\
-& & \Omega^2(\Sigma ; \Sym^{2}(T^*_\Sigma)) \ar[r]^-{\d_{g_0}} & \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma) .
-}
-\een 
-In the definition of a classical BV theory we must prescribe the data of a $(-1)$-shifted symplectic pairing on the BRST complex together with an interaction which is a local functional on the complex. The pairing can be described as follows. If $\varphi \in \Omega^0(\Sigma ; V)$ and $\psi \in \Omega^2(\Sigma ; V)$ then
+ In the definition of a classical BV theory we must prescribe the data of a $(-1)$-shifted symplectic pairing on the BRST complex together with an interaction which is a local functional on the complex. The pairing can be described as follows. If $\varphi \in \Omega^0(\Sigma ; V)$ and $\psi \in \Omega^2(\Sigma ; V)$ then
 \ben
 \<\varphi, \psi \> = \int h(\varphi, \psi) .
 \een 
@@ -204,15 +284,15 @@ where $\ev$ denotes the evaluation pairing between the tangent and cotangent bun
 
 \brian{Start with Polyakov action and explain how the chiral theory emerges in the infinite volume limit. There should also be an explanation for the theory we write down as a twist of 2d supergravity (in the same way that CDO's are a twist of a $(0,2)$ theory), not sure if you want to get into that.}
 \owen{I don't know anything about the supergravity thing you mention. It sounds interesting.}
-
-\owen{When we write out the whole BV shebang, we should point out how it relates to the usual physics description. Namely, the physicists do the following:
-\begin{itemize}
-\item write a free $bc\beta\gamma$ system as a $\ZZ/2$-graded theory
-\item lift to a $\ZZ$-grading such that the $bc$ fields are ghosts/antighosts for holomorphic vector fields (with no action on $\beta\gamma$ fields or themselves)
-\item deform the action to encode the action of vector fields on functions etc.
-\end{itemize}
-We should then see our BV action on the nose.
-(I think this is correct, but we should double-check, of course.)
-One nice thing about this observation is that it verifies the identification with semi-infinite homology, which is often explained in these kinds of terms. 
-(See the nice, short, readable Voronov note I've put in our folder.)}
+%
+%\owen{When we write out the whole BV shebang, we should point out how it relates to the usual physics description. Namely, the physicists do the following:
+%\begin{itemize}
+%\item write a free $bc\beta\gamma$ system as a $\ZZ/2$-graded theory
+%\item lift to a $\ZZ$-grading such that the $bc$ fields are ghosts/antighosts for holomorphic vector fields (with no action on $\beta\gamma$ fields or themselves)
+%\item deform the action to encode the action of vector fields on functions etc.
+%\end{itemize}
+%We should then see our BV action on the nose.
+%(I think this is correct, but we should double-check, of course.)
+%One nice thing about this observation is that it verifies the identification with semi-infinite homology, which is often explained in these kinds of terms. 
+%(See the nice, short, readable Voronov note I've put in our folder.)}
 
