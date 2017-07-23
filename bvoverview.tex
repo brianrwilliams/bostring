@@ -12,3 +12,30 @@
 Please add others as you think of them!}
 
 \owen{We might also add that we view the BV formalism as the analogue in field theory of derived geometry in geometry. That is, in ordinary algebraic geometry, one first builds geometry and then adds (sheaf) cohomology on top: in ordinary physics, one first builds field theories and then adds (BRST) cohomology on top. But derived geometry (respectively, BV formalism) builds the cohomological aspect into the foundations.}
+
+\subsection{\owen{description of algorithm}}
+\label{sec:bvalgorithm}
+
+For us, quantization will mean that we use perturbative constructions in the setting of the BV formalism.
+Concretely, this means that we enforces the gauge symmetries using the homological algebra of the BV formalism 
+and that we use Feynman diagrams and renormalization to obtain an expression for the desired, putative path integral. 
+\owen{Be more careful about saying path integral. It's an approximation.}
+There are toy models for this approach where one can see very clearly how it gives asymptotic expansions for finite-dimensional integrals \owen{add references}.
+In particular, these toy models show that this approach need not recover the true integral
+but does know important information about it;
+a similar relationship should hold between this quantization method and the putative path integral, 
+but in this case there is no {\em a priori} definition of the true integral in most cases.
+
+This notion of quantization applies to any field theory arising from an action functional,
+and the algorithm one applies to obtain a quantization is the following:
+\begin{enumerate}
+\item Write down the integrals labeled by Feynman diagrams arising from action functional.
+\item Identify the divergences that appear in these integrals and add ``counterterms'' to the original action that are designed to cancel divergences.
+\item Repeat these steps until no more divergences appear in Feynman diagrams.
+We call this the ``renormalized action.''
+\item Check if the renormalized action satisfies the quantum master equation. 
+If it does, you have a well-posed BV quantum theory, and we call the result a {\em quantized action}. If not, guess a way to adjust the renormalized action and begin the whole process again.
+\end{enumerate}
+It should be clear that along the way, one makes many choices;
+hence if a quantization exists, it may not be unique.
+It is also possible that a BV quantization may not exist.
