@@ -22,9 +22,8 @@ Thus, for quantum corrections at one loop we consider local functionals that are
 Put simply, these are local functionals that only depend on the base of the shifted cotangent bundle. 
 On a Riemann surface $\Sigma$ the $\CC^\times$ invariant local functionals are of the form
 \ben
-\left(\Oloc\left(\Omega^{0,*}(\Sigma, T^{1,0})[1] \oplus \Omega^{0,*}(\Sigma, V)\right), \{S, -\}\right) .
+\left(\Oloc\left(\Omega^{0,*}(\Sigma, V) \oplus \Omega^{0,*}(\Sigma, T^{1,0})[1] \Omega^{1,*}(\Sigma ; V) \oplus \Omega^{1,*}(\Sigma, T^{1,0*})[-1] \right), \{S, -\}\right) .
 \een
-Suppose $\Sigma = $....
 
 \begin{prop} There are $\GL(V)$-equivariant quasi--isomorphisms
 \begin{itemize}
@@ -56,11 +55,19 @@ Thus an element of $(V [[z]])^\vee$ is a linear combination of the vectors of th
 
 \subsubsection{The $\CC^\times_{\rm cot}$-weight zero piece}
 
-The weight $\CC^\times_{\rm cot}$-weight zero sub Lie algebra of the Lie algebra (\ref{jet lie}) is simply $W_1 \ltimes V [[z]] [-1]$. 
-Thus, we have reduced the calculation of the weight zero piece of the local deformation complex to calculating the Chevalley-Eilenberg complex of this Lie algebra:
+The weight $\CC^\times_{\rm cot}$-weight zero sub Lie algebra of the Lie algebra (\ref{jet lie}) is simply $W_1 \ltimes V [[z]] [-1]$, where the semi-direct product comes from the natural action of formal vector fields on formal power series.
+Thus, we have reduced the calculation of the $\CC^\times_{\rm cot}$-weight zero piece of the local deformation complex to calculating the Chevalley-Eilenberg complex of this Lie algebra:
 \ben
-\clie^*\left({\rm W}_1 ; \Sym^{\geq 1} (V [[z]])^\vee \right) .
+\cred^* \left({\rm W}_1 \ltimes V [[z]] [-1] \right) .
 \een
+This splits into two terms $\cred^* ({\rm W}_1) \oplus \clie^*(W_1 ;  \Sym^{\geq 1} (V [[z]])^\vee)$. 
+
+The first term in this summand is the reduced Gelfand-Fuks cohomology of formal vector fields with values in the trivial module.
+It is well-known that the cohomology is one-dimensional and concentrated in degree $3$, $H^3_{\rm red} ({\rm W}_1) \cong \CC[-3]$. 
+We will identify the anomaly for the holomorphic string with flat target as multiple of the generator of this space. 
+The remaining piece of the weight zero deformation complex is the home of the anomalies for the holomorphic string placed in a non trivial background: for instance, when the target of the $\sigma$ model is curved. 
+We will not see this in our theory, of course, but the following will hopefully be...
+
 The first step in computing this is to notice that there is a quasi-isomorphic subcomplex.
 The vector field $L_0 = z^{n+1} \partial_z$ induces a grading on ${\rm W}_1$ and hence on the Chevalley-Eilenberg complex of ${\rm W}_1$ with coefficients in any module. 
 We will call this grading the {\em conformal dimension}.
@@ -108,5 +115,14 @@ which, in turn, is identified with $\Omega^{2}_{cl}(V)[1] \oplus \Omega^1(V) \op
 \subsubsection{The $\CC^\times_{\rm cot}$-weight one piece}
 
 The $\CC^\times_{\rm cot}$-weight one part of the Lie algebra (\ref{jet Lie}) is $\d z V^\vee [[z]] [-1] \oplus \d z \hOmega^1_{1} [-2]$.
+
+A totally analogous calculation as in the weight zero case yields the following.
+
+\begin{prop} There is a $\GL(V)$-equivariant quasi-isomorphism
+\ben
+\clie^*\left(W_1 ; \Sym \left(V [[z]]\right)^\vee \tensor (\d z V^*[[z]] \oplus \hOmega^{1\tensor 2}_1[-1])^\vee \right) \simeq T_V [-1] \oplus T_V [-2] 
+\een
+where $T_V$ denotes the adjoint representation. 
+\end{prop}
 
 
