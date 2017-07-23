@@ -1,0 +1,146 @@
+\section{Quantizing the holomorphic bosonic string on a disk} 
+
+\brian{Gauge fixing condition. The theory is finite, no counterterms. Review Gelfand-Fuksy stuff. Local local deformation complex calculation. Do the anomaly calculation to obtain $\dim_{\CC} = 13$. Argue why this produces a quantization on any source Riemann surface.}
+
+\owen{I'm not sure what is the optimal order: diagrams then cohomology group, or other way? If we do the concrete Feynman diagrams and show that something vanishes exactly when you'd expect from the literature, then people might feel assured. However, it's not clear where this anomaly lives until you do the obstruction-deformation computation. Perhaps we just indicate how the reader can pick her preferred order.}
+
+We will apply the algorithm described in Section~\ref{sec:bvalgorithm}
+in the case of $\Sigma = \CC$ (or any open subset of the plane).
+For this theory we are lucky, however:
+the integrals that appear from the Feynman diagrams do not have divergences,
+so that renormalized action is easy to compute.
+This aspect is the subject of the first part of this section.
+Moreover, it is easy to check whether the quantum master equation is satisfied,
+and the answer is simple.
+This aspect is the subject of the second part.
+The results can be summarized as follows.
+
+\begin{prop}
+The holomorphic bosonic string with source $\CC$ and target $\CC^d$ admits a BV quantization
+if $d = 13$.
+This quantized action only has terms of order $\hbar^0$ and $\hbar$ (i.e., it quantizes at one loop).
+\end{prop}
+
+\subsection{The Feynman diagrams}
+
+Let us describe the combinatorics of the Feynman diagrams that appear here
+before we describe the associated integrals.
+
+\subsubsection{}
+
+The procedure constructs graphs out of a prescribed type of vertices and edges;
+we must consider all graphs with such local structure.
+The classical action functional determines the allowed kinds of vertices and edges.
+The quadratic terms of the action tell us the edges;
+each quadratic term yields an edge whose boundary is labeled by the two fields appearing in the term.
+For us there are thus two types of edges: 
+an edge that flows from $c$ to $b$, 
+and an edge that flows from $\gamma$ to~$\beta$.
+\owen{Add picture.}
+The nonquadratic terms tell us the vertices:
+each $n$-ary term yields a vertex with $n$ legs,
+and the legs are labeled by the $n$ types of fields appearing in the term.
+For us there are thus two types of trivalent vertices:
+a vertex with two $c$ legs and a $b$ leg, 
+and a vertex with a $c$ leg, a $\gamma$ leg, and a $\beta$ leg.
+It helpful to picture these legs as directed,
+so that $c$ and $\gamma$ legs flow into a vertex
+and $b$ and $\beta$ legs flow out.
+\owen{Add picture.}
+
+The kinds of graphs one can build with such vertices and edges are limited.
+We focus on connected graphs.
+A tree (i.e., a connected graph with no loops) must have at most one outgoing leg,
+which can be either a $b$ or a~$\beta$;
+the other legs are incoming, so each must be labeled by a $c$ or a~$\gamma$.
+\owen{Add picture.}
+A 1-loop graph will consist of a wheel (i.e., a sequence of edges that form an overall loop)
+with trees attached.
+\owen{Add pictures.}
+Every edge along a wheel will have the same type.
+It is not possible to build a connected graph with more than one loop.
+This combinatorics is the essential reason that we can quantize at one loop.
+
+\subsubsection{}
+
+These graphs describe linear maps associated to the field.
+More precisely, a graph with $k$ legs describes a linear functional on the $k$-fold tensor product of the space of fields.
+One builds this linear functional out of the data of the action functional.
+
+For instance, a $k$-valent vertex corresponds to a $k$-ary term in the action,
+which manifestly takes in $k$ copies of the fields and outputs a number.
+Thus, the vertex labels an element of a (continuous) linear dual of the $k$-fold tensor product of fields.
+An edge corresponds an element of the 2-fold tensor product of the space of fields,
+often called a {\em propagator}.
+More precisely, the edge should correspond to
+the Green's function for the linear differential operator 
+appearing in the associated quadratic term of the action;
+hence the propagator is an element of the {\em distributional completion} of the 2-fold tensor product.
+For us the $\beta\gamma$ leg should be labeled by $\dbar^{-1} \otimes {\rm id}_V$,
+where $\dbar^{-1}$ denotes an inverse to the Dolbeault operator on functions.
+The $bc$ leg should be labeled by $\dbar^{-1}_T$, 
+the inverse of the Dolbeault operator on the bundle~$T^{1,0}$.
+
+Given a graph, one should contract the tensors associated to the vertices and edges.
+In most situations this contraction is ill-defined, 
+since the vertices label distributional sections of some vector bundle, 
+the edges are likewise distributional,
+and one cannot (usually) pair distributions.
+Thus, in practice one labels the edges by a smooth replacement of the Green's functions. 
+(Imagine replacing a delta function $\delta_0$ by a bump function.)
+Since one can pair smooth functions and distributions,
+each graph yields a linear functional on fields using these mollified edges.
+But now this linear functional depends on the choice of mollifications.
+Hence the challenge is to show that 
+if one picks a sequence of smooth replacements that approaches the Green's function,
+there is a well-defined limit of the linear functionals.
+
+\subsubsection{}
+
+We will now sketch one method well-suited to complex geometry
+that allows us to see that no divergences appear for the holomorphic bosonic string.
+
+Our primary interest in this section is $\Sigma = \CC$.
+For this Riemann surface, a standard choice of Green's function for $\dbar$ is
+\[
+P(z,w) = \frac{1}{2 \pi i} \frac{\d z + \d w}{z-w}.
+\]
+It is a distributional one-form on $\CC^2$ that satisfies $\dbar \otimes 1(P) = \delta_\Delta$, 
+where $\delta_\Delta$ is the delta-current supported along the diagonal $\Delta: \CC \hookrightarrow \CC^2$ and providing the integral kernel for the identity.
+In terms of our discussion above,
+we view this one-form as a distributional section of the fields $\gamma$ and~$\beta$: 
+for example, for fixed $w$, the one-form $\d z/(z - w)$ is a $\beta$ field in the $z$-variable 
+as it is a $(1,0)$-form.
+
+
+
+We fix a Hermitian metric on $\Sigma$, 
+which then associates provides an adjoint $\dbar^*$ to the Dolbeault operator~$\dbar$.
+In physics one calls a choice of $\dbar^*$ a {\em gauge-fix} as it \owen{not sure how to end this sentence for noncompact manifolds \dots}
+The commutator $[\dbar,\dbar^*]$ is the Laplace-Beltrami operator $D$ for this metric \owen{correct?}.
+We can thus call upon Hodge theory and many nice results about finding partial inverses to the Laplacian.
+
+\owen{I'm not sure how much to say here.}
+
+\[
+P_\ell^L = \dbar^* \int_{\ell}^L e^{-tD}\d t
+\]
+
+\[
+\dbar P_\ell^L = D \int_{\ell}^L e^{-tD}\d t = e^{-LD} - e^{-\ell D}
+\]
+
+If $f$ is an eigenfunction of $D$ so that $Df = \lambda f$, 
+\owen{with our conventions, is $\lambda$ positive or negative?}
+then
+\[
+(\dbar P_\ell^L) f = (e^{-L\lambda} - e^{-\ell \lambda})f, 
+\]
+which gets arbitrarily close to $f$ as $L \to \infty$ and $\ell~\to~0$.
+Thus $P_\ell^L$ is almost an inverse to $\dbar$;
+moreover, it is a smooth function on $\Sigma~\times~\Sigma$.
+\owen{Should I say why?}
+
+\subsection{The quantum master equation}
+
+

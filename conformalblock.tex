@@ -28,7 +28,7 @@ H^*\left(\Obs^\q_{free}(\Sigma)\right) \cong \det \left(H^*(\Sigma ; \sO_\Sigma)
 \een
 where 
 \ben
-d(\Sigma) = \dim (V) \cdot \left(\dim H^0(\Sigma ; \sO_\Sigma) + \dim H^1(\Sigma ; \sO_\Sigma)\right) + \dim(H^0(\Sigma ; T_\Sigma^{1,0})) + \dim(H^0(\Sigma ; T_\Sigma^{1,0}))
+d(\Sigma) = \dim (V) \cdot \left(\dim H^0(\Sigma ; \sO_\Sigma) + \dim H^1(\Sigma ; \sO_\Sigma)\right) + \dim(H^0(\Sigma ; T_\Sigma^{1,0})) - \dim(H^1(\Sigma ; T_\Sigma^{1,0}))
 \een
 
 %\begin{lem}[\cite{fact1} Proposition 8.1.4.1]
@@ -46,13 +46,30 @@ d(\Sigma) = \dim (V) \cdot \left(\dim H^0(\Sigma ; \sO_\Sigma) + \dim H^1(\Sigma
 
 We have constructed the quantization of the holomorphic string on $\CC$ and derived from its factorization algebra a vertex algebra. 
 The only anomaly cancellation condition to have such a quantization was the restriction that the target be $13$ complex dimensional. 
-Here, we show that our anomaly calculation above is actually enough to show the existence of a quantization on an arbitrary Riemann surface. 
+Here, we see why our anomaly calculation above is actually enough to show the existence of a quantization on an arbitrary Riemann surface. 
+It is clear that in the case of a flat target that the only anomaly is purely a functional of the $c$-fields (holomorphic vector fields on $\Sigma$).
+Hence, the part of the deformation complex that contains the anomaly is:
+\ben
+\Omega^{*}_\Sigma \tensor_{D_\Sigma} \cred^*(J \Omega^{0,*}(\Sigma ; T_\Sigma)) [2] .
+\een
+Now Proposition 5.3 of \ref{bw} shows that this sheaf of complexes is quasi-isomorphic to the constant sheaf $\CC[-1]$ concentrated in degree $+1$. 
+Now, a main result of the Costello-Gwilliam formulation of BV quantization is that anomalies are {\em local}: the anomaly computed on an open set $U \subset \Sigma$ is equal to the anomaly of the theory restricted to $U \subset \Sigma$. 
+In particular, since the anomaly is an element of the constant sheaf, it suffices to compute the anomaly on an arbitrary open in the Riemann surface, which we may take to be $U \cong \CC$ with its flat metric. 
+This is precisely the context in which we computed the anomaly in Section \ref{sec:quantization}.
 
-Let 
+Thus, just as in the case of a flat source, a quantization of the holomorphic string exists on any Riemann surface provided $\dim_{\CC}(V) = 13$. 
+Now, there is a moduli of quantizations.
+Indeed, by the calculation of the $\CC^\times_{\rm cot}$-weight zero component of the deformation complex in Section \ref{sec:moduli} we see that the space of deformations for quantizations at one loop are a torsor for the vector space
+\ben
+H^0(\Sigma) \tensor \Omega^1(V) \oplus H^1(\Sigma) \tensor \Omega^2_{cl}(V) .
+\een 
+Thus, the space of deformations is given by a space of continuous parameters and hence will not change the class of the line bundle of global observables. 
+In conclusion, we are free to choose any one-loop quantization; this will not affect the cohomology of the global observables. 
 
+\subsection{}
 
-
-Now, consider the global observables of the bosonic string $\Obs^\q(\Sigma)$. There is a spectral sequence converging to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_2$ page given by the cohomology of the global observables of the $\beta \gamma$ system with values in the holomorphic vector bundle $\cV = \cT_\Sigma [1] \oplus \CC^{13}$. By Lemma \ref{lem bg global obs} this $E_2$ page is concentrated in a single degree and is given by
+Now, let us consider the global observables of the bosonic string $\Obs^\q(\Sigma)$. 
+There is a spectral sequence converging to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_2$ page given by the cohomology of the global observables of the $bc\beta \gamma$ system which we have already computed:
 \bestar
 E_2 & \cong & \det\left(H^*(\Sigma ; \cT_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
 & \cong & \det \left(H^1(\Sigma ; \cT_\Sigma) \right) \tensor \det \left(H^0(\Sigma ; \cT_\Sigma)\right)^{-1} \tensor \det \left(H^0(\Sigma ; K_{\Sigma}) \right)^{-13}
