@@ -5,3 +5,108 @@
 \owen{We should observe that we see the deformations of the action, such as $B$-fields and dilatons. Observe we've rediscovered "string backgrounds."}
 
 \brian{Might be good to hint at the curved sigma model here.}
+
+The local deformation complex is the complex of local functionals on the full BV complex describing the classical field theory. 
+In this section, we will provide an interpretation of this complex of local functionals in terms of Gelfand-Fuks cohomology. 
+Along the way we will see how the usual backgrounds for the bosonic string (a target metric, dilaton term, etc.) appear as elements in this complex of local functionals and hence as deformations of the classical action. 
+
+We have already seen that the holomorphic bosonic string is the shifted cotangent bundle on the tangent complex of ${\rm Maps}_{\dbar}(--, V)$ as a bundle over the moduli of Riemann surfaces. 
+Consider the following action by the group $\CC^\times_{\rm cot} = \CC^\times$ on the theory.
+The base of the cotangent bundle, the tangent complex of ${\rm Maps}_{\dbar}(--, V)$ has weight $0$, and the cotangent fiber has weight $+1$. 
+That is, this action simply comes from rescaling the cotangent fiber.
+Note that the classical action functional is weight one for this $\CC^\times_{\rm cot}$-action. 
+Thus classical deformations of the holomorphic bosonic string will consist of weight one local functionals in the deformation complex.
+
+The weight of the parameter $\hbar$ is also one with respect to the scaling by $\CC^\times_{\rm cot}$.
+Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.
+Put simply, these are local functionals that only depend on the base of the shifted cotangent bundle. 
+On a Riemann surface $\Sigma$ the $\CC^\times$ invariant local functionals are of the form
+\ben
+\left(\Oloc\left(\Omega^{0,*}(\Sigma, T^{1,0})[1] \oplus \Omega^{0,*}(\Sigma, V)\right), \{S, -\}\right) .
+\een
+Suppose $\Sigma = $....
+
+\begin{prop} There are $\GL(V)$-equivariant quasi--isomorphisms
+\begin{itemize}
+\item[(0)]
+\ben
+\left(\Oloc(\cE)^{(0)}, \{S,-\}\right) \simeq \Omega^2_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)[-1] 
+\een
+\item[(1)]
+\ben 
+\left(\Oloc(\cE)^{(1)} , \{S,-\}\right) \simeq ?? .
+\een
+\end{itemize}
+\end{prop}
+
+\subsection{}
+
+The jets at $0 \in \CC$ of local Lie algebra $\Omega^{0,*}(\CC ; T^{1,0} \ltimes (V[-1] \oplus \d z V^*[-1] \oplus \d z T^{1,0 *})$ is quasi-isomorphic to the Lie algebra
+\be\label{jet lie}
+{\rm W}_1 \ltimes (V [[z]] [-1] \oplus \d z V^*[[z]] [-1] \oplus \hOmega^1_1 [-2])
+\ee
+where ${\rm W}_1 = \CC [[z]] \partial_z$ is the Lie algebra of formal vector fields in one variable and $\hOmega^1_1 = \CC [[z]] \d z$ is the space of formal one forms. 
+The Lie bracket comes from bracket on ${\rm W}_1$ and the natural action of ${\rm W}_1$ on $\CC [[z]]$ and $\hOmega^1_1$. 
+
+Denote by $\{L_n = z^{n+1} \partial_z\}$ the standard basis for the Lie algebra of formal vector fields ${\rm W}_1$. 
+Let $\lambda_n \in {\rm W}_1^\vee$ be the dual vector to $L_n$ (we are using the continuous dual, as in the setting of Gelfand-Fuks cohomology). 
+An arbitrary element of $V [[z]]$ is linear combination of vectors of the form $v \tensor z^k$. 
+Write $\zeta_k$ for the dual element $(z^k)^\vee$. 
+Thus an element of $(V [[z]])^\vee$ is a linear combination of the vectors of the form $v^\vee \tensor \zeta_k$. 
+
+\subsubsection{The $\CC^\times_{\rm cot}$-weight zero piece}
+
+The weight $\CC^\times_{\rm cot}$-weight zero sub Lie algebra of the Lie algebra (\ref{jet lie}) is simply $W_1 \ltimes V [[z]] [-1]$. 
+Thus, we have reduced the calculation of the weight zero piece of the local deformation complex to calculating the Chevalley-Eilenberg complex of this Lie algebra:
+\ben
+\clie^*\left({\rm W}_1 ; \Sym^{\geq 1} (V [[z]])^\vee \right) .
+\een
+The first step in computing this is to notice that there is a quasi-isomorphic subcomplex.
+The vector field $L_0 = z^{n+1} \partial_z$ induces a grading on ${\rm W}_1$ and hence on the Chevalley-Eilenberg complex of ${\rm W}_1$ with coefficients in any module. 
+We will call this grading the {\em conformal dimension}.
+
+ \begin{lem} Let $M$ be any ${\rm W}_1$-module. Then, the inclusion of the conformal dimension zero subcomplex
+\ben
+\clie^*({\rm W}_1 ; M)^{(0)} \xto{\simeq} \clie^*({\rm W}_1 ; M)
+\een
+is a quasi-isomorphism. \brian{Is this true?}
+\end{lem}
+
+\begin{proof} For $p-1$ define the operator $\iota_{L_0} : \clie^{p}({\rm W}_1 ; M) \to \clie^{p-1}({\rm W}_1 ; M)$ defined by sending a cochain $\varphi$ to the cochain
+\ben
+(\iota_{L_0}\varphi)(X_1,\ldots,X_p) = \varphi(L_0, X_1,\ldots,X_p) .
+\een 
+Let $\d$ be the differential for the complex $\clie^*({\rm W}_1 ; M)$. It is easy to check that the difference $\d \iota_{L_0} - \iota_{L_0} \d$ is equal to the projection onto the dimension zero subspace. 
+\end{proof}
+
+The underlying graded vector space of this conformal dimension zero subcomplex splits as follows:
+\ben
+\clie^{\#}({\rm W}_1)^{(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{(0)} \oplus \clie^{\#}({\rm W}_1)^{(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{(-1)}
+\een
+Observe that the dimension zero part of the reduced symmetric algebra is simply $\Sym^{\geq 1}(V^\vee)$ which is identified $\GL(V)$-equivariantly with $\cO_{red}(V)$. 
+That is, power series on $V$ with no constant term. 
+Similarly, the dimension one part of $\Sym^{\geq 1}\left(V[[z]]\right)^\vee$ is of the form ${\rm Sym}(V^\vee) \tensor z^\vee V^\vee$, which is identified $\GL(V)$-equivariantly with $\Omega^1(V)$. 
+
+The full dimension zero complex, including the differential is
+\[
+\xymatrix{
+1 \otimes \sO_{red}(V) \ar[rd]^{\d_{dR}} & \lambda^0 \otimes \sO_{red}(V) \ar[r] \ar[rd]^{\d_{dR}} & \lambda^{-1} \wedge \lambda^1 \otimes \sO_{red}(V) & \lambda^{-1} \wedge \lambda^1 \wedge \lambda^0 \otimes \sO_{red}(V) \\
+ & \lambda^{-1} \otimes \Omega^1(V) \ar[r] & \lambda^{-1} \wedge \lambda^0 \otimes\Omega^1(V) &
+}
+\]
+The top horizontal map sends $\lambda^0 \mapsto 2 \cdot \lambda^{-1} \wedge \lambda^1$ and the bottom horizontal map sends $\lambda^{-1}$ to $\lambda^{-1} \wedge \lambda^0$ (both are the identity on $V$). 
+The diagonal maps are given by the de Rham differential $\d_{dR} : \sO_{red}(V) \to \Omega^1(V)$. 
+This complex is quasi-isomorphic to 
+\[
+\xymatrix{
+1 \otimes \sO_{red}(V) \ar[rd]^{\d_{dR}} & & & \lambda^{-1} \wedge \lambda^1 \wedge \lambda^0 \otimes \sO_{red}(V) \\
+ & \lambda^{-1} \otimes \Omega^1(V) & \lambda^{-1} \wedge \lambda^0 \otimes\Omega^1(V) &
+}
+\]
+which, in turn, is identified with $\Omega^{2}_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)$. This completes the calculation of the $\CC^\times_{\rm cot}$-weight zero component. 
+
+\subsubsection{The $\CC^\times_{\rm cot}$-weight one piece}
+
+The $\CC^\times_{\rm cot}$-weight one part of the Lie algebra (\ref{jet Lie}) is $\d z V^\vee [[z]] [-1] \oplus \d z \hOmega^1_{1} [-2]$.
+
+

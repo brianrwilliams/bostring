@@ -1,0 +1,83 @@
+\documentclass[10pt]{amsart}
+
+\usepackage{macros}
+
+\def\brian{\textcolor{blue}}
+\def\owen{\textcolor{red}}
+
+\title{The holomorphic bosonic string: classical theory}
+\begin{document}
+\maketitle
+
+\section{Sigma-models in the BV-formalism}
+
+\subsection{Working over a dg-ring}
+\brian{everything lives over $\Omega^*_X$.}
+
+\section{The local Lie algebra}
+\brian{Owen's description of local Lie algebra as a square zero
+  extension of the derived quotient
+  $\fg_X^S // \aut(S)_X$.}
+
+\brian{Write down the classical field theory we consider}
+
+Fix a source Riemann surface (possibly non-compact) $S$. 
+
+The local Lie algebra is the following cochain complex
+\[
+\Dol{0}(S,T^{1,0}_S) \oplus \Dol{1}(S, T^{\ast 1,0}_S) \oplus \Dol{0}(S) \ot \fg_X \oplus \Dol{1}(S) \ot \fg_X^\vee,
+\]
+equipped with a Lie algebra structure that we now describe. The first summand is the Dolbeault complex of the holomorphic vector fields on $S$, and it is both a sub and a quotient Lie algebra. The second summand has no internal Lie structure but has the natural action of holomorphic vector fields. The third summand is a (complicated and curved) $L_\infty$ algebra, inherited from that for $\fg_X$; it also receives a natural action from the holomorphic vector fields. The final term is a module for both the first and third terms.
+
+Let's introduce some notation to clarify the exposition. We write
+\[
+\aut(S) := \Dol{0}(S,T^{1,0}_S)
+\]
+for the Dolbeault complex of holomorphic vector fields on $S$, as these are the infinitesimal automorphisms of $S$ as a Riemann surface. We write
+\[
+\fg_X^S := \Dol{0}(S) \ot \fg_X
+\]
+for the curved $L_\infty$ algebra (over base ring $\Omega^\ast(X)$) that describes the formal neighborhood of the constant maps inside the space of all holomorphic maps. \owen{That description is perhaps a little unclear.} Note that $\aut(S)$ acts on $\fg_X^S$ by extending the natural action of holomorphic vector fields on holomorphic functions. We make the situation more symmetric with respect to $S$ and $X$ by working with 
+\[
+\aut(S)_X := \Omega^*(X) \otimes \aut(S),
+\]
+which is locally constant on $X$. 
+
+Consider the Lie algebra
+\[
+\fg_X^S//\mathfrak{aut}(S)_X := \aut(S)_X \ltimes \fg_X^S. 
+\]
+which describes the derived quotient by holomorphic automorphisms of $S$ of the formal neighborhood of constant maps from $S$ to $X$. (What a mouthful!) Note that the automorphisms of $S$ are both a sub and quotient Lie algebra of this whole thing.
+
+The Lie algebra describing the holomorphic bosonic string is the split square zero extension of this Lie algebra by its coadjoint module.
+
+We want to quantize this \emph{cotangent theory}, which has several simplifying consequences. First, a cotangent quantization only involves one-loop contributions -- i.e., $\hbar$ additions to the differential -- and so it is much more computable if it exists. Second, the deformation complex as a cotangent theory is 
+\[
+C^*_{loc,red}(\fg_X^S//\mathfrak{aut}(S)_X),
+\]
+so that we can ignore the coadjoint summands.
+
+The structure of this Lie algebra, as an extension of the holomorphic vector fields, induces a natural retract of commutative dg algebras
+\[
+\Omega^\ast_X \ot_\CC C^*_{loc}(\aut(S)) \to C^*_{loc}(\fg_X^S//\mathfrak{aut}(S)) \to \Omega^\ast_X \ot_\CC C^*_{loc}(\aut(S)).\footnote{Note that this is a retract on the nose. Note also that $C^*(\aut(S)_X) \cong \Omega^*(S) \ot C^*(\aut(S))$ by base change.}
+\]
+\owen{Is this true? I'm worried about how things interact with the curving \dots} Thus
+\[
+C^*_{loc}(\fg_X^S//\mathfrak{aut}(S)) \cong \Omega^\ast_X \ot_\CC C^*_{loc}(\aut(S)) \oplus C^*_{loc}(\aut(S)_X, C^*_{red}(\fg^S_X))
+\]
+Thus, we obtain a useful splitting:
+\[
+C^*_{loc,red}(\fg_X^S//\mathfrak{aut}(S)_X) \cong \Omega^\ast_X \ot_\CC C^*_{red,loc}(\aut(S)) \oplus C^*_{loc}(\aut(S)_X, C^*_{red}(\fg^S_X)).
+\]
+The first summand is where the obstruction for the string with flat target lives; in particularly, we will see here the same ``conformal anomaly'' appear.
+
+We will now examine the second summand, where a dependence on $X$ appears.
+
+\section{The classical field theory}
+
+\section{An infinite volume limit}
+\brian{Motivate our theory by considering infinite volume limit of the
+  Polyakov action} 
+
+
+\end{document}
