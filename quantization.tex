@@ -2,8 +2,6 @@
 
 \brian{Gauge fixing condition. The theory is finite, no counterterms. Review Gelfand-Fuksy stuff. Local local deformation complex calculation. Do the anomaly calculation to obtain $\dim_{\CC} = 13$. Argue why this produces a quantization on any source Riemann surface.}
 
-\owen{I'm not sure what is the optimal order: diagrams then cohomology group, or other way? If we do the concrete Feynman diagrams and show that something vanishes exactly when you'd expect from the literature, then people might feel assured. However, it's not clear where this anomaly lives until you do the obstruction-deformation computation. Perhaps we just indicate how the reader can pick her preferred order.}
-
 We will apply the algorithm described in Section~\ref{sec:bvalgorithm}
 in the case of $\Sigma~=~\CC$.
 For this theory we are lucky, however:
@@ -84,11 +82,15 @@ The $bc$ leg should be labeled by $\dbar^{-1}_T$,
 the inverse of the Dolbeault operator on the bundle~$T^{1,0}$.
 
 Given a graph, one should contract the tensors associated to the vertices and edges.
+Each vertex labels a distributional section of some vector bundle on~$\Sigma$,
+and each edge labels a distributional section of a vector bundle on~$\Sigma^2$.
+Thus the desired contraction can be written {\em formally} as an integral over the manifold~$\Sigma^{v}$,
+where $v$ denotes the number of vertices.
 In most situations this contraction is ill-defined, 
-since the vertices label distributional sections of some vector bundle, 
-the edges are likewise distributional,
-and one cannot (usually) pair distributions.
-Thus, in practice one labels the edges by a smooth replacement of the Green's functions. 
+since one cannot (usually) pair distributions.
+Concretely, one sees that the integral expression is divergent.
+
+Thus, to avoid these divergences, one labels the edges by a smooth replacement of the Green's functions. 
 (Imagine replacing a delta function $\delta_0$ by a bump function.)
 Since one can pair smooth functions and distributions,
 each graph yields a linear functional on fields using these mollified edges.
@@ -101,8 +103,10 @@ there is a well-defined limit of the linear functionals.
 
 We will now sketch one method well-suited to complex geometry
 that allows us to see that no divergences appear for the holomorphic bosonic string.
+Our approach is an example of the renormalization method developed by Costello in ~\cite{CosBook},
+which applies to many more situations.
 
-Our primary interest in this section is $\Sigma = \CC$.
+Our primary setting in this section is $\Sigma=\CC$.
 For this Riemann surface, a standard choice of Green's function for $\dbar$ is
 \[
 P(z,w) = \frac{1}{2 \pi i} \frac{\d z + \d w}{z-w}.
@@ -114,35 +118,132 @@ we view this one-form as a distributional section of the fields $\gamma$ and~$\b
 for example, for fixed $w$, the one-form $\d z/(z - w)$ is a $\beta$ field in the $z$-variable 
 as it is a $(1,0)$-form.
 
+We will now describe the integral associated to a simple diagram.
+For simplicity, we assume $V = \CC$ so that the $\gamma$ and $\beta$ fields are simply functions and $1$-forms on $\CC$, respectively.
+Consider a ``tadpole'' diagram whose outer legs are $c$~fields 
+(i.e., vector fields on~$\CC$).
+\owen{Add picture.}
+There is only one vertex here, corresponding to the cubic function on fields
+\[
+F(c,\gamma,\beta) = \int_{z \in \CC} \beta \wedge c\gamma.
+\]
+If the field $c$ is of the form $f(z) \d \zbar \partial_z$,
+with $f$ compactly supported, 
+then our integral is
+\[
+\int_{z \in \CC} \beta \wedge f(z)(\partial_z\gamma) \d \zbar.
+\]
+(Note that a general cubic function could be described as an integral over $\CC^3$,
+but our function is supported on the small diagonal $\CC \hookrightarrow \CC^3$.)
+The linear functional for this tapole diagram should be given by inserting the propagator $P$ in place of the $\beta$ and $\gamma$ fields. 
+Hence it ought to be given by the following integral over~$\CC$:
+\[
+\int_{z \in \CC} c(z)P(z,w)|_{z = w}  
+= \int_{z \in \CC} f(z) \left( \partial_z \frac{1}{2 \pi i} \frac{\d z + \d w}{z-w}\right)|_{z = w}\, \d \zbar.
+\]
+This putative integral is manifestly ill-defined.
 
-
-We fix a Hermitian metric on $\Sigma$, 
+We smooth out the propagator $P$ using familiar tools from differential geometry.
+Fix a Hermitian metric on $\Sigma$, 
 which then associates provides an adjoint $\dbar^*$ to the Dolbeault operator~$\dbar$.
-In physics one calls a choice of $\dbar^*$ a {\em gauge-fix} as it \owen{not sure how to end this sentence for noncompact manifolds \dots}
-The commutator $[\dbar,\dbar^*]$ is the Laplace-Beltrami operator $D$ for this metric \owen{correct?}.
+For the usual metric on $\CC$, we have
+\[
+\dbar^* = \pm \frac{\partial}{\partial (\d \zbar)} \frac{\partial}{\partial z}.
+\]
+\owen{Why is there a $\pm$? Let's fix a sign.}
+In physics one calls a choice of $\dbar^*$ a {\em gauge-fix} as it \owen{not sure how to end this sentence for noncompact manifolds \dots maybe this comment should go elsewhere.}
+The commutator $[\dbar,\dbar^*]$, which we will denote $D$, 
+is equal to $\tfrac{1}{2} \Delta$, where $\Delta$ is the Laplace-Beltrami operator for this metric \owen{correct?}.
 We can thus call upon Hodge theory and many nice results about finding partial inverses to the Laplacian.
 
 \owen{I'm not sure how much to say here.}
 
+We introduce a smoothed version of the propagator using the heat kernel~$e^{-tD}$,
+which is a notation that denotes a solution to the heat equation $\ddot{f}(t,z) = Df(t,z)$.
+For $\CC$ with the Euclidean metric, the standard heat kernel is
 \[
-P_\ell^L = \dbar^* \int_{\ell}^L e^{-tD}\d t
+e^{-tD}(z,w) =  \frac{1}{4\pi t} e^{-|z-w|/4t} (\d z - \d w) \wedge (\d\zbar - \d\overline{w}). 
 \]
-
+For $0 < \ell < L < \infty$, we define
 \[
-\dbar P_\ell^L = D \int_{\ell}^L e^{-tD}\d t = e^{-LD} - e^{-\ell D}
+P_\ell^L = \dbar^* \int_{\ell}^L e^{-tD}\d t.
 \]
-
-If $f$ is an eigenfunction of $D$ so that $Df = \lambda f$, 
+We compute
+\[
+\dbar P_\ell^L = D \int_{\ell}^L e^{-tD}\d t =  \int_{\ell}^L \frac{d}{dt} e^{-tD}\d t = e^{-LD} - e^{-\ell D}.
+\]
+In the limit as $\ell \to 0$ and $L \to \infty$, the operator $P_\ell^L$ goes to a propagator (or Green's function) $P$ for~$\dbar$.
+To see this, consider an eigenfunction $f$ of $D$ where $Df=\lambda f$.
 \owen{with our conventions, is $\lambda$ positive or negative?}
-then
+Then
 \[
 (\dbar P_\ell^L) f = (e^{-L\lambda} - e^{-\ell \lambda})f, 
 \]
-which gets arbitrarily close to $f$ as $L \to \infty$ and $\ell~\to~0$.
-Thus $P_\ell^L$ is almost an inverse to $\dbar$;
+which goes to $f$ as $L \to \infty$ and $\ell~\to~0$.
+\owen{I want to be careful about this since eigenfunction decomposition is subtle on noncompact manifolds \dots}
+Thus, if one works with the correct space of functions, 
+$P_\ell^L$ is almost an inverse to $\dbar$;
 moreover, it is a smooth function on $\Sigma~\times~\Sigma$.
 \owen{Should I say why?}
 
+We now return to the tadpole diagram and put $P_\ell^L$ on the edge instead of~$P$.
+\owen{fill in}
+
+\subsubsection{}
+
+By explicitly analyzing the $\ell \to 0$ limit for the integral associated to every Feynman diagram,
+we find the following result.
+
+\begin{prop}
+\owen{Insert statement}
+\end{prop}
+
+The necessary manipulations and inequalities are very close to those used in~\cite{}.
+We recommend looking at \owen{exact location} for model arguments.
+
 \subsection{The quantum master equation}
+
+In the BV formalism the basic idea is to replace integration against a path integral measure $e^{-S(\phi)/\hbar} \cD \phi$ on a space of fields with a cochain complex.
+In this cochain complex, we view a cocycle as defining an observable of the theory,
+and its cohomology class is viewed as its expected value against the path integral measure.
+For toy models of finite-dimensional integration, see \cite{};
+these examples are always cryptomorphically equivalent to a de Rham complex,
+which is a familiar homological approach to integration.
+
+Hence the content of the path integral, in this approach, is encoded in the differential.
+As the toy models demonstrate, 
+the differential is supposed to behave like a divergence operator;
+recall that given a volume form $\mu$ on a manifold, 
+its divergence operator maps vector fields to functions by the relationship
+\[
+{\rm div}_\mu({\mathcal X}) \mu = L_{\mathcal X} \mu.
+\] 
+The BV formalism axiomatizes general properties of divergence operators;
+a putative differential must satisfy these properties to provide a BV quantization.
+
+When following the algorithm of Section~\ref{sec:bvalgorithm},
+the renormalized action
+\[
+S = S^{\rm cl} + \hbar S_1 + \hbar^2 S_2 + \cdots
+\]
+determines a putative differential 
+\[
+\d^q_S=\{S,-\} + \hbar\Delta_{BV}
+\]
+on the graded vector space of observables.
+The term $\Delta_{BV}$ is called the {\em BV Laplacian}, 
+and it is determined at the level of the classical BV by the pairing on fields. 
+In our case, there is the pairing between $b$ and $c$ and between $\beta$ and~$\gamma$, respectively;
+in general, there is a pairing between each field and its ``anti-field'' in a BV theory.
+This pairing also determines a degree~1 Poisson bracket $\{-,-\}$ on the observables.
+
+By construction, this putative differential $\d_S^q$ satisfies the conditions of behaving like a divergence operator.
+The only remaining condition to check is that it is square-zero.
+This condition ends up being equivalent to $S$ satisfying the {\em quantum master equation}
+\[
+\hbar \Delta_{BV} S + \frac{1}{2}\{S,S\} = 0.
+\]
+More accurately, $\d^q_S$ is a differential if and only if the right hand side is a constant.
+
 
 
