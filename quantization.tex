@@ -28,7 +28,7 @@ before we describe the associated integrals.
 
 \subsubsection{}
 
-The procedure is to construct graphs out of a prescribed type of vertices and edges;
+The procedure constructs graphs out of a prescribed type of vertices and edges;
 we must consider all graphs with such local structure.
 The classical action functional determines the allowed kinds of vertices and edges.
 The quadratic terms of the action tell us the edges;
@@ -70,12 +70,13 @@ One builds this linear functional out of the data of the action functional.
 For instance, a $k$-valent vertex corresponds to a $k$-ary term in the action,
 which manifestly takes in $k$ copies of the fields and outputs a number.
 Thus, the vertex labels an element of a (continuous) linear dual of the $k$-fold tensor product of fields.
-An edge corresponds an element of the 2-fold tensor product of the space of fields.
-More accurately, one would like to associate to the edge 
+An edge corresponds an element of the 2-fold tensor product of the space of fields,
+often called a {\em propagator}.
+More precisely, the edge should correspond to
 the Green's function for the linear differential operator 
-appearing in the associated quadratic term of the action,
-hence an element of the {\em distributional completion} of the 2-fold tensor product.
-Thus, for us the $\beta\gamma$ leg should be labeled by $\dbar^{-1} \otimes {\rm id}_V$,
+appearing in the associated quadratic term of the action;
+hence the propagator is an element of the {\em distributional completion} of the 2-fold tensor product.
+For us the $\beta\gamma$ leg should be labeled by $\dbar^{-1} \otimes {\rm id}_V$,
 where $\dbar^{-1}$ denotes an inverse to the Dolbeault operator on functions.
 The $bc$ leg should be labeled by $\dbar^{-1}_T$, 
 the inverse of the Dolbeault operator on the bundle~$T^{1,0}$.
@@ -85,6 +86,61 @@ In most situations this contraction is ill-defined,
 since the vertices label distributional sections of some vector bundle, 
 the edges are likewise distributional,
 and one cannot (usually) pair distributions.
-Thus, in practice one chooses a mollification of the Green's functions. 
+Thus, in practice one labels the edges by a smooth replacement of the Green's functions. 
+(Imagine replacing a delta function $\delta_0$ by a bump function.)
+Since one can pair smooth functions and distributions,
+each graph yields a linear functional on fields using these mollified edges.
+But now this linear functional depends on the choice of mollifications.
+Hence the challenge is to show that 
+if one picks a sequence of smooth replacements that approaches the Green's function,
+there is a well-defined limit of the linear functionals.
+
+\subsubsection{}
+
+We will now sketch one method well-suited to complex geometry
+that allows us to see that no divergences appear for the holomorphic bosonic string.
+
+Our primary interest in this section is $\Sigma = \CC$.
+For this Riemann surface, a standard choice of Green's function for $\dbar$ is
+\[
+P(z,w) = \frac{1}{2 \pi i} \frac{\d z + \d w}{z-w}.
+\]
+It is a distributional one-form on $\CC^2$ that satisfies $\dbar \otimes 1(P) = \delta_\Delta$, 
+where $\delta_\Delta$ is the delta-current supported along the diagonal $\Delta: \CC \hookrightarrow \CC^2$ and providing the integral kernel for the identity.
+In terms of our discussion above,
+we view this one-form as a distributional section of the fields $\gamma$ and $\beta$: 
+for example, for fixed $w$, the one-form $\d z/(z ? w)$ is a $\beta$ field in the $z$-variable 
+as it is a $(1,0)$-form.
+
+
+
+We fix a Hermitian metric on $\Sigma$, 
+which then associates provides an adjoint $\dbar^*$ to the Dolbeault operator~$\dbar$.
+In physics one calls a choice of $\dbar^*$ a {\em gauge-fix} as it \owen{not sure how to end this sentence for noncompact manifolds \dots}
+The commutator $[\dbar,\dbar^*]$ is the Laplace-Beltrami operator $D$ for this metric \owen{correct?}.
+We can thus call upon Hodge theory and many nice results about finding partial inverses to the Laplacian.
+
+\owen{I'm not sure how much to say here.}
+
+\[
+P_\ell^L = \dbar^* \int_{\ell}^L e^{-tD}\d t
+\]
+
+\[
+\dbar P_\ell^L = D \int_{\ell}^L e^{-tD}\d t = e^{-LD} - e^{-\ell D}
+\]
+
+If $f$ is an eigenfunction of $D$ so that $Df = \lambda f$, 
+\owen{with our conventions, is $\lambda$ positive or negative?}
+then
+\[
+(\dbar P_\ell^L) f = (e^{-L\lambda} - e^{-\ell \lambda})f, 
+\]
+which gets arbitrarily close to $f$ as $L \to \infty$ and $\ell~\to~0$.
+Thus $P_\ell^L$ is almost an inverse to $\dbar$;
+moreover, it is a smooth function on $\Sigma~\times~\Sigma$.
+\owen{Should I say why?}
+
+\subsection{The quantum master equation}
 
 
