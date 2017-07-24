@@ -1,5 +1,4 @@
 \section{Global sections of the factorization algebra} 
-\brian{this should probably go earlier}
 
 %First, consider the elliptic complex
 %\ben
@@ -15,7 +14,7 @@
 %\een
 %where $\<-,-\>_\cV$ denotes the evaluation pairing between $\cV$ and its dual. This theory is called the $\beta\gamma$ (or sometimes $\beta \gamma-bc$ \owen{what are the $bc$ fields?}) system with values in $\cV$. This is a free field theory and hence has a natural quantization. We will denote the factorization algebra of quantum observables on $\Sigma$ by $\Obs^{q}_{\cV}$. 
 
-\brian{Discuss relationship to conformal blocks}
+\brian{Discuss relationship to conformal blocks??}
 
 We wish to write the global observables of the holomorphic string in terms of the cohomology of natural holomorphic vector bundles on the Riemann surface. 
 
@@ -87,6 +86,24 @@ If $g \geq 2$ one has
 It is clear that the spectral sequence degenerates at this page. Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
 
 \section{The string partition function on an elliptic curve}
+
+We will evaluate the partition function of the theory on an elliptic curve. 
+For $\tau \in \HH$, the upper half plane, we can write an elliptic curve as a quotient of $\CC$ by the lattice $\ZZ + \tau \ZZ$
+\ben
+E_\tau = \CC / (\ZZ + \tau \ZZ) .
+\een 
+Let $\d^2 z = \d z \d \zbar$ be the volume form on $\CC$ which descends to one on $E_\tau$ that we denote by the same name. 
+
+We have already discussed the gauge fixing operator and constructed the heat kernel that regularizes the operator $\dbar^{-1}$ on $\CC$. 
+We can make the same choice of gauge fixing operator, namely $\dbar^*$, on the elliptic curve $E_\tau$ and hence we obtain a heat kernel for the operator $e^{-t D^{E_\tau}}$ where $D^{E_\tau}$ is the commutator $[\dbar, \dbar^*] = \frac{1}{2} \Delta$ on $E_\tau$. 
+Explicitly, the heat kernel of the operator $e^{-t D^{E_\tau}}$ on the elliptic curve $E_\tau$ pulled back to the universal cover $\CC$ along the $\CC \to E_\tau$ is of the form
+\ben 
+K^{E_\tau}_t (z,w) = \sum_{\lambda \in \ZZ + \tau \ZZ} \frac{1}{2\pi t} e^{-|z-w + \lambda|^2 / 2 t} (\d z - \d w) (\d \zbar - \d \wbar ) .
+\een
+From $K_t^{E_\tau}$ we obtain the propagator $P_{\ell < L}^{E_\tau} = \dbar^* \int_{\ell}^L e^{-t D^{E_\tau}} \d t$ just as above. 
+
+
+
 
 \brian{Sketch how to see the mumford form}
 

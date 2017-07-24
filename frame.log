@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  23 JUL 2017 21:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 JUL 2017 14:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -609,83 +609,114 @@ LaTeX Info: Redefining \nameref on input line 15.
 
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 17.
- (./frame.toc)
+
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write5
 \openout5 = `frame.toc'.
 
- (./bvoverview.tex [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap
-/pdftex.map}]) (./classicaltheory.tex
-Underfull \vbox (badness 3029) has occurred while \output is active []
-
- [2]
+(./bvoverview.tex [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/
+pdftex.map}]) (./classicaltheory.tex [2]
 LaTeX Font Info:    Try loading font information for U+fplmbb on input line 41.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [3] [4]
-[5] [6]
+) [3]
 
-LaTeX Warning: Citation `GGW' on page 7 undefined on input line 268.
+LaTeX Warning: Reference `sec:curved' on page 4 undefined on input line 127.
 
-[7]) (./moduli.tex [8] [9] <xymatrix
-LaTeX Font Info:    Try loading font information for U+eus on input line 102.
+[4] [5]
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueus.fd
+LaTeX Warning: Citation `GGW' on page 6 undefined on input line 268.
+
+[6]) (./moduli.tex [7]
+
+LaTeX Warning: Reference `jet lie' on page 8 undefined on input line 60.
+
+[8] <xymatrix
+LaTeX Font Info:    Try loading font information for U+eus on input line 104.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
-) 4x2 184>
-<xymatrix 4x2 75>
+)
+4x2 184> [9] <xymatrix 4x2 75>
 
-LaTeX Warning: Reference `jet Lie' on page 10 undefined on input line 117.
+LaTeX Warning: Reference `jet Lie' on page 10 undefined on input line 119.
 
-) (./quantization.tex [10] [11] [12]) (./vertexalgebra.tex
+) (./quantization.tex
 
-LaTeX Warning: Reference `prop book vertex' on page 13 undefined on input line 
-5.
+LaTeX Warning: Reference `sec:bvalgorithm' on page 10 undefined on input line 5
+.
 
-) (./conformalblock.tex
+[10] [11]
 
-LaTeX Warning: Citation `fact1' on page 13 undefined on input line 25.
+LaTeX Warning: Citation `CosBook' on page 12 undefined on input line 120.
 
-[13]
+[12] [13]
 
-LaTeX Warning: Reference `bw' on page 14 undefined on input line 55.
-
-
-LaTeX Warning: Reference `sec:quantization' on page 14 undefined on input line 
-58.
-
-
-LaTeX Warning: Reference `sec:moduli' on page 14 undefined on input line 62.
+LaTeX Warning: Reference `sec:bvalgorithm' on page 14 undefined on input line 2
+64.
 
 [14]
 
-LaTeX Warning: Reference `lem bg global obs' on page 15 undefined on input line
- 71.
+LaTeX Warning: Citation `CosBook' on page 15 undefined on input line 330.
 
-) (./curvedtargets.tex)
+[15]) (./vertexalgebra.tex
+
+LaTeX Warning: Reference `prop book vertex' on page 16 undefined on input line 
+5.
+
+[16]) (./conformalblock.tex
+
+LaTeX Warning: Reference `rmk:bcbg' on page 17 undefined on input line 21.
+
+
+LaTeX Warning: Citation `fact1' on page 17 undefined on input line 24.
+
+[17]
+
+LaTeX Warning: Reference `bw' on page 18 undefined on input line 54.
+
+
+LaTeX Warning: Reference `sec:quantization' on page 18 undefined on input line 
+57.
+
+
+LaTeX Warning: Reference `sec:moduli' on page 18 undefined on input line 61.
+
+[18]) (./curvedtargets.tex)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 29.
- [15]
+ [19]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 29.
  (./frame.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 29.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 29.
-Package rerunfilecheck Info: File `frame.out' has not changed.
-(rerunfilecheck)             Checksum: D4762BE0562EB0CAF10BADE0CBD26EBA;1373.
 
+
+Package rerunfilecheck Warning: File `frame.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `frame.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  D4762BE0562EB0CAF10BADE0CBD26EBA;1373.
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 29.
  ) 
 Here is how much of TeX's memory you used:
- 10429 strings out of 493089
- 140023 string characters out of 6134842
- 281338 words of memory out of 5000000
- 13458 multiletter control sequences out of 15000+600000
+ 10424 strings out of 493089
+ 139926 string characters out of 6134842
+ 282052 words of memory out of 5000000
+ 13441 multiletter control sequences out of 15000+600000
  30558 words of font info for 98 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 36i,13n,31p,3255b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,13n,31p,3255b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -702,10 +733,10 @@ mf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/public/xypic/xycmat10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
 1/public/xypic/xycmbt10.pfb>
-Output written on frame.pdf (15 pages, 186779 bytes).
+Output written on frame.pdf (19 pages, 205645 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
