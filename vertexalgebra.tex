@@ -1,5 +1,27 @@
 \section{OPE and the string vertex algebra}
 
+Vertex algebras were introduced into mathematics 
+
+In the BV formalism one constructs a cochain complex of observables,
+for both the classical and the quantized theory, if it exists.
+The cochain complexes are local on the source manifold of a theory:
+on each open set $U$ in that manifold~$\Sigma$,
+one can pick out the observables with support in~$U$ by asking for the observables that vanish on fields with support outside~$U$.
+It is the central result of~\cite{CG1,CG2} that the observables also satisfy a local-to-global property,
+akin to the sheaf gluing axiom,
+and hence form a {\em factorization algebra} on~$\Sigma$.
+
+We will not need that general notion here.
+Instead we will use vertex algebras, 
+as these are well-known in the setting of chiral conformal field theories (CFT),
+where they codify the operator product expansions (OPE) for local observables.
+Theorem~\owen{???} of~\cite{CG1} assures us that the factorization algebra of a chiral CFT 
+determines a vertex algebra;
+that result
+
+\owen{describe classical observables \& why we get a Poisson vertex algebra}
+
+
 \brian{Write down vertex algebra from quantization above. Possibly state the relationship to semi-infinite cohomology}
 
 \begin{prop} Let $\Obs^q$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string. The factorization product of open disks $D \subset \CC$ determines the structure of a vertex algebra (see Proposition \ref{prop book vertex} below) on the cohomology of the factorization algebra on an open disk $H^*(\Obs^q(D))$, that we denote $\Vert(\Obs^q)$. Moreover, there is an isomorphism of vertex algebras
@@ -11,5 +33,7 @@
 \owen{I believe these vertex algebras are cohomologically graded, unless we're lucky and the cohomology all sits in degree zero. In which case, we should point out this miracle. Perhaps better would be to extract the dg vertex algebra.}
 
 \owen{Do you know a citation where the string vertex algebra is already written down? Of course it's almost explicit in any discussion of the ``modern''/BRST quantization of the bosonic string, where they write down $Q$, which ought to be the differential of the dg vertex algebra using our construction.}
+
+\owen{Si's theorem gives us a nice approach: we conjugate the free $bc\beta\gamma$ vertex algebra by the appropriate VOA automorphism to recover the string. This may be close to what physicists do anyway.}
 
 \brian{How deformations discussed in Section 3 gives explicit deformations of the the vertex algebra.}

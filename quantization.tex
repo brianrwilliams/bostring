@@ -131,6 +131,9 @@ In terms of our discussion above,
 we view this one-form as a distributional section of the fields $\gamma$ and~$\beta$: 
 for example, for fixed $w$, the one-form $\d z/(z - w)$ is a $\beta$ field in the $z$-variable 
 as it is a $(1,0)$-form.
+(This propagator is for the $\beta\gamma$ fields---and one must tensor with a kernel for the identity on $V$---but a similar formula provides a propagator for the $bc$ fields.)
+
+\subsubsection{}
 
 We will now describe the integral associated to a simple diagram.
 For simplicity, we assume $V = \CC$ so that the $\gamma$ and $\beta$ fields are simply functions and $1$-forms on $\CC$, respectively.
@@ -205,6 +208,7 @@ moreover, it is a smooth function on $\Sigma~\times~\Sigma$.
 \subsubsection{}
 
 We now return to the tadpole diagram and put $P_\ell^L$ on the edge instead of~$P$.
+(We again assume $V = \CC$ for simplicity.)
 The propagator is
 \begin{align*}
 P_\ell^L(z,w) &= \int_{\ell}^L \d t \, \frac{\partial}{\partial (\d \zbar)} \frac{\partial}{\partial z}\left( \frac{1}{4\pi t} e^{-|z-w|^2/4t} (\d z - \d w) \wedge (\d\zbar - \d\overline{w})\right)\\
@@ -344,7 +348,7 @@ so that we can examine whether the renormalized action satisfies the quantum mas
 \begin{dfn}
 The {\em scale~$L$ bracket} $\{-,-\}_L$ is given by pairing with the scale~$L$ heat kernel
 \[
-K_L(z,w) = \frac{1}{4\pi t} e^{-|z-w|/4t} (\d z - \d w) \wedge (\d\zbar - \d\overline{w}). 
+K_L(z,w) = \frac{1}{4\pi L} e^{-|z-w|/4L} (\d z - \d w) \wedge (\d\zbar - \d\overline{w}). 
 \]
 The {\em scale~$L$ BV Laplacian} $\Delta_L$ is given by the contraction~$\partial_{K_L}$.
 \end{dfn}
