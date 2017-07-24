@@ -26,8 +26,9 @@ and hence form a {\em factorization algebra} on~$\Sigma$.
 
 We will not need that general notion here.
 Instead, we will use vertex algebras.
-Theorem~\owen{???} of~\cite{CG1} explains how a certain class of factorization algebras (living on $\Sigma = \CC$) yields a vertex algebra by an explicit construction.
-It assures us that the factorization algebra of a chiral CFT determines a vertex algebra.
+Theorem~\owen{???} of~\cite{CG1} explains how a factorization algebra~$F$ on $\Sigma = \CC$ 
+(satisfying certain hypotheses) yields a vertex algebra~$\Vert(F)$. 
+It assures us that the observables of a chiral CFT determine a vertex algebra.
 
 In particular, Section~\owen{???} of~\cite{CG1} examines the free $\beta\gamma$ system in great detail.
 Its main result is that the well-known $\beta\gamma$ vertex algebra is recovered by the two-step process of BV quantization, which yields a factorization algebra, and then the extraction of a vertex algebra.
@@ -54,20 +55,20 @@ One of his main results is that for a free chiral BV theory with action $S_{\rm 
 yield a renormalized action~$\{S_I[L]\}$.
 \item If the renormalized action $\{S_I[L]\}$ satisfies the quantum master equation,
 then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$.
-\item The vertex algebra for such an action $\{S_I[L]\}$ is isomorphic to the vertex algebra~$V$ via the automorphism~$\exp(D_I)$.
+\item The vertex algebra $\cV_I$ for such an action $\{S_I[L]\}$ is isomorphic to the vertex algebra~$\cV_{\rm free}$ via the automorphism~$\exp(D_I)$.
 \end{itemize}
 The holomorphic bosonic string with target $V=\CC^{13}$ provides a concrete example of this situation.
 The free theory is the $bc\beta\gamma$ system, 
 and we have seen that the renormalized action satisfies the QME.
 Hence we obtain the following.
 
-
 \begin{prop} 
-Let $\Obs^q$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string. The factorization product of open disks $D \subset \CC$ determines the structure of a vertex algebra (see Proposition \ref{prop book vertex} below) on the cohomology of the factorization algebra on an open disk $H^*(\Obs^q(D))$, that we denote $\Vert(\Obs^q)$. Moreover, there is an isomorphism of vertex algebras
-\ben
-\Phi : \cV_{\rm string} \xto{\cong} \Vert(\Obs^q) .
-\een
+Let $\Obs^q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. 
+There is an isomorphism of vertex algebras $\cV_{\rm string} \cong \Vert(\Obs^q_{\rm string})$.
+Moreover, this vertex algebra is isomorphic to the chiral sector of the bosonic string \owen{cite some description}.
 \end{prop}
+
+\owen{Compare with Lian-Zuckerman. We need to see that our differential on the dg vertex algebra is the BRST operator they write down.}
 
 \owen{describe classical observables \& why we get a Poisson vertex algebra}
 
