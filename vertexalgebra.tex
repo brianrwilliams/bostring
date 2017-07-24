@@ -1,6 +1,19 @@
 \section{OPE and the string vertex algebra}
 
-Vertex algebras were introduced into mathematics 
+Vertex algebras are mathematical objects that axiomatize the behavior of local observables 
+(i.e., point-like observables) of a chiral conformal field theory (CFT),
+such as the $bc\beta\gamma$ system or the holomorphic bosonic string.
+The vertex operator of a vertex algebras encodes the operator product expansions (OPE) for local observables,
+which is of central interest in understanding a chiral CFT.
+(We will not review vertex algebras here
+as there are many nice expositions \owen{cite some}.)
+
+In this section we will explain how to extract the vertex algebra of the holomorphic bosonic string,
+using machinery developed in~\cite{CG1,LiVA,CDO}.
+The answer we recover is precisely the chiral sector of the usual bosonic string.
+\owen{Is that true?}
+
+\subsection{Some context}
 
 In the BV formalism one constructs a cochain complex of observables,
 for both the classical and the quantized theory, if it exists.
@@ -12,19 +25,35 @@ akin to the sheaf gluing axiom,
 and hence form a {\em factorization algebra} on~$\Sigma$.
 
 We will not need that general notion here.
-Instead we will use vertex algebras, 
-as these are well-known in the setting of chiral conformal field theories (CFT),
-where they codify the operator product expansions (OPE) for local observables.
-Theorem~\owen{???} of~\cite{CG1} assures us that the factorization algebra of a chiral CFT 
-determines a vertex algebra;
-that result
+Instead, we will use vertex algebras.
+Theorem~\owen{???} of~\cite{CG1} explains how a certain class of factorization algebras (living on $\Sigma = \CC$) yields a vertex algebra by an explicit construction.
+It assures us that the factorization algebra of a chiral CFT determines a vertex algebra.
+
+In particular, Section~\owen{???} of~\cite{CG1} examines the free $\beta\gamma$ system in great detail.
+Its main result is that the well-known $\beta\gamma$ vertex algebra is recovered by the two-step process of BV quantization, which yields a factorization algebra, and then the extraction of a vertex algebra.
+
+The exact same arguments apply to the free $bc\beta\gamma$ system,
+and we obtain the following.
+
+\begin{prop}
+\owen{State the $bc\beta\gamma$ VOA. Mention the classical (=associated graded) observables are a Poisson vertex algebra.}
+\end{prop}
+
+\subsection{The case of the string}
+
+The holomorphic bosonic string is a chiral CFT and so the machinery of~\cite{CG1} applies to it.
+One can extract a vertex algebra directly by this method.
+But Li's work
+
+
 
 \owen{describe classical observables \& why we get a Poisson vertex algebra}
 
 
 \brian{Write down vertex algebra from quantization above. Possibly state the relationship to semi-infinite cohomology}
 
-\begin{prop} Let $\Obs^q$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string. The factorization product of open disks $D \subset \CC$ determines the structure of a vertex algebra (see Proposition \ref{prop book vertex} below) on the cohomology of the factorization algebra on an open disk $H^*(\Obs^q(D))$, that we denote $\Vert(\Obs^q)$. Moreover, there is an isomorphism of vertex algebras
+\begin{prop} 
+Let $\Obs^q$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string. The factorization product of open disks $D \subset \CC$ determines the structure of a vertex algebra (see Proposition \ref{prop book vertex} below) on the cohomology of the factorization algebra on an open disk $H^*(\Obs^q(D))$, that we denote $\Vert(\Obs^q)$. Moreover, there is an isomorphism of vertex algebras
 \ben
 \Phi : V^{\rm string} \xto{\cong} \Vert(\Obs^q) .
 \een
