@@ -75,6 +75,12 @@ These graphs describe linear maps associated to the field.
 More precisely, a graph with $k$ legs describes a linear functional on the $k$-fold tensor product of the space of fields.
 One builds this linear functional out of the data of the action functional.
 
+\begin{rmk}
+Like the action functional, it is rarely well-defined on all fields if the source manifold is non-compact.
+Instead, like the action functional, it defines a function on compactly-supported fields.
+This domain is all one needs for making variational arguments or for constructing a BV quantization.
+\end{rmk}
+
 For instance, a $k$-valent vertex corresponds to a $k$-ary term in the action,
 which manifestly takes in $k$ copies of the fields and outputs a number.
 Thus, the vertex labels an element of a (continuous) linear dual of the $k$-fold tensor product of fields.
@@ -92,7 +98,7 @@ the inverse of the Dolbeault operator on the bundle~$T^{1,0}$.
 Given a graph, one should contract the tensors associated to the vertices and edges.
 Each vertex labels a distributional section of some vector bundle on~$\Sigma$,
 and each edge labels a distributional section of a vector bundle on~$\Sigma^2$.
-Thus the desired contraction can be written {\em formally} as an integral over the manifold~$\Sigma^{v}$,
+Thus the desired contraction can be written {\em formally} as an integral over the product manifold~$\Sigma^{v}$,
 where $v$ denotes the number of vertices.
 In most situations this contraction is ill-defined, 
 since one cannot (usually) pair distributions.
@@ -147,9 +153,12 @@ The linear functional for this tapole diagram should be given by inserting the p
 Hence it ought to be given by the following integral over~$\CC$:
 \[
 \int_{z \in \CC} c(z)P(z,w)|_{z = w}  
-= \int_{z \in \CC} f(z) \left( \partial_z \frac{1}{2 \pi i} \frac{\d z + \d w}{z-w}\right)|_{z = w}\, \d \zbar.
+= \int_{z \in \CC} f(z) \partial_z \left(  \frac{1}{2 \pi i} \frac{\d z + \d w}{z-w}\right)|_{z = w}\, \d \zbar.
 \]
-This putative integral is manifestly ill-defined.
+This putative integral is manifestly ill-defined,
+since the distribution is singular along the diagonal.
+
+\subsubsection{}
 
 We smooth out the propagator $P$ using familiar tools from differential geometry.
 Fix a Hermitian metric on $\Sigma$, 
@@ -167,10 +176,10 @@ We can thus call upon Hodge theory and many nice results about finding partial i
 \owen{I'm not sure how much to say here.}
 
 We introduce a smoothed version of the propagator using the heat kernel~$e^{-tD}$,
-which is a notation that denotes a solution to the heat equation $\ddot{f}(t,z) = Df(t,z)$.
+which is a notation that denotes a solution to the heat equation $\partial_t^2 f(t,z) = Df(t,z)$.
 For $\CC$ with the Euclidean metric, the standard heat kernel is
 \[
-e^{-tD}(z,w) =  \frac{1}{4\pi t} e^{-|z-w|/4t} (\d z - \d w) \wedge (\d\zbar - \d\overline{w}). 
+e^{-tD}(z,w) =  \frac{1}{4\pi t} e^{-|z-w|^2/4t} (\d z - \d w) \wedge (\d\zbar - \d\overline{w}). 
 \]
 For $0 < \ell < L < \infty$, we define
 \[
@@ -194,8 +203,24 @@ $P_\ell^L$ is almost an inverse to $\dbar$;
 moreover, it is a smooth function on $\Sigma~\times~\Sigma$.
 \owen{Should I say why?}
 
+\subsubsection{}
+
 We now return to the tadpole diagram and put $P_\ell^L$ on the edge instead of~$P$.
-\owen{fill in}
+The propagator is
+\begin{align*}
+P_\ell^L(z,w) &= \int_{\ell}^L \d t \, \frac{\partial}{\partial (\d \zbar)} \frac{\partial}{\partial z}\left( \frac{1}{4\pi t} e^{-|z-w|^2/4t} (\d z - \d w) \wedge (\d\zbar - \d\overline{w})\right)\\
+&= \int_{\ell}^L \d t \frac{1}{4\pi t} \frac{\zbar - \overline{w}}{2t} e^{-|z-w|^2/4t} (\d z - \d w).
+\end{align*}
+Note that it is smooth everywhere on~$\CC^2$.
+The integral for the tadpole diagram is 
+\begin{align*}
+\int_{z \in \CC} c(z)P_\ell^L(z,w)|_{z = w}  
+&= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \partial_z \left(\frac{1}{4\pi t} \frac{\zbar - \overline{w}}{2t} e^{-|z-w|^2/4t} (\d z - \d w) \right)|_{z = w}\, \d \zbar\\
+&= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \left(\frac{1}{4\pi t} \left(\frac{\zbar - \overline{w}}{2t}\right)^2 e^{-|z-w|^2/4t} (\d z - \d w) \right)|_{z = w}\, \d \zbar\\
+&= 0,
+\end{align*}
+since the integrand vanishes along the diagonal.
+Note that this integral is independent of $\ell$ and $L$ and hence the limit is zero.
 
 \subsubsection{}
 
@@ -215,7 +240,7 @@ We recommend looking at \owen{exact location} for model arguments.
 
 \subsection{The quantum master equation}
 
-In the BV formalism the basic idea is to replace integration against a path integral measure $e^{-S(\phi)/\hbar} \cD \phi$ on a space of fields with a cochain complex.
+In the BV formalism the basic idea is to replace integration against a path integral measure $e^{-S(\phi)/\hbar} \cD \phi$ with a cochain complex.
 In this cochain complex, we view a cocycle as defining an observable of the theory,
 and its cohomology class is viewed as its expected value against the path integral measure.
 For toy models of finite-dimensional integration, see \cite{};
@@ -249,7 +274,7 @@ that the BV formalism uses.
 First, in practice, the observables are the symmetric algebra generated by the continuous linear duals to the vector spaces of fields.
 There is also a pairing on fields that is part of the data of the classical BV theory,
 between each field and its ``anti-field.''
-(This pairing is a version of the action of vector fields on functions in the toy models.)
+(This pairing is a version of the action of constant vector fields on functions in the toy models.)
 In our case, there is the pairing between $b$ and $c$ and between $\beta$ and~$\gamma$, respectively.
 It behaves like a ``shifted symplectic'' pairing as it has cohomological degree~$-1$,
 and hence it determines a degree~1 Poisson bracket $\{-,-\}$ on the graded algebra of observables.
