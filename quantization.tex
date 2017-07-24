@@ -165,9 +165,8 @@ Fix a Hermitian metric on $\Sigma$,
 which then associates provides an adjoint $\dbar^*$ to the Dolbeault operator~$\dbar$.
 For the usual metric on $\CC$, we have
 \[
-\dbar^* = \pm \frac{\partial}{\partial (\d \zbar)} \frac{\partial}{\partial z}.
+\dbar^* = -2 \frac{\partial}{\partial (\d \zbar)} \frac{\partial}{\partial z}.
 \]
-\owen{Why is there a $\pm$? Let's fix a sign.}
 In physics one calls a choice of $\dbar^*$ a {\em gauge-fix} as it \owen{not sure how to end this sentence for noncompact manifolds \dots maybe this comment should go elsewhere.}
 The commutator $[\dbar,\dbar^*]$, which we will denote $D$, 
 is equal to $\tfrac{1}{2} \Delta$, where $\Delta$ is the Laplace-Beltrami operator for this metric \owen{correct?}.
@@ -179,7 +178,7 @@ We introduce a smoothed version of the propagator using the heat kernel~$e^{-tD}
 which is a notation that denotes a solution to the heat equation $\partial_t^2 f(t,z) = Df(t,z)$.
 For $\CC$ with the Euclidean metric, the standard heat kernel is
 \[
-e^{-tD}(z,w) =  \frac{1}{4\pi t} e^{-|z-w|^2/4t} (\d z - \d w) \wedge (\d\zbar - \d\overline{w}). 
+e^{-tD}(z,w) =  \frac{1}{4\pi t} e^{-|z-w|^2/4t} (\d z - \d w) \wedge (\d\zbar - \d\wbar) . 
 \]
 For $0 < \ell < L < \infty$, we define
 \[
