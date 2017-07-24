@@ -1,0 +1,352 @@
+\documentclass{amsart}
+
+\usepackage{fullpage,bwog_macros,amssymb,stmaryrd}
+
+%import
+%\input{/Users/brianwilliams/Desktop/bwog/holomorphic/bwog_macros}
+
+%formatting
+\setlength{\parindent}{0pt} 
+\setlength{\parskip}{2ex}% plus 0.5ex minus 0.2ex}
+
+\title{Critical case}
+
+\begin{document}
+\maketitle
+We compute the critical wheel. In dimension $d$ this is the wheel with
+$d+1$ vertices. On $\CC^d$ we have seen the obstruction lives in 
+\ben
+{\rm H}^1_{\rm loc}(\mathscr{L}^{\CC^d})
+\een
+which we can identify with ${\rm H}^{2d+2}({\rm BU}(d))$. Write the
+generators of this space as $c_\sigma$ where $\sigma$ labels degree
+$2d+2$ characteristic classes in $d$-(complex) dimensions. For instance when $d=2$ we have
+two admissible indices and they correspond to
+\ben
+c_{\sigma_1} = c_1^3 \;\; , \;\; c_{\sigma_2} = c_1 c_2 .
+\een
+For
+coefficients in the tensor bundle $E = T_X^{\otimes n} \otimes 
+(T_X^\vee)^{\otimes m}$ we will find polynomials $p_\sigma(n,m) \in \mathbb{Q}[n,m]$ such
+that under the above isomorphism the obstruction has the form
+\ben
+\Theta(d) = \sum_{\sigma} p_\sigma(n,m) c_\sigma .
+\een
+\section{${\rm dim}_{\CC}=1$}
+
+We take coefficients in the tensor bundle $T_\CC^{\otimes n}$,
+i.e. $m=0$ in the above notation. 
+
+Recall that 
+\[
+f(z) \partial_z \cdot (\phi(z) \partial_z^{\otimes n}) := f(z) [\partial_z \phi(z)] \partial_z^{\otimes n} - n \phi(z) [\partial_z f(z)] \partial_z^{\otimes n},
+\]
+extending the adjoint action to the $n$-fold power.
+
+The obstruction has the form $\Theta(1) = \lim_{\epsilon \to 0}
+\Theta_\epsilon(1)$ where $\Theta_{\epsilon}(1)$ is the functional
+that sends $(f \partial_z, g \d \Bar{z} \partial_z)$ to
+\bestar
+& & \int_{(z_0,z_1) \in \CC \times \CC} f(z_0) [\partial_{z_0}
+  P_\epsilon^L(z_0,z_1)]g(z_1) [\partial_{z_1}
+  K_\epsilon(z_0,z_1)]\\   
+  & - & n \left( \int_{(z_0,z_1) \in \CC \times \CC} [\partial_{z_0}f(z_0)]
+  P_\epsilon^L(z_0,z_1) g(z_1) [\partial_{z_1}
+  K_\epsilon(z_0,z_1)] - \int_{(z_0,z_1) \in \CC \times \CC} f(z_0) [\partial_{z_0}
+  P_\epsilon^L(z_0,z_1)] [\partial_{z_1}  g(z_1)] 
+  K_\epsilon(z_0,z_1) \right) \\   
+  & + &n^2 \left( \int_{(z_0,z_1) \in \CC \times \CC} [\partial_{z_0} f(z_0)] 
+  P_\epsilon^L(z_0,z_1) [\partial_{z_1}  g(z_1) ]
+  K_\epsilon(z_0,z_1)\right).
+\eestar
+Recall that
+\ben
+K_t(z_0,z_1) = \frac{1}{t} e^{-|z_0-z_1|/t} \;\; , \;\;
+P_\epsilon^L(z_0,z_1) = \int_{\epsilon}^L (\Bar{\partial}^\ast \tensor
+ 1) K_t (z_0,z_1).
+\een
+
+As in the previous sections we will utilize the change of coordinates
+$y_0 = z_0 - z_1$, $y_1 = z_1$. We compute the three basic integrals. 
+\begin{itemize} 
+\item[(I)] First consider 
+\ben
+\int_{(z_0,z_1) \in \CC \times \CC} \left(f(z_0) \partial_{z_0}
+  P_\epsilon^L(z_0,z_1)\right) \left(g(z_1) \partial_{z_1}
+  K_\epsilon(z_0,z_1)\right) .
+\een
+After making the change of coordinates this is
+\ben
+\int_{y_0,y_1} \int_{\epsilon}^L f g \epsilon^{-2}t^{-3} y_0^{3}\exp\left(-\left(\frac{1}{t} +
+    \frac{1}{\epsilon}\right) y_0\right)  \d t \d {\rm vol}_{{\bf y}}.
+\een
+Taylor expanding $fg$ in $y_0$ and performing Wick in the $y_0$-variable this reduces to 
+\ben
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{\epsilon}^L \epsilon^{-2}
+t^{-3} \frac{\epsilon t}{\epsilon + t} \left[ \left(\frac{\epsilon
+      t}{\epsilon + t}\right)^3 + {\rm higher\;order\;terms} \right] .
+\een
+%In the limit as $\epsilon \to 0$ only the first term contributes and
+%is easily seen to be finite and gives
+%\ben
+%\frac{1}{12} \int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 .
+%\een
+\item[(II)] Next we evaluate
+\ben
+\int_{(z_0,z_1) \in \CC \times \CC} \left(f(z_0) \partial_{z_0} \partial_{z_1}
+  P_\epsilon^L(z_0,z_1)\right) \left(g(z_1)
+  K_\epsilon(z_0,z_1)\right) = \int_{z_0,z_1} fg
+(\partial_{z_0} \partial_{z_1} P K) .
+\een 
+After changing coordinates and Wick expanding as above this has the
+form
+\ben
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{\epsilon}^L \epsilon^{-1}
+t^{-4} \frac{\epsilon t}{\epsilon + t} \left[ \left(\frac{\epsilon
+      t}{\epsilon + t}\right)^3 + {\rm higher\;order\;terms} \right] .
+\een
+%Only the first term contributes in the limit and gives
+%\ben
+%\frac{1}{24}\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 .
+%\een
+
+\item[(III)] Finally we evaluate 
+\ben
+\int_{(z_0,z_1) \in \CC \times \CC} \left(f(z_0) 
+  P_\epsilon^L(z_0,z_1)\right) \left(g(z_1)
+  \partial_{z_0} \partial_{z_1}  K_\epsilon(z_0,z_1)\right) = \int_{z_0,z_1} fg
+(P \partial_{z_0} \partial_{z_1}  K) .
+\een 
+Changing coordinates and Wick expanding this reduces to
+\ben
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{\epsilon}^L \epsilon^{-3}
+t^{-2} \frac{\epsilon t}{\epsilon + t} \left[ \left(\frac{\epsilon
+      t}{\epsilon + t}\right)^3 + {\rm higher\;order\;terms} \right]
+\een
+\end{itemize}
+
+Since only the lowest order terms in the above integrals contribute in
+the limit as $\epsilon \to 0$ we will forget about the higher order
+terms in the following calculation. Consider the first integral in the
+second line above. We integrate by parts to get
+\ben
+\int (\partial_{z_0} f P) (g \partial_{z_1} K) = - \left(\int fg \partial_0
+  P \partial_{z_1} K + \int fg P \partial_{z_0} \partial_{z_1}
+  K\right) .
+\een
+Integration by parts applied to the second line gives
+\ben
+\int (f \partial_{z_0} P)(\partial_{z_1} g K) = -\left(\int
+  fg \partial_{z_0} \partial_{z_1} P K + \int fg \partial_{z_0}
+  P \partial_{z_1} K \right) .
+\een
+Finally, we can integrate by parts twice for the term in the last line
+to get
+\bestar
+\int (\partial_{z_0} f P)(\partial_{z_1} g K) & = & - \left(\int
+  f \partial_{z_0} P (\partial_{z_1} g K) + \int (fP)(\partial_{z_1}
+  g \partial_{z_0} K) \right) \\ & = & 2 \int fg \partial_{z_0}
+P \partial_{z_1} K + \int fg \partial_{z_0}\partial_{z_1} P + \int fg
+P \partial_{z_0} \partial_{z_1} K .
+\eestar
+Thus we see the obstruction has the form
+\bestar
+\Theta_\epsilon(1)(f \partial_z, g \d \Bar{z} \partial_z) & = & (1 + 2 n
++ 2n^2) {\rm I} + (n^2 + n) ( {\rm II} + {\rm III})  \\ & = &
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{t =
+  \epsilon}^L \frac{\epsilon}{(\epsilon + t)^4} \left(\epsilon t + (n +n^2)
+  (2\epsilon t + \epsilon^2 + t^2) \right) \d t \\  & = & \int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{t =
+  \epsilon}^L \frac{\epsilon}{(\epsilon + t)^4} \left(\epsilon t + (n
+  +n^2) (\epsilon + t)^2 \right) \d t  .
+\eestar
+In the limit as $\epsilon \to 0$ we get
+\ben
+\Theta(1) = \int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1
+\left(\frac{1}{12} + \frac{1}{2}(n^2 + n)\right) = \frac{1}{12}
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1  (1 + 6
+n + 6n^2) .
+\een
+Identifying the cocycle 
+\ben
+\frac{1}{12}\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1
+\een
+with the generator for the obstruction group we conclude that the polynomial for $d=1$ and $m=0$ is
+\ben
+p(n,0) = 1 + 6
+n + 6n^2 .
+\een
+{\color{red} I know this isn't exactly the argument you had in mind
+  but this is a slightly different way of using integration by
+  parts and shows that we really only need to know how to evaluate TWO
+  rational integrals. I think something similar should happen in
+  higher dimensions. 
+
+In another direction, I think you are right in that we could try to
+just look at polynomial inputs and utilize a ``recursive'' Wick's
+lemma. I'm working on writing that up now for dimension 1.
+}
+
+% \section{${\rm dim}_\CC = 2$}
+% \subsection{Counterterms}
+% From the local functional $I$ encoding the interaction of a field theory
+% we form the corresponding {\it effective theory} by introducing a
+% family functionals $I[L]$ defined by
+% \ben
+% I[L] = {\rm lim}_{\epsilon \to 0} W(\mathbb{P}_\epsilon^L,I) .
+% \een
+% Only in nice (see ${\rm dim}_{\CC} = 1$) situations does this work, in
+% general this limit does not exist. After a choice of a {\it
+%   renormalization scheme} we can choose {\it counter terms} $I^{\rm
+%   CT}(\epsilon) \in (\mathscr{O}_{\rm loc}(\mathscr{E})\llbracket \hbar
+% \rrbracket)^+ \tensor C^\infty(\RR_{>0})$ such that 
+% \ben
+% I[L] = \lim_{\epsilon \to 0} W(\mathbb{P}_\epsilon^L,I-I^{\rm CT}(\epsilon))
+% \in \mathscr{O}(\mathscr{E})\llbracket \hbar \rrbracket^+
+% \een
+% exists. 
+
+% There is a general formula for 1-loop obstructions. 
+
+% \begin{prop} Let $\Theta[L]$ be the 1-loop obstruction. Then
+% \ben
+% \Theta[L] = \lim_{\epsilon \to 0} \left( W(P_{\epsilon}^L, K_\epsilon
+%   - K_0,I) + \Delta_\epsilon I\right) .
+% \een
+% \end{prop}
+
+% \begin{remark} In the 1d case above we have $\Delta_\epsilon I = 0$ and
+% \ben
+% \lim_{\delta \to 0} W(P_\epsilon^L, K_\delta,I) = 0
+% \een
+% so that the obstruction is given by $\Theta = \lim_{\epsilon \to 0}
+% W(P_\epsilon^L,K_\epsilon,I)$. 
+% \end{remark}
+
+
+% % \begin{prop} The only nonzero diagram appearing in
+% %   $W(\mathbb{P}_\epsilon^L,I)$ is the wheel with 3 vertices. 
+% % \end{prop}
+
+% % To write down the counter term we will need to evaluate this wheel
+% % which we denote by $\gamma$. That is, we need to pick out the
+% % singular part of the weight
+% % $W_{\gamma}(\mathbb{P}_\epsilon,I)$. We apply the weight to test vector field $\xi =
+% % \xi^0 \cdot \partial_z + \xi^1 \cdot \partial_z + \xi^{\Bar{1}}
+% % \cdot \partial_z + \xi^{2} \d z \d \Bar{z}
+% % \cdot \partial_z$. Where $\xi^j \cdot \partial_z :=
+% % \xi^{j,0} \partial_{z^0} + \xi^{j,1} \partial_{z^1}$ and each
+% % $\xi^{j,k} \in C^{\infty}(\CC^2)$. We have
+% % \ben
+% % W_\gamma(\mathbb{P}_\epsilon^L, I)(\xi) = \int_{(z_i) \in (\CC^2)^3}
+% % \left(\xi_0 \cdot P_\epsilon^L(z_0,z_1)\right) \left(\xi_1 \cdot P_\epsilon^L(z_1,z_2)\right) \left(\xi_2 \cdot P_\epsilon^L(z_2,z_0)\right) .
+% % \een
+% % The notation $\xi_i$ means that all functions and derivatives are
+% % taken in the coordinate $z_i$. An example of a term that will
+% % contribute is
+% % \ben
+
+% \subsection{The obstruction}
+% As a warmup we compute the obstruction for $\beta \gamma$ with
+% coefficients in a trivial bundle. 
+
+% We know the obstruction $\Theta(2)$ denoted just by $\Theta$ for now
+% is a degree one element of the form
+% \ben
+% \Theta = \lim_{\epsilon \to 0} \Theta_\epsilon \in
+% C_{\rm loc,red}^*(\mathscr{L}^{\CC^2})
+% \een
+% where each $\Theta_\epsilon$ is itself a degree on element in
+% $C^*_{\rm loc,red}$. We have shown that the cocycle is represented by
+% a wheel with $3$-vertices hence is can be thought of as a degree 2
+% functional 
+% \ben
+% \Theta : \mathscr{L}_c^{\tensor 3} \to \CC . 
+% \een
+% Thus, if $(\alpha_0,\alpha_1,\alpha_2) \in \mathscr{L}$ then the
+% functional is defined when ${\rm deg}(\alpha_0) + {\rm deg}(\alpha_1)
+% + {\rm deg}(\alpha_2) = 2$. For notational ease let us determine the
+% value of the functional applied to a element of the form
+% \ben
+% (\alpha_0,\alpha_1,\alpha_2) = (f,g,h \; \d z \d \Bar{z})
+% \een
+% where $f,g,h \in C^\infty_c(\CC^2)$. 
+
+\section{General dimension}
+
+Now, we work on $\CC^d$. We modify a calculation of Si to calculate the obstruction. As we have
+already seen, only the wheel with $d+1$ vertices contributes
+nontrivially. Thus, the obstruction is described by a functional
+\ben
+\Theta : \Omega^{0,*}(\CC,T\CC)^{\tensor (d+1)} \to \CC 
+\een
+which is explicitly described by the weight $W_{\gamma_d} (P_\epsilon^L,
+K_\epsilon)$. On a $d+1$-tuple of vector fields $(\vec{\xi}_0,\ldots, \vec{\xi}_d)$ its value is
+\ben
+\Theta(\vec{\xi}_0,\ldots , \vec{\xi}_d) = \int_{(z_\alpha) \in
+  (\CC^d)^{d+1}} \left(\vec{\xi}_d \cdot K_{\epsilon}\right)
+\prod_{\alpha = 0}^{d-1} \left( \vec{\xi}_\alpha \cdot P_{\alpha,\alpha+1})\right)
+\een
+where $P_{\alpha,\alpha+1} = P(z_\alpha, z_{\alpha+1})$ and $K_\epsilon
+= K_{\epsilon}(z_0,z_d)$. 
+
+We have a canonical framing
+\ben
+\Omega^{0,*}(\CC,T\CC) = \Omega^{0,*}(\CC) \tensor
+\CC\left\langle\partial_{z^1},\ldots,\partial_{z^d}\right\rangle .
+\een 
+Fix a collection of integers $i_0, \ldots, i_d \in \{1,\ldots,d\}$. We
+will
+compute
+\ben
+\Theta(A_0 \partial_{z_0^{i_0}}, \ldots, A_d \partial_{z_d^{i_d}})
+\een
+where $A_\alpha \in \Omega^{0,*}(\CC)$ for $0 \leq \alpha \leq d$. 
+
+First, we compute $\partial_{z_\alpha^{i_\alpha}} P_{\alpha,\alpha+1} =
+(\zbar_\alpha^{i_\alpha} - \zbar_{\alpha +1}^{i_\alpha})
+\Tilde{P}_{\alpha,\alpha+1}$ where
+\ben
+\Tilde{P}_{\alpha,\alpha+1} = \int_{t_\alpha \in [\epsilon,L]}
+t_\alpha^{-1} \Bar{\partial}^*_{z_\alpha}
+K_{t_\alpha}(z_\alpha,z_{\alpha+1}) \; \d
+t_\alpha .
+\een 
+Similarly, $\partial_{z_d^{i_d}} K_\epsilon = (\zbar_d^{i_d} -
+\zbar_0^{i_d}) \Tilde{K}_\epsilon$ where $\Tilde{K}_\epsilon =
+\epsilon^{-1} K_\epsilon$. 
+
+We also employ the following change of coordinates
+\ben
+w_\alpha = w_{\alpha} - w_{\alpha +1} \;\; , \;\; 0 \leq \alpha < d
+\een
+and $w_d = z_d$. 
+
+Up to a sign, this weight is
+\ben
+\int_{(w_\alpha) \in (\CC^{d})^{d+1}} \left(\prod_{\alpha = 0}^{d-1}
+  \Bar{w}_\alpha^{i_\alpha} A_\alpha
+  \wedge {\rm dvol}_\alpha^{\rm hol} \right) (\Bar{w}_0^{i_d} + \cdots
++ \Bar{w}_{d-1}^{i_d}) \; \Tilde{K}_\epsilon \int_{{\bf t} \in [\epsilon,
+    L]^{d}} \prod_{\alpha = 0}^d \Tilde{P}_{\alpha, \alpha+1} \; {\rm
+    dvol}_{\bf t} .
+\een
+
+We compute the term 
+\bestar
+\Tilde{K}_\epsilon \int_{{\bf t} \in [\epsilon,
+    L]^{d}} \prod_{\alpha = 0}^d \Tilde{P}_{\alpha, \alpha+1} \; {\rm
+    dvol}_{\bf t} & = & \pm \epsilon^{-d-1}  \int_{{\bf t} \in [\epsilon,
+    L]^{d}} \left(\prod_{\alpha = 0}^{d-1} t_\alpha^{-d}\right) \\ & &
+  \sum_{{\bf
+      k} = (k_0,\ldots,k_{d-1})} \epsilon_{\bf k} \left(\prod_{\alpha
+      = 0}^{d-1} t_\alpha^{-1} \Bar{w}_{\alpha}^{k_\alpha} \right)
+  \exp(- \Bar{w}^T M w) \; \left(\prod_{\alpha = 0}^{d-1} \d^d
+  \Bar{w}_\alpha \right) {\rm
+    dvol}_{\bf t}.
+\eestar
+
+Thus, when we write $A_\alpha$ in the new $w$-coordinates only terms
+with $\d \Bar{w}_d^j$ factors will contribute. 
+
+
+\end{document}

@@ -1,0 +1,272 @@
+\documentclass{amsart}
+
+\usepackage{fullpage,bwog_macros,amssymb,stmaryrd,xypic,color}
+
+%formatting
+\setlength{\parindent}{0pt} 
+\setlength{\parskip}{2ex}% plus 0.5ex minus 0.2ex}
+
+\def\owen{\textcolor{red}}
+\def\brian{\textcolor{blue}}
+\def\zbar{\Bar{z}}
+\def\dbar{\Bar{\partial}}
+
+\title{Obstruction for flat string}
+\begin{document}
+\maketitle
+
+Obstruction calculation for the flat string. Throughout we work on
+$\Sigma = \CC$. 
+
+\section{Deformation complex}
+
+The full deformation complex is
+\ben
+{\rm Def} = \left(\scr{O}_{\rm loc}(\scr{E}_{\rm string}), \Bar{\partial} +
+\{I,-\} \right)
+\een
+There is a subcomplex ${\rm Def}' \subset {\rm Def}$ consisting of
+those functionals that only depend on $\scr{E}_{\rm grav}$. 
+
+\begin{prop} The obstruction lies in ${\rm Def}'$. 
+\end{prop}
+
+\subsection{Heat Kernels}
+\brian{this might fit better in an appendix}
+The heat kernel is a degree $1$ element $\mathbb{K}_t \in (\scr{E}_{\rm string})^{\tensor 2}$
+that depends smoothly on $t \geq 0$. It splits as 
+\ben
+\mathbb{K}_t = \left(\mathbb{K}_t^{\beta
+      \gamma}\tensor 1 \right)
+\oplus \left(1 \tensor \mathbb{K}_t^{\rm grav}\right) \in
+\left(\left(\scr{E}_{\beta \gamma}^{\oplus 13}\right)^{\tensor 2} \tensor 1\right) \oplus
+\left( 1 \tensor \scr{E}_{\rm grav} \right)
+\een
+For they single free $\beta\gamma$-theory we have the explicit form
+\ben
+\mathbb{K}_t^{\beta\gamma} (z,w) = 
+\een
+\section{Anomaly cancelation}
+The machinery of [C1] allows us to define a pre-theory
+\ben
+I[L] := \lim_{\epsilon \to 0} W(\mathbb{P}_\epsilon^L, I - I^{\rm
+  CT}(\epsilon)) .
+\een
+
+\begin{lemma} The counterterms vanish. In other words, the limit
+\ben
+\lim_{\epsilon \to 0} W(\mathbb{P}_\epsilon^L, I) 
+\een
+exists, and we denote it by $I[L]$. 
+\end{lemma}
+
+The obstruction has the form
+\ben
+\Theta [L] := \dbar I[L] + \{I[L],I[L]\}_L + \Delta_L I[L] .
+\een 
+
+\begin{lemma} T
+
+he obstruction is computed by
+\ben
+\Theta[L] = \lim_{\epsilon} W(\mathbb{P}_{\epsilon}^L,
+\mathbb{K}_\epsilon, I)  .
+\een
+\end{lemma}
+
+\begin{lemma} Only wheels (of valency 3) contribute to the obstruction. Further,
+  tadpole and wheels with vertices greater than 2 don't contribute. That
+  leaves two wheels of with two vertices each. One of them has inputs
+  $\beta \gamma$ the other has inputs vector fields. 
+\end{lemma}
+
+Thus, the obstruction is
+\bestar
+\Theta[L] &=& \lim_{\epsilon \to 0} W_{\gamma_2}(\mathbb{P}_{\epsilon}^L,
+\mathbb{K}_\epsilon, I) \\ 
+&=& 13 \cdot \lim_{\epsilon \to 0}  W_{\gamma_2}(\mathbb{P}_{\epsilon}^{\beta\gamma,L},
+\mathbb{K}^{\beta\gamma}_\epsilon, I) + \lim_{\epsilon \to 0}
+W_{\gamma_2}(\mathbb{P}_{\epsilon}^{{\rm string},L},
+\mathbb{K}^{\rm string}_\epsilon, I)  .
+\eestar
+
+We already know from the DEFORMATION section that these functionals
+are only nonzero on vector fields. Denote by
+$\Theta^{\beta\gamma}_\epsilon[L] (\xi_0,\xi_1)$ the $\beta \gamma$
+weight applied to vector fields $\xi_0,\xi_1$. Similarly, define
+$\Theta^{\rm grav}_\epsilon[L] (\xi_0,\xi_1)$. 
+
+We have
+\bestar
+\Theta^{\beta\gamma}_\epsilon[L] (\xi_0,\xi_1) & = & \int_{(z_0,z_1)
+  \in \CC^2} \left(\xi_0(z_0) \cdot
+  \mathbb{P}_{\epsilon}^{\beta\gamma,L}(z_0,z_1)\right) \left(\xi_1 \cdot
+  \mathbb{K}^{\beta\gamma}_\epsilon(z_0,z_1) \right) .
+\eestar
+
+We assume that $\xi_0,\xi_1$ are homogenous. Since the obstruction is
+a degree one element it is nonzero provided ${\rm deg} (\xi_0) + {\rm
+  deg}(\xi_1) = 1$. For concreteness, suppose
+\ben
+\xi_0 = f(z,\zbar) \partial_z \;\; , \;\; \xi_1 =
+g(z,\zbar) \d \zbar \partial_z .
+\een 
+Then
+\ben
+\Theta^{\beta\gamma}_\epsilon[L] (\xi_0,\xi_1) = \int_{(z_0,z_1) \in \CC \times \CC} \left(f(z_0) \partial_{z_0}
+  P_\epsilon^L(z_0,z_1)\right) \left(g(z_1) \partial_{z_1}
+  K_\epsilon(z_0,z_1)\right) .
+\een
+After making the change of coordinates this is
+\ben
+\int_{y_0,y_1} \int_{\epsilon}^L f g \epsilon^{-2}t^{-3} y_0^{3}\exp\left(-\left(\frac{1}{t} +
+    \frac{1}{\epsilon}\right) y_0\right)  \d t \d {\rm vol}_{{\bf y}}.
+\een
+Taylor expanding $fg$ in $y_0$ and performing Wick in the $y_0$-variable this reduces to 
+\ben
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{\epsilon}^L \epsilon^{-2}
+t^{-3} \frac{\epsilon t}{\epsilon + t} \left[ \left(\frac{\epsilon
+      t}{\epsilon + t}\right)^3 + {\rm higher\;order\;terms} \right] .
+\een
+Taking the limit as $\epsilon \to 0$ we see that
+\ben
+\Theta^{\beta \gamma}[L] = \frac{1}{12}
+  \int_{y_1} \partial_{y_1}^3(fg) \d y_1 \d \Bar{y}_1 .
+\een
+
+\section{Computing $\Theta^{\rm grav}$}
+
+Note that $\nu \wedge [\xi,\xi] = \nu L_\xi \xi$ where $L_\xi$
+denotes Lie derivative. 
+\be\label{strob}
+\Theta^{\rm grav}_\epsilon[L] (\xi_0,\xi_1) = \int_{(z_0,z_1)
+  \in \CC^2} \left(L_{\xi_0} 
+  \mathbb{P}_{\epsilon}^{\beta\gamma,L}(z_0,z_1)\right) \left(L_{\xi_1} \cdot
+  \mathbb{K}^{\beta\gamma}_\epsilon(z_0,z_1) \right) .
+\ee
+
+Again, we assume that $\xi_0,\xi_1$ are homogenous and we must have ${\rm deg} (\xi_0) + {\rm
+  deg}(\xi_1) = 1$. For concreteness, suppose
+\ben
+\xi_0 = f(z,\zbar) \partial_z \;\; , \;\; \xi_1 =
+g(z,\zbar) \d \zbar \partial_z .
+\een 
+Expanding out, the integral (\ref{strob}) splits into four parts
+
+\begin{eqnarray}
+\Theta^{\rm grav}_\epsilon[L] (\xi_0,\xi_1) & = & \int_{(z_0,z_1) \in \CC \times \CC} f(z_0) [\partial_{z_0}
+  P_\epsilon^L(z_0,z_1)]g(z_1) [\partial_{z_1}
+  K_\epsilon(z_0,z_1)]\\   
+  & - & \int_{(z_0,z_1) \in \CC \times \CC} [\partial_{z_0}f(z_0)]
+  P_\epsilon^L(z_0,z_1) g(z_1) [\partial_{z_1}
+  K_\epsilon(z_0,z_1)] \\ &- & \int_{(z_0,z_1) \in \CC \times \CC} f(z_0) [\partial_{z_0}
+  P_\epsilon^L(z_0,z_1)] [\partial_{z_1}  g(z_1)] 
+  K_\epsilon(z_0,z_1) \\   
+  & + &\int_{(z_0,z_1) \in \CC \times \CC} [\partial_{z_0} f(z_0)] 
+  P_\epsilon^L(z_0,z_1) [\partial_{z_1}  g(z_1) ]
+  K_\epsilon(z_0,z_1).
+\end{eqnarray} 
+
+We make the change of coordinates
+$y_0 = z_0 - z_1$, $y_1 = z_1$. Before evaluating the obstruction we compute the three basic integrals. 
+\begin{itemize} 
+\item[(I)] First consider 
+\ben
+\int_{(z_0,z_1) \in \CC \times \CC} \left(f(z_0) \partial_{z_0}
+  P_\epsilon^L(z_0,z_1)\right) \left(g(z_1) \partial_{z_1}
+  K_\epsilon(z_0,z_1)\right) .
+\een
+After making the change of coordinates this is
+\ben
+\int_{y_0,y_1} \int_{\epsilon}^L f g \epsilon^{-2}t^{-3} y_0^{3}\exp\left(-\left(\frac{1}{t} +
+    \frac{1}{\epsilon}\right) y_0\right)  \d t \d {\rm vol}_{{\bf y}}.
+\een
+Taylor expanding $fg$ in $y_0$ and performing Wick in the $y_0$-variable this reduces to 
+\ben
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{\epsilon}^L \epsilon^{-2}
+t^{-3} \frac{\epsilon t}{\epsilon + t} \left[ \left(\frac{\epsilon
+      t}{\epsilon + t}\right)^3 + {\rm higher\;order\;terms} \right] .
+\een
+%In the limit as $\epsilon \to 0$ only the first term contributes and
+%is easily seen to be finite and gives
+%\ben
+%\frac{1}{12} \int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 .
+%\een
+\item[(II)] Next we evaluate
+\ben
+\int_{(z_0,z_1) \in \CC \times \CC} \left(f(z_0) \partial_{z_0} \partial_{z_1}
+  P_\epsilon^L(z_0,z_1)\right) \left(g(z_1)
+  K_\epsilon(z_0,z_1)\right) = \int_{z_0,z_1} fg
+(\partial_{z_0} \partial_{z_1} P K) .
+\een 
+After changing coordinates and Wick expanding as above this has the
+form
+\ben
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{\epsilon}^L \epsilon^{-1}
+t^{-4} \frac{\epsilon t}{\epsilon + t} \left[ \left(\frac{\epsilon
+      t}{\epsilon + t}\right)^3 + {\rm higher\;order\;terms} \right] .
+\een
+%Only the first term contributes in the limit and gives
+%\ben
+%\frac{1}{24}\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 .
+%\een
+
+\item[(III)] Finally we evaluate 
+\ben
+\int_{(z_0,z_1) \in \CC \times \CC} \left(f(z_0) 
+  P_\epsilon^L(z_0,z_1)\right) \left(g(z_1)
+  \partial_{z_0} \partial_{z_1}  K_\epsilon(z_0,z_1)\right) = \int_{z_0,z_1} fg
+(P \partial_{z_0} \partial_{z_1}  K) .
+\een 
+Changing coordinates and Wick expanding this reduces to
+\ben
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{\epsilon}^L \epsilon^{-3}
+t^{-2} \frac{\epsilon t}{\epsilon + t} \left[ \left(\frac{\epsilon
+      t}{\epsilon + t}\right)^3 + {\rm higher\;order\;terms} \right]
+\een
+\end{itemize}
+
+Since only the lowest order terms in the above integrals contribute in
+the limit as $\epsilon \to 0$ we will forget about the higher order
+terms in the following calculation. Consider the first integral in the
+second line above. We integrate by parts to get
+\ben
+\int (\partial_{z_0} f P) (g \partial_{z_1} K) = - \left(\int fg \partial_0
+  P \partial_{z_1} K + \int fg P \partial_{z_0} \partial_{z_1}
+  K\right) .
+\een
+Integration by parts applied to the second line gives
+\ben
+\int (f \partial_{z_0} P)(\partial_{z_1} g K) = -\left(\int
+  fg \partial_{z_0} \partial_{z_1} P K + \int fg \partial_{z_0}
+  P \partial_{z_1} K \right) .
+\een
+Finally, we can integrate by parts twice for the term in the last line
+to get
+\bestar
+\int (\partial_{z_0} f P)(\partial_{z_1} g K) & = & - \left(\int
+  f \partial_{z_0} P (\partial_{z_1} g K) + \int (fP)(\partial_{z_1}
+  g \partial_{z_0} K) \right) \\ & = & 2 \int fg \partial_{z_0}
+P \partial_{z_1} K + \int fg \partial_{z_0}\partial_{z_1} P + \int fg
+P \partial_{z_0} \partial_{z_1} K .
+\eestar
+
+Thus, we see the obstruction has the form
+\bestar
+\Theta^{\rm grav}_\epsilon[L] (\xi_0,\xi_1) & = & 5 {\rm I} + 2 ( {\rm
+  II} + {\rm III})  + \left[{\rm higher\;\epsilon\;terms}\right] \\ & = &
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{t =
+  \epsilon}^L \frac{\epsilon}{(\epsilon + t)^4} \left(\epsilon t + 2
+  (2\epsilon t + \epsilon^2 + t^2) \right) \d t  + \left[{\rm higher\;\epsilon\;terms}\right]\\  & = & \int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 \int_{t =
+  \epsilon}^L \frac{\epsilon}{(\epsilon + t)^4} \left(\epsilon t + 2(\epsilon + t)^2 \right) \d t + \left[{\rm higher\;\epsilon\;terms}\right] .
+\eestar
+In the limit as $\epsilon \to 0$ we get
+\ben
+\Theta^{\rm grav}[L] (\xi_0,\xi_1) = \int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1
+\left(\frac{1}{12} + 1 \right) = \frac{13}{12}
+\int_{y_1} \partial_{y_1}^3 (fg) \d y_1 \d \Bar{y}_1 .
+\een
+
+
+\end{document}
+

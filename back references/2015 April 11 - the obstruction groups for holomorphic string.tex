@@ -1,0 +1,230 @@
+\documentclass{amsart}
+
+\usepackage{fullpage,color,mathrsfs,amssymb,xypic}
+
+\setlength{\parindent}{0pt} 
+\setlength{\parskip}{2ex}% plus 0.5ex minus 0.2ex}
+
+\def\bgs{\beta\gamma}
+\def\CC{\mathbb C}
+\def\NN{\mathbb N}
+\def\RR{\mathbb R}
+\def\xbar{\overline{x}}
+\def\ybar{\overline{y}}
+\def\d{{\rm d}}
+\def\cX{\mathcal X}
+\def\fg{\mathfrak g}
+\def\cL{\mathcal L}
+\def\ot{\otimes}
+\def\Td{\rm Td} % Todd class
+\def\ch{\rm ch} % Chern character
+\def\sk{\rm sk} % skeleton
+\def\Grav{\mathscr G} % symbol for holomorphic vector fields as local Lie algebra for ``gravity''
+\def\ob{\Theta} % symbol for the obstruction to quantization
+\def\sO{\mathscr O}
+\def\gl{\frak{gl}}
+ 
+
+\def\owen{\textcolor{red}}
+\def\brian{\textcolor{blue}}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+\owen{Comments by Owen look like this.}
+
+\brian{Comments by Brian look like this.}
+
+We will outline how to describe the deformation complex for the holomorphic bosonic string with target a complex manifold $X$. (Following Costello, we will interpret $X$ as an $L_\infty$ space $B\fg_X$, so our computations will include a larger world of examples, but \emph{not} the instantonic contributions to the nonlinear $\sigma$-model.) Our source manifold will be $\CC$, although we will discuss what changes when working with an arbitrary Riemann surface $S$.
+
+\section{Background}
+
+Let $S$ denote a Riemann surface.
+
+The deformation complex is always given by the local functionals modulo constants.  (\emph{Local} here refers to the source $S$.) Alternatively, it is the reduced local Chevalley-Eilenberg cochains on a local dg Lie algebra. For us, the local Lie algebra is the following cochain complex
+\[
+\Dol{0}(S,T^{1,0}_S) \oplus \Dol{1}(S, T^{\ast 1,0}_S) \oplus \Dol{0}(S) \ot \fg_X \oplus \Dol{1}(S) \ot \fg_X^\vee,
+\]
+equipped with a Lie algebra structure that we now describe. The first summand is the Dolbeault complex of the holomorphic vector fields on $S$, and it is both a sub and a quotient Lie algebra. The second summand has no internal Lie structure but has the natural action of holomorphic vector fields. The third summand is a (complicated and curved) $L_\infty$ algebra, inherited from that for $\fg_X$; it also receives a natural action from the holomorphic vector fields. The final term is a module for both the first and third terms.
+
+Let's introduce some notation to clarify the exposition. We write
+\[
+\aut(S) := \Dol{0}(S,T^{1,0}_S)
+\]
+for the Dolbeault complex of holomorphic vector fields on $S$, as these are the infinitesimal automorphisms of $S$ as a Riemann surface. We write
+\[
+\fg_X^S := \Dol{0}(S) \ot \fg_X
+\]
+for the curved $L_\infty$ algebra (over base ring $\Omega^\ast(X)$) that describes the formal neighborhood of the constant maps inside the space of all holomorphic maps. \owen{That description is perhaps a little unclear.} Note that $\aut(S)$ acts on $\fg_X^S$ by extending the natural action of holomorphic vector fields on holomorphic functions. We make the situation more symmetric with respect to $S$ and $X$ by working with 
+\[
+\aut(S)_X := \Omega^*(X) \otimes \aut(S),
+\]
+which is locally constant on $X$. 
+
+Consider the Lie algebra
+\[
+\fg_X^S//\mathfrak{aut}(S)_X := \aut(S)_X \ltimes \fg_X^S. 
+\]
+which describes the derived quotient by holomorphic automorphisms of $S$ of the formal neighborhood of constant maps from $S$ to $X$. (What a mouthful!) Note that the automorphisms of $S$ are both a sub and quotient Lie algebra of this whole thing.
+
+The Lie algebra describing the holomorphic bosonic string is the split square zero extension of this Lie algebra by its coadjoint module.
+
+We want to quantize this \emph{cotangent theory}, which has several simplifying consequences. First, a cotangent quantization only involves one-loop contributions -- i.e., $\hbar$ additions to the differential -- and so it is much more computable if it exists. Second, the deformation complex as a cotangent theory is 
+\[
+C^*_{loc,red}(\fg_X^S//\mathfrak{aut}(S)_X),
+\]
+so that we can ignore the coadjoint summands.
+
+The structure of this Lie algebra, as an extension of the holomorphic vector fields, induces a natural retract of commutative dg algebras
+\[
+\Omega^\ast_X \ot_\CC C^*_{loc}(\aut(S)) \to C^*_{loc}(\fg_X^S//\mathfrak{aut}(S)) \to \Omega^\ast_X \ot_\CC C^*_{loc}(\aut(S)).\footnote{Note that this is a retract on the nose. Note also that $C^*(\aut(S)_X) \cong \Omega^*(S) \ot C^*(\aut(S))$ by base change.}
+\]
+\owen{Is this true? I'm worried about how things interact with the curving \dots} Thus
+\[
+C^*_{loc}(\fg_X^S//\mathfrak{aut}(S)) \cong \Omega^\ast_X \ot_\CC C^*_{loc}(\aut(S)) \oplus C^*_{loc}(\aut(S)_X, C^*_{red}(\fg^S_X))
+\]
+Thus, we obtain a useful splitting:
+\[
+C^*_{loc,red}(\fg_X^S//\mathfrak{aut}(S)_X) \cong \Omega^\ast_X \ot_\CC C^*_{red,loc}(\aut(S)) \oplus C^*_{loc}(\aut(S)_X, C^*_{red}(\fg^S_X)).
+\]
+The first summand is where the obstruction for the string with flat target lives; in particularly, we will see here the same ``conformal anomaly'' appear.
+
+We will now examine the second summand, where a dependence on $X$ appears.
+
+\section{The disk as source}
+
+Let $S$ be $\CC$. Let $\cT$ denote the sheaf of holomorphic vector fields, which possesses a canonical inclusion $\cT \hookrightarrow \aut$. In this setting, it is a quasi-isomorphism on every open. Similarly, we have an inclusion and quasi-isomorphism $\sO \ot \fg_X \hookrightarrow \fg_X^S$. This induces a quasi-isomorphism
+\[
+C^*_{loc}(\aut(S)_X, C^*_{red}(\fg^S_X)) \to C^*_{loc}(\cT, C^*{red}(\sO \ot \fg_X)).
+\]
+We will focus on the right hand term.
+
+\owen{Is there a characterization of $C^*_{loc}$ as simply the Lie algebra cohomology in the sheaf-theoretic setting? I think this might make some formal arguments cleaner. Note that a map of sheaves between $C^\infty$ modules is always a differential operator, by Peetre's theorem, so I think this might be true. (There's some fine print to worry about there.)}
+
+\owen{I now want to take the invariants with respect to the Lie subalgebra $\CC z \partial_z = \CC L_0$. If everything were purely algebraic, then everything would nicely decompose as a sum/product over weights, but on an arbitrary open in $\CC$, this isn't really true. What are the magic words here?}
+
+\subsection{Identifying the weight zero subcomplex}
+
+The role of $\fg_X$ here is bookkeeping, so we will simply denote it $\fg$. We will use the coordinate $z$ on $\CC$, and let $\partial$ denote $\partial/\partial z$/
+
+For the Lie algebra $\CC[[z]]\partial$, we have a natural basis $L_n = iz^{n+1} \partial$, with $n \geq -1$. Note that 
+\[
+[L_m,L_n] = (m-n) L_{m+n}.
+\]
+Then $L_0$ induces a natural weight filtration on everything in sight. For instance, $z^k$ has weight $k$, $\partial = L_{-1}$ has weight $-1$, and $\d z$ has weight $1$.
+
+We want to compute Lie algebra cohomology, so we work with the dual spaces. We denote the dual basis vector to $L_n$ by $\lambda^n$ and the dual to $z^k$ by $\zeta_k$ (which can also be written as $(1/k!)\partial^k\delta_0$). Note that $L_m \zeta_n = (n-m) \zeta_{n-m}$. For concision's sake, if $\xi$ is an element of $\fg^\vee$, we write $\xi \zeta_k$ for the element $\xi \ot \zeta_k$. 
+
+Since $\zeta_k$ has weight $-k$, we see that every $L_0$-eigenvector in $\fg^\vee \otimes \CC[[z]]^\vee$ has nonpositive weight. Similarly, every element $\lambda^k$ has weight $1-k$. Thus, the weight zero subspace of
+\[
+C^*(\CC[[z]]\partial, C^*_{red}(\fg[[z]])),
+\] 
+as a graded vector space, is
+\begin{align*}
+C^\sharp(\CC[[z]]&\partial)_{\wt=0} \ot C^\sharp_{red}(\fg[[z]])_{\wt=0} \\
+&\oplus C^\sharp(\CC[[z]]\partial)_{\wt=1} \ot C^\sharp_{red}(\fg[[z]])_{\wt=-1}
+\end{align*}
+A basis for the weight 0 component for the vector fields is $1$, $\lambda^{0}$, $\lambda^{-1} \wedge \lambda^{1}$,  and $\lambda^{-1} \wedge \lambda^0 \wedge \lambda^{1}$. A basis for the weight 1 component for the vector fields is $\lambda^{-1}$ and $\lambda^{-1} \wedge \lambda^0$.  A term in the weight 0 component for the module is given by sums of elements like
+\[
+(\xi_1 \zeta_0) \wedge (\xi_2 \zeta_0) \wedge \cdots \wedge ( \xi_k \zeta_0),
+\]
+where the $\xi_j$s denote arbitrary elements of $\fg^\vee$.  (The important point is that every such term is paired with $\zeta_0$.) A term in the weight -1 component for the module is given by sums of elements like
+\[
+(\xi_1 \zeta_1) \wedge (\xi_2 \zeta_0) \wedge \cdots \wedge ( \xi_k \zeta_0),
+\]
+where the $\xi_j$s denote arbitrary elements of $\fg^\vee$.  (The important point is that precisely one copy of $\zeta_1$ appears, and the rest are $\zeta_0$s.)
+
+Let's analyze now the differential on this complex. There is the internal differential of the module $C^*_{red}(\fg[[z]])$, which preserves the weight grading. We make the following observation.
+
+\begin{lemma}
+We have
+\[
+C^\ast_{red}(\fg[[z]])_{\wt=0} \cong C^*_{red}(\fg).
+\]
+In other words, the weight zero component of the module is simply the reduced Lie algebra cohomology $\fg$.
+
+Similarly,
+\[
+C^\ast_{red}(\fg[[z]])_{\wt=-1} \cong C^*(\fg,\fg^\vee).
+\]
+\end{lemma}
+
+With respect to the interpretation of $\fg$ as providing a formal space $B\fg$, we see that the weight zero component is $\sO_{red}(B\fg)$ and the weight -1 component is $\Omega^1(B\fg)[-1]$.
+
+The interesting contribution arises from how the vector fields act, both on themselves and on the module. 
+
+\subsubsection{The main diagram} 
+
+\owen{I seem to keep screwing up this part of the computation. I'll draw the main parts of the diagram and then sketch how I'm confused.}
+
+\[
+\xymatrix{
+1 \otimes \sO_{red}(B\fg) \ar[rd]^{\d_{dR}} & \lambda^0 \otimes \sO_{red}(B\fg) \ar[r]^-2 \ar[rd]^{\d_{dR}} & \lambda^{-1} \wedge \lambda^1 \otimes \sO_{red}(B\fg) & \lambda^{-1} \wedge \lambda^1 \wedge \lambda^0 \otimes \sO_{red}(B\fg) \\
+ & \lambda^{-1} \otimes \Omega^1(B\fg) \ar[r]^-1 & \lambda^{-1} \wedge \lambda^0 \otimes\Omega^1(B\fg) &
+}
+\]
+
+The top row is the part of the total complex coming from the weight 0
+by weight 0 terms and the bottom row comes from the weight 1 by weight
+-1 terms. Each component has the internal differential coming from the
+``geometry'' of $B\fg$. The diagonal terms should be the de Rham
+differential on $B\fg$. The horizontal arrows arise from the action of
+vector fields on themselves.
+
+The above complex is quasi-isomorphic to
+\[
+\xymatrix{
+1 \otimes \sO_{red}(B\fg) \ar[rd]^{\d_{dR}} & & & \lambda^{-1} \wedge \lambda^1 \wedge \lambda^0 \otimes \sO_{red}(B\fg) \\
+ & \lambda^{-1} \otimes \Omega^1(B\fg) & \lambda^{-1} \wedge \lambda^0 \otimes\Omega^1(B\fg) &
+}
+\]
+Keeping track of the degrees this complex is isomorphic to
+\[
+\Omega^2_{cl}(B \fg)[1] \oplus \Omega^1(B \fg) \oplus \Omega^1_{cl}(B
+\fg)[-1] .
+\]
+
+\owen{If this diagram is correct (about which I'm dubious), then we're kind of fucked. The complex would be quasi-isomorphic to $\sO_{red}(B\fg) \oplus \sO_{red}(B\fg)[-3]$. I don't think that gives us what we want.}
+
+***************** GARBAGE BELOW HERE ******************
+
+Let's examine first how the vector fields act on themselves. Because $[L_{-1},L_1] = 2 L_0$, we see that the differential sends $\lambda^0$ to $2 \lambda^{-1} \wedge \lambda^1$.  Similarly, we know $[L_{-1},L_0] = L_{-1}$, so that the differential sends $\lambda^{-1}$ to $\lambda^{-1} \wedge \lambda^0$.
+
+Now consider how the vector fields act on the module. We know that
+\[
+L_{-1} \cdot (y_0 z)y_1 \cdots y_k = i y_0 y_1 \cdots y_k,
+\]
+where the $y_j$ are elements of $\fg$, so that $(y_0 z)y_1 \cdots y_k$ has weight $1$ and $y_0 y_1 \cdots y_k$ has weight 0. Dualizing, we find that in our total complex,
+\[
+\d (1 \ot \gamma_0 \cdots \gamma_k) = i \lambda^{-1} \ot \sum \pm (\gamma_j \zeta_0) \gamma_1 \cdots \widehat{\gamma_j} \cdots \gamma_k + \lambda^0 \ot \d_\fg(\gamma_0 \cdots \gamma_k).
+\]
+Reinterpreting via the geometric language, we are witnessing 
+\[
+\sO_{red}(B\fg) \overset{\d_{dR}}{\longrightarrow} \Omega^1(B\fg).
+\]
+We also know that
+\[
+L_{0} \cdot (y_0 z)y_1 \cdots y_k = i(y_0z) y_1 \cdots y_k.
+\]
+Hence
+\begin{align*}
+\d (\lambda^0 \ot \gamma_0 \cdots \gamma_k) = &i \lambda^0 \wedge \lambda^{-1} \ot \sum \pm (\gamma_j \zeta_0) \gamma_1 \cdots \widehat{\gamma_j} \cdots \gamma_k \\
+&+ 2 \lambda^{-1} \wedge \lambda^{1} \ot \gamma_0 \cdots \gamma_k \\
+&+ \lambda^0 \ot \d_\fg(\gamma_0 \cdots \gamma_k).
+\end{align*}
+
+We also know that
+\[
+[L_{-1},L_0] = L_{-1} \quad\text{and}\quad sdf
+\]
+
+\section{An arbitrary source manifold}
+
+
+
+
+\end{document}
