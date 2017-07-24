@@ -1,0 +1,78 @@
+\documentclass[10pt]{amsart}
+
+\usepackage{macros}
+
+\def\brian{\textcolor{blue}}
+\def\owen{\textcolor{red}}
+
+\title{BV-quantization}
+\begin{document}
+\maketitle
+
+\brian{I'm going to start using $\sE, \sL$ for fields and $\cE, \cL$
+  for Lie algebras. Thus $\sE = \cE[1]$, etc.. }
+
+\section{Renormalization}
+\subsection{Generalities on renormalization}
+\brian{existence of counterterms, effective theories, gauge fixing,
+  $\beta \gamma$ examples etc.}
+\subsection{Effective propagator}
+There is a natural choice for the gauge fixing operator for our
+theory. Namely, 
+\ben
+Q_{GF} := \Bar{\partial}^* : \sE \to \sE
+\een
+defined using the flat metrix on $\CC$ coming from the holomorphic
+volume element $\d z$. 
+\begin{lemma} Let $Q$ be the total differential for fields
+  $\sE$. Then
+\ben
+D = [\dbar^*, Q] : \sE \to \sE
+\een 
+is the usual Laplacian acting on the appropriate Dolbeault complex. 
+\end{lemma}
+
+The heat kernel is the element $\mathbb{K}_t \in {\rm Sym}^2(\sE)$ defined
+for $t >0$ determined by the equation
+\ben
+\<\mathbb{K}_t(z,w), \varphi(w)\> = (e^{-t D} \varphi) (z)
+\een
+for all $\varphi \in \sE$. 
+
+For us, the fields split as $\sE = \sE_{\beta \gamma} \oplus
+\sE_{\rm grav}$. 
+
+\begin{lemma} The heat kernel is of the form
+\ben
+\mathbb{K}_t = \mathbb{K}_t^{\beta \gamma} \oplus \mathbb{K}_t^{\rm
+  grav} \in {\rm Sym}^2(\sE_{\beta \gamma}) \oplus {\rm
+  Sym}^2(\sE_{\rm grav})
+\een
+where 
+\brian{write down kernels}
+\end{lemma}
+
+\subsection{Pre-theory}
+\brian{naive quantization works, i.e. no counterterms. Reduction to
+  wheels, reduction to trivalent wheels.}
+
+
+\section{The quantum master equation}
+\subsection{Obstruction theory}
+\brian{introduce deformation complex for bosonic string.}
+By definition, holomorphic string is described by the local curved
+$L_\infty$-algebra 
+\ben
+\mathbb{D}_S (\cL \ltimes \cE) =  .
+\een 
+Thus, the full obstruction-deformation complex is
+\ben
+{\rm Def}_X := C^*_{\rm loc}(\mathbb{D}_S (\cL \ltimes \cE)) .
+\een 
+\subsection{Symmetries}
+\brian{symmetries to consider for the deformation complex. Cotangent
+  quantization. ${\rm Aff}(\CC)$-symmetry. }
+
+
+
+\end{document}

@@ -1,0 +1,190 @@
+\documentclass[10pt]{amsart}
+
+\usepackage{macros,slashed}
+\linespread{1.25}
+
+\usepackage{parskip}
+\setlength{\parindent}{18pt}
+\setlength{\parindent}{0cm}
+
+\title{Outline}
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+\def\owen{\textcolor{red}{OG: }\textcolor{red}}
+
+\begin{document}
+\maketitle
+
+\section{From classical to quantum: anomalies in the BV formalism}
+
+\brian{A rapid overview of classical BV and effective quantizations. Stress how obstructions appear, where they live, and how to compute them.}
+
+\owen{I think we should articulate here the structural features of our BV package that make the arguments below more conceptual. For instance:
+\begin{itemize}
+\item Linear BV quantization is determinantal, which explains why we'll produce determinant line bundles when we do free $\beta\gamma$ system.
+\item ``Gauging'' a theory corresponds to a stacky quotient of the original fields. Hence, obstruction to quantizing a gauged theory corresponds to descending the quantization to the quotient.
+\item If a classical theory makes sense on a class (=site) of manifolds, then to quantize the whole class, it suffices to check on a generating cover (typically given by disks with geometric structure) but compatibly with all automorphisms. This often explains the appearance of characteristic classes as anomalies.
+\item Every BV theory produces a factorization algebra. The local structure encodes the OPE algebra (and hence recovers a vertex algebra in chiral CFT situation). On compact manifolds, solutions to EoM typically form finite-dimensional space, and the global observables encode a volume form on this space. (An example is conformal blocks for the free $bc\beta\gamma$ system.)
+\end{itemize}
+Please add others as you think of them!}
+
+\owen{We might also add that we view the BV formalism as the analogue in field theory of derived geometry in geometry. That is, in ordinary algebraic geometry, one first builds geometry and then adds (sheaf) cohomology on top: in ordinary physics, one first builds field theories and then adds (BRST) cohomology on top. But derived geometry (respectively, BV formalism) builds the cohomological aspect into the foundations.}
+
+\section{The classical holomorphic bosonic string}
+
+\brian{First define the holomorphic theory we will work with. Then show how it's related to more familiar models for the string, eg the Polyakov action. Level of detail depending on the space we have.
+}
+
+\subsection{The theory} 
+
+\subsection{From the second order Polyakov action}
+
+Let us fix a 2-dimensional Riemannian manifold $(\Sigma, g_0)$ and a Hermitian vector space~$(V,h)$. In this section we start with a description of the classical Polyakov model for the bosonic string as a classical BV theory. This is the ordinary $\sigma$-model of maps $\Sigma \to V$ coupled to a metric on $\Sigma$. More precisely, this is a perturbative model for the Polyakov string, since we only look at deformations of the fixed metric $g_0$. We will show that after a reparametrization of the space of fields that it makes sense to take a certain ``infinite volume limit" as $h \to \infty$. In this limit we will show that the Polyakov model splits into a certain holomorphic theory plus its complex conjugate. The holomorphic theory is what we call the {\em holomorphic bosonic string}.
+
+\begin{rmk} A similar analysis has appeared in \cite{GGW} where one does not consider deformations of the metric: the infinite volume limit of the bare $\sigma$-model of maps $\Sigma \to V$ splits into the free $\beta\gamma$ system plus its complex conjugate. In the case of the string we find an interacting theory that can be thought of as a deformation of a $\beta\gamma$ system. 
+\end{rmk}
+
+\owen{Give explanation of what this section will be about: writing down a holomorphic theory that appears as the chiral part of a large volume limit of the usual bosonic string. We should advertise that we start with conventional ways of writing a theory and explain the algorithm by which one extracts a BV action.}
+
+\owen{After looking at Wikipedia, I feel like Polyakov may not be enough, since it seems just like the action for the sigma model. Part of it may be the way that standard expositions go (and that is followed below). Anyway, I'd like to verify this stuff. Related issue: this is for the {\em critical} string, and Liouville action seems to be for {\em noncritical} string.}
+
+We recall the most familiar form of the classical Polyakov string and show how to write it down in terms of a classical BV theory. The fields of the Polyakov model consist of a $C^\infty$ function $\varphi : \Sigma \to V$ and a metric $g$ on $\Sigma$. Since we are doing perturbation theory, we assume that $g$ is infinitesimally close to the fixed metric $g_0$ in the space of all metrics on $\Sigma$. There is an identification of the tangent space of the space of all metrics $T_{[g_0]} {\rm Met}(\Sigma) \cong \Sym^2(T_\Sigma)$. Thus, we can take the metric $g$ to be of the form $g = g_0 + \alpha$ where $\alpha \in \Sym^2(T_\Sigma)$. \owen{Should we include comments about "formal (derived) spaces"?}
+ 
+The naive action functional, before accounting for any gauge symmetries, is of the form
+\ben
+S^{naive} (\varphi, \alpha) = \int_\Sigma h(\varphi, \Delta_{g_0 + \alpha} \varphi)\, \dvol_h
+\een
+where $\Delta_g : C^\infty(\Sigma ; V) \to \Omega^2(\Sigma ; V)$ is the $2$-form valued operator equal to the ordinary Laplacian on functions times metric the top form $\dvol_g$. \owen{I think this redefinition of the Laplacian might be more confusing than the savings we recover in typing. At the very least, I'd use a different symbol than the usual Laplace symbol.}
+
+The functional $S^{naive}$ is invariant under the group of diffeomorphisms ${\rm Diff}(\Sigma)$. Infinitesimally, this means that if $X$ is a vector field on $\Sigma$ the action is left invariant under the transformation $(\varphi,\alpha) \mapsto (\varphi + X \cdot \varphi, \alpha + L_X \alpha)$, where $L_X(-)$ denotes the Lie derivative on tensors. 
+
+There is another symmetry, namely Weyl rescalings of the metric, which reflects the fact that the theory is classically conformal. Infinitesimally, this means that for an arbitrary function $f \in C^\infty(\Sigma)$ the action is left invariant under the transformation $\alpha \mapsto \alpha + f \alpha$. In fact this symmetry is compatible with the symmetry by vector fields in an obvious way: if $f \in C^\infty(\Sigma)$ and $X$ is a vector field on $\Sigma$ then $L_{X} (f \alpha) = X(f) \alpha + f L_X \alpha$ for any $\alpha \in \Sym^2(T_\Sigma)$. 
+
+The BRST operator for the gauge symmetries can be summarized via the following elliptic complex, that we denote $\cE^{Polyakov}$:
+
+\ben
+\xymatrix{
+\ul{-1} & \ul{0} & \ul{1} & \ul{2} \\
+& \Omega^{0}(\Sigma) \tensor V \ar[r]^-{\Delta_{g_0}} & \Omega^2(\Sigma) \tensor V & \\
+{\rm Vect}(\Sigma) \oplus C^\infty(\Sigma) \ar[r]^-{\d_{g_0}} & \Sym^2(T_\Sigma) & & \\
+& & \Omega^2(\Sigma ; \Sym^{2}(T^*_\Sigma)) \ar[r]^-{\d_{g_0}} & \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma) .
+}
+\een 
+In the definition of a classical BV theory we must prescribe the data of a $(-1)$-shifted symplectic pairing on the BRST complex together with an interaction which is a local functional on the complex. The pairing can be described as follows. If $\varphi \in \Omega^0(\Sigma ; V)$ and $\psi \in \Omega^2(\Sigma ; V)$ then
+\ben
+\<\varphi, \psi \> = \int h(\varphi, \psi) .
+\een 
+The fields $(X, f) \in \Vect(\Sigma) \oplus C^\infty(\Sigma)$ pair with the conjugate fields $(X', f') \in  \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma)$ via
+\ben
+\<(X,f), (X',f')\> = \int \ev(X, X') + \int f f' 
+\een
+where $\ev$ denotes the evaluation pairing between the tangent and cotangent bundles. 
+
+\brian{Start with Polyakov action and explain how the chiral theory emerges in the infinite volume limit. There should also be an explanation for the theory we write down as a twist of 2d supergravity (in the same way that CDO's are a twist of a $(0,2)$ theory), not sure if you want to get into that.}
+\owen{I don't know anything about the supergravity thing you mention. It sounds interesting.}
+
+\owen{When we write out the whole BV shebang, we should point out how it relates to the usual physics description. Namely, the physicists do the following:
+\begin{itemize}
+\item write a free $bc\beta\gamma$ system as a $\ZZ/2$-graded theory
+\item lift to a $\ZZ$-grading such that the $bc$ fields are ghosts/antighosts for holomorphic vector fields (with no action on $\beta\gamma$ fields or themselves)
+\item deform the action to encode the action of vector fields on functions etc.
+\end{itemize}
+We should then see our BV action on the nose.
+(I think this is correct, but we should double-check, of course.)
+One nice thing about this observation is that it verifies the identification with semi-infinite homology, which is often explained in these kinds of terms. 
+(See the nice, short, readable Voronov note I've put in our folder.)}
+
+\section{Deformations of the theory and string backgrounds}
+
+\owen{Maybe the Gelfand-Fuk discussion can be anticipated in Section 1? I think versions of it are easy to motivate: ``We want to study Lagrangian densities, which are functions on jets of fields. Hence the simplest case is to consider functions on jets at a point, which we recognize as a version of Gelfand-Fuks \dots'' Then we invoke that discussion to work with formal vector fields and simply quote~GF.}
+
+\owen{We should observe that we see the deformations of the action, such as $B$-fields and dilatons. Observe we've rediscovered "string backgrounds."}
+
+\brian{Might be good to hint at the curved sigma model here.}
+
+\section{Quantizing the holomorphic bosonic string on a disk} 
+
+\brian{Gauge fixing condition. The theory is finite, no counterterms. Review Gelfand-Fuksy stuff. Local local deformation complex calculation. Do the anomaly calculation to obtain $\dim_{\CC} = 13$. Argue why this produces a quantization on any source Riemann surface.}
+
+\owen{I'm not sure what is the optimal order: diagrams then cohomology group, or other way? If we do the concrete Feynman diagrams and show that something vanishes exactly when you'd expect from the literature, then people might feel assured. However, it's not clear where this anomaly lives until you do the obstruction-deformation computation. Perhaps we just indicate how the reader can pick her preferred order.}
+
+\section{OPE and the string vertex algebra}
+
+\brian{Write down vertex algebra from quantization above. Possibly state the relationship to semi-infinite cohomology}
+
+\begin{prop} Let $\Obs^q$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string. The factorization product of open disks $D \subset \CC$ determines the structure of a vertex algebra (see Proposition \ref{prop book vertex} below) on the cohomology of the factorization algebra on an open disk $H^*(\Obs^q(D))$, that we denote $\Vert(\Obs^q)$. Moreover, there is an isomorphism of vertex algebras
+\ben
+\Phi : V^{\rm string} \xto{\cong} \Vert(\Obs^q) .
+\een
+\end{prop}
+
+\owen{I believe these vertex algebras are cohomologically graded, unless we're lucky and the cohomology all sits in degree zero. In which case, we should point out this miracle. Perhaps better would be to extract the dg vertex algebra.}
+
+\owen{Do you know a citation where the string vertex algebra is already written down? Of course it's almost explicit in any discussion of the ``modern''/BRST quantization of the bosonic string, where they write down $Q$, which ought to be the differential of the dg vertex algebra using our construction.}
+
+\brian{How deformations discussed in Section 3 gives explicit deformations of the the vertex algebra.}
+
+\section{The quantization on arbitrary Riemann surfaces} 
+
+\subsection{Global sections of the factorization algebra}
+
+\brian{Discuss relationship to conformal blocks}
+
+We wish to write the global observables of the holomorphic string in terms of the cohomology of natural holomorphic vector bundles on the Riemann surface. 
+
+We introduce a simpler theory defined for any (graded) holomorphic vector bundle $\cV$ on $\Sigma$. First, consider the elliptic complex
+\ben
+\Omega^{0,*}(\Sigma ; \cV)
+\een
+of $(0,*)$-forms with values in $\cV$. The differential is simply the $\dbar$ operator. We consider its shift $\Omega^{0,*}(\Sigma ; \cV)[-1]$ as an abelian local dg Lie algebra. In this way, the associated cotangent theory of the elliptic complex is defined as 
+\ben
+T^{*}[-1] (\Omega^{0,*}(\Sigma ; \cV)) = \Omega^{0,*}(\Sigma ; \cV) \oplus \Omega^{1,*}(\Sigma ; \cV^\vee) .
+\een 
+We write the fields as $\gamma \in \Omega^{0,*}(\Sigma ; \cV)$ for the base direction and $\beta \in \Omega^{1,*}(\Sigma ; \cV^\vee)$ for the fiber direction. With this notation, the action functional is defined as
+\ben
+S (\beta, \gamma) = \int_\Sigma \<\beta, \dbar \gamma\>_\cV
+\een
+where $\<-,-\>_\cV$ denotes the evaluation pairing between $\cV$ and its dual. This theory is called the $\beta\gamma$ (or sometimes $\beta \gamma-bc$ \owen{what are the $bc$ fields?}) system with values in $\cV$. This is a free field theory and hence has a natural quantization. We will denote the factorization algebra of quantum observables on $\Sigma$ by $\Obs^{q}_{\cV}$. 
+
+\begin{lem}
+\label{lem bg global obs} 
+The cohomology of the global observables of the $\beta\gamma$ system with values in $\cV$ is given by
+\ben
+H^*\left(\Obs^q_{\cV}(\Sigma)\right) \cong \det \left(H^*(\Sigma ; \cV) \right) [d(\cV)] 
+\een
+where $d(\cV) = ...$. 
+\end{lem}
+
+\owen{It would be good here to point out the GRR argument for identifying the first Chern class of this determinant line bundle. We can then point out that it resonates with our computation on the formal disk and give a reminder that this is a manifestation of ``Virasoro uniformization.'' This then leads into the string case: the holomorphic vector fields (rather the free $bc$ system) also contribute a determinant line (we should include that computation) and we can ask when those determinant lines tensor to a trivial line. Note that deforming the action from free $bc\beta\gamma$ system to holomorphic bosonic string doesn't affect the line bundles, since those are continuous parameters and Chern classes are discrete.}
+
+Now, consider the global observables of the bosonic string $\Obs^q(\Sigma)$. There is a spectral sequence converging to the cohomology of the global observables $H^*\Obs^q(\Sigma)$ with $E_2$ page given by the cohomology of the global observables of the $\beta \gamma$ system with values in the holomorphic vector bundle $\cV = \cT_\Sigma [1] \oplus \CC^{13}$. By Lemma \ref{lem bg global obs} this $E_2$ page is concentrated in a single degree and is given by
+\bestar
+E_2 & \cong & \det\left(H^*(\Sigma ; \cT_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
+& \cong & \det \left(H^1(\Sigma ; \cT_\Sigma) \right) \tensor \det \left(H^0(\Sigma ; \cT_\Sigma)\right)^{-1} \tensor \det \left(H^0(\Sigma ; K_{\Sigma}) \right)^{-13}
+\eestar
+where we have used the fact that $H^0(\Sigma ; \cO) \cong \CC$ for any $\Sigma$. 
+
+Let $\Sigma_{g}$ be a surface of genus $g$. Then for $g=1$ the above simplifies to
+\ben
+\det \left(H^1(\Sigma_1 ; \cT_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-14} .
+\een 
+If $g \geq 2$ one has
+\ben
+\det \left(H^1(\Sigma_1 ; \cT_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-13} .
+\een
+It is clear that the spectral sequence degenerates at this page. Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
+
+\section{The string partition function on an elliptic curve}
+
+\brian{Sketch how to see the mumford form}
+
+\owen{If possible, it would be cool to explain how one can extract the differential equations (=flat connection) governing the partition function from our construction. This might be too hard right now \dots}
+
+\section{Looking ahead: curved targets}
+
+\owen{I think here we can mention our CDO work and assert that it's compatible with the discussion here. Then we state the corresponding theorems.}
+
+\brian{State the quantization condition for curved target.} 
+
+hello
+\end{document}
