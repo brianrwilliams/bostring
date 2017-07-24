@@ -43,21 +43,36 @@ and we obtain the following.
 
 The holomorphic bosonic string is a chiral CFT and so the machinery of~\cite{CG1} applies to it.
 One can extract a vertex algebra directly by this method.
-But Li's work
+
+But there is a slicker approach, using Li's work~\cite{Li},
+which studies chiral deformations of free chiral BV theories such as the $bc\beta\gamma$ system.
+\owen{Define what chiral deformation means.}
+One of his main results is that for a free chiral BV theory with action $S_{\rm free}$ and associated vertex algebra $\cV_{\rm free}$, one has the following:
+\owen{Check that this is an accurate summary of his work}
+\begin{itemize}
+\item For any chiral interaction~$I$, the action $S_I = S_{\rm free} + I$ needs no counterterms, 
+yield a renormalized action~$\{S_I[L]\}$.
+\item If the renormalized action $\{S_I[L]\}$ satisfies the quantum master equation,
+then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$.
+\item The vertex algebra for such an action $\{S_I[L]\}$ is isomorphic to the vertex algebra~$V$ via the automorphism~$\exp(D_I)$.
+\end{itemize}
+The holomorphic bosonic string with target $V=\CC^{13}$ provides a concrete example of this situation.
+The free theory is the $bc\beta\gamma$ system, 
+and we have seen that the renormalized action satisfies the QME.
+Hence we obtain the following.
 
 
+\begin{prop} 
+Let $\Obs^q$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string. The factorization product of open disks $D \subset \CC$ determines the structure of a vertex algebra (see Proposition \ref{prop book vertex} below) on the cohomology of the factorization algebra on an open disk $H^*(\Obs^q(D))$, that we denote $\Vert(\Obs^q)$. Moreover, there is an isomorphism of vertex algebras
+\ben
+\Phi : \cV_{\rm string} \xto{\cong} \Vert(\Obs^q) .
+\een
+\end{prop}
 
 \owen{describe classical observables \& why we get a Poisson vertex algebra}
 
 
 \brian{Write down vertex algebra from quantization above. Possibly state the relationship to semi-infinite cohomology}
-
-\begin{prop} 
-Let $\Obs^q$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string. The factorization product of open disks $D \subset \CC$ determines the structure of a vertex algebra (see Proposition \ref{prop book vertex} below) on the cohomology of the factorization algebra on an open disk $H^*(\Obs^q(D))$, that we denote $\Vert(\Obs^q)$. Moreover, there is an isomorphism of vertex algebras
-\ben
-\Phi : V^{\rm string} \xto{\cong} \Vert(\Obs^q) .
-\een
-\end{prop}
 
 \owen{I believe these vertex algebras are cohomologically graded, unless we're lucky and the cohomology all sits in degree zero. In which case, we should point out this miracle. Perhaps better would be to extract the dg vertex algebra.}
 
