@@ -49,13 +49,21 @@ and $b$ and $\beta$ legs flow out.
 \owen{Add picture.}
 
 The kinds of graphs one can build with such vertices and edges are limited.
-We focus on connected graphs.
+We focus on connected graphs, since an arbitrary graph is just a union of connected components.
+
 A tree (i.e., a connected graph with no loops) must have at most one outgoing leg,
-which can be either a $b$ or a~$\beta$;
+which must be either a $b$ or a~$\beta$;
 the other legs are incoming, so each must be labeled by a $c$ or a~$\gamma$.
 \owen{Add picture.}
+Note that there are two types of trees.
+If there is a $\gamma$ leg, then there is a $\beta$ leg,
+and there is a chain of $\gamma\beta$ edges connecting them;
+all other external legs are of $c$~type.
+If there is a $b$ leg, then the only other legs are $c$~type.
+
 A 1-loop graph will consist of a wheel (i.e., a sequence of edges that form an overall loop)
 with trees attached.
+The outer legs are all of $c$~type.
 \owen{Add pictures.}
 Every edge along a wheel will have the same type.
 It is not possible to build a connected graph with more than one loop.
