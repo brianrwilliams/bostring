@@ -69,22 +69,24 @@ Every edge along a wheel will have the same type.
 It is not possible to build a connected graph with more than one loop.
 This combinatorics is the essential reason that we can quantize at one loop.
 
+We write ${\bf Graph}_{\rm string}$ for the collection of connected graphs just described,
+namely the directed trees and 1-loop graphs allowed by the string action functional.
+Let ${\bf Graph}_{\rm string}^{(0)}$ denote the 0-loop graphs (i.e., trees) and let ${\bf Graph}_{\rm string}^{(1)}$ denote the 1-loop graphs (i.e., wheels with trees attached).
+
 \subsubsection{}
 
 These graphs describe linear maps associated to the field.
 More precisely, a graph with $k$ legs describes a linear functional on the $k$-fold tensor product of the space of fields.
 One builds this linear functional out of the data of the action functional.
 
-\begin{rmk}
-Like the action functional, it is rarely well-defined on all fields if the source manifold is non-compact.
-Instead, like the action functional, it defines a function on compactly-supported fields.
-This domain is all one needs for making variational arguments or for constructing a BV quantization.
-\end{rmk}
-
-For instance, a $k$-valent vertex corresponds to a $k$-ary term in the action,
+As an example, a $k$-valent vertex corresponds to a $k$-ary term in the action,
 which manifestly takes in $k$ copies of the fields and outputs a number.
 Thus, the vertex labels an element of a (continuous) linear dual of the $k$-fold tensor product of fields.
-An edge corresponds an element of the 2-fold tensor product of the space of fields,
+In fact, one restricts to {\em compactly-supported} fields,
+since the action functional is rarely well-defined on all fields when the source manifold is non-compact.
+(Note this domain of compactly-supported fields is all one needs for making variational arguments or for constructing a BV quantization.)
+
+An edge corresponds an element $P$ of the 2-fold tensor product of the space of fields,
 often called a {\em propagator}.
 More precisely, the edge should correspond to
 the Green's function for the linear differential operator 
@@ -95,7 +97,13 @@ where $\dbar^{-1}$ denotes an inverse to the Dolbeault operator on functions.
 The $bc$ leg should be labeled by $\dbar^{-1}_T$, 
 the inverse of the Dolbeault operator on the bundle~$T^{1,0}$.
 
-Given a graph, one should contract the tensors associated to the vertices and edges.
+Given a graph~$\Gamma$, one should contract the tensors associated to the vertices and edges.
+We denote the linear functional for this graph by~$w_\Gamma(P,I)$,
+where $w$ stands for ``weight,'' the term $P$ indicates we label edges by the propagator~$P$,
+and the term $I$ indicates we label vertices by the ``interaction'' term of the action~$S$ 
+(i.e., the terms that are cubic and higher).
+
+This contraction is not always well-posed, unfortunately.
 Each vertex labels a distributional section of some vector bundle on~$\Sigma$,
 and each edge labels a distributional section of a vector bundle on~$\Sigma^2$.
 Thus the desired contraction can be written {\em formally} as an integral over the product manifold~$\Sigma^{v}$,
@@ -108,6 +116,8 @@ Thus, to avoid these divergences, one labels the edges by a smooth replacement o
 (Imagine replacing a delta function $\delta_0$ by a bump function.)
 Since one can pair smooth functions and distributions,
 each graph yields a linear functional on fields using these mollified edges.
+Thus we have {\em regularized} the divergent expression.
+
 But now this linear functional depends on the choice of mollifications.
 Hence the challenge is to show that 
 if one picks a sequence of smooth replacements that approaches the Green's function,
@@ -138,12 +148,12 @@ as it is a $(1,0)$-form.
 
 We will now describe the integral associated to a simple diagram.
 For simplicity, we assume $V = \CC$ so that the $\gamma$ and $\beta$ fields are simply functions and $1$-forms on $\CC$, respectively.
-Consider a ``tadpole'' diagram whose outer legs are $c$~fields 
+Consider a ``tadpole'' diagram $\Gamma_{\rm tad}$ whose outer legs are $c$~fields 
 (i.e., vector fields on~$\CC$).
 \owen{Add picture.}
 There is only one vertex here, corresponding to the cubic function on fields
 \[
-F(c,\gamma,\beta) = \int_{z \in \CC} \beta \wedge c\gamma.
+w_{\Gamma_{\rm tad}}(P,I_{\rm string}) = \int_{z \in \CC} \beta \wedge c\gamma.
 \]
 If the field $c$ is of the form $f(z) \d \zbar \partial_z$,
 with $f$ compactly supported, 
@@ -218,7 +228,8 @@ P_\ell^L(z,w) &= \int_{\ell}^L \d t \, \frac{\partial}{\partial (\d \zbar)} \fra
 Note that it is smooth everywhere on~$\CC^2$.
 The integral for the tadpole diagram is 
 \begin{align*}
-\int_{z \in \CC} c(z)P_\ell^L(z,w)|_{z = w}  
+w_{\Gamma_{\rm tad}}(P_\ell^L,I_{\rm string})
+&= \int_{z \in \CC} c(z)P_\ell^L(z,w)|_{z = w}  \\
 &= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \partial_z \left(\frac{1}{4\pi t} \frac{\zbar - \overline{w}}{2t} e^{-|z-w|^2/4t} (\d z - \d w) \right)|_{z = w}\, \d \zbar\\
 &= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \left(\frac{1}{4\pi t} \left(\frac{\zbar - \overline{w}}{2t}\right)^2 e^{-|z-w|^2/4t} (\d z - \d w) \right)|_{z = w}\, \d \zbar\\
 &= 0,
@@ -232,15 +243,33 @@ By explicitly analyzing the $\ell \to 0$ limit for the integral associated to ev
 we find the following result.
 
 \begin{prop}
-\owen{Insert statement}
+For any graph $\Gamma \in {\bf Graph}_{\rm string}$ allowed by the combinatorics of the string action functional,
+there is a well-defined limit
+\[
+\lim_{\ell \to 0} w_{\Gamma}(P_{\ell}^L,I_{\rm string})
+\]
+for any $L > 0$.
 \end{prop}
+
+We denote this limit by~$w_{\Gamma}(P_{0}^L,I_{\rm string})$.
+
+\owen{I think we should sketch a proof: we explain why trees are no issue, and then mention key ideas in the wheel case. We can even include a nontrivial example if there's space.}
 
 The necessary manipulations and inequalities are very close to those used in~\cite{}.
 We recommend looking at \owen{exact location} for model arguments.
 
 \owen{Define the renormalized action at scale $L$ as the sum of the Feynman diagrams labeled by $P_0^L$.}
 
+\begin{dfn}
+The {\em renormalized action functional} at scale~$L$ for the holomorphic bosonic string is
+\[
+S[L] = \sum_{\Gamma \in {\bf Graph}_{\rm string}^{(0)}} w_{\Gamma}(P_{0}^L,I_{\rm string}) + \hbar\sum_{\Gamma \in {\bf Graph}_{\rm string}^{(1)}} w_{\Gamma}(P_{0}^L,I_{\rm string}).
+\]
+\end{dfn}
+
 \owen{Will also remark that this flow satisfies an exact RG equation, and Kevin calls it ``RG flow" (but not to be confused with Wilsonian RG flow)}
+
+\owen{Cite Si's paper about chiral deformations.}
 
 \subsection{The quantum master equation}
 
