@@ -255,6 +255,31 @@ We denote this limit by~$w_{\Gamma}(P_{0}^L,I_{\rm string})$.
 
 \owen{I think we should sketch a proof: we explain why trees are no issue, and then mention key ideas in the wheel case. We can even include a nontrivial example if there's space.}
 
+\begin{proof}[Outline of proof]
+When $\Gamma$ is a tree, there is never an issue with divergences; 
+we could even use the Green's function $\dbar^{-1}$ on each edge.
+To see this, note that one can view a tree as having a distinguished root,
+given by the leg that is either of $\beta$ or $b$~type.
+One can then see the tree as describing a multilinear map from the leaves (i.e., legs that are not roots) to the root.
+Indeed, one can view each cubic vertex as such an operator.
+For instance, $\langle b, [c,c]\rangle$ corresponds to the Lie bracket of vector fields,
+since we view $\langle b,-\rangle$ as an element of the $c$~fields.
+For a tree, one can then input arbitrary elements into the leaves, 
+apply the operations labeled by the vertices,
+apply the operator labeled by the edge, and so on,
+until one reaches the root.
+The composite multilinear operator sends smooth sections to smooth sections,
+even if the edges are labeled by distributional sections,
+since the associated operator sends smooth sections to smooth sections.
+
+When $\Gamma$ is a one-loop graph, it consists of a wheel with trees attached to the outer legs.
+By the preceding argument, we know those trees do not introduce singularities;
+hence any divergences are due solely to the wheel.
+It thus suffices to consider pure wheels (i.e., those with no trees attached).
+
+In this case \owen{and now I think I'll just write an explicit integral for a 2-vertex or 3-vertex wheel and assert that it is not divergent by explaining loosely the argument.}
+\end{proof}
+
 The necessary manipulations and inequalities are very close to those used in~\cite{}.
 We recommend looking at \owen{exact location} for model arguments.
 
@@ -265,6 +290,8 @@ The {\em renormalized action functional} at scale~$L$ for the holomorphic bosoni
 \[
 S[L] = \sum_{\Gamma \in {\bf Graph}_{\rm string}^{(0)}} w_{\Gamma}(P_{0}^L,I_{\rm string}) + \hbar\sum_{\Gamma \in {\bf Graph}_{\rm string}^{(1)}} w_{\Gamma}(P_{0}^L,I_{\rm string}).
 \]
+We denote the first summand---the tree-level expansion---by $S_0[L]$ 
+and the second summand---the one-loop expansion---by~$S_1[L]$
 \end{dfn}
 
 \owen{Will also remark that this flow satisfies an exact RG equation, and Kevin calls it ``RG flow" (but not to be confused with Wilsonian RG flow)}
