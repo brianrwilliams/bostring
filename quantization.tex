@@ -549,15 +549,17 @@ where $F[L]$ is a functional independent of~$V$.
 \end{prop}
 
 In short, the failure to satisfy the QME is a linear function of the dimension of the target space~$V$.
-In particular, when $V \cong \CC^{13}$, the obstruction vanishes and the renormalized action {\em does} satisfy the QME, 
+In particular, when $V \cong \CC^{13}$, 
+the obstruction vanishes and the renormalized action {\em does} satisfy the QME, 
 giving us an immediate corollary.
+(Note that we do {\em not} need to compute $F[L]$ to recognize that the obstruction vanishes!)
 
 \begin{cor}
 When the target vector space is 13-dimensional (i.e., has 26 real dimensions),
 the holomorphic bosonic string admits a BV quantization.
 \end{cor}
 
-\begin{proof}[Sketch of proof]
+\begin{proof}
 It is a general feature of Costello's formalism that the tree-level term $S_0[L]$ of the renormalized action satisfies the scale~$L$ equation
 \[
 \{S_0[L],S_0[L]\}_L = 0,
@@ -574,6 +576,27 @@ Hence the obstruction to satisfying the QME is precisely
 \[
 \hbar\left( \{S_0[L],S_1[L]\} + \Delta_L S_0[L] \right).
 \]
-Let $Ob$ denote the term inside the parenthesis (i.e., we drop the $\hbar$ term going forward).
-\owen{Add the rest \dots}
+Thus we see that the obstruction is a multiple of~$\hbar$.
+For simplicity, we will divide out that factor and let $Ob_V$ denote the term inside the parenthesis.
+
+Consider the term $\{S_0[L],S_1[L]\}$. 
+Diagrammatically, it corresponds to attaching a tree with a $b$ ``root'' to a wheel using an edge labeled by~$K_L$.
+\owen{For some reason this is irrelevant.}
+
+Now consider the term $\Delta_L S_0[L]$. 
+Diagrammatically, it corresponds to turning a tree into a wheel by using an edge---labeled by $K_L$---to attach the root to an incoming leaf.
+There are thus two kinds of wheels that appear, since there are two kinds of trees.
+There are the wheels where the $K$ edge is for $bc$ fields.
+Note that these wheels are the same for every choice of target $V$
+as they only depend on the $bc$ fields, i.e., are independent of the $\beta\gamma$ fields.
+These will contribute a term $F[L]$ to the obstruction.
+On the other hand, there are the wheels where the $K$ edge is for $\beta\gamma$ fields.
+These depend on $V$ but in a very simple way: 
+the distribution $K$ is just the heat kernel tensored with the identity on~$V$, 
+and hence the contraction amounts to taking $\dim_\CC(V)$ copies of the $V = \CC$ value.
+In other words, the $\beta\gamma$ wheels contribute a term $\dim_\CC(V) G[L]$ to the obstruction,
+where $G[L]$ is the value for $V = \CC$.
+\owen{Is there a slick way to see that $F[L] = G[L]$?}
+The interested reader can verify that $F[L]$ is not just zero, 
+so that the obstruction is nontrivial when $\dim_\CC(V) \neq 13$.
 \end{proof}
