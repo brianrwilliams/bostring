@@ -13,6 +13,43 @@ using machinery developed in~\cite{CG1,LiVA,CDO}.
 The answer we recover is precisely the chiral sector of the usual bosonic string.
 \owen{Is that true?}
 
+\subsection{A reminder on the chiral algebra of the string}
+
+We provide a brief background on the vertex algebra for the chiral sector of the bosonic string. 
+For a detailed reference we refer the reader to the series of papers \cite{LZ1,LZ2}. 
+It is easiest to introduce this as a {\em differential graded vertex algebra}. 
+This is simply a vertex algebra internal to the category of chain complexes. 
+The underlying graded vertex algebra has state space of the form
+\ben
+\cV_{\beta \gamma}^{\tensor 13} \tensor \cV_{bc}
+\een
+where $\cV_{\beta\gamma}$ and $\cV_{bc}$ are the $\beta\gamma$ and $bc$ vertex algebras, respectively. 
+The $\beta$ and $\gamma$ generators are in grading degree zero, the $c$ generator is in grading degree $-1$, and the $b$ is in grading degree $+1$. 
+In the physics literature this is referred to as the {\em BRST} grading.
+
+Forgetting the cohomological (or BRST) grading, this vertex algebra is a conformal vertex algebra of central charge zero (by construction). 
+In particular, this means that the vertex algebra has a stress energy tensor. 
+Explicitly, it is of the form
+\ben
+T_{\rm string} (z) = \left(\sum_{i = 1}^{13} \beta_i (z) \partial_z \gamma_i (z) + \partial_z \beta_i(z) \gamma_i (z) \right) + \left(b(z) \partial_z c(z) + 2 \partial_z b(z) c(z) \right) . 
+\een
+Note that $T_{\rm string}$ is of cohomological degree zero. 
+The first parenthesis is interpreted as the stress energy tensor of the vertex algebra $\cV_{\beta \gamma}^{\tensor 13}$ and the second term is the stress energy tensor of $\cV_{bc}$. 
+
+We have not yet described the differential on the graded vertex algebra. 
+The BRST differential is defined to be the vertex algebra derivation obtained by taking the following residue
+\ben
+Q^{BRST} = \oint c(z) T_{\rm string}(z) .
+\een 
+By construction this operator satisfies $(Q^{BRST})^2 = 0$. 
+
+\begin{dfn} The {\em string vertex algebra} is the dg vertex algebra 
+\ben 
+\cV_{\rm string} = \left(\cV_{\beta \gamma}^{\tensor 13} \tensor \cV_{bc}, Q^{BRST}\right)  .
+\een
+\end{dfn}
+
+
 \subsection{Some context}
 
 In the BV formalism one constructs a cochain complex of observables,
@@ -47,12 +84,27 @@ One can extract a vertex algebra directly by this method.
 
 But there is a slicker approach, using Li's work~\cite{Li},
 which studies chiral deformations of free chiral BV theories such as the $bc\beta\gamma$ system.
-\owen{Define what chiral deformation means.}
+Recall, a deformation of a classical field theory is given by a local functional. 
+We have seen that this is essentially the data of a Lagrangian density, which is a density valued multilinear functional that depends on (arbitrarily high order) jets of the fields. 
+In other words, for a field $\varphi$, a Lagrangian density is of the form
+\ben
+\cL(\varphi) = \sum (D_{k_1} \varphi) \cdots (D_{k_m} \varphi) \cdot {\rm vol}_\Sigma
+\een 
+for $C^\infty(\Sigma)$-valued differential operators $D_{k_i}$.
+By a {\em chiral} Lagrangian density we mean a Lagrangian for which the differential operators $D_{k_i}$ are all holomorphic. 
+For instance, on $\Sigma = \CC$, we require $D_{k_i}$ to be a sum of operators of the form $f(z) \partial_z^n$ where $f(z)$ is a holomorphic function. 
+On $\Sigma = \CC$ we will also require the chiral Lagrangian to be translation invariant. 
+This means that all differential operators $D_{k_i}$ are of the form $\partial_z^n$. 
+Thus, a {\em translation invariant chiral deformation} is a local functional of the form
+\ben
+I(\varphi) = \sum \int (\partial^{k_1}_z \varphi) \cdots (\partial^{k_m} \varphi) \d^2 z .
+\een
+
 One of his main results is that for a free chiral BV theory with action $S_{\rm free}$ and associated vertex algebra $\cV_{\rm free}$, one has the following:
 \owen{Check that this is an accurate summary of his work}
 \begin{itemize}
 \item For any chiral interaction~$I$, the action $S_I = S_{\rm free} + I$ needs no counterterms, 
-yield a renormalized action~$\{S_I[L]\}$.
+and yields a renormalized action~$\{S_I[L]\}$.
 \item If the renormalized action $\{S_I[L]\}$ satisfies the quantum master equation,
 then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$.
 \item The vertex algebra $\cV_I$ for such an action $\{S_I[L]\}$ is isomorphic to the vertex algebra~$\cV_{\rm free}$ via the automorphism~$\exp(D_I)$.
