@@ -154,10 +154,61 @@ Moreover, the $P_0$ bracket on the classical observables determines the structur
 
 \brian{Write down vertex algebra from quantization above. Possibly state the relationship to semi-infinite cohomology}
 
-\owen{I believe these vertex algebras are cohomologically graded, unless we're lucky and the cohomology all sits in degree zero. In which case, we should point out this miracle. Perhaps better would be to extract the dg vertex algebra.}
+\subsection{The $E_2$ algebra}
 
-\owen{Do you know a citation where the string vertex algebra is already written down? Of course it's almost explicit in any discussion of the ``modern''/BRST quantization of the bosonic string, where they write down $Q$, which ought to be the differential of the dg vertex algebra using our construction.}
+We continue to consider the theory on the Riemann surface $\Sigma = \CC$. 
+In this section we show how to produce, from the point of view of factorization algebras, the structure of a Gerstenhaber algebra on the BRST cohomology of the bosonic string. 
+A Gerstenhaber algebra is equivalent to an algebra over the homology of the frame little 2-disk operad. 
+It is a well-known result of Lurie \cite{Lurie} that a {\em locally constant} factorization algebra on $\RR^n$ is equivalent to an algebra over the little $n$-disks operad, or an $E_n$-algebra. 
+We will show that the cohomology of the factorization algebra $\Obs^{\q}_{\rm string}$ on $\CC \cong \RR^2$ has the structure of a Gerstenhaber algebra, which implies that $\Obs^\q_{\rm string}$ is equivalent to an $E_2$-algebra. 
 
-\owen{Si's theorem gives us a nice approach: we conjugate the free $bc\beta\gamma$ vertex algebra by the appropriate VOA automorphism to recover the string. This may be close to what physicists do anyway.}
+Another occurrence of $E_n$-algebras is as the observables of topological field theories in (real) dimension $n$. 
+At this level, this implies that the theory of the holomorphic bosonic string is equivalent to a topological field theory. There is a more direct link to topological field theories as defined in \cite{wtop} that we recall here. 
+There is an action of the differential operators $\frac{\d}{\d z}$ and $\frac{\d}{\d \zbar}$ on the Dolbeault complex $\Omega^{0,*}(\CC)$. 
+This extends to an action of the differential operators to the holomorphic bosonic string, and hence to the observables as well. 
+By Noether's theorem the symmetry of the theory determined by these operators define observables: these are simply the $zz$ and $\zbar \zbar$ components of the stress energy tensor $T_{zz}$, $T_{\zbar \zbar}$. 
+We will see that in the case of the string the stress energy tensors are cohomologically trivial. 
+This is the general definition of a topological theory given in \cite{top}.
 
-\brian{How deformations discussed in Section 3 gives explicit deformations of the the vertex algebra.}
+\brian{Am I oversimplifying above?}
+
+\subsubsection{}
+
+We consider the factorization algebra $\Obs^\q_{\rm string}$. 
+For each open $U \subset \CC$ we can define the operators
+\ben
+\frac{\d}{\d z} , \frac{\d}{\d \zbar} : \Obs^\q_{\rm string} (U) \to \Obs^\q_{\rm string}(U) .
+\een 
+In fact, these operators define {\em derivations} of the factorization algebra, in the sense that they are compatible with the factorization product. 
+Note that these operators preserve the cohomological degree. 
+
+Consider the operator acting on Dolbeault forms
+\ben
+\Bar{\eta} = \frac{\partial}{\partial (\d \zbar)} .
+\een 
+This extends to a derivation of degree $-1$ on the factorization algebra $\Obs^\q_{\rm string}$. 
+Moreover, we have the following relation
+\ben
+[\dbar + \hbar \Delta + \{I^\q, -\} , \Bar{\eta}] =  \frac{\d}{\d \zbar}
+\een 
+as endomorphisms of the factorization algebra. 
+This means that the operator $\frac{\d}{\d \zbar}$ acts cohomologically trivial on $\Obs^\q_{\rm string}$. 
+
+Recall that the $b$-fields of the bosonic string are concentrated in degree $+1$ and $+2$. 
+A field in degree $+1$ is of the form $f(z,\zbar) \d z^{\tensor 2} \in \Omega^{1,0}(\Sigma, T_\Sigma^{1,0*})$. 
+Define the following linear observable on $\CC$ that vanishes on all fields besides the degree $+1$ component of the $b$-fields:
+\ben
+b_{-1} : f(z,\zbar) \d z^{\tensor 2} \mapsto f(0) . 
+\een 
+This observable is a closed element of degree $-1$ in $\Obs^\q_{\rm string}$. 
+Given any other observable $O \in \Obs^{\q}_{\rm string}$ we can define the observable $b_{-1} \cdot O$ using the symmetric product.
+Denote the derivation $\eta : O \mapsto b_{-1} \cdot O$
+
+\begin{lem} The derivation $\eta$ is degree $-1$ and satisfies 
+\ben
+[\dbar + \hbar \Delta + \{I^\q, -\}, \eta] = \frac{\d}{\d z}
+\een
+\end{lem}
+\begin{proof} \brian{do this}
+\end{proof}
+This shows that the derivation $\frac{\d}{\d z}$ acts trivial up to homotopy on the factorization algebra. 
