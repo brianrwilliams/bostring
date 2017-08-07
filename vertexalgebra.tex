@@ -13,7 +13,7 @@ using machinery developed in~\cite{CG1,LiVA,CDO}.
 The answer we recover is precisely the chiral sector of the usual bosonic string.
 \owen{Is that true?}
 
-\subsection{A reminder on the chiral algebra of the string}
+\subsection{A reminder on the chiral algebra of the string}\label{subsec: string vert}
 
 We provide a brief background on the vertex algebra for the chiral sector of the bosonic string. 
 For a detailed reference we refer the reader to the series of papers \cite{LZ1,LZ2}. 
@@ -53,7 +53,6 @@ There is another grading on $\cV_{\rm string}$ coming from the eigenvalues of th
 In particular, this determines a filtration and we can consider the associated graded ${\rm Gr} \; \cV_{\rm string}$. 
 The conformal weight grading preserves the cohomological grading so that this object still has the structure of a dg vertex algebra. 
 
-
 Note that the cohomology of a dg vertex algebra is an ordinary (graded) vertex algebra. 
 The cohomology of the string vertex algebra is called the {\em BRST cohomology} of the bosonic string. 
 In the remainder of this section we will show how we recover the string vertex algebra from the quantization of the holomorphic bosonic string.
@@ -89,7 +88,7 @@ Let $n = \dim_{\CC}(V)$. Then, there is an isomorphism of vertex algebras
 \ben
 \Vert(\Obs^{\q}_{free})_{\hbar = 2 \pi i} \cong \cV_{bc} \tensor \cV_{\beta\gamma}^{\tensor n} 
 \een 
-where on the left-hand side we have set $\hbar = 2\pi i$. Moreover, the $\hbar \to 0$ limit of $\Obs^\q
+where on the left-hand side we have set $\hbar = 2\pi i$.
 \end{prop}
 
 \subsection{The case of the string}
@@ -126,7 +125,8 @@ then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the 
 D_I = \oint I^q \d z
 \een
 where $I^q = \lim_{L \to 0} I[L]$.
-\item The vertex algebra $\cV_I$ for such an action $\{I[L]\}$ is isomorphic to the vertex algebra~$\cV_{\rm free}$ via the automorphism~$\exp(D_I)$. \brian{Not really, right? Deformations are Maurer-Cartan elements in degree 0 (or 0 depending on convention) and automorphisms are of degree -1 (or 0 depending on convention) Here's what I think is true:}.
+\item \owen{The vertex algebra $\cV_I$ for such an action $\{I[L]\}$ is isomorphic to the vertex algebra~$\cV_{\rm free}$ via the automorphism~$\exp(D_I)$}. \brian{Not really, right? Deformations are Maurer-Cartan elements in degree 0 (or 0 depending on convention) and automorphisms are of degree -1 (or 0 depending on convention) Here's what I think is true:}.
+\brian{EDIT: I checked with Si, and he says that the below assertion is accurate.}
 \item The dg vertex algebra $\cV_I$ for such an action $\{I[L]\}$ has the same underlying graded vertex algebra $\cV_{\rm free}$ but it is equipped with the differential $\oint I^q \d z$. 
 \end{itemize}
 
@@ -137,14 +137,20 @@ Hence we obtain the following.
 
 \begin{prop} 
 Let $\Obs^q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. 
-There is an isomorphism of vertex algebras $\cV_{\rm string} \cong \Vert(\Obs^q_{\rm string})$.
-Moreover, this vertex algebra is isomorphic to the chiral sector of the bosonic string \owen{cite some description}.
+There is an isomorphism of vertex algebras $\cV_{\rm string} \cong \Vert(\Obs^q_{\rm string})_{\hbar = 2 \pi i}$.
+Moreover, this vertex algebra is isomorphic to the chiral sector of the bosonic string as in Section~\ref{subsec: string vert}.
 \end{prop}
 
-\owen{Compare with Lian-Zuckerman. We need to see that our differential on the dg vertex algebra is the BRST operator they write down.}
+The factorization algebra $\Obs^\q_{\rm string}$ is a quantization of the factorization algebra $\Obs^{\cl}_{\rm string}$ of classical observables of the free $bc\beta\gamma$ system.
+We have noted that the classical observables of any theory has the structure of a $P_0$ factorization algebra, and the $\hbar \to 0$ limit of $\Obs^\q_{\rm string}$ is isomorphic to $\Obs^{\cl}_{\rm string}$ as $P_0$ factorization algebras. 
+In this case, the classical factorization algebra $\Obs^{\cl}_{\rm string}$ still has enough structure to determine a vertex algebra $\Vert(\Obs^\cl_{\rm string})$.
+Moreover, the $P_0$ bracket on the classical observables determines the structure of a {\em Poisson vertex algebra} on $\Vert(\Obs^{\cl}_{\rm string})$. 
+
+\begin{cor} In the classical limit, there is an isomorphism of Poisson vertex algebras~$\Vert(\Obs^{\cl}_{\rm string}) \cong {\rm Gr} \; \cV_{\rm string}$.
+\end{cor}
 
 \owen{describe classical observables \& why we get a Poisson vertex algebra}
-
+\brian{Should I say more?}
 
 \brian{Write down vertex algebra from quantization above. Possibly state the relationship to semi-infinite cohomology}
 
