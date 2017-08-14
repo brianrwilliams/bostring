@@ -307,10 +307,10 @@ moreover, it is a smooth function on $\Sigma~\times~\Sigma$.
 We now return to the tadpole diagram and put $P_\ell^L$ on the edge instead of~$P$.
 (We again assume $V = \CC$ for simplicity.)
 The propagator is
-\begin{align*}
+\begin{align}\label{propagator}
 P_\ell^L(z,w) &= \int_{\ell}^L \d t \, \frac{\partial}{\partial (\d \zbar)} \frac{\partial}{\partial z}\left( \frac{1}{4\pi t} e^{-|z-w|^2/4t} (\d z - \d w) \wedge (\d\zbar - \d\overline{w})\right)\\
 &= \int_{\ell}^L \d t \frac{1}{4\pi t} \frac{\zbar - \overline{w}}{2t} e^{-|z-w|^2/4t} (\d z - \d w).
-\end{align*}
+\end{align}
 Note that it is smooth everywhere on~$\CC^2$.
 The integral for the tadpole diagram is 
 \begin{align*}
@@ -579,7 +579,7 @@ Hence the obstruction to satisfying the QME is precisely
 Thus we see that the obstruction is a multiple of~$\hbar$.
 For simplicity, we will divide out that factor and let $Ob_V$ denote the term inside the parenthesis.
 
-Consider the term $\{S_0[L],S_1[L]\}$. 
+Consider the term $\{S_0[L],S_1[L]\}_L$. 
 Diagrammatically, it corresponds to attaching a tree with a $b$ ``root'' to a wheel using an edge labeled by~$K_L$.
 \owen{For some reason this is irrelevant.}
 
@@ -597,6 +597,82 @@ and hence the contraction amounts to taking $\dim_\CC(V)$ copies of the $V = \CC
 In other words, the $\beta\gamma$ wheels contribute a term $\dim_\CC(V) G[L]$ to the obstruction,
 where $G[L]$ is the value for $V = \CC$.
 \owen{Is there a slick way to see that $F[L] = G[L]$?}
+\brian{We want $F[L] = 13 G[L]$, right? The only way I know how to do this is to actually write out the integrals. That's what I'll do below, and you can tell me if it's too long.}
 The interested reader can verify that $F[L]$ is not just zero, 
 so that the obstruction is nontrivial when $\dim_\CC(V) \neq 13$.
 \end{proof}
+
+\brian{Any direct proof I know for showing that the anomaly reduces to a one-loop calculation reduces to an argument in Si's B-twist paper or Kevin's Witten genus.}
+
+\begin{proof} \brian{Here I've already assumed we've reduced the calculation to two wheel diagrams: A) with internal edges labeled by the $bc$ heat kernel and propagator, respectively. B) with internal edges labeled by the $\beta\gamma$ heat kernel and propagator, respecitvely. }
+
+We start with the weight of diagram A. 
+Use coordinates $z,w$ to denote the coordinates at each of the vertices.
+Denote the inputs of the weight by the compactly supported vector fields $f(z) \partial_z$ and $g(w) \d \wbar \partial_w$.
+(Note that the diagram is only nonzero if the total degree of the elements is $+1$.)
+If $c(z) \partial_z$ is another vector field, the action by $f(z) \partial_z$ is given by 
+\ben
+[f(z) \partial_z, c(z) \partial_z] = f(z) \partial_z c(z) \partial_z - c(z) \partial_z f(z) \partial_z .
+\een 
+Thus, the weight of diagram $A$ can be written as the $\ell \to 0$ limit of
+\be
+\begin{array}{ccc}
+\displaystyle
+& & \int_{z,w} f(z) \partial_z P_{\ell}^L(z,w) g(w) \partial_w K_\ell(z,w) \\
+&-& \int_{z,w} \partial_z f(z) P_{\ell}^L(z,w) g(w) \partial_w K_\ell (z,w) \\
+&-& \int_{z,w} f(z) P_\ell^L(z,w) \partial_w g(w) K_\ell (z,w) \\
+&+& \int_{z,w} \partial_z f(z) P_\ell^L(z,w) \partial_w g(w) K_\ell (z,w) .
+\end{array}
+\ee
+We label each line above as I,II, III, IV. 
+
+Using the form of the propagator in (\ref{propagator}) we see that line I is given by
+\ben
+{\rm I} = \frac{1}{(4 \pi)^2} \int_{(z,w) \in \CC \times \CC} \int_{t = \ell}^L f(z) g(w) \frac{1}{\epsilon^2} \frac{1}{t^3} \frac{(\zbar - \wbar)^3}{8} \exp \left(-\frac{1}{4}\left(\frac{1}{\ell} + \frac{1}{t}\right)|z-w|^2 \right)
+\een
+(we are omitting volume factors for simplicity). 
+To evaluate this integral we change variables and apply the Wick expansion, Lemma \ref{lem: wick} to one of the variables of integration. 
+Indeed, introduce $\xi = z -w$, and notice that the integral simplifies to
+\ben
+{\rm I} = \frac{1}{(4 \pi)^2} \int_{w \in \CC} \int_{\xi \in \CC} \int_{t = \ell}^L f(\xi + w) g(w) \frac{1}{\epsilon^2} \frac{1}{t^3} \frac{\Bar{\xi}^3}{8} \exp \exp \left(-\frac{1}{4} \left(\frac{1}{\ell} + \frac{1}{t}\right)| \xi |^2 \right) .
+\een
+Applying Lemma \ref{lem: wick} to the $\xi$-integral we see that this simplifies to
+\ben
+{\rm I} = \frac{1}{4 \pi} \# \int_{w \in \CC} \partial^3_w f(w) g(w) \int_{t = \ell}^L \frac{\ell^2 t}{(\ell + t)^4} + O(\ell)
+\een
+where the terms $O(\ell)$ are of order $\ell$ so are zero in the limit $\ell \to 0$. 
+On the other hand, we can evaluate the remaining $t$-integral and see that in the limit $\ell \to 0$ Line I becomes
+\ben
+\lim_{\ell \to 0} {\rm I} = \frac{1}{4 \pi} \# \frac{1}{12} \int_{w\in \CC} \partial^3_w f(w) g(w) \d^2 w .
+\een 
+
+Similarly, we can evaluate line II. 
+After changing coordinates as in I and performing the Wick type integral we obtain
+\ben
+{\rm II} = \frac{1}{4 \pi} \# \int_{w \in \CC} \partial^3_w f(w) g(w) \int_{t = \ell}^L \frac{\ell t}{(\ell + t)^3} + O(\ell) .
+\een
+Evaluating the remaining $t$ integral and taking $\ell \to 0$ this becomes 
+\ben
+\lim_{\ell \to 0} {\rm II} = \frac{1}{4 \pi} \# \frac{3}{8} \int_{w\in \CC} \partial^3_w f(w) g(w) \d^2 w .
+\een 
+\brian{Is this too much detail, or not enough? I'll wait for your feedback before going further, but the last two integrals are very similar.}
+
+\end{proof}
+
+\brian{***BELOW MAY GO IN APPENDIX***}
+
+We will utilize the following version of Wick expansion to evaluate the integrals below. 
+
+\begin{lem}\label{wick} Let $\Phi$ be a smooth compactly supported function on $\CC$ and suppose $\tau > 0$. 
+Then
+\ben
+\int_{\xi \in \CC} \Phi(\xi) e^{-\tau |\xi|^2/4} \d^2 \xi  = 4 \pi \cdot \tau^{-1} \left(\exp\left(\tau^{-1} \frac{\partial}{\partial \xi} \frac{\partial}{\partial \xi} \Phi\right)_{\xi = 0}\right) .
+\een
+\end{lem}
+
+\brian{Should we prove this?}
+
+
+
+
+
