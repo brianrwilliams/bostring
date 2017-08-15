@@ -13,9 +13,8 @@ the nonlinear $\sigma$-model picks out holomorphic maps from a Riemann surface t
 One then quotients the space of fields (and solutions to the equations of motion) with respect to reparametrization.
 \owen{This description is a bit opaque. We should find a better one.}
 In the usual bosonic string,
-one quotients by diffeomorphisms, which can thus change the metric on the source.
-In our setting,
-we quotient by diffeomorphisms as well, which can thus change the complex structure on the source.
+one quotients by diffeomorphisms and Weyl scalings, which can thus change the metric on the source.
+In our setting, we quotient by biholomorphisms, which act on the complex structure on the source.
 
 In this section we begin by describing our theory in the BV formalism.
 We do not expect the reader to find the action functional immediately clear,
@@ -35,7 +34,6 @@ and let $\langle-,-\rangle_V$ denote the evaluation pairing between $V$ and its 
 Let $\Sigma$ denote a Riemann surface (the source).
 Let $T_\Sigma^{1,0}$ denote the holomorphic tangent bundle on $\Sigma$, 
 let $\langle-,-\rangle_T$ denote the evaluation pairing between $T_\Sigma^{1,0}$ and its vector bundle dual~$T_\Sigma^{1,0*}$. 
-\owen{Correct terminology?}
 These are the key geometric inputs.
 
 In a BV theory, the fields are $\ZZ$-graded;
@@ -63,12 +61,14 @@ For instance, the degree zero $\gamma$ field is a smooth $V$-valued function
 and hence the natural field for the nonlinear $\sigma$-model into~$V$.
 The degree zero $c$ field is a smooth $(0,1)$-form with values in vector field ``in the holomorphic direction,''
 and hence encodes an infinitesimal change of complex structure of~$\Sigma$.
-They thus constitute the obvious fields to introduce for a holomorphic version of the bosonic string.
-The fields a$\beta$ and $b$ are less obvious but appear as ``partners'' (or antifields)
+The degree $-1$ part of $c$ contains the gauge fields of the theories, vector fields. 
+The equations of motion dictate that these vector fields be holomorphic, so we are seeing the infinitesimal version of the symmetry by biholomorphisms we mentioned above.
+These constitute the obvious fields to introduce for a holomorphic version of the bosonic string.
+The fields $\beta$ and $b$ are less obvious but appear as ``partners'' (or antifields)
 whose role is clearest once we have the action functional and hence equations of motion.
 
 The action functional is
-\begin{equation}
+\begin{equation}\label{bosaction}
 S(\gamma,\beta,c,b) = 
 \int_\Sigma \langle \beta, \dbar \gamma \rangle_V 
 + \int_\Sigma \langle b, \dbar c \rangle_T 
@@ -88,8 +88,10 @@ For instance, the equation in $\gamma$ picks out holomorphic maps from $\Sigma$,
 with the $c$-deformed complex structure, to~$V$.
 
 \owen{Add something about how to understand the degrees. E.g., does $b$ ever appear?}
+\brian{Confused by what you mean by ``does b ever appear"? But I've added further comments above about degrees.}
 
 \owen{Add explanation of writing BV theory from ordinary action.}
+\brian{??}
 
 \begin{rmk}
 \label{rmk:bcbg}
@@ -117,7 +119,7 @@ The fields $b,c$ remain the same.
 The degree 0 field $\gamma$ still encodes smooth maps into $X$, but now the degree 1 field is a section of $\Omega^{0,1}(\Sigma, \gamma^*T^{1,0}_X)$.
 Similarly, $\beta$ is now a section of $\Omega^{1,*}(\Sigma, \gamma^*T^{1,0*}_X)$.
 The action is then
-\begin{equation}
+\begin{equation}\label{curved action}
 S(\gamma,\beta,c,b) = 
 \int_\Sigma \langle \beta, \dbar \gamma \rangle_{T_X}
 + \int_\Sigma \langle b, \dbar c \rangle_{T_\Sigma} 
@@ -215,8 +217,6 @@ As we are interested in a string theory, we want to gauge these symmetries.
 In geometric language, we want to think about the quotient stack 
 obtained by taking solutions to the equations of motion and quotienting by these symmetry groups.
 
-\owen{It might be better to explain the first-order description of sigma model before entering into the perturbative \& BV discussion.}
-
 Our focus is perturbative, so that we want to study the behavior of this action near a fixed solution to the equations of motion
 (e.g., the Taylor expansion of the true action near some solution).
 \owen{Might be good here to leverage the derived discussion earlier:
@@ -251,40 +251,85 @@ To summarize, we have the following fields:
 & & \Omega^2(\Sigma ; \Sym^{2}(T^*_\Sigma)) & \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma) .
 \end{array}
 \]
-The BV action functional is then
-\[
-S_{Poly}(\phi,\alpha,X,f) = \int_\Sigma h(\varphi, \Delta_{g_0 + \alpha} \varphi)\, \dvol_{g_0+\alpha} + \text{MORE STUFF}
-\]
-\owen{Finish writing action}
-This situation is quite a bit more complicated than our holomorphic bosonic string,
-but it admits a succinct description in geometric terms \owen{add statement about quotient of mapping stack} 
+The BV action functional is of the form:
+\begin{equation}\label{polyakov bv}
+\begin{array}{lll}
+S^{h}_{Poly}(\varphi,\alpha,X,f) & = & \int_\Sigma h(\varphi, \Delta_{g_0} \varphi)\, \dvol_{g_0} + \sum_{n \geq 1} \frac{1}{n!} \int_{\Sigma} h(\varphi, D_n(\alpha,\ldots,\alpha) \varphi) \dvol_{g_0} \\
+& + & \int_{\Sigma} h(\varphi, X \cdot \varphi) \dvol_{g_0} \\
+& + & S'(X, f, \alpha) 
+\end{array}
+\end{equation}
+Here: $D_n$ are differential operators of the form $D_n : \Gamma(\Sigma , \Sym^2 T\Sigma)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ where ${\rm Diff}^{\leq 2}(\Sigma)$ are order $\leq 2$ differential operators on $\Sigma$, the second line encodes how vector fields act on the maps of the $\sigma$ model, and the term $S'(X, f, \alpha)$ is only a function of the fields $(f, X, \alpha) \in C^\infty(\Sigma)[-1] \oplus {\rm Vect}(\Sigma)[-1] \oplus \Sym^2(T\Sigma)$(and their antifields) whose exact form will not concern us. 
+An explicit formula for $D_n(\alpha,\ldots,\alpha)$ can be derived from the power series expansion of the Laplace-Beltrami operator in terms of the metric. 
+For instance, if we are working locally on $\Sigma = \RR^2$ with the $g_0$ the flat metric, then for $n=1$ the operator $D_1(\alpha)$ is sum of a first order and a second order differential operator:
+\ben
+D_1(\alpha) = \frac{1}{2} \frac{\partial}{\partial x^i} ({\rm tr}(\alpha)) \frac{\partial}{\partial x^i} + \frac{1}{2} {\rm tr} (\alpha) \frac{\partial}{\partial x^i} \frac{\partial}{\partial x^i}  .
+\een
+Here, we use the natural trace map ${\rm tr} : \Gamma(\Sigma , \Sym^2 T\Sigma) \to C^\infty(\Sigma)$ of symmetric $2\times2$ matrices. 
 
-***********
+\begin{claim} In the ``infinite volume limit" $h \to \infty$ the BV action above becomes
+\ben
+S_{Poly}^h \to S(\beta, \gamma, b,c) + \Bar{S}(\Bar{\beta}, \Bar{\gamma}, \Bar{b}, \Bar{c})
+\een
+where $S(\beta, \gamma, b,c)$ is the action functional for the holomorphic bosonic string in Equation (\ref{bosaction}) and $\Bar{S}$ is its anti-holomorphic conjugate. 
+\end{claim}
 
-In this section we start with a description of the classical Polyakov model for the bosonic string as a classical BV theory. 
-This is the ordinary $\sigma$-model of maps $\Sigma \to V$ coupled to a metric on $\Sigma$. 
-More precisely, this is a perturbative model for the Polyakov string, since we only look at deformations of the fixed metric $g_0$. We will show that after a reparametrization of the space of fields that it makes sense to take a certain ``infinite volume limit" as $h \to \infty$. In this limit we will show that the Polyakov model splits into a certain holomorphic theory plus its complex conjugate. The holomorphic theory is what we call the {\em holomorphic bosonic string}.
-
-\begin{rmk} 
-A similar analysis has appeared in \cite{GGW} where one does not consider deformations of the metric: the infinite volume limit of the bare $\sigma$-model of maps $\Sigma \to V$ splits into the free $\beta\gamma$ system plus its complex conjugate. In the case of the string we find an interacting theory that can be thought of as a deformation of a $\beta\gamma$ system. 
+\begin{rmk} The action functional $\Bar{S}$ is similar to $S$ where the fields $\gamma,\beta,b,c$ are replaced by sections in the the relevant conjugate bundles. 
+For example $\beta \in \Omega^{1,*}(\Sigma)$ becomes $\Bar{\beta} \in \Omega^{*,1} (\Sigma)$. 
+Moreover, the operator $\dbar$ is replaced by the holomorphic Dolbeault operator $\partial$. 
 \end{rmk}
 
-\owen{Give explanation of what this section will be about: writing down a holomorphic theory that appears as the chiral part of a large volume limit of the usual bosonic string. We should advertise that we start with conventional ways of writing a theory and explain the algorithm by which one extracts a BV action.}
+\begin{proof}[Outline of proof] There are two things that may cause alarm in the statement of the claim. First, the space of fields of the Polyakov string (in the BV language) and those of the holomorphic bosonic string to not match up. Second, the limit $h \to \infty$ is naively ill-defined looking at the action functional (\ref{polyakov bv}). 
+It turns out that these two issues are each others solutions. 
 
-
-We recall the most familiar form of the classical Polyakov string and show how to write it down in terms of a classical BV theory. The fields of the Polyakov model consist of a $C^\infty$ function $\varphi : \Sigma \to V$ and a metric $g$ on $\Sigma$. Since we are doing perturbation theory, we assume that $g$ is infinitesimally close to the fixed metric $g_0$ in the space of all metrics on $\Sigma$. There is an identification of the tangent space of the space of all metrics $T_{[g_0]} {\rm Met}(\Sigma) \cong \Sym^2(T_\Sigma)$. Thus, we can take the metric $g$ to be of the form $g = g_0 + \alpha$ where $\alpha \in \Sym^2(T_\Sigma)$. \owen{Should we include comments about "formal (derived) spaces"?}
- In the definition of a classical BV theory we must prescribe the data of a $(-1)$-shifted symplectic pairing on the BRST complex together with an interaction which is a local functional on the complex. The pairing can be described as follows. If $\varphi \in \Omega^0(\Sigma ; V)$ and $\psi \in \Omega^2(\Sigma ; V)$ then
+We focus first on the first term in the first line of (\ref{polyakov bv}). 
+Notice that this is simply the action functional for the $\sigma$ model of maps from $(\Sigma, g_0)$ to $(V, h)$. 
+It is shown in Appendix ?? of \cite{ggw} how to make sense of the infinite volume limit of this theory. 
+The idea is to rewrite this theory in the {\em first order formalism}.
+This amounts to introducing a new field $B \in \Omega^1(\Sigma) \tensor V^\vee$ and action functional 
 \ben
-\<\varphi, \psi \> = \int h(\varphi, \psi) .
-\een 
-The fields $(X, f) \in \Vect(\Sigma) \oplus C^\infty(\Sigma)$ pair with the conjugate fields $(X', f') \in  \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma)$ via
-\ben
-\<(X,f), (X',f')\> = \int \ev(X, X') + \int f f' 
+\int_\Sigma {\rm ev}_V(B, \d \varphi) - \frac{1}{2} \int_\Sigma h^\vee(B, \star B)
 \een
-where $\ev$ denotes the evaluation pairing between the tangent and cotangent bundles. 
+where: ${\rm ev}_V$ represents the evaluation pairing between $V$ and its dual, $\star$ is the Hodge star operator for the metric $g_0$, and $h^\vee$ denotes the dual metric on $V$. 
+This action functional is equivalent to the original $\sigma$ model. 
+Moreover, the limit $h \to \infty \iff h^\vee \to 0$ amounts to dropping the last term. 
+It is shown that the remaining theory splits as the free $\beta\gamma$ system with target $V$ plus its anti-holomorphic conjugate. 
 
-\brian{Start with Polyakov action and explain how the chiral theory emerges in the infinite volume limit. There should also be an explanation for the theory we write down as a twist of 2d supergravity (in the same way that CDO's are a twist of a $(0,2)$ theory), not sure if you want to get into that.}
-\owen{I don't know anything about the supergravity thing you mention. It sounds interesting.}
+For the remaining part of the action one shows that in this infinite volume limit, only the $n=1$ term in the expansion of $D_n(\alpha,\ldots,\alpha)$ survives. 
+Furthermore, we can use the metric $g_0$ to define a projection map
+\ben
+\Sym^2(T\Sigma) \to \Omega^{0,1}(\Sigma ; T^{1,0}\Sigma) \oplus  ...
+\een
+
+\end{proof}
+
+
+%***********
+%
+%In this section we start with a description of the classical Polyakov model for the bosonic string as a classical BV theory. 
+%This is the ordinary $\sigma$-model of maps $\Sigma \to V$ coupled to a metric on $\Sigma$. 
+%More precisely, this is a perturbative model for the Polyakov string, since we only look at deformations of the fixed metric $g_0$. We will show that after a reparametrization of the space of fields that it makes sense to take a certain ``infinite volume limit" as $h \to \infty$. In this limit we will show that the Polyakov model splits into a certain holomorphic theory plus its complex conjugate. The holomorphic theory is what we call the {\em holomorphic bosonic string}.
+%
+%\begin{rmk} 
+%A similar analysis has appeared in \cite{GGW} where one does not consider deformations of the metric: the infinite volume limit of the bare $\sigma$-model of maps $\Sigma \to V$ splits into the free $\beta\gamma$ system plus its complex conjugate. In the case of the string we find an interacting theory that can be thought of as a deformation of a $\beta\gamma$ system. 
+%\end{rmk}
+%
+%\owen{Give explanation of what this section will be about: writing down a holomorphic theory that appears as the chiral part of a large volume limit of the usual bosonic string. We should advertise that we start with conventional ways of writing a theory and explain the algorithm by which one extracts a BV action.}
+%
+%
+%We recall the most familiar form of the classical Polyakov string and show how to write it down in terms of a classical BV theory. The fields of the Polyakov model consist of a $C^\infty$ function $\varphi : \Sigma \to V$ and a metric $g$ on $\Sigma$. Since we are doing perturbation theory, we assume that $g$ is infinitesimally close to the fixed metric $g_0$ in the space of all metrics on $\Sigma$. There is an identification of the tangent space of the space of all metrics $T_{[g_0]} {\rm Met}(\Sigma) \cong \Sym^2(T_\Sigma)$. Thus, we can take the metric $g$ to be of the form $g = g_0 + \alpha$ where $\alpha \in \Sym^2(T_\Sigma)$. \owen{Should we include comments about "formal (derived) spaces"?}
+% In the definition of a classical BV theory we must prescribe the data of a $(-1)$-shifted symplectic pairing on the BRST complex together with an interaction which is a local functional on the complex. The pairing can be described as follows. If $\varphi \in \Omega^0(\Sigma ; V)$ and $\psi \in \Omega^2(\Sigma ; V)$ then
+%\ben
+%\<\varphi, \psi \> = \int h(\varphi, \psi) .
+%\een 
+%The fields $(X, f) \in \Vect(\Sigma) \oplus C^\infty(\Sigma)$ pair with the conjugate fields $(X', f') \in  \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma)$ via
+%\ben
+%\<(X,f), (X',f')\> = \int \ev(X, X') + \int f f' 
+%\een
+%where $\ev$ denotes the evaluation pairing between the tangent and cotangent bundles. 
+%
+%\brian{Start with Polyakov action and explain how the chiral theory emerges in the infinite volume limit. There should also be an explanation for the theory we write down as a twist of 2d supergravity (in the same way that CDO's are a twist of a $(0,2)$ theory), not sure if you want to get into that.}
+%\owen{I don't know anything about the supergravity thing you mention. It sounds interesting.}
 %
 %\owen{When we write out the whole BV shebang, we should point out how it relates to the usual physics description. Namely, the physicists do the following:
 %\begin{itemize}
