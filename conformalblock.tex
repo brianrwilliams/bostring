@@ -119,12 +119,16 @@ c_1\left(H^*\left(\Obs^\q_{free}(\Sigma)\right)\right) =
 We have already seen that the holomorphic string {\it on a disk} admits a BV quantization if and only if the target is a complex vector space of dimension 13.
 Here we will explain why this anomaly calculation is actually enough to show the existence of a quantization on an {\it arbitrary} Riemann surface. 
 
-It is clear that \owen{I'm rarely a fan of this phrase \dots} in the case of a flat target that the only anomaly is purely a functional of the $c$-fields (holomorphic vector fields on $\Sigma$).
-Hence, the part of the deformation complex that contains the anomaly is
-\ben
-\Omega^{*}_\Sigma \tensor_{D_\Sigma} \cred^*(J \Omega^{0,*}(\Sigma ; T_\Sigma)) [2] .
-\een
-Now Proposition 5.3 of \ref{bw} shows that this sheaf of complexes is quasi-isomorphic to the constant sheaf $\CC_\Sigma[-1]$ concentrated in degree $+1$. 
+It is clear that \owen{I'm rarely a fan of this phrase \dots} in the case of a flat target that the only anomaly is purely a functional of the $c$ fields,
+\owen{Could I write ``Our diagrammatic arguments showed that only wheels with $c$ legs appear,
+and these arguments did not depend on the choice of $\Sigma$. Hence the anomaly will be purely a functional on the $c$ fields.''}
+and so we only need to understand the component of the deformation complex that consists of local functionals depending just on the $c$ fields.
+By arguments analogous to those in Section \ref{sec: moduli}, 
+when $\Sigma$ is the disk,
+this component is quasi-isomorphic to $\C^*_{\Lie,\red}(W_1)[2]$,
+whose cohomology is $\CC$ concentrated in degree 1.
+More generally, the deformation complex is a sheaf of cochain complexes on $\Sigma$, 
+and Proposition 5.3 of \ref{bw} shows that this sheaf of complexes is quasi-isomorphic to the constant sheaf $\CC_\Sigma[-1]$ concentrated in degree $+1$. 
 A main result of BV quantization \cite{CosBook} \owen{maybe give precise reference} is that anomalies are {\em local}: the anomaly computed on an open set $U \subset \Sigma$ is equal to the anomaly of the theory on $\Sigma$ restricted to $U$. 
 In our case, the anomaly on some Riemann surface $\Sigma$ must match with the anomaly we have already computed if we take $U$ to be a disk in $\Sigma$.
 This global anomaly is a 1-cocycle for the derived global sections of the shifted constant sheaf, 
