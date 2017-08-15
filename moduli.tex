@@ -6,16 +6,50 @@
 
 \brian{Might be good to hint at the curved sigma model here.}
 
-The local deformation complex is the complex of local functionals on the full BV complex describing the classical field theory. 
-In this section, we will provide an interpretation of this complex of local functionals in terms of Gelfand-Fuks cohomology. 
-Along the way we will see how the usual backgrounds for the bosonic string (a target metric, dilaton term, etc.) appear as elements in this complex of local functionals and hence as deformations of the classical action. 
+Whenever one is studying a theory,
+it is helpful to understand how it can be modified 
+and how features of the theory change as one adjusts natural parameters of the theory,
+such as coupling constants of the action functional.
+In other words, one wants to understand the theory in the moduli space of classical theories.
 
-We have already seen that the holomorphic bosonic string is the shifted cotangent bundle on the tangent complex of ${\rm Maps}_{\dbar}(--, V)$ as a bundle over the moduli of Riemann surfaces. 
-Consider the following action by the group $\CC^\times_{\rm cot} = \CC^\times$ on the theory.
-The base of the cotangent bundle, the tangent complex of ${\rm Maps}_{\dbar}(--, V)$ has weight $0$, and the cotangent fiber has weight $+1$. 
-That is, this action simply comes from rescaling the cotangent fiber.
-Note that the classical action functional is weight one for this $\CC^\times_{\rm cot}$-action. 
-Thus classical deformations of the holomorphic bosonic string will consist of weight one local functionals in the deformation complex.
+In the BV formalism, because we are working homologically, this moduli space is derived,
+and there is a tangent complex to our theory in the moduli of classical BV theories.
+We call it the {\em deformation complex} of the theory.
+A systematic discussion can be found in Chapter 5 of~\cite{CosBook}.
+
+As a gloss, the underlying graded vector space of this deformation complex consists of the local functionals on the fields, i.e., Lagrangian densities. 
+(Note that we allow local functionals of arbitrary cohomological degree.) 
+There is also a shifted Lie bracket $\{-,-\}$, 
+which arises from the pairing $\int_\Sigma \langle-,-\rangle$ on the fields.
+It is, in essence, the shifted Poisson bracket corresponding to that shifted symplectic pairing on the fields.
+The differential on the local functionals is then $\{S,?\}$, where $S$ is the classical action. 
+All together, the deformation complex forms a shifted dg Lie algebra. 
+Observe that if we find a degree zero element $I$ such that
+\[0=\{S +I,S +I\}=2\{S,I\}+\{I,I\},
+\]then $I$ is a shifted Maurer-Cartan element and 
+hence determines a new classical BV theory whose action functional is $S + I$. 
+In particular, degree 0 cocycles determine first-order deformations of the classical BV theory. Cocycles in degree -1 encode local symmetries of the classical theory; 
+and obstructions to satisfying the quantum master equation end up being degree 1 cocycles.
+
+In this section, we will explain why the deformation complex of the holomorphic string 
+can be expressed in terms of Gelfand-Fuks cohomology. 
+Along the way we will see how the usual backgrounds for the bosonic string (a target metric, dilaton term, and so on) appear as elements in this complex of local functionals and hence as deformations of the classical action. 
+
+\subsection{}
+
+We have already seen how to think of the holomorphic bosonic string theory 
+as corresponding to $\TT^*[-1]{\rm Maps}_{\dbar}(-, V)$, 
+as a bundle over the moduli of Riemann surfaces. 
+There is a natural action of the group $ \CC^\times$ on this space
+by scaling the shifted cotangent fibers,
+and we will use the notation $\CC^\times_{\rm cot}$ to indicate this appearance of the multiplicative group.
+
+This group action can be seen on the level of the field theory as follows: 
+we give the $\gamma$ and $c$ fields---the base of the cotangent bundle---weight $0$ and give the $\beta$ and $b$ fields---the cotangent fiber---weight~$1$. 
+In these terms, the classical action functional is weight 1. 
+Thus, we focus on weight 1 deformations of the holomorphic bosonic string,
+as we are interested in local functionals of the same kind.
+That means we consider the subcomplex of weight 1 local functionals inside the deformation complex.
 
 The weight of the parameter $\hbar$ is also one with respect to the scaling by $\CC^\times_{\rm cot}$.
 Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.
@@ -39,8 +73,6 @@ On a Riemann surface $\Sigma$ the $\CC^\times$ invariant local functionals are o
 \end{prop}
 
 \subsection{}
-
-\owen{Every subsection should have a label or we should change how the table of contents works to only show section headings.}
 
 The jets at $0 \in \CC$ of local Lie algebra $\Omega^{0,*}(\CC ; T^{1,0} \ltimes (V[-1] \oplus \d z V^*[-1] \oplus \d z T^{1,0 *})$ is quasi-isomorphic to the Lie algebra
 \be\label{jet lie}
