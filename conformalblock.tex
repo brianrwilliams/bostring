@@ -148,42 +148,49 @@ H^0(\Sigma) \tensor \Omega^1(V) \oplus H^1(\Sigma) \tensor \Omega^2_{cl}(V) .
 Thus, the space of deformations is given by a space of continuous parameters and hence will not change the class of the line bundle of global observables. 
 In conclusion, we are free to choose any one-loop quantization; this will not affect the cohomology of the global observables. 
 
-\subsection{}
+\subsection{Global observables for the holomorphic string}
 
-Now, let us consider the global observables of the bosonic string $\Obs^\q(\Sigma)$. 
-There is a spectral sequence converging to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_2$ page given by the cohomology of the global observables of the $bc\beta \gamma$ system which we have already computed:
+Now, let us consider the global observables of the holomorphic string $\Obs^\q(\Sigma)$. 
+There is a spectral sequence \owen{you have to say what it is!} converging to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_2$ page given by the cohomology of the global observables of the $bc\beta \gamma$ system which we have already computed:
 \bestar
 E_2 & \cong & \det\left(H^*(\Sigma ; \cT_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
 & \cong & \det \left(H^1(\Sigma ; \cT_\Sigma) \right) \tensor \det \left(H^0(\Sigma ; \cT_\Sigma)\right)^{-1} \tensor \det \left(H^0(\Sigma ; K_{\Sigma}) \right)^{-13}
 \eestar
 where we have used the fact that $H^0(\Sigma ; \cO) \cong \CC$ for any $\Sigma$. 
+It is clear that the spectral sequence degenerates at this page.
+\owen{Don't say "it is clear": just say why! It's not much more writing.}
 
 Let $\Sigma_{g}$ be a surface of genus $g$. Then for $g=1$ the above simplifies to
 \ben
 \det \left(H^1(\Sigma_1 ; \cT_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-14} .
 \een 
+\owen{You can simplify further: these are trivial lines!}
 If $g \geq 2$ one has
 \ben
 \det \left(H^1(\Sigma_1 ; \cT_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-13} .
 \een
-It is clear that the spectral sequence degenerates at this page. Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
+\owen{Again, I think you can trivialize further and identify these with a line bundle on the moduli space of Riemann surfaces.}
+Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
 
 \section{The string partition function on an elliptic curve}
 
 We will evaluate the partition function of the theory on an elliptic curve. 
-For $\tau \in \HH$, the upper half plane, we can write an elliptic curve as a quotient of $\CC$ by the lattice $\ZZ + \tau \ZZ$
-\ben
-E_\tau = \CC / (\ZZ + \tau \ZZ) .
-\een 
-Let $\d^2 z = \d z \d \zbar$ be the volume form on $\CC$ which descends to one on $E_\tau$ that we denote by the same name. 
+Every $\tau \in \HH$, the upper half plane, 
+determines an elliptic curve as a quotient $E_\tau = \CC / (\ZZ + \tau \ZZ)$.
+Let $\d^2 z = \d z \d \zbar$ be the standard volume form on $\CC$, 
+which descends to one on $E_\tau$; 
+we denote it by the same name. 
 
-We have already discussed the gauge fixing operator and constructed the heat kernel that regularizes the operator $\dbar^{-1}$ on $\CC$. 
-We can make the same choice of gauge fixing operator, namely $\dbar^*$, on the elliptic curve $E_\tau$ and hence we obtain a heat kernel for the operator $e^{-t D^{E_\tau}}$ where $D^{E_\tau}$ is the commutator $[\dbar, \dbar^*] = \frac{1}{2} \Delta$ on $E_\tau$. 
-Explicitly, the heat kernel of the operator $e^{-t D^{E_\tau}}$ on the elliptic curve $E_\tau$ pulled back to the universal cover $\CC$ along the $\CC \to E_\tau$ is of the form
+This presentation of an elliptic curve allows us to take advantage of constructions we've introduced over $\CC$.
+For instance, we have already discussed the gauge fixing operator $\dbar^*$ and constructed the heat kernel on $\CC$. 
+We can make the same choice of gauge fixing operator on $E_\tau$ and hence obtain a heat kernel for the operator $e^{-t D^{E_\tau}}$, 
+where $D^{E_\tau}$ is the commutator $[\dbar, \dbar^*] = \frac{1}{2} \Delta$ on $E_\tau$. 
+This heat kernel admits a nice description when pulled back from the elliptic curve $E_\tau$ to its universal cover $\CC$,
+namely it becomes the sum over lattice points
 \ben 
 K^{E_\tau}_t (z,w) = \sum_{\lambda \in \ZZ + \tau \ZZ} \frac{1}{2\pi t} e^{-|z-w + \lambda|^2 / 2 t} (\d z - \d w) (\d \zbar - \d \wbar ) .
 \een
-From $K_t^{E_\tau}$ we obtain the propagator $P_{\ell < L}^{E_\tau} = \dbar^* \int_{\ell}^L e^{-t D^{E_\tau}} \d t$ just as above. 
+From $K_t^{E_\tau}$ we obtain the propagator $P_{\ell < L}^{E_\tau} = \dbar^* \int_{\ell}^L e^{-t D^{E_\tau}} \d t$ as earlier. 
 
 This propagator regularizes the operator $\dbar^{-1}$ on $E_\tau$. 
 The full propagator of the holomorphic string on $E_\tau$ has one component coming from the pairing between the fields $\beta$ and $\gamma$ and another component coming from the pairing between the fields $b$ and $c$. 
