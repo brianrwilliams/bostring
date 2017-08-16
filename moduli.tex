@@ -40,7 +40,7 @@ Along the way we will see how the usual backgrounds for the bosonic string (a ta
 \subsection{}
 
 We have already seen how to think of the holomorphic bosonic string theory 
-as corresponding to $\TT^*[-1]{\rm Maps}_{\dbar}(-, V)$, 
+as corresponding to the shifted cotangent bundle $\TT^*[-1]{\rm Maps}_{\dbar}(-, V)$, 
 as a bundle over the moduli of Riemann surfaces. 
 There is a natural action of the group $ \CC^\times$ on this space
 by scaling the shifted cotangent fibers,
@@ -50,8 +50,7 @@ This group action can be seen on the level of the field theory as follows:
 we give the $\gamma$ and $c$ fields---the base of the cotangent bundle---weight $0$ and give the $\beta$ and $b$ fields---the cotangent fiber---weight~$1$. 
 In these terms, the classical action functional is weight $1$. 
 We will focus on both weight $0$ and weight $1$ deformations of the holomorphic bosonic string.
-Weight $1$ local functionals correspond to deformations of the classical theory. 
-We will see how to interpret these as the existence of various {\em backgrounds} of the bosonic string. 
+Weight $1$ local functionals correspond to deformations of the classical theory inside of the space of cotangent theories.
 
 We interpret the weight $0$ deformations as follows. 
 Notice that the weight of the parameter $\hbar$ is also $1$ with respect to the scaling by $\CC^\times_{\rm cot}$.
@@ -63,22 +62,7 @@ On a Riemann surface $\Sigma$ the $\CC^\times_{\rm cot}$ weight $0$ local functi
 \een
 We are concerned with the case that $\Sigma = \CC$ and we restrict ourselves to studying {\em translation invariant} local functionals. 
 
-The main result of this section is the following:
-
-\begin{prop} There are $\GL(V)$-equivariant quasi-isomorphisms of the translation invariant deformations
-\begin{itemize}
-\item[(0)] of weight $0$:
-\ben
-\left(\Oloc(\cE)^{(0)}, \{S,-\}\right)^{\CC} \simeq \Omega^2_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)[-1] 
-\een
-\item[(1)] and of weight $1$:
-\ben 
-\left(\Oloc(\cE)^{(1)} , \{S,-\}\right)^\CC \simeq ?? .
-\een
-\end{itemize}
-\end{prop}
-
-We have already mentioned that we want to study Lagrangian densities, which are functions on jets of fields. 
+We have already mentioned that Lagrangian densities are functions on jets of fields integrated against a density. 
 The simplest case is to consider functions on jets at a point, which is sufficient to understand a translation invariant Lagrangian densities. 
 Hence, for translation invariant local functionals on $\CC$ it suffices to look at functionals of the jet at $0 \in \CC$ of the fields. 
 For instance, if we look at the jet at zero of the complex of sheaves $\Omega^{0,*}(\CC ; V)$ we obtain the complex
@@ -88,6 +72,22 @@ For instance, if we look at the jet at zero of the complex of sheaves $\Omega^{0
 where $\dbar$ is the formal Dolbeault differential. 
 By the Poincar\'{e} lemma for the $\dbar$ operator this complex is quasi-isomorphic to $V[[z]]$ (concentrated in degree zero). 
 Similarly, the jet at zero of the complex of sheaves $\Omega^{0,*}(\CC ; T^{1,0}_\CC)$ is quasi-isomorphic, as dg Lie algebras, to the Lie algebra of formal vector fields in one variable ${\rm W}_1$.
+
+The main result of this section is the following:
+
+\begin{prop}\label{prop: def complex} There are $\GL(V)$-equivariant quasi-isomorphisms of the translation invariant deformations
+\begin{itemize}
+\item[(0)] of weight $0$:
+\ben
+\left(\Oloc(\cE)^{(0)}, \{S,-\}\right)^{\CC} \simeq \CC[-1] \oplus \Omega^2_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)[-1] 
+\een
+\item[(1)] and of weight $1$:
+\ben 
+\left(\Oloc(\cE)^{(1)} , \{S,-\}\right)^\CC \simeq T_V [1] .
+\een
+\end{itemize}
+\end{prop}
+
 
 \subsection{}
 
@@ -167,13 +167,42 @@ which, in turn, is identified with $\Omega^{2}_{cl}(V)[1] \oplus \Omega^1(V) \op
 
 The $\CC^\times_{\rm cot}$-weight one part of the Lie algebra (\ref{jet Lie}) is $\d z V^\vee [[z]] [-1] \oplus \d z \hOmega^1_{1} [-2]$.
 
-A totally analogous calculation as in the weight zero case yields the following.
+A totally analogous calculation as in the weight zero case yields the following. 
 
 \begin{prop} There is a $\GL(V)$-equivariant quasi-isomorphism
 \ben
-\clie^*\left(W_1 ; \Sym \left(V [[z]]\right)^\vee \tensor (\d z V^*[[z]] \oplus \hOmega^{1\tensor 2}_1[-1])^\vee \right) \simeq T_V [-1] \oplus T_V [-2] 
+\clie^*\left(W_1 ; \Sym \left(V [[z]]\right)^\vee \tensor (\d z V^*[[z]] \oplus \hOmega^{1\tensor 2}_1[-1])^\vee \right) \simeq T_V [-1]
 \een
-where $T_V$ denotes the adjoint representation. 
+where $T_V$ denotes the adjoint representation which as a vector space is $T_V = \Sym(V^*) \tensor V$. 
 \end{prop}
+
+This result implies the second part of Proposition \ref{prop: def complex}. 
+
+\subsubsection{Interpretation as string backgrounds}
+
+Since $V$ is flat we will see that all such deformations will be trivializable. 
+Note that this trivializations will {\em not} be compatible with $\GL(V)$ (or, in particular general diffeomorphisms of the target). 
+Thus, these deformations are relevant for the case of a curved target and we can give an interpretation of them in terms of the usual perspective of {\em string backgrounds}. 
+
+We have already mentioned that we should think of the $\CC^\times_{\rm cot}$ weight $1$ local functionals as deformations of the classical theory as a cotangent theory.
+The cohomological degree zero deformations of the weight one deformations is $H^1(V ; T_V)$. 
+Given any such element $\mu \in H^1(V ; T_V)$ we can consider the following local functional
+\ben
+\int_\Sigma \<\beta, \mu(\gamma)\>_V .
+\een 
+The element $\mu$ determines a deformation of the complex structure of $V$, and we have prescribed an action functional encoding this deformation. 
+We propose that this an appearance of the ordinary curved background in bosonic string theory from the perspective of the holomorphic model we work with.
+
+There are interesting deformations that go outside of the world of cotangent theories. 
+Consider the cohomological degree zero part of the weight 0 complex. 
+There is a term of the form $H^1(V ; \Omega^2_{cl}(V))$.
+It is shown in Part 2 Section 8.5 of \cite{ggw} how closed holomorphic two-forms determine local functionals of the $\beta\gamma$ system with curved target. 
+A sketch of this construction goes as follows.
+Locally we can write a closed holomorphic 2-form as $\d \theta$ for some holomorphic one-form $\theta \in \Omega^1(V)$. 
+If $\gamma : \Sigma \to V$ is a map of the $\sigma$-model there is an induced map (when $\gamma$ satisfies the equations of motion) $\gamma^* : \Omega^1(V) \to \Omega^1(\Sigma)$. 
+We can then integrate $\gamma^* \theta$ along any closed cycle $C$ in $\Sigma$ and one should think of this as a residue along $C$. 
+In \cite{ggw} we write down a local functional that realizes this residue, and one can show that it only depends on the corresponding class in $H^1(V ; \Omega^2_{cl}(V))$. 
+We posit that this is the appearance of the $B$-field deformation of the ordinary bosonic string. 
+
 
 
