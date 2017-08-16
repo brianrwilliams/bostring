@@ -1,4 +1,4 @@
-\section{Global sections of the factorization algebra} 
+\section{The holomorphic string on closed Riemann surfaces} 
 
 %First, consider the elliptic complex
 %\ben
@@ -89,6 +89,7 @@ as it encodes the de Rham complex on the formal quotient stack $B\fg = \ast/\fg$
 
 The computation here works for any Riemann surface $\Sigma$ and, indeed, for any family of Riemann surfaces.
 Hence it implies that the global observables of the free $bc\beta\gamma$ system determine a determinant line bundle on the moduli $\cM$ of Riemann surfaces.
+\owen{We refer to this moduli space several times in the text, so perhaps we should give it a notation. Let's discuss what to use.}
 
 We can work out the first Chern class of this determinant line bundle using the Grothendieck-Riemann-Roch theorem as follows.
 Consider the universal Riemann surface $\pi \colon C \to \cM$ over the moduli space, 
@@ -114,7 +115,7 @@ c_1\left(H^*\left(\Obs^\q_{free}(\Sigma)\right)\right) =
 
 \owen{It would be good here to point out the GRR argument for identifying the first Chern class of this determinant line bundle. We can then point out that it resonates with our computation on the formal disk and give a reminder that this is a manifestation of ``Virasoro uniformization.'' This then leads into the string case: the holomorphic vector fields (rather the free $bc$ system) also contribute a determinant line (we should include that computation) and we can ask when those determinant lines tensor to a trivial line. Note that deforming the action from free $bc\beta\gamma$ system to holomorphic bosonic string doesn't affect the line bundles, since those are continuous parameters and Chern classes are discrete.}
 
-\subsection{The anomaly and the deformation complex on a Riemann surface}
+\subsection{The anomaly and moduli of quantizations on an arbitrary Riemann surface}
 
 We have already seen that the holomorphic string {\it on a disk} admits a BV quantization if and only if the target is a complex vector space of dimension 13.
 Here we will explain why this anomaly calculation is actually enough to show the existence of a quantization on an {\it arbitrary} Riemann surface. 
@@ -139,14 +140,23 @@ But this is precisely the context in which we computed the anomaly in Section~\r
 so we know the anomaly is simply the dimension of the target vector space.
 Thus, a quantization of the holomorphic string exists on any Riemann surface provided $\dim_{\CC}(V) = 13$. 
 
-Now we turn to the moduli of theories.
-Indeed, by the calculation in Section \ref{sec: moduli}, 
-we see that \owen{this phrase is really unwieldy} the space of deformations for quantizations at one loop are a torsor for the vector space
+Now we ask how many such quantizations are possible,
+i.e., what is the moduli of theories.
+By the calculation in Section \ref{sec: moduli}, 
+we know that, up to BV equivalence, 
+the possible one-loop terms in the quantized action functional are parametrized by
 \ben
-H^0(\Sigma) \tensor \Omega^1(V) \oplus H^1(\Sigma) \tensor \Omega^2_{cl}(V) .
+H^0(\Sigma) \tensor \Omega^1(V) \oplus H^1(\Sigma) \tensor \Omega^2_{cl}(V).
 \een 
-Thus, the space of deformations is given by a space of continuous parameters and hence will not change the class of the line bundle of global observables. 
-In conclusion, we are free to choose any one-loop quantization; this will not affect the cohomology of the global observables. 
+(That is, these vector spaces are the first cohomology group of the relevant deformation complex.)
+This space of deformations corresponds to continuous parameters we can vary in the action functional \owen{such as [now we spell out what they are]}. 
+As the isomorphism classes of line bundles form a discrete set, 
+varying these continuous parameters will not change the class of the line bundle of global observables. 
+In conclusion, no matter what one-loop quantization we choose, 
+the cohomology of the global observables will be the same.
+\owen{On the other hand, it does affect the flat connection on this line bundle, aka partition function. Should we mention that here?} 
+
+\owen{It might be worth noting that the second direct summand is invisible except in genus $>0$, but they are relevant if you're trying to define a theory that makes sense on all Riemann surfaces.}
 
 \subsection{Global observables for the holomorphic string}
 
@@ -159,6 +169,8 @@ E_2 & \cong & \det\left(H^*(\Sigma ; \cT_\Sigma[1])\right) \tensor \det \left(H^
 where we have used the fact that $H^0(\Sigma ; \cO) \cong \CC$ for any $\Sigma$. 
 It is clear that the spectral sequence degenerates at this page.
 \owen{Don't say "it is clear": just say why! It's not much more writing.}
+
+\owen{We should cite Witten, since that's why you're using this notation. We could also unpack what these lines are in terms of the "central charge" (meaning what power we get of the canonical line on the moduli of Riemann surfaces.}
 
 Let $\Sigma_{g}$ be a surface of genus $g$. Then for $g=1$ the above simplifies to
 \ben
