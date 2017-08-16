@@ -1,4 +1,5 @@
 \section{Deformations of the theory and string backgrounds}
+\label{sec: moduli}
 
 \owen{Maybe the Gelfand-Fuk discussion can be anticipated in Section 1? I think versions of it are easy to motivate: ``}
 
@@ -48,15 +49,19 @@ and we will use the notation $\CC^\times_{\rm cot}$ to indicate this appearance 
 
 This group action can be seen on the level of the field theory as follows: 
 we give the $\gamma$ and $c$ fields---the base of the cotangent bundle---weight $0$ and give the $\beta$ and $b$ fields---the cotangent fiber---weight~$1$. 
-In these terms, the classical action functional is weight $1$. 
-We will focus on both weight $0$ and weight $1$ deformations of the holomorphic bosonic string.
-Weight $1$ local functionals correspond to deformations of the classical theory inside of the space of cotangent theories.
+Note that this implies that the pairing $\langle-,-\rangle$ on fields thus has weight -1 
+\owen{I'm kind of confused here: I'd hoped that the BV bracket has weight -1 so that $\{S,-\}$ has overall weight 0.}
+\brian{I think this weight is preserved by duals. That is, both \<-,-\> and \{-,-\} have weight -1. So we're OK.}
+In these terms, the classical action functional is weight 1. 
+Thus, we focus on weight 1 deformations of the holomorphic bosonic string,
+as we are interested in local functionals of the same kind.
+That means we consider the subcomplex of weight 1 local functionals inside the deformation complex.
 
-We interpret the weight $0$ deformations as follows. 
-Notice that the weight of the parameter $\hbar$ is also $1$ with respect to the scaling by $\CC^\times_{\rm cot}$.
-Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.\brian{I want to cite BV laplacian and quantum differential here}
+\owen{I think we should explain this choice: it's because we want the overall differential to have weight zero, and $\Delta$ should have weight $-1$.}
+The weight of the parameter $\hbar$ is also one with respect to the scaling by $\CC^\times_{\rm cot}$.
+Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.
 Put simply, these are local functionals that only depend on the base of the shifted cotangent bundle. 
-On a Riemann surface $\Sigma$ the $\CC^\times_{\rm cot}$ weight $0$ local functionals are of the form
+On a Riemann surface $\Sigma$ the $\CC^\times_{\rm cot}$-invariant local functionals are of the form
 \ben
 \left(\Oloc\left(\Omega^{0,*}(\Sigma, V) \oplus \Omega^{0,*}(\Sigma, T^{1,0})[1] \Omega^{1,*}(\Sigma ; V) \oplus \Omega^{1,*}(\Sigma, T^{1,0*})[-1] \right), \{S, -\}\right) .
 \een
@@ -88,6 +93,9 @@ The main result of this section is the following:
 \end{itemize}
 \end{prop}
 
+\owen{At the moment, I find the discussion above a bit convoluted. Let's discuss how to disentangle.}
+
+\owen{One option is to rearrange the order of this whole section. It's natural to talk first just about weight 1, since that is strictly classical. Postpone discussing $\hbar$ etc. Hence, right after introducing weight 1, we can just state the value of the deformation complex for that component. In the next subsection, we can say that weight 0 stuff shows up when quantizing at 1-loop and refer ahead in the document, explain the more subtle weight issues, and then state the deformation complex for that component.}
 
 \subsection{}
 
@@ -118,6 +126,7 @@ It is well-known that the cohomology is one-dimensional and concentrated in degr
 We will identify the anomaly for the holomorphic string with flat target as multiple of the generator of this space. 
 The remaining piece of the weight zero deformation complex is the home of the anomalies for the holomorphic string placed in a non trivial background: for instance, when the target of the $\sigma$ model is curved. 
 We will not see this in our theory, of course, but the following will hopefully be...
+\owen{Not sure where this paragraph is going.}
 
 The first step in computing this is to notice that there is a quasi-isomorphic subcomplex.
 The vector field $L_0 = z^{n+1} \partial_z$ induces a grading on ${\rm W}_1$ and hence on the Chevalley-Eilenberg complex of ${\rm W}_1$ with coefficients in any module. 

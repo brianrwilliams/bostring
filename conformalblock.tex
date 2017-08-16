@@ -1,4 +1,4 @@
-\section{Global sections of the factorization algebra} 
+\section{The holomorphic string on closed Riemann surfaces} 
 
 %First, consider the elliptic complex
 %\ben
@@ -89,6 +89,7 @@ as it encodes the de Rham complex on the formal quotient stack $B\fg = \ast/\fg$
 
 The computation here works for any Riemann surface $\Sigma$ and, indeed, for any family of Riemann surfaces.
 Hence it implies that the global observables of the free $bc\beta\gamma$ system determine a determinant line bundle on the moduli $\cM$ of Riemann surfaces.
+\owen{We refer to this moduli space several times in the text, so perhaps we should give it a notation. Let's discuss what to use.}
 
 We can work out the first Chern class of this determinant line bundle using the Grothendieck-Riemann-Roch theorem as follows.
 Consider the universal Riemann surface $\pi \colon C \to \cM$ over the moduli space, 
@@ -114,7 +115,7 @@ c_1\left(H^*\left(\Obs^\q_{free}(\Sigma)\right)\right) =
 
 \owen{It would be good here to point out the GRR argument for identifying the first Chern class of this determinant line bundle. We can then point out that it resonates with our computation on the formal disk and give a reminder that this is a manifestation of ``Virasoro uniformization.'' This then leads into the string case: the holomorphic vector fields (rather the free $bc$ system) also contribute a determinant line (we should include that computation) and we can ask when those determinant lines tensor to a trivial line. Note that deforming the action from free $bc\beta\gamma$ system to holomorphic bosonic string doesn't affect the line bundles, since those are continuous parameters and Chern classes are discrete.}
 
-\subsection{The anomaly and the deformation complex on a Riemann surface}
+\subsection{The anomaly and moduli of quantizations on an arbitrary Riemann surface}
 
 We have already seen that the holomorphic string {\it on a disk} admits a BV quantization if and only if the target is a complex vector space of dimension 13.
 Here we will explain why this anomaly calculation is actually enough to show the existence of a quantization on an {\it arbitrary} Riemann surface. 
@@ -139,84 +140,48 @@ But this is precisely the context in which we computed the anomaly in Section~\r
 so we know the anomaly is simply the dimension of the target vector space.
 Thus, a quantization of the holomorphic string exists on any Riemann surface provided $\dim_{\CC}(V) = 13$. 
 
-Now we turn to the moduli of theories.
-Indeed, by the calculation in Section \ref{sec: moduli}, 
-we see that \owen{this phrase is really unwieldy} the space of deformations for quantizations at one loop are a torsor for the vector space
+Now we ask how many such quantizations are possible,
+i.e., what is the moduli of theories.
+By the calculation in Section \ref{sec: moduli}, 
+we know that, up to BV equivalence, 
+the possible one-loop terms in the quantized action functional are parametrized by
 \ben
-H^0(\Sigma) \tensor \Omega^1(V) \oplus H^1(\Sigma) \tensor \Omega^2_{cl}(V) .
+H^0(\Sigma) \tensor \Omega^1(V) \oplus H^1(\Sigma) \tensor \Omega^2_{cl}(V).
 \een 
-Thus, the space of deformations is given by a space of continuous parameters and hence will not change the class of the line bundle of global observables. 
-In conclusion, we are free to choose any one-loop quantization; this will not affect the cohomology of the global observables. 
+(That is, these vector spaces are the first cohomology group of the relevant deformation complex.)
+This space of deformations corresponds to continuous parameters we can vary in the action functional \owen{such as [now we spell out what they are]}. 
+As the isomorphism classes of line bundles form a discrete set, 
+varying these continuous parameters will not change the class of the line bundle of global observables. 
+In conclusion, no matter what one-loop quantization we choose, 
+the cohomology of the global observables will be the same.
+\owen{On the other hand, it does affect the flat connection on this line bundle, aka partition function. Should we mention that here?} 
 
-\subsection{}
+\owen{It might be worth noting that the second direct summand is invisible except in genus $>0$, but they are relevant if you're trying to define a theory that makes sense on all Riemann surfaces.}
 
-Now, let us consider the global observables of the bosonic string $\Obs^\q(\Sigma)$. 
-There is a spectral sequence converging to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_2$ page given by the cohomology of the global observables of the $bc\beta \gamma$ system which we have already computed:
+\subsection{Global observables for the holomorphic string}
+
+Now, let us consider the global observables of the holomorphic string $\Obs^\q(\Sigma)$. 
+There is a spectral sequence \owen{you have to say what it is!} converging to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_2$ page given by the cohomology of the global observables of the $bc\beta \gamma$ system which we have already computed:
 \bestar
 E_2 & \cong & \det\left(H^*(\Sigma ; \cT_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
 & \cong & \det \left(H^1(\Sigma ; \cT_\Sigma) \right) \tensor \det \left(H^0(\Sigma ; \cT_\Sigma)\right)^{-1} \tensor \det \left(H^0(\Sigma ; K_{\Sigma}) \right)^{-13}
 \eestar
 where we have used the fact that $H^0(\Sigma ; \cO) \cong \CC$ for any $\Sigma$. 
+It is clear that the spectral sequence degenerates at this page.
+\owen{Don't say "it is clear": just say why! It's not much more writing.}
+
+\owen{We should cite Witten, since that's why you're using this notation. We could also unpack what these lines are in terms of the "central charge" (meaning what power we get of the canonical line on the moduli of Riemann surfaces.}
 
 Let $\Sigma_{g}$ be a surface of genus $g$. Then for $g=1$ the above simplifies to
 \ben
 \det \left(H^1(\Sigma_1 ; \cT_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-14} .
 \een 
+\owen{You can simplify further: these are trivial lines!}
 If $g \geq 2$ one has
 \ben
 \det \left(H^1(\Sigma_1 ; \cT_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-13} .
 \een
-It is clear that the spectral sequence degenerates at this page. Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
+\owen{Again, I think you can trivialize further and identify these with a line bundle on the moduli space of Riemann surfaces.}
+Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
 
-\section{The string partition function on an elliptic curve}
 
-We will evaluate the partition function of the theory on an elliptic curve. 
-For $\tau \in \HH$, the upper half plane, we can write an elliptic curve as a quotient of $\CC$ by the lattice $\ZZ + \tau \ZZ$
-\ben
-E_\tau = \CC / (\ZZ + \tau \ZZ) .
-\een 
-Let $\d^2 z = \d z \d \zbar$ be the volume form on $\CC$ which descends to one on $E_\tau$ that we denote by the same name. 
-
-We have already discussed the gauge fixing operator and constructed the heat kernel that regularizes the operator $\dbar^{-1}$ on $\CC$. 
-We can make the same choice of gauge fixing operator, namely $\dbar^*$, on the elliptic curve $E_\tau$ and hence we obtain a heat kernel for the operator $e^{-t D^{E_\tau}}$ where $D^{E_\tau}$ is the commutator $[\dbar, \dbar^*] = \frac{1}{2} \Delta$ on $E_\tau$. 
-Explicitly, the heat kernel of the operator $e^{-t D^{E_\tau}}$ on the elliptic curve $E_\tau$ pulled back to the universal cover $\CC$ along the $\CC \to E_\tau$ is of the form
-\ben 
-K^{E_\tau}_t (z,w) = \sum_{\lambda \in \ZZ + \tau \ZZ} \frac{1}{2\pi t} e^{-|z-w + \lambda|^2 / 2 t} (\d z - \d w) (\d \zbar - \d \wbar ) .
-\een
-From $K_t^{E_\tau}$ we obtain the propagator $P_{\ell < L}^{E_\tau} = \dbar^* \int_{\ell}^L e^{-t D^{E_\tau}} \d t$ just as above. 
-
-This propagator regularizes the operator $\dbar^{-1}$ on $E_\tau$. 
-The full propagator of the holomorphic string on $E_\tau$ has one component coming from the pairing between the fields $\beta$ and $\gamma$ and another component coming from the pairing between the fields $b$ and $c$. 
-Since $\gamma$ is a section of the trivial vector bundle labeled by the vector space $V$, the first term in the full propagator is of the form $P_{\ell < L}^{E_\tau} \tensor \frac{1}{2} (\id_V + \id_{V^*})$.
-Now, since the tangent bundle is trivial on an elliptic curve we can choose a canonical framing and write the second piece of the propagator describing the pairing between $b$ and $c$ as $P_{\ell < L}^{E_\tau} \tensor (\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z)$ where $\partial_z, \partial_z^\vee$ denote the canonical framing of $T_{E_\tau}, T_{E_\tau}*$ respectively. 
-
-Just as in the case of the calculation of the anomaly, the propagator will is a sum over wheels that are functionals of the $c$-fields. 
-Unlike the case of the anomaly, the internal edges of the wheels are all labeled by the propagator. 
-The vertices are labeled by the interaction terms which have two types: a $\beta c \gamma$-type interaction and a $bcc$-type interaction. 
-Thus, the partition function splits up into a sum of two types of diagrams (\ref{diagram:partition}): A) all input legs labeled by the fields $c$ with each internal edge labeled by the $\beta\gamma$ propagator $P_{\ell < L}^{E_\tau} \tensor \frac{1}{2} (\id_V + \id_{V^*})$, and B) all input legs labeled by the fields $c$ with each internal edge labeled by the $bc$ propagator $P_{\ell < L}^{E_\tau} \tensor (\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z)$. 
-\brian{draw diagrams}
-
-For $j \geq 1$ let $A^{E_\tau}_j$ (respectively $B^{E_\tau}_j$) be the weight of the graph of type $A$ (respectively $B$) with $j$ incoming legs.
-
-\begin{lem} Consider the weight of the tadpole diagram of type $A$, $A^{E_\tau}_1(c)$. Evaluated on the generator $c = \d \zbar \partial_z$ one has
-\ben
-A_1^{E_\tau} (\zbar \partial_z) = \# (- 2) \cdot (13) \cdot E_2^*(\tau) 
-\een
-\brian{WORK OUT FACTOR} .
-Similarly, the weight of the tadpole diagram of type $B$ evaluated on the generator is given by
-\ben
-B_1^{E_\tau} (\zbar \partial_z) = \# (2) \cdot E_2^*(\tau) .
-\een 
-\end{lem}
-
-We obtain the weight of the diagrams with two or more vertices by the following inductive formula. 
-
-\begin{lem} One has $\partial_\tau A^{E_\tau}_{j} = \# A^{E_\tau}_{j+1}$ and $\partial_\tau B_j^{E_\tau} = \# B_{j+1}^{E_\tau}$.
-\end{lem}
-
-We conclude the following. 
-
-\begin{prop} The partition function of the holomorphic bosonic string is the formal power series expansion of the holomorphic function $-24 \log \eta (t)$ near the point $t = \tau \in \HH$. 
-\end{prop}
-
-\owen{If possible, it would be cool to explain how one can extract the differential equations (=flat connection) governing the partition function from our construction. This might be too hard right now \dots}

@@ -89,9 +89,11 @@ with the $c$-deformed complex structure, to~$V$.
 
 \owen{Add something about how to understand the degrees. E.g., does $b$ ever appear?}
 \brian{Confused by what you mean by ``does b ever appear"? But I've added further comments above about degrees.}
+\owen{$b$ essentially appears as a Lagrange multiplier, so it doesn't have an ``intrinsic meaning'' itself. People might find it confusing since it is not in degree 0, and hence looks ``unphysical,'' plus it isn't obvious from the naive/usual approach to specifying field theories. (That's why I mentioned that it might be nice to include a pointer to Kevin's discussion of where BV action comes from.)}
 
 \owen{Add explanation of writing BV theory from ordinary action.}
 \brian{??}
+\owen{I meant that there's a process by which one can work out the BV action from the naive action plus the relevant gauge action.}
 
 \begin{rmk}
 \label{rmk:bcbg}
@@ -143,9 +145,10 @@ Let $\cM$ denote the moduli space of Riemann surfaces,
 so that a surface $\Sigma$ determines a point in~$\cM$.
 Let $\Maps_{\dbar}(\Sigma,V)$ denote the space of holomorphic maps from $\Sigma$ to $V$,
 and hence a bundle $\Maps_{\dbar}(-,V)$ over $\cM$ by varying~$\Sigma$.
-For our equations of motion, the $\gamma$ and $c$ fields of a solution determine a point in this bundle~$\Maps_{\dbar}(-,V)$.
+For our equations of motion, the $\gamma$ and $c$ fields of a solution determine a point in this bundle~$\Maps_{\dbar}(-,V)$. 
+The commutative algebra $\cO(\Maps_{\dbar}(\Sigma,V))$ of functions on the space encodes the  observables of the classical theory.
 
-\def\RS{{\mathcal RS}}
+\def\RS{{\cR\cS}}
 
 This construction makes sense on noncompact Riemann surfaces as well.
 Let $\RS$ denote the category whose objects are Riemann surfaces and whose morphisms are holomorphic embeddings.
@@ -201,10 +204,10 @@ These ``antifields'' are added so that the overall space of fields has a 1-shift
 This holomorphic bosonic string has a natural relationship with the usual bosonic string.
 We sketch it briefly, only considering a linear target.
 
-We begin with a bosonic string theory where the source is a 2-dimensional smooth oriented manifold $\Sigma$ and the target is a Hermitian vector space~$(V,h)$. 
+We begin with a bosonic string theory where the source is a 2-dimensional smooth oriented Riemannian manifold $\Sigma$ and the target is a Hermitian vector space~$(V,h)$. 
 The ``naive'' action functional is
 \ben
-S^{naive}_{Poly}(\varphi, g) = \int_\Sigma h(\varphi, \Delta_{g} \varphi)\, \dvol_g
+S^{\text{naive}}_{Poly}(\varphi, g) = \int_\Sigma h(\varphi, \Delta_{g} \varphi)\, \dvol_g
 \een
 where the field $g$ is a Riemannian metric on $\Sigma$ and the field $\varphi$ is a smooth map from $\Sigma$ to~$V$.
 The notation $\Delta_g$ denotes the Laplace-Beltrami operator on~$\Sigma$. 
@@ -216,99 +219,142 @@ As we are interested in a string theory, we want to gauge these symmetries.
 In geometric language, we want to think about the quotient stack 
 obtained by taking solutions to the equations of motion and quotienting by these symmetry groups.
 
-Our focus is perturbative, so that we want to study the behavior of this action near a fixed solution to the equations of motion
-(e.g., the Taylor expansion of the true action near some solution).
+Our focus is perturbative, so that we want to study the behavior of this action near a fixed solution to the equations of motion.
+In other words, we want to work with the Taylor expansion of the true action near some solution.
 \owen{Might be good here to leverage the derived discussion earlier:
 it's easy to see what the tangent complex looks like \dots which leads to fields we work with.}
-Hence, we fix a metric $g_0$ on $\Sigma$ and substitute for the field $g$,
+Hence, we work around a fixed metric $g_0$ on $\Sigma$, 
+and we substitute for the field $g$,
 the term $g_0+\alpha$ where $\alpha \in \Gamma(\Sigma,\Sym^2(T_\Sigma))$.
-That is, we simply consider deformations of~$g_0$.
+That is, we will consider deformations of~$g_0$.
 As $\varphi$ is linear, we just consider expanding around the zero map.
-Thus our initial fields are $\varphi \in C^\infty(\Sigma,V)$ and $\alpha \in \Gamma(\Sigma,\Sym^2(T_\Sigma))$.
+Thus our new fields are $\varphi \in C^\infty(\Sigma,V)$ and $\alpha \in \Gamma(\Sigma,\Sym^2(T_\Sigma))$.
 
 There are also ghost fields associated to the symmetries we gauge.
 First, there are infinitesimal diffeomorphisms,  which are described by vector fields on~$\Sigma$.
-We denote this ghost field by $X \in \Gamma(\Sigma,T_\Sigma))$.
-It acts on the initial fields by the transformation 
+We denote this ghost field by $X \in \Gamma(\Sigma,T_\Sigma)$.
+It acts on the fields by the transformation 
 \[
 (\varphi,\alpha) \mapsto (\varphi + X \cdot \varphi, \alpha + L_X \alpha), 
 \]
 where $L_X$ denotes the Lie derivative on tensors.
-Second, there are infinitesimal rescalings such as $\alpha \mapsto \alpha + f \alpha$, 
+Second, there are infinitesimal rescalings of the metric, 
+such as $\alpha \mapsto \alpha + f \alpha$, 
 with ghost field $f \in~C^\infty(\Sigma)$.
 The rescaling does not affect $\varphi$.
 The two symmetries are compatible: 
 given $f$ and $X$, then $L_{X} (f \alpha) = X(f) \alpha + f L_X \alpha$ for any $\alpha \in \Sym^2(T_\Sigma)$.
 
-To summarize, we have the following fields:
+To summarize, we have the following graded vector space of fields:
+\owen{I'm trying to add in the names for fields as well to make life easier}
 \[
-\begin{array}{cccc}
--1 &0 & 1 & 2\\
-\hline \\
-& \Omega^{0}(\Sigma) \tensor V & \Omega^2(\Sigma) \tensor V & \\
-{\rm Vect}(\Sigma) \oplus C^\infty(\Sigma) & \Sym^2(T_\Sigma) & & \\
-& & \Omega^2(\Sigma ; \Sym^{2}(T^*_\Sigma)) & \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma) .
+\begin{array}{ccccc}
+\text{field/antifield} & -1 &0 & 1 & 2\\
+\hline
+\varphi, \varphi^\vee & & \Omega^{0}(\Sigma) \tensor V & \Omega^2(\Sigma) \tensor V & \\
+\alpha, \alpha^\vee & & \Sym^2(T_\Sigma) & \Omega^2(\Sigma ; \Sym^{2}(T^*_\Sigma)) & \\
+X, X^\vee & {\rm Vect}(\Sigma) & & & \Omega^2(\Sigma ; T^*_\Sigma)\\
+f, f^\vee & C^\infty(\Sigma) &&& \Omega^2(\Sigma) .
 \end{array}
 \]
 The BV action functional is of the form:
 \begin{equation}\label{polyakov bv}
-\begin{array}{lll}
-S^{h}_{Poly}(\varphi,\alpha,X,f) & = & \int_\Sigma h(\varphi, \Delta_{g_0} \varphi)\, \dvol_{g_0} + \sum_{n \geq 1} \frac{1}{n!} \int_{\Sigma} h(\varphi, D_n(\alpha,\ldots,\alpha) \varphi) \dvol_{g_0} \\
-& + & \int_{\Sigma} h(\varphi, X \cdot \varphi) \dvol_{g_0} \\
-& + & S'(X, f, \alpha) 
-\end{array}
+\begin{align*}
+S^{BV}_{Poly} = 
+& \int_\Sigma h(\varphi, \Delta_{g_0} \varphi)\, \dvol_{g_0} + \sum_{n \geq 1} \frac{1}{n!} \int_{\Sigma} h(\varphi, D_n(\alpha,\ldots,\alpha) \varphi) \dvol_{g_0} \\
+& +  \int_{\Sigma} h(\varphi, X \cdot \varphi) \dvol_{g_0} \\
+& +  S'(X, f, \alpha) 
+\end{align*}
 \end{equation}
-Here: $D_n$ are differential operators of the form $D_n : \Gamma(\Sigma , \Sym^2 T\Sigma)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ where ${\rm Diff}^{\leq 2}(\Sigma)$ are order $\leq 2$ differential operators on $\Sigma$, the second line encodes how vector fields act on the maps of the $\sigma$ model, and the term $S'(X, f, \alpha)$ is only a function of the fields $(f, X, \alpha) \in C^\infty(\Sigma)[-1] \oplus {\rm Vect}(\Sigma)[-1] \oplus \Sym^2(T\Sigma)$(and their antifields) whose exact form will not concern us. 
-An explicit formula for $D_n(\alpha,\ldots,\alpha)$ can be derived from the power series expansion of the Laplace-Beltrami operator in terms of the metric. 
-For instance, if we are working locally on $\Sigma = \RR^2$ with the $g_0$ the flat metric, then for $n=1$ the operator $D_1(\alpha)$ is sum of a first order and a second order differential operator:
+The right hand side of the first line amounts to expanding out the Laplace-Beltrami operator $\Delta_{g_0 + \alpha}$ as a function of $\alpha$.
+Hence, the $D_n$ are differential operators of the form 
+$D_n : \Gamma(\Sigma , \Sym^2 T\Sigma)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ 
+where ${\rm Diff}^{\leq 2}(\Sigma)$ are order $\leq 2$ differential operators on $\Sigma$.
+The second line encodes how vector fields act on the maps of the $\sigma$ model \owen{I think we should hyphenate: $\sigma$-model}. 
+The third line $S'(X, f, \alpha)$ is a function only of the fields $f$, $X$, $\alpha$, and their antifields,
+whose exact form will not concern us. 
+
+An explicit formula for $D_n(\alpha,\ldots,\alpha)$ is a rather involved exercise (and not needed here).
+%can be derived from the power series expansion of the Laplace-Beltrami operator in terms of the metric. 
+For instance, if we are working locally on $\Sigma = \RR^2$ with the $g_0$ the flat metric, 
+then the operator $D_1(\alpha)$ is sum of a first-order and a second-order differential operator
 \ben
-D_1(\alpha) = \frac{1}{2} \frac{\partial}{\partial x^i} ({\rm tr}(\alpha)) \frac{\partial}{\partial x^i} + \frac{1}{2} {\rm tr} (\alpha) \frac{\partial}{\partial x^i} \frac{\partial}{\partial x^i} 
+D_1(\alpha) = \frac{1}{2} \frac{\partial}{\partial x^i} ({\rm tr}(\alpha)) \frac{\partial}{\partial x^i} + \frac{1}{2} {\rm tr} (\alpha) \frac{\partial}{\partial x^i} \frac{\partial}{\partial x^i}, 
 \een
-or, in a more coordinate free notation $D_1(\alpha) = \frac{1}{2} \star \d \left({\rm tr}(\alpha) \star \d\right)$. 
+or in a more coordinate-free notation, 
+\[
+D_1(\alpha) = \frac{1}{2} \star \d \left({\rm tr}(\alpha) \star \d\right).
+\] 
 Here, we use the natural trace map ${\rm tr} : \Gamma(\Sigma , \Sym^2 T\Sigma) \to C^\infty(\Sigma)$ of symmetric $2\times2$ matrices. 
 
-\begin{claim} In the ``infinite volume limit" $h \to \infty$ the BV action above becomes
+There is an important parameter in this action functional: the Hermitian inner product $h$.
+We can consider scaling it $h \to t h$, with $t \in (0,\infty)$.
+The ``infinite volume limit'' as $t \to \infty$ admits a nice description,
+provided one rewrites the action functional in a first-order formalism
+(i.e., adjoins fields so that only first-order differential operators appear in the action,
+which is a sort of action functional analogue of working with phase space).
+\owen{What do you think?}
+
+\begin{lem} 
+In this infinite volume limit
+the bosonic string becomes equivalent to a BV theory whose action functional has the form
 \ben
-S_{Poly}^h \to S(\beta, \gamma, b,c) + \Bar{S}(\Bar{\beta}, \Bar{\gamma}, \Bar{b}, \Bar{c})
+S(\beta, \gamma, b,c) + \Bar{S}(\Bar{\beta}, \Bar{\gamma}, \Bar{b}, \Bar{c}),
 \een
 where $S(\beta, \gamma, b,c)$ is the action functional for the holomorphic bosonic string in Equation (\ref{bosaction}) and $\Bar{S}$ is its anti-holomorphic conjugate. 
-\end{claim}
+\end{lem}
 
-\begin{rmk} The action functional $\Bar{S}$ is similar to $S$ where the fields $\gamma,\beta,b,c$ are replaced by sections in the the relevant conjugate bundles. 
-For example $\beta \in \Omega^{1,*}(\Sigma)$ becomes $\Bar{\beta} \in \Omega^{*,1} (\Sigma)$. 
+\owen{I promoted this to a lemma. I think it's true, and we don't feel obligated elsewhere to give full proofs of every assertion.}
+
+\begin{rmk} 
+The action functional $\Bar{S}$ is similar to $S$ where the fields $\gamma,\beta,b,c$ are replaced by sections in the the relevant conjugate bundles. 
+For example, $\beta \in \Omega^{1,*}(\Sigma)$ becomes $\Bar{\beta} \in \Omega^{*,1} (\Sigma)$. 
 Moreover, the operator $\dbar$ is replaced by the holomorphic Dolbeault operator $\partial$. 
+\owen{We could also just say ``the holomorphic string on $\Bar{\Sigma}$, which is the conjugate complex structure.''}
 \end{rmk}
 
-\begin{proof}[Outline of proof] There are two things that may cause alarm in the statement of the claim. First, the space of fields of the Polyakov string (in the BV language) and those of the holomorphic bosonic string to not match up. Second, the limit $h \to \infty$ is naively ill-defined looking at the action functional (\ref{polyakov bv}). 
-It turns out that these two issues are each others solutions. 
+\begin{proof}[Outline of proof] 
+There are two things that may cause alarm in the statement of the claim. 
+First, the space of fields of the Polyakov string (in the BV language) and those of the holomorphic bosonic string do not match up. 
+Second, the infinite volume limit $t \to \infty$ is naively ill-defined using the action functional (\ref{polyakov bv}). 
+It turns out that these two issues are solved by the same maneuver. 
 
-We focus first on the first term in the first line of (\ref{polyakov bv}). 
-Notice that this is simply the action functional for the $\sigma$ model of maps from $(\Sigma, g_0)$ to $(V, h)$. 
-It is shown in Appendix ?? of \cite{ggw} how to make sense of the infinite volume limit of this theory. 
+We begin with the first term in the first line of (\ref{polyakov bv}). 
+Notice that it is simply the action functional for the $\sigma$ model \owen{hyphenate} of maps from $(\Sigma, g_0)$ to $(V, h)$. 
+It is shown in Appendix ?? of \cite{ggw} how to make sense of the infinite volume limit of this usual $\sigma$-model. 
 The idea is to rewrite this theory in the {\em first order formalism}.
 This amounts to introducing a new field $B \in \Omega^1(\Sigma) \tensor V^\vee$ and action functional 
 \ben
 \int_\Sigma \<B, \d \varphi\>_V - \frac{1}{2} \int_\Sigma h^\vee(B, \star B)
 \een
-where: $\<-,-\>_V$ represents the evaluation pairing between $V$ and its dual, $\star$ is the Hodge star operator for the metric $g_0$, and $h^\vee$ denotes the dual metric on $V$. 
-This action functional is equivalent to the original $\sigma$ model. 
-Moreover, the limit $h \to \infty \iff h^\vee \to 0$ amounts to dropping the last term. 
-It is shown that the remaining theory splits as the free $\beta\gamma$ system with target $V$ plus its anti-holomorphic conjugate. 
-At the level of fields the relationship between the fields in the first order formalism and the $\beta\gamma$, $\Bar{\beta} \Bar{\gamma}$ system is $\varphi \leftrightarrow \gamma + \Bar{\gamma}$ and $B \leftrightarrow \beta + \Bar{\beta}$. 
+where $\<-,-\>_V$ represents the evaluation pairing between $V$ and its dual, 
+$\star$ is the Hodge star operator for the metric $g_0$, 
+and $h^\vee$ denotes the dual metric on $V$. 
+This action functional is equivalent to the original $\sigma$-model;
+one can compare the equations of motion. 
+Moreover, the limit $(th)^\vee = (1/t)h^\vee$, 
+and so in the infinite volume limit $t \to \infty$, 
+the dual $(th)^\vee$ goes to $0$, which kills the second term in the first order action. 
+The remaining theory splits as the direct sum of the free $\beta\gamma$ system with target $V$ and its anti-holomorphic conjugate. 
+At the level of fields, the original field $\varphi$ corresponds to $\gamma + \Bar{\gamma}$ in the first order description,
+and $B$ corresponds to~$\beta+\Bar{\beta}$. 
 
-For the remaining part of the action one shows that in this infinite volume limit, only the $n=1$ term in the expansion of $D_n(\alpha,\ldots,\alpha)$ survives. 
-Furthermore, we can use the metric $g_0$ to define an injective map
+Of the remaining terms on the first line of the action, 
+only the $D_1$ term survives in this infinite volume limit. 
+\owen{Is there some way to see this from the concrete computation of $D_1$ above?}
+Furthermore, the metric $g_0$ determines an injective map
 \ben
-\Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma) \oplus \Omega^{1,0}(\Sigma ; T^{0,1}) \hookrightarrow \Sym^2(T_\Sigma) .
+\Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma) \oplus \Omega^{1,0}(\Sigma ; T^{0,1}_\Sigma) \hookrightarrow \Sym^2(T_\Sigma) .
 \een
-The pull-back of the term $\int_\Sigma h(\varphi, D_1(\alpha) \varphi)$ along this map is, in the $h \to \infty$ limit
+Restricting the term $\int_\Sigma h(\varphi, D_1(\alpha) \varphi)$ to the image,
+we obtain a term whose infinite volume limit is
 \ben
-\int_\Sigma \<\beta , [c, \gamma]\>_V + {\rm c.c.}
+\int_\Sigma \<\beta , [c, \gamma]\>_V + \int_\Sigma \<\Bar{\beta} , [\Bar{c}, \bar{\gamma}]\>_V.
 \een
-where $c \in \Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma)$ and the second term is the anti-holomorphic conjugate. 
-This first term above is precisely the third term in the action functional of the holomorphic bosonic string (\ref{bosaction}) describing how deformations of complex structure couple to the fields of the $\sigma$ model. 
+This first term is precisely the third term in the holomorphic string action functional (\ref{bosaction}), which describes how deformations of complex structure couple to the fields of the $\sigma$-model. 
 
-The remaining terms of the holomorphic bosonic string come from analyzing what happens to the term $S'(f, X, \alpha)$ in the infinite volume limit and is similar to the idea above. 
+The remaining terms of the holomorphic bosonic string come from analyzing what happens to the term $S'(f, X, \alpha)$ in the infinite volume limit, 
+and the arguments are similar to those we have just sketched. 
 \end{proof}
 
 
