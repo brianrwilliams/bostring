@@ -1,0 +1,55 @@
+\section{The string partition function on an elliptic curve}
+
+We will evaluate the partition function of the theory on an elliptic curve. 
+Every $\tau \in \HH$, the upper half plane, 
+determines an elliptic curve as a quotient $E_\tau = \CC / (\ZZ + \tau \ZZ)$.
+Let $\d^2 z = \d z \d \zbar$ be the standard volume form on $\CC$, 
+which descends to one on $E_\tau$; 
+we denote it by the same name. 
+
+This presentation of an elliptic curve allows us to take advantage of constructions we've introduced over $\CC$.
+For instance, we have already discussed the gauge fixing operator $\dbar^*$ and constructed the heat kernel on $\CC$. 
+We can make the same choice of gauge fixing operator on $E_\tau$ and hence obtain a heat kernel for the operator $e^{-t D^{E_\tau}}$, 
+where $D^{E_\tau}$ is the commutator $[\dbar, \dbar^*] = \frac{1}{2} \Delta$ on $E_\tau$. 
+This heat kernel admits a nice description when pulled back from the elliptic curve $E_\tau$ to its universal cover $\CC$,
+namely it becomes the sum over lattice points
+\ben 
+K^{E_\tau}_t (z,w) = \sum_{\lambda \in \ZZ + \tau \ZZ} \frac{1}{2\pi t} e^{-|z-w + \lambda|^2 / 2 t} (\d z - \d w) (\d \zbar - \d \wbar ) .
+\een
+From $K_t^{E_\tau}$ we obtain the propagator $P_{\ell < L}^{E_\tau} = \dbar^* \int_{\ell}^L e^{-t D^{E_\tau}} \d t$ as earlier. 
+
+This propagator regularizes the operator $\dbar^{-1}$ on $E_\tau$. 
+The full propagator of the holomorphic string on $E_\tau$ has one component coming from the pairing between the fields $\beta$ and $\gamma$ and another component coming from the pairing between the fields $b$ and $c$. 
+Since $\gamma$ is a section of the trivial vector bundle labeled by the vector space $V$, the first term in the full propagator is of the form $P_{\ell < L}^{E_\tau} \tensor \frac{1}{2} (\id_V + \id_{V^*})$.
+Now, since the tangent bundle is trivial on an elliptic curve we can choose a canonical framing and write the second piece of the propagator describing the pairing between $b$ and $c$ as $P_{\ell < L}^{E_\tau} \tensor (\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z)$ where $\partial_z, \partial_z^\vee$ denote the canonical framing of $T_{E_\tau}, T_{E_\tau}*$ respectively. 
+
+Just as in the case of the calculation of the anomaly, the propagator will is a sum over wheels that are functionals of the $c$-fields. 
+Unlike the case of the anomaly, the internal edges of the wheels are all labeled by the propagator. 
+The vertices are labeled by the interaction terms which have two types: a $\beta c \gamma$-type interaction and a $bcc$-type interaction. 
+Thus, the partition function splits up into a sum of two types of diagrams (\ref{diagram:partition}): A) all input legs labeled by the fields $c$ with each internal edge labeled by the $\beta\gamma$ propagator $P_{\ell < L}^{E_\tau} \tensor \frac{1}{2} (\id_V + \id_{V^*})$, and B) all input legs labeled by the fields $c$ with each internal edge labeled by the $bc$ propagator $P_{\ell < L}^{E_\tau} \tensor (\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z)$. 
+\brian{draw diagrams}
+
+For $j \geq 1$ let $A^{E_\tau}_j$ (respectively $B^{E_\tau}_j$) be the weight of the graph of type $A$ (respectively $B$) with $j$ incoming legs.
+
+\begin{lem} Consider the weight of the tadpole diagram of type $A$, $A^{E_\tau}_1(c)$. Evaluated on the generator $c = \d \zbar \partial_z$ one has
+\ben
+A_1^{E_\tau} (\zbar \partial_z) = \# (- 2) \cdot (13) \cdot E_2^*(\tau) 
+\een
+\brian{WORK OUT FACTOR} .
+Similarly, the weight of the tadpole diagram of type $B$ evaluated on the generator is given by
+\ben
+B_1^{E_\tau} (\zbar \partial_z) = \# (2) \cdot E_2^*(\tau) .
+\een 
+\end{lem}
+
+We obtain the weight of the diagrams with two or more vertices by the following inductive formula. 
+
+\begin{lem} One has $\partial_\tau A^{E_\tau}_{j} = \# A^{E_\tau}_{j+1}$ and $\partial_\tau B_j^{E_\tau} = \# B_{j+1}^{E_\tau}$.
+\end{lem}
+
+We conclude the following. 
+
+\begin{prop} The partition function of the holomorphic bosonic string is the formal power series expansion of the holomorphic function $-24 \log \eta (t)$ near the point $t = \tau \in \HH$. 
+\end{prop}
+
+\owen{If possible, it would be cool to explain how one can extract the differential equations (=flat connection) governing the partition function from our construction. This might be too hard right now \dots}
