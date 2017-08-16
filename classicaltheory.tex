@@ -295,14 +295,16 @@ provided one rewrites the action functional in a first-order formalism
 which is a sort of action functional analogue of working with phase space).
 \owen{What do you think?}
 
-\begin{claim} 
+\begin{lem} 
 In this infinite volume limit
 the bosonic string becomes equivalent to a BV theory whose action functional has the form
 \ben
 S(\beta, \gamma, b,c) + \Bar{S}(\Bar{\beta}, \Bar{\gamma}, \Bar{b}, \Bar{c}),
 \een
 where $S(\beta, \gamma, b,c)$ is the action functional for the holomorphic bosonic string in Equation (\ref{bosaction}) and $\Bar{S}$ is its anti-holomorphic conjugate. 
-\end{claim}
+\end{lem}
+
+\owen{I promoted this to a lemma. I think it's true, and we don't feel obligated elsewhere to give full proofs of every assertion.}
 
 \begin{rmk} 
 The action functional $\Bar{S}$ is similar to $S$ where the fields $\gamma,\beta,b,c$ are replaced by sections in the the relevant conjugate bundles. 
@@ -317,8 +319,8 @@ First, the space of fields of the Polyakov string (in the BV language) and those
 Second, the infinite volume limit $t \to \infty$ is naively ill-defined using the action functional (\ref{polyakov bv}). 
 It turns out that these two issues are solved by the same maneuver. 
 
-We focus first on the first term in the first line of (\ref{polyakov bv}). 
-Notice that this is simply the action functional for the $\sigma$ model \owen{hyphenate} of maps from $(\Sigma, g_0)$ to $(V, h)$. 
+We begin with the first term in the first line of (\ref{polyakov bv}). 
+Notice that it is simply the action functional for the $\sigma$ model \owen{hyphenate} of maps from $(\Sigma, g_0)$ to $(V, h)$. 
 It is shown in Appendix ?? of \cite{ggw} how to make sense of the infinite volume limit of this usual $\sigma$-model. 
 The idea is to rewrite this theory in the {\em first order formalism}.
 This amounts to introducing a new field $B \in \Omega^1(\Sigma) \tensor V^\vee$ and action functional 
@@ -334,21 +336,25 @@ Moreover, the limit $(th)^\vee = (1/t)h^\vee$,
 and so in the infinite volume limit $t \to \infty$, 
 the dual $(th)^\vee$ goes to $0$, which kills the second term in the first order action. 
 The remaining theory splits as the direct sum of the free $\beta\gamma$ system with target $V$ and its anti-holomorphic conjugate. 
-At the level of fields the relationship between the fields in the first order formalism and the $\beta\gamma$, $\Bar{\beta} \Bar{\gamma}$ system is $\varphi \leftrightarrow \gamma + \Bar{\gamma}$ and $B \leftrightarrow \beta + \Bar{\beta}$. 
+At the level of fields, the original field $\varphi$ corresponds to $\gamma + \Bar{\gamma}$ in the first order description,
+and $B$ corresponds to~$\beta+\Bar{\beta}$. 
 
-For the remaining part of the action one shows that in this infinite volume limit, only the $n=1$ term in the expansion of $D_n(\alpha,\ldots,\alpha)$ survives. 
-Furthermore, we can use the metric $g_0$ to define an injective map
+Of the remaining terms on the first line of the action, 
+only the $D_1$ term survives in this infinite volume limit. 
+\owen{Is there some way to see this from the concrete computation of $D_1$ above?}
+Furthermore, the metric $g_0$ determines an injective map
 \ben
-\Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma) \oplus \Omega^{1,0}(\Sigma ; T^{0,1}) \hookrightarrow \Sym^2(T_\Sigma) .
+\Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma) \oplus \Omega^{1,0}(\Sigma ; T^{0,1}_\Sigma) \hookrightarrow \Sym^2(T_\Sigma) .
 \een
-The pull-back of the term $\int_\Sigma h(\varphi, D_1(\alpha) \varphi)$ along this map is, in the $h \to \infty$ limit
+Restricting the term $\int_\Sigma h(\varphi, D_1(\alpha) \varphi)$ to the image,
+we obtain a term whose infinite volume limit is
 \ben
-\int_\Sigma \<\beta , [c, \gamma]\>_V + {\rm c.c.}
+\int_\Sigma \<\beta , [c, \gamma]\>_V + \int_\Sigma \<\Bar{\beta} , [\Bar{c}, \bar{\gamma}]\>_V.
 \een
-where $c \in \Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma)$ and the second term is the anti-holomorphic conjugate. 
-This first term above is precisely the third term in the action functional of the holomorphic bosonic string (\ref{bosaction}) describing how deformations of complex structure couple to the fields of the $\sigma$ model. 
+This first term is precisely the third term in the holomorphic string action functional (\ref{bosaction}), which describes how deformations of complex structure couple to the fields of the $\sigma$-model. 
 
-The remaining terms of the holomorphic bosonic string come from analyzing what happens to the term $S'(f, X, \alpha)$ in the infinite volume limit and is similar to the idea above. 
+The remaining terms of the holomorphic bosonic string come from analyzing what happens to the term $S'(f, X, \alpha)$ in the infinite volume limit, 
+and the arguments are similar to those we have just sketched. 
 \end{proof}
 
 
