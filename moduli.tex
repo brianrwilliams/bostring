@@ -1,6 +1,6 @@
 \section{Deformations of the theory and string backgrounds}
 
-\owen{Maybe the Gelfand-Fuk discussion can be anticipated in Section 1? I think versions of it are easy to motivate: ``We want to study Lagrangian densities, which are functions on jets of fields. Hence the simplest case is to consider functions on jets at a point, which we recognize as a version of Gelfand-Fuks \dots'' Then we invoke that discussion to work with formal vector fields and simply quote~GF.}
+\owen{Maybe the Gelfand-Fuk discussion can be anticipated in Section 1? I think versions of it are easy to motivate: ``}
 
 \owen{We should observe that we see the deformations of the action, such as $B$-fields and dilatons. Observe we've rediscovered "string backgrounds."}
 
@@ -17,7 +17,7 @@ and there is a tangent complex to our theory in the moduli of classical BV theor
 We call it the {\em deformation complex} of the theory.
 A systematic discussion can be found in Chapter 5 of~\cite{CosBook}.
 
-As a gloss, the underlying graded vector space of this deformation complex consists of the local functionals on the fields, i.e., Lagrangian densities. 
+As a gloss, the underlying graded vector space of this deformation complex consists of the local functionals on the jets of fields, i.e., Lagrangian densities.
 (Note that we allow local functionals of arbitrary cohomological degree.) 
 There is also a shifted Lie bracket $\{-,-\}$, 
 which arises from the pairing $\int_\Sigma \langle-,-\rangle$ on the fields.
@@ -25,8 +25,10 @@ It is, in essence, the shifted Poisson bracket corresponding to that shifted sym
 The differential on the local functionals is then $\{S,?\}$, where $S$ is the classical action. 
 All together, the deformation complex forms a shifted dg Lie algebra. 
 Observe that if we find a degree zero element $I$ such that
-\[0=\{S +I,S +I\}=2\{S,I\}+\{I,I\},
-\]then $I$ is a shifted Maurer-Cartan element and 
+\[
+0=\{S +I,S +I\}=2\{S,I\}+\{I,I\},
+\]
+then $I$ is a shifted Maurer-Cartan element and 
 hence determines a new classical BV theory whose action functional is $S + I$. 
 In particular, degree 0 cocycles determine first-order deformations of the classical BV theory. Cocycles in degree -1 encode local symmetries of the classical theory; 
 and obstructions to satisfying the quantum master equation end up being degree 1 cocycles.
@@ -46,31 +48,46 @@ and we will use the notation $\CC^\times_{\rm cot}$ to indicate this appearance 
 
 This group action can be seen on the level of the field theory as follows: 
 we give the $\gamma$ and $c$ fields---the base of the cotangent bundle---weight $0$ and give the $\beta$ and $b$ fields---the cotangent fiber---weight~$1$. 
-In these terms, the classical action functional is weight 1. 
-Thus, we focus on weight 1 deformations of the holomorphic bosonic string,
-as we are interested in local functionals of the same kind.
-That means we consider the subcomplex of weight 1 local functionals inside the deformation complex.
+In these terms, the classical action functional is weight $1$. 
+We will focus on both weight $0$ and weight $1$ deformations of the holomorphic bosonic string.
+Weight $1$ local functionals correspond to deformations of the classical theory. 
+We will see how to interpret these as the existence of various {\em backgrounds} of the bosonic string. 
 
-The weight of the parameter $\hbar$ is also one with respect to the scaling by $\CC^\times_{\rm cot}$.
-Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.
+We interpret the weight $0$ deformations as follows. 
+Notice that the weight of the parameter $\hbar$ is also $1$ with respect to the scaling by $\CC^\times_{\rm cot}$.
+Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.\brian{I want to cite BV laplacian and quantum differential here}
 Put simply, these are local functionals that only depend on the base of the shifted cotangent bundle. 
-On a Riemann surface $\Sigma$ the $\CC^\times$ invariant local functionals are of the form
+On a Riemann surface $\Sigma$ the $\CC^\times_{\rm cot}$ weight $0$ local functionals are of the form
 \ben
 \left(\Oloc\left(\Omega^{0,*}(\Sigma, V) \oplus \Omega^{0,*}(\Sigma, T^{1,0})[1] \Omega^{1,*}(\Sigma ; V) \oplus \Omega^{1,*}(\Sigma, T^{1,0*})[-1] \right), \{S, -\}\right) .
 \een
+We are concerned with the case that $\Sigma = \CC$ and we restrict ourselves to studying {\em translation invariant} local functionals. 
 
-\begin{prop} There are $\GL(V)$-equivariant quasi--isomorphisms
+The main result of this section is the following:
+
+\begin{prop} There are $\GL(V)$-equivariant quasi-isomorphisms of the translation invariant deformations
 \begin{itemize}
-\item[(0)]
+\item[(0)] of weight $0$:
 \ben
-\left(\Oloc(\cE)^{(0)}, \{S,-\}\right) \simeq \Omega^2_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)[-1] 
+\left(\Oloc(\cE)^{(0)}, \{S,-\}\right)^{\CC} \simeq \Omega^2_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)[-1] 
 \een
-\item[(1)]
+\item[(1)] and of weight $1$:
 \ben 
-\left(\Oloc(\cE)^{(1)} , \{S,-\}\right) \simeq ?? .
+\left(\Oloc(\cE)^{(1)} , \{S,-\}\right)^\CC \simeq ?? .
 \een
 \end{itemize}
 \end{prop}
+
+We have already mentioned that we want to study Lagrangian densities, which are functions on jets of fields. 
+The simplest case is to consider functions on jets at a point, which is sufficient to understand a translation invariant Lagrangian densities. 
+Hence, for translation invariant local functionals on $\CC$ it suffices to look at functionals of the jet at $0 \in \CC$ of the fields. 
+For instance, if we look at the jet at zero of the complex of sheaves $\Omega^{0,*}(\CC ; V)$ we obtain the complex
+\ben
+(V [[z,\zbar]] [\d \zbar] , \dbar)
+\een
+where $\dbar$ is the formal Dolbeault differential. 
+By the Poincar\'{e} lemma for the $\dbar$ operator this complex is quasi-isomorphic to $V[[z]]$ (concentrated in degree zero). 
+Similarly, the jet at zero of the complex of sheaves $\Omega^{0,*}(\CC ; T^{1,0}_\CC)$ is quasi-isomorphic, as dg Lie algebras, to the Lie algebra of formal vector fields in one variable ${\rm W}_1$.
 
 \subsection{}
 

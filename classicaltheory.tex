@@ -262,8 +262,9 @@ Here: $D_n$ are differential operators of the form $D_n : \Gamma(\Sigma , \Sym^2
 An explicit formula for $D_n(\alpha,\ldots,\alpha)$ can be derived from the power series expansion of the Laplace-Beltrami operator in terms of the metric. 
 For instance, if we are working locally on $\Sigma = \RR^2$ with the $g_0$ the flat metric, then for $n=1$ the operator $D_1(\alpha)$ is sum of a first order and a second order differential operator:
 \ben
-D_1(\alpha) = \frac{1}{2} \frac{\partial}{\partial x^i} ({\rm tr}(\alpha)) \frac{\partial}{\partial x^i} + \frac{1}{2} {\rm tr} (\alpha) \frac{\partial}{\partial x^i} \frac{\partial}{\partial x^i}  .
+D_1(\alpha) = \frac{1}{2} \frac{\partial}{\partial x^i} ({\rm tr}(\alpha)) \frac{\partial}{\partial x^i} + \frac{1}{2} {\rm tr} (\alpha) \frac{\partial}{\partial x^i} \frac{\partial}{\partial x^i} 
 \een
+or, in a more coordinate free notation $D_1(\alpha) = \frac{1}{2} \star \d \left({\rm tr}(\alpha) \star \d\right)$. 
 Here, we use the natural trace map ${\rm tr} : \Gamma(\Sigma , \Sym^2 T\Sigma) \to C^\infty(\Sigma)$ of symmetric $2\times2$ matrices. 
 
 \begin{claim} In the ``infinite volume limit" $h \to \infty$ the BV action above becomes
@@ -287,19 +288,27 @@ It is shown in Appendix ?? of \cite{ggw} how to make sense of the infinite volum
 The idea is to rewrite this theory in the {\em first order formalism}.
 This amounts to introducing a new field $B \in \Omega^1(\Sigma) \tensor V^\vee$ and action functional 
 \ben
-\int_\Sigma {\rm ev}_V(B, \d \varphi) - \frac{1}{2} \int_\Sigma h^\vee(B, \star B)
+\int_\Sigma \<B, \d \varphi\>_V - \frac{1}{2} \int_\Sigma h^\vee(B, \star B)
 \een
-where: ${\rm ev}_V$ represents the evaluation pairing between $V$ and its dual, $\star$ is the Hodge star operator for the metric $g_0$, and $h^\vee$ denotes the dual metric on $V$. 
+where: $\<-,-\>_V$ represents the evaluation pairing between $V$ and its dual, $\star$ is the Hodge star operator for the metric $g_0$, and $h^\vee$ denotes the dual metric on $V$. 
 This action functional is equivalent to the original $\sigma$ model. 
 Moreover, the limit $h \to \infty \iff h^\vee \to 0$ amounts to dropping the last term. 
 It is shown that the remaining theory splits as the free $\beta\gamma$ system with target $V$ plus its anti-holomorphic conjugate. 
+At the level of fields the relationship between the fields in the first order formalism and the $\beta\gamma$, $\Bar{\beta} \Bar{\gamma}$ system is $\varphi \leftrightarrow \gamma + \Bar{\gamma}$ and $B \leftrightarrow \beta + \Bar{\beta}$. 
 
 For the remaining part of the action one shows that in this infinite volume limit, only the $n=1$ term in the expansion of $D_n(\alpha,\ldots,\alpha)$ survives. 
-Furthermore, we can use the metric $g_0$ to define a projection map
+Furthermore, we can use the metric $g_0$ to define an injective map
 \ben
-\Sym^2(T\Sigma) \to \Omega^{0,1}(\Sigma ; T^{1,0}\Sigma) \oplus  ...
+\Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma) \oplus \Omega^{1,0}(\Sigma ; T^{0,1}) \hookrightarrow \Sym^2(T_\Sigma) .
 \een
+The pull-back of the term $\int_\Sigma h(\varphi, D_1(\alpha) \varphi)$ along this map is, in the $h \to \infty$ limit
+\ben
+\int_\Sigma \<\beta , [c, \gamma]\>_V + {\rm c.c.}
+\een
+where $c \in \Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma)$ and the second term is the anti-holomorphic conjugate. 
+This first term above is precisely the third term in the action functional of the holomorphic bosonic string (\ref{bosaction}) describing how deformations of complex structure couple to the fields of the $\sigma$ model. 
 
+The remaining terms of the holomorphic bosonic string come from analyzing what happens to the term $S'(f, X, \alpha)$ in the infinite volume limit and is similar to the idea above. 
 \end{proof}
 
 
