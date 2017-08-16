@@ -258,14 +258,13 @@ f, f^\vee & C^\infty(\Sigma) &&& \Omega^2(\Sigma) .
 \end{array}
 \]
 The BV action functional is of the form:
-\begin{equation}\label{polyakov bv}
-\begin{align*}
+\begin{align*}\label{polyakov bv}
 S^{BV}_{Poly} = 
 & \int_\Sigma h(\varphi, \Delta_{g_0} \varphi)\, \dvol_{g_0} + \sum_{n \geq 1} \frac{1}{n!} \int_{\Sigma} h(\varphi, D_n(\alpha,\ldots,\alpha) \varphi) \dvol_{g_0} \\
 & +  \int_{\Sigma} h(\varphi, X \cdot \varphi) \dvol_{g_0} \\
 & +  S'(X, f, \alpha) 
 \end{align*}
-\end{equation}
+\brian{You used both ``begin{equation}'' and ''begin{align*}''. Latex was giving me an error, and I don't think you need to use both.}
 The right hand side of the first line amounts to expanding out the Laplace-Beltrami operator $\Delta_{g_0 + \alpha}$ as a function of $\alpha$.
 Hence, the $D_n$ are differential operators of the form 
 $D_n : \Gamma(\Sigma , \Sym^2 T\Sigma)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ 
