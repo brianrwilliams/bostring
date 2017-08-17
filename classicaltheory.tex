@@ -89,11 +89,14 @@ with the $c$-deformed complex structure, to~$V$.
 
 \owen{Add something about how to understand the degrees. E.g., does $b$ ever appear?}
 \brian{Confused by what you mean by ``does b ever appear"? But I've added further comments above about degrees.}
-\owen{$b$ essentially appears as a Lagrange multiplier, so it doesn't have an ``intrinsic meaning'' itself. People might find it confusing since it is not in degree 0, and hence looks ``unphysical,'' plus it isn't obvious from the naive/usual approach to specifying field theories. (That's why I mentioned that it might be nice to include a pointer to Kevin's discussion of where BV action comes from.)}
+
+Note that $b$ essentially appears as a Lagrange multiplier, so it doesn't have any intrinsic meaning physical meaning by itself. 
+The field $b$ can be understood as an ``antifield" to the ghost field $c$, in other words an {\em antighost}. 
+
 
 \owen{Add explanation of writing BV theory from ordinary action.}
-\brian{??}
 \owen{I meant that there's a process by which one can work out the BV action from the naive action plus the relevant gauge action.}
+\brian{I agree, but even the $b$ fields appear in the usual string theory literature, so maybe their appearance here won't surprise people? I'm happy to sketch the construction of a BV theory from a naive gauge theory, but it may belong in the overview section, so I've added a bullet there.}
 
 \begin{rmk}
 \label{rmk:bcbg}
@@ -269,7 +272,7 @@ The right hand side of the first line amounts to expanding out the Laplace-Beltr
 Hence, the $D_n$ are differential operators of the form 
 $D_n : \Gamma(\Sigma , \Sym^2 T\Sigma)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ 
 where ${\rm Diff}^{\leq 2}(\Sigma)$ are order $\leq 2$ differential operators on $\Sigma$.
-The second line encodes how vector fields act on the maps of the $\sigma$ model \owen{I think we should hyphenate: $\sigma$-model}. 
+The second line encodes how vector fields act on the maps of the $\sigma$ model.
 The third line $S'(X, f, \alpha)$ is a function only of the fields $f$, $X$, $\alpha$, and their antifields,
 whose exact form will not concern us. 
 
@@ -292,7 +295,6 @@ The ``infinite volume limit'' as $t \to \infty$ admits a nice description,
 provided one rewrites the action functional in a first-order formalism
 (i.e., adjoins fields so that only first-order differential operators appear in the action,
 which is a sort of action functional analogue of working with phase space).
-\owen{What do you think?}
 
 \begin{lem} 
 In this infinite volume limit
@@ -303,13 +305,11 @@ S(\beta, \gamma, b,c) + \Bar{S}(\Bar{\beta}, \Bar{\gamma}, \Bar{b}, \Bar{c}),
 where $S(\beta, \gamma, b,c)$ is the action functional for the holomorphic bosonic string in Equation (\ref{bosaction}) and $\Bar{S}$ is its anti-holomorphic conjugate. 
 \end{lem}
 
-\owen{I promoted this to a lemma. I think it's true, and we don't feel obligated elsewhere to give full proofs of every assertion.}
-
 \begin{rmk} 
 The action functional $\Bar{S}$ is similar to $S$ where the fields $\gamma,\beta,b,c$ are replaced by sections in the the relevant conjugate bundles. 
 For example, $\beta \in \Omega^{1,*}(\Sigma)$ becomes $\Bar{\beta} \in \Omega^{*,1} (\Sigma)$. 
 Moreover, the operator $\dbar$ is replaced by the holomorphic Dolbeault operator $\partial$. 
-\owen{We could also just say ``the holomorphic string on $\Bar{\Sigma}$, which is the conjugate complex structure.''}
+Another way of saying this is that $\Bar{S}$ is the holomorphic string on $\Bar{\Sigma}$, which is the conjugate complex structure to $\Sigma$. 
 \end{rmk}
 
 \begin{proof}[Outline of proof] 
@@ -319,7 +319,7 @@ Second, the infinite volume limit $t \to \infty$ is naively ill-defined using th
 It turns out that these two issues are solved by the same maneuver. 
 
 We begin with the first term in the first line of (\ref{polyakov bv}). 
-Notice that it is simply the action functional for the $\sigma$ model \owen{hyphenate} of maps from $(\Sigma, g_0)$ to $(V, h)$. 
+Notice that it is simply the action functional for the $\sigma$-model of maps from $(\Sigma, g_0)$ to $(V, h)$. 
 It is shown in Appendix ?? of \cite{ggw} how to make sense of the infinite volume limit of this usual $\sigma$-model. 
 The idea is to rewrite this theory in the {\em first order formalism}.
 This amounts to introducing a new field $B \in \Omega^1(\Sigma) \tensor V^\vee$ and action functional 
