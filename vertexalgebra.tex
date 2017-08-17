@@ -152,8 +152,10 @@ Moreover, the $P_0$ bracket on the classical observables determines the structur
 
 \owen{describe classical observables \& why we get a Poisson vertex algebra}
 \brian{Should I say more?}
+\owen{Yes, I think it would be worth noting that the classical observables are simply functions on solutions to the equation of motion (rather, for the polynomial solutions).}
 
 \brian{Write down vertex algebra from quantization above. Possibly state the relationship to semi-infinite cohomology}
+\owen{Yes we should state it, probably as a remark.}
 
 \subsection{The $E_2$ algebra}
 
@@ -197,15 +199,17 @@ This means that the operator $\frac{\d}{\d \zbar}$ acts cohomologically trivial 
 
 Recall that the $b$-fields of the bosonic string are concentrated in degree $+1$ and $+2$. 
 A field in degree $+1$ is of the form $f(z,\zbar) \d z^{\tensor 2} \in \Omega^{1,0}(\Sigma, T_\Sigma^{1,0*})$. 
-Define the following linear observable on $\CC$ that vanishes on all fields besides the degree $+1$ component of the $b$-fields:
+Define the following linear observable on $\CC$,
 \ben
-b_{-1} : f(z,\zbar) \d z^{\tensor 2} \mapsto f(0) . 
+b_{-1} : f(z,\zbar) \d z^{\tensor 2} \mapsto f(0),
 \een 
+which vanishes on all fields besides the degree $+1$ component of the $b$-fields.
 This observable is a closed element of degree $-1$ in $\Obs^\q_{\rm string}$. 
 Given any other observable $O \in \Obs^{\q}_{\rm string}$ we can define the observable $b_{-1} \cdot O$ using the symmetric product.
 Denote the derivation $\eta : O \mapsto b_{-1} \cdot O$
 
-\begin{lem} The derivation $\eta$ is degree $-1$ and satisfies 
+\begin{lem} 
+The derivation $\eta$ is degree $-1$ and satisfies 
 \ben
 [\dbar + \hbar \Delta + \{I^\q, -\}, \eta] = \frac{\d}{\d z}
 \een
