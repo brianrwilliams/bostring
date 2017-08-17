@@ -38,7 +38,60 @@ In this section, we will explain why the deformation complex of the holomorphic 
 can be expressed in terms of Gelfand-Fuks cohomology. 
 Along the way we will see how the usual backgrounds for the bosonic string (a target metric, dilaton term, and so on) appear as elements in this complex of local functionals and hence as deformations of the classical action. 
 
+Right now, we will focus on the case $\Sigma = \CC$, 
+and in Section \ref{sec: conformalblock} we will consider arbitrary Riemann surfaces.
+We restrict ourselves to examining {\em translation-invariant} local functionals.
+\owen{Should we explain why?}
+Unpacking what this means will lead swiftly to Gelfand-Fuks cohomology.
+
 \subsection{}
+
+As a local functional is given by integration of a Lagrangian density,
+translation invariance requires the density to be the Lebesgue measure $\d^2 z$, up to rescaling,  
+and requires the Lagrangian to be specified by its behavior at one point.
+Hence, a translation-invariant local functional on $\CC$ is determined by a function of the jet (i.e., Taylor expansion) of the fields at the origin in $\CC$. 
+For instance, the jets at the origin of the Dolbeault complex $\Omega^{0,*}(\CC ; V)$ are
+$(V [[z,\zbar]] [\d \zbar] , \dbar)$,
+where $\dbar$ is the formal Dolbeault differential. 
+An example of an element is $\widehat{\gamma} = \sum_{m,n} \frac{1}{m!n!}g_{mn} z^m \zbar^n$,
+which is just a formal power series with values in $V$.
+An example of a functional is
+\[
+F(\widehat{\gamma}) = g_{10} + g_{21} = \left( \partial_z \widehat{\gamma}\right)|_0 + \left( \partial_z^2 \partial_{\zbar} \widehat{\gamma}\right)|_0,
+\]
+which corresponds to the local functional
+\[
+F(\gamma) = \int_\CC \partial_z \gamma + \partial_z^2 \partial_{\zbar} {\gamma}\,\d^2 z.
+\]
+We will the first kind of term a {\em chiral} interaction, as it only depends on holomorphic derivatives.
+
+By the $\dbar$-Poincar\'{e} lemma, 
+this complex $(V [[z,\zbar]] [\d \zbar] , \dbar)$ is quasi-isomorphic to $V[[z]]$, concentrated in degree zero. 
+This observation is actually quite concrete:
+it is simply saying that for a solution $\gamma$ to the equation of motion $\dbar \gamma = 0$, 
+its Taylor expansion is just a power series in $z$ and it is independent of $\zbar$.
+In consequence, if we consider translation-invariant Lagrangians depending only on the $\gamma$ field, then up to quasi-isomorphism these are $\Sym(V^\vee[z^\vee])$.
+In other words, only chiral interactions yield distinct modifications of the action,
+when one takes into account the equation of motion.
+
+Note that we have chosen to work with functionals of the fields
+that are polynomials built out of continuous linear functionals of the jet.
+This choice is the standard and natural one for variational problems.
+We note as well that we should exclude constant functionals,
+so we want to use $\Sym^{>0}(V^\vee[z^\vee])$ to describe translation-invariant local functionals.
+
+An analogous argument applies to the $c$ field. 
+It shows there is a quasi-isomorphism of dg Lie algebras 
+between the jet at the origin of the Dolbeault complex $\Omega^{0,*}(\CC ; T^{1,0}_\CC)$ of holomorphic vector fields 
+and the Lie algebra of formal vector fields ${\rm W}_1 = \CC[[z]]\partial_z$.
+\owen{I inserted a description because I don't think $W_1$ is obvious notation.}
+The translation-invariant Lagrangians depending only on the $c$ field 
+are thus quasi-isomorphic to $\cred({\rm W}_1)$,
+by which we mean the (reduced) {\em continuous} Lie algebra cohomology,
+often known as the Gelfand-Fuks cohomology 
+
+
+\subsection{Deformations for the classical theory}
 
 We have already seen how to think of the holomorphic bosonic string theory 
 as corresponding to the shifted cotangent bundle $\TT^*[-1]{\rm Maps}_{\dbar}(-, V)$, 
@@ -49,34 +102,19 @@ and we will use the notation $\CC^\times_{\rm cot}$ to indicate this appearance 
 
 This group action can be seen on the level of the field theory as follows: 
 we give the $\gamma$ and $c$ fields---the base of the cotangent bundle---weight $0$ and give the $\beta$ and $b$ fields---the cotangent fiber---weight~$1$. 
-Note that, in consequence, the pairing $\langle-,-\rangle$ on fields thus has weight -1 
-\owen{I'm kind of confused here: I'd hoped that the BV bracket has weight -1 so that $\{S,-\}$ has overall weight 0.}
-\brian{I think this weight is preserved by duals. That is, both $\<-,-\>$ and $\{-,-\}$ have weight -1. So we're OK.}
+Note that, in consequence, the pairing $\langle-,-\rangle$ on fields thus has weight -1.
 In these terms, the classical action functional is weight 1. 
-Thus, we focus on weight 1 deformations of the holomorphic bosonic string,
+Thus, we focus on weight 1 deformations of the action for the holomorphic bosonic string,
 as we are interested in local functionals of the same kind.
 That means we consider the subcomplex of weight 1 local functionals inside the deformation complex.
 
-\owen{I think we should explain this choice: it's because we want the overall differential to have weight zero, and $\Delta$ should have weight $-1$.}
-The weight of the parameter $\hbar$ is also one with respect to the scaling by $\CC^\times_{\rm cot}$.
-Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.
-Put simply, these are local functionals that only depend on the base of the shifted cotangent bundle. 
-On a Riemann surface $\Sigma$ the $\CC^\times_{\rm cot}$-invariant local functionals are of the form
-\ben
-\left(\Oloc\left(\Omega^{0,*}(\Sigma, V) \oplus \Omega^{0,*}(\Sigma, T^{1,0})[1] \Omega^{1,*}(\Sigma ; V) \oplus \Omega^{1,*}(\Sigma, T^{1,0*})[-1] \right), \{S, -\}\right) .
-\een
-We are concerned with the case that $\Sigma = \CC$ and we restrict ourselves to studying {\em translation invariant} local functionals. 
-
-We have already mentioned that Lagrangian densities are functions on jets of fields integrated against a density. 
-The simplest case is to consider functions on jets at a point, which is sufficient to understand a translation invariant Lagrangian densities. 
-Hence, for translation invariant local functionals on $\CC$ it suffices to look at functionals of the jet at $0 \in \CC$ of the fields. 
-For instance, if we look at the jet at zero of the complex of sheaves $\Omega^{0,*}(\CC ; V)$ we obtain the complex
-\ben
-(V [[z,\zbar]] [\d \zbar] , \dbar)
-\een
-where $\dbar$ is the formal Dolbeault differential. 
-By the Poincar\'{e} lemma for the $\dbar$ operator this complex is quasi-isomorphic to $V[[z]]$ (concentrated in degree zero). 
-Similarly, the jet at zero of the complex of sheaves $\Omega^{0,*}(\CC ; T^{1,0}_\CC)$ is quasi-isomorphic, as dg Lie algebras, to the Lie algebra of formal vector fields in one variable ${\rm W}_1$.
+\begin{rmk}\label{rmk: classical weights}
+Although this action $S$ has weight 1, 
+its role in the cochain complex of classical observables is to define the differential $\{S,-\}$.
+Observe that the shifted Poisson bracket $\{-,-\}$ has weight -1, 
+because it is determined by the pairing, 
+and so the differential has weight 0. 
+\end{rmk}
 
 The main result of this section is the following:
 
@@ -112,7 +150,19 @@ An arbitrary element of $V [[z]]$ is linear combination of vectors of the form $
 Write $\zeta_k$ for the dual element $(z^k)^\vee$. 
 Thus an element of $(V [[z]])^\vee$ is a linear combination of the vectors of the form $v^\vee \tensor \zeta_k$. 
 
-\subsubsection{The $\CC^\times_{\rm cot}$-weight zero piece}
+\subsubsection{Interaction terms that appear at one loop}
+
+\owen{I think we should explain this choice: it's because we want the overall differential to have weight zero, and $\Delta$ should have weight $-1$.}
+The weight of the parameter $\hbar$ is also one with respect to the scaling by $\CC^\times_{\rm cot}$.
+Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.
+Put simply, these are local functionals that only depend on the base of the shifted cotangent bundle. 
+On a Riemann surface $\Sigma$ the $\CC^\times_{\rm cot}$-invariant local functionals are of the form
+\ben
+\left(\Oloc\left(\Omega^{0,*}(\Sigma, V) \oplus \Omega^{0,*}(\Sigma, T^{1,0})[1] \Omega^{1,*}(\Sigma ; V) \oplus \Omega^{1,*}(\Sigma, T^{1,0*})[-1] \right), \{S, -\}\right) .
+\een
+
+
+{The $\CC^\times_{\rm cot}$-weight zero piece}
 
 The weight $\CC^\times_{\rm cot}$-weight zero sub Lie algebra of the Lie algebra (\ref{jet lie}) is simply $W_1 \ltimes V [[z]] [-1]$, where the semi-direct product comes from the natural action of formal vector fields on formal power series.
 Thus, we have reduced the calculation of the $\CC^\times_{\rm cot}$-weight zero piece of the local deformation complex to calculating the Chevalley-Eilenberg complex of this Lie algebra:
