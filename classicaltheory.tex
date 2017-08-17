@@ -181,9 +181,9 @@ which encodes deformations of complex structure and holomorphic maps.
 Negative degree cohomology of the tangent complex detects infinitesimal automorphisms (and automorphisms of automorphisms, etc) of the space.
 For instance, here we see $H^0(\Sigma_c,\cT_{\Sigma_c})$ appear in degree -1, 
 since a holomorphic vector field is an infinitesimal automorphism of a complex curve.
-These negative directions are called ``ghosts'' (or ghosts for ghosts, etc) in physics.
-The positive degree cohomology detects infinitesimal relations (and relations of relations, etc).
-For instance, here we see $H^1(\Sigma_c,V)$, the cokernel of~$\dbar+c$. \owen{???}
+These negative directions are called ``ghosts'' (or ghosts for ghosts, and so on) in physics.
+The positive degree cohomology detects infinitesimal relations (and relations of relations, and so on).
+For instance, here we see $H^1(\Sigma_c,V)$, the cokernel of~$\dbar+c$. \owen{??? We should explain how we see relations of relations in this example}
 \end{rmk}
 
 Note that the underlying graded spaces of this tangent complex are the $c$ and $\gamma$ fields from the BV theory described above.
@@ -261,20 +261,22 @@ f, f^\vee & C^\infty(\Sigma) &&& \Omega^2(\Sigma) .
 \end{array}
 \]
 The BV action functional is of the form:
-\begin{align*}\label{polyakov bv}
+\begin{align}\label{polyakov bv}
 S^{BV}_{Poly} = 
-& \int_\Sigma h(\varphi, \Delta_{g_0} \varphi)\, \dvol_{g_0} + \sum_{n \geq 1} \frac{1}{n!} \int_{\Sigma} h(\varphi, D_n(\alpha,\ldots,\alpha) \varphi) \dvol_{g_0} \\
+& \int_\Sigma h(\varphi, \Delta_{g_0} \varphi)\, \dvol_{g_0} + \sum_{n \geq 1} \frac{1}{n!} \int_{\Sigma} h(\varphi, D_n(\alpha) \varphi) \dvol_{g_0} \\
 & +  \int_{\Sigma} h(\varphi, X \cdot \varphi) \dvol_{g_0} \\
 & +  S'(X, f, \alpha) 
-\end{align*}
+\end{align}
 \brian{You used both ``begin{equation}'' and ''begin{align*}''. Latex was giving me an error, and I don't think you need to use both.}
+\owen{I did that to have a single equation number for the equation. If you use align*, then you get no equation number. If you use align, as I did now, you get three. It's poopy.}
 The right hand side of the first line amounts to expanding out the Laplace-Beltrami operator $\Delta_{g_0 + \alpha}$ as a function of $\alpha$.
 Hence, the $D_n$ are differential operators of the form 
 $D_n : \Gamma(\Sigma , \Sym^2 T\Sigma)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ 
 where ${\rm Diff}^{\leq 2}(\Sigma)$ are order $\leq 2$ differential operators on $\Sigma$.
+\owen{I'm not sure I like this description, although it's accurate. Maybe something more concrete like ``for each $\alpha$, we get a second-order differential operator $D_n(\alpha)$.'' I also removed the $n$-fold appearance of $\alpha$.}
 The second line encodes how vector fields act on the maps of the $\sigma$ model.
 The third line $S'(X, f, \alpha)$ is a function only of the fields $f$, $X$, $\alpha$, and their antifields,
-whose exact form will not concern us. 
+whose exact form is irrelevant to us. \owen{Is it clear why $S'$ doesn't matter? For instance, does it obviously vanish in the infinite volume limit?}
 
 An explicit formula for $D_n(\alpha,\ldots,\alpha)$ is a rather involved exercise (and not needed here).
 %can be derived from the power series expansion of the Laplace-Beltrami operator in terms of the metric. 

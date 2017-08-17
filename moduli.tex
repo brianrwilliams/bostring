@@ -23,7 +23,7 @@ As a gloss, the underlying graded vector space of this deformation complex consi
 There is also a shifted Lie bracket $\{-,-\}$, 
 which arises from the pairing $\int_\Sigma \langle-,-\rangle$ on the fields.
 It is, in essence, the shifted Poisson bracket corresponding to that shifted symplectic pairing on the fields.
-The differential on the local functionals is then $\{S,?\}$, where $S$ is the classical action. 
+The differential on the local functionals is then $\{S,-\}$, where $S$ is the classical action. 
 All together, the deformation complex forms a shifted dg Lie algebra. 
 Observe that if we find a degree zero element $I$ such that
 \[
@@ -34,11 +34,86 @@ hence determines a new classical BV theory whose action functional is $S + I$.
 In particular, degree 0 cocycles determine first-order deformations of the classical BV theory. Cocycles in degree -1 encode local symmetries of the classical theory; 
 and obstructions to satisfying the quantum master equation end up being degree 1 cocycles.
 
-In this section, we will explain why the deformation complex of the holomorphic string 
+In this section, we will explain why the deformation complex $\Def_{\rm string}$ of the holomorphic string 
 can be expressed in terms of Gelfand-Fuks cohomology. 
 Along the way we will see how the usual backgrounds for the bosonic string (a target metric, dilaton term, and so on) appear as elements in this complex of local functionals and hence as deformations of the classical action. 
 
-\subsection{}
+Right now, we will focus on the case $\Sigma = \CC$, 
+and in Section \ref{sec: conformalblock} we will consider arbitrary Riemann surfaces.
+We restrict ourselves to examining {\em translation-invariant} local functionals.
+\owen{Should we explain why?}
+Unpacking what this means will lead swiftly to Gelfand-Fuks cohomology.
+
+\subsection{Deformations for the classical theory}
+
+As a local functional is given by integration of a Lagrangian density,
+translation invariance requires the density to be the Lebesgue measure $\d^2 z$, up to rescaling,  
+and requires the Lagrangian to be specified by its behavior at one point.
+Hence, a translation-invariant local functional on $\CC$ is determined by a function of the jet (i.e., Taylor expansion) of the fields at the origin in~$\CC$. 
+
+It is particularly easy to understand what we mean in the case of the free $bc\beta\gamma$ system.
+For instance, the $\gamma$ fields live in the Dolbeault complex $\Omega^{0,*}(\CC ; V)$,
+and their jets at the origin are $(V [[z,\zbar]] [\d \zbar] , \dbar)$,
+where $\dbar$ is the formal Dolbeault differential. 
+An example of an element is thus $\widehat{\gamma} = \sum_{m,n} \frac{1}{m!n!}g_{mn} z^m \zbar^n$,
+which is just a formal power series with values in $V$.
+An example of a functional is
+\[
+F(\widehat{\gamma}) = g_{10} + g_{21} = \left( \partial_z \widehat{\gamma}\right)|_0 + \left( \partial_z^2 \partial_{\zbar} \widehat{\gamma}\right)|_0,
+\]
+which corresponds to the local functional
+\[
+F(\gamma) = \int_\CC \partial_z \gamma + \partial_z^2 \partial_{\zbar} {\gamma}\,\d^2 z.
+\]
+We call the first kind of term a {\em chiral} interaction, as it only depends on holomorphic derivatives.
+
+By the $\dbar$-Poincar\'{e} lemma, 
+this complex $(V [[z,\zbar]] [\d \zbar] , \dbar)$ is quasi-isomorphic to $V[[z]]$, concentrated in degree zero. 
+This observation is actually quite concrete:
+it simply says that for a solution $\gamma$ to the equation of motion $\dbar \gamma = 0$, 
+its Taylor expansion is just a power series in $z$ and it is independent of $\zbar$.
+In consequence, if we consider translation-invariant Lagrangians depending only on the $\gamma$ field, then up to quasi-isomorphism these are $\Sym(V^\vee[z^\vee])$.
+In other words, only chiral interactions yield distinct modifications of the action,
+when one takes into account the equation of motion.
+
+Note that we have chosen to work with functionals of the fields
+that are polynomials built out of continuous linear functionals $V^\vee[z^\vee]$ of the jets.
+This choice is the standard and natural one for variational problems.
+We note as well that constant functionals are irrelevant,
+so we want to use $\Sym^{>0}(V^\vee[z^\vee])$ to describe translation-invariant local functionals.
+
+An analogous argument applies to the $c$ field. 
+It shows there is a quasi-isomorphism of dg Lie algebras 
+between the jet at the origin of the Dolbeault complex $\Omega^{0,*}(\CC ; T^{1,0}_\CC)$ of holomorphic vector fields 
+and the Lie algebra of formal vector fields $\wone = \CC[[z]]\partial_z$.
+\owen{I inserted a description because I don't think $W_1$ is obvious notation.}
+The translation-invariant Lagrangians depending only on the $c$ field 
+are thus quasi-isomorphic to $\cred(\wone)$,
+by which we mean the (reduced) {\em continuous} Lie algebra cohomology,
+often known as the Gelfand-Fuks cohomology 
+Similar arguments work for the $\beta$ and $b$ fields.
+
+If we take all the fields into account together and consider the full equations of motion 
+for the holomorphic string,
+which couple the $c$ field to the others,
+then these arguments yield the following.
+
+\begin{lem}
+There is a quasi-isomorphism 
+\[
+\Def_{\rm string}(\CC,V)^\CC \simeq \cred(\wone, \Sym^{>0}(V^\vee[z^\vee] \oplus V[z^\vee] \d z^\vee \oplus W_1^{\rm ad}[2])) 
+\]
+between the deformation complex of translation-invariant local functionals for the holomorphic string and a certain Gelfand-Fuks cochain complex.
+\end{lem}
+
+\owen{Please double check that $b$ field part.}
+
+This lemma already substantially simplifies our lives, 
+as one can invoke the literature on Gelfand-Fuks cohomology.
+But before we do,
+we will take advantage of another symmetry condition to simplify the situation.
+
+\subsection{Dilating cotangent fibers}
 
 We have already seen how to think of the holomorphic bosonic string theory 
 as corresponding to the shifted cotangent bundle $\TT^*[-1]{\rm Maps}_{\dbar}(-, V)$, 
@@ -49,106 +124,133 @@ and we will use the notation $\CC^\times_{\rm cot}$ to indicate this appearance 
 
 This group action can be seen on the level of the field theory as follows: 
 we give the $\gamma$ and $c$ fields---the base of the cotangent bundle---weight $0$ and give the $\beta$ and $b$ fields---the cotangent fiber---weight~$1$. 
-Note that this implies that the pairing $\langle-,-\rangle$ on fields thus has weight -1 
-\owen{I'm kind of confused here: I'd hoped that the BV bracket has weight -1 so that $\{S,-\}$ has overall weight 0.}
-\brian{I think this weight is preserved by duals. That is, both $\<-,-\>$ and $\{-,-\}$ have weight -1. So we're OK.}
+Note that, in consequence, the pairing $\langle-,-\rangle$ on fields thus has weight -1.
 In these terms, the classical action functional is weight 1. 
-Thus, we focus on weight 1 deformations of the holomorphic bosonic string,
+Thus, we focus on weight 1 deformations of the action for the holomorphic bosonic string,
 as we are interested in local functionals of the same kind.
 That means we consider the subcomplex of weight 1 local functionals inside the deformation complex.
 
-\owen{I think we should explain this choice: it's because we want the overall differential to have weight zero, and $\Delta$ should have weight $-1$.}
-The weight of the parameter $\hbar$ is also one with respect to the scaling by $\CC^\times_{\rm cot}$.
-Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.
-Put simply, these are local functionals that only depend on the base of the shifted cotangent bundle. 
-On a Riemann surface $\Sigma$ the $\CC^\times_{\rm cot}$-invariant local functionals are of the form
-\ben
-\left(\Oloc\left(\Omega^{0,*}(\Sigma, V) \oplus \Omega^{0,*}(\Sigma, T^{1,0})[1] \Omega^{1,*}(\Sigma ; V) \oplus \Omega^{1,*}(\Sigma, T^{1,0*})[-1] \right), \{S, -\}\right) .
-\een
-We are concerned with the case that $\Sigma = \CC$ and we restrict ourselves to studying {\em translation invariant} local functionals. 
+\begin{rmk}\label{rmk: classical weights}
+Although this action $S$ has weight 1, 
+its role in the cochain complex of classical observables is to define the differential $\{S,-\}$.
+Observe that the shifted Poisson bracket $\{-,-\}$ has weight -1, 
+because it is determined by the pairing, 
+and so the differential has weight 0. 
+\end{rmk}
 
-We have already mentioned that Lagrangian densities are functions on jets of fields integrated against a density. 
-The simplest case is to consider functions on jets at a point, which is sufficient to understand a translation invariant Lagrangian densities. 
-Hence, for translation invariant local functionals on $\CC$ it suffices to look at functionals of the jet at $0 \in \CC$ of the fields. 
-For instance, if we look at the jet at zero of the complex of sheaves $\Omega^{0,*}(\CC ; V)$ we obtain the complex
-\ben
-(V [[z,\zbar]] [\d \zbar] , \dbar)
-\een
-where $\dbar$ is the formal Dolbeault differential. 
-By the Poincar\'{e} lemma for the $\dbar$ operator this complex is quasi-isomorphic to $V[[z]]$ (concentrated in degree zero). 
-Similarly, the jet at zero of the complex of sheaves $\Omega^{0,*}(\CC ; T^{1,0}_\CC)$ is quasi-isomorphic, as dg Lie algebras, to the Lie algebra of formal vector fields in one variable ${\rm W}_1$.
+This subcomplex admits a nice description in terms of the geometry of the target.
 
-The main result of this section is the following:
+\begin{lem}
+\label{lem: def complex wt zero} 
+There is a $\GL(V)$-equivariant quasi-isomorphism
+\[
+\Def_{\rm string}(\CC)^{\CC, (0)} \simeq \Sym(V^*) \tensor V[1]
+\]
+between the weight 1, translation-invariant deformation complex 
+and the polynomial vector fields on $V$, placed in degree~-1.
+\end{lem}
 
-\begin{prop}\label{prop: def complex} There are $\GL(V)$-equivariant quasi-isomorphisms of the translation invariant deformations
-\begin{itemize}
-\item[(0)] of weight $0$:
-\ben
+\owen{I think we might be able to just to sketch the key argument in light of the discussion in the preceding subsection. That is, just point out the weights argument. We can also just say that it is proved by arguments that are similar but easier than what we do in the next subsection.}
+
+\owen{We should make a small comment about why we take into account $GL(V)$ equivariance,
+such as that we want to take into account the other natural symmetries of the target $V$.}
+
+\subsection{Interaction terms that appear at one loop}
+
+As we will see in Section \ref{sec: quantization}, 
+the quantization of the holomorphic string only involves local functional of weight zero for this $\CC^\times_{\rm cot}$-action.
+(Concretely, this restriction appears because the one-loop Feynman diagrams only have external legs for $c$ and $\gamma$ fields.)
+Hence, it behooves us to compute the weight zero subcomplex of the deformation complex as well.
+
+\begin{lem}
+\label{lem: def complex wt zero} 
+There is a $\GL(V)$-equivariant quasi-isomorphism
+\[
 \left(\Oloc(\cE)^{(0)}, \{S,-\}\right)^{\CC} \simeq \CC[-1] \oplus \Omega^2_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)[-1] 
-\een
-\item[(1)] and of weight $1$:
-\ben 
-\left(\Oloc(\cE)^{(1)} , \{S,-\}\right)^\CC \simeq T_V [1] .
-\een
-\end{itemize}
-\end{prop}
+\]
+between the weight 0, translation-invariant deformation complex 
+and the polynomial vector fields on $V$, placed in degree~-1.
+\end{lem}
 
-\owen{At the moment, I find the discussion above a bit convoluted. Let's discuss how to disentangle.}
+Before explaining the key steps of the proof, 
+we remark that there is another, more structural way to see that only weight zero local functionals should be relevant.
+A quick physical argument would say that we want the path integral measure $\exp(-S/\hbar)$ to be weight zero,
+which forces $\hbar$ to have weight one to cancel out with the weight of the classical action.
+But the one-loop term $I_1$ in the quantized action $S^\q = S + \hbar I_1 + \cdots$ must then have weight zero.
 
-\owen{One option is to rearrange the order of this whole section. It's natural to talk first just about weight 1, since that is strictly classical. Postpone discussing $\hbar$ etc. Hence, right after introducing weight 1, we can just state the value of the deformation complex for that component. In the next subsection, we can say that weight 0 stuff shows up when quantizing at 1-loop and refer ahead in the document, explain the more subtle weight issues, and then state the deformation complex for that component.}
+There is a BV analogue of this argument.
+It notes that the differential of the quantum observables has the form $\{S^\q,-\} + \hbar \Delta$,
+where $\Delta$ denotes the BV Laplacian.
+(See Section \ref{subsec: QME} for a discussion of these objects.)
+As the BV Laplacian has weight -1 because it is determined by the bracket,
+we must give $\hbar$ weight 1 to ensure the total differential has weight zero.
+Again the one-loop interaction is forced to have weight zero.
 
-\subsection{}
+%\owen{I think we should explain this choice: it's because we want the overall differential to have weight zero, and $\Delta$ should have weight $-1$.}
+%The weight of the parameter $\hbar$ is also one with respect to the scaling by $\CC^\times_{\rm cot}$.
+%Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.
+%Put simply, these are local functionals that only depend on the base of the shifted cotangent bundle. 
+%On a Riemann surface $\Sigma$ the $\CC^\times_{\rm cot}$-invariant local functionals are of the form
+%\ben
+%\left(\Oloc\left(\Omega^{0,*}(\Sigma, V) \oplus \Omega^{0,*}(\Sigma, T^{1,0})[1] \Omega^{1,*}(\Sigma ; V) \oplus \Omega^{1,*}(\Sigma, T^{1,0*})[-1] \right), \{S, -\}\right) .
+%\een
 
-The jets at $0 \in \CC$ of local Lie algebra $\Omega^{0,*}(\CC ; T^{1,0} \ltimes (V[-1] \oplus \d z V^*[-1] \oplus \d z T^{1,0 *})$ is quasi-isomorphic to the Lie algebra
+\subsubsection{Sketch of proof}
+
+The fields (rather, their shift up by one) form a dg Lie algebra
+\[
+\Omega^{0,*}(\CC ; T^{1,0} \ltimes (V[-1] \oplus \d z \,V^*[-1] \oplus \d z \,T^{1,0 *}).
+\]
+The jets at $0 \in \CC$ of this Lie algebra is quasi-isomorphic to the Lie algebra
 \be\label{jet lie}
-{\rm W}_1 \ltimes (V [[z]] [-1] \oplus \d z V^*[[z]] [-1] \oplus \hOmega^1_1 [-2])
+\wone \ltimes (V [[z]] [-1] \oplus \d z V^*[[z]] [-1] \oplus \hOmega^1_1 [-2]),
 \ee
-where ${\rm W}_1 = \CC [[z]] \partial_z$ is the Lie algebra of formal vector fields in one variable and $\hOmega^1_1 = \CC [[z]] \d z$ is the space of formal one forms. 
-The Lie bracket comes from bracket on ${\rm W}_1$ and the natural action of ${\rm W}_1$ on $\CC [[z]]$ and $\hOmega^1_1$. 
+where $\wone = \CC [[z]] \partial_z$ is the Lie algebra of formal vector fields in one variable and $\hOmega^1_1 = \CC [[z]] \d z$ is the space of formal one-forms. 
+\owen{One-forms is hyphenated. The need to do this is clear from considering "two forms" which is ambiguous without the hyphen.}
+The Lie bracket comes from bracket on $\wone$ and the natural action of $\wone$ on $\CC [[z]]$ and $\hOmega^1_1$. 
 
-Denote by $\{L_n = z^{n+1} \partial_z\}$ the standard basis for the Lie algebra of formal vector fields ${\rm W}_1$. 
-Let $\lambda_n \in {\rm W}_1^\vee$ be the dual vector to $L_n$ (we are using the continuous dual, as in the setting of Gelfand-Fuks cohomology). 
+Denote by $\{L_n = z^{n+1} \partial_z\}$ the standard basis for the Lie algebra of formal vector fields $\wone$. 
+Let $\lambda_n \in \wone^\vee$ be the dual vector to $L_n$ (we are using the continuous dual, as in the setting of Gelfand-Fuks cohomology). 
 An arbitrary element of $V [[z]]$ is linear combination of vectors of the form $v \tensor z^k$. 
 Write $\zeta_k$ for the dual element $(z^k)^\vee$. 
 Thus an element of $(V [[z]])^\vee$ is a linear combination of the vectors of the form $v^\vee \tensor \zeta_k$. 
 
-\subsubsection{The $\CC^\times_{\rm cot}$-weight zero piece}
 
-The weight $\CC^\times_{\rm cot}$-weight zero sub Lie algebra of the Lie algebra (\ref{jet lie}) is simply $W_1 \ltimes V [[z]] [-1]$, where the semi-direct product comes from the natural action of formal vector fields on formal power series.
+The weight $\CC^\times_{\rm cot}$-weight zero sub-Lie algebra of the Lie algebra (\ref{jet lie}) is simply $W_1 \ltimes V [[z]] [-1]$, where the semi-direct product comes from the natural action of formal vector fields on formal power series.
 Thus, we have reduced the calculation of the $\CC^\times_{\rm cot}$-weight zero piece of the local deformation complex to calculating the Chevalley-Eilenberg complex of this Lie algebra:
 \ben
-\cred^* \left({\rm W}_1 \ltimes V [[z]] [-1] \right) .
+\cred^* \left(\wone \ltimes V [[z]] [-1] \right) .
 \een
-This splits into two terms $\cred^* ({\rm W}_1) \oplus \clie^*(W_1 ;  \Sym^{\geq 1} (V [[z]])^\vee)$. 
+This splits into two terms $\cred^* (\wone) \oplus \clie^*(W_1 ;  \Sym^{\geq 1} (V [[z]])^\vee)$. 
 
 The first term in this summand is the reduced Gelfand-Fuks cohomology of formal vector fields with values in the trivial module.
-It is well-known that the cohomology is one-dimensional and concentrated in degree $3$, $H^3_{\rm red} ({\rm W}_1) \cong \CC[-3]$. 
+It is well-known that the cohomology is one-dimensional and concentrated in degree $3$, $H^3_{\rm red} (\wone) \cong \CC[-3]$. 
 We will identify the anomaly for the holomorphic string with flat target as multiple of the generator of this space. 
-The remaining piece of the weight zero deformation complex is the home of the anomalies for the holomorphic string placed in a non trivial background: for instance, when the target of the $\sigma$ model is curved. 
+The remaining piece of the weight zero deformation complex is the home of the anomalies for the holomorphic string placed in a non trivial background: for instance, when the target of the $\sigma$-model is curved. 
 We will not see this in our theory, of course, but the following will hopefully be...
 \owen{Not sure where this paragraph is going.}
 
 The first step in computing this is to notice that there is a quasi-isomorphic subcomplex.
-The vector field $L_0 = z^{n+1} \partial_z$ induces a grading on ${\rm W}_1$ and hence on the Chevalley-Eilenberg complex of ${\rm W}_1$ with coefficients in any module. 
+The vector field $L_0 = z^{n+1} \partial_z$ induces a grading on $\wone$ and hence on the Chevalley-Eilenberg complex of $\wone$ with coefficients in any module. 
 We will call this grading the {\em conformal dimension}.
 
- \begin{lem} Let $M$ be any ${\rm W}_1$-module. Then, the inclusion of the conformal dimension zero subcomplex
+ \begin{lem} Let $M$ be any $\wone$-module. Then, the inclusion of the conformal dimension zero subcomplex
 \ben
-\clie^*({\rm W}_1 ; M)^{(0)} \xto{\simeq} \clie^*({\rm W}_1 ; M)
+\clie^*(\wone ; M)^{(0)} \xto{\simeq} \clie^*(\wone ; M)
 \een
 is a quasi-isomorphism. \brian{Is this true?}
 \end{lem}
 
-\begin{proof} For $p-1$ define the operator $\iota_{L_0} : \clie^{p}({\rm W}_1 ; M) \to \clie^{p-1}({\rm W}_1 ; M)$ defined by sending a cochain $\varphi$ to the cochain
+\begin{proof} For $p-1$ define the operator $\iota_{L_0} : \clie^{p}(\wone ; M) \to \clie^{p-1}(\wone ; M)$ defined by sending a cochain $\varphi$ to the cochain
 \ben
 (\iota_{L_0}\varphi)(X_1,\ldots,X_p) = \varphi(L_0, X_1,\ldots,X_p) .
 \een 
-Let $\d$ be the differential for the complex $\clie^*({\rm W}_1 ; M)$. It is easy to check that the difference $\d \iota_{L_0} - \iota_{L_0} \d$ is equal to the projection onto the dimension zero subspace. 
+Let $\d$ be the differential for the complex $\clie^*(\wone ; M)$. It is easy to check that the difference $\d \iota_{L_0} - \iota_{L_0} \d$ is equal to the projection onto the dimension zero subspace. 
 \end{proof}
 
 The underlying graded vector space of this conformal dimension zero subcomplex splits as follows:
 \ben
-\clie^{\#}({\rm W}_1)^{(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{(0)} \oplus \clie^{\#}({\rm W}_1)^{(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{(-1)}
+\clie^{\#}(\wone)^{(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{(0)} \oplus \clie^{\#}(\wone)^{(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{(-1)}
 \een
 Observe that the dimension zero part of the reduced symmetric algebra is simply $\Sym^{\geq 1}(V^\vee)$ which is identified $\GL(V)$-equivariantly with $\cO_{red}(V)$. 
 That is, power series on $V$ with no constant term. 
@@ -170,28 +272,29 @@ This complex is quasi-isomorphic to
  & \lambda^{-1} \otimes \Omega^1(V) & \lambda^{-1} \wedge \lambda^0 \otimes\Omega^1(V) &
 }
 \]
-which, in turn, is identified with $\Omega^{2}_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)$. This completes the calculation of the $\CC^\times_{\rm cot}$-weight zero component. 
+which, in turn, is identified with $\Omega^{2}_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)$. This observation completes the calculation of the $\CC^\times_{\rm cot}$-weight zero component. 
 
-\subsubsection{The $\CC^\times_{\rm cot}$-weight one piece}
+%\subsubsection{The $\CC^\times_{\rm cot}$-weight one piece}
+%
+%The $\CC^\times_{\rm cot}$-weight one part of the Lie algebra (\ref{jet Lie}) is $\d z V^\vee [[z]] [-1] \oplus \d z \hOmega^1_{1} [-2]$.
+%
+%A totally analogous calculation as in the weight zero case yields the following. 
+%
+%\begin{prop} There is a $\GL(V)$-equivariant quasi-isomorphism
+%\ben
+%\clie^*\left(W_1 ; \Sym \left(V [[z]]\right)^\vee \tensor (\d z V^*[[z]] \oplus \hOmega^{1\tensor 2}_1[-1])^\vee \right) \simeq T_V [-1]
+%\een
+%where $T_V$ denotes the adjoint representation which as a vector space is $T_V = \Sym(V^*) \tensor V$. 
+%\end{prop}
+%
+%This result implies the second part of Proposition \ref{prop: def complex}. 
 
-The $\CC^\times_{\rm cot}$-weight one part of the Lie algebra (\ref{jet Lie}) is $\d z V^\vee [[z]] [-1] \oplus \d z \hOmega^1_{1} [-2]$.
+\subsection{Interpretation as string backgrounds}
 
-A totally analogous calculation as in the weight zero case yields the following. 
-
-\begin{prop} There is a $\GL(V)$-equivariant quasi-isomorphism
-\ben
-\clie^*\left(W_1 ; \Sym \left(V [[z]]\right)^\vee \tensor (\d z V^*[[z]] \oplus \hOmega^{1\tensor 2}_1[-1])^\vee \right) \simeq T_V [-1]
-\een
-where $T_V$ denotes the adjoint representation which as a vector space is $T_V = \Sym(V^*) \tensor V$. 
-\end{prop}
-
-This result implies the second part of Proposition \ref{prop: def complex}. 
-
-\subsubsection{Interpretation as string backgrounds}
-
-Since $V$ is flat we will see that all such deformations will be trivializable. 
-Note that this trivializations will {\em not} be compatible with $\GL(V)$ (or, in particular general diffeomorphisms of the target). 
-Thus, these deformations are relevant for the case of a curved target and we can give an interpretation of them in terms of the usual perspective of {\em string backgrounds}. 
+Since $V$ is flat,
+we will see that all such \owen{what does 'such' refer to?} deformations will be trivializable. 
+Note that this trivializations will {\em not} be compatible with $\GL(V)$ (or for non-flat targets, general diffeomorphisms of the target). 
+Thus, these deformations are relevant for the case of a curved target, and we can give an interpretation of them in terms of the usual perspective of {\em string backgrounds}. 
 
 We have already mentioned that we should think of the $\CC^\times_{\rm cot}$ weight $1$ local functionals as deformations of the classical theory as a cotangent theory.
 The cohomological degree zero deformations of the weight one deformations is $H^1(V ; T_V)$. 

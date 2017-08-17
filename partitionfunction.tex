@@ -16,40 +16,50 @@ namely it becomes the sum over lattice points
 \ben 
 K^{E_\tau}_t (z,w) = \sum_{\lambda \in \ZZ + \tau \ZZ} \frac{1}{2\pi t} e^{-|z-w + \lambda|^2 / 2 t} (\d z - \d w) (\d \zbar - \d \wbar ) .
 \een
-From $K_t^{E_\tau}$ we obtain the propagator $P_{\ell < L}^{E_\tau} = \dbar^* \int_{\ell}^L e^{-t D^{E_\tau}} \d t$ as earlier. 
+From $K_t^{E_\tau}$ we obtain the propagator $P_{\ell < L}^{E_\tau} = \dbar^* \int_{\ell}^L e^{-t D^{E_\tau}} \d t$ as earlier. This propagator regularizes the operator $\dbar^{-1}$ on~$E_\tau$. 
 
-This propagator regularizes the operator $\dbar^{-1}$ on $E_\tau$. 
-The full propagator of the holomorphic string on $E_\tau$ has one component coming from the pairing between the fields $\beta$ and $\gamma$ and another component coming from the pairing between the fields $b$ and $c$. 
-Since $\gamma$ is a section of the trivial vector bundle labeled by the vector space $V$, the first term in the full propagator is of the form $P_{\ell < L}^{E_\tau} \tensor \frac{1}{2} (\id_V + \id_{V^*})$.
-Now, since the tangent bundle is trivial on an elliptic curve we can choose a canonical framing and write the second piece of the propagator describing the pairing between $b$ and $c$ as $P_{\ell < L}^{E_\tau} \tensor (\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z)$ where $\partial_z, \partial_z^\vee$ denote the canonical framing of $T_{E_\tau}, T_{E_\tau}*$ respectively. 
+The full propagator of the holomorphic string on $E_\tau$ has one component for the paired fields $\beta$ and $\gamma$ and another component for the paired fields $b$ and $c$. 
+Since $\gamma$ is a section of the trivial vector bundle labeled by the vector space $V$, 
+the first term in the full propagator is of the form $P_{\ell < L}^{E_\tau} \tensor \frac{1}{2} (\id_V + \id_{V^*})$.
+Now, since the tangent bundle is trivial on an elliptic curve, 
+we can choose a canonical framing and write the second piece of the propagator 
+describing the pairing between $b$ and $c$ as 
+$P_{\ell < L}^{E_\tau} \tensor (\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z),$ 
+where $\partial_z, \partial_z^\vee$ denotes the canonical framing of $T_{E_\tau}, T_{E_\tau}^*$ respectively. 
 
-Just as in the case of the calculation of the anomaly, the propagator will is a sum over wheels that are functionals of the $c$-fields. 
+Just as in the case of the calculation of the anomaly, the propagator is a sum over wheels that are functionals of the $c$-fields. 
 Unlike the case of the anomaly, the internal edges of the wheels are all labeled by the propagator. 
 The vertices are labeled by the interaction terms which have two types: a $\beta c \gamma$-type interaction and a $bcc$-type interaction. 
-Thus, the partition function splits up into a sum of two types of diagrams (\ref{diagram:partition}): A) all input legs labeled by the fields $c$ with each internal edge labeled by the $\beta\gamma$ propagator $P_{\ell < L}^{E_\tau} \tensor \frac{1}{2} (\id_V + \id_{V^*})$, and B) all input legs labeled by the fields $c$ with each internal edge labeled by the $bc$ propagator $P_{\ell < L}^{E_\tau} \tensor (\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z)$. 
+Thus, the partition function splits up into a sum of two types of diagrams (\ref{diagram:partition}): 
+\begin{enumerate}
+\item[A)] all input legs labeled by the fields $c$ with each internal edge labeled by the $\beta\gamma$ propagator $P_{\ell < L}^{E_\tau} \tensor \frac{1}{2} (\id_V + \id_{V^*})$, and 
+\item[B)] all input legs labeled by the fields $c$ with each internal edge labeled by the $bc$ propagator $P_{\ell < L}^{E_\tau} \tensor (\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z)$. 
+\end{enumerate}
 \brian{draw diagrams}
+Let $A^{E_\tau}_j$ (respectively $B^{E_\tau}_j$) be the weight of the graph of type $A$ (respectively $B$) with $j \geq 1$ incoming legs.
 
-For $j \geq 1$ let $A^{E_\tau}_j$ (respectively $B^{E_\tau}_j$) be the weight of the graph of type $A$ (respectively $B$) with $j$ incoming legs.
-
-\begin{lem} Consider the weight of the tadpole diagram of type $A$, $A^{E_\tau}_1(c)$. Evaluated on the generator $c = \d \zbar \partial_z$ one has
+\begin{lem} 
+The weight of the type $A$ tadpole diagram is
 \ben
 A_1^{E_\tau} (\zbar \partial_z) = \# (- 2) \cdot (13) \cdot E_2^*(\tau) 
 \een
+when evaluated on the generator $c = \d \zbar \partial_z$.
 \brian{WORK OUT FACTOR} .
-Similarly, the weight of the tadpole diagram of type $B$ evaluated on the generator is given by
+Similarly, the weight of the type $B$ tadpole diagram evaluated on the generator is
 \ben
 B_1^{E_\tau} (\zbar \partial_z) = \# (2) \cdot E_2^*(\tau) .
 \een 
 \end{lem}
 
-We obtain the weight of the diagrams with two or more vertices by the following inductive formula. 
+There is then a useful inductive formula to determine the weight of diagrams with two or more vertices.
 
-\begin{lem} One has $\partial_\tau A^{E_\tau}_{j} = \# A^{E_\tau}_{j+1}$ and $\partial_\tau B_j^{E_\tau} = \# B_{j+1}^{E_\tau}$.
+\begin{lem} 
+One has $\partial_\tau A^{E_\tau}_{j} = \# A^{E_\tau}_{j+1}$ and $\partial_\tau B_j^{E_\tau} = \# B_{j+1}^{E_\tau}$.
 \end{lem}
 
 We conclude the following. 
 
-\begin{prop} The partition function of the holomorphic bosonic string is the formal power series expansion of the holomorphic function $-24 \log \eta (t)$ near the point $t = \tau \in \HH$. 
+\begin{prop} The partition function of the holomorphic bosonic string is the power series expansion of the holomorphic function $-24 \log \eta (t)$ around the point $\tau \in \HH$. 
 \end{prop}
 
 \owen{If possible, it would be cool to explain how one can extract the differential equations (=flat connection) governing the partition function from our construction. This might be too hard right now \dots}
