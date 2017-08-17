@@ -434,13 +434,13 @@ For small $t_i$, we thus only care about the behavior of $F$ near the origin as 
 Thus, consider a partial Taylor expansion of $F$.
 The polynomial part can be computed quickly since the expected values of monomials against a Gaussian measure (i.e., the moments) have a simply expression in terms of the variance.
 The first nonzero contribution would come from the $u^4$ term in the Taylor expansion of $F$,
-and it contributes a factor of the form $(\sqrt{t_1 t_2/(t_1+t_2)})^5$,
+and it contributes a factor of the form $(\sqrt{t_1 t_2/(t_1+t_2)})^9$,
 and so we are left with
 \[
-\int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2 \frac{1}{\sqrt{t_1t_2}(t_1 + t_2)^{5/2}} \leq \int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2 \, \frac{1}{\ell^{9/2}} = \frac{(L- \ell)^2}{\ell^{9/2}}
+\int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2 \frac{(t_1t_2)^{3/2}}{(t_1 + t_2)^{9/2}} \leq \frac{(L^{5/2} - \ell^{5/2})^2}{\ell^{9/2}}
 \]
 \owen{NOT GOOD!} as $\ell \to 0$.
-(The higher terms contribute bigger powers of the variance and hence
+(The higher terms contribute bigger powers of the variance and hence \owen{nevermind})
 On the other hand, the expected value of the error term, which vanishes to some positive order at the origin,
  \owen{explain why it doesn't matter}
 \end{proof}
