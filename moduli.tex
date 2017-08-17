@@ -23,7 +23,7 @@ As a gloss, the underlying graded vector space of this deformation complex consi
 There is also a shifted Lie bracket $\{-,-\}$, 
 which arises from the pairing $\int_\Sigma \langle-,-\rangle$ on the fields.
 It is, in essence, the shifted Poisson bracket corresponding to that shifted symplectic pairing on the fields.
-The differential on the local functionals is then $\{S,?\}$, where $S$ is the classical action. 
+The differential on the local functionals is then $\{S,-\}$, where $S$ is the classical action. 
 All together, the deformation complex forms a shifted dg Lie algebra. 
 Observe that if we find a degree zero element $I$ such that
 \[
@@ -49,11 +49,13 @@ Unpacking what this means will lead swiftly to Gelfand-Fuks cohomology.
 As a local functional is given by integration of a Lagrangian density,
 translation invariance requires the density to be the Lebesgue measure $\d^2 z$, up to rescaling,  
 and requires the Lagrangian to be specified by its behavior at one point.
-Hence, a translation-invariant local functional on $\CC$ is determined by a function of the jet (i.e., Taylor expansion) of the fields at the origin in $\CC$. 
-For instance, the jets at the origin of the Dolbeault complex $\Omega^{0,*}(\CC ; V)$ are
-$(V [[z,\zbar]] [\d \zbar] , \dbar)$,
+Hence, a translation-invariant local functional on $\CC$ is determined by a function of the jet (i.e., Taylor expansion) of the fields at the origin in~$\CC$. 
+
+It is particularly easy to understand what we mean in the case of the free $bc\beta\gamma$ system.
+For instance, the $\gamma$ fields live in the Dolbeault complex $\Omega^{0,*}(\CC ; V)$,
+and their jets at the origin are $(V [[z,\zbar]] [\d \zbar] , \dbar)$,
 where $\dbar$ is the formal Dolbeault differential. 
-An example of an element is $\widehat{\gamma} = \sum_{m,n} \frac{1}{m!n!}g_{mn} z^m \zbar^n$,
+An example of an element is thus $\widehat{\gamma} = \sum_{m,n} \frac{1}{m!n!}g_{mn} z^m \zbar^n$,
 which is just a formal power series with values in $V$.
 An example of a functional is
 \[
@@ -63,12 +65,12 @@ which corresponds to the local functional
 \[
 F(\gamma) = \int_\CC \partial_z \gamma + \partial_z^2 \partial_{\zbar} {\gamma}\,\d^2 z.
 \]
-We will the first kind of term a {\em chiral} interaction, as it only depends on holomorphic derivatives.
+We call the first kind of term a {\em chiral} interaction, as it only depends on holomorphic derivatives.
 
 By the $\dbar$-Poincar\'{e} lemma, 
 this complex $(V [[z,\zbar]] [\d \zbar] , \dbar)$ is quasi-isomorphic to $V[[z]]$, concentrated in degree zero. 
 This observation is actually quite concrete:
-it is simply saying that for a solution $\gamma$ to the equation of motion $\dbar \gamma = 0$, 
+it simply says that for a solution $\gamma$ to the equation of motion $\dbar \gamma = 0$, 
 its Taylor expansion is just a power series in $z$ and it is independent of $\zbar$.
 In consequence, if we consider translation-invariant Lagrangians depending only on the $\gamma$ field, then up to quasi-isomorphism these are $\Sym(V^\vee[z^\vee])$.
 In other words, only chiral interactions yield distinct modifications of the action,
@@ -77,18 +79,32 @@ when one takes into account the equation of motion.
 Note that we have chosen to work with functionals of the fields
 that are polynomials built out of continuous linear functionals of the jet.
 This choice is the standard and natural one for variational problems.
-We note as well that we should exclude constant functionals,
+We note as well that constant functionals are irrelevant,
 so we want to use $\Sym^{>0}(V^\vee[z^\vee])$ to describe translation-invariant local functionals.
 
 An analogous argument applies to the $c$ field. 
 It shows there is a quasi-isomorphism of dg Lie algebras 
 between the jet at the origin of the Dolbeault complex $\Omega^{0,*}(\CC ; T^{1,0}_\CC)$ of holomorphic vector fields 
-and the Lie algebra of formal vector fields ${\rm W}_1 = \CC[[z]]\partial_z$.
+and the Lie algebra of formal vector fields $\wone = \CC[[z]]\partial_z$.
 \owen{I inserted a description because I don't think $W_1$ is obvious notation.}
 The translation-invariant Lagrangians depending only on the $c$ field 
-are thus quasi-isomorphic to $\cred({\rm W}_1)$,
+are thus quasi-isomorphic to $\cred(\wone)$,
 by which we mean the (reduced) {\em continuous} Lie algebra cohomology,
 often known as the Gelfand-Fuks cohomology 
+Similar arguments work for the $\beta$ and $b$ fields.
+
+If we take all the fields into account together and consider the full equations of motion 
+for the holomorphic string,
+which couple the $c$ field to the others,
+then these arguments yield the following.
+
+\begin{lem}
+There is a quasi-isomorphism 
+\[
+\Def_{\rm string}(\CC,V)^\CC \simeq \cred(\wone, \Sym^{>0}(V^\vee[z^\vee] \oplus V[z^\vee] \d z^\vee \oplus )) 
+\]
+deformation complex of translation-invariant local functionals for the holomorphic string 
+\end{lem}
 
 
 \subsection{Deformations for the classical theory}
@@ -139,13 +155,13 @@ The main result of this section is the following:
 
 The jets at $0 \in \CC$ of local Lie algebra $\Omega^{0,*}(\CC ; T^{1,0} \ltimes (V[-1] \oplus \d z V^*[-1] \oplus \d z T^{1,0 *})$ is quasi-isomorphic to the Lie algebra
 \be\label{jet lie}
-{\rm W}_1 \ltimes (V [[z]] [-1] \oplus \d z V^*[[z]] [-1] \oplus \hOmega^1_1 [-2])
+\wone \ltimes (V [[z]] [-1] \oplus \d z V^*[[z]] [-1] \oplus \hOmega^1_1 [-2])
 \ee
-where ${\rm W}_1 = \CC [[z]] \partial_z$ is the Lie algebra of formal vector fields in one variable and $\hOmega^1_1 = \CC [[z]] \d z$ is the space of formal one forms. 
-The Lie bracket comes from bracket on ${\rm W}_1$ and the natural action of ${\rm W}_1$ on $\CC [[z]]$ and $\hOmega^1_1$. 
+where $\wone = \CC [[z]] \partial_z$ is the Lie algebra of formal vector fields in one variable and $\hOmega^1_1 = \CC [[z]] \d z$ is the space of formal one forms. 
+The Lie bracket comes from bracket on $\wone$ and the natural action of $\wone$ on $\CC [[z]]$ and $\hOmega^1_1$. 
 
-Denote by $\{L_n = z^{n+1} \partial_z\}$ the standard basis for the Lie algebra of formal vector fields ${\rm W}_1$. 
-Let $\lambda_n \in {\rm W}_1^\vee$ be the dual vector to $L_n$ (we are using the continuous dual, as in the setting of Gelfand-Fuks cohomology). 
+Denote by $\{L_n = z^{n+1} \partial_z\}$ the standard basis for the Lie algebra of formal vector fields $\wone$. 
+Let $\lambda_n \in \wone^\vee$ be the dual vector to $L_n$ (we are using the continuous dual, as in the setting of Gelfand-Fuks cohomology). 
 An arbitrary element of $V [[z]]$ is linear combination of vectors of the form $v \tensor z^k$. 
 Write $\zeta_k$ for the dual element $(z^k)^\vee$. 
 Thus an element of $(V [[z]])^\vee$ is a linear combination of the vectors of the form $v^\vee \tensor \zeta_k$. 
@@ -167,38 +183,38 @@ On a Riemann surface $\Sigma$ the $\CC^\times_{\rm cot}$-invariant local functio
 The weight $\CC^\times_{\rm cot}$-weight zero sub Lie algebra of the Lie algebra (\ref{jet lie}) is simply $W_1 \ltimes V [[z]] [-1]$, where the semi-direct product comes from the natural action of formal vector fields on formal power series.
 Thus, we have reduced the calculation of the $\CC^\times_{\rm cot}$-weight zero piece of the local deformation complex to calculating the Chevalley-Eilenberg complex of this Lie algebra:
 \ben
-\cred^* \left({\rm W}_1 \ltimes V [[z]] [-1] \right) .
+\cred^* \left(\wone \ltimes V [[z]] [-1] \right) .
 \een
-This splits into two terms $\cred^* ({\rm W}_1) \oplus \clie^*(W_1 ;  \Sym^{\geq 1} (V [[z]])^\vee)$. 
+This splits into two terms $\cred^* (\wone) \oplus \clie^*(W_1 ;  \Sym^{\geq 1} (V [[z]])^\vee)$. 
 
 The first term in this summand is the reduced Gelfand-Fuks cohomology of formal vector fields with values in the trivial module.
-It is well-known that the cohomology is one-dimensional and concentrated in degree $3$, $H^3_{\rm red} ({\rm W}_1) \cong \CC[-3]$. 
+It is well-known that the cohomology is one-dimensional and concentrated in degree $3$, $H^3_{\rm red} (\wone) \cong \CC[-3]$. 
 We will identify the anomaly for the holomorphic string with flat target as multiple of the generator of this space. 
 The remaining piece of the weight zero deformation complex is the home of the anomalies for the holomorphic string placed in a non trivial background: for instance, when the target of the $\sigma$ model is curved. 
 We will not see this in our theory, of course, but the following will hopefully be...
 \owen{Not sure where this paragraph is going.}
 
 The first step in computing this is to notice that there is a quasi-isomorphic subcomplex.
-The vector field $L_0 = z^{n+1} \partial_z$ induces a grading on ${\rm W}_1$ and hence on the Chevalley-Eilenberg complex of ${\rm W}_1$ with coefficients in any module. 
+The vector field $L_0 = z^{n+1} \partial_z$ induces a grading on $\wone$ and hence on the Chevalley-Eilenberg complex of $\wone$ with coefficients in any module. 
 We will call this grading the {\em conformal dimension}.
 
- \begin{lem} Let $M$ be any ${\rm W}_1$-module. Then, the inclusion of the conformal dimension zero subcomplex
+ \begin{lem} Let $M$ be any $\wone$-module. Then, the inclusion of the conformal dimension zero subcomplex
 \ben
-\clie^*({\rm W}_1 ; M)^{(0)} \xto{\simeq} \clie^*({\rm W}_1 ; M)
+\clie^*(\wone ; M)^{(0)} \xto{\simeq} \clie^*(\wone ; M)
 \een
 is a quasi-isomorphism. \brian{Is this true?}
 \end{lem}
 
-\begin{proof} For $p-1$ define the operator $\iota_{L_0} : \clie^{p}({\rm W}_1 ; M) \to \clie^{p-1}({\rm W}_1 ; M)$ defined by sending a cochain $\varphi$ to the cochain
+\begin{proof} For $p-1$ define the operator $\iota_{L_0} : \clie^{p}(\wone ; M) \to \clie^{p-1}(\wone ; M)$ defined by sending a cochain $\varphi$ to the cochain
 \ben
 (\iota_{L_0}\varphi)(X_1,\ldots,X_p) = \varphi(L_0, X_1,\ldots,X_p) .
 \een 
-Let $\d$ be the differential for the complex $\clie^*({\rm W}_1 ; M)$. It is easy to check that the difference $\d \iota_{L_0} - \iota_{L_0} \d$ is equal to the projection onto the dimension zero subspace. 
+Let $\d$ be the differential for the complex $\clie^*(\wone ; M)$. It is easy to check that the difference $\d \iota_{L_0} - \iota_{L_0} \d$ is equal to the projection onto the dimension zero subspace. 
 \end{proof}
 
 The underlying graded vector space of this conformal dimension zero subcomplex splits as follows:
 \ben
-\clie^{\#}({\rm W}_1)^{(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{(0)} \oplus \clie^{\#}({\rm W}_1)^{(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{(-1)}
+\clie^{\#}(\wone)^{(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{(0)} \oplus \clie^{\#}(\wone)^{(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{(-1)}
 \een
 Observe that the dimension zero part of the reduced symmetric algebra is simply $\Sym^{\geq 1}(V^\vee)$ which is identified $\GL(V)$-equivariantly with $\cO_{red}(V)$. 
 That is, power series on $V$ with no constant term. 
