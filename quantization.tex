@@ -34,9 +34,21 @@ The classical action functional determines the allowed kinds of vertices and edg
 The quadratic terms of the action tell us the edges;
 each quadratic term yields an edge whose boundary is labeled by the two fields appearing in the term.
 For us there are thus two types of edges: 
-an edge that flows from $c$ to $b$, 
-and an edge that flows from $\gamma$ to~$\beta$.
-\owen{Add picture.}
+an edge that flows from $\beta$ to $\gamma$, 
+and an edge that flows from $b$ to~$c$ displayed in Figure \ref{fig:props}.
+\begin{figure}
+\begin{tikzpicture}
+		\draw[fermion] (-4,0) -- (-2,0);
+		\draw[vector] (2,0) -- (4,0);
+		\draw (-4.2, 0) node {$\beta$};
+		\draw (-1.8,0) node {$\gamma$};
+		\draw (1.8,0) node {$b$};
+		\draw (4.2,0) node {$c$};
+\end{tikzpicture}
+\caption{The $\beta\gamma$ and $bc$ propagators}
+\label{fig:props}
+\end{figure}
+
 The nonquadratic terms tell us the vertices:
 each $n$-ary term yields a vertex with $n$ legs,
 and the legs are labeled by the $n$ types of fields appearing in the term.
@@ -45,8 +57,30 @@ a vertex with two $c$ legs and a $b$ leg,
 and a vertex with a $c$ leg, a $\gamma$ leg, and a $\beta$ leg.
 It helpful to picture these legs as directed,
 so that $c$ and $\gamma$ legs flow into a vertex
-and $b$ and $\beta$ legs flow out.
-\owen{Add picture.}
+and $b$ and $\beta$ legs flow out. 
+These vertices are displayed in Figure \ref{fig:verts}.
+
+\begin{figure}
+\begin{tikzpicture}[line width=.2mm, scale = 1]
+		\draw[vector](-4.7,1)--(-4,0);
+		\draw[fermion](-3.3,1)--(-4,0);
+		\draw[fermion](-4,0)--(-4,-1);
+		\filldraw[color=black]  (-4,0) circle (.1);
+		\draw (-4.75,1.2) node {$c$};
+		\draw (-3.25,1.2) node {$\gamma$};
+		\draw (-4,-1.3) node {$\beta$};	
+		
+		\draw[vector](3.3,1)--(4,0);
+		\draw[vector](4.7,1)--(4,0);
+		\draw[vector](4,0)--(4,-1);
+		\filldraw[color=black]  (4,0) circle (.1);
+		\draw (3.25, 1.2) node {$c$};
+		\draw (4.75,1.2) node {$c$};
+		\draw (4, -1.3) node {$b$};
+\end{tikzpicture}
+\caption{The trivalent vertices for $\int \langle \beta, [c,\gamma] \rangle$ and $\int \langle b, [c,c] \rangle$}
+\label{fig:verts}
+\end{figure}
 
 The kinds of graphs one can build with such vertices and edges are limited.
 We focus on connected graphs, since an arbitrary graph is just a union of connected components.
@@ -75,20 +109,23 @@ Let ${\bf Graph}_{\rm string}^{(0)}$ denote the 0-loop graphs (i.e., trees) and 
 
 See Figure \ref{fig:wheel} for a simple example.
 
-\begin{figure}
-\begin{tikzpicture}[decoration={markings,mark=at position 0.6cm with {\arrow[black,line width=.4mm]{stealth}}}];
-\draw[postaction=decorate, line width=.2mm] (-0.7, 1) -- (0,0);
-\draw[postaction=decorate, line width=.2mm] (0.7,1) -- (0,0);
-\draw[postaction=decorate, line width=.2mm] (0,0) -- (0,-1);
-\filldraw[color=black]  (0,0) circle (.1);
-\draw (1.2,-0.1) node {$I_k = t^n \partial_t$};
-\draw (-0.75,1.2) node {$c$};
-\draw (0.75,1.2) node {$\gamma$};
-\draw (0,-1.3) node {$\beta$};
-\end{tikzpicture}
-\caption{The trivalent vertex for $\int \langle \beta, c \gamma\rangle$}
-\label{fig:vertex}
-\end{figure}
+
+%\begin{figure}
+%\begin{tikzpicture}[decoration={markings,mark=at position 0.6cm with {\arrow[black,line width=.4mm]{stealth}}}];
+%\draw[thick, postaction=decorate, decoration={markings,mark=at position 0.6cm with {\arrow[black,line width=.4mm]{stealth}}},
+%decoration={snake, segment length=5, amplitude=1}](-.7,1) --(0,0);
+%%\draw[postaction=decorate, line width=.2mm] (-0.7, 1) -- (0,0);
+%\draw[postaction=decorate, line width=.2mm] (0.7,1) -- (0,0);
+%\draw[postaction=decorate, line width=.2mm] (0,0) -- (0,-1);
+%\filldraw[color=black]  (0,0) circle (.1);
+%\draw (1.2,-0.1) node {$I_k = t^n \partial_t$};
+%\draw (-0.75,1.2) node {$c$};
+%\draw (0.75,1.2) node {$\gamma$};
+%\draw (0,-1.3) node {$\beta$};
+%\end{tikzpicture}
+%\caption{The trivalent vertex for $\int \langle \beta, c \gamma\rangle$}
+%\label{fig:vertex}
+%\end{figure}
 
 %\begin{figure}
 %\begin{tikzpicture}[decoration={markings,
@@ -105,19 +142,19 @@ See Figure \ref{fig:wheel} for a simple example.
 %\label{fig:prop}
 %\end{figure}
 
-\begin{figure}
-\begin{center}
-\feynmandiagram [horizontal=a to b]{
-a [particle=\(\gamma\)] -- [charged boson] b [particle=\(\beta\)]
-};
-\end{center}
-\end{figure}
-
-\feynmandiagram[horizontal=a to b]{
-a -- [charged boson] b,
-i1 -- [fermion] a -- [fermion] i2,
-f1 -- [fermion] b -- [fermion] f2,
-};
+%\begin{figure}
+%\begin{center}
+%\feynmandiagram [horizontal=a to b]{
+%a [particle=\(\gamma\)] -- [charged boson] b [particle=\(\beta\)]
+%};
+%\end{center}
+%\end{figure}
+%
+%\feynmandiagram[horizontal=a to b]{
+%a -- [charged boson] b,
+%i1 -- [fermion] a -- [fermion] i2,
+%f1 -- [fermion] b -- [fermion] f2,
+%};
 
 \begin{figure}
 \begin{center}
