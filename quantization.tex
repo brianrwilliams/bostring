@@ -423,18 +423,24 @@ First, note that taking the partial derivative $\partial_{z_i}$ will simply mult
 Moreover, we change coordinates to $u = z_1 - z_2$ and $v = z_2$. 
 Then the integral is proportional to
 \[
-\int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2\int_{\CC^2} \d^2 u \, \d^2 v \, f_1 f_2 \frac{\overline{u}^4}{t_1^4 t_2^4} e^{-|u|^2(\tfrac{1}{t_1} + \tfrac{1}{t_2})}.
+\int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2\int_{\CC^2} \d^2 u \, \d^2 v \, f_1 f_2 \frac{\overline{u}^4}{t_1^3 t_2^3} e^{-|u|^2(\tfrac{1}{t_1} + \tfrac{1}{t_2})}.
 \]
-\owen{I fixed the powers of $t$ but that also adds powers of $\Bar{u}$.}
 Consider first the integral just over~$\CC^2$,
 so that we are computing the expected value of $F=f_1 f_2$ against a Gaussian measure 
 whose variance is determined by $t_1$ and~$t_2$.
 (Namely, the variance is~$\sqrt{t_1 t_2/(t_1+t_2)}$.)
 We might as well focus on values of $t_i$ that are very small, as those would be the source of divergences when $\ell \to 0$.
-But for small $t_i$, we only care about the behavior of $F$ near the origin.
-Consider a partial Taylor expansion of $F$.
+For small $t_i$, we thus only care about the behavior of $F$ near the origin as the measure is concentrated near the origin.
+Thus, consider a partial Taylor expansion of $F$.
 The polynomial part can be computed quickly since the expected values of monomials against a Gaussian measure (i.e., the moments) have a simply expression in terms of the variance.
-\owen{and now I should do it!}
+The first nonzero contribution would come from the $u^4$ term in the Taylor expansion of $F$,
+and it contributes a factor of the form $(\sqrt{t_1 t_2/(t_1+t_2)})^5$,
+and so we are left with
+\[
+\int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2 \frac{1}{\sqrt{t_1t_2}(t_1 + t_2)^{5/2}} \leq \int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2 \, \frac{1}{\ell^{9/2}} = \frac{(L- \ell)^2}{\ell^{9/2}}
+\]
+\owen{NOT GOOD!} as $\ell \to 0$.
+(The higher terms contribute bigger powers of the variance and hence
 On the other hand, the expected value of the error term, which vanishes to some positive order at the origin,
  \owen{explain why it doesn't matter}
 \end{proof}

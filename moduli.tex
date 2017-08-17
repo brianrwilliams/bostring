@@ -88,7 +88,7 @@ between the jet at the origin of the Dolbeault complex $\Omega^{0,*}(\CC ; T^{1,
 and the Lie algebra of formal vector fields $\wone = \CC[[z]]\partial_z$.
 \owen{I inserted a description because I don't think $W_1$ is obvious notation.}
 The translation-invariant Lagrangians depending only on the $c$ field 
-are thus quasi-isomorphic to $\cred(\wone)$,
+are thus quasi-isomorphic to $\cred^*(\wone)$,
 by which we mean the (reduced) {\em continuous} Lie algebra cohomology,
 often known as the Gelfand-Fuks cohomology 
 Similar arguments work for the $\beta$ and $b$ fields.
@@ -101,7 +101,7 @@ then these arguments yield the following.
 \begin{lem}
 There is a quasi-isomorphism 
 \[
-\Def_{\rm string}(\CC,V)^\CC \simeq \cred(\wone, \Sym^{>0}(V^\vee[z^\vee] \oplus V[z^\vee] \d z^\vee \oplus W_1^{\rm ad}[2])) 
+\Def_{\rm string}(\CC,V)^\CC \simeq \cred^*(\wone, \Sym(V^\vee[z^\vee] \oplus V[z^\vee] \d z^\vee \oplus W_1^{\rm ad}[2])) 
 \]
 between the deformation complex of translation-invariant local functionals for the holomorphic string and a certain Gelfand-Fuks cochain complex.
 \end{lem}
@@ -144,11 +144,17 @@ This subcomplex admits a nice description in terms of the geometry of the target
 \label{lem: def complex wt zero} 
 There is a $\GL(V)$-equivariant quasi-isomorphism
 \[
-\Def_{\rm string}(\CC)^{\CC, (0)} \simeq \Sym(V^*) \tensor V[1]
+\Def_{\rm string}(\CC)^{\CC, (1)} \simeq \Sym(V^*) \tensor V[1]
 \]
 between the weight 1, translation-invariant deformation complex 
 and the polynomial vector fields on $V$, placed in degree~-1.
 \end{lem}
+
+Concretely, this result says that there are no weight zero interactions that are not not trivialized by an automorphism of the theory.
+This claim is a consequence of the fact that the zeroth cohomology group vanishes.
+On the other hand, this lemma says the theory admits a large group of symmetries,
+namely diffeomorphisms of the target, 
+which appears as the degree -1 cohomology.
 
 \owen{I think we might be able to just to sketch the key argument in light of the discussion in the preceding subsection. That is, just point out the weights argument. We can also just say that it is proved by arguments that are similar but easier than what we do in the next subsection.}
 
@@ -166,11 +172,18 @@ Hence, it behooves us to compute the weight zero subcomplex of the deformation c
 \label{lem: def complex wt zero} 
 There is a $\GL(V)$-equivariant quasi-isomorphism
 \[
-\left(\Oloc(\cE)^{(0)}, \{S,-\}\right)^{\CC} \simeq \CC[-1] \oplus \Omega^2_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)[-1] 
+\Def_{\rm string}(\CC)^{\CC, (0)} \simeq \CC[-1] \oplus \Omega^2_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)[-1] 
 \]
 between the weight 0, translation-invariant deformation complex 
-and the polynomial vector fields on $V$, placed in degree~-1.
+and natural complexes related to the geometry of the target.
 \end{lem}
+
+In particular, the one-loop interactions terms that can appear---up to equivalences of BV theories---are
+\[
+H^1(V,\Omega^2_{cl}) \oplus \Omega^1(V).
+\]
+As $V$ is a vector space, the first term is trivial, but for a curved target it would survive \owen{and contribute a WHAT KIND of field.}
+The second term is a choice of \owen{potential?} on the target and contributes a term \owen{???} to the action.
 
 Before explaining the key steps of the proof, 
 we remark that there is another, more structural way to see that only weight zero local functionals should be relevant.
@@ -231,7 +244,7 @@ We will not see this in our theory, of course, but the following will hopefully 
 \owen{Not sure where this paragraph is going.}
 
 The first step in computing this is to notice that there is a quasi-isomorphic subcomplex.
-The vector field $L_0 = z^{n+1} \partial_z$ induces a grading on $\wone$ and hence on the Chevalley-Eilenberg complex of $\wone$ with coefficients in any module. 
+The Euler vector field $L_0 = z \partial_z$ induces a grading on $\wone$ and hence on the Chevalley-Eilenberg complex of $\wone$ with coefficients in any module. 
 We will call this grading the {\em conformal dimension}.
 
  \begin{lem} Let $M$ be any $\wone$-module. Then, the inclusion of the conformal dimension zero subcomplex
@@ -295,6 +308,7 @@ Since $V$ is flat,
 we will see that all such \owen{what does 'such' refer to?} deformations will be trivializable. 
 Note that this trivializations will {\em not} be compatible with $\GL(V)$ (or for non-flat targets, general diffeomorphisms of the target). 
 Thus, these deformations are relevant for the case of a curved target, and we can give an interpretation of them in terms of the usual perspective of {\em string backgrounds}. 
+\owen{So now lets add some words providing such an interpretation.}
 
 We have already mentioned that we should think of the $\CC^\times_{\rm cot}$ weight $1$ local functionals as deformations of the classical theory as a cotangent theory.
 The cohomological degree zero deformations of the weight one deformations is $H^1(V ; T_V)$. 

@@ -273,10 +273,11 @@ The right hand side of the first line amounts to expanding out the Laplace-Beltr
 Hence, the $D_n$ are differential operators of the form 
 $D_n : \Gamma(\Sigma , \Sym^2 T\Sigma)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ 
 where ${\rm Diff}^{\leq 2}(\Sigma)$ are order $\leq 2$ differential operators on $\Sigma$.
-\owen{I'm not sure I like this description, although it's accurate. Maybe something more concrete like ``for each $\alpha$, we get a second-order differential operator $D_n(\alpha)$.'' I also removed the $n$-fold appearance of $\alpha$.}
+\owen{I'm not sure I like this description, although it's accurate. Maybe something more concrete like ``for each $\alpha$, we get a second-order differential operator $D_n(\alpha)$. (This term is the $n$th term in the Taylor expansion, so it homogeneous of order $n$: $D_n(t \alpha) = t^n D_n(\alpha)$ for a scalar $t$.)'' I also removed the $n$-fold appearance of $\alpha$.}
 The second line encodes how vector fields act on the maps of the $\sigma$ model.
-The third line $S'(X, f, \alpha)$ is a function only of the fields $f$, $X$, $\alpha$, and their antifields,
-whose exact form is irrelevant to us. \owen{Is it clear why $S'$ doesn't matter? For instance, does it obviously vanish in the infinite volume limit?}
+The third line $S'(X, f, \alpha)$ is independent of $\varphi$
+and only depends on the fields $f$, $X$, $\alpha$ and their antifields.
+\owen{Would it be crazy to specify $S'$ to some extent?}
 
 An explicit formula for $D_n(\alpha,\ldots,\alpha)$ is a rather involved exercise (and not needed here).
 %can be derived from the power series expansion of the Laplace-Beltrami operator in terms of the metric. 
@@ -348,14 +349,18 @@ Furthermore, the metric $g_0$ determines an injective map
 \Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma) \oplus \Omega^{1,0}(\Sigma ; T^{0,1}_\Sigma) \hookrightarrow \Sym^2(T_\Sigma) .
 \een
 Restricting the term $\int_\Sigma h(\varphi, D_1(\alpha) \varphi)$ to the image,
-we obtain a term whose infinite volume limit is
+we obtain a term whose infinite volume limit~is
 \ben
 \int_\Sigma \<\beta , [c, \gamma]\>_V + \int_\Sigma \<\Bar{\beta} , [\Bar{c}, \bar{\gamma}]\>_V.
 \een
 This first term is precisely the third term in the holomorphic string action functional (\ref{bosaction}), which describes how deformations of complex structure couple to the fields of the $\sigma$-model. 
 
-The remaining terms of the holomorphic bosonic string come from analyzing what happens to the term $S'(f, X, \alpha)$ in the infinite volume limit, 
-and the arguments are similar to those we have just sketched. 
+In the infinite volume limit, the term $S'(f, X, \alpha)$ recovers the terms
+\[
+\int_\Sigma \langle b, \dbar c \rangle_T + \int_\Sigma \langle b, [c,c] \rangle_T
+\]
+in the action of the holomorphic string, plus their conjugates. 
+The arguments are similar to those we have just sketched. 
 \end{proof}
 
 
