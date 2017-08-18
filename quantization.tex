@@ -443,6 +443,19 @@ and so we are left with
 (The higher terms contribute bigger powers of the variance and hence \owen{nevermind})
 On the other hand, the expected value of the error term, which vanishes to some positive order at the origin,
  \owen{explain why it doesn't matter}
+ 
+\brian{I apologize, but it doesn't look like my super naive estimate is going to work. Here's what does work. Also, it's a two real dimensional integral so the correct variance is $t_1t_2 / (t_1+t_2)$ (the square of what you use). 
+The $t$-integral you get out is
+\ben
+\int_{t_1,t_2 = \ell}^L \frac{(t_1 t_2)^2}{(t_1+t_2)^5} \d t_1 \d t_2  .
+\een
+Now, by AM-GM $|t_1 + t_2| \geq C \sqrt{(t_1 t_2)}$ for some $C > 0$. Thus, the integral is bounded by 
+\ben
+1/C \int_{t_1,t_2 = \ell}^L \frac{(t_1 t_2)^2}{(t_1t_2)^{5/2}} \d t_1 \d t_2 = \int_{t_1,t_2 = \ell}^L \frac{1}{\sqrt{t_1 t_2}} \d t_1 \d t_2
+\een
+which does have a finite $\epsilon \to 0$ limit. Look OK?
+}
+
 \end{proof}
 
 \owen{Define the renormalized action at scale $L$ as the sum of the Feynman diagrams labeled by $P_0^L$.}
