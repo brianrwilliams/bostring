@@ -432,8 +432,9 @@ Then the integral has the form
 \int_{(z_1,\ldots,z_n) \in \CC^n}\d^n \zbar \,(f_1  \partial_{z_1} P_\ell^L(z_1,z_n))(f_2 \partial_{z_2} P_\ell^L(z_2,z_1)) \cdots (f_n\partial_{z_n} P_\ell^L(z_n,z_{n-1})),
 \] 
 since the $k$th input will act on one of the propagators entering the $k$th vertex.
+One needs to show that this expression has a finite $\ell \to 0$ limit.
 
-Let us write the full expression for the case $n=2$.
+Let us prove this limit exists for the case $n=2$.
 Then we have
 \begin{align*}
 \int_{z_1,z_2 \in \CC} \d\zbar_1\d\zbar_2 \int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2\, 
@@ -449,43 +450,54 @@ Then the integral is proportional to
 \[
 \int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2\int_{\CC^2} \d^2 u \, \d^2 v \, f_1 f_2 \frac{\overline{u}^4}{t_1^3 t_2^3} e^{-|u|^2(\tfrac{1}{t_1} + \tfrac{1}{t_2})}.
 \]
-Consider first the integral just over~$\CC^2$,
+We take the integral over $v$ last;
+it will be manifestly well-behaved after we take the other integrals.
+
+Thus consider the integral just over $u \in \CC$,
 so that we are computing the expected value of $F=f_1 f_2$ against a Gaussian measure 
 whose variance is determined by $t_1$ and~$t_2$.
-(Namely, the variance is~$\sqrt{t_1 t_2/(t_1+t_2)}$.)
-We might as well focus on values of $t_i$ that are very small, as those would be the source of divergences when $\ell \to 0$.
-For small $t_i$, we thus only care about the behavior of $F$ near the origin as the measure is concentrated near the origin.
+(Namely, the variance is~$t_1 t_2/(t_1+t_2)$.)
+We might as well focus on values of $t_i$ that are very small, 
+as those would be the source of divergences when $\ell \to 0$.
+For small $t_i$, we only care about the behavior of $F$ near the origin as the measure is concentrated near the origin.
 Thus, consider a partial Taylor expansion of $F$.
 The polynomial part can be computed quickly since the expected values of monomials against a Gaussian measure (i.e., the moments) have a simply expression in terms of the variance.
 The first nonzero contribution would come from the $u^4$ term in the Taylor expansion of $F$,
-and it contributes a factor of the form $(\sqrt{t_1 t_2/(t_1+t_2)})^9$,
-and so we are left with
+and it contributes a factor of the form $(t_1 t_2/(t_1+t_2))^5$,
+up to constant that we ignore.
+We are left with
 \[
-\int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2 \frac{(t_1t_2)^{3/2}}{(t_1 + t_2)^{9/2}} \leq \frac{(L^{5/2} - \ell^{5/2})^2}{\ell^{9/2}}
+\int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2 \frac{(t_1t_2)^{3}}{(t_1 + t_2)^{5}} 
+\leq \int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2 \, 2^{-5}\sqrt{t_1t_2} 
+= 2^{-5}(L^{3/2} - {\ell}^{3/2})^2,
 \]
-\owen{NOT GOOD!} as $\ell \to 0$.
-(The higher terms contribute bigger powers of the variance and hence \owen{nevermind})
-On the other hand, the expected value of the error term, which vanishes to some positive order at the origin,
- \owen{explain why it doesn't matter}
- 
-\brian{I apologize, but it doesn't look like my super naive estimate is going to work. Here's what does work. Also, it's a two real dimensional integral so the correct variance is $t_1t_2 / (t_1+t_2)$ (the square of what you use). 
-The $t$-integral you get out is
-\ben
-\int_{t_1,t_2 = \ell}^L \frac{(t_1 t_2)^2}{(t_1+t_2)^5} \d t_1 \d t_2  .
-\een
-Now, by AM-GM $|t_1 + t_2| \geq C \sqrt{(t_1 t_2)}$ for some $C > 0$. Thus, the integral is bounded by 
-\ben
-1/C \int_{t_1,t_2 = \ell}^L \frac{(t_1 t_2)^2}{(t_1t_2)^{5/2}} \d t_1 \d t_2 = \int_{t_1,t_2 = \ell}^L \frac{1}{\sqrt{t_1 t_2}} \d t_1 \d t_2
-\een
-which does have a finite $\epsilon \to 0$ limit. Look OK?
-}
-
-\owen{I'm going to try again. That's a good point about the behavior of variance as a function of dimension, but we're actually taking an integral over $\CC^2$. I tried using the AM-GM inequality earlier but it didn't help with my fucked up exponents. Time to try again.}
-
-\brian{Actually, we are only doing an integral over $\CC$. We are only applying Wick's Lemma for the integral over $u \in \CC$. The final answer is written as an integral over $v = z_2$ of some differential operator applied to the compactly supported function $f_1f_2$. So, in this case the final answer is proportional to $\int_{v \in \CC} \partial^4 f_1(v) f_2(v)$.
-}
-
+where we use the arithmetic-geometric mean inequality $\sqrt{t_1t_2}/(t_1+t_2)\leq 1/2$ in the middle.
+This expression has a finite limit as $\ell \to 0$.
+The higher terms in the Taylor expansion contribute bigger powers of the variance 
+and hence have $\ell \to 0$ limits.
+Finally, the expected value of the error term, 
+which vanishes to some positive order at the origin,
+can be bounded in such as way that an $\ell \to 0$ limit exists.
+\owen{Should we give an argument?}
 \end{proof}
+
+ 
+%\brian{I apologize, but it doesn't look like my super naive estimate is going to work. Here's what does work. Also, it's a two real dimensional integral so the correct variance is $t_1t_2 / (t_1+t_2)$ (the square of what you use). 
+%The $t$-integral you get out is
+%\ben
+%\int_{t_1,t_2 = \ell}^L \frac{(t_1 t_2)^2}{(t_1+t_2)^5} \d t_1 \d t_2  .
+%\een
+%Now, by AM-GM $|t_1 + t_2| \geq C \sqrt{(t_1 t_2)}$ for some $C > 0$. Thus, the integral is bounded by 
+%\ben
+%1/C \int_{t_1,t_2 = \ell}^L \frac{(t_1 t_2)^2}{(t_1t_2)^{5/2}} \d t_1 \d t_2 = \int_{t_1,t_2 = \ell}^L \frac{1}{\sqrt{t_1 t_2}} \d t_1 \d t_2
+%\een
+%which does have a finite $\epsilon \to 0$ limit. Look OK?
+%}
+%
+%\owen{I'm going to try again. That's a good point about the behavior of variance as a function of dimension, but we're actually taking an integral over $\CC^2$. I tried using the AM-GM inequality earlier but it didn't help with my fucked up exponents. Time to try again.}
+%
+%\brian{Actually, we are only doing an integral over $\CC$. We are only applying Wick's Lemma for the integral over $u \in \CC$. The final answer is written as an integral over $v = z_2$ of some differential operator applied to the compactly supported function $f_1f_2$. So, in this case the final answer is proportional to $\int_{v \in \CC} \partial^4 f_1(v) f_2(v)$.
+%}
 
 \owen{Define the renormalized action at scale $L$ as the sum of the Feynman diagrams labeled by $P_0^L$.}
 
