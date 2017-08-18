@@ -458,6 +458,9 @@ which does have a finite $\epsilon \to 0$ limit. Look OK?
 
 \owen{I'm going to try again. That's a good point about the behavior of variance as a function of dimension, but we're actually taking an integral over $\CC^2$. I tried using the AM-GM inequality earlier but it didn't help with my fucked up exponents. Time to try again.}
 
+\brian{Actually, we are only doing an integral over $\CC$. We are only applying Wick's Lemma for the integral over $u \in \CC$. The final answer is written as an integral over $v = z_2$ of some differential operator applied to the compactly supported function $f_1f_2$. So, in this case the final answer is proportional to $\int_{v \in \CC} \partial^4 f_1(v) f_2(v)$.
+}
+
 \end{proof}
 
 \owen{Define the renormalized action at scale $L$ as the sum of the Feynman diagrams labeled by $P_0^L$.}
