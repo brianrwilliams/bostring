@@ -87,8 +87,33 @@ We focus on connected graphs, since an arbitrary graph is just a union of connec
 
 A tree (i.e., a connected graph with no loops) must have at most one outgoing leg,
 which must be either a $b$ or a~$\beta$;
-the other legs are incoming, so each must be labeled by a $c$ or a~$\gamma$.
-\owen{Add picture.}
+the other legs are incoming, so each must be labeled by a $c$ or a~$\gamma$. 
+An example of such a tree is given in Figure \ref{fig:tree}.
+
+\begin{figure}
+\begin{tikzpicture}[line width=.2mm, scale = 1]
+		\draw[vector] (-2,3) -- (-1,2.5);
+		\draw[vector] (-2, 2) -- (-1, 2.5);
+		\draw[vector] (-1,2.5) --(0, 1.5);
+		\draw (-2.25, 3) node {$c$};
+		\draw (-2.25, 2) node {$c$};
+		\draw(-.4, 2.25) node {$P$};
+		\filldraw[color=black] (-1,2.5) circle (.075);
+		\draw[vector] (-2, 1) -- (-1, .5);
+		\draw[fermion] (-2, 0) -- (-1,.5);
+		\draw[fermion] (-1,.5) -- (0,1.5);
+		\draw (-2.25, 1) node {$c$};
+		\draw (-2.25, 0) node {$\gamma$};
+		\draw (-.4, .75) node {$P$};
+		\filldraw[color=black] (-1,.5) circle (.075);
+		\draw[fermion] (0,1.5) -- (1,1.5);
+		\draw (1.25, 1.5) node {$\beta$};
+		\filldraw[color=black] (0,1.5) circle (.075);
+\end{tikzpicture}
+\caption{An example of a tree with four inputs and one output}
+\label{fig:tree}
+\end{figure}
+		
 Note that there are two types of trees.
 If there is a $\gamma$ leg, then there is a $\beta$ leg,
 and there is a chain of $\gamma\beta$ edges connecting them;
@@ -106,8 +131,6 @@ This combinatorics is the essential reason that we can quantize at one loop.
 We write ${\bf Graph}_{\rm string}$ for the collection of connected graphs just described,
 namely the directed trees and 1-loop graphs allowed by the string action functional.
 Let ${\bf Graph}_{\rm string}^{(0)}$ denote the 0-loop graphs (i.e., trees) and let ${\bf Graph}_{\rm string}^{(1)}$ denote the 1-loop graphs (i.e., wheels with trees attached).
-
-See Figure \ref{fig:wheel} for a simple example.
 
 
 %\begin{figure}
@@ -156,42 +179,43 @@ See Figure \ref{fig:wheel} for a simple example.
 %f1 -- [fermion] b -- [fermion] f2,
 %};
 
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}[scale=0.8,decoration={markings,mark=at position 0.9cm with {\arrow[black,line width=.4mm]{stealth}}}];
-\draw[postaction=decorate, line width=.2mm] (2,0) -- (0,0);
-\draw (1, -0.4) node {$P$};
-\draw[postaction=decorate, line width=.2mm] (0,0) -- (0,2);
-\draw (-0.4, 1) node {$P$};
-\draw[postaction=decorate, line width=.2mm] (0,2) -- (2,2);
-\draw (1, 2.4) node {$P$};
-\draw[postaction=decorate, line width=.2mm] (2,2) -- (2,0);
-\draw (2.4, 1) node {$P$};
-\draw[postaction=decorate, line width=.2mm] (-1.4,0) -- (0,0);
-\draw (-1.6,0) node {$\gamma$};
-\draw[postaction=decorate, line width=.2mm] (0,-1.4) -- (0,0);
-\draw (0,-1.6) node {$\gamma$};
-\draw[postaction=decorate, line width=.2mm] (-1.12,-1.12) -- (0,0);
-\draw (-1.3,-1.3) node {$\gamma$};
-\draw[postaction=decorate, line width=.2mm] (-1.12,3.12) -- (0,2);
-\draw (-1.3,3.3) node {$\gamma$};
-\draw[postaction=decorate, line width=.2mm] (3.4,2.5) -- (2,2);
-\draw (3.6,2.6) node {$\gamma$};
-\draw[postaction=decorate, line width=.2mm] (2.5,3.4) -- (2,2);
-\draw (2.6,3.6) node {$\gamma$};
-\draw[postaction=decorate, line width=.2mm] (3.4,-0.5) -- (2,0);
-\draw (3.6,-.6) node {$\gamma$};
-\draw[postaction=decorate, line width=.2mm] (2.5,-1.4) -- (2,0);
-\draw (2.6,-1.6) node {$\gamma$};
-\filldraw[color=black]  (0,0) circle (.1);
-\filldraw[color=black]  (0,2) circle (.1);
-\filldraw[color=black]  (2,0) circle (.1);
-\filldraw[color=black]  (2,2) circle (.1);
-\end{tikzpicture}
-\caption{A wheel with four vertices}
-\label{fig:wheel}
-\end{center}
-\end{figure}
+%\begin{figure}
+%\begin{center}
+%\begin{tikzpicture}[scale=0.8,decoration={markings,mark=at position 0.9cm with {\arrow[black,line width=.4mm]{stealth}}}];
+%\draw[postaction=decorate, line width=.2mm] (2,0) -- (0,0);
+%\draw (1, -0.4) node {$P$};
+%\draw[postaction=decorate, line width=.2mm] (0,0) -- (0,2);
+%\draw (-0.4, 1) node {$P$};
+%\draw[postaction=decorate, line width=.2mm] (0,2) -- (2,2);
+%\draw (1, 2.4) node {$P$};
+%\draw[postaction=decorate, line width=.2mm] (2,2) -- (2,0);
+%\draw (2.4, 1) node {$P$};
+%\draw[postaction=decorate, line width=.2mm] (-1.4,0) -- (0,0);
+%\draw (-1.6,0) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (0,-1.4) -- (0,0);
+%\draw (0,-1.6) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (-1.12,-1.12) -- (0,0);
+%\draw (-1.3,-1.3) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (-1.12,3.12) -- (0,2);
+%\draw (-1.3,3.3) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (3.4,2.5) -- (2,2);
+%\draw (3.6,2.6) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (2.5,3.4) -- (2,2);
+%\draw (2.6,3.6) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (3.4,-0.5) -- (2,0);
+%\draw (3.6,-.6) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (2.5,-1.4) -- (2,0);
+%\draw (2.6,-1.6) node {$\gamma$};
+%\filldraw[color=black]  (0,0) circle (.1);
+%\filldraw[color=black]  (0,2) circle (.1);
+%\filldraw[color=black]  (2,0) circle (.1);
+%\filldraw[color=black]  (2,2) circle (.1);
+%\end{tikzpicture}
+%\caption{A wheel with four vertices}
+%\label{fig:wheel}
+%\end{center}
+%\end{figure}
+
 
 
 \subsubsection{}
