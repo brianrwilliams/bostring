@@ -224,8 +224,6 @@ obtained by taking solutions to the equations of motion and quotienting by these
 
 Our focus is perturbative, so that we want to study the behavior of this action near a fixed solution to the equations of motion.
 In other words, we want to work with the Taylor expansion of the true action near some solution.
-\owen{Might be good here to leverage the derived discussion earlier:
-it's easy to see what the tangent complex looks like \dots which leads to fields we work with.}
 Hence, we work around a fixed metric $g_0$ on $\Sigma$, 
 and we substitute for the field $g$,
 the term $g_0+\alpha$ where $\alpha \in \Gamma(\Sigma,\Sym^2(T_\Sigma))$.
@@ -249,13 +247,12 @@ The two symmetries are compatible:
 given $f$ and $X$, then $L_{X} (f \alpha) = X(f) \alpha + f L_X \alpha$ for any $\alpha \in \Sym^2(T_\Sigma)$.
 
 To summarize, we have the following graded vector space of fields:
-\owen{I'm trying to add in the names for fields as well to make life easier}
 \[
 \begin{array}{ccccc}
 \text{field/antifield} & -1 &0 & 1 & 2\\
 \hline
 \varphi, \varphi^\vee & & \Omega^{0}(\Sigma) \tensor V & \Omega^2(\Sigma) \tensor V & \\
-\alpha, \alpha^\vee & & \Sym^2(T_\Sigma) & \Omega^2(\Sigma ; \Sym^{2}(T^*_\Sigma)) & \\
+\alpha, \alpha^\vee & &  \Omega^0(\Sigma,\Sym^2(T_\Sigma)) & \Omega^2(\Sigma ; \Sym^{2}(T^*_\Sigma)) & \\
 X, X^\vee & {\rm Vect}(\Sigma) & & & \Omega^2(\Sigma ; T^*_\Sigma)\\
 f, f^\vee & C^\infty(\Sigma) &&& \Omega^2(\Sigma) .
 \end{array}
