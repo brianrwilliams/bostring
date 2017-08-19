@@ -123,10 +123,28 @@ If there is a $b$ leg, then the only other legs are $c$~type.
 A 1-loop graph will consist of a wheel (i.e., a sequence of edges that form an overall loop)
 with trees attached.
 The outer legs are all of $c$~type.
-\owen{Add pictures.}
 Every edge along a wheel will have the same type.
 It is not possible to build a connected graph with more than one loop.
 This combinatorics is the essential reason that we can quantize at one loop.
+For an example of such a wheel see Figure \ref{fig:wheel}.
+
+\begin{figure}
+\begin{tikzpicture}[line width=.2mm, scale=1.5]
+		\draw[vector](145:1) -- (145:.3cm);
+			\node at (145:1.15) {$c$};
+		\draw[vector](215:1) -- (215:.3cm);
+			\node at (215:1.2) {$c$};
+		\draw[vector](35:1) -- (35:.3cm);
+			\node at (35:1.15) {$c$};
+		\draw[vector](-35:1) -- (-35:.3cm);
+			\node at (-35:1.2) {$c$};
+		\draw[fill=black] (0,0) circle (.3cm);
+		\draw[fill=white] (0,0) circle (.29cm);
+	    	\clip (0,0) circle (.3cm);
+\end{tikzpicture}
+\caption{An example of a wheel with four inputs}
+\label{fig:wheel}
+\end{figure}
 
 We write ${\bf Graph}_{\rm string}$ for the collection of connected graphs just described,
 namely the directed trees and 1-loop graphs allowed by the string action functional.
@@ -216,8 +234,6 @@ Let ${\bf Graph}_{\rm string}^{(0)}$ denote the 0-loop graphs (i.e., trees) and 
 %\end{center}
 %\end{figure}
 
-
-
 \subsubsection{}
 
 These graphs describe linear maps associated to the field.
@@ -288,16 +304,27 @@ we view this one-form as a distributional section of the fields $\gamma$ and~$\b
 for example, for fixed $w$, the one-form $\d z/(z - w)$ is a $\beta$ field in the $z$-variable 
 as it is a $(1,0)$-form.
 (This propagator is for the $\beta\gamma$ fields---and one must tensor with a kernel for the identity on $V$---but a similar formula provides a propagator for the $bc$ fields.)
-\brian{maybe expand on this and give formulas for the individual propagators}
-\owen{We could write $P^{\beta\gamma}$ and $P^{bc}$, but I worry the notation gets heavy.}
 
 \subsubsection{}
 
 We will now describe the integral associated to a simple diagram.
 For simplicity, we assume $V = \CC$ so that the $\gamma$ and $\beta$ fields are simply functions and $1$-forms on $\CC$, respectively.
-Consider a ``tadpole'' diagram $\Gamma_{\rm tad}$ whose outer legs are $c$~fields 
+Consider a ``tadpole'' diagram, Figure \ref{fig:tadpole}, $\Gamma_{\rm tad}$ whose outer legs are $c$~fields 
 (i.e., vector fields on~$\CC$).
-\owen{Add picture.}
+
+\begin{figure}
+\begin{tikzpicture}[line width=.2mm, scale=1.5]
+		\draw[vector](180:1) -- (180:.3cm);
+			\node at (180:1.15) {$c$};
+		\draw[fill=black] (0,0) circle (.3cm);
+		\draw[fill=white] (0,0) circle (.29cm);
+	    	\clip (0,0) circle (.3cm);
+\end{tikzpicture}
+\caption{The tadpole diagram $\Gamma_{\rm tad}$}
+\label{fig:tadpole}
+\end{figure}
+
+
 There is only one vertex here, corresponding to the cubic function on fields
 \[
 w_{\Gamma_{\rm tad}}(P,I_{\rm string}) = \int_{z \in \CC} \beta \wedge c\gamma.
@@ -330,7 +357,7 @@ For the usual metric on $\CC$, we have
 \]
 In physics one calls a choice of $\dbar^*$ a {\em gauge-fix} as it \owen{not sure how to end this sentence for noncompact manifolds \dots maybe this comment should go elsewhere.}
 The commutator $[\dbar,\dbar^*]$, which we will denote $D$, 
-is equal to $\tfrac{1}{2} \Delta$, where $\Delta$ is the Laplace-Beltrami operator for this metric \owen{correct?}.
+is equal to $\tfrac{1}{2} \Delta$, where $\Delta$ is the Laplace-Beltrami operator for this metric.
 We can thus call upon Hodge theory and many nice results about finding partial inverses to the Laplacian.
 
 \owen{I'm not sure how much to say here.}
