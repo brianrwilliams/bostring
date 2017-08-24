@@ -222,36 +222,49 @@ Again the one-loop interaction is forced to have weight zero.
 We have already seen in Lemma \ref{lem: gf} that we can identify the full translation invariant deformation complex with a certain Gelfand-Fuks cohomology. 
 In terms of this Gelfand-Fuks cohomology we see that the cotangent weight zero piece is identified with the subcomplex
 \ben
-\Def_{\rm string}(\CC)^{\CC, \wt(0)} = \cred^*\left(\wone ; \Sym(V^\vee[z^\vee]) \right) [2] \subset \Def_{\rm string}(\CC)^{\CC} .
+\Def_{\rm string}(\CC)^{\CC, \wt(0)} = \cred^*\left(\wone ; \Sym(V^\vee[z^\vee]) \right) [2]. 
+%\subset \Def_{\rm string}(\CC)^{\CC} .
 \een 
 We will drop the overall shift by $2$ until the end of the proof. 
 
-Since $\Sym(W) = \CC \oplus \Sym^{\geq 1}(W)$ for any vector space $W$, we notice that we can write
+Any symmetric algebra has a natural maximal ideal: 
+for any vector space $W$,
+\[
+\Sym(W) = \CC \oplus \Sym^{\geq 1}(W).
+\] 
+Thus, we can decompose our complexes as
 \ben
  \cred^*\left(\wone ; \Sym(V^\vee[z^\vee]) \right) =   \cred^*(\wone) \oplus \clie^*\left(\wone ; \Sym^{\geq 1} (V^\vee[z^\vee]) \right) .
  \een
 The first summand is the reduced Gelfand-Fuks cohomology of formal vector fields with values in the trivial module.
-It is well-known that the cohomology is one-dimensional and concentrated in degree $3$, $H^3_{\rm red} (\wone) \cong \CC[-3]$. 
+It is well-known that $H^3_{\rm red} (\wone) \cong \CC[-3]$, 
+i.e., this cohomology is one-dimensional and concentrated in degree~$3$. 
 
 We now proceed to computing the second summand. 
-For this, it is convenient to introduce an additional grading.
-Notice that the Euler vector field $L_0 = z \partial_z$ induces a grading on $\wone$ and hence on the Chevalley-Eilenberg complex of $\wone$ with coefficients in any module. 
-We will call this grading the {\em conformal dimension}.
-
 Denote by $\{L_n = z^{n+1} \partial_z\}$ the standard basis for the Lie algebra of formal vector fields $\wone$. 
-Let $\lambda_n \in \wone^\vee$ be the dual vector to $L_n$ (we are using the continuous dual, as in the setting of Gelfand-Fuks cohomology). 
+Notice that the Euler vector field $L_0 = z \partial_z$ induces a grading on $\wone$,
+that we will call {\em conformal dimension}.
+Note that $L_n$ has conformal dimension $n$. 
+This grading extends naturally to the Chevalley-Eilenberg complex of $\wone$ with coefficients in any module. 
+
+Let $\lambda_n \in \wone^\vee$ be the dual vector to $L_n$. 
+(We work with the continuous dual vector space, as in the setting of Gelfand-Fuks cohomology.) 
 An arbitrary element of $V [[z]]$ is linear combination of vectors of the form $v \tensor z^k$. 
 Write $\zeta_k$ for the dual element $(z^k)^\vee$. 
 Thus an element of $(V [[z]])^\vee$ is a linear combination of the vectors of the form $v^\vee \tensor \zeta_k$. 
 
- \begin{lem} Let $M$ be any $\wone$-module. Then, the inclusion of the conformal dimension zero subcomplex
+ \begin{lem} 
+ Let $M$ be any $\wone$-module. 
+The inclusion of the subcomplex of conformal dimension zero elements
 \ben
-\clie^*(\wone ; M)^{(0)} \xto{\simeq} \clie^*(\wone ; M)
+\clie^*(\wone ; M)^{\wt(0)} \xto{\simeq} \clie^*(\wone ; M)
 \een
 is a quasi-isomorphism. \brian{Is this true?}
 \end{lem}
 
-\begin{proof} For $p-1$ define the operator $\iota_{L_0} : \clie^{p}(\wone ; M) \to \clie^{p-1}(\wone ; M)$ defined by sending a cochain $\varphi$ to the cochain
+\begin{proof} 
+For each $p-1 \geq 0$, 
+define the operator $\iota_{L_0} : \clie^{p}(\wone ; M) \to \clie^{p-1}(\wone ; M)$ by sending a cochain $\varphi$ to the cochain
 \ben
 (\iota_{L_0}\varphi)(X_1,\ldots,X_p) = \varphi(L_0, X_1,\ldots,X_p) .
 \een 
@@ -260,13 +273,16 @@ Let $\d$ be the differential for the complex $\clie^*(\wone ; M)$. It is easy to
 
 The underlying graded vector space of this conformal dimension zero subcomplex splits as follows:
 \be\label{splitting}
-\clie^{\#}(\wone)^{(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{(0)} \oplus \clie^{\#}(\wone)^{(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{(-1)}
+\clie^{\#}(\wone)^{\wt(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{\wt(0)} \oplus \clie^{\#}(\wone)^{\wt(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{\wt(-1)}
 \ee
-Observe that the dimension zero part of the reduced symmetric algebra is simply $\Sym^{\geq 1}(V^\vee)$ which is identified $\GL(V)$-equivariantly with $\cO_{red}(V)$. 
-That is, power series on $V$ with no constant term. 
-Similarly, the dimension one part of $\Sym^{\geq 1}\left(V[[z]]\right)^\vee$ is of the form ${\rm Sym}(V^\vee) \tensor z^\vee V^\vee$, which is identified $\GL(V)$-equivariantly with $\Omega^1(V)$. 
+In the first component, the purely dimension zero part of the reduced symmetric algebra is simply $\Sym^{\geq 1}(V^\vee)$, i.e., power series \owen{Do you want power series? You wrote polynomials earlier} on $V$ with no constant term.
+We denote this algebra concisely as $\cO_{red}(V)$, for reduced functions on $V$.
+%which is identified $\GL(V)$-equivariantly with $\cO_{red}(V)$. 
+Similarly, in the second component, 
+the dimension one part of $\Sym^{\geq 1}\left(V[[z]]\right)^\vee$ is of the form ${\rm Sym}(V^\vee) \tensor z^\vee V^\vee$, which is naturally identified %$\GL(V)$-equivariantly 
+with~$\Omega^1(V)$. 
 
-The full Gelfand-Fuks complex is
+The differential in this Gelfand-Fuks complex has the form
 \[
 \xymatrix{
 \overset{\ul{0}}{1 \otimes \sO_{red}(V)} \ar[rd]^{\d_{dR}} & \overset{\ul{1}}{\lambda^0 \otimes \sO_{red}(V)} \ar[r] \ar[rd]^{\d_{dR}} & \overset{\ul{2}}{\lambda^{-1} \wedge \lambda^1 \otimes \sO_{red}(V)} & \overset{\ul{3}}{\lambda^{-1} \wedge \lambda^1 \wedge \lambda^0 \otimes \sO_{red}(V)} \\
@@ -274,7 +290,8 @@ The full Gelfand-Fuks complex is
 }
 \]
 The top line comes from the first summand in (\ref{splitting}) and the bottom line corresponds to the second summand.
-The top horizontal map sends $\lambda^0 \mapsto 2 \cdot \lambda^{-1} \wedge \lambda^1$ and the bottom horizontal map sends $\lambda^{-1}$ to $\lambda^{-1} \wedge \lambda^0$ (both are the identity on $V$). 
+The top horizontal map sends $\lambda^0$ to $2 \cdot \lambda^{-1} \wedge \lambda^1$, 
+and the bottom horizontal map sends $\lambda^{-1}$ to $\lambda^{-1} \wedge \lambda^0$ (both are the identity on $V$). 
 The diagonal maps are given by the de Rham differential $\d_{dR} : \sO_{red}(V) \to \Omega^1(V)$. 
 This complex is quasi-isomorphic to 
 \[
@@ -284,7 +301,8 @@ This complex is quasi-isomorphic to
 }
 \]
 which, in turn, is identified with $\Omega^{2}_{cl}(V)[-1] \oplus \Omega^1(V)[-2] \oplus \Omega^1_{cl}(V)[-3]$. 
-After accounting for the overall shift by $2$ we arrive at the identification of the $\CC_{\rm cot}^\times$-weight zero component of the translation invariant deformation complex.
+After accounting for the overall shift by $2$, 
+we arrive at the identification of the $\CC_{\rm cot}^\times$-weight zero component of the translation-invariant deformation complex.
 
 %\subsubsection{The $\CC^\times_{\rm cot}$-weight one piece}
 %
@@ -306,7 +324,7 @@ After accounting for the overall shift by $2$ we arrive at the identification of
 We now discuss, in light of the calculations above, how to interpret string backgrounds in our approach. 
 Since $V$ is flat,
 we will see that the following deformations will be trivializable. 
-Note that this trivializations will {\em not} be compatible with $\GL(V)$ (or for non-flat targets, general diffeomorphisms of the target). 
+Note that this trivializations will {\em not} be equivariant for the obvious $\GL(V)$ action (or for non-flat targets, general diffeomorphisms of the target). 
 Thus, these deformations are relevant for the case of a curved target, and we can give an interpretation of them in terms of the usual perspective of {\em string backgrounds}. 
 \owen{So now lets add some words providing such an interpretation.}
 
