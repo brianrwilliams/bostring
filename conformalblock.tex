@@ -94,16 +94,34 @@ Hence it implies that the global observables of the free $bc\beta\gamma$ system 
 
 We can work out the first Chern class of this determinant line bundle using the Grothendieck-Riemann-Roch theorem as follows.
 Consider the universal Riemann surface $\pi \colon C \to \cM$ over the moduli space, 
-and consider the bundles $\sO_C \otimes V$ and $\sT_{C/\cM}$,
+and consider the bundles $\sO_C \otimes V$ and $\sT_\pi = \sT_{C/\cM}$,
 which one can view the universal $\gamma$ fields and $c$ fields, respectively.
 The first Chern class of the derived pushforward $R\pi_*(\sO_C \otimes V)$ is given by the first Chern class of $\det(H^*(\sO_C \otimes V)) \cong \det(\sO_C)^{\otimes \dim V}$, 
 since the first Chern class of a vector bundle is the first Chern class of its determinant bundle.
-But the GRR theorem tells us that \owen{finish this!}
-
-the global observables $H^*\left(\Obs^\q_{free}(C)\right)$ as a bundle over $C$.
+The Grothendieck-Riemann-Roch theorem states that for a coherent sheaf $\cF$ on $C$, 
+the Chern character $\ch(R\pi_* \cF)$ of its derived pushforward $R\pi_* \cF$  is given by 
+\def\Td{{\rm Td}}
+\begin{align*}
+\pi_*( \ch(\cF) \Td(\cT_\pi)) &= \pi_*( (1 + c_1(\cF) + \frac{1}{2}(c_1(\cF)^2 - 2c_2(\cF)) + \cdots)(1 +\frac{1}{2}c_1(\cT_\pi)))\\
+%&=  (1 + \pi^* c_1(\cT_X) + \pi^* \ch_2(\cT_X) + \cdots)(1 +\frac{1}{2}c_1(\cT_\pi)),
+\end{align*}
+where $\cT_\pi$ denotes the relative tangent bundle,
+which is here just the tangent line bundle of a Riemann surface.
+The first Chern class is the component of cohomological degree 2, namely
 \[
-c_1\left(H^*\left(\Obs^\q_{free}(\Sigma)\right)\right) = 
+(1-g) c_1(\cF) + \ch_2(\cF) 
 \]
+where $g$ denotes the genus of $C$.
+For us $\cF$ is always a line bundle and thus $\ch_2(\cF) = 0$.
+When $\cF = \sO_C \otimes V$, we get $(\dim V) (1-g)$, and
+when $\cF = \cT_{\pi}$, we get $(1-g) (3g+3)$.
+Hence, for the determinant line of global observables $H^*\left(\Obs^\q_{free}(C)\right)$ as a bundle over $C$,
+we get
+\[
+c_1\left(H^*\left(\Obs^\q_{free}(\Sigma)\right)\right) = (g-1)(3g+3 - \dim(V)) =
+\]
+\owen{I am fucking this up royally.}
+
 
 %\begin{lem}[\cite{fact1} Proposition 8.1.4.1]
 %\label{lem bg global obs} 
