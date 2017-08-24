@@ -1,12 +1,6 @@
 \section{Deformations of the theory and string backgrounds}
 \label{sec: moduli}
 
-\owen{Maybe the Gelfand-Fuk discussion can be anticipated in Section 1? I think versions of it are easy to motivate: ``}
-
-\owen{We should observe that we see the deformations of the action, such as $B$-fields and dilatons. Observe we've rediscovered "string backgrounds."}
-
-\brian{Might be good to hint at the curved sigma model here.}
-
 Whenever one is studying a theory,
 it is helpful to understand how it can be modified 
 and how features of the theory change as one adjusts natural parameters of the theory,
@@ -40,8 +34,7 @@ Along the way we will see how the usual backgrounds for the bosonic string (a ta
 
 Right now, we will focus on the case $\Sigma = \CC$, 
 and in Section \ref{sec: conformalblock} we will consider arbitrary Riemann surfaces.
-We restrict ourselves to examining {\em translation-invariant} local functionals.
-\owen{Should we explain why?}
+We restrict ourselves to examining {\em translation-invariant} local functionals (which will allow us to descend to a theory defined on an elliptic curve).
 Unpacking what this means will lead swiftly to Gelfand-Fuks cohomology.
 
 \subsection{Deformations for the classical theory}
@@ -86,7 +79,6 @@ An analogous argument applies to the $c$ field.
 It shows there is a quasi-isomorphism of dg Lie algebras 
 between the jet at the origin of the Dolbeault complex $\Omega^{0,*}(\CC ; T^{1,0}_\CC)$ of holomorphic vector fields 
 and the Lie algebra of formal vector fields $\wone = \CC[[z]]\partial_z$.
-\owen{I inserted a description because I don't think $W_1$ is obvious notation.}
 The translation-invariant Lagrangians depending only on the $c$ field 
 are thus quasi-isomorphic to $\cred^*(\wone)$,
 by which we mean the (reduced) {\em continuous} Lie algebra cohomology,
@@ -98,15 +90,13 @@ for the holomorphic string,
 which couple the $c$ field to the others,
 then these arguments yield the following.
 
-\begin{lem}
+\begin{lem}\label{lem: gf}
 There is a quasi-isomorphism 
 \[
-\Def_{\rm string}(\CC,V)^\CC \simeq \cred^*(\wone, \Sym(V^\vee[z^\vee] \oplus V[z^\vee] \d z^\vee \oplus W_1^{\rm ad}[2])) 
+\Def_{\rm string}(\CC,V)^\CC \simeq \cred^*(\wone, \Sym(V^\vee[z^\vee] \oplus V[z^\vee] \d z^\vee \oplus W_1^{\rm ad}[2])) [2]
 \]
 between the deformation complex of translation-invariant local functionals for the holomorphic string and a certain Gelfand-Fuks cochain complex.
 \end{lem}
-
-\owen{Please double check that $b$ field part.}
 
 This lemma already substantially simplifies our lives, 
 as one can invoke the literature on Gelfand-Fuks cohomology.
@@ -158,10 +148,9 @@ On the other hand, this lemma says the theory admits a large group of symmetries
 namely diffeomorphisms of the target, 
 which appears as the degree -1 cohomology.
 
-\owen{I think we might be able to just to sketch the key argument in light of the discussion in the preceding subsection. That is, just point out the weights argument. We can also just say that it is proved by arguments that are similar but easier than what we do in the next subsection.}
-
-\owen{We should make a small comment about why we take into account $GL(V)$ equivariance,
-such as that we want to take into account the other natural symmetries of the target $V$.}
+The $\GL(V)$ equivariance takes into account the natural symmetries of the target. 
+It also is the first step in the approach to studying the deformation complex with general curved target. 
+We will discuss this further in the section on string backgrounds. 
 
 \subsection{Interaction terms that appear at one loop}
 
@@ -180,12 +169,12 @@ between the weight 0, translation-invariant deformation complex
 and natural complexes related to the geometry of the target.
 \end{lem}
 
-In particular, the one-loop interactions terms that can appear---up to equivalences of BV theories---are
-\[
-H^1(V,\Omega^2_{cl}) \oplus \Omega^1(V).
-\]
-As $V$ is a vector space, the first term is trivial, but for a curved target it would survive \owen{and contribute a WHAT KIND of field.}
-The second term is a choice of \owen{potential?} on the target and contributes a term \owen{???} to the action.
+%In particular, the one-loop interactions terms that can appear---up to equivalences of BV theories---are
+%\[
+%H^1(V,\Omega^2_{cl}) \oplus \Omega^1(V).
+%\]
+%As $V$ is a vector space, the first term is trivial, but for a curved target it would survive \owen{and contribute a WHAT KIND of field.}
+%The second term is a choice of \owen{potential?} on the target and contributes a term \owen{???} to the action. \brian{Does it make more sense to include interpretations of all the background fields in the last subsection of this section? Or did you want to get rid of that and just include that here?}
 
 Before explaining the key steps of the proof, 
 we remark that there is another, more structural way to see that only weight zero local functionals should be relevant.
@@ -212,42 +201,48 @@ Again the one-loop interaction is forced to have weight zero.
 
 \subsubsection{Sketch of proof}
 
-The fields (rather, their shift up by one) form a dg Lie algebra
-\[
-\Omega^{0,*}(\CC ; T^{1,0} \ltimes (V[-1] \oplus \d z \,V^*[-1] \oplus \d z \,T^{1,0 *}).
-\]
-The jets at $0 \in \CC$ of this Lie algebra is quasi-isomorphic to the Lie algebra
-\be\label{jet lie}
-\wone \ltimes (V [[z]] [-1] \oplus \d z V^*[[z]] [-1] \oplus \hOmega^1_1 [-2]),
-\ee
-where $\wone = \CC [[z]] \partial_z$ is the Lie algebra of formal vector fields in one variable and $\hOmega^1_1 = \CC [[z]] \d z$ is the space of formal one-forms. 
-\owen{One-forms is hyphenated. The need to do this is clear from considering "two forms" which is ambiguous without the hyphen.}
-The Lie bracket comes from bracket on $\wone$ and the natural action of $\wone$ on $\CC [[z]]$ and $\hOmega^1_1$. 
+%The fields (rather, their shift up by one) form a dg Lie algebra
+%\[
+%\Omega^{0,*}(\CC ; T^{1,0} \ltimes (V[-1] \oplus \d z \,V^*[-1] \oplus \d z \,T^{1,0 *}).
+%\]
+%The jets at $0 \in \CC$ of this Lie algebra is quasi-isomorphic to the Lie algebra
+%\be\label{jet lie}
+%\wone \ltimes (V [[z]] [-1] \oplus \d z V^*[[z]] [-1] \oplus \hOmega^1_1 [-2]),
+%\ee
+%where $\wone = \CC [[z]] \partial_z$ is the Lie algebra of formal vector fields in one variable and $\hOmega^1_1 = \CC [[z]] \d z$ is the space of formal one-forms. 
+%The Lie bracket comes from bracket on $\wone$ and the natural action of $\wone$ on $\CC [[z]]$ and $\hOmega^1_1$. 
+
+%The weight $\CC^\times_{\rm cot}$-weight zero sub-Lie algebra of the Lie algebra (\ref{jet lie}) is simply $W_1 \ltimes V [[z]] [-1]$, where the semi-direct product comes from the natural action of formal vector fields on formal power series.
+%Thus, we have reduced the calculation of the $\CC^\times_{\rm cot}$-weight zero piece of the local deformation complex to calculating the Chevalley-Eilenberg complex of this Lie algebra:
+%\ben
+%\cred^* \left(\wone \ltimes V [[z]] [-1] \right) .
+%\een
+%This splits into two terms $\cred^* (\wone) \oplus \clie^*(W_1 ;  \Sym^{\geq 1} (V [[z]])^\vee)$. 
+
+We have already seen in Lemma \ref{lem: gf} that we can identify the full translation invariant deformation complex with a certain Gelfand-Fuks cohomology. 
+In terms of this Gelfand-Fuks cohomology we see that the cotangent weight zero piece is identified with the subcomplex
+\ben
+\Def_{\rm string}(\CC)^{\CC, \wt(0)} = \cred^*\left(\wone ; \Sym(V^\vee[z^\vee]) \right) [2] \subset \Def_{\rm string}(\CC)^{\CC} .
+\een 
+We will drop the overall shift by $2$ until the end of the proof. 
+
+Since $\Sym(W) = \CC \oplus \Sym^{\geq 1}(W)$ for any vector space $W$, we notice that we can write
+\ben
+ \cred^*\left(\wone ; \Sym(V^\vee[z^\vee]) \right) =   \cred^*(\wone) \oplus \clie^*\left(\wone ; \Sym^{\geq 1} (V^\vee[z^\vee]) \right) .
+ \een
+The first summand is the reduced Gelfand-Fuks cohomology of formal vector fields with values in the trivial module.
+It is well-known that the cohomology is one-dimensional and concentrated in degree $3$, $H^3_{\rm red} (\wone) \cong \CC[-3]$. 
+
+We now proceed to computing the second summand. 
+For this, it is convenient to introduce an additional grading.
+Notice that the Euler vector field $L_0 = z \partial_z$ induces a grading on $\wone$ and hence on the Chevalley-Eilenberg complex of $\wone$ with coefficients in any module. 
+We will call this grading the {\em conformal dimension}.
 
 Denote by $\{L_n = z^{n+1} \partial_z\}$ the standard basis for the Lie algebra of formal vector fields $\wone$. 
 Let $\lambda_n \in \wone^\vee$ be the dual vector to $L_n$ (we are using the continuous dual, as in the setting of Gelfand-Fuks cohomology). 
 An arbitrary element of $V [[z]]$ is linear combination of vectors of the form $v \tensor z^k$. 
 Write $\zeta_k$ for the dual element $(z^k)^\vee$. 
 Thus an element of $(V [[z]])^\vee$ is a linear combination of the vectors of the form $v^\vee \tensor \zeta_k$. 
-
-
-The weight $\CC^\times_{\rm cot}$-weight zero sub-Lie algebra of the Lie algebra (\ref{jet lie}) is simply $W_1 \ltimes V [[z]] [-1]$, where the semi-direct product comes from the natural action of formal vector fields on formal power series.
-Thus, we have reduced the calculation of the $\CC^\times_{\rm cot}$-weight zero piece of the local deformation complex to calculating the Chevalley-Eilenberg complex of this Lie algebra:
-\ben
-\cred^* \left(\wone \ltimes V [[z]] [-1] \right) .
-\een
-This splits into two terms $\cred^* (\wone) \oplus \clie^*(W_1 ;  \Sym^{\geq 1} (V [[z]])^\vee)$. 
-
-The first term in this summand is the reduced Gelfand-Fuks cohomology of formal vector fields with values in the trivial module.
-It is well-known that the cohomology is one-dimensional and concentrated in degree $3$, $H^3_{\rm red} (\wone) \cong \CC[-3]$. 
-We will identify the anomaly for the holomorphic string with flat target as multiple of the generator of this space. 
-The remaining piece of the weight zero deformation complex is the home of the anomalies for the holomorphic string placed in a non trivial background: for instance, when the target of the $\sigma$-model is curved. 
-We will not see this in our theory, of course, but the following will hopefully be...
-\owen{Not sure where this paragraph is going.}
-
-The first step in computing this is to notice that there is a quasi-isomorphic subcomplex.
-The Euler vector field $L_0 = z \partial_z$ induces a grading on $\wone$ and hence on the Chevalley-Eilenberg complex of $\wone$ with coefficients in any module. 
-We will call this grading the {\em conformal dimension}.
 
  \begin{lem} Let $M$ be any $\wone$-module. Then, the inclusion of the conformal dimension zero subcomplex
 \ben
@@ -264,20 +259,21 @@ Let $\d$ be the differential for the complex $\clie^*(\wone ; M)$. It is easy to
 \end{proof}
 
 The underlying graded vector space of this conformal dimension zero subcomplex splits as follows:
-\ben
+\be\label{splitting}
 \clie^{\#}(\wone)^{(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{(0)} \oplus \clie^{\#}(\wone)^{(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{(-1)}
-\een
+\ee
 Observe that the dimension zero part of the reduced symmetric algebra is simply $\Sym^{\geq 1}(V^\vee)$ which is identified $\GL(V)$-equivariantly with $\cO_{red}(V)$. 
 That is, power series on $V$ with no constant term. 
 Similarly, the dimension one part of $\Sym^{\geq 1}\left(V[[z]]\right)^\vee$ is of the form ${\rm Sym}(V^\vee) \tensor z^\vee V^\vee$, which is identified $\GL(V)$-equivariantly with $\Omega^1(V)$. 
 
-The full dimension zero complex, including the differential is
+The full Gelfand-Fuks complex is
 \[
 \xymatrix{
-1 \otimes \sO_{red}(V) \ar[rd]^{\d_{dR}} & \lambda^0 \otimes \sO_{red}(V) \ar[r] \ar[rd]^{\d_{dR}} & \lambda^{-1} \wedge \lambda^1 \otimes \sO_{red}(V) & \lambda^{-1} \wedge \lambda^1 \wedge \lambda^0 \otimes \sO_{red}(V) \\
+\overset{\ul{0}}{1 \otimes \sO_{red}(V)} \ar[rd]^{\d_{dR}} & \overset{\ul{1}}{\lambda^0 \otimes \sO_{red}(V)} \ar[r] \ar[rd]^{\d_{dR}} & \overset{\ul{2}}{\lambda^{-1} \wedge \lambda^1 \otimes \sO_{red}(V)} & \overset{\ul{3}}{\lambda^{-1} \wedge \lambda^1 \wedge \lambda^0 \otimes \sO_{red}(V)} \\
  & \lambda^{-1} \otimes \Omega^1(V) \ar[r] & \lambda^{-1} \wedge \lambda^0 \otimes\Omega^1(V) &
 }
 \]
+The top line comes from the first summand in (\ref{splitting}) and the bottom line corresponds to the second summand.
 The top horizontal map sends $\lambda^0 \mapsto 2 \cdot \lambda^{-1} \wedge \lambda^1$ and the bottom horizontal map sends $\lambda^{-1}$ to $\lambda^{-1} \wedge \lambda^0$ (both are the identity on $V$). 
 The diagonal maps are given by the de Rham differential $\d_{dR} : \sO_{red}(V) \to \Omega^1(V)$. 
 This complex is quasi-isomorphic to 
@@ -287,7 +283,8 @@ This complex is quasi-isomorphic to
  & \lambda^{-1} \otimes \Omega^1(V) & \lambda^{-1} \wedge \lambda^0 \otimes\Omega^1(V) &
 }
 \]
-which, in turn, is identified with $\Omega^{2}_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)$. This observation completes the calculation of the $\CC^\times_{\rm cot}$-weight zero component. 
+which, in turn, is identified with $\Omega^{2}_{cl}(V)[-1] \oplus \Omega^1(V)[-2] \oplus \Omega^1_{cl}(V)[-3]$. 
+After accounting for the overall shift by $2$ we arrive at the identification of the $\CC_{\rm cot}^\times$-weight zero component of the translation invariant deformation complex.
 
 %\subsubsection{The $\CC^\times_{\rm cot}$-weight one piece}
 %
@@ -306,8 +303,9 @@ which, in turn, is identified with $\Omega^{2}_{cl}(V)[1] \oplus \Omega^1(V) \op
 
 \subsection{Interpretation as string backgrounds}
 
+We now discuss, in light of the calculations above, how to interpret string backgrounds in our approach. 
 Since $V$ is flat,
-we will see that all such \owen{what does 'such' refer to?} deformations will be trivializable. 
+we will see that the following deformations will be trivializable. 
 Note that this trivializations will {\em not} be compatible with $\GL(V)$ (or for non-flat targets, general diffeomorphisms of the target). 
 Thus, these deformations are relevant for the case of a curved target, and we can give an interpretation of them in terms of the usual perspective of {\em string backgrounds}. 
 \owen{So now lets add some words providing such an interpretation.}

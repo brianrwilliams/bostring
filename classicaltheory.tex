@@ -87,16 +87,8 @@ The other equations then amount to solving for holomorphic sections (of the rele
 For instance, the equation in $\gamma$ picks out holomorphic maps from $\Sigma$,
 with the $c$-deformed complex structure, to~$V$.
 
-\owen{Add something about how to understand the degrees. E.g., does $b$ ever appear?}
-\brian{Confused by what you mean by ``does b ever appear"? But I've added further comments above about degrees.}
-
 Note that $b$ essentially appears as a Lagrange multiplier, so it doesn't have any intrinsic meaning physical meaning by itself. 
 The field $b$ can be understood as an ``antifield" to the ghost field $c$, in other words an {\em antighost}. 
-
-
-\owen{Add explanation of writing BV theory from ordinary action.}
-\owen{I meant that there's a process by which one can work out the BV action from the naive action plus the relevant gauge action.}
-\brian{I agree, but even the $b$ fields appear in the usual string theory literature, so maybe their appearance here won't surprise people? I'm happy to sketch the construction of a BV theory from a naive gauge theory, but it may belong in the overview section, so I've added a bullet there.}
 
 \begin{rmk}
 \label{rmk:bcbg}
@@ -259,22 +251,24 @@ f, f^\vee & C^\infty(\Sigma) &&& \Omega^2(\Sigma) .
 \]
 The BV action functional is of the form:
 \begin{align}\label{polyakov bv}
-S^{BV}_{Poly} = 
+S^{BV}_{Poly} (\varphi, \alpha, X, f) = 
 & \int_\Sigma h(\varphi, \Delta_{g_0} \varphi)\, \dvol_{g_0} + \sum_{n \geq 1} \frac{1}{n!} \int_{\Sigma} h(\varphi, D_n(\alpha) \varphi) \dvol_{g_0} \\
 & +  \int_{\Sigma} h(\varphi, X \cdot \varphi) \dvol_{g_0} \\
 & +  S'(X, f, \alpha) 
 \end{align}
-\brian{You used both ``begin{equation}'' and ''begin{align*}''. Latex was giving me an error, and I don't think you need to use both.}
-\owen{I did that to have a single equation number for the equation. If you use align*, then you get no equation number. If you use align, as I did now, you get three. It's poopy.}
 The right hand side of the first line amounts to expanding out the Laplace-Beltrami operator $\Delta_{g_0 + \alpha}$ as a function of $\alpha$.
 Hence, the $D_n$ are differential operators of the form 
-$D_n : \Gamma(\Sigma , \Sym^2 T\Sigma)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ 
+$D_n : \left(\Sym^2(T_\Sigma)\right)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ 
 where ${\rm Diff}^{\leq 2}(\Sigma)$ are order $\leq 2$ differential operators on $\Sigma$.
-\owen{I'm not sure I like this description, although it's accurate. Maybe something more concrete like ``for each $\alpha$, we get a second-order differential operator $D_n(\alpha)$. (This term is the $n$th term in the Taylor expansion, so it homogeneous of order $n$: $D_n(t \alpha) = t^n D_n(\alpha)$ for a scalar $t$.)'' I also removed the $n$-fold appearance of $\alpha$.}
-The second line encodes how vector fields act on the maps of the $\sigma$ model.
+Thus, for each section $\alpha$ of $\Sym^2(T_\Sigma)$, we get a second-order differential operator $D_n(\alpha)$ acting on functions on $\Sigma$. (This term is the $n$th term in the Taylor expansion, so its homogeneous of order $n$: $D_n(t \alpha) = t^n D_n(\alpha)$ for a scalar $t$.)
+The second line encodes how vector fields act on the maps of the $\sigma$-model.
 The third line $S'(X, f, \alpha)$ is independent of $\varphi$
-and only depends on the fields $f$, $X$, $\alpha$ and their antifields.
-\owen{Would it be crazy to specify $S'$ to some extent?}
+and only depends on the fields $f$, $X$, $\alpha$ and their antifields (denoted with checks $(-)^\vee$).
+It is of the form
+\ben
+S'(f,X,\alpha) = \int_\Sigma \<\alpha^\vee, L_X (g_0 + \alpha) + f (g_0 + \alpha)\> + \int_\Sigma \<X^\vee, [X,X]\> + \int_\Sigma \<f^\vee, X \cdot f\> .
+\een
+The first term encodes how vector fields and Weyl transformations act on the perturbed metric $g_0 + \alpha$ and the remaining terms are required to ensure the gauge symmetry is consistent (satisfies the classical master equation). 
 
 An explicit formula for $D_n(\alpha,\ldots,\alpha)$ is a rather involved exercise (and not needed here).
 %can be derived from the power series expansion of the Laplace-Beltrami operator in terms of the metric. 
@@ -287,7 +281,7 @@ or in a more coordinate-free notation,
 \[
 D_1(\alpha) = \frac{1}{2} \star \d \left({\rm tr}(\alpha) \star \d\right).
 \] 
-Here, we use the natural trace map ${\rm tr} : \Gamma(\Sigma , \Sym^2 T\Sigma) \to C^\infty(\Sigma)$ of symmetric $2\times2$ matrices. 
+Here, we use the natural trace map ${\rm tr} : \Sym^2 T\Sigma \to C^\infty(\Sigma)$ of symmetric $2\times2$ matrices. 
 
 There is an important parameter in this action functional: the Hermitian inner product $h$.
 We can consider scaling it $h \to t h$, with $t \in (0,\infty)$.
@@ -360,6 +354,11 @@ in the action of the holomorphic string, plus their conjugates.
 The arguments are similar to those we have just sketched. 
 \end{proof}
 
+\begin{rmk} Another approach to arrive at the holomorphic theory we consider comes from considering supersymmetry. 
+Without gravity, the pure holomorphic $\sigma$-model can be viewed as the {\em holomorphic twist} of the $N=(2,0)$ supersymmetric $\sigma$ model (in this case the target is required to be K\"{a}hler). 
+Moreover, the $\beta\gamma bc$ system is the holomorphic twist of the $N=(2,2)$ model. 
+Conjecturally, we expect the holomorphic theory of gravity we consider to be the holomorphic twist of two-dimensional $N=2$ supergravity.
+\end{rmk}
 
 %***********
 %

@@ -1,11 +1,17 @@
 \section{The string partition function on an elliptic curve}
 
+\def\Im{{\rm Im}\;}
+
 We will evaluate the partition function of the theory on an elliptic curve. 
 Every $\tau \in \HH$, the upper half plane, 
 determines an elliptic curve as a quotient $E_\tau = \CC / (\ZZ + \tau \ZZ)$.
 Let $\d^2 z = \d z \d \zbar$ be the standard volume form on $\CC$, 
 which descends to one on $E_\tau$; 
 we denote it by the same name. 
+Note that in terms of $\tau$, the volume of the elliptic curve is
+\ben
+\int_{E_\tau} \d^2 z = \Im \tau .
+\een
 
 This presentation of an elliptic curve allows us to take advantage of constructions we've introduced over $\CC$.
 For instance, we have already discussed the gauge fixing operator $\dbar^*$ and constructed the heat kernel on $\CC$. 
@@ -14,9 +20,18 @@ where $D^{E_\tau}$ is the commutator $[\dbar, \dbar^*] = \frac{1}{2} \Delta$ on 
 This heat kernel admits a nice description when pulled back from the elliptic curve $E_\tau$ to its universal cover $\CC$,
 namely it becomes the sum over lattice points
 \ben 
-K^{E_\tau}_t (z,w) = \sum_{\lambda \in \ZZ + \tau \ZZ} \frac{1}{2\pi t} e^{-|z-w + \lambda|^2 / 2 t} (\d z - \d w) (\d \zbar - \d \wbar ) .
+K^{E_\tau}_t (z,w) = \sum_{\lambda \in \ZZ + \tau \ZZ} \frac{1}{2\pi t} e^{-|z-w - \lambda|^2 / 4 t} (\d z - \d w) (\d \zbar - \d \wbar ) .
 \een
 From $K_t^{E_\tau}$ we obtain the propagator $P_{\ell < L}^{E_\tau} = \dbar^* \int_{\ell}^L e^{-t D^{E_\tau}} \d t$ as earlier. This propagator regularizes the operator $\dbar^{-1}$ on~$E_\tau$. 
+Explicitly, it is of the form
+\ben
+P^{E_{\tau}}_{\ell < L} (z,w) = \sum_{\lambda \in \ZZ + \tau \ZZ} \int_{t = \ell}^L \frac{1}{2\pi t} \left( \frac{\zbar - \wbar + \Bar{\lambda}}{4t} \right) e^{-|z-w-\lambda|/4t} \d t (\d z - \d w) .
+\een
+
+%\\ & = &
+%\sum_{(m,n) \in \ZZ^2 \setminus (0,0)} \int_{t = \ell}^L \frac{1}{2\pi t} \left( \frac{\zbar - \wbar -(m + n\tau)}{4t} \right) e^{-|z-w+m + n\tau|/4t} \d t (\d z - \d w) 
+%\eestar
+%where we have substituted $\lambda = m + n \tau$. 
 
 The full propagator of the holomorphic string on $E_\tau$ has one component for the paired fields $\beta$ and $\gamma$ and another component for the paired fields $b$ and $c$. 
 Since $\gamma$ is a section of the trivial vector bundle labeled by the vector space $V$, 
@@ -24,7 +39,7 @@ the first term in the full propagator is of the form $P_{\ell < L}^{E_\tau} \ten
 Now, since the tangent bundle is trivial on an elliptic curve, 
 we can choose a canonical framing and write the second piece of the propagator 
 describing the pairing between $b$ and $c$ as 
-$P_{\ell < L}^{E_\tau} \tensor (\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z),$ 
+$P_{\ell < L}^{E_\tau} \tensor \frac{1}{2}(\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z),$ 
 where $\partial_z, \partial_z^\vee$ denotes the canonical framing of $T_{E_\tau}, T_{E_\tau}^*$ respectively. 
 
 Just as in the case of the calculation of the anomaly, the propagator is a sum over wheels that are functionals of the $c$-fields. 
@@ -33,29 +48,84 @@ The vertices are labeled by the interaction terms which have two types: a $\beta
 Thus, the partition function splits up into a sum of two types of diagrams (\ref{diagram:partition}): 
 \begin{enumerate}
 \item[A)] all input legs labeled by the fields $c$ with each internal edge labeled by the $\beta\gamma$ propagator $P_{\ell < L}^{E_\tau} \tensor \frac{1}{2} (\id_V + \id_{V^*})$, and 
-\item[B)] all input legs labeled by the fields $c$ with each internal edge labeled by the $bc$ propagator $P_{\ell < L}^{E_\tau} \tensor (\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z)$. 
+\item[B)] all input legs labeled by the fields $c$ with each internal edge labeled by the $bc$ propagator $P_{\ell < L}^{E_\tau} \tensor \frac{1}{2}(\partial_z \tensor \partial_z^\vee + \partial_z^\vee \tensor \partial_z)$. 
 \end{enumerate}
 \brian{draw diagrams}
 Let $A^{E_\tau}_j$ (respectively $B^{E_\tau}_j$) be the weight of the graph of type $A$ (respectively $B$) with $j \geq 1$ incoming legs.
 
-\begin{lem} 
+First we consider the tadpole graphs of each type. 
+\begin{lem} \label{lem:tadpole}
 The weight of the type $A$ tadpole diagram is
 \ben
-A_1^{E_\tau} (\zbar \partial_z) = \# (- 2) \cdot (13) \cdot E_2^*(\tau) 
+\epsilon A_1^{E_\tau} =  - (2 \pi i) \frac{13}{12}  \cdot E_2 (\tau) 
 \een
 when evaluated on the generator $c = \d \zbar \partial_z$.
 \brian{WORK OUT FACTOR} .
 Similarly, the weight of the type $B$ tadpole diagram evaluated on the generator is
 \ben
-B_1^{E_\tau} (\zbar \partial_z) = \# (2) \cdot E_2^*(\tau) .
+\epsilon B_1^{E_\tau} = (2 \pi i) \frac{1}{12} E_2 (\tau) .
 \een 
+Thus, in sum we have $\epsilon A_1^{E_\tau} + \epsilon B_1^{E_\tau} = - (2\pi i) \cdot E_2 (\tau)$. 
+\end{lem}
+\begin{proof} 
+The vertex of the tadpole of type $A$ is labeled by the interaction $\int \<\beta, [\d \zbar \partial_z, \gamma\>$. 
+The $z$-derivative of $P_{\ell < L}^{E_\tau}(z,w)$ is given by
+\ben
+\sum_{\lambda \in \ZZ + \tau \ZZ} \int_{t = \ell}^L \frac{1}{2\pi t} \left( \frac{\zbar - \wbar + \Bar{\lambda}}{4t} \right)^2 e^{-|z-w+\lambda|/4t} \d t (\d z - \d w) .
+\een
+We refer to Lemma 2.2 of \cite{LiMod} for the following result:
+\ben
+\lim_{\epsilon \to 0} \lim_{L \to \infty} \lim_{z\to w} \frac{\d}{\d z} P_{\ell < L}^{E_\tau}(z,w) = \frac{1}{12 \pi} E_2^{ren}(\tau) 
+\een
+where $E_2^{ren}$ is the renormalized second Eistenstein series 
+\ben
+E_2^{ren}(\tau) = 1 - 24 \sum_{n=1}^\infty \frac{n q^n}{1-q^n} 
+\een
+where $q = e^{2 \pi i \tau}$. 
+Thus, the contribution for the tadpole of type $A$ is given by
+\ben
+\dim(V) \frac{1}{12 \pi} E_{2}^{ren}(\tau) \int_{E_{\tau}} \frac{\d^2 z}{\Im \tau} = 
+\een
+\end{proof}
+
+There is a simple relationship between the quasi-modular form $E_2(\tau)$ and the discriminant $\Delta(\tau)$. 
+\ben
+\frac{1}{2 \pi i} \frac{\Delta'(\tau)}{\Delta(\tau)} = E_2(\tau)
+\een
+where the prime denotes the derivative with respect to $\tau$. 
+Since $\Delta'/\Delta$ is equal to the derivative of $\log(\Delta)$ we see that by Lemma \ref{lem:tadpole} we can write the contribution from the tadpole diagrams as
+\ben 
+\epsilon A_1^{E_\tau} + \epsilon B_1^{E_\tau} = \frac{\d}{\d \tau} \left(\log \Delta(\tau) \right) .
+\een 
+
+\begin{lem}\label{lem:weight as trace}
 \end{lem}
 
 There is then a useful inductive formula to determine the weight of diagrams with two or more vertices.
 
+
 \begin{lem} 
-One has $\partial_\tau A^{E_\tau}_{j} = \# A^{E_\tau}_{j+1}$ and $\partial_\tau B_j^{E_\tau} = \# B_{j+1}^{E_\tau}$.
+One has $\partial_\tau A^{E_\tau}_{j} = \frac{1}{j+1} A^{E_\tau}_{j+1}$ and $\partial_\tau B_j^{E_\tau} = \frac{1}{j+1} B_{j+1}^{E_\tau}$.
 \end{lem}
+\begin{proof} 
+Let's consider diagrams of type $A$. 
+By Lemma \ref{lem:weight as trace} weight of the wheel with $j$ inputs all given by $\d\zbar \partial_z$ is equal to the trace over $C^\infty(E_\tau)$ of the operator $\frac{1}{\Im \tau} \frac{\d^2}{\d z^2} {\rm D}^{-1}$.
+
+To compute this trace we proceed in a similar way as in \cite{wg2}. 
+Introduce the following smooth functions on $\CC$
+\ben
+F_{m,n} (z,\zbar) = ?? .
+\een 
+
+The operator $\frac{1}{\Im \tau} \frac{\d^2}{\d z^2} {\rm D}^{-1}$ applied to $F_{m,n}(z,\zbar)$ is given by
+\ben
+\frac{1}{\Im \tau} \frac{\d^2}{\d z^2} {\rm D}^{-1} F_{m,n}(z,\zbar) = \frac{1}{\Im \tau} \frac{m+n\Bar{\tau}}{m + n \tau} F_{m,n}(z,\zbar) .
+\een 
+Thus, the weight of the diagram of type A with $j$ inputs is given by 
+\ben
+\epsilon^{j} A_{j}^{E_\tau} =  \sum_{(m,n) \in \ZZ \times \ZZ} \left(\frac{1}{\Im \tau} \frac{m+n\Bar{\tau}}{m + n \tau} \right)^{2k} .
+\een
+\end{proof}
 
 We conclude the following. 
 
