@@ -122,6 +122,17 @@ c_1\left(H^*\left(\Obs^\q_{free}(\Sigma)\right)\right) = (g-1)(3g+3 - \dim(V)) =
 \]
 \owen{I am fucking this up royally.}
 
+\brian{There is no $c_2$ for surfaces, only $c_1$. Also, you're missing a term in the Todd class. 
+Should be
+\ben
+\pi_*( \ch(\cF) \Td(\cT_\pi)) = \pi_*( (1 + c_1(\cF) + \frac{1}{2}(c_1(\cF)^2) + \cdots)(1 +\frac{1}{2}c_1(\cT_\pi) + \frac{1}{12} c_1(\cT_\pi)^2))
+\een
+Thus, the degree two part is the pushforward of 
+\ben
+\frac{1}{12} c_1(\cT_\pi)^2 + \frac{1}{2} c_1(\cF) c_1(T_\pi) + \frac{1}{2} c_1(\cF)^2 .
+\een  
+That looks better? For $\cF = T_\pi^{\tensor n}$ we get $\frac{1 + 6n + 6n^2}{12} c_1(T_\pi)^2$. 
+}
 
 %\begin{lem}[\cite{fact1} Proposition 8.1.4.1]
 %\label{lem bg global obs} 
