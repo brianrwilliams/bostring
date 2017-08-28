@@ -1,15 +1,13 @@
 \section{Quantizing the holomorphic bosonic string on a disk} 
 \label{sec: quantization}
 
-\brian{Gauge fixing condition. The theory is finite, no counterterms. Review Gelfand-Fuksy stuff. Local local deformation complex calculation. Do the anomaly calculation to obtain $\dim_{\CC} = 13$. Argue why this produces a quantization on any source Riemann surface.}
-
 We will apply the algorithm described in Section~\ref{sec:bvalgorithm}
 in the case of $\Sigma~=~\CC$.
 For this theory we are lucky, however:
 the integrals that appear from the Feynman diagrams do not have divergences,
 so that renormalized action is easy to compute.
 This aspect is the subject of the first part of this section.
-(In Section \ref{sec: conformalblock} we will explain why these divergences do not appear on an arbitrary Riemann surface. \owen{Do we do that?})
+(In Section \ref{sec: conformalblock} we will provide an argument based on deformation theory as to why quantizations exist on arbitrary Riemann surfaces.)
 Moreover, it is easy to check whether the quantum master equation is satisfied,
 and the answer is simple.
 This aspect is the subject of the second part.
@@ -355,15 +353,14 @@ For the usual metric on $\CC$, we have
 \[
 \dbar^* = -2 \frac{\partial}{\partial (\d \zbar)} \frac{\partial}{\partial z}.
 \]
-In physics one calls a choice of $\dbar^*$ a {\em gauge-fix} as it \owen{not sure how to end this sentence for noncompact manifolds \dots maybe this comment should go elsewhere.}
+In physics one calls a choice of the operator $\dbar^*$ a {\em gauge-fix}.
 The commutator $[\dbar,\dbar^*]$, which we will denote $D$, 
 is equal to $\tfrac{1}{2} \Delta$, where $\Delta$ is the Laplace-Beltrami operator for this metric.
-We can thus call upon Hodge theory and many nice results about finding partial inverses to the Laplacian.
 
-\owen{I'm not sure how much to say here.}
+%We can thus call upon Hodge theory and many nice results about finding partial inverses to the Laplacian.
 
 We introduce a smoothed version of the propagator using the heat kernel~$e^{-tD}$,
-which is a notation that denotes a solution to the heat equation $\partial_t^2 f(t,z) = Df(t,z)$.
+which is a notation that denotes a solution to the heat equation $\partial_t f(t,z) + D f(t,z) = 0$.
 For $\CC$ with the Euclidean metric, the standard heat kernel is
 \[
 e^{-tD}(z,w) =  \frac{1}{4\pi t} e^{-|z-w|^2/4t} (\d z - \d w) \wedge (\d\zbar - \d\wbar) . 
@@ -377,18 +374,17 @@ We compute
 \dbar P_\ell^L = D \int_{\ell}^L e^{-tD}\d t =  \int_{\ell}^L \frac{d}{dt} e^{-tD}\d t = e^{-LD} - e^{-\ell D}.
 \]
 In the limit as $\ell \to 0$ and $L \to \infty$, the operator $P_\ell^L$ goes to a propagator (or Green's function) $P$ for~$\dbar$.
-To see this, consider an eigenfunction $f$ of $D$ where $Df=\lambda f$.
-\owen{with our conventions, is $\lambda$ positive or negative?}
+To see this, consider an eigenfunction $f$ of $D$ where $Df=\lambda f$ where $\lambda$ is a non-negative real number. 
 Then
 \[
 (\dbar P_\ell^L) f = (e^{-L\lambda} - e^{-\ell \lambda})f, 
 \]
 which goes to $f$ as $L \to \infty$ and $\ell~\to~0$.
-\owen{I want to be careful about this since eigenfunction decomposition is subtle on noncompact manifolds \dots}
 Thus, if one works with the correct space of functions, 
 $P_\ell^L$ is almost an inverse to $\dbar$;
-moreover, it is a smooth function on $\Sigma~\times~\Sigma$.
-\owen{Should I say why?}
+moreover, it is a smooth function on $\Sigma~\times~\Sigma$. 
+
+\brian{I've fixed our convention for eigenvalues and some small typos above. Is there something you want to be careful above?}
 
 \subsubsection{}
 
@@ -424,9 +420,7 @@ there is a well-defined limit $\lim_{\ell \to 0} w_{\Gamma}(P_{\ell}^L,I_{\rm st
 We denote this limit by~$w_{\Gamma}(P_{0}^L,I_{\rm string})$.
 
 The necessary manipulations and inequalities are very close to those used in~\cite{}.
-We recommend looking at \owen{exact location} for model arguments.
-
-\owen{I think we should sketch a proof: we explain why trees are no issue, and then mention key ideas in the wheel case. We can even include a nontrivial example if there's space.}
+We recommend looking at \owen{exact location} for model arguments. 
 
 \begin{proof}[Outline of proof]
 When $\Gamma$ is a tree, there is never an issue with divergences; 
@@ -502,10 +496,9 @@ where we use the arithmetic-geometric mean inequality $\sqrt{t_1t_2}/(t_1+t_2)\l
 This expression has a finite limit as $\ell \to 0$.
 The higher terms in the Taylor expansion contribute bigger powers of the variance 
 and hence have $\ell \to 0$ limits.
-Finally, the expected value of the error term, 
+Finally, the expected value of the error term of our partial Taylor expansion, 
 which vanishes to some positive order at the origin,
 can be bounded in such as way that an $\ell \to 0$ limit exists.
-\owen{Should we give an argument?}
 \end{proof}
 
  
@@ -526,20 +519,25 @@ can be bounded in such as way that an $\ell \to 0$ limit exists.
 %\brian{Actually, we are only doing an integral over $\CC$. We are only applying Wick's Lemma for the integral over $u \in \CC$. The final answer is written as an integral over $v = z_2$ of some differential operator applied to the compactly supported function $f_1f_2$. So, in this case the final answer is proportional to $\int_{v \in \CC} \partial^4 f_1(v) f_2(v)$.
 %}
 
-\owen{Define the renormalized action at scale $L$ as the sum of the Feynman diagrams labeled by $P_0^L$.}
+We can now define the effective theory that we consider for the string. 
 
 \begin{dfn}
 The {\em renormalized action functional} at scale~$L$ for the holomorphic bosonic string is
 \[
-S[L] = \sum_{\Gamma \in {\bf Graph}_{\rm string}^{(0)}} w_{\Gamma}(P_{0}^L,I_{\rm string}) + \hbar\sum_{\Gamma \in {\bf Graph}_{\rm string}^{(1)}} w_{\Gamma}(P_{0}^L,I_{\rm string}).
+I[L] = \sum_{\Gamma \in {\bf Graph}_{\rm string}^{(0)}} w_{\Gamma}(P_{0}^L,I_{\rm string}) + \hbar\sum_{\Gamma \in {\bf Graph}_{\rm string}^{(1)}} w_{\Gamma}(P_{0}^L,I_{\rm string}).
 \]
 We denote the first summand---the tree-level expansion---by $S_0[L]$ 
-and the second summand---the one-loop expansion---by~$S_1[L]$
+and the second summand---the one-loop expansion---by~$S_1[L]$.
+We use the notation $S[L] = S_{free} + I[L]$ where $S_{free}$ is the classical free part of the action functional. 
 \end{dfn}
 
-\owen{Will also remark that this flow satisfies an exact RG equation, and Kevin calls it ``RG flow" (but not to be confused with Wilsonian RG flow)}
-
-\owen{Cite Si's paper about chiral deformations.}
+\begin{rmk} For any functional $J$, let $w(P_{\ell}^L, J)$ denote the sum over all graphs as above with the smooth propagator $P_{\ell}^L$ placed at the edges and $J$ placed at the vertices. 
+Then, the family $\{I[L]\}$ satisfies the {\em homotopy RG equation}
+\ben
+I[L] = w(P_\ell^L , I[\ell]).
+\een
+The operator $w(P_\ell^L,-)$ defines a homotopy equivalence between the theory at scale $\ell$, defined using $S[\ell]$, and the theory at scale $S$, defined using $S[L]$. 
+\end{rmk}
 
 \subsection{The quantum master equation}
 \label{subsec: QME}
@@ -617,7 +615,7 @@ For instance, given an observable $F$ that is a homogeneous polynomial of arity~
 and an observable $G$ of arity~$n$, 
 then $\{F,G\}$ has arity~$m+n-2$.
 It can be expressed as a Feynman diagram 
-\owen{add picture}
+\brian{pic}
 where the edge connecting $F$ and $G$ is labeled by a 2-fold tensor~$K$.
 
 The BV Laplacian acts by attaching an edge labeled by~$K$ as a loop in all possible ways.
@@ -639,8 +637,7 @@ The scale~$L$ renormalized action $S[L]$ satisfies the scale~$L$ quantum master 
 \[
 \hbar \Delta_{L} S[L] + \frac{1}{2}\{S[L],S[L]\}_L = 0
 \]
-if and only if $S[L']$ satisfies the scale~$L'$ quantum master equation for every other scale~$L'$.
-\owen{Cite Kevin's lemma in book.}
+if and only if $S[L']$ satisfies the scale~$L'$ quantum master equation for every other scale~$L'$, see Lemma 9.2.2 in \cite{cosbook}.
 Hence, we say a renormalized action satisfies the quantum master equation if its solves the scale~$L$ equation for some~$L$.
 
 Thus it remains for us to describe the scale~$L$ bracket and BV Laplacian in our setting,
