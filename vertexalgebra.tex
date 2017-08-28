@@ -49,8 +49,7 @@ By construction this operator satisfies $(Q^{BRST})^2 = 0$.
 \een
 \end{dfn}
 
-There is another grading on $\cV_{\rm string}$ coming from the eigenvalues of the vertex algebra derivation $c_0$ called the {\em conformal weight}. 
-\owen{Did we call this conformal dimension earlier?}
+There is another grading on $\cV_{\rm string}$ coming from the eigenvalues of the vertex algebra derivation $c_0$ called the {\em conformal dimension}. 
 In particular, this determines a filtration and we can consider the associated graded ${\rm Gr} \; \cV_{\rm string}$. 
 The conformal weight grading preserves the cohomological grading so that this object still has the structure of a dg vertex algebra. 
 
@@ -71,11 +70,11 @@ and hence form a {\em factorization algebra} on~$\Sigma$.
 
 We will not need that general notion here.
 Instead, we will use vertex algebras.
-Theorem~\owen{???} of~\cite{CG1} explains how a factorization algebra~$F$ on $\Sigma = \CC$
+Theorem~5.2.3.1 of~\cite{CG1} explains how a factorization algebra~$F$ on $\Sigma = \CC$
 yields a vertex algebra~$\Vert(F)$, under natural hypotheses on~$F$. 
 It assures us that the observables of a chiral CFT determine a vertex algebra.
 
-In particular, Section~\owen{???} of~\cite{CG1} examines the free $\beta\gamma$ system in great detail.
+In particular, Section~5.3 of~\cite{CG1} examines the free $\beta\gamma$ system in great detail.
 Its main result is that the well-known $\beta\gamma$ vertex algebra is recovered by the two-step process of BV quantization, which yields a factorization algebra, and then the extraction of a vertex algebra.
 
 The exact same arguments apply to the free $bc\beta\gamma$ system,
@@ -116,21 +115,31 @@ I(\varphi) = \sum \int (\partial^{k_1}_z \varphi) \cdots (\partial^{k_m} \varphi
 \een
 
 One of Li's main results is that for a free chiral BV theory with action $S_{\rm free}$ and associated vertex algebra $\cV_{\rm free}$, one has the following:
-\owen{Check that this is an accurate summary of his work}
 \begin{itemize}
 \item For any chiral interaction~$I$, the action $S_{\rm free} + I$ needs no counterterms, 
-and yields a renormalized interaction~$\{I [L]\}$.
-\item If the renormalized action $\{I[L]\}$ satisfies the quantum master equation,
+and yields a renormalized interaction~$\{S [L]\}$.
+\item If the renormalized action $\{S [L]\}$ satisfies the quantum master equation,
 then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the form
 \ben
 D_I = \oint I^q \d z
 \een
-where $I^q = \lim_{L \to 0} I[L]$.
+of cohomological degree one, where $I^q = \lim_{L \to 0} I[L]$.
 \item The dg vertex algebra $\cV_I$ for such an action $\{I[L]\}$ has the same underlying graded vertex algebra $\cV_{\rm free}$ but it is equipped with the differential $\oint I^q \d z$. 
 \end{itemize}
 
+\begin{rmk} The fact that $I$ satisfies the quantum master equation implies that one has a map, for each open set $U \subset \CC$, from the free factorization algebra evaluated on $U$ to the factorization algebra of the deformed theory evaluated on $U$:
+\ben
+e^{I /\hbar} : \Obs^q_{free}(U) \to \Obs^q_I (U) .
+\een
+This map sends an observable $O \in \Obs^q_{free}(U)$ to $O \cdot e^{I/\hbar}$. 
+In fact, this map is an isomorphism with inverse given by $O \mapsto O \cdot e^{-I/\hbar}$. 
+So, open by open, the factorization algebra assigns the same vector space for the deformed theory.\brian{should I keep going?}
+\end{rmk}
+
 \owen{We need to figure out how such a chiral deformation affects the vertex algebra in more explicit terms. 
 For instance, do we just use $e^{I/\hbar}$ as the vacuum vector and generate a new VOA? Or do we ``conjugate'' the factorization structure maps by $e^{I/\hbar}$ to get a Wick-type formula?}
+
+\brian{I think I want to stress the following. Si's result implies that we get an interesting dg vertex algebra. Forgetting the differential we see the same underlying graded vertex algebra as the undeformed theory. Indeed, what we do is applying your and Kevin's result for the underlying graded vertex algebra. Then, using the language from our CDO paper we see that the differential $\{I,-\}$ satisfies the requirements to determine a derivation of the graded vertex algebra. This is the dg vertex algebra giving semi infinite cohomology. This avoids saying anything about a Wick-type formula.}
 
 The holomorphic bosonic string with target $V=\CC^{13}$ provides a concrete example of this situation.
 The free theory is the $bc\beta\gamma$ system, 
@@ -138,7 +147,7 @@ and we have seen that the renormalized action satisfies the QME.
 Hence we obtain the following.
 
 \begin{prop} 
-Let $\Obs^q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. 
+Let $\Obs^q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. And let $\Vert(\Obs^q_{\rm string})$ be the dg vertex algebra (defined over $\CC[\hbar]$) obtained via Li's construction. 
 There is an isomorphism of vertex algebras $\cV_{\rm string} \cong \Vert(\Obs^q_{\rm string})_{\hbar = 2 \pi i}$.
 Moreover, this vertex algebra is isomorphic to the chiral sector of the bosonic string as in Section~\ref{subsec: string vert}.
 \end{prop}
@@ -147,22 +156,21 @@ The factorization algebra $\Obs^\q_{\rm string}$ is a quantization of the factor
 We have noted that the classical observables of any theory has the structure of a $P_0$ factorization algebra, and the $\hbar \to 0$ limit of $\Obs^\q_{\rm string}$ is isomorphic to $\Obs^{\cl}_{\rm string}$ as $P_0$ factorization algebras. 
 In this case, the classical factorization algebra $\Obs^{\cl}_{\rm string}$ still has enough structure to determine a vertex algebra $\Vert(\Obs^\cl_{\rm string})$.
 Moreover, the $P_0$ bracket on the classical observables determines the structure of a {\em Poisson vertex algebra} on $\Vert(\Obs^{\cl}_{\rm string})$. 
+The classical observables are simply functions on the solutions to the classical equations of motion, so the Poisson structure is completely natural.
 
 \begin{cor} In the classical limit, there is an isomorphism of Poisson vertex algebras~$\Vert(\Obs^{\cl}_{\rm string}) \cong {\rm Gr} \; \cV_{\rm string}$.
 \end{cor}
 
-\owen{describe classical observables \& why we get a Poisson vertex algebra}
-\brian{Should I say more?}
-\owen{Yes, I think it would be worth noting that the classical observables are simply functions on solutions to the equation of motion (rather, for the polynomial solutions).}
+\subsection{Relation to semi-infinite cohomology}
 
-\brian{Write down vertex algebra from quantization above. Possibly state the relationship to semi-infinite cohomology}
+\brian{Possibly state the relationship to semi-infinite cohomology}
 \owen{Yes we should state it, probably as a remark.}
 
 \subsection{The $E_2$ algebra}
 
 We continue to consider the theory on the Riemann surface $\Sigma = \CC$. 
 In this section we show how to produce, from the point of view of factorization algebras, the structure of a Gerstenhaber algebra on the BRST cohomology of the bosonic string. 
-A Gerstenhaber algebra is equivalent to an algebra over the homology of the frame little 2-disk operad. 
+A Gerstenhaber algebra is equivalent to an algebra over the homology of the framed little 2-disk operad. 
 It is a well-known result of Lurie \cite{Lurie} that a {\em locally constant} factorization algebra on $\RR^n$ is equivalent to an algebra over the little $n$-disks operad, or an $E_n$-algebra. 
 We will show that the cohomology of the factorization algebra $\Obs^{\q}_{\rm string}$ on $\CC \cong \RR^2$ has the structure of a Gerstenhaber algebra, which implies that $\Obs^\q_{\rm string}$ is equivalent to an $E_2$-algebra. 
 
