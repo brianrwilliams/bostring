@@ -38,9 +38,9 @@ The first parenthesis is interpreted as the stress energy tensor of the vertex a
 
 We have not yet described the differential on the graded vertex algebra. 
 The BRST differential is defined to be the vertex algebra derivation obtained by taking the following residue
-\ben
+\be\label{brst}
 Q^{BRST} = \oint c(z) T_{\rm string}(z) .
-\een 
+\ee
 By construction this operator satisfies $(Q^{BRST})^2 = 0$. 
 
 \begin{dfn} The {\em string vertex algebra} is the dg vertex algebra 
@@ -83,7 +83,7 @@ Let $\Obs^\q_{free}$ denote the observables of this theory on $\Sigma = \CC$.
 As a quantization of a free field theory, it is a factorization algebra valued in the category of $\CC [\hbar]$-modules.
 In particular, the associated vertex algebra $\Vert(\Obs^\q_{free})$ is also valued in $\CC[\hbar]$-modules.
 
-\begin{prop}
+\begin{prop}\label{prop: bcbg vertex}
 Let $n = \dim_{\CC}(V)$. Then, there is an isomorphism of vertex algebras
 \ben
 \Vert(\Obs^{\q}_{free})_{\hbar = 2 \pi i} \cong \cV_{bc} \tensor \cV_{\beta\gamma}^{\tensor n} 
@@ -146,27 +146,34 @@ The free theory is the $bc\beta\gamma$ system,
 and we have seen that the renormalized action satisfies the QME.
 Hence we obtain the following.
 
-\begin{prop} 
-Let $\Obs^q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. And let $\Vert(\Obs^q_{\rm string})$ be the dg vertex algebra (defined over $\CC[\hbar]$) obtained via Li's construction. 
+\begin{prop} \label{prop: fact is vert}
+Let $\Obs^\q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. And let $\Vert(\Obs^q_{\rm string})$ be the dg vertex algebra (defined over $\CC[\hbar]$) obtained via Li's construction. 
 There is an isomorphism of vertex algebras $\cV_{\rm string} \cong \Vert(\Obs^q_{\rm string})_{\hbar = 2 \pi i}$.
 Moreover, this vertex algebra is isomorphic to the chiral sector of the bosonic string as in Section~\ref{subsec: string vert}.
 \end{prop}
 
 The factorization algebra $\Obs^\q_{\rm string}$ is a quantization of the factorization algebra $\Obs^{\cl}_{\rm string}$ of classical observables of the free $bc\beta\gamma$ system.
-We have noted that the classical observables of any theory has the structure of a $P_0$ factorization algebra, and the $\hbar \to 0$ limit of $\Obs^\q_{\rm string}$ is isomorphic to $\Obs^{\cl}_{\rm string}$ as $P_0$ factorization algebras. 
-In this case, the classical factorization algebra $\Obs^{\cl}_{\rm string}$ still has enough structure to determine a vertex algebra $\Vert(\Obs^\cl_{\rm string})$.
+We have noted that the classical observables of any theory has the structure of a $P_0$ factorization algebra, and the $\hbar \to 0$ limit of $\Obs^\q_{\rm string}$ is isomorphic to $\Obs^{\cl}_{\rm string}$ as $P_0$ factorization algebras.
+By definition, the classical observables are simply functions on the solutions to the classical equations of motion.
+The $P_0$ structure is induced from the symplectic pairing of degree $(-1)$ on the fields. 
+The classical factorization algebra still has enough structure to determine a vertex algebra $\Vert(\Obs^\cl_{\rm string})$.
 Moreover, the $P_0$ bracket on the classical observables determines the structure of a {\em Poisson vertex algebra} on $\Vert(\Obs^{\cl}_{\rm string})$. 
-The classical observables are simply functions on the solutions to the classical equations of motion, so the Poisson structure is completely natural.
 
 \begin{cor} In the classical limit, there is an isomorphism of Poisson vertex algebras~$\Vert(\Obs^{\cl}_{\rm string}) \cong {\rm Gr} \; \cV_{\rm string}$.
 \end{cor}
 
+\begin{proof}[Proof of Proposition \ref{prop: fact is vert}] By Proposition \ref{prop: bcbg vertex} we know that the vertex algebra of the associated free theory is identified with the $bc\beta\gamma$ vertex algebra. 
+The thing we need to check is that the differential induced from the quantization of the holomorphic string agrees with the differential of the string vertex algebra. 
+In fact, we observe that the induced differential $\oint I \d z$ from the classical interaction of the holomorphic bosonic string agrees with the BRST charge in Equation (\ref{brst}). 
+To see that this persists at the quantum level we need to check that there are no quantum corrections. 
+Indeed, this follows from the fact that the quantum master equation holds identically (as opposed to holding up to an exact term in the deformation complex) provided $\dim_\CC V = 13$. 
+\end{proof}
+
 \subsection{Relation to semi-infinite cohomology}
 
-\brian{Possibly state the relationship to semi-infinite cohomology}
-\owen{Yes we should state it, probably as a remark.}
+\brian{O to take a crack at this}
 
-\subsection{The $E_2$ algebra}
+\subsection{The $E_2$ algebra and descent}
 
 We continue to consider the theory on the Riemann surface $\Sigma = \CC$. 
 In this section we show how to produce, from the point of view of factorization algebras, the structure of a Gerstenhaber algebra on the BRST cohomology of the bosonic string. 
@@ -175,19 +182,71 @@ It is a well-known result of Lurie \cite{Lurie} that a {\em locally constant} fa
 We will show that the cohomology of the factorization algebra $\Obs^{\q}_{\rm string}$ on $\CC \cong \RR^2$ has the structure of a Gerstenhaber algebra, which implies that $\Obs^\q_{\rm string}$ is equivalent to an $E_2$-algebra. 
 
 Another occurrence of $E_n$-algebras is as the observables of topological field theories in (real) dimension $n$. 
-At this level, this implies that the theory of the holomorphic bosonic string is equivalent to a topological field theory. There is a more direct link to topological field theories as defined in \cite{wtop} that we recall here. 
-There is an action of the differential operators $\frac{\d}{\d z}$ and $\frac{\d}{\d \zbar}$ on the Dolbeault complex $\Omega^{0,*}(\CC)$. 
+At this level, this implies that the theory of the holomorphic bosonic string is equivalent to a topological field theory. 
+In fact, we can see directly that the factorization algebra outputted by our construction is topological. 
+
+\begin{prop} The factorization algebra $\Obs^\q_{\rm string}$ is locally constant.
+\end{prop}
+\begin{proof} 
+We need to show that for any inclusion of open disks $D \hookrightarrow D'$ that natural map
+\ben
+\Obs^\q_{\rm string}(U) \to \Obs^\q_{\rm string}(U')
+\een
+is a quasi-isomorphism. 
+We first show that this is true when we replace the quantum observables by the classical observables. 
+We have already mentioned that the classical observables are functions on solutions to the classical equations of motion. 
+It is convenient to phrase this in terms of Lie algebra cohomology. 
+The classical interaction induces the structure of a sheaf of dg Lie algebras on the shift of the space of fields shifted up by one. 
+This sheaf of dg Lie algebras is of the form
+\ben
+\Omega^{0,*}(\Sigma ; \cT_\Sigma) \ltimes \left(\Omega^{0,*}(\Sigma; V)[-1] \oplus \Omega^{1,*}(\Sigma;V^*)[-1] \oplus \Omega^{1,*}(\Sigma ; \cT_\Sigma^*)[-2] \right) . 
+\een
+We view this as a square zero extension of the dg Lie algebra $\Omega^{0,*}(\Sigma ; \cT_\Sigma)$ by the dg module inside the parentheses where the module structure is determined by the Lie derivative. 
+For simplicity we denote $\cL = \Omega^{0,*}(\Sigma ; \cT_\Sigma)$ and $\cM$ the module inside the parentheses.
+In this language, the space of classical observables supported on an open set $U \subset \Sigma$ is the following Chevalley-Eilenberg cochain complex
+\ben
+\Obs^{\cl}_{\rm string}(U) = \clie^*\left(\cL(U) ; \; \Sym(\cM(U)^*[-1])\right)
+\een
+where $\cM(U)^*$ denotes the continuous dual of $\cM(U)$. 
+We consider the case that $U = D$ a disk centered at zero. 
+By the $\dbar$-Poincar\'{e} lemma there is a quasi-isomorphism of dg Lie algebras $\cT_{hol}(D) \hookrightarrow \cL(D)$ where $\cT_{\rm hol}(D)$ is the vector space of holomorphic vector fields on $D$. 
+Thus, the classical observables on $D$ are quasi-isomorphic to $\clie^*\left(\cT_{hol}(U) ; \; \Sym(\cM(U)^*[-1])\right)$.
+Now, consider the composition of Lie algebras
+\ben
+{\rm W}_1^{\rm poly} \hookrightarrow \cT_{hol} (D) \to {\rm W}_1
+\een
+where ${\rm W}_1^{\rm poly}$ are the holomorphic vector fields with polynomial coefficients, and ${\rm W}_1$ is the Lie algebra of formal vector fields. 
+Moreover, via the inclusion $D \hookrightarrow D'$ we have an induced commutative diagram
+\ben
+\xymatrix{
+\clie^*\left({\rm W}_1^{\rm poly} ; {\rm res} \; \Sym(\cM(D)^*[-1])\right) \ar[d] & \ar[l] \clie^*\left(\cT_{\rm hol} (D) ; \Sym(\cM(D)^*[-1])\right) \ar[d] & \ar[l]  \clie^*\left({\rm W}_1 ; \Sym(j^\infty_0 \cM(D)^*[-1])\right) \ar[d] \\
+\clie^*\left({\rm W}_1^{\rm poly} ; {\rm res} \; \Sym(\cM(D')^*[-1])\right) & \ar[l] \clie^*\left(\cT_{\rm hol} (D') ; \Sym(\cM(D')^*[-1])\right) & \ar[l] \clie^*\left({\rm W}_1 ; \Sym(j^\infty_0 \cM(D')^*[-1])\right) .
+}
+\een
+Here, ${\rm res}$ denotes the restriction of the module along the inclusion ${\rm W}_{1}^{\rm poly} \hookrightarrow \cT_{\rm hol}(D)$ and $j_0^\infty$ denotes the infinite jet of the sheaf $\cM$ at zero.
+For instance, if $\Omega^1_{\rm hol}(D)$ is the $\cT_{\rm hol}(D)$-module of holomorphic one-forms then $j_0^\infty\Omega^1_{\rm hol}$ is the ${\rm W}_1$-module of formal one-forms (one-forms with coefficients in formal power series). 
+
+By Lemma \ref{lem: gf} (and an analogous result for polynomial vector fields) we know that $\clie^*({\rm W}_1 ; M)$ and $\clie^*({\rm W}^{\rm poly}_1; M)$ are quasi-isomorphic to the conformal dimension zero subcomplex, that is, the constants. 
+The conformal zero subcomplex does not depend on the size of the disk, so we conclude that vertical arrows on the outside of the diagram above are quasi-isomorphisms. 
+It follows that the middle vertical arrow is as well, thus showing that $\Obs^{\cl}_{\rm string}(D) \to \Obs^{\cl}_{\rm string}(D')$ is a quasi-isomorphism, as desired. 
+
+To finish the proof we consider the spectral sequence induced from the filtration of the module~$\Sym \;\cM(D)$ by symmetric polynomial degree. 
+The $E_1$ page of this spectral sequence is the classical observables above and it converges to the cohomology of the quantum observables. 
+The map of factorization algebras induced by the inclusion $D \hookrightarrow D'$ preserves this filtration, hence by the convergence of this spectral sequence we conclude that $\Obs^{\q}_{\rm string}(D) \to \Obs^\q_{\rm string}(D')$ is also a quasi-isomorphism. 
+\end{proof}
+
+\brian{Am I oversimplifying above?}
+
+\subsubsection{Gerstenhaber bracket via descent}
+
+There is another link to topological field theories as defined in \cite{wtop} that we recall here. 
+Consider the action of the differential operators $\frac{\d}{\d z}$ and $\frac{\d}{\d \zbar}$ on the Dolbeault complex $\Omega^{0,*}(\CC)$. 
 This extends to an action of the differential operators to the holomorphic bosonic string, and hence to the observables as well. 
 By Noether's theorem the symmetry of the theory determined by these operators define observables: these are simply the $zz$ and $\zbar \zbar$ components of the stress energy tensor $T_{zz}$, $T_{\zbar \zbar}$. 
 We will see that in the case of the string the stress energy tensors are cohomologically trivial. 
 This is the general definition of a topological theory given in \cite{top}.
 
-\brian{Am I oversimplifying above?}
-
-\subsubsection{}
-
-We consider the factorization algebra $\Obs^\q_{\rm string}$. 
-For each open $U \subset \CC$ we can define the operators
+For each open $U \subset \CC$ we can have the operators
 \ben
 \frac{\d}{\d z} , \frac{\d}{\d \zbar} : \Obs^\q_{\rm string} (U) \to \Obs^\q_{\rm string}(U) .
 \een 
@@ -200,10 +259,13 @@ Consider the operator acting on Dolbeault forms
 \een 
 This extends to a derivation of degree $-1$ on the factorization algebra $\Obs^\q_{\rm string}$. 
 Moreover, we have the following relation
-\ben
+\be\label{d/dzbar}
 [\dbar + \hbar \Delta + \{I^\q, -\} , \Bar{\eta}] =  \frac{\d}{\d \zbar}
-\een 
+\ee
 as endomorphisms of the factorization algebra. 
+Indeed, one immediately obvserves $[\dbar, \Bar{\eta}] =  \frac{\d}{\d \zbar}$. 
+Moreover, since $I^\q$ is a chiral deformation one has $\Bar{\eta} \cdot I^\q = 0$. 
+Finally, since the pairing defining the $(-1)$ shifted symplectic structure is holomorphic we see that $\Bar{\eta}$ also commutes with the BV Laplacian $[\Bar{\eta}, \Delta] = 0$. 
 This means that the operator $\frac{\d}{\d \zbar}$ acts cohomologically trivial on $\Obs^\q_{\rm string}$. 
 
 Recall that the $b$-fields of the bosonic string are concentrated in degree $+1$ and $+2$. 
@@ -219,10 +281,51 @@ Denote the derivation $\eta : O \mapsto b_{-1} \cdot O$
 
 \begin{lem} 
 The derivation $\eta$ is degree $-1$ and satisfies 
-\ben
+\be\label{d/dz}
 [\dbar + \hbar \Delta + \{I^\q, -\}, \eta] = \frac{\d}{\d z}
-\een
+\ee
 \end{lem}
-\begin{proof} \brian{do this}
+\begin{proof} Immediately we see that both $\dbar$ and $\Delta$ commute with $\eta$. 
+Thus, it suffices to show that $[\{I^\q, -\}, \eta] = \frac{\d}{\d z}$. 
+Consider, for example the observable $O_{\gamma,0} : \gamma \mapsto \gamma (0)$ which we can write as the following residue $O_{\gamma,0} = \oint \frac{\gamma(z)}{z}$. 
+Then, we see that the only part of the interaction that contributes is $\int \<\beta, c \cdot \gamma\>$ and 
+\ben
+[\{\int \<\beta, c \cdot \gamma\> , -\}, \eta] O_{\gamma, 0} = \{\int \<\beta, \partial_z \gamma\>, O_{\gamma,0}\} = \oint \frac{\partial_z \gamma}{z} \d z = \frac{\d}{\d z} O_{\gamma,0} .
+\een
+The calculation is similar for a general linear observable. 
+To get the result for an arbitrary observable we use the fact that the bracket is a derivation. 
+\brian{I tried to come up with a more conceptual proof by interpreting $\{I,-\}$ as the Chevalley-Eilenberg differential for vector fields, but failed.}
 \end{proof}
-This shows that the derivation $\frac{\d}{\d z}$ acts trivial up to homotopy on the factorization algebra. 
+
+This shows that the derivation $\frac{\d}{\d z}$ acts trivial up to homotopy on the factorization algebra.
+Given any observable $O$, the relations (\ref{d/dzbar}) and (\ref{d/dz}) allow us to define the following differential form valued observable $\Tilde{O}$ as follows. 
+The zero form part $\Tilde{O}^{0}$ is just the observable $O$. 
+The one form part $\Tilde{O}^1$ is equal to the linear combination
+\ben
+\d z \; (\eta \cdot O) + \d \zbar \; (\Bar{\eta}\cdot O) . 
+\een
+Similarly, the two form part is $\Tilde{O}^2 = \d z \d \zbar \eta \Bar{\eta} \cdot O$. 
+An easy calculation shows that if $O$ is closed for the quantum differential $\d^\q = \dbar + \hbar \Delta + \{I^\q, -\}$ then $\Tilde{O} = \Tilde{O}^{0} + \Tilde{O}^1 + \Tilde{O}^2$ satisfies $(\d_{dR} + \d^\q) \Tilde{O} = 0$. 
+This implies that given any closed observable $O$ and submanifold $C \subset \Sigma$ we can define the closed observable
+\ben
+\int_C \Tilde{O} \in \Obs^\q(C) .
+\een
+If $O$ has cohomological degree $k$ and $C$ is of dimension $l$ then $\int_C \Tilde{O}$ has degree $k - l$. 
+
+\begin{rmk}
+A priori the factorization algebra is only well-defined on open sets $U \subset \Sigma$. 
+One can define the value on a closed submanifold $C \subset \Sigma$ by taking the direct limit of what the factorization algebra assigns to open submanifolds containing $C$. 
+\end{rmk} 
+
+We are now able to define the bracket. 
+Suppose $O,O'$ are closed observables on a disk $D,D'$.
+For simplicity, we assume that $D \subsetneq D'$. 
+Then, if $C = \partial D'$ we can define $\int_C \Tilde{O}'$ as above. 
+Finally, for $D''$ another disk containing $D$ and $C$ consider the factorization product $\star : \Obs^\q(D) \tensor \Obs^\q (C) \to \Obs^\q(D'')$ and define
+\ben
+\{O,O'\}_{\rm Ger} := O \star \int_C \Tilde{O}' \in \Obs^\q (D'') .
+\een 
+
+\begin{prop} On cohomology $\{-,-\}_{\rm Ger}$ together with the symmetric product determine the structure of a Gerstenaber algebra. 
+\end{prop}
+
