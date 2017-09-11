@@ -133,13 +133,9 @@ e^{I /\hbar} : \Obs^q_{free}(U) \to \Obs^q_I (U) .
 \een
 This map sends an observable $O \in \Obs^q_{free}(U)$ to $O \cdot e^{I/\hbar}$. 
 In fact, this map is an isomorphism with inverse given by $O \mapsto O \cdot e^{-I/\hbar}$. 
-So, open by open, the factorization algebra assigns the same vector space for the deformed theory.\brian{should I keep going?}
+So, open by open, the factorization algebra assigns the same vector space for the deformed theory.
+This isomorphism is {\em not} compatible with the factorization product, so we do get a different factorization algebra in the presence of a deformation.
 \end{rmk}
-
-\owen{We need to figure out how such a chiral deformation affects the vertex algebra in more explicit terms. 
-For instance, do we just use $e^{I/\hbar}$ as the vacuum vector and generate a new VOA? Or do we ``conjugate'' the factorization structure maps by $e^{I/\hbar}$ to get a Wick-type formula?}
-
-\brian{I think I want to stress the following. Si's result implies that we get an interesting dg vertex algebra. Forgetting the differential we see the same underlying graded vertex algebra as the undeformed theory. Indeed, what we do is applying your and Kevin's result for the underlying graded vertex algebra. Then, using the language from our CDO paper we see that the differential $\{I,-\}$ satisfies the requirements to determine a derivation of the graded vertex algebra. This is the dg vertex algebra giving semi infinite cohomology. This avoids saying anything about a Wick-type formula.}
 
 The holomorphic bosonic string with target $V=\CC^{13}$ provides a concrete example of this situation.
 The free theory is the $bc\beta\gamma$ system, 
@@ -235,8 +231,6 @@ The $E_1$ page of this spectral sequence is the classical observables above and 
 The map of factorization algebras induced by the inclusion $D \hookrightarrow D'$ preserves this filtration, hence by the convergence of this spectral sequence we conclude that $\Obs^{\q}_{\rm string}(D) \to \Obs^\q_{\rm string}(D')$ is also a quasi-isomorphism. 
 \end{proof}
 
-\brian{Am I oversimplifying above?}
-
 \subsubsection{Gerstenhaber bracket via descent}
 
 There is another link to topological field theories as defined in \cite{wtop} that we recall here. 
@@ -325,7 +319,16 @@ Finally, for $D''$ another disk containing $D$ and $C$ consider the factorizatio
 \ben
 \{O,O'\}_{\rm Ger} := O \star \int_C \Tilde{O}' \in \Obs^\q (D'') .
 \een 
+We note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$ then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$. 
 
-\begin{prop} On cohomology $\{-,-\}_{\rm Ger}$ together with the symmetric product determine the structure of a Gerstenaber algebra. 
+The last piece of structure we need to define is that of a commutative product. 
+In this context, this is simply given by the factorization product of two disjoint disks including into a larger disk:
+\ben
+\cdot : \Obs^\q(D) \tensor \Obs^\q(D') \to \Obs^\q(D'') .
+\een 
+
+\begin{prop} The bracket $\{-,-\}_{\rm Ger}$ together with the product $\cdot$ determine the structure of a Gerstenaber algebra on the cohomology of the observables on an open disk $H^* \Obs^\q_{\rm string}(D)$. 
 \end{prop}
+
+\brian{Should we prove this or just argue that the bracket and product above agree with what Lian-Zuckerman get.}
 
