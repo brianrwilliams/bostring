@@ -1,0 +1,735 @@
+\section{Quantizing the holomorphic bosonic string on a disk} 
+\label{sec: quantization}
+
+We will apply the algorithm described in Section~\ref{sec:bvalgorithm}
+in the case of $\Sigma~=~\CC$.
+For this theory we are lucky, however:
+the integrals that appear from the Feynman diagrams do not have divergences,
+so that renormalized action is easy to compute.
+This aspect is the subject of the first part of this section.
+(In Section \ref{sec: conformalblock} we will provide an argument based on deformation theory as to why quantizations exist on arbitrary Riemann surfaces.)
+Moreover, it is easy to check whether the quantum master equation is satisfied,
+and the answer is simple.
+This aspect is the subject of the second part.
+The results can be summarized as follows.
+
+\begin{prop}
+The holomorphic bosonic string with source $\CC$ and target $\CC^d$ admits a BV quantization
+if $d = 13$.
+This quantized action only has terms of order $\hbar^0$ and $\hbar$ (i.e., it quantizes at one loop).
+\end{prop}
+
+\subsection{The Feynman diagrams}
+
+Let us describe the combinatorics of the Feynman diagrams that appear here
+before we describe the associated integrals.
+
+\subsubsection{}
+
+The procedure constructs graphs out of a prescribed type of vertices and edges;
+we must consider all graphs with such local structure.
+The classical action functional determines the allowed kinds of vertices and edges.
+The quadratic terms of the action tell us the edges;
+each quadratic term yields an edge whose boundary is labeled by the two fields appearing in the term.
+For us there are thus two types of edges: 
+an edge that flows from $\beta$ to $\gamma$, 
+and an edge that flows from $b$ to~$c$ displayed in Figure \ref{fig:props}.
+\begin{figure}
+\begin{tikzpicture}
+		\draw[fermion] (-4,0) -- (-2,0);
+		\draw[vector] (2,0) -- (4,0);
+		\draw (-4.2, 0) node {$\beta$};
+		\draw (-1.8,0) node {$\gamma$};
+		\draw (1.8,0) node {$b$};
+		\draw (4.2,0) node {$c$};
+\end{tikzpicture}
+\caption{The $\beta\gamma$ and $bc$ propagators}
+\label{fig:props}
+\end{figure}
+
+The nonquadratic terms tell us the vertices:
+each $n$-ary term yields a vertex with $n$ legs,
+and the legs are labeled by the $n$ types of fields appearing in the term.
+For us there are thus two types of trivalent vertices:
+a vertex with two $c$ legs and a $b$ leg, 
+and a vertex with a $c$ leg, a $\gamma$ leg, and a $\beta$ leg.
+It helpful to picture these legs as directed,
+so that $c$ and $\gamma$ legs flow into a vertex
+and $b$ and $\beta$ legs flow out. 
+These vertices are displayed in Figure \ref{fig:verts}.
+
+\begin{figure}
+\begin{tikzpicture}[line width=.2mm, scale = 1]
+		\draw[vector](-4.7,1)--(-4,0);
+		\draw[fermion](-3.3,1)--(-4,0);
+		\draw[fermion](-4,0)--(-4,-1);
+		\filldraw[color=black]  (-4,0) circle (.1);
+		\draw (-4.75,1.2) node {$c$};
+		\draw (-3.25,1.2) node {$\gamma$};
+		\draw (-4,-1.3) node {$\beta$};	
+		
+		\draw[vector](3.3,1)--(4,0);
+		\draw[vector](4.7,1)--(4,0);
+		\draw[vector](4,0)--(4,-1);
+		\filldraw[color=black]  (4,0) circle (.1);
+		\draw (3.25, 1.2) node {$c$};
+		\draw (4.75,1.2) node {$c$};
+		\draw (4, -1.3) node {$b$};
+\end{tikzpicture}
+\caption{The trivalent vertices for $\int \langle \beta, [c,\gamma] \rangle$ and $\int \langle b, [c,c] \rangle$}
+\label{fig:verts}
+\end{figure}
+
+The kinds of graphs one can build with such vertices and edges are limited.
+We focus on connected graphs, since an arbitrary graph is just a union of connected components.
+
+A tree (i.e., a connected graph with no loops) must have at most one outgoing leg,
+which must be either a $b$ or a~$\beta$;
+the other legs are incoming, so each must be labeled by a $c$ or a~$\gamma$. 
+An example of such a tree is given in Figure \ref{fig:tree}.
+
+\begin{figure}
+\begin{tikzpicture}[line width=.2mm, scale = 1]
+		\draw[vector] (-2,3) -- (-1,2.5);
+		\draw[vector] (-2, 2) -- (-1, 2.5);
+		\draw[vector] (-1,2.5) --(0, 1.5);
+		\draw (-2.25, 3) node {$c$};
+		\draw (-2.25, 2) node {$c$};
+		\draw(-.4, 2.25) node {$P$};
+		\filldraw[color=black] (-1,2.5) circle (.075);
+		\draw[vector] (-2, 1) -- (-1, .5);
+		\draw[fermion] (-2, 0) -- (-1,.5);
+		\draw[fermion] (-1,.5) -- (0,1.5);
+		\draw (-2.25, 1) node {$c$};
+		\draw (-2.25, 0) node {$\gamma$};
+		\draw (-.4, .75) node {$P$};
+		\filldraw[color=black] (-1,.5) circle (.075);
+		\draw[fermion] (0,1.5) -- (1,1.5);
+		\draw (1.25, 1.5) node {$\beta$};
+		\filldraw[color=black] (0,1.5) circle (.075);
+\end{tikzpicture}
+\caption{An example of a tree with four inputs and one output}
+\label{fig:tree}
+\end{figure}
+		
+Note that there are two types of trees.
+If there is a $\gamma$ leg, then there is a $\beta$ leg,
+and there is a chain of $\gamma\beta$ edges connecting them;
+all other external legs are of $c$~type.
+If there is a $b$ leg, then the only other legs are $c$~type.
+
+A 1-loop graph will consist of a wheel (i.e., a sequence of edges that form an overall loop)
+with trees attached.
+The outer legs are all of $c$~type.
+Every edge along a wheel will have the same type.
+It is not possible to build a connected graph with more than one loop.
+This combinatorics is the essential reason that we can quantize at one loop.
+For an example of such a wheel see Figure \ref{fig:wheel}.
+
+\begin{figure}
+\begin{tikzpicture}[line width=.2mm, scale=1.5]
+		\draw[vector](145:1) -- (145:.3cm);
+			\node at (145:1.15) {$c$};
+		\draw[vector](215:1) -- (215:.3cm);
+			\node at (215:1.2) {$c$};
+		\draw[vector](35:1) -- (35:.3cm);
+			\node at (35:1.15) {$c$};
+		\draw[vector](-35:1) -- (-35:.3cm);
+			\node at (-35:1.2) {$c$};
+		\draw[fill=black] (0,0) circle (.3cm);
+		\draw[fill=white] (0,0) circle (.29cm);
+	    	\clip (0,0) circle (.3cm);
+\end{tikzpicture}
+\caption{An example of a wheel with four inputs}
+\label{fig:wheel}
+\end{figure}
+
+We write ${\bf Graph}_{\rm string}$ for the collection of connected graphs just described,
+namely the directed trees and 1-loop graphs allowed by the string action functional.
+Let ${\bf Graph}_{\rm string}^{(0)}$ denote the 0-loop graphs (i.e., trees) and let ${\bf Graph}_{\rm string}^{(1)}$ denote the 1-loop graphs (i.e., wheels with trees attached).
+
+
+%\begin{figure}
+%\begin{tikzpicture}[decoration={markings,mark=at position 0.6cm with {\arrow[black,line width=.4mm]{stealth}}}];
+%\draw[thick, postaction=decorate, decoration={markings,mark=at position 0.6cm with {\arrow[black,line width=.4mm]{stealth}}},
+%decoration={snake, segment length=5, amplitude=1}](-.7,1) --(0,0);
+%%\draw[postaction=decorate, line width=.2mm] (-0.7, 1) -- (0,0);
+%\draw[postaction=decorate, line width=.2mm] (0.7,1) -- (0,0);
+%\draw[postaction=decorate, line width=.2mm] (0,0) -- (0,-1);
+%\filldraw[color=black]  (0,0) circle (.1);
+%\draw (1.2,-0.1) node {$I_k = t^n \partial_t$};
+%\draw (-0.75,1.2) node {$c$};
+%\draw (0.75,1.2) node {$\gamma$};
+%\draw (0,-1.3) node {$\beta$};
+%\end{tikzpicture}
+%\caption{The trivalent vertex for $\int \langle \beta, c \gamma\rangle$}
+%\label{fig:vertex}
+%\end{figure}
+
+%\begin{figure}
+%\begin{tikzpicture}[decoration={markings,
+%   mark=at position 1.2cm with {\arrow[black,line width=.4mm]{stealth}}}];
+%\draw[postaction=decorate, line width=.2mm] (-4,0) -- (-2,0);
+%\draw (-4.2,0) node {$\gamma$};
+%\draw (-1.8,0) node {$\beta$};
+%\draw[->,decorate,decoration=snake] (2,0) -- (4,0);
+%\draw (1.8,0) node {$c$};
+%\draw (4.2,0) node {$b$};
+%\draw (0, 0.4) node {$P$};
+%\end{tikzpicture}
+%\caption{The propagators as directed from $\gamma$ to $\beta$}
+%\label{fig:prop}
+%\end{figure}
+
+%\begin{figure}
+%\begin{center}
+%\feynmandiagram [horizontal=a to b]{
+%a [particle=\(\gamma\)] -- [charged boson] b [particle=\(\beta\)]
+%};
+%\end{center}
+%\end{figure}
+%
+%\feynmandiagram[horizontal=a to b]{
+%a -- [charged boson] b,
+%i1 -- [fermion] a -- [fermion] i2,
+%f1 -- [fermion] b -- [fermion] f2,
+%};
+
+%\begin{figure}
+%\begin{center}
+%\begin{tikzpicture}[scale=0.8,decoration={markings,mark=at position 0.9cm with {\arrow[black,line width=.4mm]{stealth}}}];
+%\draw[postaction=decorate, line width=.2mm] (2,0) -- (0,0);
+%\draw (1, -0.4) node {$P$};
+%\draw[postaction=decorate, line width=.2mm] (0,0) -- (0,2);
+%\draw (-0.4, 1) node {$P$};
+%\draw[postaction=decorate, line width=.2mm] (0,2) -- (2,2);
+%\draw (1, 2.4) node {$P$};
+%\draw[postaction=decorate, line width=.2mm] (2,2) -- (2,0);
+%\draw (2.4, 1) node {$P$};
+%\draw[postaction=decorate, line width=.2mm] (-1.4,0) -- (0,0);
+%\draw (-1.6,0) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (0,-1.4) -- (0,0);
+%\draw (0,-1.6) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (-1.12,-1.12) -- (0,0);
+%\draw (-1.3,-1.3) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (-1.12,3.12) -- (0,2);
+%\draw (-1.3,3.3) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (3.4,2.5) -- (2,2);
+%\draw (3.6,2.6) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (2.5,3.4) -- (2,2);
+%\draw (2.6,3.6) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (3.4,-0.5) -- (2,0);
+%\draw (3.6,-.6) node {$\gamma$};
+%\draw[postaction=decorate, line width=.2mm] (2.5,-1.4) -- (2,0);
+%\draw (2.6,-1.6) node {$\gamma$};
+%\filldraw[color=black]  (0,0) circle (.1);
+%\filldraw[color=black]  (0,2) circle (.1);
+%\filldraw[color=black]  (2,0) circle (.1);
+%\filldraw[color=black]  (2,2) circle (.1);
+%\end{tikzpicture}
+%\caption{A wheel with four vertices}
+%\label{fig:wheel}
+%\end{center}
+%\end{figure}
+
+\subsubsection{}
+
+These graphs describe linear maps associated to the field.
+More precisely, a graph with $k$ legs describes a linear functional on the $k$-fold tensor product of the space of fields.
+One builds this linear functional out of the data of the action functional.
+
+As an example, a $k$-valent vertex corresponds to a $k$-ary term in the action,
+which manifestly takes in $k$ copies of the fields and outputs a number.
+Thus, the vertex labels an element of a (continuous) linear dual of the $k$-fold tensor product of fields.
+In fact, one restricts to {\em compactly-supported} fields,
+since the action functional is rarely well-defined on all fields when the source manifold is non-compact.
+(Note this domain of compactly-supported fields is all one needs for making variational arguments or for constructing a BV quantization.)
+
+An edge corresponds an element $P$ of the 2-fold tensor product of the space of fields,
+often called a {\em propagator}.
+More precisely, the edge should correspond to
+the Green's function for the linear differential operator 
+appearing in the associated quadratic term of the action;
+hence the propagator is an element of the {\em distributional completion} of the 2-fold tensor product.
+For us the $\beta\gamma$ leg should be labeled by $\dbar^{-1} \otimes {\rm id}_V$,
+where $\dbar^{-1}$ denotes an inverse to the Dolbeault operator on functions.
+The $bc$ leg should be labeled by $\dbar^{-1}_T$, 
+the inverse of the Dolbeault operator on the bundle~$T^{1,0}$.
+
+Given a graph~$\Gamma$, one should contract the tensors associated to the vertices and edges.
+We denote the linear functional for this graph by~$w_\Gamma(P,I)$,
+where $w$ stands for ``weight,'' the term $P$ indicates we label edges by the propagator~$P$,
+and the term $I$ indicates we label vertices by the ``interaction'' term of the action~$S$ 
+(i.e., the terms that are cubic and higher).
+
+This contraction is not always well-posed, unfortunately.
+Each vertex labels a distributional section of some vector bundle on~$\Sigma$,
+and each edge labels a distributional section of a vector bundle on~$\Sigma^2$.
+Thus the desired contraction can be written {\em formally} as an integral over the product manifold~$\Sigma^{v}$,
+where $v$ denotes the number of vertices.
+In most situations this contraction is ill-defined, 
+since one cannot (usually) pair distributions.
+Concretely, one sees that the integral expression is divergent.
+
+Thus, to avoid these divergences, one labels the edges by a smooth replacement of the Green's functions. 
+(Imagine replacing a delta function $\delta_0$ by a bump function.)
+Since one can pair smooth functions and distributions,
+each graph yields a linear functional on fields using these mollified edges.
+Thus we have {\em regularized} the divergent expression.
+
+But now this linear functional depends on the choice of mollifications.
+Hence the challenge is to show that 
+if one picks a sequence of smooth replacements that approaches the Green's function,
+there is a well-defined limit of the linear functionals.
+
+\subsubsection{}
+
+We will now sketch one method well-suited to complex geometry
+that allows us to see that no divergences appear for the holomorphic bosonic string.
+Our approach is an example of the renormalization method developed by Costello in ~\cite{CosBook},
+which applies to many more situations.
+
+Our primary setting in this section is $\Sigma=\CC$.
+For this Riemann surface, 
+a standard choice of Green's function for the $\dbar$ that acts on functions is
+\[
+P(z,w) = \frac{1}{2 \pi i} \frac{\d z + \d w}{z-w}.
+\]
+It is a distributional one-form on $\CC^2$ that satisfies $\dbar \otimes 1(P) = \delta_\Delta$, 
+where $\delta_\Delta$ is the delta-current supported along the diagonal $\Delta: \CC \hookrightarrow \CC^2$ and providing the integral kernel for the identity.
+In terms of our discussion above,
+we view this one-form as a distributional section of the fields $\gamma$ and~$\beta$: 
+for example, for fixed $w$, the one-form $\d z/(z - w)$ is a $\beta$ field in the $z$-variable 
+as it is a $(1,0)$-form.
+(This propagator is for the $\beta\gamma$ fields---and one must tensor with a kernel for the identity on $V$---but a similar formula provides a propagator for the $bc$ fields.)
+
+\subsubsection{}
+
+We will now describe the integral associated to a simple diagram.
+For simplicity, we assume $V = \CC$ so that the $\gamma$ and $\beta$ fields are simply functions and $1$-forms on $\CC$, respectively.
+Consider a ``tadpole'' diagram, Figure \ref{fig:tadpole}, $\Gamma_{\rm tad}$ whose outer legs are $c$~fields 
+(i.e., vector fields on~$\CC$).
+
+\begin{figure}
+\begin{tikzpicture}[line width=.2mm, scale=1.5]
+		\draw[vector](180:1) -- (180:.3cm);
+			\node at (180:1.15) {$c$};
+		\draw[fill=black] (0,0) circle (.3cm);
+		\draw[fill=white] (0,0) circle (.29cm);
+	    	\clip (0,0) circle (.3cm);
+\end{tikzpicture}
+\caption{The tadpole diagram $\Gamma_{\rm tad}$}
+\label{fig:tadpole}
+\end{figure}
+
+
+There is only one vertex here, corresponding to the cubic function on fields
+\[
+w_{\Gamma_{\rm tad}}(P,I_{\rm string}) = \int_{z \in \CC} \beta \wedge c\gamma.
+\]
+If the field $c$ is of the form $f(z) \d \zbar \partial_z$,
+with $f$ compactly supported, 
+then our integral is
+\[
+\int_{z \in \CC} \beta \wedge f(z)(\partial_z\gamma) \d \zbar.
+\]
+(Note that a general cubic function could be described as an integral over $\CC^3$,
+but our function is supported on the small diagonal $\CC \hookrightarrow \CC^3$.)
+The linear functional for this tapole diagram should be given by inserting the propagator $P$ in place of the $\beta$ and $\gamma$ fields. 
+Hence it ought to be given by the following integral over~$\CC$:
+\[
+\int_{z \in \CC} c(z)P(z,w)|_{z = w}  
+= \int_{z \in \CC} f(z) \partial_z \left(  \frac{1}{2 \pi i} \frac{\d z + \d w}{z-w}\right)|_{z = w}\, \d \zbar.
+\]
+This putative integral is manifestly ill-defined,
+since the distribution is singular along the diagonal.
+
+\subsubsection{}
+
+We smooth out the propagator $P$ using familiar tools from differential geometry.
+Fix a Hermitian metric on $\Sigma$, 
+which then associates provides an adjoint $\dbar^*$ to the Dolbeault operator~$\dbar$.
+For the usual metric on $\CC$, we have
+\[
+\dbar^* = -2 \frac{\partial}{\partial (\d \zbar)} \frac{\partial}{\partial z}.
+\]
+In physics one calls a choice of the operator $\dbar^*$ a {\em gauge-fix}.
+The commutator $[\dbar,\dbar^*]$, which we will denote $D$, 
+is equal to $\tfrac{1}{2} \Delta$, where $\Delta$ is the Laplace-Beltrami operator for this metric.
+
+%We can thus call upon Hodge theory and many nice results about finding partial inverses to the Laplacian.
+
+We introduce a smoothed version of the propagator using the heat kernel~$e^{-tD}$,
+which is a notation that denotes a solution to the heat equation $\partial_t f(t,z) + D f(t,z) = 0$.
+For $\CC$ with the Euclidean metric, the standard heat kernel is
+\[
+e^{-tD}(z,w) =  \frac{1}{4\pi t} e^{-|z-w|^2/4t} (\d z - \d w) \wedge (\d\zbar - \d\wbar) . 
+\]
+For $0 < \ell < L < \infty$, we define
+\[
+P_\ell^L = \dbar^* \int_{\ell}^L e^{-tD}\d t.
+\]
+We compute
+\[
+\dbar P_\ell^L = D \int_{\ell}^L e^{-tD}\d t =  \int_{\ell}^L \frac{d}{dt} e^{-tD}\d t = e^{-LD} - e^{-\ell D}.
+\]
+In the limit as $\ell \to 0$ and $L \to \infty$, the operator $P_\ell^L$ goes to a propagator (or Green's function) $P$ for~$\dbar$.
+To see this, consider an eigenfunction $f$ of $D$ where $Df=\lambda f$ where $\lambda$ is a non-negative real number. 
+Then
+\[
+(\dbar P_\ell^L) f = (e^{-L\lambda} - e^{-\ell \lambda})f, 
+\]
+which goes to $f$ as $L \to \infty$ and $\ell~\to~0$.
+Thus, if one works with the correct space of functions, 
+$P_\ell^L$ is almost an inverse to $\dbar$;
+moreover, it is a smooth function on $\Sigma~\times~\Sigma$. 
+
+%\brian{I've fixed our convention for eigenvalues and some small typos above. Is there something you want to be careful above?}
+
+\subsubsection{}
+
+We now return to the tadpole diagram and put $P_\ell^L$ on the edge instead of~$P$.
+(We again assume $V = \CC$ for simplicity.)
+The propagator is
+\begin{align}\label{propagator}
+P_\ell^L(z,w) &= \int_{\ell}^L \d t \, \frac{\partial}{\partial (\d \zbar)} \frac{\partial}{\partial z}\left( \frac{1}{4\pi t} e^{-|z-w|^2/4t} (\d z - \d w) \wedge (\d\zbar - \d\overline{w})\right)\\
+&= \int_{\ell}^L \d t \frac{1}{4\pi t} \frac{\zbar - \overline{w}}{2t} e^{-|z-w|^2/4t} (\d z - \d w).
+\end{align}
+Note that it is smooth everywhere on~$\CC^2$.
+The integral for the tadpole diagram is 
+\begin{align*}
+w_{\Gamma_{\rm tad}}(P_\ell^L,I_{\rm string})
+&= \int_{z \in \CC} c(z)P_\ell^L(z,w)|_{z = w}  \\
+&= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \partial_z \left(\frac{1}{4\pi t} \frac{\zbar - \overline{w}}{2t} e^{-|z-w|^2/4t} (\d z - \d w) \right)|_{z = w}\, \d \zbar\\
+&= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \left(\frac{1}{4\pi t} \left(\frac{\zbar - \overline{w}}{2t}\right)^2 e^{-|z-w|^2/4t} (\d z - \d w) \right)|_{z = w}\, \d \zbar\\
+&= 0,
+\end{align*}
+since the integrand vanishes along the diagonal.
+Note that this integral is independent of $\ell$ and $L$ and hence the limit is zero.
+
+\subsubsection{}
+
+By explicitly analyzing the $\ell \to 0$ limit for the integral associated to every Feynman diagram,
+we find the following result.
+
+\begin{prop}
+For any graph $\Gamma \in {\bf Graph}_{\rm string}$ allowed by the combinatorics of the string action functional and for any $L > 0$,
+there is a well-defined limit $\lim_{\ell \to 0} w_{\Gamma}(P_{\ell}^L,I_{\rm string})$.
+\end{prop}
+
+We denote this limit by~$w_{\Gamma}(P_{0}^L,I_{\rm string})$.
+
+The necessary manipulations and inequalities are very close to those used in~\cite{wg2, GGW}.
+%We recommend looking at \owen{exact location} for model arguments. 
+
+\begin{proof}[Outline of proof]
+When $\Gamma$ is a tree, there is never an issue with divergences; 
+we could even use the Green's function $\dbar^{-1}$ on each edge.
+To see this, note that one can view a tree as having a distinguished root,
+given by the leg that is either of $\beta$ or $b$~type.
+One can then see the tree as describing a multilinear map from the leaves (i.e., legs that are not roots) to the root.
+Indeed, one can view each cubic vertex as such an operator.
+For instance, $\langle b, [c,c]\rangle$ corresponds to the Lie bracket of vector fields,
+since we view $\langle b,-\rangle$ as an element of the $c$~fields.
+For a tree, one can then input arbitrary elements into the leaves, 
+apply the operations labeled by the vertices,
+apply the operator labeled by the edge, and so on,
+until one reaches the root.
+The composite multilinear operator sends smooth sections to smooth sections,
+even if the edges are labeled by distributional sections,
+since the associated operator sends smooth sections to smooth sections.
+
+When $\Gamma$ is a one-loop graph, it consists of a wheel with trees attached to the outer legs.
+By the preceding argument, we know those trees do not introduce singularities;
+hence any divergences are due solely to the wheel.
+It thus suffices to consider pure wheels (i.e., those with no trees attached).
+
+Let the wheel have $n$ vertices. 
+The $k$th vertex has a coordinate $z_k$ on $\CC$;
+the $k$th external leg has input $c_k = f_k(z_k,\zbar_k) \d\zbar_k\, \partial_{z_k}$, 
+where $f_k$ is a compactly-supported smooth function.
+Then the integral has the form
+\[
+\int_{(z_1,\ldots,z_n) \in \CC^n}\d^n \zbar \,(f_1  \partial_{z_1} P_\ell^L(z_1,z_n))(f_2 \partial_{z_2} P_\ell^L(z_2,z_1)) \cdots (f_n\partial_{z_n} P_\ell^L(z_n,z_{n-1})),
+\] 
+since the $k$th input will act on one of the propagators entering the $k$th vertex.
+One needs to show that this expression has a finite $\ell \to 0$ limit.
+
+Let us prove this limit exists for the case $n=2$.
+Then we have
+\begin{align*}
+\int_{z_1,z_2 \in \CC} \d\zbar_1\d\zbar_2 \int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2\, 
+& f_1(z_1)f_2(z_2) 
+\partial_{z_1} \left(\frac{1}{4\pi t_1} \frac{\zbar_1 - \zbar_2}{2t_1} e^{-|z_1-z_2|^2/4t_1} (\d z_1 - \d z_2) \right)\\
+& \times \partial_{z_2} \left(\frac{1}{4\pi t_2} \frac{\zbar_1 - \zbar_2}{2t_2} e^{-|z_1-z_2|^2/4t_2} (\d z_2 - \d z_1) \right),
+\end{align*}
+which is already a bit lengthy.
+As our focus is on showing a limit exists, we will throw out unimportant factors and simplify the expression.
+First, note that taking the partial derivative $\partial_{z_i}$ will simply multiply the integrand by $(\zbar_1 - \zbar_2)/2t_i$.
+Moreover, we change coordinates to $u = z_1 - z_2$ and $v = z_2$. 
+Then the integral is proportional to
+\[
+\int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2\int_{\CC^2} \d^2 u \, \d^2 v \, f_1 f_2 \frac{\overline{u}^4}{t_1^3 t_2^3} e^{-|u|^2(\tfrac{1}{t_1} + \tfrac{1}{t_2})}.
+\]
+We take the integral over $v$ last;
+it will be manifestly well-behaved after we take the other integrals.
+
+Thus consider the integral just over $u \in \CC$,
+so that we are computing the expected value of $F=f_1 f_2$ against a Gaussian measure 
+whose variance is determined by $t_1$ and~$t_2$.
+(Namely, the variance is~$t_1 t_2/(t_1+t_2)$.)
+We might as well focus on values of $t_i$ that are very small, 
+as those would be the source of divergences when $\ell \to 0$.
+For small $t_i$, we only care about the behavior of $F$ near the origin as the measure is concentrated near the origin.
+Thus, consider a partial Taylor expansion of $F$.
+The polynomial part can be computed quickly since the expected values of monomials against a Gaussian measure (i.e., the moments) have a simply expression in terms of the variance.
+The first nonzero contribution would come from the $u^4$ term in the Taylor expansion of $F$,
+and it contributes a factor of the form $(t_1 t_2/(t_1+t_2))^5$,
+up to constant that we ignore.
+We are left with
+\[
+\int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2 \frac{(t_1t_2)^{3}}{(t_1 + t_2)^{5}} 
+\leq \int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2 \, 2^{-5}\sqrt{t_1t_2} 
+= 2^{-5}(L^{3/2} - {\ell}^{3/2})^2,
+\]
+where we use the arithmetic-geometric mean inequality $\sqrt{t_1t_2}/(t_1+t_2)\leq 1/2$ in the middle.
+This expression has a finite limit as $\ell \to 0$.
+The higher terms in the Taylor expansion contribute bigger powers of the variance 
+and hence have $\ell \to 0$ limits.
+Finally, the expected value of the error term of our partial Taylor expansion, 
+which vanishes to some positive order at the origin,
+can be bounded in such as way that an $\ell \to 0$ limit exists.
+\end{proof}
+
+ 
+%\brian{I apologize, but it doesn't look like my super naive estimate is going to work. Here's what does work. Also, it's a two real dimensional integral so the correct variance is $t_1t_2 / (t_1+t_2)$ (the square of what you use). 
+%The $t$-integral you get out is
+%\ben
+%\int_{t_1,t_2 = \ell}^L \frac{(t_1 t_2)^2}{(t_1+t_2)^5} \d t_1 \d t_2  .
+%\een
+%Now, by AM-GM $|t_1 + t_2| \geq C \sqrt{(t_1 t_2)}$ for some $C > 0$. Thus, the integral is bounded by 
+%\ben
+%1/C \int_{t_1,t_2 = \ell}^L \frac{(t_1 t_2)^2}{(t_1t_2)^{5/2}} \d t_1 \d t_2 = \int_{t_1,t_2 = \ell}^L \frac{1}{\sqrt{t_1 t_2}} \d t_1 \d t_2
+%\een
+%which does have a finite $\epsilon \to 0$ limit. Look OK?
+%}
+%
+%\owen{I'm going to try again. That's a good point about the behavior of variance as a function of dimension, but we're actually taking an integral over $\CC^2$. I tried using the AM-GM inequality earlier but it didn't help with my fucked up exponents. Time to try again.}
+%
+%\brian{Actually, we are only doing an integral over $\CC$. We are only applying Wick's Lemma for the integral over $u \in \CC$. The final answer is written as an integral over $v = z_2$ of some differential operator applied to the compactly supported function $f_1f_2$. So, in this case the final answer is proportional to $\int_{v \in \CC} \partial^4 f_1(v) f_2(v)$.
+%}
+
+We can now define the effective theory that we consider for the string. 
+
+\begin{dfn}
+The {\em renormalized action functional} at scale~$L$ for the holomorphic bosonic string is
+\[
+I[L] = \sum_{\Gamma \in {\bf Graph}_{\rm string}^{(0)}} w_{\Gamma}(P_{0}^L,I_{\rm string}) + \hbar\sum_{\Gamma \in {\bf Graph}_{\rm string}^{(1)}} w_{\Gamma}(P_{0}^L,I_{\rm string}).
+\]
+We denote the first summand---the tree-level expansion---by $S_0[L]$ 
+and the second summand---the one-loop expansion---by~$S_1[L]$.
+We use the notation $S[L] = S_{free} + I[L]$ where $S_{free}$ is the classical free part of the action functional. 
+\end{dfn}
+
+\begin{rmk} For any functional $J$, let $w(P_{\ell}^L, J)$ denote the sum over all graphs as above with the smooth propagator $P_{\ell}^L$ placed at the edges and $J$ placed at the vertices. 
+Then, the family $\{I[L]\}$ satisfies the {\em homotopy RG equation}
+\ben
+I[L] = w(P_\ell^L , I[\ell]).
+\een
+The operator $w(P_\ell^L,-)$ defines a homotopy equivalence between the theory at scale $\ell$, defined using $S[\ell]$, and the theory at scale $S$, defined using $S[L]$. 
+\end{rmk}
+
+\subsection{The quantum master equation}
+\label{subsec: QME}
+
+In the BV formalism the basic idea is to replace integration against a path integral measure $e^{-S(\phi)/\hbar} \cD \phi$ with a cochain complex.
+In this cochain complex, we view a cocycle as defining an observable of the theory,
+and its cohomology class is viewed as its expected value against the path integral measure.
+For toy models of finite-dimensional integration, see \cite{};
+these examples are always cryptomorphically equivalent to a de Rham complex,
+which is a familiar homological approach to integration.
+
+Hence the content of the path integral, in this approach, is encoded in the differential. 
+A key idea is that the differential is supposed to behave like a divergence operator for a volume form:
+recall that given a volume form $\mu$ on a manifold, 
+its divergence operator maps vector fields to functions by the relationship
+\[
+{\rm div}_\mu({\mathcal X}) \mu = L_{\mathcal X} \mu.
+\] 
+This relationship, in conjunction with Stokes lemma, 
+implies that if a function~$f$ is a divergence ${\rm div}_\mu({\mathcal X})$,
+then $\int f \mu = 0$,
+i.e., its expected value against the measure~$\mu$ is zero.
+%(The toy models extend the divergence operator of a true volume form on a finite-dimensional manifold to an operator on polyvector fields.)
+The BV formalism axiomatizes general properties of divergence operators;
+a putative differential must satisfy these properties to provide a BV quantization.
+
+When following the algorithm of Section~\ref{sec:bvalgorithm},
+we want the renormalized action
+\[
+S = S^{\rm cl} + \hbar S_1 + \hbar^2 S_2 + \cdots
+\]
+to determine a putative differential $\d^q_S$ on the graded vector space of observables.
+To explain this operator, we need to describe further algebraic properties on the observables
+that the BV formalism uses.
+
+First, in practice, the observables are the symmetric algebra generated by the continuous linear duals to the vector spaces of fields.
+There is also a pairing on fields that is part of the data of the classical BV theory,
+between each field and its ``anti-field.''
+(This pairing is a version of the action of constant vector fields on functions in the toy models.)
+In our case, there is the pairing between $b$ and $c$ and between $\beta$ and~$\gamma$, respectively.
+It behaves like a ``shifted symplectic'' pairing as it has cohomological degree~$-1$,
+and hence it determines a degree~1 Poisson bracket $\{-,-\}$ on the graded algebra of observables.
+Finally, the pairing also determines a second-order differential operator $\Delta_{BV}$ on the algebra of observables by the condition that
+\[
+\Delta_{BV}(FG) = (\Delta_{BV}F)G + (-1)^F F(\Delta_{BV}G) + \{F,G\}.
+\]
+(This equation is a characteristic feature of divergence operators with respect to the product of polyvector fields.)
+
+With these structures in hand, we can give the formula
+\[
+\d^q_S=\{S,-\} + \hbar\Delta_{BV}
+\]
+for the putative differential.
+As $S$ has cohomological degree~0, the operator $\{S,-\}$ has degree~1.
+We remark that modulo~$\hbar$, one recovers the differential $\{S^{\rm cl},-\}$ on the classical observables;
+the zeroth cohomology of the classical observables is functions on the critical locus of the classical action~$S^{\rm cl}$.
+
+By construction, this putative differential $\d_S^q$ satisfies the conditions of behaving like a divergence operator.
+The only remaining condition to check is that it is square-zero.
+This condition ends up being equivalent to $S$ satisfying the {\em quantum master equation}
+\begin{equation}
+\hbar \Delta_{BV} S + \frac{1}{2}\{S,S\} = 0.
+\end{equation}
+More accurately, $\d^q_S$ is a differential if and only if the right hand side is a constant.
+
+
+\subsubsection{}
+
+We now turn to examining this condition in our setting.
+It helps to understand it is diagrammatic terms.
+
+As the bracket is determined by a linear pairing,
+it admits a simple diagrammatic description as an edge.
+For instance, given an observable $F$ that is a homogeneous polynomial of arity~$m$
+and an observable $G$ of arity~$n$, 
+then $\{F,G\}$ has arity~$m+n-2$.
+It can be expressed as a Feynman diagram 
+%\brian{pic}
+where the edge connecting $F$ and $G$ is labeled by a 2-fold tensor~$K$.
+
+The BV Laplacian acts by attaching an edge labeled by~$K$ as a loop in all possible ways.
+%\owen{Add picture.}
+This diagrammatic behavior corresponds to the fact that $\Delta_{BV}$ is a constant-coefficient second-order differential operator.
+
+The tensor~$K$ determined by the pairing on fields is distributional.
+As one might expect from our discussion of divergences above,
+these diagrammatic descriptions of the BV bracket and Laplacian are thus typically ill-defined.
+In other words, the quantum master equation is {\em a priori} ill-posed for the same reason that the initial Feynman diagrams are ill-defined.
+We can apply, however, the same cure of mollification.
+
+\subsubsection{}
+
+Costello's framework \cite{CosBook} provides an approach to renormalization built to be compatible with the BV formalism.
+A key feature is that for each ``length scale''~$L>0$, 
+there is a BV bracket $\{-,-\}_L$ and BV Laplacian $\Delta_L$.
+The scale~$L$ renormalized action $S[L]$ satisfies the scale~$L$ quantum master equation~(QME)
+\[
+\hbar \Delta_{L} S[L] + \frac{1}{2}\{S[L],S[L]\}_L = 0
+\]
+if and only if $S[L']$ satisfies the scale~$L'$ quantum master equation for every other scale~$L'$, see Lemma 9.2.2 in \cite{cosbook}.
+Hence, we say a renormalized action satisfies the quantum master equation if its solves the scale~$L$ equation for some~$L$.
+
+Thus it remains for us to describe the scale~$L$ bracket and BV Laplacian in our setting,
+so that we can examine whether the renormalized action satisfies the quantum master equation.
+
+\begin{dfn}
+The {\em scale~$L$ bracket} $\{-,-\}_L$ is given by pairing with the scale~$L$ heat kernel
+\[
+K_L(z,w) = \frac{1}{4\pi L} e^{-|z-w|/4L} (\d z - \d w) \wedge (\d\zbar - \d\overline{w}). 
+\]
+The {\em scale~$L$ BV Laplacian} $\Delta_L$ is given by the contraction~$\partial_{K_L}$.
+\end{dfn}
+
+These definitions mean that testing the quantum master equation leads to diagrams whose integrals are similar to those we encountered earlier.
+We explain the diagrammatics and sketch the relevant integrals in the proof of the following result,
+which characterizes when the string action admits a BV quantization.
+
+We emphasize that up to now, we have not indicated explicitly which vector space $V$ is the target space for our string.
+But the action functional explicitly depends on this choice,
+so here we will write $S_V$ for the action with target~$V$.
+
+\begin{prop}
+The obstruction to satisfying the quantum master equation is the functional
+\[
+Ob_V[L] = \hbar \Delta_{L} S_V[L] + \frac{1}{2}\{S_V[L],S_V[L]\}_L.
+\]
+It has the form
+\[
+Ob_V[L] = \hbar (\dim_\CC(V) - 13) F[L],
+\]
+where $F[L]$ is a functional independent of~$V$.
+\end{prop}
+
+In short, the failure to satisfy the QME is a linear function of the dimension of the target space~$V$.
+In particular, when $V \cong \CC^{13}$, 
+the obstruction vanishes and the renormalized action {\em does} satisfy the QME, 
+giving us an immediate corollary.
+(Note that we do {\em not} need to know $F[L]$ to recognize that the obstruction vanishes!)
+
+\begin{cor}
+When the target vector space is 13-dimensional (i.e., has 26 real dimensions),
+the holomorphic bosonic string admits a BV quantization.
+\end{cor}
+
+\begin{proof}
+It is a general feature of Costello's formalism that the tree-level term $S_0[L]$ of the renormalized action satisfies the scale~$L$ equation
+\[
+\{S_0[L],S_0[L]\}_L = 0,
+\]
+known as the classical master equation.
+Hence the first obstruction to satisfying the QME can only appear with positive powers of~$\hbar$.
+We can also see quickly that no terms of~$\hbar^2$ appear:
+the one-loop term $S_1[L]$ is only a function of the $c$~field, 
+so 
+\[
+\{S_1[L],S_1[L]\}_L = 0 \quad\text{and}\quad \Delta_L S_1[L] = 0.
+\]
+Hence the obstruction to satisfying the QME is precisely
+\[
+\hbar\left( \{S_0[L],S_1[L]\} + \Delta_L S_0[L] \right).
+\]
+Thus we see that the obstruction is a multiple of~$\hbar$.
+For simplicity, we will divide out that factor and let $Ob_V$ denote the term inside the parenthesis.
+
+Consider the term $\{S_0[L],S_1[L]\}_L$. 
+Diagrammatically, it corresponds to attaching a tree with a $b$ ``root'' to a wheel using an edge labeled by~$K_L$.
+%\owen{Need to reference/explain the results of Si and KC.}
+
+Now consider the term $\Delta_L S_0[L]$. 
+Diagrammatically, it corresponds to turning a tree into a wheel by using an edge---labeled by $K_L$---to attach the root to an incoming leaf.
+There are thus two kinds of wheels that appear, since there are two kinds of trees.
+There are the wheels where the $K$ edge is for $bc$ fields.
+Note that these wheels are the same for every choice of target $V$
+as they only depend on the $bc$ fields, i.e., are independent of the $\beta\gamma$ fields.
+These will contribute a term $F[L]$ to the obstruction.
+On the other hand, there are the wheels where the $K$ edge is for $\beta\gamma$ fields.
+These depend on $V$ but in a very simple way: 
+the distribution $K$ is just the heat kernel tensored with the identity on~$V$, 
+and hence the contraction amounts to taking $\dim_\CC(V)$ copies of the $V = \CC$ value.
+In other words, the $\beta\gamma$ wheels contribute a term $\dim_\CC(V) G[L]$ to the obstruction,
+where $G[L]$ is the value for $V = \CC$.
+The last part of the proof of the theorem is a direct calculation of the functionals $F[L]$ and $G[L]$. 
+So as to not diverge from our track of thought we include this calculation in Section \ref{??} where we show that $F[L], G[L]$ are both independent of $L$ and satisfy $F = -13 G$, thus completing the proof.
+\end{proof}
+
+\begin{rmk} One can consider coupling the $\beta\gamma$ system to any tensor bundle on the Riemann surface. 
+For instance, suppose $\gamma$ is a section of $T_\Sigma^{\tensor n}$ and hence $\beta$ is a section of $T^{* \otimes {n+1}}_\Sigma$.
+In this case, one can show that the part of the obstruction with internal edges labeled by the $\beta\gamma$ propagators contributes a factor $(6n^2 + 6n + 1)G$, with $G$ the same functional above. 
+\brian{should I say more?}
+\end{rmk}
+
+
+
+
+
