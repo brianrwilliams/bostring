@@ -1,19 +1,4 @@
-\documentclass[10pt]{amsart}
-
-\usepackage{macros,slashed}
-
-\linespread{1.25}
-
-\usepackage{parskip}
-\setlength{\parindent}{18pt}
-\setlength{\parindent}{0cm}
-
-\setcounter{tocdepth}{1}
-
-\title{The holomorphic bosonic string}
-
-\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
-\def\owen{\textcolor{red}{OG: }\textcolor{red}}
+\documentclass{article}
 
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes}
@@ -23,7 +8,6 @@
 \usetikzlibrary{calc,through}
 \usetikzlibrary{decorations.pathreplacing}
 \usepackage{pgffor}
-%\usepackage{tikz-feynman} 
 
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.markings}
@@ -42,7 +26,7 @@
     scalar/.style={dashed,draw=black, postaction={decorate},
         decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
     scalarbar/.style={dashed,draw=black, postaction={decorate},
-        dwecoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
     scalarnoarrow/.style={dashed,draw=black},
     electron/.style={draw=black, postaction={decorate},
         decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
@@ -50,18 +34,17 @@
 }
 
 \begin{document}
-\maketitle
-
-%\input{intro}
-\tableofcontents
-\input{bvoverview}
-\input{classicaltheory}
-\input{moduli}
-\input{quantization}
-\input{vertexalgebra}
-\input{conformalblock}
-\input{partitionfunction}
-\input{curvedtargets}
-\input{calc}
-
+\begin{tikzpicture}[line width=1.5 pt, scale=2]
+		\draw[vector](145:1) -- (145:.3cm);
+			\node at (145:1.15) {$A$};
+		\draw[fermion](215:1) -- (215:.3cm);
+			\node at (215:1.2) {$B$};
+		\draw[fermionbar](35:1) -- (35:.3cm);
+			\node at (35:1.15) {$C$};
+		\draw[fermionbar](-35:1) -- (-35:.3cm);
+			\node at (-35:1.2) {$D$};
+		\draw[fill=black] (0,0) circle (.3cm);
+		\draw[fill=white] (0,0) circle (.29cm);
+	    	\clip (0,0) circle (.3cm);
+\end{tikzpicture}
 \end{document}

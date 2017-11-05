@@ -255,4 +255,67 @@ LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 36.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count114
+\scratchdimen=\dimen147
+\scratchbox=\box33
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen148
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
+\everyMPtoPDFconversion=\toks33
+)
+Package xypdf Info: Line width: 0.39998pt on input line 36.
+LaTeX Font Info:    Try loading font information for U+euf on input line 42.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+./2015 April 11 - the obstruction groups for holomorphic string.tex:50: Undefin
+ed control sequence.
+l.50 \Dol
+         {0}(S,T^{1,0}_S) \oplus \Dol{1}(S, T^{\ast 1,0}_S) \oplus \Dol{0}(S...
+
+? 
+./2015 April 11 - the obstruction groups for holomorphic string.tex:50: Emergen
+cy stop.
+l.50 \Dol
+         {0}(S,T^{1,0}_S) \oplus \Dol{1}(S, T^{\ast 1,0}_S) \oplus \Dol{0}(S...
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 4972 strings out of 493089
+ 58338 string characters out of 6134842
+ 158316 words of memory out of 5000000
+ 8255 multiletter control sequences out of 15000+600000
+ 11491 words of font info for 49 fonts, out of 8000000 for 9000
+ 1302 hyphenation exceptions out of 8191
+ 34i,3n,31p,1484b,132s stack positions out of 5000i,500n,10000p,200000b,80000s
+./2015 April 11 - the obstruction groups for holomorphic string.tex:50:  ==> Fa
+tal error occurred, no output PDF file produced!
