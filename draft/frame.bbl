@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{wg2}
+Kevin Costello.
+\newblock A geometric construction of the {W}itten genus, {II}.
+\newblock available at \url{http://arxiv.org/abs/1112.0816}.
+
+\bibitem{CosBook}
+Kevin Costello.
+\newblock {\em Renormalization and effective field theory}, volume 170 of {\em
+  Mathematical Surveys and Monographs}.
+\newblock American Mathematical Society, Providence, RI, 2011.
+
+\bibitem{GGW}
+Owen Gwilliam, Vassily Gorbounov, and Brian Williams.
+\newblock {C}hiral differential operators via {B}atalin-{V}ilkovisky
+  quantization.
+\newblock Available at \url{https://arxiv.org/abs/1610.09657}.
+
+\bibitem{GJF}
+Owen Gwilliam and Theo Johnson-Freyd.
+\newblock How to derive feynman diagrams for finite-dimensional integrals
+  directly from the bv formalism.
+\newblock Available at \url{https://arxiv.org/abs/1202.1554}.
+
+\end{thebibliography}

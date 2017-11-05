@@ -1,0 +1,73 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: frame.aux
+Case mismatch error between cite keys ggw and GGW
+---line 45 of file frame.aux
+ : \citation{ggw
+ :              }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys ggw and GGW
+---line 46 of file frame.aux
+ : \citation{ggw
+ :              }
+I'm skipping whatever remains of this command
+The style file: plain.bst
+Database file #1: string.bib
+Warning--I didn't find a database entry for "GwilliamThesis"
+Warning--I didn't find a database entry for "FHL"
+Warning--I didn't find a database entry for "BZF"
+Warning--I didn't find a database entry for "CG1"
+Warning--I didn't find a database entry for "LiVA"
+Warning--I didn't find a database entry for "CDO"
+Warning--I didn't find a database entry for "LZ1"
+Warning--I didn't find a database entry for "LZ2"
+Warning--I didn't find a database entry for "CG2"
+Warning--I didn't find a database entry for "Li"
+Warning--I didn't find a database entry for "Lurie"
+Warning--I didn't find a database entry for "wtop"
+Warning--I didn't find a database entry for "top"
+Warning--I didn't find a database entry for "WitString"
+Warning--I didn't find a database entry for "GWcurved"
+Warning--I didn't find a database entry for "BM"
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            548 strings with 4763 characters,
+and the built_in function-call counts, 868 in all, are:
+= -- 82
+> -- 45
+< -- 1
++ -- 19
+- -- 14
+* -- 45
+:= -- 174
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 18
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 31
+empty$ -- 57
+format.name$ -- 14
+if$ -- 165
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 2
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 19
+preamble$ -- 1
+purify$ -- 15
+quote$ -- 0
+skip$ -- 19
+stack$ -- 0
+substring$ -- 21
+swap$ -- 3
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 14
+warning$ -- 0
+while$ -- 8
+width$ -- 5
+write$ -- 40
+(There were 2 error messages)
