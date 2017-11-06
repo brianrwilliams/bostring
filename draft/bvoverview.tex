@@ -2,22 +2,28 @@
 %\section{From classical to quantum: anomalies in the BV formalism}
 
 We have two intertwined goals here.
-First, we want to describe a two-dimensional field theory
-and its perturbative quantization,
-which we'll see encodes the chiral sector of a bosonic string with linear target space.
-We view this theory as a holomorphic version of bosonic string theory.
+First, we want to describe a two-dimensional field theory,
+which we view as a holomorphic version of bosonic string theory,
+and its perturbative quantization.
+We'll see this theory encodes the chiral sector of a bosonic string with linear target space,
+justifying our interpretation.
 Second, we want to use this theory as the running example for key ideas and techniques in the formalism for quantum field theory developed by Costello and collaborators \cite{CosBook, CG1,CG2, others}.
-None of the results here about string theory are new, 
+We hope to give readers a feel for how to use this formalism by exhibiting it with a beautiful theory.
+
+Our focus is thus on narrative rather than detailed argumentation.
+That is, we work systematically in the natural order of the formalism. 
+Along the way we emphasize the motivations behind each step rather than the nitty-gritty computations. 
+Precedence is given to communicating the essence of an argument, over spelling everything out.
+We do give detailed citations where such arguments can found in the literature,
+but we defer some not-yet-extant details to a forthcoming work on this theory with curved target space~\cite{GWcurved}.
+
+None of the results here about string theory is new, 
 as the bosonic string has been under intensive study for several decades,
 but this formalism recovers them in a single, systematic process,
 often giving a novel argument or perspective.
 It is compelling to have a direct path from the action functional to such sophisticated constructions as the semi-infinite cohomology of a vertex algebra.
-
-Our focus is thus on narrative rather than detailed argumentation.
-That is, we work systematically in the natural order of the formalism and along the way we emphasize the motivations behind each step rather than the nitty-gritty computations. 
-Precedence is given to communicating the essence of an argument, over spelling everything out.
-We do give detailed citations where such arguments can found in the literature,
-and we defer some not-yet-extant details to a forthcoming work on this theory with curved target space~\cite{GWcurved}.
+In fact, since so many of these results are familiar,
+the reader may see more clearly what's distinctive and illuminating about this approach to field theory.
 
 Given the vastness of the string theory literature,
 it should not be surprise that there is already work along these lines,
@@ -27,8 +33,45 @@ Again, we note that the formalism of Costello provides a mathematical articulati
 and our relative and unfortunate ignorance of much of it,
 we have chosen to mention a reference when we feel its description is particularly useful for us, 
 even if it is not the original or standard reference for a given result.}
+This machinery allows us to revisit such prior work in a manner particularly amenable to mathematicians.
 
-As the bulk of the text is devoted to detailed exposition centered on our example,
+\subsection{Overview}
+
+The central figure of this paper is a holomorphic analogue of the bosonic string.
+We proceed, as usual in physics, from the classical to the quantum.
+
+Hence, we begin by introducing the classical theory, 
+expressed both in the BV formalism and also in terms of an action functional.
+We take some time to identify this theory as the chiral sector of a limit of the bosonic string when the K\"{a}hler metric of the target is made very large. 
+We also interpret the theory in the language of derived geometry.
+
+We then turn to analyzing the deformations of this classical theory,
+which by Costello's work admits a nice description in terms of a type of Gelfand-Fuks cohomology.
+This perspective naturally leads to a discussion of string backgrounds.
+
+With a firm grip on the classical, we turn to constructing the perturbative quantization.
+We first work with a disk or $\CC$ as the source manifold,
+and we review relevant features of Costello's approach to renormalization.
+The usual dimensional \owen{conformal?} anomaly appears as an obstruction to satisfying the quantum master equation,
+a key condition in the BV formalism.
+It is a computation with Feynman diagrams.
+
+The next section describes the vertex algebra of the quantized theory,
+using the machinery of factorization algebras of \cite{CG1, CG2}.
+We find this piece of the formalism particularly illuminating,
+as it lets a mathematician understand how to read off the OPE from path integral manipulations.
+
+We then turn to the case of a compact Riemann surface as the source manifold.
+Here we discuss how the formalism relates to the global approach to computing anomalies using, for instance, the Grothendieck-Riemann-Roch formula.
+We also discuss conformal blocks in this formalism.
+
+Finally, we sketch how to modify the approach here to allow a complex manifold as the target.
+This paper can be viewed as an expository precursor to future work,
+which pushes into new territory (particularly in describing the vertex algebra).
+
+\subsection{Lessons to bear in mind}
+
+Before turning to our example,
 we want to expound some key ideas of the Costello formalism so that the reader is alert to them when proceeding through the text.
 That is, we wish to articulate here the structural features of this BV/renormalization package that make the arguments below conceptual.
 
@@ -70,7 +113,7 @@ One can say that we couple it to holomorphic gravity.
 But then we recognize a natural consequence of our prior lessons.
 
 \begin{lesson}[\S 5.11, \cite{CosBook}]
-``Gauging'' a classical theory corresponds to a stacky quotient of the original fields. 
+Gauging a classical theory corresponds to taking a stacky quotient of the original fields. 
 To quantize the gauged theory corresponds to descending the quantization to the quotient.
 Hence, an anomaly that prevents quantization should be understood as an obstruction to descent.
 \end{lesson}
