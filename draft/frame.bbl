@@ -42,6 +42,11 @@ Pierre Deligne, Pavel Etingof, Daniel~S. Freed, Lisa~C. Jeffrey, David Kazhdan,
 \newblock Material from the Special Year on Quantum Field Theory held at the
   Institute for Advanced Study, Princeton, NJ, 1996--1997.
 
+\bibitem{DP}
+Eric D'Hoker and D.~H. Phong.
+\newblock The geometry of string perturbation theory.
+\newblock {\em Rev. Modern Phys.}, 60(4):917--1065, 1988.
+
 \bibitem{BZF}
 Edward Frenkel and David Ben-Zvi.
 \newblock {\em Vertex algebras and algebraic curves}, volume~88 of {\em
@@ -59,11 +64,32 @@ D.~B. Fuks.
 \newblock Contemporary Soviet Mathematics. Consultants Bureau, New York, 1986.
 \newblock Translated from the Russian by A. B. Sosinski\u\i.
 
+\bibitem{GLL}
+Ryan~E. Grady, Qin Li, and Si~Li.
+\newblock Batalin-{V}ilkovisky quantization and the algebraic index.
+\newblock {\em Adv. Math.}, 317:575--639, 2017.
+
+\bibitem{GSW1}
+Michael~B. Green, John~H. Schwarz, and Edward Witten.
+\newblock {\em Superstring theory. {V}ol. 1. {I}ntroduction}.
+\newblock Cambridge University Press, Cambridge, anniversary edition, 2012.
+
+\bibitem{GSW2}
+Michael~B. Green, John~H. Schwarz, and Edward Witten.
+\newblock {\em Superstring theory. {V}ol. 2. {L}oop amplitudes, anomalies and
+  phenomenology}.
+\newblock Cambridge University Press, Cambridge, anniversary edition, 2012.
+
 \bibitem{GGW}
 Owen Gwilliam, Vassily Gorbounov, and Brian Williams.
 \newblock {C}hiral differential operators via {B}atalin-{V}ilkovisky
   quantization.
 \newblock Available at \url{https://arxiv.org/abs/1610.09657}.
+
+\bibitem{GG1}
+Owen Gwilliam and Ryan Grady.
+\newblock One-dimensional {C}hern-{S}imons theory and the {$\hat A$} genus.
+\newblock {\em Algebr. Geom. Topol.}, 14(4):2299--2377, 2014.
 
 \bibitem{GH}
 Owen Gwilliam and Rune Haugseng.
@@ -79,8 +105,15 @@ Owen Gwilliam and Theo Johnson-Freyd.
 
 \bibitem{GWcurved}
 Owen Gwilliam and Brian Williams.
-\newblock {T}he holomorphic bosonic string {I}{I}: the case of a curved target.
+\newblock {T}he holomorphic bosonic string, {I}{I}: the case of a curved
+  target.
 \newblock To appear.
+
+\bibitem{LL1}
+Qin Li and Si~Li.
+\newblock On the {B}-twisted topological sigma model and {C}alabi-{Y}au
+  geometry.
+\newblock {\em J. Differential Geom.}, 102(3):409--484, 2016.
 
 \bibitem{LiVA}
 Si~Li.
@@ -116,9 +149,28 @@ Joseph Polchinski.
   Press, Cambridge, 1998.
 \newblock An introduction to the bosonic string.
 
+\bibitem{BWvir}
+Brian Williams.
+\newblock The {V}irasoro vertex algebra and factorization algebras on {R}iemann
+  surfaces.
+\newblock {\em Lett. Math. Phys.}, 107(12):2189--2237, 2017.
+
 \bibitem{WittenTop}
 Edward Witten.
 \newblock Topological quantum field theory.
 \newblock {\em Comm. Math. Phys.}, 117(3):353--386, 1988.
+
+\bibitem{WittenFeynman}
+Edward Witten.
+\newblock The {F}eynman {$i\epsilon$} in string theory.
+\newblock {\em J. High Energy Phys.}, (4):055, front matter+24, 2015.
+
+\bibitem{WitString}
+Edward Witten.
+\newblock Notes on holomorphic string and superstring theory measures of low
+  genus.
+\newblock In {\em Analysis, complex geometry, and mathematical physics: in
+  honor of {D}uong {H}. {P}hong}, volume 644 of {\em Contemp. Math.}, pages
+  307--359. Amer. Math. Soc., Providence, RI, 2015.
 
 \end{thebibliography}

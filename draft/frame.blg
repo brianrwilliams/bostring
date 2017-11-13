@@ -3,48 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: frame.aux
 The style file: plain.bst
 Database file #1: string.bib
-Warning--I didn't find a database entry for "others"
-Warning--I didn't find a database entry for "GwilliamThesis"
-Warning--I didn't find a database entry for "WitString"
-You've used 21 entries,
+Warning--there's a number but no volume in WittenFeynman
+You've used 30 entries,
             2118 wiz_defined-function locations,
-            638 strings with 7310 characters,
-and the built_in function-call counts, 5714 in all, are:
-= -- 567
-> -- 271
-< -- 4
-+ -- 109
-- -- 86
-* -- 356
-:= -- 1025
-add.period$ -- 69
-call.type$ -- 21
-change.case$ -- 100
+            696 strings with 8455 characters,
+and the built_in function-call counts, 8851 in all, are:
+= -- 889
+> -- 385
+< -- 6
++ -- 157
+- -- 122
+* -- 590
+:= -- 1528
+add.period$ -- 97
+call.type$ -- 30
+change.case$ -- 145
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 214
-empty$ -- 426
-format.name$ -- 86
-if$ -- 1157
+cite$ -- 31
+duplicate$ -- 329
+empty$ -- 691
+format.name$ -- 122
+if$ -- 1816
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 18
-newline$ -- 111
-num.names$ -- 43
-pop$ -- 102
+int.to.str$ -- 30
+missing$ -- 29
+newline$ -- 156
+num.names$ -- 61
+pop$ -- 144
 preamble$ -- 1
-purify$ -- 85
+purify$ -- 121
 quote$ -- 0
-skip$ -- 136
+skip$ -- 209
 stack$ -- 0
-substring$ -- 279
-swap$ -- 28
-text.length$ -- 4
+substring$ -- 559
+swap$ -- 48
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
-warning$ -- 0
-while$ -- 56
-width$ -- 23
-write$ -- 223
-(There were 3 warnings)
+type$ -- 104
+warning$ -- 1
+while$ -- 88
+width$ -- 32
+write$ -- 324
+(There was 1 warning)

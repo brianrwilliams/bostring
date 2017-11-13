@@ -2,10 +2,9 @@
 \label{sec: quantization}
 
 For us, quantization will mean that we use perturbative constructions in the setting of the BV formalism.
-Concretely, this means that we enforces the gauge symmetries using the homological algebra of the BV formalism 
-and that we use Feynman diagrams and renormalization to obtain an expression for the desired, putative path integral. 
-\owen{Be more careful about saying path integral. It's an approximation.}
-There are toy models for this approach where one can see very clearly how it gives asymptotic expansions for finite-dimensional integrals \owen{add references}.
+Concretely, this means that we enforces the gauge symmetries using the homological algebra of the BV formalism and that we use Feynman diagrams and renormalization to obtain an approximation for the desired, putative path integral. 
+%\owen{Be more careful about saying path integral. It's an approximation.}
+There are toy models for this approach where one can see very clearly how it gives asymptotic expansions for finite-dimensional integrals \cite{GJF}.
 In particular, these toy models show that this approach need not recover the true integral
 but does know important information about it;
 a similar relationship should hold between this quantization method and the putative path integral, 
@@ -27,7 +26,7 @@ It is also possible that a BV quantization may not exist.
 
 In this section we will apply the algorithm in the case of $\Sigma~=~\CC$.
 For this theory we are lucky, however:
-the integrals that appear from the Feynman diagrams do not have divergences,
+at one-loop the integrals that appear in our quantization from the Feynman diagrams do not have divergences,
 so that renormalized action is easy to compute.
 This aspect is the subject of the first part of this section.
 (In Section \ref{sec: conformalblock} we will provide an argument based on deformation theory as to why quantizations exist on arbitrary Riemann surfaces.)
@@ -141,7 +140,7 @@ and there is a chain of $\gamma\beta$ edges connecting them;
 all other external legs are of $c$~type.
 If there is a $b$ leg, then the only other legs are $c$~type.
 
-A 1-loop graph will consist of a wheel (i.e., a sequence of edges that form an overall loop)
+A one-loop graph will consist of a wheel (i.e., a sequence of edges that form an overall loop)
 with trees attached.
 The outer legs are all of $c$~type.
 Every edge along a wheel will have the same type.
@@ -441,9 +440,8 @@ For any graph $\Gamma \in {\bf Graph}_{\rm string}$ allowed by the combinatorics
 there is a well-defined limit $\lim_{\ell \to 0} w_{\Gamma}(P_{\ell}^L,I_{\rm string})$.
 \end{prop}
 
-We denote this limit by~$w_{\Gamma}(P_{0}^L,I_{\rm string})$.
-
-The necessary manipulations and inequalities are very close to those used in~\cite{wg2, GGW}.
+We denote this limit by~$w_{\Gamma}(P_{0}^L,I_{\rm string})$. 
+The necessary manipulations and inequalities referenced below are very close to those used in~\cite{wg2, GGW}.
 %We recommend looking at \owen{exact location} for model arguments. 
 
 \begin{proof}[Outline of proof]
@@ -525,6 +523,8 @@ which vanishes to some positive order at the origin,
 can be bounded in such as way that an $\ell \to 0$ limit exists.
 \end{proof}
 
+It would be interested int compare our method for renormalization of the bosonic string to Witten's ``$i\epsilon$'' procedure for the perturbative string in \cite{WittenFeynman}.
+
  
 %\brian{I apologize, but it doesn't look like my super naive estimate is going to work. Here's what does work. Also, it's a two real dimensional integral so the correct variance is $t_1t_2 / (t_1+t_2)$ (the square of what you use). 
 %The $t$-integral you get out is
@@ -569,7 +569,7 @@ The operator $w(P_\ell^L,-)$ defines a homotopy equivalence between the theory a
 In the BV formalism the basic idea is to replace integration against a path integral measure $e^{-S(\phi)/\hbar} \cD \phi$ with a cochain complex.
 In this cochain complex, we view a cocycle as defining an observable of the theory,
 and its cohomology class is viewed as its expected value against the path integral measure.
-For toy models of finite-dimensional integration, see \cite{GwilliamThesis, GJF};
+For toy models of finite-dimensional integration, see \cite{GJF};
 these examples are always cryptomorphically equivalent to a de Rham complex,
 which is a familiar homological approach to integration.
 
@@ -588,7 +588,7 @@ i.e., its expected value against the measure~$\mu$ is zero.
 The BV formalism axiomatizes general properties of divergence operators;
 a putative differential must satisfy these properties to provide a BV quantization.
 
-When following the algorithm of Section~\ref{sec:bvalgorithm},
+When following the algorithm of Section~\ref{sec:bvoverview},
 we want the renormalized action
 \[
 S = S^{\rm cl} + \hbar S_1 + \hbar^2 S_2 + \cdots
@@ -683,7 +683,7 @@ We emphasize that up to now, we have not indicated explicitly which vector space
 But the action functional explicitly depends on this choice,
 so here we will write $S_V$ for the action with target~$V$.
 
-\begin{prop}
+\begin{prop} \label{prop anomaly}
 The obstruction to satisfying the quantum master equation is the functional
 \[
 Ob_V[L] = \hbar \Delta_{L} S_V[L] + \frac{1}{2}\{S_V[L],S_V[L]\}_L.
@@ -746,7 +746,7 @@ and hence the contraction amounts to taking $\dim_\CC(V)$ copies of the $V = \CC
 In other words, the $\beta\gamma$ wheels contribute a term $\dim_\CC(V) G[L]$ to the obstruction,
 where $G[L]$ is the value for $V = \CC$.
 The last part of the proof of the theorem is a direct calculation of the functionals $F[L]$ and $G[L]$. 
-So as to not diverge from our track of thought we include this calculation in Section \ref{??} where we show that $F[L], G[L]$ are both independent of $L$ and satisfy $F = -13 G$, thus completing the proof.
+So as to not diverge from our track of thought we include this calculation in Appendix \ref{sec:calculation} where we show that $F[L], G[L]$ are both independent of $L$ and satisfy $F = -13 G$, thus completing the proof.
 \end{proof}
 
 \begin{rmk} One can consider coupling the $\beta\gamma$ system to any tensor bundle on the Riemann surface. 
