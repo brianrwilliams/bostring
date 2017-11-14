@@ -77,7 +77,7 @@ In particular, Section~5.3 of~\cite{CG1} examines the free $\beta\gamma$ system 
 Its main result is that the well-known $\beta\gamma$ vertex algebra is recovered by the two-step process of BV quantization, which yields a factorization algebra, and then the extraction of a vertex algebra.
 
 The exact same arguments apply to the free $bc\beta\gamma$ system,
-where the $\beta\gamma$ sector is valued in a vector space $V$, as we introduced in Section \ref{sec:classical}
+where the $\beta\gamma$ sector is valued in a vector space $V$, as we introduced in Section~\ref{sec:classical}.
 Let $\Obs^\q_{free}$ denote the observables of this theory on $\Sigma = \CC$.
 As a quantization of a free field theory, it is a factorization algebra valued in the category of $\CC [\hbar]$-modules.
 In particular, the associated vertex algebra $\Vert(\Obs^\q_{free})$ is also valued in $\CC[\hbar]$-modules.
@@ -174,121 +174,192 @@ Indeed, this follows from the fact that the quantum master equation holds identi
 
 We continue to consider the theory on the Riemann surface $\Sigma = \CC$. 
 In this section we show how to produce, from the point of view of factorization algebras, the structure of a Gerstenhaber algebra on the BRST cohomology of the bosonic string. 
-A Gerstenhaber algebra is equivalent to an algebra over the homology of the framed little 2-disk operad. 
-It is a well-known result of Lurie \cite{Lurie} that a {\em locally constant} factorization algebra on $\RR^n$ is equivalent to an algebra over the little $n$-disks operad, or an $E_n$-algebra. 
-We will show that the cohomology of the factorization algebra $\Obs^{\q}_{\rm string}$ on $\CC \cong \RR^2$ has the structure of a Gerstenhaber algebra, which implies that $\Obs^\q_{\rm string}$ is equivalent to an $E_2$-algebra. 
 
-Another occurrence of $E_n$-algebras is as the observables of topological field theories in (real) dimension $n$. 
-At this level, this implies that the theory of the holomorphic bosonic string is equivalent to a topological field theory. 
-In fact, we can see directly that the factorization algebra outputted by our construction is topological. 
+Recall that a Gerstenhaber algebra is equivalent to an algebra over the homology of the little 2-disk operad.
+Hence, our approach is to see why the factorization algebra naturally exhibits the structure of a algebra of little 2-disks.
+Here we use an important result of Lurie \cite{Lurie}: 
+a {\em locally constant} factorization algebra on $\RR^n$ is equivalent to an algebra over the little $n$-disks operad, or an $E_n$-algebra. 
 
-\begin{prop} The factorization algebra $\Obs^\q_{\rm string}$ is locally constant.
+\begin{prop} 
+The factorization algebra $\Obs^\q_{\rm string}$ is locally constant, 
+and hence it determines an $E_2$ algebra.
 \end{prop}
+
+In particular, the cohomology $H^*(\Obs^\q_{\rm string})$ is an algebra over the cohomology of the $E_2$ operad and hence a Gerstenhaber algebra.
+
+\begin{rmk}
+The factorization algebra of a topological field theory (in the physicist's sense) is locally constant.
+Hence a TFT in $n$ real dimensions produces an $E_n$-algebra, by Lurie's result. 
+In this sense, holomorphic bosonic string theory is a 2-dimensional topological field theory. 
+Indeed, Scheimbauer \cite{Scheim} verifies that we recover a fully-extended framed 2-dimensional TFT in the functorial sense, albeit with values in an unusual target $(\infty,2)$-category.
+\end{rmk}
+
 \begin{proof} 
 We need to show that for any inclusion of open disks $D \hookrightarrow D'$ that natural map
 \ben
 \Obs^\q_{\rm string}(U) \to \Obs^\q_{\rm string}(U')
 \een
 is a quasi-isomorphism. 
-We first show that this is true when we replace the quantum observables by the classical observables. 
-We have already mentioned that the classical observables are functions on solutions to the classical equations of motion. 
-It is convenient to phrase this in terms of Lie algebra cohomology. 
-The classical interaction induces the structure of a sheaf of dg Lie algebras on the shift of the space of fields shifted up by one. 
-This sheaf of dg Lie algebras is of the form
+
+We first show that the classical observables are locally constant. 
+We have already mentioned that the classical observables are the commutative algebra of functions on the space of solutions to the classical equations of motion. 
+This space of solutions forms a sheaf on $\Sigma$, 
+since satisfying a PDE is a local condition.
+We find it convenient to encode the equations of motion as the Maurer-Cartan equation of a sheaf  of dg Lie algebras:
 \ben
 \Omega^{0,*}(\Sigma ; \cT_\Sigma) \ltimes \left(\Omega^{0,*}(\Sigma; V)[-1] \oplus \Omega^{1,*}(\Sigma;V^*)[-1] \oplus \Omega^{1,*}(\Sigma ; \cT_\Sigma^*)[-2] \right) . 
 \een
-We view this as a square zero extension of the dg Lie algebra $\Omega^{0,*}(\Sigma ; \cT_\Sigma)$ by the dg module inside the parentheses where the module structure is determined by the Lie derivative. 
-For simplicity we denote $\cL = \Omega^{0,*}(\Sigma ; \cT_\Sigma)$ and $\cM$ the module inside the parentheses.
-In this language, the space of classical observables supported on an open set $U \subset \Sigma$ is the following Chevalley-Eilenberg cochain complex
+(Note that the underlying graded space is simply the fields shifted up by one degree,
+which is a generic phenomenon in the BV formalism.)
+The dg Lie algebra $\Omega^{0,*}(\Sigma ; \cT_\Sigma)$ is simply a sheaf-theoretic resolution of holomorphic vector fields, with the usual Lie bracket.
+Our large dg Lie algebra is a square-zero extension of $\Omega^{0,*}(\Sigma ; \cT_\Sigma)$, 
+by the dg module inside the parentheses.
+The vector fields act by the Lie derivative on 
+\[
+\Omega^{0,*}(\Sigma; V)[-1] \oplus \Omega^{1,*}(\Sigma;V^*)[-1] \oplus \Omega^{1,*}(\Sigma ; \cT_\Sigma^*)[-2],
+\]
+which are simply a copy of the $\beta\gamma$ system with target vector space~$V$.
+ 
+For simplicity, we write $\cL = \Omega^{0,*}(\Sigma ; \cT_\Sigma)$ and write $\cM$ for the module inside the parentheses.
+In this language, the space of classical observables supported on an open set $U \subset \Sigma$ is the Chevalley-Eilenberg cochain complex
 \ben
-\Obs^{\cl}_{\rm string}(U) = \clie^*\left(\cL(U) ; \; \Sym(\cM(U)^*[-1])\right)
+\Obs^{\cl}_{\rm string}(U) = \clie^*\left(\cL(U) \ltimes \cM(U)\right) = \clie^*\left(\cL(U) ; \; \Sym(\cM(U)^*[-1])\right),
 \een
-where $\cM(U)^*$ denotes the continuous dual of $\cM(U)$. 
-We consider the case that $U = D$ a disk centered at zero. 
-By the $\dbar$-Poincar\'{e} lemma there is a quasi-isomorphism of dg Lie algebras $\cT_{hol}(D) \hookrightarrow \cL(D)$ where $\cT_{\rm hol}(D)$ is the vector space of holomorphic vector fields on $D$. 
-Thus, the classical observables on $D$ are quasi-isomorphic to $\clie^*\left(\cT_{hol}(U) ; \; \Sym(\cM(U)^*[-1])\right)$.
-Now, consider the composition of Lie algebras
+where $\cM(U)^*$ denotes the continuous linear dual of~$\cM(U)$. 
+
+Consider now $U = D$, a disk centered at zero. 
+By the $\dbar$-Poincar\'{e} lemma 
+there is a quasi-isomorphism of dg Lie algebras $\cT_{hol}(D) \hookrightarrow \cL(D)$ where $\cT_{\rm hol}(D)$ is the vector space of holomorphic vector fields on $D$. 
+Thus, we have a quasi-isomorphism
+\[
+\clie^*\left(\cT_{hol}(D) ; \; \Sym(\cM(D)^*[-1])\right) \simeq \Obs^{\cl}_{\rm string}(D).
+\]
+This quasi-isomorphism clearly holds for any disks, so it suffices to check that the left-hand side is a quasi-isomorphism for an inclusion of disks.
+
+Consider the composition of Lie algebras
 \ben
 {\rm W}_1^{\rm poly} \hookrightarrow \cT_{hol} (D) \to {\rm W}_1
 \een
-where ${\rm W}_1^{\rm poly}$ are the holomorphic vector fields with polynomial coefficients, and ${\rm W}_1$ is the Lie algebra of formal vector fields. 
-Moreover, via the inclusion $D \hookrightarrow D'$ we have an induced commutative diagram
+where ${\rm W}_1^{\rm poly}$ are the holomorphic vector fields with {\em polynomial} coefficients, and ${\rm W}_1$ is the Lie algebra with {\em power series} coefficients (i.e., formal vector fields).
+We will compare Lie algebra cohomology using these different Lie algebras.
+
+Let $\cA(D)$ denote $\Sym(\cM(D)^*[-1])$.
+It determines a module over ${\rm W}_1^{\rm poly}$ by restriction,
+which we will abusively denote $\cA(D)$ as well.
+Likewise, if $j_0^\infty \cM$ denotes the infinite jet of the sheaf $\cM$ at the origin of the disk $D$,
+then it determines a natural module over ${\rm W}_1$.
+Then $\Sym(\cM(D)^*[-1])$ determines a ${\rm W}_1$-module that we will also abusively denote by~$\cA(D)$.
+ 
+The inclusion $D \hookrightarrow D'$ then yields a commutative diagram
 \ben
 \xymatrix{
-\clie^*\left({\rm W}_1^{\rm poly} ; {\rm res} \; \Sym(\cM(D)^*[-1])\right) \ar[d] & \ar[l] \clie^*\left(\cT_{\rm hol} (D) ; \Sym(\cM(D)^*[-1])\right) \ar[d] & \ar[l]  \clie^*\left({\rm W}_1 ; \Sym(j^\infty_0 \cM(D)^*[-1])\right) \ar[d] \\
-\clie^*\left({\rm W}_1^{\rm poly} ; {\rm res} \; \Sym(\cM(D')^*[-1])\right) & \ar[l] \clie^*\left(\cT_{\rm hol} (D') ; \Sym(\cM(D')^*[-1])\right) & \ar[l] \clie^*\left({\rm W}_1 ; \Sym(j^\infty_0 \cM(D')^*[-1])\right) .
+\clie^*\left({\rm W}_1^{\rm poly} ; \cA(D)\right) \ar[d] & \ar[l] \clie^*\left(\cT_{\rm hol} (D) ; \cA(D))\right) \ar[d] & \ar[l]  \clie^*\left({\rm W}_1 ; \cA(D)\right) \ar[d] \\
+\clie^*\left({\rm W}_1^{\rm poly} ; \cA(D')\right) & \ar[l] \clie^*\left(\cT_{\rm hol} (D') ; \cA(D')\right) & \ar[l] \clie^*\left({\rm W}_1 ; \cA(D')\right) .
 }
 \een
-Here, ${\rm res}$ denotes the restriction of the module along the inclusion ${\rm W}_{1}^{\rm poly} \hookrightarrow \cT_{\rm hol}(D)$ and $j_0^\infty$ denotes the infinite jet of the sheaf $\cM$ at zero.
-For instance, if $\Omega^1_{\rm hol}(D)$ is the $\cT_{\rm hol}(D)$-module of holomorphic one-forms then $j_0^\infty\Omega^1_{\rm hol}$ is the ${\rm W}_1$-module of formal one-forms (one-forms with coefficients in formal power series). 
+By Lemma \ref{lem: gf} (and an analogous result for polynomial vector fields),
+the complexes $\clie^*({\rm W}_1 ; \cM)$ and $\clie^*({\rm W}^{\rm poly}_1; \cM)$ are quasi-isomorphic to the subcomplex of conformal dimension zero element, in this case, to the constants. 
+As the conformal zero subcomplex does not depend on the size of the disk, we conclude that vertical arrows on the outside of the commutative diagram are quasi-isomorphisms. 
+It follows that the middle vertical arrow is as well, 
+thus showing that $\Obs^{\cl}_{\rm string}(D) \to \Obs^{\cl}_{\rm string}(D')$ is a quasi-isomorphism, as desired. 
 
-By Lemma \ref{lem: gf} (and an analogous result for polynomial vector fields) we know that $\clie^*({\rm W}_1 ; M)$ and $\clie^*({\rm W}^{\rm poly}_1; M)$ are quasi-isomorphic to the conformal dimension zero subcomplex, that is, the constants. 
-The conformal zero subcomplex does not depend on the size of the disk, so we conclude that vertical arrows on the outside of the diagram above are quasi-isomorphisms. 
-It follows that the middle vertical arrow is as well, thus showing that $\Obs^{\cl}_{\rm string}(D) \to \Obs^{\cl}_{\rm string}(D')$ is a quasi-isomorphism, as desired. 
-
-To finish the proof we consider the spectral sequence induced from the filtration of the module~$\Sym \;\cM(D)$ by symmetric polynomial degree. 
-The $E_1$ page of this spectral sequence is the classical observables above and it converges to the cohomology of the quantum observables. 
-The map of factorization algebras induced by the inclusion $D \hookrightarrow D'$ preserves this filtration, hence by the convergence of this spectral sequence we conclude that $\Obs^{\q}_{\rm string}(D) \to \Obs^\q_{\rm string}(D')$ is also a quasi-isomorphism. 
+To finish the proof, we need to prove the quasi-isomorphism for {\em quantum} observables.
+Consider the spectral sequence induced from the filtration of the module~$\Sym \;\cM(D)$ by symmetric polynomial degree. 
+The $E_1$ page of this spectral sequence is the classical observables above, 
+and it converges to the cohomology of the quantum observables. 
+As the map of factorization algebras induced by the inclusion $D \hookrightarrow D'$ preserves this filtration, 
+we obtain a map of spectral sequences,
+which is quasi-isomorphism on the first page.
+Hence, $\Obs^{\q}_{\rm string}(D) \to \Obs^\q_{\rm string}(D')$ is also a quasi-isomorphism. 
 \end{proof}
 
 \subsubsection{Gerstenhaber bracket via descent}
 
-There is another link to topological field theories as studied in \cite{WittenTop} that we recall here. 
+There is another link to topological field theories as studied in \cite{WittenTop}. 
 Consider the action of the differential operators $\frac{\d}{\d z}$ and $\frac{\d}{\d \zbar}$ on the Dolbeault complex $\Omega^{0,*}(\CC)$. 
-This extends to an action of the differential operators to the holomorphic bosonic string, and hence to the observables as well. 
-By Noether's theorem the symmetry of the theory determined by these operators define observables: these are simply the $zz$ and $\zbar \zbar$ components of the stress energy tensor $T_{zz}$, $T_{\zbar \zbar}$. 
-We will see that in the case of the string the stress energy tensors are cohomologically trivial. 
-This is the general definition of a topological theory given in \cite{WittenTop}.
+This action extends to an action on the fields of the holomorphic bosonic string, and hence to their classical observables as well. 
+By Noether's theorem the symmetry of the theory determined by these operators define observables: 
+these are simply the $zz$ and $\zbar \zbar$ components of the stress energy tensor $T_{zz}$, $T_{\zbar \zbar}$. 
+In the case of the bosonic string, we will now show that the stress energy tensor is cohomologically trivial. 
+This property is, in fact, the general definition of a topological theory given in \cite{WittenTop}.
 
-For each open $U \subset \CC$ we can have the operators
+\owen{I find this section a little incoherent in organization. It starts with a discussion of stress-energy tensors and then suddenly starts talking about Lian-Zuckerman. I think maybe we should rearrange things a little or break things into further subsections.}
+
+For each open $U \subset \CC$, the differential operators determine cochain maps
 \ben
-\frac{\d}{\d z} , \frac{\d}{\d \zbar} : \Obs^\q_{\rm string} (U) \to \Obs^\q_{\rm string}(U) .
+\frac{\d}{\d z} , \frac{\d}{\d \zbar} : \Obs^\q_{\rm string} (U) \to \Obs^\q_{\rm string}(U) 
 \een 
+in the obvious way, by how they act on the underlying Dolbeault forms.
 In fact, these operators define {\em derivations} of the factorization algebra, in the sense that they are compatible with the factorization product. 
+(See Definition 7.3.2 of \cite{CG1} for a discussion of this notion.)
 Note that these operators preserve the cohomological degree. 
 
-Consider the operator acting on Dolbeault forms
+There is also an operator 
 \ben
-\Bar{\eta} = \frac{\partial}{\partial (\d \zbar)} .
+\Bar{\eta} = \frac{\partial}{\partial (\d \zbar)} 
 \een 
-This extends to a derivation of degree $-1$ on the factorization algebra $\Obs^\q_{\rm string}$. 
-Moreover, we have the following relation
+acting on Dolbeault forms. 
+This operator $\Bar{\eta}$ extends to a derivation of degree $-1$ on the factorization algebra $\Obs^\q_{\rm string}$. 
+It satisfies the relation
 \be\label{d/dzbar}
 [\dbar + \hbar \Delta + \{I^\q, -\} , \Bar{\eta}] =  \frac{\d}{\d \zbar}
 \ee
-as endomorphisms of the factorization algebra. 
-Indeed, one immediately obvserves $[\dbar, \Bar{\eta}] =  \frac{\d}{\d \zbar}$. 
-Moreover, since $I^\q$ is a chiral deformation one has $\Bar{\eta} \cdot I^\q = 0$. 
-Finally, since the pairing defining the $(-1)$ shifted symplectic structure is holomorphic we see that $\Bar{\eta}$ also commutes with the BV Laplacian $[\Bar{\eta}, \Delta] = 0$. 
-This means that the operator $\frac{\d}{\d \zbar}$ acts cohomologically trivial on $\Obs^\q_{\rm string}$. 
+as endomorphisms of the factorization algebra, as we now explain.
+One observes first that $[\dbar, \Bar{\eta}] =  \frac{\d}{\d \zbar}$. 
+Moreover, since $I^\q$ is a chiral deformation, we also have $\Bar{\eta} \cdot I^\q = 0$. 
+Finally, since the pairing defining the $-1$-shifted symplectic structure is holomorphic, 
+we see that $\Bar{\eta}$ also commutes with the BV Laplacian $[\Bar{\eta}, \Delta] = 0$. 
+Hence we have shown the following, by relation~(\ref{d/dzbar}).
 
-Recall that the $b$-fields of the bosonic string are concentrated in degree $+1$ and $+2$. 
-A field in degree $+1$ is of the form $f(z,\zbar) \d z^{\tensor 2} \in \Omega^{1,0}(\Sigma, T_\Sigma^{1,0*})$. 
-Define the following linear observable on $\CC$,
+\begin{lem}
+The operator $\frac{\d}{\d \zbar}$ acts cohomologically trivial on $\Obs^\q_{\rm string}$. 
+\end{lem}
+
+This fact ensures that the stress-energy tensor vanishes in the $\zbar\zbar$ direction.
+We now turn to~$\d/\d z$.
+
+Recall that the $b$-fields of the bosonic string are concentrated in degree $1$ and $2$. 
+In degree $1$ a $b$-field has the form 
+\[
+f(z,\zbar) \d z^{\tensor 2} \in \Omega^{1,0}(\Sigma, T_\Sigma^{1,0*}).
+\] 
+For any open $U \subset \CC$ containing the origin, consider the linear observable
 \ben
-b_{-1} : f(z,\zbar) \d z^{\tensor 2} \mapsto f(0),
+b_{-1}(f(z,\zbar) \d z^{\tensor 2})= f(0),
 \een 
-which vanishes on all fields besides the degree $+1$ component of the $b$-fields.
-This observable is a closed element of degree $-1$ in $\Obs^\q_{\rm string}$. 
-Given any other observable $O \in \Obs^{\q}_{\rm string}$ we can define the observable $b_{-1} \cdot O$ using the symmetric product.
-Denote the derivation $\eta : O \mapsto b_{-1} \cdot O$
+which vanishes on all fields besides the degree $1$ component of the $b$-fields.
+This observable $b_{-1}$ is a closed element of degree $-1$ in $\Obs^\q_{\rm string}(U)$. 
+Given any other cochain-level observable $O \in \Obs^{\q}_{\rm string}(U)$,
+we define the observable $b_{-1} \cdot O$, since the underlying cochain complex has the structure of a symmetric algebra.
 
 \begin{lem} 
-The derivation $\eta$ is degree $-1$ and satisfies 
+The map 
+\[
+\eta: O \mapsto b_{-1} \cdot O
+\] 
+determines a degree $-1$ derivation of $\Obs^{\q}_{\rm string}(U)$. 
+It satisfies 
 \be\label{d/dz}
-[\dbar + \hbar \Delta + \{I^\q, -\}, \eta] = \frac{\d}{\d z}
+[\dbar + \hbar \Delta + \{I^\q, -\}, \eta] = \frac{\d}{\d z}.
 \ee
 \end{lem}
-\begin{proof} Immediately we see that both $\dbar$ and $\Delta$ commute with $\eta$. 
+
+\owen{This construction does not define a derivation of the factorization algebra, because it uses one distinguished point.}
+
+\begin{proof} 
+Both $\dbar$ and $\Delta$ commute with $\eta$, by direct computation. 
 Thus, it suffices to show that $[\{I^\q, -\}, \eta] = \frac{\d}{\d z}$. 
-Consider, for example the observable $O_{\gamma,0} : \gamma \mapsto \gamma (0)$ which we can write as the following residue $O_{\gamma,0} = \oint \frac{\gamma(z)}{z}$. 
-Then, we see that the only part of the interaction that contributes is $\int \<\beta, c \cdot \gamma\>$ and 
+Consider the observable 
+\[
+O_{\gamma,0}(\gamma) = \gamma (0),
+\] 
+which we can write as the residue $O_{\gamma,0} = \oint \frac{\gamma(z)}{z}$. 
+The only part of the interaction that contributes is $\int \<\beta, c \cdot \gamma\>$ and 
 \ben
 [\{\int \<\beta, c \cdot \gamma\> , -\}, \eta] O_{\gamma, 0} = \{\int \<\beta, \partial_z \gamma\>, O_{\gamma,0}\} = \oint \frac{\partial_z \gamma}{z} \d z = \frac{\d}{\d z} O_{\gamma,0} .
 \een
 The calculation is similar for a general linear observable. 
-To get the result for an arbitrary observable we use the fact that the bracket is a derivation. 
+To get the result for an arbitrary observable, we use the fact that the bracket is a derivation. 
 %\brian{I tried to come up with a more conceptual proof by interpreting $\{I,-\}$ as the Chevalley-Eilenberg differential for vector fields, but failed.}
 \end{proof}
 
@@ -299,7 +370,7 @@ The one form part $\Tilde{O}^1$ is equal to the linear combination
 \ben
 \d z \; (\eta \cdot O) + \d \zbar \; (\Bar{\eta}\cdot O) . 
 \een
-Similarly, the two form part is $\Tilde{O}^2 = \d z \d \zbar \eta \Bar{\eta} \cdot O$. 
+Similarly, the 2-form part is $\Tilde{O}^2 = \d z \d \zbar \eta \Bar{\eta} \cdot O$. 
 An easy calculation shows that if $O$ is closed for the quantum differential $\d^\q = \dbar + \hbar \Delta + \{I^\q, -\}$ then $\Tilde{O} = \Tilde{O}^{0} + \Tilde{O}^1 + \Tilde{O}^2$ satisfies $(\d_{dR} + \d^\q) \Tilde{O} = 0$. 
 This implies that given any closed observable $O$ and submanifold $C \subset \Sigma$ we can define the closed observable
 \ben
@@ -308,8 +379,8 @@ This implies that given any closed observable $O$ and submanifold $C \subset \Si
 If $O$ has cohomological degree $k$ and $C$ is of dimension $l$ then $\int_C \Tilde{O}$ has degree $k - l$. 
 
 \begin{rmk}
-A priori the factorization algebra is only well-defined on open sets $U \subset \Sigma$. 
-One can define the value on a closed submanifold $C \subset \Sigma$ by taking the direct limit of what the factorization algebra assigns to open submanifolds containing $C$. 
+{\it A priori} the factorization algebra is only well-defined on open sets $U \subset \Sigma$. 
+One can define the value on a closed submanifold $C \subset \Sigma$ by taking the direct limit over open submanifolds containing~$C$. 
 \end{rmk} 
 
 We are now able to define the bracket. 
@@ -334,7 +405,8 @@ We let $V$ be the sum of all eigenspaces for this action of the cohomology of th
 \begin{prop} The bracket $\{-,-\}_{\rm Ger}$ together with the product $\cdot$ determine the structure of a Gerstenaber algebra on the subspace $V \subset H^*(\Obs^\q(D))$. 
 This Gerstenhaber structure is isomorphic to the one found by Lian-Zuckerman \cite{LZ1}.
 \end{prop}
-\begin{proof}
+
+\begin{proof}[Proof of proposition]
 Let $V_{LZ}$ be the Gerstenhaber algebra considered by Lian-Zuckerman.
 As vector spaces, both $V$ and $W$ are isomorphic to the state space of the $\beta\gamma$ vertex algebra.
 
