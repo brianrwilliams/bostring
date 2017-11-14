@@ -27,13 +27,13 @@ The $\beta$ and $\gamma$ generators are in grading degree zero, the $c$ generato
 In the physics literature this is referred to as the {\em BRST} grading.
 
 Forgetting the cohomological (or BRST) grading, this vertex algebra is a conformal vertex algebra of central charge zero (by construction). 
-In particular, this means that the vertex algebra has a stress energy tensor. 
+In particular, this means that the vertex algebra has a stress-energy tensor. 
 Explicitly, it is of the form
 \ben
 T_{\rm string} (z) = \left(\sum_{i = 1}^{13} \beta_i (z) \partial_z \gamma_i (z) + \partial_z \beta_i(z) \gamma_i (z) \right) + \left(b(z) \partial_z c(z) + 2 \partial_z b(z) c(z) \right) . 
 \een
 Note that $T_{\rm string}$ is of cohomological degree zero. 
-The first parenthesis is interpreted as the stress energy tensor of the vertex algebra $\cV_{\beta \gamma}^{\tensor 13}$ and the second term is the stress energy tensor of $\cV_{bc}$. 
+The first parenthesis is interpreted as the stress-energy tensor of the vertex algebra $\cV_{\beta \gamma}^{\tensor 13}$ and the second term is the stress-energy tensor of $\cV_{bc}$. 
 
 We have not yet described the differential on the graded vertex algebra. 
 The BRST differential is defined to be the vertex algebra derivation obtained by taking the following residue
@@ -176,7 +176,7 @@ In this section we highlight a remarkable feature of the vertex algebra associat
 At first glance, the theory we have constructed is far from being topological.
 Indeed, the classical theory depends delicately on the complex structure of the two-dimensional source. 
 Nevertheless, the local observables of the bosonic string behave like the observables of a {\em topological} field theory (TFT). 
-It is well-known that the observables of a 2d TFT have the structure of a {\em Gerstenhaber algebra} \cite{Getzler}.
+In particular, as noted perhaps first by \cite{Getzler}, the observables of a 2-dimensional TFT have the structure of a {\em Gerstenhaber algebra}.
 In this section we provide two equivalent methods for extracting this algebra.
 The first is intuitive from the point of view of factorization algebras, but has the disadvantage of not giving a concrete description of the algebra. 
 The second approach gives an explicit formula for bracket and is based on the formalism of ``descent" for local operators. 
@@ -189,7 +189,7 @@ In this section we show how to produce, from the point of view of factorization 
 Recall that a Gerstenhaber algebra is equivalent to an algebra over the homology of the little 2-disk operad.
 Hence, our approach is to see why the factorization algebra naturally exhibits the structure of a algebra of little 2-disks.
 Here we use an important result of Lurie \cite{Lurie}: 
-a {\em locally constant} factorization algebra on $\RR^n$ is equivalent to an algebra over the little $n$-disks operad, or an $E_n$-algebra. 
+a {\em locally constant} factorization algebra on $\RR^n$ is equivalent to an algebra over the little $n$-disks operad, i.e., an $E_n$-algebra. 
 
 \begin{prop} 
 The factorization algebra $\Obs^\q_{\rm string}$ is locally constant, 
@@ -199,10 +199,12 @@ and hence it determines an $E_2$ algebra.
 In particular, the cohomology $H^*(\Obs^\q_{\rm string})$ is an algebra over the cohomology of the $E_2$ operad and hence a Gerstenhaber algebra.
 
 \begin{rmk}
-The factorization algebra of a topological field theory (in the physicist's sense) is locally constant.
-Hence a TFT in $n$ real dimensions produces an $E_n$-algebra, by Lurie's result. 
+For all examples of topological field theories arising from action functionals with which we are familiar (e.g., Chern-Simones theories),
+the factorization algebra is locally constant.
+Hence such a TFT in $n$ real dimensions produces an $E_n$-algebra, by Lurie's result. 
 In this sense, holomorphic bosonic string theory is a 2-dimensional topological field theory. 
-Indeed, Scheimbauer \cite{Scheim} verifies that we recover a fully-extended framed 2-dimensional TFT in the functorial sense, albeit with values in an unusual target $(\infty,2)$-category.
+Moreover, every $E_n$ algebra determines a fully-extended framed n-dimensional TFT in the functorial sense, albeit with values in an unusual target $(\infty,n)$-category, by work of Scheimbauer \cite{Scheim},
+so that the holomorphic bosonic string does determine a functorial 2-dimensional TFT.
 \end{rmk}
 
 \begin{proof} 
@@ -284,28 +286,31 @@ which is quasi-isomorphism on the first page.
 Hence, $\Obs^{\q}_{\rm string}(D) \to \Obs^\q_{\rm string}(D')$ is also a quasi-isomorphism. 
 \end{proof}
 
-\subsubsection{The stress energy tensor}
+\subsubsection{The stress-energy tensor}
 
 We proceed to give an explicit construction of the $E_2$ algebra. 
-Our method is based on the perspective of TFT in \cite{WittenTop} that the stress energy tensor is (homotopy) trivial. 
+Our method is based on Witten's characterization of TFT in \cite{WittenTop}: 
+a TFT is a theory whose the stress-energy tensor is (homotopy) trivial. 
 
-Consider the action of the differential operators $\frac{\d}{\d z}$ and $\frac{\d}{\d \zbar}$ on the Dolbeault complex $\Omega^{0,*}(\CC)$. 
+Hence we want to show that the translation symmetries of the holomorphic bosonic string act trivially on the cohomology of the observables.
+As a first step, consider the action of the differential operators $\frac{\d}{\d z}$ and $\frac{\d}{\d \zbar}$ on the Dolbeault complex $\Omega^{0,*}(\CC)$. 
 This action extends to an action on the fields of the holomorphic bosonic string, and hence to their classical observables as well. 
-By Noether's theorem the symmetry of the theory determined by these operators define observables: 
-these are simply the $zz$ and $\zbar \zbar$ components of the stress energy tensor $T_{zz}$, $T_{\zbar \zbar}$. 
-In the case of the bosonic string, we will now show that the stress energy tensor is cohomologically trivial. 
-This property is, in fact, the general definition of a topological theory given in \cite{WittenTop}.
+By Noether's theorem any symmetry of a theory determines observables: 
+these are simply the $zz$ and $\zbar \zbar$ components of the stress-energy tensor $T_{zz}$, $T_{\zbar \zbar}$. 
+In the case of the bosonic string, we will now show that the stress-energy tensor is cohomologically trivial on the quantum observables. 
+%This property is, in fact, the general definition of a topological theory given in \cite{WittenTop}.
 
-For each open $U \subset \CC$, the differential operators determine cochain maps
+For each open $U \subset \CC$, the differential operators lift to cochain maps on the quantum level
 \ben
 \frac{\d}{\d z} , \frac{\d}{\d \zbar} : \Obs^\q_{\rm string} (U) \to \Obs^\q_{\rm string}(U) 
 \een 
-in the obvious way, by how they act on the underlying Dolbeault forms.
-In fact, these operators define {\em derivations} of the factorization algebra, in the sense that they are compatible with the factorization product. 
+because the BV Laplacian is translation-invariant.
+These cochain maps intertwine with the structure maps of the factorization algebra 
+in the sense that they define {\em derivations} of the factorization algebra. 
 (See Definition 7.3.2 of \cite{CG1} for a discussion of this notion.)
 Note that these operators preserve the cohomological degree. 
 
-There is also an operator 
+Consider now the operator 
 \ben
 \Bar{\eta} = \frac{\partial}{\partial (\d \zbar)} 
 \een 
@@ -332,14 +337,16 @@ We now turn to~$\d/\d z$.
 We can view the vector field $\frac{\d}{\d z}$ as a constant $c$-field. 
 Consider the linear local functional of cohomological degree $-2$:
 \ben
-O_{b} = \int \<b, \frac{\d}{\d z}\> .
+O_{\frac{\d}{\d z}}(\beta,\gamma,b,c) = \int \<b, \frac{\d}{\d z}\>,
 \een
-Note that for the integral to be nonzero, we must have $b \in \Omega^{1,1}(\Sigma , T_\Sigma^{1,0*})$. 
-Using the BV bracket we obtain a derivation of the factorization algebra 
+It only depends on the $b$-field.
+Note that for this integral to be nonzero, 
+we must have $b \in \Omega^{1,1}(\Sigma , T_\Sigma^{1,0*})$. 
+Using the BV bracket, we obtain a derivation of the factorization algebra 
 \ben
-\eta = \{O_b, -\}
+\eta = \{O_{\frac{\d}{\d z}}, -\}
 \een
-of cohomological degree $-1$. 
+of cohomological degree~$-1$. 
 
 %Recall that the $b$-fields of the bosonic string are concentrated in degree $1$ and $2$. 
 %In degree $1$ a $b$-field has the form 
@@ -363,13 +370,18 @@ The derivation $\eta$ satisfies
 \end{lem}
 \begin{proof}
 The derivation $\eta$ commutes with both $\dbar$ and $\Delta$. 
-Thus, the left-hand side is $[\{I, -\}, \eta] = \{ \{I, O_b\}, -\}$.
-The only part of the interaction that contributes is $\int \<\beta, c \cdot \gamma\> + \int \<b, [c,c]\>$ and one has
+Thus, the left-hand side is 
+\[
+[\{I, -\}, \eta] = \{ \{I, O_{\frac{\d}{\d z}}\}, -\}.
+\]
+The only part of the interaction that contributes is $\int \<\beta, c \cdot \gamma\> + \int \<b, [c,c]\>$, and one computes that
 \ben
-\{I, O_b\} = \int \<\beta, \partial_z \gamma\> + \int\<b, [\partial_z, c]\> .
+\{I, O_{\frac{\d}{\d z}}\} = \int \<\beta, \partial_z \gamma\> + \int\<b, [\partial_z, c]\> .
 \een
 Bracketing with this local functional is precisely $\frac{\d}{\d z}$ as desired.
 \end{proof}
+
+Together these two lemmas ensure that translations act trivially on the cohomological observables.
 
 %\begin{proof} 
 %Both $\dbar$ and $\Delta$ commute with $\eta$, by direct computation. 
@@ -394,31 +406,34 @@ A Gerstenhaber algebra is a graded commutative algebra with a Lie bracket of coh
 that is a graded biderivation for the product. 
 In this section we show how to explicitly write down the product and bracket on the observables and compare our answer to the work of Lian-Zuckerman \cite{LZ1}.
 
-We have just seen that the derivation $\frac{\d}{\d z}$ acts trivially up to homotopy on the factorization algebra.
-Given any observable $O$, the relations (\ref{d/dzbar}) and (\ref{d/dz}) allow us to define the following differential form valued observable $\Tilde{O}$ as follows. 
-The zero form part $\Tilde{O}^{0}$ is just the observable $O$. 
-The one form part $\Tilde{O}^1$ is equal to the linear combination
+We have just seen that the derivations $\frac{\d}{\d z}$ and $\frac{\d}{\d \Bar{z}}$ act trivially, up to homotopy, on the factorization algebra.
+Given any observable $O$, the relations (\ref{d/dzbar}) and (\ref{d/dz}) allow us to define a differential form-valued observable $\Tilde{O}$ as follows. 
+The 0-form part $\Tilde{O}^{0}$ is just the observable $O$. 
+The 1-form part $\Tilde{O}^1$ is equal to the linear combination
 \ben
 \d z \; (\eta \cdot O) + \d \zbar \; (\Bar{\eta}\cdot O) . 
 \een
 Similarly, the 2-form part is $\Tilde{O}^2 = \d z \d \zbar \eta \Bar{\eta} \cdot O$. 
 An easy calculation shows that if $O$ is closed for the quantum differential $\d^\q = \dbar + \hbar \Delta + \{I^\q, -\}$ then $\Tilde{O} = \Tilde{O}^{0} + \Tilde{O}^1 + \Tilde{O}^2$ satisfies $(\d_{dR} + \d^\q) \Tilde{O} = 0$. 
-This implies that given any closed observable $O$ and submanifold $C \subset \Sigma$ we can define the closed observable
+This implies that given any closed observable $O$ and submanifold $C \subset \Sigma$, 
+we can define a cocycle in the observables via
 \ben
 \int_C \Tilde{O} \in \Obs^\q(C) .
 \een
-If $O$ has cohomological degree $k$ and $C$ is of dimension $l$ then $\int_C \Tilde{O}$ has degree $k - l$. 
+If $O$ has cohomological degree $k$ and $C$ is of dimension $l$, 
+then $\int_C \Tilde{O}$ has degree $k - l$. 
 
 \begin{rmk}
 {\it A priori} the factorization algebra is only well-defined on open sets $U \subset \Sigma$. 
-One can define the value on a closed submanifold $C \subset \Sigma$ by taking the direct limit over open submanifolds containing~$C$. 
+One can define the value on a closed submanifold $C \subset \Sigma$ by taking the (homotopy)  limit over open submanifolds containing~$C$. 
 \end{rmk} 
 
 We are now able to define the bracket. 
-Suppose $O,O'$ are closed observables on a disk $D,D'$.
+Suppose $O,O'$ are closed observables on disks $D,D'$, respectively.
 For simplicity, we assume that $D \subsetneq D'$. 
 Then, if $C = \partial D'$ we can define $\int_C \Tilde{O}'$ as above. 
-Finally, for $D''$ another disk containing $D$ and $C$ consider the factorization product $\star : \Obs^\q(D) \tensor \Obs^\q (C) \to \Obs^\q(D'')$ and define
+Finally, for $D''$ another disk containing $D$ and $C$, 
+consider the factorization product $\star : \Obs^\q(D) \tensor \Obs^\q (C) \to \Obs^\q(D'')$ and define
 \ben
 \{O,O'\}_{\rm Ger} := O \star \int_C \Tilde{O}' \in \Obs^\q (D'') .
 \een 
@@ -433,19 +448,21 @@ In this context, this is simply given by the factorization product of two disjoi
 The bracket and product restrict to a subspace of $\Obs^\q(D)$ consisting of all eigenvalues for the action of rotations $S^1 \subset \CC$. 
 We let $V$ be the sum of all eigenspaces for this action of the cohomology of the observables on a disk.
 
-\begin{prop} The bracket $\{-,-\}_{\rm Ger}$ together with the product $\cdot$ determine the structure of a Gerstenaber algebra on the subspace $V \subset H^*(\Obs^\q(D))$. 
+\begin{prop} 
+The bracket $\{-,-\}_{\rm Ger}$ together with the product $\cdot$ determine the structure of a Gerstenhaber algebra on the subspace $V \subset H^*(\Obs^\q(D))$. 
 This Gerstenhaber structure is isomorphic to the one found by Lian-Zuckerman \cite{LZ1}.
 \end{prop}
 
-\begin{proof}[Proof of proposition]
+\begin{proof}
 Let $V_{LZ}$ be the Gerstenhaber algebra considered by Lian-Zuckerman.
 As vector spaces, both $V$ and $W$ are isomorphic to the state space of the $\beta\gamma$ vertex algebra.
 
 According to the construction of a vertex algebra from a holomorphic factorization algebra in Chapter 6 of \cite{CG1}, the factorization product of two disks is what defines the operator product map $Y(-,z) : V \tensor V \to V ((z))$ of the vertex algebra.
-It's this operator product that Lian-Zuckerman use to define the commutative product.
+It is this operator product that Lian-Zuckerman use to define the commutative product.
 Thus, as commutative algebras, the algebras coincide. 
 
-To see that the bracket coincides we note that we our derivation $\eta$ that trivializes $\d / \d z$ agrees with Lian-Zuckerman's trivialization.
+To see that the brackets coincide, 
+we note that the derivation $\eta$ that trivializes $\d / \d z$ agrees with Lian-Zuckerman's trivialization.
 \end{proof}
 %\brian{Should we prove this or just argue that the bracket and product above agree with what Lian-Zuckerman get.}
 
