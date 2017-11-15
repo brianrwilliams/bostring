@@ -436,7 +436,6 @@ The trivializations $\eta$ and $\Bar{\eta}$ equip $\sO{\rm bs}$ with a flat conn
 Thus, the vector bundle $\sO{\rm bs}$ is a local system on $\CC$.
 \end{cor}
 
-\owen{We can remove the following paragraph if you think it's confusing.}
 This local system gives us yet another method for producing observables of the theory.
 Given a compactly-supported de Rham form with values in $\sO{\rm bs}$
 \[
@@ -445,7 +444,6 @@ Given a compactly-supported de Rham form with values in $\sO{\rm bs}$
 it can be viewed as determining an element of $\Obs^\q_{\rm string}(U)$ by integration over $U$.
 At the classical level this identification is particularly clear:
 we simply evaluate $\widetilde{O}_{z\zbar} \d z\, \d\zbar$ on a field, producing a top form, and then integrating.
-\owen{End interlude}
 
 We now explain the method of ``descent" for local observables using this framework. 
 Expositions of this construction as related to two-dimensional gravity can be found in \cite{WittenDescent,Dijk}.
@@ -473,6 +471,7 @@ then
 \]
 satisfies $(\d_{dR} + \d^\q) \Tilde{O} = 0$. 
 \owen{This is probably too pedantic to worry about, but $\d^\q$ {\em a priori} requires compact support \dots}
+\brian{I don't think that creates a problem here. The observables are elements in $\Omega^* \tensor \sO{\rm bs}_0$ and the $\d^\q$ part acts on the second factor.}
 This relationship implies that for any $\d^\q$-closed observable $O$ and for any closed submanifold $C \subset \Sigma$, 
 we obtain a cocycle in the observables via
 \ben
@@ -494,7 +493,7 @@ there is a natural quasi-isomorphism
 \sL \overset{\simeq}{\hookrightarrow} \Omega^*(\CC, \sL)
 \]
 identifying a section of the system with a horizontal section in  its de Rham complex.
-\owen{This is a little sloppy because we're conflating the sheaf with the vector bundle.}
+%\owen{This is a little sloppy because we're conflating the sheaf with the vector bundle.}
 In our case, this ``flat section" map 
 \ben
 \Obs^\q_{\rm string}(\CC) \to \Omega^*(\CC , \sO{\rm bs})
@@ -534,9 +533,8 @@ as we can just move one disk around the other.
 
 To construct the shifted Poisson bracket, we use descent.
 Suppose $O,O'$ are closed observables on disks $D,D'$, respectively.
-For simplicity, we assume that $D \subsetneq D'$. 
-\owen{Do you mean they can overlap but not be a proper subset? Or do you want them disjoint? Or their closures disjoint?}
-Then, if $C = \partial D'$, we can define $\int_C \Tilde{O}'$ as above. 
+For simplicity, we assume that the closure of $D$ is strictly contained in $D'$. 
+If $C = \partial D'$, we can define $\int_C \Tilde{O}'$ as above. 
 Finally, for $D''$ another disk containing $D$ and $C$, 
 consider the factorization product $\star : \Obs^\q(D) \tensor \Obs^\q (C) \to \Obs^\q(D'')$ and define
 \ben
@@ -559,7 +557,7 @@ manifestly playing nicely with this eigenspace decomposition.
 Hence they descend to the cohomology $V$ of~$\cV_{\rm string}$.
 
 Let $V_{LZ}$ be the Gerstenhaber algebra considered by Lian-Zuckerman.
-As vector spaces, both $V$ and $W$ \owen{Is this $V_{LZ}$?} are isomorphic to the state space of the $\beta\gamma$ vertex algebra.
+As vector spaces, both $V$ and $V_{LZ}$ are isomorphic to the state space of the $\beta\gamma$ vertex algebra.
 
 According to the construction of a vertex algebra from a holomorphic factorization algebra in Chapter 6 of \cite{CG1}, the factorization product of two disks is what defines the operator product map $Y(-,z) : V \tensor V \to V ((z))$ of the vertex algebra.
 It is this operator product that Lian-Zuckerman use to define the commutative product.
