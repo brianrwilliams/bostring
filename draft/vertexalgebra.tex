@@ -142,7 +142,8 @@ and we have seen that the renormalized action satisfies the QME.
 Hence we obtain the following.
 
 \begin{prop} \label{prop: fact is vert}
-Let $\Obs^\q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. And let $\Vert(\Obs^q_{\rm string})$ be the dg vertex algebra (defined over $\CC[\hbar]$) obtained via Li's construction. 
+Let $\Obs^\q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. 
+Let $\Vert(\Obs^q_{\rm string})$ be the dg vertex algebra (defined over $\CC[\hbar]$) obtained via Li's construction. 
 There is an isomorphism of vertex algebras $\cV_{\rm string} \cong \Vert(\Obs^q_{\rm string})_{\hbar = 2 \pi i}$.
 Moreover, this vertex algebra is isomorphic to the chiral sector of the bosonic string as in Section~\ref{subsec: string vert}.
 \end{prop}
@@ -541,26 +542,30 @@ consider the factorization product $\star : \Obs^\q(D) \tensor \Obs^\q (C) \to \
 \ben
 \{O,O'\}_{\rm Ger} := O \star \int_C \Tilde{O}' \in \Obs^\q (D'') .
 \een 
-We note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$ then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$. 
+We note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$. 
 
-The bracket and product restrict to a subspace of $\Obs^\q(D)$ consisting of all eigenvalues for the action of rotations $S^1 \subset \CC$. 
-We let $V$ be the sum of all eigenspaces for this action of the cohomology of the observables on a disk.
+Let $V$ denote the cohomology $H^* \cV_{\rm string}$ of the dg vertex algebra $\cV_{\rm string}$.
 
 \begin{prop} 
-The bracket $\{-,-\}_{\rm Ger}$ together with the product $\cdot$ determine the structure of a Gerstenhaber algebra on the subspace $V \subset H^*(\Obs^\q(D))$. 
-This Gerstenhaber structure is isomorphic to the one found by Lian-Zuckerman \cite{LZ1}.
+The bracket $\{-,-\}_{\rm Ger}$ together with the product $\cdot$ determine the structure of a Gerstenhaber algebra on $V$. 
+This Gerstenhaber structure is isomorphic to the one found by Lian-Zuckerman~\cite{LZ1}.
 \end{prop}
 
 \begin{proof}
+The vertex algebra construction of \cite{CG1} extracts $\cV_{\rm string}$ as the direct sum of the weight spaces of $\Obs^\q_{\rm string}(D)$, 
+where $D$ is a disk centered at the origin and we take weight space for the rotation action of $S^1$ on $\CC$.
+The bracket and product restrict to this subspace of $\Obs^\q(D)$,
+manifestly playing nicely with this eigenspace decomposition. 
+Hence they descend to the cohomology $V$ of~$\cV_{\rm string}$.
+
 Let $V_{LZ}$ be the Gerstenhaber algebra considered by Lian-Zuckerman.
-As vector spaces, both $V$ and $W$ are isomorphic to the state space of the $\beta\gamma$ vertex algebra.
+As vector spaces, both $V$ and $W$ \owen{Is this $V_{LZ}$?} are isomorphic to the state space of the $\beta\gamma$ vertex algebra.
 
 According to the construction of a vertex algebra from a holomorphic factorization algebra in Chapter 6 of \cite{CG1}, the factorization product of two disks is what defines the operator product map $Y(-,z) : V \tensor V \to V ((z))$ of the vertex algebra.
 It is this operator product that Lian-Zuckerman use to define the commutative product.
 Thus, as commutative algebras, the algebras coincide. 
 
-To see that the brackets coincide, 
-we note that the derivation $\eta$ that trivializes $\d / \d z$ agrees with Lian-Zuckerman's trivialization.
+The brackets coincide by noting that the derivation $\eta$ trivializing $\d / \d z$ agrees with Lian-Zuckerman's trivialization.
 \end{proof}
 %\brian{Should we prove this or just argue that the bracket and product above agree with what Lian-Zuckerman get.}
 
