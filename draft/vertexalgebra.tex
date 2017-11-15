@@ -177,7 +177,7 @@ In this section we highlight a remarkable feature of the vertex algebra associat
 At first glance, the theory we have constructed is far from being topological.
 Indeed, the classical theory depends delicately on the complex structure of the two-dimensional source. 
 Nevertheless, the local observables of the bosonic string behave like the observables of a {\em topological} field theory (TFT). 
-In particular, as noted perhaps first by \cite{Getzler}, the observables of a 2-dimensional TFT have the structure of a {\em Gerstenhaber algebra}.
+In particular, it was discovered that the observables of a 2-dimensional TFT have the structure of a {\em Gerstenhaber algebra} \cite{Getzler,LZ1}.
 In this section we provide two equivalent methods for extracting this algebra.
 The first is intuitive from the point of view of factorization algebras, but has the disadvantage of not giving a concrete description of the algebra. 
 The second approach gives an explicit formula for bracket and is based on the formalism of ``descent" for local operators. 
@@ -407,7 +407,7 @@ Alternatively, we can consider the dg vector bundle whose fiber over every point
 Via the structure maps of $\Obs^\q_{\rm string}$, 
 these two dg vector bundles are quasi-isomorphic.
 
-This quasi-isomorphism also explains why we have a dg local system:
+This quasi-isomorphism also explains in what sense we have a dg local system:
 for any two points, there is a zigzag of quasi-isomorphisms between their fibers,
 passing through the global observables.
 In other words, we know how to do ``transport up to quasi-isomorphism.''
@@ -427,22 +427,23 @@ In this way, we can identify smooth sections of $\sO{\rm bs}$ with elements of
 \[
 C^\infty(\CC) \otimes \sO{\rm bs}_0.
 \]
-But we also know how $\d/\d z$ and $\d/\d\zbar$ act, and that they act homotopically trivially.
+But we also know how $\d/\d z$ and $\d/\d\zbar$ act.
 In short, we have the following.
 
+%We seemed to believe the trivializations also played a role but can't quite pin down a clear statement about what role they play
+
 \begin{cor} 
-The trivializations $\eta$ and $\Bar{\eta}$ equip $\sO{\rm bs}$ with a flat connection. 
-Thus, the vector bundle $\sO{\rm bs}$ is a local system on $\CC$.
+The vector bundle $\sO{\rm bs}$ has a natural flat connection on~$\CC$.
 \end{cor}
 
-This local system gives us yet another method for producing observables of the theory.
-Given a compactly-supported de Rham form with values in $\sO{\rm bs}$
-\[
-\widetilde{O} = \widetilde{O}_0 + \widetilde{O}_z \d z + \widetilde{O}_{\zbar} \d\zbar + \widetilde{O}_{z\zbar} \d z\, \d\zbar \in \Omega^*_c(U,\sO{\rm bs}),
-\]
-it can be viewed as determining an element of $\Obs^\q_{\rm string}(U)$ by integration over $U$.
-At the classical level this identification is particularly clear:
-we simply evaluate $\widetilde{O}_{z\zbar} \d z\, \d\zbar$ on a field, producing a top form, and then integrating.
+%This local system gives us yet another method for producing observables of the theory.
+%Given a compactly-supported de Rham form with values in $\sO{\rm bs}$
+%\[
+%\widetilde{O} = \widetilde{O}_0 + \widetilde{O}_z \d z + \widetilde{O}_{\zbar} \d\zbar + \widetilde{O}_{z\zbar} \d z\, \d\zbar \in \Omega^*_c(U,\sO{\rm bs}),
+%\]
+%it can be viewed as determining an element of $\Obs^\q_{\rm string}(U)$ by integration over $U$.
+%At the classical level this identification is particularly clear:
+%we simply evaluate $\widetilde{O}_{z\zbar} \d z\, \d\zbar$ on a field, producing a top form, and then integrating.
 
 We now explain the method of ``descent" for local observables using this framework. 
 Expositions of this construction as related to two-dimensional gravity can be found in \cite{WittenDescent,Dijk}.
@@ -459,7 +460,8 @@ The 1-form part $\Tilde{O}^1$ is
 \d z \; (\eta O) + \d \zbar \; (\Bar{\eta} O),
 \een
 where, for instance, $\eta O$ denotes the image of $O$ under the map $\eta$.
-Similarly, the 2-form part is 
+(This form is constant over $\CC$ as well.)
+The 2-form part is 
 \[
 \Tilde{O}^2 = \d z \,\d \zbar\, \eta \Bar{\eta} O.
 \] 
@@ -483,21 +485,14 @@ then $\int_C \Tilde{O}$ has degree $k - l$.
 %One can define the value on a closed submanifold $C \subset \Sigma$ by taking the (homotopy)  limit over open submanifolds containing~$C$. 
 %\end{rmk} 
 
-This construction can be understood in a different way. 
-Given any local system $\sL$ on $\CC$, 
-there is a natural quasi-isomorphism
-\[
-\sL \overset{\simeq}{\hookrightarrow} \Omega^*(\CC, \sL)
-\]
-identifying a section of the system with a horizontal section in  its de Rham complex.
-%\owen{This is a little sloppy because we're conflating the sheaf with the vector bundle.}
-In our case, this ``flat section" map 
+This construction can be understood in a different way:
+we have described a ``horizontal/flat section" map 
 \ben
-\Obs^\q_{\rm string}(\CC) \to \Omega^*(\CC , \sO{\rm bs})
+\Obs^\q_{\rm string}(\CC) \simeq \sO{\rm bs}^\q_0 \to \Omega^*(\CC , \sO{\rm bs})
 \een
-sends a closed observable $O$ to the $(\d_{dR} + \d^\q)$-closed differential form-valued observable~$\Tilde{\sO}$. 
+that sends a closed observable $O$ to the $(\d_{dR} + \d^\q)$-closed differential form-valued observable~$\Tilde{\sO}$. 
 
-We now put this construction to use.
+We now put this construction to use in understanding the Gerstenhaber structure concretely.
 
 %\begin{proof} 
 %Both $\dbar$ and $\Delta$ commute with $\eta$, by direct computation. 
