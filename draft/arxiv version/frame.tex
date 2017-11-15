@@ -1,0 +1,40 @@
+\documentclass[10pt]{amsart}
+
+\usepackage{macros,slashed}
+
+\linespread{1.25}
+
+\usepackage{parskip}
+\setlength{\parindent}{18pt}
+\setlength{\parindent}{0cm}
+
+\title{The holomorphic bosonic string}
+\author{Owen Gwilliam and Brian Williams}
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+\def\owen{\textcolor{red}{OG: }\textcolor{red}}
+
+\renewcommand{\contentsname}{}
+
+\begin{document}
+\maketitle
+
+%\section*{Contents}
+\setcounter{tocdepth}{1}
+
+\tableofcontents
+
+\input{bvoverview}
+\input{classicaltheory}
+\input{moduli}
+\input{quantization}
+\input{vertexalgebra}
+\input{conformalblock}
+\input{curvedtargets}
+\input{calc}
+
+\bibliographystyle{amsalpha}
+
+\bibliography{string}
+
+\end{document}
