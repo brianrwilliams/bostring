@@ -18,7 +18,7 @@ hence providing a bridge from the Feynman diagrammatic anomaly computations to t
 \subsection{The free case}
 
 Before jumping to the holomorphic string, 
-we will work out the global observables in the simpler case of the $bc\beta\gamma$ system,
+we will work out the global observables in the simpler case of the free $bc\beta\gamma$ system,
 introduced in Remark \ref{rmk:bcbg}. 
 The global {\it classical}\/ observables on a Riemann surface $\Sigma$ are given by the symmetric algebra on the continuous linear dual to the fields,
 \[
@@ -34,12 +34,12 @@ Although this expression might look complicated,
 it can be readily unpacked in the setting of algebraic geometry, 
 particularly when $\Sigma$ is closed.
 In that case, this graded commutative algebra is a symmetric algebra on a finite-dimensional graded vector space,
-which encodes the derived tangent space of the moduli of Riemann surfaces at $\Sigma$ and of holomorphic functions to~$V$.
+which encodes the derived tangent space of the moduli of Riemann surfaces at $\Sigma$ and of holomorphic functions to~$V$. \owen{Eugene: At 0? (origin?)}
 
 As this theory is free, it admits a canonical BV quantization.
-Denote by $\Obs^{\q}_{free}$ be the corresponding factorization algebra.
+Denote by $\Obs^{\q}_{free}$ the corresponding factorization algebra.
 One can compute its global sections on $\Sigma$ by using a spectral sequence whose first page is the global classical observables.
-The result of Theorem 8.1.4.1 of \cite{CG1} states that the cohomology of this free theory along a closed Riemann surface with values in {\em any} line bundle is one-dimensional concentrated in a certain cohomological degree. 
+The result of Theorem 8.1.4.1 of \cite{CG1} states that the cohomology of this free theory along a closed Riemann surface with values in {\em any} line bundle is one-dimensional and concentrated in a certain cohomological degree. 
 In our case, it the calculation implies that we get a shifted determinant of the cohomology of the fields:
 \ben
 H^*\left(\Obs^\q_{free}(\Sigma)\right) \cong \det \left(H^*(\Sigma ; \sO_\Sigma) \right)^{\tensor \dim(V)} \tensor \det \left(H^*(\Sigma ; T_\Sigma^{1,0})\right)^{-1} [d(\Sigma)] 
@@ -48,6 +48,8 @@ where
 \ben
 d(\Sigma) = \dim (V)  \left(\dim H^0(\Sigma ; \sO_\Sigma) + \dim H^1(\Sigma ; \sO_\Sigma)\right) + \dim(H^0(\Sigma ; T_\Sigma^{1,0})) - \dim(H^1(\Sigma ; T_\Sigma^{1,0})).
 \een
+
+\owen{Eugene points out that in principle we could have jumping phenomena, so we should make sure we say things clearly.}
 
 \begin{rmk}
 The shift $d(\Sigma)$ here likely looks funny.
@@ -74,34 +76,40 @@ Hence it implies that the global observables of the free $bc\beta\gamma$ system 
 We can work out the first Chern class of this determinant line bundle using the Grothendieck-Riemann-Roch theorem as follows.
 Consider the universal Riemann surface $\pi \colon C \to \cM$ over the moduli space, 
 and consider the bundles $\sO_C \otimes V$ and $\sT_\pi = \sT_{C/\cM}$,
-which one can view the universal $\gamma$ fields and $c$ fields, respectively.
+which one can view as the universal $\gamma$ fields and $c$ fields, respectively.
 The first Chern class of the derived pushforward $R\pi_*(\sO_C \otimes V)$ is given by the first Chern class of $\det(H^*(\sO_C \otimes V)) \cong \det(\sO_C)^{\otimes \dim V}$, 
 since the first Chern class of a vector bundle is the first Chern class of its determinant bundle.
-The Grothendieck-Riemann-Roch theorem states that for a complex of coherent sheafs $\cF = \cF^*$ on $C$, 
+The Grothendieck-Riemann-Roch theorem states that for a cochain complex of coherent sheaves $\cF$ on $C$, 
 the Chern character $\ch(R\pi_* \cF)$ of its derived pushforward $R\pi_* \cF$  is given by 
 \def\Td{{\rm Td}}
 \begin{align*}
-\pi_*( \ch(\cF) \Td(T_\pi)) &= \pi_*\left( \left(\sum_{i} (-1)^i \ch (\cF^i) \right) \Td(T_\pi)\right) \\
+\pi_*( \ch(\cF) &\Td(T_\pi)) = \pi_*\left( \left(\sum_{i} (-1)^i \ch (\cF^i) \right) \Td(T_\pi)\right) \\
 &= \pi_*\left( \left(\sum_i (-1)^i ({\rm rk}(\cF^i) + c_1(\cF^i) + \frac{1}{2}(c_1(\cF^i)^2) + \cdots)\right) (1 +\frac{1}{2}c_1(T_\pi) + \frac{1}{12} c_1(T_\pi)^2)\right)
 \end{align*}
 where $T_\pi$ denotes the relative tangent bundle along $\pi$,
 which is here just the tangent line bundle of a Riemann surface.
+\owen{Eugene found this a bit quick.}
 The first Chern class is the component of cohomological degree 2.
 For instance, when $\cF = \cF^0$ is concentrated in degree zero, the above simplifies to:
 \ben
 \frac{1}{12} {\rm rk}(\cF) c_1(T_\pi)^2 + \frac{1}{2} c_1(\cF) c_1(T_\pi) + \frac{1}{2} c_1(\cF)^2 .
 \een  
-When $\cF = T^{\tensor n}_{\pi} [1]$, the expression for the first Chern class is $-\frac{1 + 6n + 6n^2}{12} c_1(T_\pi)^2$.
-When $\cF = \cO \tensor V$ we simply get $\dim(V)$. 
+When $\cF = T^{\tensor n}_{\pi} [1]$ \owen{we should probably explain how shifts affect signs \dots}, the expression for the first Chern class is $-\frac{1 + 6n + 6n^2}{12} c_1(T_\pi)^2$.
+When $\cF = \cO \tensor V$ we simply get~$\dim(V)$. 
+\owen{Maybe do $n =1 $ case explicitly first and then explain general case. We also change notation from scripty T to straight T.}
 
-Hence, when $\cF = T[1] \oplus \cO \tensor V$, for the determinant line of global observables $H^*\left(\Obs^\q_{free}(C)\right)$ as a bundle over $C$ we obtain
+Hence, when $\cF = T[1] \oplus (\cO \tensor V)$, 
+the global observables $H^*\left(\Obs^\q_{free}(C)\right)$ provide a determinant line with
 \[
 c_1\left(H^*\left(\Obs^\q_{free}(\Sigma)\right)\right) = \frac{1}{12} (\dim(V) - 13) c_1(T_\pi)^2 .
 \]
+\owen{We are adding two contributions so maybe give steps carefully.}
 
 It is worthwhile to point out that the above argument based on GRR for identifying the first Chern class of this determinant line bundle resonates with our computation of the anomaly of the bosonic string on the disk. Indeed, this is a manifestation of ``Virasoro uniformization.'' 
+\owen{No one knows what that means. We should add a few words.}
 Also, notice that the above calculation assumed that there was no deformation, so that we were working with a free theory. 
 However, deforming the action from free $bc\beta\gamma$ system to holomorphic bosonic string doesn't affect the line bundles, since those are continuous parameters and Chern classes are discrete.
+\owen{Eugene was (rightly) suspicious of this, since adding an interaction can change the cohomology of observables somewhat abruptly. }
 
 \subsection{The anomaly and moduli of quantizations on an arbitrary Riemann surface}
 
@@ -140,8 +148,8 @@ the possible one-loop terms in the quantized action functional are parametrized 
 \ben
 H^0(\Sigma) \tensor \Omega^1(V) \oplus H^1(\Sigma) \tensor \Omega^2_{cl}(V).
 \een 
-(That is, these vector spaces are the first cohomology group of the relevant deformation complex.)
-This space of deformations corresponds to continuous parameters we can vary in the action functional.
+(That is, these vector spaces are the first \owen{Eugene: zeroth earlier?} cohomology group of the relevant deformation complex.)
+This space of deformations corresponds to continuous parameters that we can vary in the action functional.
 As the isomorphism classes of line bundles form a discrete set, 
 varying these continuous parameters will not change the class of the line bundle of global observables. 
 In conclusion, no matter what one-loop quantization we choose, 
@@ -149,8 +157,11 @@ the cohomology of the global observables will be the same.
 
 \subsection{Global observables for the holomorphic string}
 
+\owen{Eugene suggests to move this before 6.2}
+
 Now, let us consider the global observables of the holomorphic string $\Obs^\q(\Sigma)$. 
 Consider the filtration on the quantum observables induced by the polynomial degree of the functional. 
+\owen{Eugene: This is not a filtration, since BV Laplacian lowers symmetric degree. Perhaps use homological perturbation lemma?}
 There is a spectral sequence abutting to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_1$ page given by the cohomology of the global observables of the free $bc\beta \gamma$ system which we have already computed:
 \bestar
 E_2 & \cong & \det\left(H^*(\Sigma ; T_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\

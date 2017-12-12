@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 DEC 2017 22:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 DEC 2017 23:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -866,11 +866,7 @@ s/tikzlibrarydecorations.pathmorphing.code.tex
 brarydecorations.pathmorphing.code.tex))
 \c@thm=\count147
 \c@dfn/lem=\count148
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/carlisle/slashed.sty
-Package: slashed 1997/01/16 v0.01 Feynman Slashed Character Notation (DPC)
-)
-(./frame.aux
+) (./frame.aux
 
 LaTeX Warning: Label `lem: def complex wt zero' multiply defined.
 
@@ -1060,28 +1056,25 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 ) 4x2 184>
 [12] <xymatrix 4x2 75>) (./quantization.tex [13] [14] [15] [16] [17] [18]
 [19] [20] [21]) (./vertexalgebra.tex [22] [23]
-Overfull \hbox (30.61168pt too wide) in paragraph at lines 158--159
+Overfull \hbox (30.61168pt too wide) in paragraph at lines 161--162
 [][][]\OT1/ppl/m/sc/10 Corollary \OT1/ppl/m/n/10 5.5\OT1/ppl/m/sc/10 . []\OT1/p
 pl/m/it/10 In the clas-si-cal limit, there is an iso-mor-phism of Pois-son ver-
 tex al-ge-bras $\U/fplmbb/m/n/10 V[]\OT1/zplm/m/n/10 ([][]) []
  []
 
-[24] [25] <xymatrix 3x2 264> [26] [27] [28] [29]) (./conformalblock.tex
-[30]
-Overfull \hbox (38.61545pt too wide) in paragraph at lines 86--86
+[24] [25] <xymatrix 3x2 264>
+Overfull \hbox (16.68971pt too wide) in paragraph at lines 273--279
+\OT1/ppl/m/n/10 and $C[]\OT1/zplm/m/n/10 (\OT1/ppl/m/n/10 W[]; \OMS/zplm/m/n/10
+ M\OT1/zplm/m/n/10 )$ \OT1/ppl/m/n/10 are quasi-isomorphic to the sub-com-plex 
+of con-for-mal di-men-sion zero elements---
+ []
+
+[26] [27] [28] [29]) (./conformalblock.tex [30]
+Overfull \hbox (1.733pt too wide) in paragraph at lines 88--88
 [] 
  []
 
-
-Overfull \hbox (8.88953pt too wide) in paragraph at lines 97--98
-[]\OT1/ppl/m/n/10 Hence, when $\OMS/zplm/m/n/10 F \OT1/zplm/m/n/10 = \OML/zplm/
-m/it/10 T\OT1/zplm/m/n/10 [\OT1/ppl/m/n/10 1\OT1/zplm/m/n/10 ] \OMS/zplm/m/n/10
- ^^H O 
- \OML/zplm/m/it/10 V$\OT1/ppl/m/n/10 , for the de-ter-mi-nant line of global ob
--serv-ables $\OML/zplm/m/it/10 H[] []$
- []
-
-[31] [32]) (./curvedtargets.tex) (./calc.tex [33] [34]) (./frame.bbl
+[31] [32]) (./curvedtargets.tex [33]) (./calc.tex [34]) (./frame.bbl
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 13.
  [35])
@@ -1100,10 +1093,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 40.
  ) 
 Here is how much of TeX's memory you used:
- 23711 strings out of 493089
- 451358 string characters out of 6134842
- 593246 words of memory out of 5000000
- 26290 multiletter control sequences out of 15000+600000
+ 23699 strings out of 493089
+ 451094 string characters out of 6134842
+ 589373 words of memory out of 5000000
+ 26281 multiletter control sequences out of 15000+600000
  42407 words of font info for 133 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  62i,16n,69p,3238b,973s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1126,10 +1119,10 @@ xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/201
 onts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/public/xypic/xycmat10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
 public/xypic/xycmbt10.pfb>
-Output written on frame.pdf (36 pages, 338986 bytes).
+Output written on frame.pdf (36 pages, 341500 bytes).
 PDF statistics:
- 575 PDF objects out of 1000 (max. 8388607)
- 513 compressed objects within 6 object streams
+ 574 PDF objects out of 1000 (max. 8388607)
+ 512 compressed objects within 6 object streams
  180 named destinations out of 1000 (max. 500000)
  85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

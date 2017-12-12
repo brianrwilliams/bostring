@@ -38,5 +38,5 @@
 \contentsline {subsection}{\tocsubsection {}{6.2}{The anomaly and moduli of quantizations on an arbitrary Riemann surface}}{32}{subsection.6.2}
 \contentsline {subsection}{\tocsubsection {}{6.3}{Global observables for the holomorphic string}}{32}{subsection.6.3}
 \contentsline {section}{\tocsection {}{7}{Looking ahead: curved targets}}{33}{section.7}
-\contentsline {section}{\tocsection {Appendix}{A}{Calculation of the anomaly}}{33}{appendix.A}
+\contentsline {section}{\tocsection {Appendix}{A}{Calculation of the anomaly}}{34}{appendix.A}
 \contentsline {section}{\tocsection {Appendix}{}{References}}{35}{section*.2}

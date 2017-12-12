@@ -1,9 +1,9 @@
 \section{Quantizing the holomorphic bosonic string on a disk} 
 \label{sec: quantization}
 
-For us, quantization will mean that we use perturbative constructions in the setting of the BV formalism.
-Concretely, this means that we enforces the gauge symmetries using the homological algebra of the BV formalism and that we use Feynman diagrams and renormalization to obtain an approximation for the desired, putative path integral. 
-There are toy models for this approach where one can see very clearly how it gives asymptotic expansions for finite-dimensional integrals \cite{GJF}.
+In this paper, quantization will mean that we use perturbative constructions in the setting of the BV formalism.
+Concretely, it means that we enforce the gauge symmetries using the homological algebra of the BV formalism and that we use Feynman diagrams and renormalization to obtain an approximation for the desired, putative path integral. 
+There are toy models for this approach where one can see very clearly how the BV formalism gives asymptotic expansions for finite-dimensional integrals \cite{GJF}.
 In particular, these toy models show that this approach need not recover the true integral
 but does know important information about it;
 a similar relationship should hold between this quantization method and the putative path integral, 
@@ -18,6 +18,7 @@ and the algorithm one applies to obtain a quantization is the following:
 We call this the ``renormalized action.''
 \item Check if the renormalized action satisfies the quantum master equation. 
 If it does, you have a well-posed BV quantum theory, and we call the result a {\em quantized action}. If not, guess a way to adjust the renormalized action and begin the whole process again.
+\owen{Eugene: Mention obstruction theory.}
 \end{enumerate}
 It should be clear that along the way, one makes many choices;
 hence if a quantization exists, it may not be unique.
@@ -275,8 +276,8 @@ but our function is supported on the small diagonal $\CC \hookrightarrow \CC^3$.
 The linear functional for this tapole diagram should be given by inserting the propagator $P$ in place of the $\beta$ and $\gamma$ fields. 
 Hence it ought to be given by the following integral over~$\CC$:
 \[
-\int_{z \in \CC} c(z)P(z,w)|_{z = w}  
-= \int_{z \in \CC} f(z) \partial_z \left(  \frac{1}{2 \pi i} \frac{\d z + \d w}{z-w}\right)|_{z = w}\, \d \zbar.
+\int_{z \in \CC} c(z)P(z,w)\big|_{z = w}  
+= \int_{z \in \CC} f(z) \partial_z \left(  \frac{1}{2 \pi i} \frac{\d z + \d w}{z-w}\right)\bigg|_{z = w}\, \d \zbar.
 \]
 This putative integral is manifestly ill-defined,
 since the distribution is singular along the diagonal.
@@ -285,7 +286,7 @@ since the distribution is singular along the diagonal.
 
 We smooth out the propagator $P$ using familiar tools from differential geometry.
 Fix a Hermitian metric on $\Sigma$, 
-which then associates provides an adjoint $\dbar^*$ to the Dolbeault operator~$\dbar$.
+which then provides an adjoint $\dbar^*$ to the Dolbeault operator~$\dbar$.
 For the usual metric on $\CC$, we have
 \[
 \dbar^* = -2 \frac{\partial}{\partial (\d \zbar)} \frac{\partial}{\partial z}.
@@ -297,8 +298,8 @@ In the physics literature, explicit gauge fixes for the bosonic string can be fo
 
 %We can thus call upon Hodge theory and many nice results about finding partial inverses to the Laplacian.
 
-We introduce a smoothed version of the propagator using the heat kernel~$e^{-tD}$,
-which is a notation that denotes a solution to the heat equation $\partial_t f(t,z) + D f(t,z) = 0$.
+We introduce a smoothed version of the propagator using the heat kernel~$e^{-tD}$.
+This notation indicates that this integral kernel encodes a solution to the heat equation $\partial_t f(t,z) + D f(t,z) = 0$.
 For $\CC$ with the Euclidean metric, the standard heat kernel is
 \[
 e^{-tD}(z,w) =  \frac{1}{4\pi t} e^{-|z-w|^2/4t} (\d z - \d w) \wedge (\d\zbar - \d\wbar) . 
@@ -337,9 +338,9 @@ Note that it is smooth everywhere on~$\CC^2$.
 The integral for the tadpole diagram is 
 \begin{align*}
 w_{\Gamma_{\rm tad}}(P_\ell^L,I_{\rm string})
-&= \int_{z \in \CC} c(z)P_\ell^L(z,w)|_{z = w}  \\
-&= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \partial_z \left(\frac{1}{4\pi t} \frac{\zbar - \overline{w}}{2t} e^{-|z-w|^2/4t} (\d z - \d w) \right)|_{z = w}\, \d \zbar\\
-&= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \left(\frac{1}{4\pi t} \left(\frac{\zbar - \overline{w}}{2t}\right)^2 e^{-|z-w|^2/4t} (\d z - \d w) \right)|_{z = w}\, \d \zbar\\
+&= \int_{z \in \CC} c(z)P_\ell^L(z,w)\big|_{z = w}  \\
+&= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \partial_z \left(\frac{1}{4\pi t} \frac{\zbar - \overline{w}}{2t} e^{-|z-w|^2/4t} (\d z - \d w) \right)\bigg|_{z = w}\, \d \zbar\\
+&= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \left(\frac{1}{4\pi t} \left(\frac{\zbar - \overline{w}}{2t}\right)^2 e^{-|z-w|^2/4t} (\d z - \d w) \right)\bigg|_{z = w}\, \d \zbar\\
 &= 0,
 \end{align*}
 since the integrand vanishes along the diagonal.
@@ -419,7 +420,7 @@ We might as well focus on values of $t_i$ that are very small,
 as those would be the source of divergences when $\ell \to 0$.
 For small $t_i$, we only care about the behavior of $F$ near the origin as the measure is concentrated near the origin.
 Thus, consider a partial Taylor expansion of $F$.
-The polynomial part can be computed quickly since the expected values of monomials against a Gaussian measure (i.e., the moments) have a simply expression in terms of the variance.
+The polynomial part can be computed quickly since the expected values of monomials against a Gaussian measure (i.e., the moments) have a simple expression in terms of the variance.
 The first nonzero contribution would come from the $u^4$ term in the Taylor expansion of $F$,
 and it contributes a factor of the form $(t_1 t_2/(t_1+t_2))^5$,
 up to constant that we ignore.
@@ -438,25 +439,9 @@ which vanishes to some positive order at the origin,
 can be bounded in such as way that an $\ell \to 0$ limit exists.
 \end{proof}
 
-It would be interested int compare our method for renormalization of the bosonic string to Witten's ``$i\epsilon$'' procedure for the perturbative string in \cite{WittenFeynman}.
+\owen{I commented out the reference to the i$\epsilon$ prescription because it seems a bit far afield, but feel free to reinsert (and cite that other dude too!) if you feel it's relevant}
 
- 
-%\brian{I apologize, but it doesn't look like my super naive estimate is going to work. Here's what does work. Also, it's a two real dimensional integral so the correct variance is $t_1t_2 / (t_1+t_2)$ (the square of what you use). 
-%The $t$-integral you get out is
-%\ben
-%\int_{t_1,t_2 = \ell}^L \frac{(t_1 t_2)^2}{(t_1+t_2)^5} \d t_1 \d t_2  .
-%\een
-%Now, by AM-GM $|t_1 + t_2| \geq C \sqrt{(t_1 t_2)}$ for some $C > 0$. Thus, the integral is bounded by 
-%\ben
-%1/C \int_{t_1,t_2 = \ell}^L \frac{(t_1 t_2)^2}{(t_1t_2)^{5/2}} \d t_1 \d t_2 = \int_{t_1,t_2 = \ell}^L \frac{1}{\sqrt{t_1 t_2}} \d t_1 \d t_2
-%\een
-%which does have a finite $\epsilon \to 0$ limit. Look OK?
-%}
-%
-%\owen{I'm going to try again. That's a good point about the behavior of variance as a function of dimension, but we're actually taking an integral over $\CC^2$. I tried using the AM-GM inequality earlier but it didn't help with my fucked up exponents. Time to try again.}
-%
-%\brian{Actually, we are only doing an integral over $\CC$. We are only applying Wick's Lemma for the integral over $u \in \CC$. The final answer is written as an integral over $v = z_2$ of some differential operator applied to the compactly supported function $f_1f_2$. So, in this case the final answer is proportional to $\int_{v \in \CC} \partial^4 f_1(v) f_2(v)$.
-%}
+%It would be interested int compare our method for renormalization of the bosonic string to Witten's ``$i\epsilon$'' procedure for the perturbative string in \cite{WittenFeynman}.
 
 We can now define the effective theory that we consider for the string. 
 
@@ -475,7 +460,8 @@ Then, the family $\{I[L]\}$ satisfies the {\em homotopy RG equation}
 \ben
 I[L] = w(P_\ell^L , I[\ell]).
 \een
-The operator $w(P_\ell^L,-)$ defines a homotopy equivalence between the theory at scale $\ell$, defined using $S[\ell]$, and the theory at scale $S$, defined using $S[L]$. 
+The operator $w(P_\ell^L,-)$ defines a homotopy equivalence between the theory at scale $\ell$, defined using $S[\ell]$, and the theory at scale $S$, defined using~$S[L]$. 
+\owen{Eugene: It might be good to expand on this a little.}
 \end{rmk}
 
 \subsection{The quantum master equation}
@@ -495,7 +481,7 @@ its divergence operator maps vector fields to functions by the relationship
 \[
 {\rm div}_\mu({\mathcal X}) \mu = L_{\mathcal X} \mu.
 \] 
-This relationship, in conjunction with Stokes lemma, 
+This relationship, in conjunction with Stokes' lemma, 
 implies that if a function~$f$ is a divergence ${\rm div}_\mu({\mathcal X})$,
 then $\int f \mu = 0$,
 i.e., its expected value against the measure~$\mu$ is zero.
@@ -509,7 +495,7 @@ we want the renormalized action
 S = S^{\rm cl} + \hbar S_1 + \hbar^2 S_2 + \cdots
 \]
 to determine a putative differential $\d^q_S$ on the graded vector space of observables.
-To explain this operator, we need to describe further algebraic properties on the observables
+To explain this operator, we need to describe further algebraic properties of the observables
 that the BV formalism uses.
 
 First, in practice, the observables are the symmetric algebra generated by the continuous linear duals to the vector spaces of fields.
@@ -546,7 +532,7 @@ More accurately, $\d^q_S$ is a differential if and only if the right hand side i
 \subsubsection{}
 
 We now turn to examining this condition in our setting.
-It helps to understand it is diagrammatic terms.
+It helps to understand it in diagrammatic terms.
 
 As the bracket is determined by a linear pairing,
 it admits a simple diagrammatic description as an edge.
@@ -554,11 +540,11 @@ For instance, given an observable $F$ that is a homogeneous polynomial of arity~
 and an observable $G$ of arity~$n$, 
 then $\{F,G\}$ has arity~$m+n-2$.
 It can be expressed as a Feynman diagram 
-%\brian{pic}
+\brian{pic}
 where the edge connecting $F$ and $G$ is labeled by a 2-fold tensor~$K$.
 
 The BV Laplacian acts by attaching an edge labeled by~$K$ as a loop in all possible ways.
-%\owen{Add picture.}
+\owen{Add picture.}
 This diagrammatic behavior corresponds to the fact that $\Delta_{BV}$ is a constant-coefficient second-order differential operator.
 
 The tensor~$K$ determined by the pairing on fields is distributional.
@@ -658,13 +644,14 @@ On the other hand, there are the wheels where the $K$ edge is for $\beta\gamma$ 
 These depend on $V$ but in a very simple way: 
 the distribution $K$ is just the heat kernel tensored with the identity on~$V$, 
 and hence the contraction amounts to taking $\dim_\CC(V)$ copies of the $V = \CC$ value.
-In other words, the $\beta\gamma$ wheels contribute a term $\dim_\CC(V) G[L]$ to the obstruction,
+In other words, the $\beta\gamma$ wheels contribute a factor of $\dim_\CC(V) G[L]$ to the obstruction,
 where $G[L]$ is the value for $V = \CC$.
-The last part of the proof of the theorem is a direct calculation of the functionals $F[L]$ and $G[L]$. 
-So as to not diverge from our track of thought we include this calculation in Appendix \ref{sec:calculation} where we show that $F[L], G[L]$ are both independent of $L$ and satisfy $F = -13 G$, thus completing the proof.
+The last part of the proof is a direct calculation of the functionals $F[L]$ and $G[L]$. 
+So as to not divert too long from our narrative, we include this calculation in Appendix \ref{sec:calculation}, where we show that $F[L], G[L]$ are both independent of $L$ and satisfy $F = -13 G$, thus completing the proof.
 \end{proof}
 
-\begin{rmk} One can consider coupling the $\beta\gamma$ system to any tensor bundle on the Riemann surface. 
+\begin{rmk} 
+One can consider coupling the $\beta\gamma$ system to any tensor bundle on the Riemann surface. 
 For instance, suppose $\gamma$ is a section of $T_\Sigma^{\tensor n}$ and hence $\beta$ is a section of $T^{* \otimes {n+1}}_\Sigma$.
 In this case, one can show that the part of the obstruction with internal edges labeled by the $\beta\gamma$ propagators contributes a factor $(6n^2 + 6n + 1)G$, with $G$ the same functional above. 
 \end{rmk}

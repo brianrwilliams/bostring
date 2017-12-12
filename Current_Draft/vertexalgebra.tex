@@ -1,10 +1,11 @@
 \section{OPE and the string vertex algebra}
 
+\owen{Eugene: I would switch 5.1 and 5.2 to indicate you're still working in the BV formalism and that the formalism reproduces the VOA}
+
 Vertex algebras are mathematical objects that axiomatize the behavior of local observables 
 (i.e., point-like observables) of a chiral conformal field theory (CFT),
 such as the $bc\beta\gamma$ system or the holomorphic bosonic string.
-The vertex operator of a vertex algebras encodes the operator product expansions (OPE) for local observables,
-which is of central interest in understanding a chiral CFT.
+In particular, the operator product expansion (OPE) for these local observables---which is of paramount importance in understanding a chiral CFT---is encoded by the vertex operator of the vertex algebra of the CFT.
 (We will not review vertex algebras here
 as there are many nice expositions \cite{FHL, BZF}.)
 
@@ -24,7 +25,7 @@ The underlying graded vertex algebra has state space of the form
 \een
 where $\cV_{\beta\gamma}$ and $\cV_{bc}$ are the $\beta\gamma$ and $bc$ vertex algebras, respectively. 
 The $\beta$ and $\gamma$ generators are in grading degree zero, the $c$ generator is in grading degree $-1$, and the $b$ is in grading degree $+1$. 
-In the physics literature this is referred to as the {\em BRST} grading.
+In the physics literature it is referred to as the {\em BRST} grading or {\em ghost number}.
 
 Forgetting the cohomological (or BRST) grading, this vertex algebra is a conformal vertex algebra of central charge zero (by construction). 
 In particular, this means that the vertex algebra has a stress-energy tensor. 
@@ -64,8 +65,8 @@ The cochain complexes are local on the source manifold of a theory:
 on each open set $U$ in that manifold~$\Sigma$,
 one can pick out the observables with support in~$U$ by asking for the observables that vanish on fields with support outside~$U$.
 It is the central result of~\cite{CG1,CG2} that the observables also satisfy a local-to-global property,
-akin to the sheaf gluing axiom,
-and hence form a {\em factorization algebra} on~$\Sigma$.
+akin to the sheaf gluing axiom.
+Such a structure is known as a {\em factorization algebra} on~$\Sigma$.
 
 We will not need that general notion here.
 Instead, we will use vertex algebras.
@@ -115,7 +116,7 @@ I(\varphi) = \sum \int (\partial^{k_1}_z \varphi) \cdots (\partial^{k_m} \varphi
 
 One of Li's main results is that for a free chiral BV theory with action $S_{\rm free}$ and associated vertex algebra $\cV_{\rm free}$, one has the following:
 \begin{itemize}
-\item For any chiral interaction~$I$, the action $S_{\rm free} + I$ needs no counterterms, 
+\item For any chiral interaction~$I$, the action $S_{\rm free} + I$ needs no counterterms \owen{Eugene: in what sense? are all diagrams finite?}, 
 and yields a renormalized interaction~$\{S [L]\}$.
 \item If the renormalized action $\{S [L]\}$ satisfies the quantum master equation,
 then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the form
@@ -123,6 +124,7 @@ then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the 
 D_I = \oint I^q \d z
 \een
 of cohomological degree one, where $I^q = \lim_{L \to 0} I[L]$.
+\owen{Eugene pointed out that this notation was kind of confusing. We should explain more carefully what $I[L]$ is and what the output $I^q$is.}
 \item The dg vertex algebra $\cV_I$ for such an action $\{I[L]\}$ has the same underlying graded vertex algebra $\cV_{\rm free}$ but it is equipped with the differential $\oint I^q \d z$. 
 \end{itemize}
 
@@ -149,6 +151,7 @@ Moreover, this vertex algebra is isomorphic to the chiral sector of the bosonic 
 \end{prop}
 
 The factorization algebra $\Obs^\q_{\rm string}$ is a quantization of the factorization algebra $\Obs^{\cl}_{\rm string}$ of classical observables of the free $bc\beta\gamma$ system.
+\owen{Eugene: I thought it was a quantization of the full interacting system. (Need to rephrase to remind that we're using the modification by $I$, in Si's style.}
 We have noted that the classical observables of any theory has the structure of a $P_0$ factorization algebra, and the $\hbar \to 0$ limit of $\Obs^\q_{\rm string}$ is isomorphic to $\Obs^{\cl}_{\rm string}$ as $P_0$ factorization algebras.
 By definition, the classical observables are simply functions on the solutions to the classical equations of motion.
 The $P_0$ structure is induced from the symplectic pairing of degree $(-1)$ on the fields. 
@@ -174,7 +177,7 @@ Nevertheless, the local observables of the bosonic string behave like the observ
 In particular, as noted perhaps first by \cite{Getzler}, the observables of a 2-dimensional TFT have the structure of a {\em Gerstenhaber algebra}.
 In this section we provide two equivalent methods for extracting this algebra.
 The first is intuitive from the point of view of factorization algebras, but has the disadvantage of not giving a concrete description of the algebra. 
-The second approach gives an explicit formula for bracket and is based on the formalism of ``descent" for local operators. 
+The second approach gives an explicit formula for the bracket and is based on the formalism of ``descent" for local operators. 
 
 \subsubsection{First method: the $E_2$ algebra}
 
@@ -205,9 +208,9 @@ In this sense, at least, the holomorphic bosonic string determines a functorial 
 \end{rmk}
 
 \begin{proof} 
-We need to show that for any inclusion of open disks $D \hookrightarrow D'$ that natural map
+We need to show that for any inclusion of open disks $D \hookrightarrow D'$, the natural map
 \ben
-\Obs^\q_{\rm string}(U) \to \Obs^\q_{\rm string}(U')
+\Obs^\q_{\rm string}(D) \to \Obs^\q_{\rm string}(D')
 \een
 is a quasi-isomorphism. 
 
@@ -229,6 +232,7 @@ The vector fields act by the Lie derivative on
 \Omega^{0,*}(\Sigma; V)[-1] \oplus \Omega^{1,*}(\Sigma;V^*)[-1] \oplus \Omega^{1,*}(\Sigma ; \cT_\Sigma^*)[-2],
 \]
 which are simply a copy of the $\beta\gamma$ system with target vector space~$V$.
+\owen{Eugene: and $b$ fields?}
  
 For simplicity, we write $\cL = \Omega^{0,*}(\Sigma ; \cT_\Sigma)$ and write $\cM$ for the module inside the parentheses.
 In this language, the space of classical observables supported on an open set $U \subset \Sigma$ is the Chevalley-Eilenberg cochain complex
@@ -268,8 +272,8 @@ The inclusion $D \hookrightarrow D'$ then yields a commutative diagram
 }
 \een
 By Lemma \ref{lem: gf} (and an analogous result for polynomial vector fields),
-the complexes $\clie^*({\rm W}_1 ; \cM)$ and $\clie^*({\rm W}^{\rm poly}_1; \cM)$ are quasi-isomorphic to the subcomplex of conformal dimension zero element, in this case, to the constants. 
-As the conformal zero subcomplex does not depend on the size of the disk, we conclude that vertical arrows on the outside of the commutative diagram are quasi-isomorphisms. 
+the complexes $\clie^*({\rm W}_1 ; \cM)$ and $\clie^*({\rm W}^{\rm poly}_1; \cM)$ are quasi-isomorphic to the subcomplex of conformal dimension zero elements---in this case, to the constants. 
+As the conformal dimension zero subcomplex does not depend on the size of the disk, we conclude that vertical arrows on the outside of the commutative diagram are quasi-isomorphisms. 
 It follows that the middle vertical arrow is as well, 
 thus showing that $\Obs^{\cl}_{\rm string}(D) \to \Obs^{\cl}_{\rm string}(D')$ is a quasi-isomorphism, as desired. 
 
@@ -332,7 +336,7 @@ The operator $\frac{\d}{\d \zbar}$ acts homotopically trivial on $\Obs^\q_{\rm s
 This fact ensures that the stress-energy tensor vanishes in the $\zbar\zbar$ direction.
 We now turn to~$\d/\d z$.
 
-We can view the vector field $\frac{\d}{\d z}$ as a constant $c$-field. 
+View the vector field $\frac{\d}{\d z}$ as a constant $c$-field. 
 Consider the linear local functional of cohomological degree $-2$:
 \ben
 O_{\frac{\d}{\d z}}(\beta,\gamma,b,c) = \int \<b, \frac{\d}{\d z}\>,
@@ -345,6 +349,8 @@ Using the BV bracket, we obtain a derivation of the factorization algebra
 \eta = \{O_{\frac{\d}{\d z}}, -\}
 \een
 of cohomological degree~$-1$. 
+
+\owen{Eugene found this a little hard to follow.}
 
 \begin{lem} 
 The derivation $\eta$ satisfies 
@@ -481,7 +487,9 @@ We now put this construction to use.
 \subsubsection{Second method: descent}
 
 A Gerstenhaber algebra is a graded commutative algebra with a Lie bracket of cohomological degree $-1$ that is a graded biderivation for the product. 
-In this section we show how to explicitly write down the product and bracket on the local observables (i.e., the observables on any disk) and compare our answer to the work of Lian-Zuckerman \cite{LZ1}.
+In this section we show how to explicitly write down the product and bracket on the local observables (i.e., the observables on any disk) and compare our answer to the work of Lian-Zuckerman~\cite{LZ1}.
+
+\owen{Eugene pointed out that the next paragraph is way too fast. It presupposes that someone understands that the factorization product is independent of the location of the disks, and what the E-H argument is! This is true of topologists, but probably not physicists or geometers!}
 
 The product of the Gerstenhaber algebra is simply given by the factorization product of two disjoint disks including into a larger disk:
 \ben
