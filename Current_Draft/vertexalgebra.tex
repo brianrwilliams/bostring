@@ -2,6 +2,8 @@
 
 \owen{Eugene: I would switch 5.1 and 5.2 to indicate you're still working in the BV formalism and that the formalism reproduces the VOA}
 
+\owen{I implemented his suggestion and made some edits. Tell me what you think.}
+
 Vertex algebras are mathematical objects that axiomatize the behavior of local observables 
 (i.e., point-like observables) of a chiral conformal field theory (CFT),
 such as the $bc\beta\gamma$ system or the holomorphic bosonic string.
@@ -13,15 +15,53 @@ In this section we will explain how to extract the vertex algebra of the holomor
 using machinery developed in~\cite{CG1,LiVA,GGW}.
 The answer we recover is precisely the chiral sector of the usual bosonic string.
 
+\subsection{Some context}
+
+In the BV formalism one constructs a cochain complex of observables,
+for both the classical and the quantized theory, if it exists.
+The cochain complexes are local on the source manifold of a theory:
+on each open set $U$ in that manifold~$\Sigma$,
+one can pick out the observables with support in~$U$ by asking for the observables that vanish on fields with support outside~$U$.
+It is the central result of~\cite{CG1,CG2} that the observables also satisfy a local-to-global property,
+akin to the sheaf gluing axiom.
+Such a structure is known as a {\em factorization algebra} on~$\Sigma$.
+
+We will not need that general notion here.
+Instead, we will use vertex algebras.
+Theorem~5.2.3.1 of~\cite{CG1} explains how a factorization algebra~$F$ on $\Sigma = \CC$
+yields a vertex algebra~$\Vert(F)$, under natural hypotheses on~$F$. 
+It assures us that the observables of a chiral CFT determine a vertex algebra.
+
+In particular, Section~5.3 of~\cite{CG1} examines the free $\beta\gamma$ system in great detail.
+Its main result is that the well-known $\beta\gamma$ vertex algebra $\cV_{\beta\gamma}$ is recovered by the two-step process of BV quantization, which yields a factorization algebra, and then the extraction of a vertex algebra.
+The exact same arguments apply to the free $bc$ system,
+recovering the vertex algebra~$\cV_{bc}$;
+and of course, the exact same arguments apply to the free $bc\beta\gamma$ system.
+
+Let $V$ denote the vector space appearing in the $\beta\gamma$ contribution of the holomorphic bosonic string theory, as introduced in Section~\ref{sec:classical}.
+Let $\Obs^\q_{free}$ denote the observables of this theory on $\Sigma = \CC$.
+As a quantization of a free field theory, it is a factorization algebra valued in the category of $\CC [\hbar]$-modules.
+In particular, the associated vertex algebra $\Vert(\Obs^\q_{free})$ is also valued in $\CC[\hbar]$-modules.
+Putting the claims together, we have the following.
+
+\begin{prop}\label{prop: bcbg vertex}
+For $n = \dim_{\CC}(V)$, 
+there is an isomorphism of vertex algebras
+\ben
+\Vert(\Obs^{\q}_{free})_{\hbar = 2 \pi i} \cong \cV_{bc} \tensor \cV_{\beta\gamma}^{\tensor n} 
+\een 
+where on the left-hand side we have set~$\hbar = 2\pi i$.
+\end{prop}
+
 \subsection{A reminder on the chiral algebra of the string}\label{subsec: string vert}
 
-We provide a brief background on the vertex algebra for the chiral sector of the bosonic string. 
-For a detailed reference we refer the reader to the series of papers \cite{LZ1,LZ2}. 
-It is easiest to introduce this as a {\em differential graded vertex algebra}. 
-This is simply a vertex algebra internal to the category of chain complexes. 
-The underlying graded vertex algebra has state space of the form
+We now provide a brief review of the vertex algebra for the chiral sector of the bosonic string. 
+For a detailed reference we refer the reader to \cite{LZ1,LZ2}. 
+The construction builds a {\em differential graded vertex algebra}, 
+which is simply a vertex algebra in the category of cochain complexes. 
+The underlying graded vertex algebra has a state space of the form
 \ben
-\cV_{\beta \gamma}^{\tensor 13} \tensor \cV_{bc}
+\cV_{\beta \gamma}^{\tensor 13} \tensor \cV_{bc},
 \een
 where $\cV_{\beta\gamma}$ and $\cV_{bc}$ are the $\beta\gamma$ and $bc$ vertex algebras, respectively. 
 The $\beta$ and $\gamma$ generators are in grading degree zero, the $c$ generator is in grading degree $-1$, and the $b$ is in grading degree $+1$. 
@@ -57,47 +97,13 @@ Note that the cohomology of a dg vertex algebra is an ordinary (graded) vertex a
 The cohomology of the string vertex algebra is called the {\em BRST cohomology} of the bosonic string. 
 In the remainder of this section we will show how we recover the string vertex algebra from the quantization of the holomorphic bosonic string.
 
-\subsection{Some context}
-
-In the BV formalism one constructs a cochain complex of observables,
-for both the classical and the quantized theory, if it exists.
-The cochain complexes are local on the source manifold of a theory:
-on each open set $U$ in that manifold~$\Sigma$,
-one can pick out the observables with support in~$U$ by asking for the observables that vanish on fields with support outside~$U$.
-It is the central result of~\cite{CG1,CG2} that the observables also satisfy a local-to-global property,
-akin to the sheaf gluing axiom.
-Such a structure is known as a {\em factorization algebra} on~$\Sigma$.
-
-We will not need that general notion here.
-Instead, we will use vertex algebras.
-Theorem~5.2.3.1 of~\cite{CG1} explains how a factorization algebra~$F$ on $\Sigma = \CC$
-yields a vertex algebra~$\Vert(F)$, under natural hypotheses on~$F$. 
-It assures us that the observables of a chiral CFT determine a vertex algebra.
-
-In particular, Section~5.3 of~\cite{CG1} examines the free $\beta\gamma$ system in great detail.
-Its main result is that the well-known $\beta\gamma$ vertex algebra is recovered by the two-step process of BV quantization, which yields a factorization algebra, and then the extraction of a vertex algebra.
-
-The exact same arguments apply to the free $bc\beta\gamma$ system,
-where the $\beta\gamma$ sector is valued in a vector space $V$, as we introduced in Section~\ref{sec:classical}.
-Let $\Obs^\q_{free}$ denote the observables of this theory on $\Sigma = \CC$.
-As a quantization of a free field theory, it is a factorization algebra valued in the category of $\CC [\hbar]$-modules.
-In particular, the associated vertex algebra $\Vert(\Obs^\q_{free})$ is also valued in $\CC[\hbar]$-modules.
-
-\begin{prop}\label{prop: bcbg vertex}
-Let $n = \dim_{\CC}(V)$. Then, there is an isomorphism of vertex algebras
-\ben
-\Vert(\Obs^{\q}_{free})_{\hbar = 2 \pi i} \cong \cV_{bc} \tensor \cV_{\beta\gamma}^{\tensor n} 
-\een 
-where on the left-hand side we have set $\hbar = 2\pi i$.
-\end{prop}
-
 \subsection{The case of the string}
 
 The holomorphic bosonic string is a chiral CFT and so the machinery of~\cite{CG1} applies to it.
-One can extract a vertex algebra directly by this method.
+One can extract a vertex algebra directly by this method, as one does with the free $bc\beta\gamma$ theory.
 
 But there is a slicker approach, using Li's work~\cite{LiVA},
-which studies chiral deformations of {\em free} chiral BV theories such as the $bc\beta\gamma$ system.
+which studies chiral deformations of {\em free} chiral BV theories such as the free $bc\beta\gamma$ system.
 Recall that a deformation of a classical field theory is given by a local functional. 
 We have seen that this is essentially the data of a Lagrangian density, which is a density valued multilinear functional that depends on (arbitrarily high order) jets of the fields. 
 In other words, for a field $\varphi$, a Lagrangian density is of the form
@@ -118,10 +124,11 @@ One of Li's main results is that for a free chiral BV theory with action $S_{\rm
 \begin{itemize}
 \item For any chiral interaction~$I$, the action $S_{\rm free} + I$ needs no counterterms \owen{Eugene: in what sense? are all diagrams finite?}, 
 and yields a renormalized interaction~$\{S [L]\}$.
+\owen{Perhaps we can compare to Prop \ref{prop: no counterterms}?}
 \item If the renormalized action $\{S [L]\}$ satisfies the quantum master equation,
 then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the form
 \ben
-D_I = \oint I^q \d z
+D_I = \oint I^q\, \d z
 \een
 of cohomological degree one, where $I^q = \lim_{L \to 0} I[L]$.
 \owen{Eugene pointed out that this notation was kind of confusing. We should explain more carefully what $I[L]$ is and what the output $I^q$is.}
@@ -139,22 +146,23 @@ This isomorphism is {\em not} compatible with the factorization product, so we d
 \end{rmk}
 
 The holomorphic bosonic string with target $V=\CC^{13}$ provides a concrete example of this situation.
-The free theory is the $bc\beta\gamma$ system, 
-and we have seen that the renormalized action satisfies the QME.
+The free theory is the $bc\beta\gamma$ system,
+the holomorphic bosonic string is a chiral deformation of it, 
+and we have seen that the renormalized action of the string satisfies the QME.
 Hence we obtain the following.
 
-\begin{prop} \label{prop: fact is vert}
+\begin{prop} 
+\label{prop: fact is vert}
 Let $\Obs^\q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. 
 Let $\Vert(\Obs^q_{\rm string})$ be the dg vertex algebra (defined over $\CC[\hbar]$) obtained via Li's construction. 
 There is an isomorphism of vertex algebras $\cV_{\rm string} \cong \Vert(\Obs^q_{\rm string})_{\hbar = 2 \pi i}$.
 Moreover, this vertex algebra is isomorphic to the chiral sector of the bosonic string as in Section~\ref{subsec: string vert}.
 \end{prop}
 
-The factorization algebra $\Obs^\q_{\rm string}$ is a quantization of the factorization algebra $\Obs^{\cl}_{\rm string}$ of classical observables of the free $bc\beta\gamma$ system.
-\owen{Eugene: I thought it was a quantization of the full interacting system. (Need to rephrase to remind that we're using the modification by $I$, in Si's style.}
+The factorization algebra $\Obs^\q_{\rm string}$ is also a quantization of the factorization algebra $\Obs^{\cl}_{\rm string}$ of classical observables.
 We have noted that the classical observables of any theory has the structure of a $P_0$ factorization algebra, and the $\hbar \to 0$ limit of $\Obs^\q_{\rm string}$ is isomorphic to $\Obs^{\cl}_{\rm string}$ as $P_0$ factorization algebras.
 By definition, the classical observables are simply functions on the solutions to the classical equations of motion.
-The $P_0$ structure is induced from the symplectic pairing of degree $(-1)$ on the fields. 
+The $P_0$ structure is induced from the symplectic pairing of degree -1 on the fields. 
 The classical factorization algebra still has enough structure to determine a vertex algebra $\Vert(\Obs^\cl_{\rm string})$.
 Moreover, the $P_0$ bracket on the classical observables determines the structure of a {\em Poisson vertex algebra} on $\Vert(\Obs^{\cl}_{\rm string})$. 
 
@@ -163,7 +171,7 @@ Moreover, the $P_0$ bracket on the classical observables determines the structur
 
 \begin{proof}[Proof of Proposition \ref{prop: fact is vert}] By Proposition \ref{prop: bcbg vertex} we know that the vertex algebra of the associated free theory is identified with the $bc\beta\gamma$ vertex algebra. 
 The thing we need to check is that the differential induced from the quantization of the holomorphic string agrees with the differential of the string vertex algebra. 
-In fact, we observe that the induced differential $\oint I \d z$ from the classical interaction of the holomorphic bosonic string agrees with the BRST charge in Equation (\ref{brst}). 
+In fact, we observe that the induced differential $\oint I \,\d z$ from the classical interaction of the holomorphic bosonic string agrees with the BRST charge in Equation (\ref{brst}). 
 To see that this persists at the quantum level we need to check that there are no quantum corrections. 
 Indeed, this follows from the fact that the quantum master equation holds identically (as opposed to holding up to an exact term in the deformation complex) provided $\dim_\CC V = 13$. 
 \end{proof}
@@ -355,7 +363,7 @@ It might help to draw this bracket diagrammatically,
 so one can see that it is a derivation that acts linearly on the generators
 (i.e., linear functionals on the fields).
 
-\owen{Eugene found this a little hard to follow.}
+\owen{Eugene found this a little hard to follow. I tried to change it a little.}
 
 \begin{lem} 
 The derivation $\eta$ satisfies 
@@ -469,6 +477,8 @@ If $O$ has cohomological degree $k$ and $C$ is of dimension $l$,
 then $\int_C \Tilde{O}$ has degree $k - l$. 
 \end{construction}
 
+\owen{I'm really not wild about evaluating the observables on a closed set like $C$, since it's not obviously well-behaved. Can we just use a small thickening?}
+
 %\begin{rmk}
 %{\it A priori} the factorization algebra is only well-defined on open sets $U \subset \Sigma$. 
 %One can define the value on a closed submanifold $C \subset \Sigma$ by taking the (homotopy)  limit over open submanifolds containing~$C$. 
@@ -532,8 +542,11 @@ as it is the same argument one uses to show that the homotopy group $\pi_2(X)$ i
 
 To construct the shifted Poisson bracket, 
 we need to pick a one-cycle in the configuration space $E_2(2)$.
-To describe the associated binary operation, we use descent.
-Suppose $O,O'$ are closed observables on disks $D,D'$, respectively.
+To describe the associated binary operation, we use descent along this one-cycle.
+
+\owen{We could include pictures to make the geometry clearer.}
+
+Hence, let $O,O'$ be closed observables on disks $D,D'$, respectively.
 For simplicity, we assume that the closure of $D$ is strictly contained in $D'$. 
 If $C = \partial D'$, we can define $\int_C \Tilde{O}'$ as above. 
 Finally, for $D''$ another disk containing $D$ and $C$, 
@@ -542,6 +555,8 @@ consider the factorization product $\star : \Obs^\q(D) \tensor \Obs^\q (C) \to \
 \{O,O'\}_{\rm Ger} := O \star \int_C \Tilde{O}' \in \Obs^\q (D'') .
 \een 
 We note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$. 
+
+\owen{I'm not wild about using $\star$ for the factorization product, since it's not a single binary product. Also recall my discomfort with observables on closed sets like $C$.} 
 
 Let $V$ denote the cohomology $H^* \cV_{\rm string}$ of the dg vertex algebra $\cV_{\rm string}$.
 
