@@ -351,7 +351,7 @@ Note that this integral is independent of $\ell$ and $L$ and hence the limit is 
 By explicitly analyzing the $\ell \to 0$ limit for the integral associated to every Feynman diagram,
 we find the following result.
 
-\begin{prop}
+\begin{prop}\label{prop no CT}
 For any graph $\Gamma \in {\bf Graph}_{\rm string}$ allowed by the combinatorics of the string action functional and for any $L > 0$,
 there is a well-defined limit $\lim_{\ell \to 0} w_{\Gamma}(P_{\ell}^L,I_{\rm string})$.
 \end{prop}
@@ -439,8 +439,6 @@ which vanishes to some positive order at the origin,
 can be bounded in such as way that an $\ell \to 0$ limit exists.
 \end{proof}
 
-\owen{I commented out the reference to the i$\epsilon$ prescription because it seems a bit far afield, but feel free to reinsert (and cite that other dude too!) if you feel it's relevant}
-
 %It would be interested int compare our method for renormalization of the bosonic string to Witten's ``$i\epsilon$'' procedure for the perturbative string in \cite{WittenFeynman}.
 
 We can now define the effective theory that we consider for the string. 
@@ -460,8 +458,10 @@ Then, the family $\{I[L]\}$ satisfies the {\em homotopy RG equation}
 \ben
 I[L] = w(P_\ell^L , I[\ell]).
 \een
-The operator $w(P_\ell^L,-)$ defines a homotopy equivalence between the theory at scale $\ell$, defined using $S[\ell]$, and the theory at scale $S$, defined using~$S[L]$. 
+The operator $w(P_\ell^L,-)$ gives a way of relating quantities in theory at the length scale $\ell$ to the length scale $L$.
+Mathematically, it defines a homotopy equivalence between the theory at scale $\ell$, defined using $S[\ell]$, and the theory at scale $S$, defined using~$S[L]$. 
 \owen{Eugene: It might be good to expand on this a little.}
+\brian{I'd prefer not to say any more. Seems like a rabbit hole, unless you have something concise you want to add.}
 \end{rmk}
 
 \subsection{The quantum master equation}
@@ -545,6 +545,7 @@ where the edge connecting $F$ and $G$ is labeled by a 2-fold tensor~$K$.
 
 The BV Laplacian acts by attaching an edge labeled by~$K$ as a loop in all possible ways.
 \owen{Add picture.}
+\brian{will do when I'm tired tonight.}
 This diagrammatic behavior corresponds to the fact that $\Delta_{BV}$ is a constant-coefficient second-order differential operator.
 
 The tensor~$K$ determined by the pairing on fields is distributional.

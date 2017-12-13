@@ -1,8 +1,5 @@
 \section{OPE and the string vertex algebra}
 
-\owen{Eugene: I would switch 5.1 and 5.2 to indicate you're still working in the BV formalism and that the formalism reproduces the VOA}
-
-\owen{I implemented his suggestion and made some edits. Tell me what you think.}
 
 Vertex algebras are mathematical objects that axiomatize the behavior of local observables 
 (i.e., point-like observables) of a chiral conformal field theory (CFT),
@@ -22,6 +19,7 @@ for both the classical and the quantized theory, if it exists.
 The cochain complexes are local on the source manifold of a theory:
 on each open set $U$ in that manifold~$\Sigma$,
 one can pick out the observables with support in~$U$ by asking for the observables that vanish on fields with support outside~$U$.
+Furthermore, you can combine observables that have support on disjoint open sets.
 It is the central result of~\cite{CG1,CG2} that the observables also satisfy a local-to-global property,
 akin to the sheaf gluing axiom.
 Such a structure is known as a {\em factorization algebra} on~$\Sigma$.
@@ -122,18 +120,25 @@ I(\varphi) = \sum \int (\partial^{k_1}_z \varphi) \cdots (\partial^{k_m} \varphi
 
 One of Li's main results is that for a free chiral BV theory with action $S_{\rm free}$ and associated vertex algebra $\cV_{\rm free}$, one has the following:
 \begin{itemize}
-\item For any chiral interaction~$I$, the action $S_{\rm free} + I$ needs no counterterms \owen{Eugene: in what sense? are all diagrams finite?}, 
-and yields a renormalized interaction~$\{S [L]\}$.
-\owen{Perhaps we can compare to Prop \ref{prop: no counterterms}?}
-\item If the renormalized action $\{S [L]\}$ satisfies the quantum master equation,
-then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the form
+\item For any chiral interaction~$I$, the action $S = S_{\rm free} + I$ yields a renormalized action functional $I[L] = \lim_{\ell \to 0} W(P_\ell^L, I)$
+that requires no counterterms. 
+That is, the weights of all Feynman diagrams are finite (compare to Proposition \ref{prop no CT}),
+\item If the renormalized action $\{I[L]\}$ satisfies the quantum master equation then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the form
 \ben
 D_I = \oint I^q\, \d z
 \een
-of cohomological degree one, where $I^q = \lim_{L \to 0} I[L]$.
+that is square-zero and of cohomological degree one.
+Here, $I^q = \lim_{L \to 0} I[L]$.
 \owen{Eugene pointed out that this notation was kind of confusing. We should explain more carefully what $I[L]$ is and what the output $I^q$is.}
+\brian{How's that? I've added a remark below about how the derivation acts on the vertex algebra}
 \item The dg vertex algebra $\cV_I$ for such an action $\{I[L]\}$ has the same underlying graded vertex algebra $\cV_{\rm free}$ but it is equipped with the differential $\oint I^q \d z$. 
 \end{itemize}
+
+One way to understand how $D_I = \oint I^\q \d z$ acts on the vertex algebra is as follows. 
+We can think of $\oint I^\q \d z$ as an operator supported on a circle, or really, a thickened annulus. 
+Recall, the state space of the vertex algebra is what the factorization algebra assigns to a disk. 
+There is a factorization product map corresponding to a disk that is disjointly nested inside an annulus, including inside of a bigger disk. 
+This structure map tells us how the annular observable $\oint I^\q \d z$ acts on the vertex algebra.
 
 \begin{rmk} The fact that $I$ satisfies the quantum master equation implies that one has a map, for each open set $U \subset \CC$, from the free factorization algebra evaluated on $U$ to the factorization algebra of the deformed theory evaluated on $U$:
 \ben
@@ -236,12 +241,11 @@ which is a generic phenomenon in the BV formalism.)
 The dg Lie algebra $\Omega^{0,*}(\Sigma ; \cT_\Sigma)$ is simply a sheaf-theoretic resolution of holomorphic vector fields, with the usual Lie bracket.
 Our large dg Lie algebra is a square-zero extension of $\Omega^{0,*}(\Sigma ; \cT_\Sigma)$, 
 by the dg module inside the parentheses.
-The vector fields act by the Lie derivative on 
+The vector fields act by the Lie derivative on the space
 \[
 \Omega^{0,*}(\Sigma; V)[-1] \oplus \Omega^{1,*}(\Sigma;V^*)[-1] \oplus \Omega^{1,*}(\Sigma ; \cT_\Sigma^*)[-2],
 \]
-which are simply a copy of the $\beta\gamma$ system with target vector space~$V$.
-\owen{Eugene: and $b$ fields?}
+which is simply a copy of the $\beta\gamma$ system with target vector space~$V$, plus the $b$-field part of the classical theory.
  
 For simplicity, we write $\cL = \Omega^{0,*}(\Sigma ; \cT_\Sigma)$ and write $\cM$ for the module inside the parentheses.
 In this language, the space of classical observables supported on an open set $U \subset \Sigma$ is the Chevalley-Eilenberg cochain complex
@@ -363,8 +367,6 @@ It might help to draw this bracket diagrammatically,
 so one can see that it is a derivation that acts linearly on the generators
 (i.e., linear functionals on the fields).
 
-\owen{Eugene found this a little hard to follow. I tried to change it a little.}
-
 \begin{lem} 
 The derivation $\eta$ satisfies 
 \be\label{d/dz}
@@ -468,16 +470,17 @@ then
 \Tilde{O} = \Tilde{O}^{0} + \Tilde{O}^1 + \Tilde{O}^2 
 \]
 satisfies $(\d_{dR} + \d^\q) \Tilde{O} = 0$. 
-This relationship implies that for any $\d^\q$-closed observable $O$ and for any closed submanifold $C \subset \Sigma$, 
-we obtain a cocycle in the observables via
+This relationship implies that for any $\d^\q$-closed observable $O$ and for any tubular neighborhood $N_C$ of a closed submanifold $C \subset \Sigma$, 
+we obtain a cocycle in the observables on $N_C$ via
 \ben
-\int_C \Tilde{O} \in \Obs^\q(C) .
+\int_{C} \Tilde{O} \in \Obs^\q(N_C) .
 \een
 If $O$ has cohomological degree $k$ and $C$ is of dimension $l$, 
 then $\int_C \Tilde{O}$ has degree $k - l$. 
 \end{construction}
 
 \owen{I'm really not wild about evaluating the observables on a closed set like $C$, since it's not obviously well-behaved. Can we just use a small thickening?}
+\brian{How's that?}
 
 %\begin{rmk}
 %{\it A priori} the factorization algebra is only well-defined on open sets $U \subset \Sigma$. 
@@ -506,8 +509,6 @@ A Gerstenhaber algebra is a graded commutative algebra with a Lie bracket of coh
 In this section we show how to explicitly write down the product and bracket on the local observables (i.e., the observables on any disk) and compare our answer to the work of Lian-Zuckerman~\cite{LZ1}.
 
 \owen{Eugene pointed out that the next paragraph is way too fast. It presupposes that someone understands that the factorization product is independent of the location of the disks, and what the E-H argument is! This is true of topologists, but probably not physicists or geometers!}
-
-\owen{Here's my new attempt.}
 
 As explained just before Proposition \ref{prop: obs is e2}, 
 the Gerstenhaber operad is the operad $H_*(E_2)$ arising by taking homology of the $E_2$ operad.
@@ -545,18 +546,20 @@ we need to pick a one-cycle in the configuration space $E_2(2)$.
 To describe the associated binary operation, we use descent along this one-cycle.
 
 \owen{We could include pictures to make the geometry clearer.}
+\brian{will do this tonight}
 
 Hence, let $O,O'$ be closed observables on disks $D,D'$, respectively.
 For simplicity, we assume that the closure of $D$ is strictly contained in $D'$. 
-If $C = \partial D'$, we can define $\int_C \Tilde{O}'$ as above. 
+If $C = \partial D'$, and $N_C$ is a small tubular neighborhood (so an annulus), we can define $\int_C \Tilde{O}' \in \Obs^\q (N_C)$ as above. 
 Finally, for $D''$ another disk containing $D$ and $C$, 
-consider the factorization product $\star : \Obs^\q(D) \tensor \Obs^\q (C) \to \Obs^\q(D'')$ and define
+consider the factorization product $\mu : \Obs^\q(D) \tensor \Obs^\q (N_C) \to \Obs^\q(D'')$ and define
 \ben
-\{O,O'\}_{\rm Ger} := O \star \int_C \Tilde{O}' \in \Obs^\q (D'') .
+\{O,O'\}_{\rm Ger} := \mu \left(O, \int_C \Tilde{O}' \in \Obs^\q (D'')\right) .
 \een 
 We note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$. 
 
-\owen{I'm not wild about using $\star$ for the factorization product, since it's not a single binary product. Also recall my discomfort with observables on closed sets like $C$.} 
+\owen{I'm not wild about using $\star$ for the factorization product, since it's not a single binary product.}
+\brian{Not sure if what I did is any better.} 
 
 Let $V$ denote the cohomology $H^* \cV_{\rm string}$ of the dg vertex algebra $\cV_{\rm string}$.
 
