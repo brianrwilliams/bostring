@@ -1,9 +1,7 @@
 \section{Deformations of the theory and string backgrounds}
 \label{sec: moduli}
 
-\owen{Recall that Eugene said he felt we should say something about (1) why we bother to analyze the deformations and (2) what we mean by string backgrounds.}
-
-\owen{Here's my attempt.}
+\def\wt{{\rm wt}}
 
 Whenever one is studying a theory,
 it is helpful to understand how it can be modified 
@@ -29,8 +27,8 @@ In mathematical language, we recognize that the moduli space of classical BV the
 and so the tangent space of the theory (i.e., first-order deformations) becomes a tangent complex.
 
 As a gloss, the underlying graded vector space of this deformation complex consists of the local functionals on the jets of fields, i.e., Lagrangian densities.
-(Note that we allow local functionals of arbitrary cohomological degree.) 
-There is also a shifted Lie bracket $\{-,-\}$, 
+Note that we allow local functionals of arbitrary cohomological degree. 
+There is a shifted Lie bracket $\{-,-\}$, 
 which arises from the pairing $\int_\Sigma \langle-,-\rangle$ on the fields.
 It is, in essence, the shifted Poisson bracket corresponding to that shifted symplectic pairing on the fields.
 The differential on the local functionals is then $\{S,-\}$, where $S$ is the classical action. 
@@ -41,8 +39,9 @@ Observe that if we find a degree zero element $I$ such that
 \]
 then $I$ is a shifted Maurer-Cartan element and 
 hence determines a new classical BV theory whose action functional is $S + I$. 
-In particular, degree 0 cocycles determine first-order deformations of the classical BV theory. Cocycles in degree -1 encode local symmetries of the classical theory; 
-and obstructions to satisfying the quantum master equation end up being degree 1 cocycles.
+In particular, degree zero cocycles determine first-order deformations of the classical BV theory. 
+Cocycles in degree $-1$ encode local symmetries of the classical theory; 
+and obstructions to satisfying the quantum master equation end up being degree $+1$ cocycles.
 
 In this section, we will explain why the deformation complex $\Def_{\rm string}$ of the holomorphic string 
 can be expressed in terms of Gelfand-Fuks cohomology~\cite{Fuks}. 
@@ -129,24 +128,23 @@ by scaling the shifted cotangent fibers,
 and we will use the notation $\CC^\times_{\rm cot}$ to indicate this appearance of the multiplicative group.
 
 This group action can be seen on the level of the field theory as follows: 
-we give the $\gamma$ and $c$ fields---the base of the cotangent bundle---weight $0$ and give the $\beta$ and $b$ fields---the cotangent fiber---weight~$1$. 
-Note that, in consequence, the pairing $\langle-,-\rangle$ on fields thus has weight -1.
-In these terms, the classical action functional is weight 1. 
-Thus, we focus on weight 1 deformations of the action for the holomorphic bosonic string,
+we give the $\gamma$ and $c$ fields---the base of the cotangent bundle---$\CC_{\rm cot}^\times$-weight $0$ and give the $\beta$ and $b$ fields---the cotangent fiber---$\CC_{\rm cot}^\times$-weight~$1$. 
+Note that, in consequence, the pairing $\langle-,-\rangle$ on fields thus has $\CC_{\rm cot}^\times$-weight $-1$.
+In these terms, the classical action functional is weight $1$. 
+Thus, we focus on weight $1$ deformations of the action for the holomorphic bosonic string,
 as we are interested in local functionals of the same kind.
-That means we consider the subcomplex of weight 1 local functionals inside the deformation complex.
+That means we consider the subcomplex of weight $1$ translation invariant local functionals inside the deformation complex that we denote $\Def_{\rm string}(\CC)^{\CC, \wt(1)}$.
 
 \begin{rmk}\label{rmk: classical weights}
-Although this action $S$ has weight 1, 
+Although this action $S$ has $\CC_{\rm cot}^\times$-weight $1$, 
 its role in the cochain complex of classical observables is to define the differential $\{S,-\}$.
-Observe that the shifted Poisson bracket $\{-,-\}$ has weight -1, 
+Observe that the shifted Poisson bracket $\{-,-\}$ has weight $-1$, 
 because it is determined by the pairing, 
-and so the differential has weight 0. 
+and so the differential has weight $0$. 
 \end{rmk}
 
 This subcomplex admits a nice description in terms of the geometry of the target space.
 
-\def\wt{{\rm wt}}
 
 \begin{lem}
 \label{lem: def complex wt zero} 
@@ -154,7 +152,7 @@ There is a $\GL(V)$-equivariant quasi-isomorphism
 \[
 \Def_{\rm string}(\CC)^{\CC, \wt(1)} \simeq \Sym(V^*) \tensor V[1]
 \]
-between the weight 1, translation-invariant deformation complex 
+between the $\CC_{\rm cot}^\times$-weight $1$, translation-invariant deformation complex 
 and the polynomial vector fields on $V$, placed in degree~-1.
 \end{lem}
 
@@ -162,7 +160,7 @@ Concretely, this result says that there are every weight one interaction is triv
 This claim is a consequence of the fact that the zeroth cohomology group vanishes.
 On the other hand, this lemma says the theory admits a large group of symmetries,
 namely diffeomorphisms of the target, 
-which appears as the degree -1 cohomology.
+which appears as the degree $-1$ cohomology.
 
 The $\GL(V)$ equivariance takes into account the natural symmetries of the target. 
 It also is the first step in the approach to studying the deformation complex with general curved target. 
@@ -181,7 +179,7 @@ There is a $\GL(V)$-equivariant quasi-isomorphism
 \[
 \Def_{\rm string}(\CC)^{\CC, \wt(0)} \simeq \CC[-1] \oplus \Omega^2_{cl}(V)[1] \oplus \Omega^1(V) \oplus \Omega^1_{cl}(V)[-1] 
 \]
-between the weight 0, translation-invariant deformation complex 
+between the $\CC^\times_{\rm cot}$-weight $0$, translation-invariant deformation complex 
 and natural complexes related to the geometry of the target.
 \end{lem}
 
@@ -226,7 +224,6 @@ Denote by $\{L_n = z^{n+1} \partial_z\}$ the standard basis for the Lie algebra 
 Notice that the Euler vector field $L_0 = z \partial_z$ induces a grading on $\wone$,
 that we will call {\em conformal dimension}.
 Note that $L_n$ has conformal dimension $n$. 
-This grading extends naturally to the Chevalley-Eilenberg complex of $\wone$ with coefficients in any module. 
 
 Let $\lambda_n \in \wone^\vee$ be the dual vector to $L_n$. 
 (We work with the continuous dual vector space, as in the setting of Gelfand-Fuks cohomology.) 
@@ -234,20 +231,18 @@ An arbitrary element of $V [[z]]$ is a linear combination of vectors of the form
 Write $\zeta_k$ for the dual element $(z^k)^\vee$. 
 Thus an element of $(V [[z]])^\vee$ is a linear combination of the vectors of the form $v^\vee \tensor \zeta_k$. 
 
+Let $M$ be any $\wone$-module. 
+Then, there is an induced grading on $M$ and hence the complex $\clie^*(\wone ; M)$ by conformal dimension. 
+We denote the subcomplex of conformal dimension $n$ by $\clie^*(\wone ; M)^{(k)}$ \footnote{Not to be confused with the $\CC_{\rm cot}^\times$-weight grading above!}.
 The following general fact is useful.
 
 \begin{lem} \label{lem: gf}
-Let $M$ be any $\wone$-module. 
-The inclusion of the subcomplex of conformal dimension zero elements
+For any $\wone$-module $M$, the inclusion of the subcomplex of conformal dimension zero elements
 \ben
-\clie^*(\wone ; M)^{\wt(0)} \xto{\simeq} \clie^*(\wone ; M)
+\clie^*(\wone ; M)^{(0)} \xto{\simeq} \clie^*(\wone ; M)
 \een
 is a quasi-isomorphism.
 \end{lem}
-
-\owen{Eugene asks if the superscript means weight or conformal dimension.}
-\brian{Fudge, we seem to have convoluted the notations for weight and conformal dimension. In this lemma we really mean conformal dimension. I suggest we reserve the superscript for the conformal dimension.}
-\owen{Sounds good. Can you fix this notation systematically, as I think you have the deformation stuff clearer in your head and hence are less likely to introduce new mistakes!}
 
 \begin{proof} 
 For each $p-1 \geq 0$, 
@@ -256,12 +251,13 @@ define the operator $\iota_{L_0} : \clie^{p}(\wone ; M) \to \clie^{p-1}(\wone ; 
 (\iota_{L_0}\varphi)(X_1,\ldots,X_p) = \varphi(L_0, X_1,\ldots,X_p) .
 \een 
 Let $\d$ be the differential for the complex $\clie^*(\wone ; M)$. 
-It is easy to check that the difference $\d \iota_{L_0} + \iota_{L_0} \d$ is equal to the \owen{identity minus?} projection onto the dimension zero subspace. 
+It is easy to check that the difference $\d \iota_{L_0} + \iota_{L_0} \d$ is equal to the identity minus projection onto the dimension zero subspace.
+Thus, $\iota_{L_0}$ defines a homotopy contraction of the full complex to the conformal dimension zero subcomplex. 
 \end{proof}
 
 Returning now to our case of interest, we see that the underlying graded vector space of this conformal dimension zero subcomplex splits as follows:
 \be\label{splitting}
-\clie^{\#}(\wone)^{\wt(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{\wt(0)} \oplus \clie^{\#}(\wone)^{\wt(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{\wt(-1)}
+\clie^{\#}(\wone)^{(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{(0)} \oplus \clie^{\#}(\wone)^{(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{(-1)}
 \ee
 In the first component, the purely dimension zero part of the reduced symmetric algebra is simply $\Sym^{\geq 1}(V^\vee)$, i.e., power series on $V$ with no constant term.
 We denote this algebra concisely as $\cO_{red}(V)$, for reduced functions on $V$.
