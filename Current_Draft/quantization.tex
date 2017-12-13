@@ -18,7 +18,7 @@ and the algorithm one applies to obtain a quantization is the following:
 We call this the ``renormalized action.''
 \item Check if the renormalized action satisfies the quantum master equation. 
 If it does, you have a well-posed BV quantum theory, and we call the result a {\em quantized action}. If not, guess a way to adjust the renormalized action and begin the whole process again.
-\owen{Eugene: Mention obstruction theory.}
+(This process is a version of an obstruction theory in homological algebra.)
 \end{enumerate}
 It should be clear that along the way, one makes many choices;
 hence if a quantization exists, it may not be unique.
@@ -146,7 +146,8 @@ The outer legs are all of $c$~type.
 Every edge along a wheel will have the same type.
 It is not possible to build a connected graph with more than one loop.
 This combinatorics is the essential reason that we can quantize at one loop.
-For an example of such a wheel see Figure \ref{fig:wheel}.
+For an example of such a wheel, 
+see Figure~\ref{fig:wheel}.
 
 \begin{figure}
 \begin{tikzpicture}[line width=.2mm, scale=1.5]
@@ -352,6 +353,7 @@ By explicitly analyzing the $\ell \to 0$ limit for the integral associated to ev
 we find the following result.
 
 \begin{prop}
+\label{prop: no counterterms}
 For any graph $\Gamma \in {\bf Graph}_{\rm string}$ allowed by the combinatorics of the string action functional and for any $L > 0$,
 there is a well-defined limit $\lim_{\ell \to 0} w_{\Gamma}(P_{\ell}^L,I_{\rm string})$.
 \end{prop}
@@ -452,17 +454,22 @@ I[L] = \sum_{\Gamma \in {\bf Graph}_{\rm string}^{(0)}} w_{\Gamma}(P_{0}^L,I_{\r
 \]
 We denote the first summand---the tree-level expansion---by $S_0[L]$ 
 and the second summand---the one-loop expansion---by~$S_1[L]$.
-We use the notation $S[L] = S_{free} + I[L]$ where $S_{free}$ is the classical free part of the action functional. 
+We denote the whole scale $L$ action by $S[L] = S_{free} + I[L]$, 
+where $S_{free}$ is the classical free part of the action functional. 
 \end{dfn}
 
-\begin{rmk} For any functional $J$, let $w(P_{\ell}^L, J)$ denote the sum over all graphs as above with the smooth propagator $P_{\ell}^L$ placed at the edges and $J$ placed at the vertices. 
-Then, the family $\{I[L]\}$ satisfies the {\em homotopy RG equation}
+\begin{rmk} 
+For any functional $J$, let $w(P_{\ell}^L, J)$ denote the sum over all graphs as above, 
+with the smooth propagator $P_{\ell}^L$ placed on the edges and the functional $J$ placed at the vertices. 
+The family $\{I[L]\}$ satisfies the {\em homotopy RG equation}
 \ben
 I[L] = w(P_\ell^L , I[\ell]).
 \een
 The operator $w(P_\ell^L,-)$ defines a homotopy equivalence between the theory at scale $\ell$, defined using $S[\ell]$, and the theory at scale $S$, defined using~$S[L]$. 
 \owen{Eugene: It might be good to expand on this a little.}
 \end{rmk}
+
+\owen{I'm not sure exactly what Eugene wants, but perhaps we can forward reference to something? I'm not sure this homotopy equivalence statement is true unless we satisfy the QME \dots}
 
 \subsection{The quantum master equation}
 \label{subsec: QME}
