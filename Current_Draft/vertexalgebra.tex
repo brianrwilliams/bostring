@@ -184,12 +184,13 @@ The second approach gives an explicit formula for the bracket and is based on th
 We continue to consider the theory on the Riemann surface $\Sigma = \CC$. 
 In this section we show how to produce, from the point of view of factorization algebras, the structure of a Gerstenhaber algebra on the BRST cohomology of the bosonic string. 
 
-Recall that a Gerstenhaber algebra is equivalent to an algebra over the homology of the little 2-disk operad.
+Recall that a Gerstenhaber algebra is equivalent to an algebra over the operad given by the homology of the little 2-disk operad.
 Hence, our approach is to see why the factorization algebra naturally exhibits the structure of a algebra of little 2-disks.
-Here we use an important result of Lurie \cite{Lurie}: 
+Here we use an important result of Lurie (namely Theorem 5.4.5.9 of~\cite{Lurie}): 
 a {\em locally constant} factorization algebra on $\RR^n$ is equivalent to an algebra over the little $n$-disks operad, i.e., an $E_n$-algebra. 
 
 \begin{prop} 
+\label{prop: obs is e2}
 The factorization algebra $\Obs^\q_{\rm string}$ is locally constant, 
 and hence it determines an $E_2$ algebra.
 \end{prop}
@@ -334,21 +335,25 @@ The operator $\frac{\d}{\d \zbar}$ acts homotopically trivial on $\Obs^\q_{\rm s
 \end{lem}
 
 This fact ensures that the stress-energy tensor vanishes in the $\zbar\zbar$ direction.
-We now turn to~$\d/\d z$.
 
-View the vector field $\frac{\d}{\d z}$ as a constant $c$-field. 
+We now turn to~$\d/\d z$.
+View this vector field $\frac{\d}{\d z}$ as a constant $c$-field. 
 Consider the linear local functional of cohomological degree $-2$:
 \ben
 O_{\frac{\d}{\d z}}(\beta,\gamma,b,c) = \int \<b, \frac{\d}{\d z}\>,
 \een
 It only depends on the $b$-field.
 Note that for this integral to be nonzero, 
-we must have $b \in \Omega^{1,1}(\Sigma , T_\Sigma^{1,0*})$. 
+we must have $b \in \Omega^{1,1}(\Sigma , T_\Sigma^{1,0*})$
+(also, in fact, compactly supported for the integral to be well-defined). 
 Using the BV bracket, we obtain a derivation of the factorization algebra 
 \ben
 \eta = \{O_{\frac{\d}{\d z}}, -\}
 \een
 of cohomological degree~$-1$. 
+It might help to draw this bracket diagrammatically, 
+so one can see that it is a derivation that acts linearly on the generators
+(i.e., linear functionals on the fields).
 
 \owen{Eugene found this a little hard to follow.}
 
@@ -360,7 +365,7 @@ The derivation $\eta$ satisfies
 \end{lem}
 \begin{proof}
 The derivation $\eta$ commutes with both $\dbar$ and $\Delta$. 
-Thus, the left-hand side is 
+Thus, the left-hand side reduces~to
 \[
 [\{I, -\}, \eta] = \{ \{I, O_{\frac{\d}{\d z}}\}, -\}.
 \]
@@ -368,7 +373,8 @@ The only part of the interaction that contributes is $\int \<\beta, c \cdot \gam
 \ben
 \{I, O_{\frac{\d}{\d z}}\} = \int \<\beta, \partial_z \gamma\> + \int\<b, [\partial_z, c]\> .
 \een
-Bracketing with this local functional is precisely $\frac{\d}{\d z}$, as desired.
+Bracketing with this local functional encodes applying $\frac{\d}{\d z}$ to the inputs, as desired.
+(In diagrammatic terms, this feature is almost immediately visible.)
 \end{proof}
 
 Together these two lemmas ensure that translations act trivially on the cohomological observables.
@@ -491,14 +497,42 @@ In this section we show how to explicitly write down the product and bracket on 
 
 \owen{Eugene pointed out that the next paragraph is way too fast. It presupposes that someone understands that the factorization product is independent of the location of the disks, and what the E-H argument is! This is true of topologists, but probably not physicists or geometers!}
 
-The product of the Gerstenhaber algebra is simply given by the factorization product of two disjoint disks including into a larger disk:
-\ben
-\cdot : \Obs^\q(D) \tensor \Obs^\q(D') \to \Obs^\q(D'') .
-\een 
-At the level of cohomology, this product is commutative by the Eckmann-Hilton argument,
-as we can just move one disk around the other.
+\owen{Here's my new attempt.}
 
-To construct the shifted Poisson bracket, we use descent.
+As explained just before Proposition \ref{prop: obs is e2}, 
+the Gerstenhaber operad is the operad $H_*(E_2)$ arising by taking homology of the $E_2$ operad.
+Recall that $E_2(2)$ parametrizes the space of binary operations as the configuration space of disjoint two disks in the unit disk in $\RR^2$.
+This space deformation retracts onto $S^1$.
+Hence 
+\[
+Gerst(2) = H_*(E_2(2)) \cong H_*(S^1). 
+\]
+(Note that we view homology of spaces as concentrated in nonpositive degrees,
+since it is viewed as the linear dual to cohomology.)
+The degree zero operation---corresponding to a commutative product---matches with a zero-dimensional cycle of $S^1$,
+and the degree -1 operation---corresponding to the shifted Poisson bracket---matches with a one-dimensional cycle of~$S^1$. 
+
+Thus, to obtain the commutative product on $H^*\Obs^\q$, 
+we need only pick an embedding of two disjoint disks inside a larger disk,
+which is precisely such a zero-cycle in $E_2(2)$.
+Then the factorization product
+\ben
+\Obs^\q(D) \tensor \Obs^\q(D') \to \Obs^\q(D'') .
+\een 
+induces the commutative product
+\[
+\cdot: H^*\Obs^\q \otimes H^*\Obs^\q \to H^*\Obs^\q.
+\]
+Since this configuration space $E_2(2)$ is connected, 
+we could use any other choice of embeddings and get the same answer at the level of cohomology.
+In particular, we could have put $D'$ on the opposite side of $D$,
+which is why the product must be commutative.
+(A topologist would call this the Eckmann-Hilton argument,
+as it is the same argument one uses to show that the homotopy group $\pi_2(X)$ is always abelian.)
+
+To construct the shifted Poisson bracket, 
+we need to pick a one-cycle in the configuration space $E_2(2)$.
+To describe the associated binary operation, we use descent.
 Suppose $O,O'$ are closed observables on disks $D,D'$, respectively.
 For simplicity, we assume that the closure of $D$ is strictly contained in $D'$. 
 If $C = \partial D'$, we can define $\int_C \Tilde{O}'$ as above. 
