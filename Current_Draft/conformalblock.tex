@@ -15,7 +15,7 @@ much as the de Rham or Dolbeault complexes do for the cohomology of sheaves that
 As we will explain, the answers we recover for the holomorphic string can be related quite cleanly to natural determinant lines on the moduli of Riemann surfaces,
 hence providing a bridge from the Feynman diagrammatic anomaly computations to the index-theoretic computations.
 
-\subsection{The free case}
+\subsection{The global observables in the free case}
 
 Before jumping to the holomorphic string, 
 we will work out the global observables in the simpler case of the free $bc\beta\gamma$ system,
@@ -45,9 +45,11 @@ In our case, it the calculation implies that we get a shifted determinant of the
 H^*\left(\Obs^\q_{free}(\Sigma)\right) \cong \det \left(H^*(\Sigma ; \sO_\Sigma) \right)^{\tensor \dim(V)} \tensor \det \left(H^*(\Sigma ; T_\Sigma^{1,0})\right)^{-1} [d(\Sigma)] 
 \een
 where 
-\ben
-d(\Sigma) = \dim (V)  \left(\dim H^0(\Sigma ; \sO_\Sigma) + \dim H^1(\Sigma ; \sO_\Sigma)\right) + \dim(H^0(\Sigma ; T_\Sigma^{1,0})) - \dim(H^1(\Sigma ; T_\Sigma^{1,0})).
-\een
+\begin{align*}
+d(\Sigma) = & \dim (V)  \left(\dim H^0(\Sigma ; \sO_\Sigma) + \dim H^1(\Sigma ; \sO_\Sigma)\right) \\
+&+ \dim(H^0(\Sigma ; T_\Sigma^{1,0})) - \dim(H^1(\Sigma ; T_\Sigma^{1,0})).
+\end{align*}
+(The meaning of this shift is not completely clear to us.)
 
 \owen{Eugene points out that in principle we could have jumping phenomena, so we should make sure we say things clearly.}
 
@@ -72,43 +74,85 @@ as it encodes the de Rham complex on the formal quotient stack $B\fg = \ast/\fg$
 
 The computation here works for any Riemann surface $\Sigma$ and, indeed, for any family of Riemann surfaces.
 Hence it implies that the global observables of the free $bc\beta\gamma$ system determine a determinant line bundle on the moduli $\cM$ of Riemann surfaces.
+We will identify {\em which} line bundle we get after examining the global observables of the holomorphic string.
 
-We can work out the first Chern class of this determinant line bundle using the Grothendieck-Riemann-Roch theorem as follows.
+\subsection{The global observables for the holomorphic string}
+
+The cohomology of the global observables $\Obs^\q(\Sigma)$ of the holomorphic string on a closed surface~$\Sigma$ is also surprisingly easy to compute.
+
+Consider the filtration on the quantum observables induced by the polynomial degree of the functional. 
+\owen{Eugene: This is not a filtration, since BV Laplacian lowers symmetric degree. Perhaps use homological perturbation lemma?}
+There is a spectral sequence abutting to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_1$ page given by the cohomology of the global observables of the free $bc\beta \gamma$ system which we have already computed:
+\bestar
+E_2 & \cong & \det\left(H^*(\Sigma ; T_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
+& \cong & \det \left(H^1(\Sigma ; T_\Sigma) \right) \tensor \det \left(H^0(\Sigma ; T_\Sigma)\right)^{-1} \tensor \det \left(H^0(\Sigma ; K_{\Sigma}) \right)^{-13}
+\eestar
+where we have used the fact that $H^0(\Sigma ; \cO) \cong \CC$ for any $\Sigma$. 
+Since this page is concentrated in a single line, we see that the spectral sequence degenerates at this page.
+
+Let $\Sigma_{g}$ be a surface of genus $g$. 
+For $g=1$, the above expression simplifies to
+\ben
+\det \left(H^1(\Sigma_1 ; T_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-14} .
+\een 
+For $g \geq 2$, one has
+\ben
+\det \left(H^1(\Sigma_1 ; T_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-13} .
+\een
+Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
+Compare these formulas to Witten's analysis \owen{precise citation?} of the bosonic string in~\cite{WitString}.
+
+\subsection{Identifying the determinant lines}
+
+We now work out the first Chern class of this determinant line bundle using the Grothendieck-Riemann-Roch theorem.
 Consider the universal Riemann surface $\pi \colon C \to \cM$ over the moduli space, 
-and consider the bundles $\sO_C \otimes V$ and $\sT_\pi = \sT_{C/\cM}$,
-which one can view as the universal $\gamma$ fields and $c$ fields, respectively.
+and consider the bundles $\sO_C \otimes V$ and the relative tangent sheaf $\sT_\pi = \sT_{C/\cM}$.
+(These encode the universal $\gamma$ fields and $c$ fields, respectively.)
 The first Chern class of the derived pushforward $R\pi_*(\sO_C \otimes V)$ is given by the first Chern class of $\det(H^*(\sO_C \otimes V)) \cong \det(\sO_C)^{\otimes \dim V}$, 
 since the first Chern class of a vector bundle is the first Chern class of its determinant bundle.
-The Grothendieck-Riemann-Roch theorem states that for a cochain complex of coherent sheaves $\cF$ on $C$, 
+The Grothendieck-Riemann-Roch (GRR) theorem states that for a cochain complex of coherent sheaves $\cF^\bullet$ on $C$, 
 the Chern character $\ch(R\pi_* \cF)$ of its derived pushforward $R\pi_* \cF$  is given by 
 \def\Td{{\rm Td}}
-\begin{align*}
-\pi_*( \ch(\cF) &\Td(T_\pi)) = \pi_*\left( \left(\sum_{i} (-1)^i \ch (\cF^i) \right) \Td(T_\pi)\right) \\
-&= \pi_*\left( \left(\sum_i (-1)^i ({\rm rk}(\cF^i) + c_1(\cF^i) + \frac{1}{2}(c_1(\cF^i)^2) + \cdots)\right) (1 +\frac{1}{2}c_1(T_\pi) + \frac{1}{12} c_1(T_\pi)^2)\right)
-\end{align*}
-where $T_\pi$ denotes the relative tangent bundle along $\pi$,
-which is here just the tangent line bundle of a Riemann surface.
-\owen{Eugene found this a bit quick.}
-The first Chern class is the component of cohomological degree 2.
-For instance, when $\cF = \cF^0$ is concentrated in degree zero, the above simplifies to:
-\ben
-\frac{1}{12} {\rm rk}(\cF) c_1(T_\pi)^2 + \frac{1}{2} c_1(\cF) c_1(T_\pi) + \frac{1}{2} c_1(\cF)^2 .
-\een  
-When $\cF = T^{\tensor n}_{\pi} [1]$ \owen{we should probably explain how shifts affect signs \dots}, the expression for the first Chern class is $-\frac{1 + 6n + 6n^2}{12} c_1(T_\pi)^2$.
-When $\cF = \cO \tensor V$ we simply get~$\dim(V)$. 
-\owen{Maybe do $n =1 $ case explicitly first and then explain general case. We also change notation from scripty T to straight T.}
-
-Hence, when $\cF = T[1] \oplus (\cO \tensor V)$, 
-the global observables $H^*\left(\Obs^\q_{free}(C)\right)$ provide a determinant line with
 \[
-c_1\left(H^*\left(\Obs^\q_{free}(\Sigma)\right)\right) = \frac{1}{12} (\dim(V) - 13) c_1(T_\pi)^2 .
+\pi_*( \ch(\cF^\bullet)\Td(\sT_\pi)) = \pi_*\left( \left(\sum_{i} (-1)^i \ch (\cF^i) \right) \Td(\sT_\pi)\right).
 \]
-\owen{We are adding two contributions so maybe give steps carefully.}
+Unraveling the definitions, we see that the class to be pushed forward expands~to
+\[
+\left(\sum_i (-1)^i ({\rm rk}(\cF^i) + c_1(\cF^i) + \frac{1}{2}(c_1(\cF^i)^2) + \cdots)\right) \left(1 +\frac{1}{2}c_1(\sT_\pi) + \frac{1}{12} c_1(\sT_\pi)^2 + \cdots \right).
+\]
+%since $\sT_\pi$ is the tangent line bundle of a Riemann surface.
+When we pushforward, we integrate out the fiber direction, so along a Riemann surface.
+
+\owen{Eugene found this a bit quick, so I've tried to improve.}
+
+We are interested in the first Chern class of the pushforward $R\pi_* \cF$,
+which is the component of cohomological degree~2.
+Thus we want to take the fiberwise integral of the degree 4 component of $\pi_*( \ch(\cF^\bullet)\Td(\sT_\pi))$,
+which we do by using the expansion.
+For instance, if $\cF = \cF^0$ is concentrated in degree zero, the relevant expression simplifies~to
+\ben
+\frac{1}{12} {\rm rk}(\cF) c_1(\sT_\pi)^2 + \frac{1}{2} c_1(\cF) c_1(\sT_\pi) + \frac{1}{2} c_1(\cF)^2 .
+\een  
+As another example, if $\cF = \sT^{\tensor n}_{\pi}$, the expression for the first Chern class~is 
+\[
+\frac{1 + 6n + 6n^2}{12} c_1(\sT_\pi)^2.
+\]
+And if $\cF = \cO \tensor V$, we simply get~$\dim(V)/12$. 
+
+For the free $bc\beta\gamma$ system,
+we have $\cF = \sT[1] \oplus (\cO \tensor V)$.
+We know that the global observables $H^*\left(\Obs^\q_{free}(C)\right)$ provide a determinant line,
+and the computations then imply
+\[
+c_1\left(H^*\left(\Obs^\q_{free}(\Sigma)\right)\right) = \frac{1}{12} (\dim(V) - 13) c_1(\sT_\pi)^2 .
+\]
+(Note the sign change due to shifting the relative tangent bundle.)
 
 It is worthwhile to point out that the above argument based on GRR for identifying the first Chern class of this determinant line bundle resonates with our computation of the anomaly of the bosonic string on the disk. Indeed, this is a manifestation of ``Virasoro uniformization.'' 
 \owen{No one knows what that means. We should add a few words.}
 Also, notice that the above calculation assumed that there was no deformation, so that we were working with a free theory. 
-However, deforming the action from free $bc\beta\gamma$ system to holomorphic bosonic string doesn't affect the line bundles, since those are continuous parameters and Chern classes are discrete.
+However, deforming the action from free $bc\beta\gamma$ system to holomorphic bosonic string should not affect the line bundles, 
+since varying the action involves adjusting continuous parameters (the coupling constants) and Chern classes are discrete invariants.
 \owen{Eugene was (rightly) suspicious of this, since adding an interaction can change the cohomology of observables somewhat abruptly. }
 
 \subsection{The anomaly and moduli of quantizations on an arbitrary Riemann surface}
@@ -155,28 +199,3 @@ varying these continuous parameters will not change the class of the line bundle
 In conclusion, no matter what one-loop quantization we choose, 
 the cohomology of the global observables will be the same.
 
-\subsection{Global observables for the holomorphic string}
-
-\owen{Eugene suggests to move this before 6.2}
-
-Now, let us consider the global observables of the holomorphic string $\Obs^\q(\Sigma)$. 
-Consider the filtration on the quantum observables induced by the polynomial degree of the functional. 
-\owen{Eugene: This is not a filtration, since BV Laplacian lowers symmetric degree. Perhaps use homological perturbation lemma?}
-There is a spectral sequence abutting to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_1$ page given by the cohomology of the global observables of the free $bc\beta \gamma$ system which we have already computed:
-\bestar
-E_2 & \cong & \det\left(H^*(\Sigma ; T_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
-& \cong & \det \left(H^1(\Sigma ; T_\Sigma) \right) \tensor \det \left(H^0(\Sigma ; T_\Sigma)\right)^{-1} \tensor \det \left(H^0(\Sigma ; K_{\Sigma}) \right)^{-13}
-\eestar
-where we have used the fact that $H^0(\Sigma ; \cO) \cong \CC$ for any $\Sigma$. 
-Since this page is concentrated in a single line, we see that the spectral sequence degenerates at this page.
-
-Let $\Sigma_{g}$ be a surface of genus $g$. Then for $g=1$ the above simplifies to
-\ben
-\det \left(H^1(\Sigma_1 ; T_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-14} .
-\een 
-If $g \geq 2$ one has
-\ben
-\det \left(H^1(\Sigma_1 ; T_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-13} .
-\een
-Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
-Compare these formulas to Witten's analysis of the bosonic string in \cite{WitString}.
