@@ -159,35 +159,38 @@ since varying the action involves adjusting continuous parameters (the coupling 
 
 We have already seen that the holomorphic string {\it on a disk} admits a BV quantization if and only if the target is a complex vector space of dimension 13.
 Here we will explain why this anomaly calculation is actually enough to show the existence of a quantization on an {\it arbitrary} Riemann surface. 
-An argument using GRR was given in the above section. 
+An argument using the GRR theorem was given in the preceding section. 
 In this section we give a proof using only the perspective of BV quantization.
-One can view this as giving a proof of GRR using Feynman diagrams (and will be the topic of future work). 
+One can view this approach as giving a proof of (a piece of) the GRR theorem using Feynman diagrams (and will be the topic of future work). 
 
-Our diagrammatic arguments showed that only wheels with $c$ legs appear in the anomaly,
+Our diagrammatic arguments show that only wheels with $c$ legs appear in the anomaly,
 and these arguments did not depend on the choice of $\Sigma$. 
 Hence the anomaly will be purely a functional on the $c$ fields.
-So we restrict ourselves to the piece of the deformation complex only involving such fields.
-By arguments analogous to those in Section \ref{sec: moduli}, 
+We thus restrict ourselves to the relevant piece of the deformation complex,
+the component only involving such fields.
+By arguments analogous to those in Section~\ref{sec: moduli}, 
 when $\Sigma$ is the disk,
 this component is quasi-isomorphic to $\cred^*(W_1)[2]$,
-whose cohomology is $\CC$ concentrated in degree 1.
+whose cohomology is $\CC$ concentrated in degree~1.
 More generally, the deformation complex is a sheaf of cochain complexes on $\Sigma$, 
-and Proposition 5.3 of \cite{BWvir} shows that this sheaf of complexes is quasi-isomorphic to the constant sheaf $\CC_\Sigma[-1]$ concentrated in degree $+1$. 
-The construction of BV quantization is manifestly {\em local-to-global} on spacetime. 
-In particular, anomalies inherit this property: the anomaly computed on an open set $U \subset \Sigma$ is equal to the anomaly of the theory on $\Sigma$ restricted to $U$. 
-In our case, the anomaly on some Riemann surface $\Sigma$ must match with the anomaly we have already computed if we take $U$ to be a disk in $\Sigma$.
-This global anomaly is a 1-cocycle for the derived global sections of the shifted constant sheaf, 
-and hence, because of the shift, this cocycle is determined by a constant function on $\Sigma$.
-Thus, it suffices to compute the anomaly on an arbitrary open, 
-in particular, it suffices to compute it on a flat disk. 
-But this is precisely the context in which we computed the anomaly in Section~\ref{sec: quantization}, 
+and Proposition 5.3 of \cite{BWvir} shows that this sheaf of complexes is quasi-isomorphic to the constant sheaf $\CC_\Sigma[-1]$ concentrated in degree~1. 
+
+Since the construction of BV quantization is manifestly {\em local-to-global} on spacetime, 
+anomalies inherit this property: 
+the anomaly computed on an open set $U \subset \Sigma$ is equal to the anomaly of the theory on $\Sigma$ restricted to $U$. 
+In our case, the anomaly on some Riemann surface $\Sigma$ must match with the anomaly we have already computed diagrammatically, if we take $U$ to be a disk in $\Sigma$.
+This global anomaly is thus a 1-cocycle for the derived global sections of the shifted constant sheaf $\CC_\Sigma[-1]$.
+Because of the shift, this cocycle is determined by a constant function on $\Sigma$.
+Thus, it suffices to compute the anomaly on an arbitrary open,
+and in particular, it suffices to compute it on a flat disk. 
+But this context is precisely where we computed the anomaly in Section~\ref{sec: quantization}, 
 so we know the anomaly is simply the dimension of the target vector space.
 Thus, a quantization of the holomorphic string exists on any Riemann surface provided $\dim_{\CC}(V) = 13$. 
 
 Now we ask how many such quantizations are possible,
-i.e., what is the moduli of theories.
-By the calculation in Section \ref{sec: moduli}, 
-we know that, up to BV equivalence, 
+i.e., what is the moduli of quantized theories.
+By the calculation in Section~\ref{sec: moduli}, 
+we know that, up to equivalence of BV theories, 
 the possible one-loop terms in the quantized action functional are parametrized by
 \ben
 H^0(\Sigma) \tensor \Omega^1(V) \oplus H^1(\Sigma) \tensor \Omega^2_{cl}(V).
