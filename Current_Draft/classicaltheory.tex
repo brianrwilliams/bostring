@@ -108,8 +108,9 @@ For instance, we will examine the vertex algebra for the free theory before seei
 Similarly, one can identify the anomaly already at the level of the free theory.
 
 This viewpoint of arriving at the bosonic string as a deformation of a free CFT is central to the analysis of the string in the physics literature. 
-See, for instance, \cite{GSW1}, Chapter 2 of \cite{polchinski},
-and~\cite{Scherk}. 
+See, for instance, Chapter 3 of \cite{GSW1}, Chapter 2 of \cite{polchinski},
+or~\cite{Scherk}. 
+\owen{Did I pick the right chapter of GSW?}
 \end{rmk}
 
 \begin{rmk}
@@ -242,8 +243,6 @@ The rescaling does not affect $\varphi$.
 The two symmetries are compatible: 
 given $f$ and $X$, then $L_{X} (f \alpha) = X(f) \alpha + f L_X \alpha$ for any $\alpha \in \Sym^2(T_\Sigma)$.
 That is, the action of infinitesimal diffeomorphisms and Weyl rescalings combine to give an action of the semi-direct product of vector fields with functions.  
-\owen{Eugene remarked "it's worth explaining what this means conceptually".}
-\brian{I've explained what I meant by "compatible". Is that what he's referring to? Not sure what else to expand on...}
 
 To summarize, we have the following graded vector space of fields:
 \[
@@ -262,27 +261,33 @@ S^{BV}_{Poly} (\varphi, \alpha, X, f) =  \int_\Sigma h(\varphi, \Delta_{g_0 + \a
 \ee
 \owen{Eugene commented "explain this as $\langle \phi \sum \log(\phi^n)\rangle$ (or something). I recall he also found this discussion a bit dense.}
 \brian{Not sure what he means. I've tried to clarify the discussion.}
-The operator $\Delta_{g_0+\alpha}$ refers to the Laplacian corresponding to the deformation of the metric $g_0 + \alpha$. 
-We write this operator as an expansion in the field $\alpha$
+The operator $\Delta_{g_0+\alpha}$ refers to the Laplacian for the deformed metric $g_0 + \alpha$. 
+We can expand this operator in terms of the $\alpha$ field:
+\owen{I removed the $\int_\Sigma$, which did not make sense to me.}
 \ben
-\Delta_{g_0 + \alpha} = \sum_{n \geq 1} \frac{1}{n!} \int_{\Sigma} D_n(\alpha,\ldots, \alpha) .
+\Delta_{g_0 + \alpha} = \sum_{n \geq 1} \frac{1}{n!} D_n(\alpha,\ldots, \alpha),
 \een
-Hence, the $D_n$ are differential operators of the form 
-$D_n : \left(\Sym^2(T_\Sigma)\right)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ 
-where ${\rm Diff}^{\leq 2}(\Sigma)$ are order $\leq 2$ differential operators.
-Thus, for each section $\alpha$ of $\Sym^2(T_\Sigma)$, we get a second-order differential operator $D_n(\alpha,\cdots,\alpha)$ acting on functions on $\Sigma$. 
-%(This term is the $n$th term in the Taylor expansion, so it is homogeneous of order $n$: $D_n(t \alpha) = t^n D_n(\alpha)$ for a scalar $t$.)
-We write $S^{ghost}(\varphi, \alpha, X,f)$ for terms in the BV action functional that encodes how the ghosts act on the physical fields of the theory.  
-It is of the form
+where $D_n$ denotes a map 
+\[
+D_n : \left(\Sym^2(T_\Sigma)\right)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma),
+\]
+with ${\rm Diff}^{\leq 2}(\Sigma)$ the differential operators of order~$\leq 2$.
+In other words, for each section $\alpha$ of $\Sym^2(T_\Sigma)$, 
+we get a second-order differential operator $D_n(\alpha,\cdots,\alpha)$ acting on functions $\phi$ on~$\Sigma$. 
+
+We write $S^{ghost}(\varphi, \alpha, X,f)$ for the terms in the BV action functional that encode how the ghosts act on the physical fields of the theory.  
+It has the form
 \begin{align}
 S^{ghost}(f,X,\alpha) & = \int_{\Sigma} h(\varphi, X \cdot \varphi) \dvol_{g_0} +  \int_\Sigma \<\alpha^\vee, L_X (g_0 + \alpha) + f (g_0 + \alpha)\> \\ & + \int_\Sigma \<X^\vee, [X,X]\> + \int_\Sigma \<f^\vee, X \cdot f\> .
 \end{align}
 The first term describes how vector fields act on the maps of the $\sigma$-model. 
-The second term encodes how vector fields and Weyl transformations act on the perturbed metric $g_0 + \alpha$ and the remaining terms are required to ensure the gauge symmetry is consistent (satisfies the classical master equation). 
+The second term encodes how vector fields and Weyl transformations act on the perturbed metric $g_0 + \alpha$ and the remaining terms are required to ensure the gauge symmetry is consistent ({\em aka} that the whole action satisfies the classical master equation). 
 
-Writing down an explicit formula for $D_n(\alpha,\ldots,\alpha)$ is a rather involved exercise (and not needed here).
-For instance, if we are working locally on $\Sigma = \RR^2$ with the $g_0$ the flat metric, 
-then the operator $D_1(\alpha)$ is the sum of a first-order and a second-order differential operator
+Writing down an explicit formula for $D_n(\alpha,\ldots,\alpha)$ is a rather involved exercise,
+and we do not need such a formula here.
+The first case is illustrative.
+Let us work locally on $\Sigma = \RR^2$ with $g_0$ the flat metric.
+Then the operator $D_1(\alpha)$ is the sum of a first-order and a second-order differential operator
 \ben
 D_1(\alpha) = \frac{1}{2} \frac{\partial}{\partial x^i} ({\rm tr}(\alpha)) \frac{\partial}{\partial x^i} + \frac{1}{2} {\rm tr} (\alpha) \frac{\partial}{\partial x^i} \frac{\partial}{\partial x^i}, 
 \een
@@ -294,10 +299,12 @@ Here, we use the natural trace map ${\rm tr} : \Sym^2 T\Sigma \to C^\infty(\Sigm
 
 There is an important parameter in this action functional: the Hermitian inner product $h$.
 We can consider scaling it: for $t \in (0,\infty)$, replace $h$ by $t h$.
-The ``infinite volume limit'' as $t \to \infty$ admits a nice description,
-provided one rewrites the action functional in a first-order formalism
-(i.e., adjoins fields so that only first-order differential operators appear in the action,
-which is a sort of action functional analogue of working with phase space).
+The ``infinite volume limit'' of $t \to \infty$ admits a nice description,
+provided one rewrites the action functional in a first-order formalism.
+By this, we mean that we want an action involving only first-order differential operators 
+but which encodes an equivalent classical field theory to that encoded by the initial, second-order action.
+In practice, one adjoins auxiliary fields to reduce the order of all differential operators in the action,
+much as one extracts Hamiltonian mechanics from Newton's equation.
 
 \begin{lem} 
 In this infinite volume limit
