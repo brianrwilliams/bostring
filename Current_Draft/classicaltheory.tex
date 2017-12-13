@@ -228,7 +228,7 @@ As $\varphi$ is linear, we just consider expanding around the zero map.
 Thus our new fields are $\varphi \in C^\infty(\Sigma,V)$ and $\alpha \in \Gamma(\Sigma,\Sym^2(T_\Sigma))$.
 
 There are also ghost fields associated to the symmetries we gauge.
-First, there are infinitesimal diffeomorphisms,  which are described by vector fields on~$\Sigma$.
+First, there are infinitesimal diffeomorphisms, which are described by vector fields on~$\Sigma$.
 We denote this ghost field by $X \in \Gamma(\Sigma,T_\Sigma)$.
 It acts on the fields by the transformation 
 \[
@@ -241,7 +241,9 @@ with ghost field $f \in~C^\infty(\Sigma)$.
 The rescaling does not affect $\varphi$.
 The two symmetries are compatible: 
 given $f$ and $X$, then $L_{X} (f \alpha) = X(f) \alpha + f L_X \alpha$ for any $\alpha \in \Sym^2(T_\Sigma)$.
-\owen{Eugene remarked "it's worth explaining what this means conceptually"}
+That is, the action of infinitesimal diffeomorphisms and Weyl rescalings combine to give an action of the semi-direct product of vector fields with functions.  
+\owen{Eugene remarked "it's worth explaining what this means conceptually".}
+\brian{I've explained what I meant by "compatible". Is that what he's referring to? Not sure what else to expand on...}
 
 To summarize, we have the following graded vector space of fields:
 \[
@@ -255,28 +257,30 @@ f, f^\vee & C^\infty(\Sigma) &&& \Omega^2(\Sigma) .
 \end{array}
 \]
 The BV action functional is of the form:
-\begin{align}\label{polyakov bv}
-S^{BV}_{Poly} (\varphi, \alpha, X, f) = 
-& \int_\Sigma h(\varphi, \Delta_{g_0} \varphi)\, \dvol_{g_0} + \sum_{n \geq 1} \frac{1}{n!} \int_{\Sigma} h(\varphi, D_n(\alpha) \varphi) \dvol_{g_0} \\
-& +  \int_{\Sigma} h(\varphi, X \cdot \varphi) \dvol_{g_0} \\
-& +  S'(X, f, \alpha) 
-\end{align}
+\be \label{polyakov bv}
+S^{BV}_{Poly} (\varphi, \alpha, X, f) =  \int_\Sigma h(\varphi, \Delta_{g_0 + \alpha} \varphi)\, \dvol_{g_0} +  S^{ghost}(X, f, \alpha) 
+\ee
 \owen{Eugene commented "explain this as $\langle \phi \sum \log(\phi^n)\rangle$ (or something). I recall he also found this discussion a bit dense.}
-The right hand side of the first line amounts to expanding out the Laplace-Beltrami operator $\Delta_{g_0 + \alpha}$ as a function of $\alpha$.
+\brian{Not sure what he means. I've tried to clarify the discussion.}
+The operator $\Delta_{g_0+\alpha}$ refers to the Laplacian corresponding to the deformation of the metric $g_0 + \alpha$. 
+We write this operator as an expansion in the field $\alpha$
+\ben
+\Delta_{g_0 + \alpha} = \sum_{n \geq 1} \frac{1}{n!} \int_{\Sigma} D_n(\alpha,\ldots, \alpha) .
+\een
 Hence, the $D_n$ are differential operators of the form 
 $D_n : \left(\Sym^2(T_\Sigma)\right)^{\tensor n} \to {\rm Diff}^{\leq 2} (\Sigma)$ 
-where ${\rm Diff}^{\leq 2}(\Sigma)$ are order $\leq 2$ differential operators on $\Sigma$.
-Thus, for each section $\alpha$ of $\Sym^2(T_\Sigma)$, we get a second-order differential operator $D_n(\alpha)$ acting on functions on $\Sigma$. (This term is the $n$th term in the Taylor expansion, so it is homogeneous of order $n$: $D_n(t \alpha) = t^n D_n(\alpha)$ for a scalar $t$.)
-The second line encodes how vector fields act on the maps of the $\sigma$-model.
-The third line $S'(X, f, \alpha)$ is independent of $\varphi$
-and only depends on the fields $f$, $X$, $\alpha$ and their antifields (denoted with checks $(-)^\vee$).
+where ${\rm Diff}^{\leq 2}(\Sigma)$ are order $\leq 2$ differential operators.
+Thus, for each section $\alpha$ of $\Sym^2(T_\Sigma)$, we get a second-order differential operator $D_n(\alpha,\cdots,\alpha)$ acting on functions on $\Sigma$. 
+%(This term is the $n$th term in the Taylor expansion, so it is homogeneous of order $n$: $D_n(t \alpha) = t^n D_n(\alpha)$ for a scalar $t$.)
+We write $S^{ghost}(\varphi, \alpha, X,f)$ for terms in the BV action functional that encodes how the ghosts act on the physical fields of the theory.  
 It is of the form
-\ben
-S'(f,X,\alpha) = \int_\Sigma \<\alpha^\vee, L_X (g_0 + \alpha) + f (g_0 + \alpha)\> + \int_\Sigma \<X^\vee, [X,X]\> + \int_\Sigma \<f^\vee, X \cdot f\> .
-\een
-The first term encodes how vector fields and Weyl transformations act on the perturbed metric $g_0 + \alpha$ and the remaining terms are required to ensure the gauge symmetry is consistent (satisfies the classical master equation). 
+\begin{align}
+S^{ghost}(f,X,\alpha) & = \int_{\Sigma} h(\varphi, X \cdot \varphi) \dvol_{g_0} +  \int_\Sigma \<\alpha^\vee, L_X (g_0 + \alpha) + f (g_0 + \alpha)\> \\ & + \int_\Sigma \<X^\vee, [X,X]\> + \int_\Sigma \<f^\vee, X \cdot f\> .
+\end{align}
+The first term describes how vector fields act on the maps of the $\sigma$-model. 
+The second term encodes how vector fields and Weyl transformations act on the perturbed metric $g_0 + \alpha$ and the remaining terms are required to ensure the gauge symmetry is consistent (satisfies the classical master equation). 
 
-An explicit formula for $D_n(\alpha,\ldots,\alpha)$ is a rather involved exercise (and not needed here).
+Writing down an explicit formula for $D_n(\alpha,\ldots,\alpha)$ is a rather involved exercise (and not needed here).
 For instance, if we are working locally on $\Sigma = \RR^2$ with the $g_0$ the flat metric, 
 then the operator $D_1(\alpha)$ is the sum of a first-order and a second-order differential operator
 \ben
