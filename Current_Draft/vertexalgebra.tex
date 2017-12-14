@@ -62,7 +62,7 @@ The underlying graded vertex algebra has a state space of the form
 \cV_{\beta \gamma}^{\tensor 13} \tensor \cV_{bc},
 \een
 where $\cV_{\beta\gamma}$ and $\cV_{bc}$ are the $\beta\gamma$ and $bc$ vertex algebras, respectively. 
-The $\beta$ and $\gamma$ generators are in grading degree zero, the $c$ generator is in grading degree $-1$, and the $b$ is in grading degree $+1$. 
+The $\beta$ and $\gamma$ generators are in grading degree zero, the $c$ generator is in grading degree~$-1$, and the $b$ is in grading degree~$1$. 
 In the physics literature it is referred to as the {\em BRST} grading or {\em ghost number}.
 
 Forgetting the cohomological (or BRST) grading, this vertex algebra is a conformal vertex algebra of central charge zero (by construction). 
@@ -130,10 +130,9 @@ then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the 
 D_I = \oint I^q\, \d z
 \een
 that is square-zero and of cohomological degree one.
-Here, $I^q = \lim_{L \to 0} I[L]$.
-\owen{Eugene pointed out that this notation was kind of confusing. We should explain more carefully what $I[L]$ is and what the output $I^q$is.}
-\brian{How's that? I've added a remark below about how the derivation acts on the vertex algebra}
-\owen{It's not about the derivation stuff (which I've now suppressed) but about the interaction $I^q$. His complaint was that one might naively think that the $L \to 0$ limit is just the classical action. I think we mean something slightly more subtle. The mod $\hbar$ term is the classical action, I believe, but there are $\hbar^n$ terms from diagrams with loops. Thus this is {\em not} what you get under Kevin's correspondence. It's this thing where you construct a quantization by setting $I_t = I^{cl}$ and running RG flow, then you set $I[L] = \lim_{t \to 0} I_t[L]$. Right?}
+Here, $I^q = \lim_{L \to 0} I[L]$, where $I[L]$ is the renormalized action functional.
+Modulo~$\hbar$, it agrees with the chiral interaction $I$, but it has $\hbar$-dependent terms that provide the ``quantum corrections.''
+\owen{How's this?}
 \item The dg vertex algebra $\cV_I$ for such an action $\{I[L]\}$ has the same underlying graded vertex algebra $\cV_{\rm free}$ but it is equipped with the differential $\oint I^q \d z$. 
 \end{itemize}
 This construction significantly reduces the work of constructing the vertex algebra for the chiral deformation, as one need not analyze the factorization algebra directly.
@@ -504,9 +503,7 @@ We now put this construction to use.
 A Gerstenhaber algebra is a graded commutative algebra with a Lie bracket of cohomological degree $-1$ that is a graded biderivation for the product. 
 In this section we show how to explicitly write down the product and bracket on the local observables (i.e., the observables on any disk) and compare our answer to the work of Lian-Zuckerman~\cite{LZ1}.
 
-\owen{Eugene pointed out that the next paragraph is way too fast. It presupposes that someone understands that the factorization product is independent of the location of the disks, and what the E-H argument is! This is true of topologists, but probably not physicists or geometers!}
-
-As explained just before Proposition \ref{prop: obs is e2}, 
+As explained just before Proposition~\ref{prop: obs is e2}, 
 the Gerstenhaber operad is the operad $H_*(E_2)$ arising by taking homology of the $E_2$ operad.
 Recall that $E_2(2)$ parametrizes the space of binary operations as the configuration space of disjoint two disks in the unit disk in $\RR^2$.
 This space deformation retracts onto $S^1$.
