@@ -2,16 +2,19 @@
 
 \usepackage{macros}
 
-\title{The holomorphic bosonic string}
-%    author one information
-\author{Owen Gwilliam}
-\address{Max Planck Institute for Mathematics, Bonn, Germany}
-\email{gwilliam@mpim-bonn.mpg.de}
-%\thanks{}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
 
-%    author two information
-\author{Brian Williams}
-\address{Department of Mathematics, Northwestern University, Evanston, IL}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
 
 
 \def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
@@ -20,7 +23,27 @@
 \renewcommand{\contentsname}{}
 
 \begin{document}
+
+\title{The holomorphic bosonic string}
+
+\author{Owen Gwilliam}
+\address{Max Planck Institute for Mathematics, Bonn, Germany}
+\email{gwilliam@mpim-bonn.mpg.de}
+%\thanks{}
+
+\author{Brian Williams}
+\address{Department of Mathematics, Northwestern University, Evanston, IL}
+\subjclass[2010]{Primary 81T30, 81T70, Secondary 58D27, 17B69}
+
+\date{}
+
+\begin{abstract}
+We present a holomorphic version of the bosonic string in the formalism of quantum field theory developed by Costello and collaborators. In this paper we focus on the case in which space-time is flat and construct a one-loop exact quantization. Starting from first principles, we arrive at the critical dimension as an obstruction to satisfying the quantum master equation. Moreover, we show how the factorization algebra recovers the BRST cohomology of the string and give another construction of the Gerstenhaber structure. Finally, we show how the factorization homology along closed manifolds encodes the determinant line bundle over the moduli space of Riemann surfaces.
+\owen{Let's discuss this tomorrow.}
+\end{abstract}
+
 \maketitle
+
 
 %\section*{Contents}
 \setcounter{tocdepth}{1}
