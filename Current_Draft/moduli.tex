@@ -206,11 +206,11 @@ In terms of this Gelfand-Fuks cohomology we see that the cotangent weight zero p
 \een 
 We will drop the overall shift by $2$ until the end of the proof. 
 
-Any symmetric algebra has a natural maximal ideal: 
-for any vector space $W$,
+Any symmetric algebra has a natural maximal ideal given by the polynomials that vanish at the origin: 
 \[
-\Sym(W) = \CC \oplus \Sym^{\geq 1}(W).
+\Sym(W) = \CC \oplus \Sym^{\geq 1}(W)
 \] 
+for any vector space~$W$.
 Thus, we can decompose our complexes as
 \ben
  \cred^*\left(\wone ; \Sym(V^\vee[z^\vee]) \right) =   \cred^*(\wone) \oplus \clie^*\left(\wone ; \Sym^{\geq 1} (V^\vee[z^\vee]) \right) .
@@ -271,6 +271,13 @@ The differential in this Gelfand-Fuks complex has the form
  & \lambda^{-1} \otimes \Omega^1(V) \ar[r] & \lambda^{-1} \wedge \lambda^0 \otimes\Omega^1(V) &
 }
 \]
+\owen{The overhang on the far right is not good. I've tried reformatting by removing the wedges. Do you think it looks better? Other suggestions?}
+\[
+\xymatrix{
+\overset{\ul{0}}{1 \otimes \sO_{red}(V)} \ar[rd]^{\d_{dR}} & \overset{\ul{1}}{\lambda^0 \otimes \sO_{red}(V)} \ar[r] \ar[rd]^{\d_{dR}} & \overset{\ul{2}}{\lambda^{-1}  \lambda^1 \otimes \sO_{red}(V)} & \overset{\ul{3}}{\lambda^{-1}  \lambda^1  \lambda^0 \otimes \sO_{red}(V)} \\
+ & \lambda^{-1} \otimes \Omega^1(V) \ar[r] & \lambda^{-1}  \lambda^0 \otimes\Omega^1(V) &
+}
+\]
 The top line comes from the first summand in (\ref{splitting}) and the bottom line corresponds to the second summand.
 The top horizontal map sends $\lambda^0$ to $2 \cdot \lambda^{-1} \wedge \lambda^1$, 
 and the bottom horizontal map sends $\lambda^{-1}$ to $\lambda^{-1} \wedge \lambda^0$ (both are the identity on $V$). 
@@ -280,6 +287,13 @@ This complex is quasi-isomorphic to
 \xymatrix{
 1 \otimes \sO_{red}(V) \ar[rd]^{\d_{dR}} & & & \lambda^{-1} \wedge \lambda^1 \wedge \lambda^0 \otimes \sO_{red}(V) \\
  & \lambda^{-1} \otimes \Omega^1(V) & \lambda^{-1} \wedge \lambda^0 \otimes\Omega^1(V) &
+}
+\]
+\owen{Same here.}
+\[
+\xymatrix{
+1 \otimes \sO_{red}(V) \ar[rd]^{\d_{dR}} & & & \lambda^{-1}  \lambda^1  \lambda^0 \otimes \sO_{red}(V) \\
+ & \lambda^{-1} \otimes \Omega^1(V) & \lambda^{-1}  \lambda^0 \otimes\Omega^1(V) &
 }
 \]
 which, in turn, is identified with $\Omega^{2}_{cl}(V)[-1] \oplus \Omega^1(V)[-2] \oplus \Omega^1_{cl}(V)[-3]$. 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 DEC 2017 19:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 DEC 2017 09:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -850,35 +850,35 @@ LaTeX Warning: Label `lem: def complex wt zero' multiply defined.
 )
 \openout1 = `frame.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Try loading font information for U+msa on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Try loading font information for U+msa on input line 13.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 19.
+LaTeX Font Info:    Try loading font information for U+msb on input line 13.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 19.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 13.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.39998pt on input line 19.
+Package xypdf Info: Line width: 0.39998pt on input line 13.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -909,7 +909,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring ON on input line 19.
+Package hyperref Info: Link coloring ON on input line 13.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -919,22 +919,22 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count152
 )
-LaTeX Info: Redefining \ref on input line 19.
-LaTeX Info: Redefining \pageref on input line 19.
-LaTeX Info: Redefining \nameref on input line 19.
+LaTeX Info: Redefining \ref on input line 13.
+LaTeX Info: Redefining \pageref on input line 13.
+LaTeX Info: Redefining \nameref on input line 13.
 
 (./frame.out) (./frame.out)
 \@outlinefile=\write5
 \openout5 = `frame.out'.
 
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 15.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
  (./frame.toc)
 \tf@toc=\write6
 \openout6 = `frame.toc'.
@@ -950,8 +950,15 @@ s an ex-ten-sive mathematically-
 [2]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 121.
- [3]) (./classicaltheory.tex [4] [5] [6] [7] [8] [9] [10]) (./moduli.tex
-[11] [12] [13] [14]
+ [3]) (./classicaltheory.tex [4] [5] [6] [7] [8]
+Overfull \hbox (1.4242pt too wide) in paragraph at lines 274--278
+\OT1/cmr/m/n/10 each sec-tion $\OML/cmm/m/it/10 $ \OT1/cmr/m/n/10 of $[][](\OM
+L/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )$, we get a second-order dif-fer-en-tial op-e
+r-a-tor $\OML/cmm/m/it/10 D[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ; []  ; \OT1/c
+mr/m/n/10 )$
+ []
+
+[9] [10]) (./moduli.tex [11] [12] [13] [14]
 Overfull \hbox (13.61507pt too wide) in paragraph at lines 248--250
 []\OT1/cmr/m/n/10 For each $\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/
 n/10 1 \OMS/cmsy/m/n/10 ^^U \OT1/cmr/m/n/10 0$, de-fine the op-er-a-tor $\OML/c
@@ -970,52 +977,55 @@ Overfull \hbox (38.8174pt too wide) detected at line 273
 []
  []
 
-[15] <xymatrix 4x2 75>
-Overfull \hbox (29.56142pt too wide) detected at line 284
+[15] <xymatrix 4x2 184>
+Overfull \hbox (5.48433pt too wide) detected at line 280
 []
  []
 
-[16]) (./quantization.tex [17] [18] [19] [20] [21]
-Overfull \hbox (4.74693pt too wide) in paragraph at lines 346--346
-[] 
+<xymatrix 4x2 75>
+Overfull \hbox (29.56142pt too wide) detected at line 291
+[]
  []
 
-[22]
-Overfull \hbox (17.85667pt too wide) in paragraph at lines 405--405
-[] 
+<xymatrix 4x2 75> [16]) (./quantization.tex [17] [18] [19] [20] [21] [22]
+[23] [24] [25] [26]) (./vertexalgebra.tex [27] [28] [29]
+Overfull \hbox (7.87973pt too wide) in paragraph at lines 131--137
+\OT1/cmr/m/n/10 that is square-zero and of co-ho-mo-log-i-cal de-gree one. Here
+, $\OML/cmm/m/it/10 I[] \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 I\OT1/cmr/m/n/1
+0 [\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 ]$.
  []
 
-[23] [24] [25] [26]) (./vertexalgebra.tex [27] [28] [29] [30] [31] <xymatrix
-3x2 264> [32] [33] [34] [35] [36]) (./conformalblock.tex [37]
+[30] [31] [32] <xymatrix 3x2 264> [33] [34] [35] [36] [37])
+(./conformalblock.tex [38]
 LaTeX Font Info:    Try loading font information for U+euf on input line 72.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [38]
-Overfull \hbox (12.18362pt too wide) detected at line 122
+) [39]
+Overfull \hbox (12.18362pt too wide) detected at line 124
 [] [] \OML/cmm/m/it/10 :
  []
 
-[39] [40]) (./curvedtargets.tex [41]) (./calc.tex [42] [43]) (./frame.bbl
-[44]) [45]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 42.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 42.
+[40] [41]) (./curvedtargets.tex [42]) (./calc.tex [43] [44]) (./frame.bbl
+[45]) [46]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
  (./frame.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 42.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 42.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `frame.out' has not changed.
 (rerunfilecheck)             Checksum: 16840ABF603EFF3A2D88877BFBF92026;649.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 42.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
  23091 strings out of 493089
- 442136 string characters out of 6134842
- 581167 words of memory out of 5000000
- 25720 multiletter control sequences out of 15000+600000
+ 442118 string characters out of 6134842
+ 577736 words of memory out of 5000000
+ 25719 multiletter control sequences out of 15000+600000
  16512 words of font info for 70 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  62i,16n,69p,3238b,973s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1048,10 +1058,10 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/xypic/xycmbt10.pfb>
-Output written on frame.pdf (45 pages, 518041 bytes).
+Output written on frame.pdf (46 pages, 520301 bytes).
 PDF statistics:
- 667 PDF objects out of 1000 (max. 8388607)
- 585 compressed objects within 6 object streams
- 191 named destinations out of 1000 (max. 500000)
+ 671 PDF objects out of 1000 (max. 8388607)
+ 588 compressed objects within 6 object streams
+ 192 named destinations out of 1000 (max. 500000)
  85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -117,13 +117,15 @@ Thus, a {\em translation-invariant chiral deformation} is a local functional of 
 \ben
 I(\varphi) = \sum \int (\partial^{k_1}_z \varphi) \cdots (\partial^{k_m} \varphi) \d^2 z .
 \een
+Such a deformation stays within the class of chiral CFTs.
 
 One of Li's main results is that for a free chiral BV theory with action $S_{\rm free}$ and associated vertex algebra $\cV_{\rm free}$, one has the following:
 \begin{itemize}
 \item For any chiral interaction~$I$, the action $S = S_{\rm free} + I$ yields a renormalized action functional $I[L] = \lim_{\ell \to 0} W(P_\ell^L, I)$
 that requires no counterterms. 
 That is, the weights of all Feynman diagrams are finite (compare to Proposition \ref{prop: no counterterms}),
-\item If the renormalized action $\{I[L]\}$ satisfies the quantum master equation then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the form
+\item If the renormalized action $\{I[L]\}$ satisfies the quantum master equation, 
+then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the form
 \ben
 D_I = \oint I^q\, \d z
 \een
@@ -131,14 +133,16 @@ that is square-zero and of cohomological degree one.
 Here, $I^q = \lim_{L \to 0} I[L]$.
 \owen{Eugene pointed out that this notation was kind of confusing. We should explain more carefully what $I[L]$ is and what the output $I^q$is.}
 \brian{How's that? I've added a remark below about how the derivation acts on the vertex algebra}
+\owen{It's not about the derivation stuff (which I've now suppressed) but about the interaction $I^q$. His complaint was that one might naively think that the $L \to 0$ limit is just the classical action. I think we mean something slightly more subtle. The mod $\hbar$ term is the classical action, I believe, but there are $\hbar^n$ terms from diagrams with loops. Thus this is {\em not} what you get under Kevin's correspondence. It's this thing where you construct a quantization by setting $I_t = I^{cl}$ and running RG flow, then you set $I[L] = \lim_{t \to 0} I_t[L]$. Right?}
 \item The dg vertex algebra $\cV_I$ for such an action $\{I[L]\}$ has the same underlying graded vertex algebra $\cV_{\rm free}$ but it is equipped with the differential $\oint I^q \d z$. 
 \end{itemize}
+This construction significantly reduces the work of constructing the vertex algebra for the chiral deformation, as one need not analyze the factorization algebra directly.
 
-One way to understand how $D_I = \oint I^\q \d z$ acts on the vertex algebra is as follows. 
-We can think of $\oint I^\q \d z$ as an operator supported on a circle, or really, a thickened annulus. 
-Recall, the state space of the vertex algebra is what the factorization algebra assigns to a disk. 
-There is a factorization product map corresponding to a disk that is disjointly nested inside an annulus, including inside of a bigger disk. 
-This structure map tells us how the annular observable $\oint I^\q \d z$ acts on the vertex algebra.
+%One way to understand how $D_I = \oint I^\q \d z$ acts on the vertex algebra is as follows. 
+%We can think of $\oint I^\q \d z$ as an operator supported on a circle, or really, a thickened annulus. 
+%Recall, the state space of the vertex algebra is what the factorization algebra assigns to a disk. 
+%There is a factorization product map corresponding to a disk that is disjointly nested inside an annulus, including inside of a bigger disk. 
+%This structure map tells us how the annular observable $\oint I^\q \d z$ acts on the vertex algebra.
 
 \begin{rmk} The fact that $I$ satisfies the quantum master equation implies that one has a map, for each open set $U \subset \CC$, from the free factorization algebra evaluated on $U$ to the factorization algebra of the deformed theory evaluated on $U$:
 \ben
@@ -479,14 +483,6 @@ If $O$ has cohomological degree $k$ and $C$ is of dimension $l$,
 then $\int_C \Tilde{O}$ has degree $k - l$. 
 \end{construction}
 
-\owen{I'm really not wild about evaluating the observables on a closed set like $C$, since it's not obviously well-behaved. Can we just use a small thickening?}
-\brian{How's that?}
-
-%\begin{rmk}
-%{\it A priori} the factorization algebra is only well-defined on open sets $U \subset \Sigma$. 
-%One can define the value on a closed submanifold $C \subset \Sigma$ by taking the (homotopy)  limit over open submanifolds containing~$C$. 
-%\end{rmk} 
-
 This construction can be understood in a different way. 
 Given any local system $\sL$ on $\CC$, 
 there is a natural quasi-isomorphism
@@ -548,18 +544,31 @@ To describe the associated binary operation, we use descent along this one-cycle
 \owen{We could include pictures to make the geometry clearer.}
 \brian{will do this tonight}
 
-Hence, let $O,O'$ be closed observables on disks $D,D'$, respectively.
-For simplicity, we assume that the closure of $D$ is strictly contained in $D'$. 
-If $C = \partial D'$, and $N_C$ is a small tubular neighborhood (so an annulus), we can define $\int_C \Tilde{O}' \in \Obs^\q (N_C)$ as above. 
-Finally, for $D''$ another disk containing $D$ and $C$, 
-consider the factorization product $\mu : \Obs^\q(D) \tensor \Obs^\q (N_C) \to \Obs^\q(D'')$ and define
+Hence, let $O,O'$ be closed observables on disks $D \subset D'$, respectively,
+where the closure of $D$ is strictly contained in $D'$. 
+Let $C = \partial D'$, and let $N_C$ be a small tubular neighborhood (i.e., annulus).
+We can define $\int_C \Tilde{O}' \in \Obs^\q (N_C)$ via the descent procedure from above. 
+Finally, for $D''$ another disk containing $D$ and $N_C$, 
+let $\mu : \Obs^\q(D) \tensor \Obs^\q (N_C) \to \Obs^\q(D'')$ denote this factorization product.
+We then define
 \ben
 \{O,O'\}_{\rm Ger} := \mu \left(O, \int_C \Tilde{O}' \in \Obs^\q (D'')\right) .
 \een 
-We note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$. 
+Note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$, 
+so we obtain a bracket of the correct degree.
 
-\owen{I'm not wild about using $\star$ for the factorization product, since it's not a single binary product.}
-\brian{Not sure if what I did is any better.} 
+\owen{We don't actually show it's a bracket, but I don't think we need to, although I'm sure it would be more convincing if we did!}
+
+\owen{Also, I added this remark. Is it clear and helpful?}
+
+\begin{rmk}
+This construction manifestly involves picking a 1-cycle---here $C$---to exhibit the bracket, 
+and it should be clear geometrically how we could relate to any other choice~$C'$.
+If $C$ and $C'$ do not intersect, they bound an annulus and hence determine cohomologous observables.
+(One may have to shrink $D$ in the construction, but that is no issue by local constancy.)
+If they do intersect, one can choose a $C''$ that does not intersect either, and then one has a pair of cohomologous terms.
+As the terms are cohomologous, they induce the same brackets at the level of cohomology.
+\end{rmk}
 
 Let $V$ denote the cohomology $H^* \cV_{\rm string}$ of the dg vertex algebra $\cV_{\rm string}$.
 

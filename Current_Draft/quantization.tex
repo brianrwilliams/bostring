@@ -18,7 +18,7 @@ and the algorithm one applies to obtain a quantization is the following:
 We call this the ``renormalized action.''
 \item Check if the renormalized action satisfies the quantum master equation. 
 If it does, you have a well-posed BV quantum theory, and we call the result a {\em quantized action}. If not, guess a way to adjust the renormalized action and begin the whole process again.
-(This process is a version of an obstruction theory in homological algebra.)
+(This process is a version of obstruction theory in homological algebra.)
 \end{enumerate}
 It should be clear that along the way, one makes many choices;
 hence if a quantization exists, it may not be unique.
@@ -337,9 +337,9 @@ Note that it is smooth everywhere on~$\CC^2$.
 The integral for the tadpole diagram is 
 \begin{align*}
 w_{\Gamma_{\rm tad}}(P_\ell^L,I_{\rm string})
-&= \int_{z \in \CC} c(z)P_\ell^L(z,w)\big|_{z = w}  \\
-&= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \partial_z \left(\frac{1}{4\pi t} \frac{\zbar - \overline{w}}{2t} e^{-|z-w|^2/4t} (\d z - \d w) \right)\bigg|_{z = w}\, \d \zbar\\
-&= \int_{z \in \CC} \int_{\ell}^L \d t f(z) \left(\frac{1}{4\pi t} \left(\frac{\zbar - \overline{w}}{2t}\right)^2 e^{-|z-w|^2/4t} (\d z - \d w) \right)\bigg|_{z = w}\, \d \zbar\\
+&= \int\displaylimits_{z \in \CC} c(z)P_\ell^L(z,w)\big|_{z = w}  \\
+&= \int\displaylimits_{z \in \CC} \int_{\ell}^L \d t f(z) \partial_z \left(\frac{1}{4\pi t} \frac{\zbar - \overline{w}}{2t} e^{-|z-w|^2/4t} (\d z - \d w) \right)\bigg|_{z = w}\, \d \zbar\\
+&= \int\displaylimits_{z \in \CC} \int_{\ell}^L \d t f(z) \left(\frac{1}{4\pi t} \left(\frac{\zbar - \overline{w}}{2t}\right)^2 e^{-|z-w|^2/4t} (\d z - \d w) \right)\bigg|_{z = w}\, \d \zbar\\
 &= 0,
 \end{align*}
 since the integrand vanishes along the diagonal.
@@ -395,9 +395,9 @@ One needs to show that this expression has a finite $\ell \to 0$ limit.
 Let us prove this limit exists for the case $n=2$.
 Then we have
 \begin{align*}
-\int_{z_1,z_2 \in \CC} \d\zbar_1\d\zbar_2 \int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2\, 
-& f_1(z_1)f_2(z_2) 
-\partial_{z_1} \left(\frac{1}{4\pi t_1} \frac{\zbar_1 - \zbar_2}{2t_1} e^{-|z_1-z_2|^2/4t_1} (\d z_1 - \d z_2) \right)\\
+\int\displaylimits_{z_1,z_2 \in \CC} & \d\zbar_1\d\zbar_2 \int_{\ell}^L \d t_1 \int_{\ell}^L \d t_2\, 
+ f_1(z_1)f_2(z_2) \\
+& \times \partial_{z_1} \left(\frac{1}{4\pi t_1} \frac{\zbar_1 - \zbar_2}{2t_1} e^{-|z_1-z_2|^2/4t_1} (\d z_1 - \d z_2) \right) \\ 
 & \times \partial_{z_2} \left(\frac{1}{4\pi t_2} \frac{\zbar_1 - \zbar_2}{2t_2} e^{-|z_1-z_2|^2/4t_2} (\d z_2 - \d z_1) \right),
 \end{align*}
 which is already a bit lengthy.
@@ -464,6 +464,7 @@ The operator $w(P_\ell^L,-)$ gives a way of relating quantities in theory at the
 Mathematically, it defines a homotopy equivalence between the theory at scale $\ell$, defined using $S[\ell]$, and the theory at scale $S$, defined using~$S[L]$. 
 \owen{Eugene: It might be good to expand on this a little.}
 \brian{I'd prefer not to say any more. Seems like a rabbit hole, unless you have something concise you want to add.}
+\owen{I'm happy to leave as is, except for this issue about the QME.}
 \end{rmk}
 
 \owen{I'm not sure exactly what Eugene wants, but perhaps we can forward reference to something? I'm not sure this homotopy equivalence statement is true unless we satisfy the QME \dots}
@@ -537,6 +538,8 @@ More accurately, $\d^q_S$ is a differential if and only if the right hand side i
 
 We now turn to examining this condition in our setting.
 It helps to understand it in diagrammatic terms.
+
+\owen{You don't need to add the pictures! We just had these suggestions commented out, and I do think they would help. We can postpone doing that till our resubmission.}
 
 As the bracket is determined by a linear pairing,
 it admits a simple diagrammatic description as an edge.

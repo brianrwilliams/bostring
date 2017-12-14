@@ -34,7 +34,7 @@ Although this expression might look complicated,
 it can be readily unpacked in the setting of algebraic geometry, 
 particularly when $\Sigma$ is closed.
 In that case, this graded commutative algebra is a symmetric algebra on a finite-dimensional graded vector space,
-which encodes the derived tangent space of the moduli of Riemann surfaces at $\Sigma$ and of holomorphic functions from $\Sigma$ to~$V$ at the zero map. \owen{Eugene: At 0? (origin?)} \brian{OK?}
+which encodes the derived tangent space of the moduli of Riemann surfaces at $\Sigma$ and of holomorphic functions from $\Sigma$ to~$V$ at the zero map. 
 
 As this theory is free, it admits a canonical BV quantization.
 Denote by $\Obs^{\q}_{free}$ the corresponding factorization algebra.
@@ -83,6 +83,7 @@ The cohomology of the global observables $\Obs^\q(\Sigma)$ of the holomorphic st
 Consider the filtration on the quantum observables induced by the polynomial degree of the functional. 
 \owen{Eugene: This is not a filtration, since BV Laplacian lowers symmetric degree. Perhaps use homological perturbation lemma?}
 \brian{Instead of a spectral sequence, let's use the harmonic representative for the factorization homology. The interaction restricts to the harmonic subcomplex and I think for degree reasons can't do anything to the cohomology.}
+\owen{I think you're implicitly using a spectral sequence argument then. We should discuss this point.}
 There is a spectral sequence abutting to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_1$ page given by the cohomology of the global observables of the free $bc\beta \gamma$ system which we have already computed:
 \bestar
 E_2 & \cong & \det\left(H^*(\Sigma ; T_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
@@ -154,6 +155,7 @@ However, deforming the action from free $bc\beta\gamma$ system to holomorphic bo
 since varying the action involves adjusting continuous parameters (the coupling constants) and Chern classes are discrete invariants.
 \owen{Eugene was (rightly) suspicious of this, since adding an interaction can change the cohomology of observables somewhat abruptly.}
 \brian{Suspicion is OK, but is there something wrong with the argument? If there is, I don't see it.}
+\owen{I think we should leave as is, but I agree with Eugene that this assertion has some implicit assumption about how the theories depend on the parameters that we do not quite identify. For instance, it essentially assumes we have a vector bundle (or else Chern classes are kind of meaningless) but we know that isn't always the case \dots}
 
 \subsection{The anomaly and moduli of quantizations on an arbitrary Riemann surface}
 
