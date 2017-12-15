@@ -2,8 +2,6 @@
 
 \section{Calculation of the anomaly} \label{sec:calculation}
 
-\owen{Sometimes integrals have top form components and sometimes not. I don't care if we have them or not, but we should be consistent (and explain at the beginning what we're suppressing if we do drop them).}
-
 In this section we compute the functionals $F[L]$ and $G[L]$ mentioned in the proof of Proposition \ref{prop anomaly}, hence completing the calculation of the anomaly. 
 
 We have reduced the calculation to the weight of two wheel diagrams: A) with internal edges labeled by the $bc$ heat kernel and propagator, respectively. B) with internal edges labeled by the $\beta\gamma$ heat kernel and propagator, respectively.
@@ -40,17 +38,16 @@ We label the integrals in each line above as I,II, III, IV, respectively.
 
 Using the form of the propagator in (\ref{propagator}) we see that line I is given by
 \ben
-{\rm I} = \frac{1}{(4 \pi)^2} \int_{(z,w) \in \CC \times \CC} \int_{t = \ell}^L f(z) g(w) \frac{1}{\epsilon^2} \frac{1}{t^3} \frac{(\zbar - \wbar)^3}{8} \exp \left(-\frac{1}{4}\left(\frac{1}{\ell} + \frac{1}{t}\right)|z-w|^2 \right)
+{\rm I} = \frac{1}{(4 \pi)^2} \int_{(z,w) \in \CC \times \CC} \int_{t = \ell}^L f(z) g(w) \frac{1}{\epsilon^2} \frac{1}{t^3} \frac{(\zbar - \wbar)^3}{8} \exp \left(-\frac{1}{4}\left(\frac{1}{\ell} + \frac{1}{t}\right)|z-w|^2 \right) \d^2 z \d^2 w \d t 
 \een
-(we are omitting volume factors for simplicity). 
 To evaluate this integral we change variables and apply the Wick expansion, Lemma \ref{lem wick} to one of the variables of integration. 
 Indeed, introduce $\xi = z -w$, and notice that the integral simplifies to
 \ben
-{\rm I} = \frac{1}{(4 \pi)^2} \int_{w \in \CC} \int_{\xi \in \CC} \int_{t = \ell}^L f(\xi + w) g(w) \frac{1}{\epsilon^2} \frac{1}{t^3} \frac{\Bar{\xi}^3}{8} \exp \exp \left(-\frac{1}{4} \left(\frac{1}{\ell} + \frac{1}{t}\right)| \xi |^2 \right) .
+{\rm I} = \frac{1}{(4 \pi)^2} \int_{w \in \CC} \int_{\xi \in \CC} \int_{t = \ell}^L f(\xi + w) g(w) \frac{1}{\epsilon^2} \frac{1}{t^3} \frac{\Bar{\xi}^3}{8} \exp \exp \left(-\frac{1}{4} \left(\frac{1}{\ell} + \frac{1}{t}\right)| \xi |^2 \right) \d^2 w \d^2 \xi \d t .
 \een
 Applying Lemma \ref{lem wick} to the $\xi$-integral we see that this simplifies to
 \ben
-{\rm I} = \frac{1}{4 \pi} \int_{w \in \CC} \partial^3_w f(w) g(w) \int_{t = \ell}^L \frac{\ell^2 t}{(\ell + t)^4} + O(\ell)
+{\rm I} = \frac{1}{4 \pi} \int_{w \in \CC} \partial^3_w f(w) g(w) \int_{t = \ell}^L \frac{\ell^2 t}{(\ell + t)^4} \d t + O(\ell)
 \een
 where the terms $O(\ell)$ are of order $\ell$ so are zero in the limit $\ell \to 0$. 
 On the other hand, we can evaluate the remaining $t$-integral and see that in the limit $\ell \to 0$ Line I becomes
