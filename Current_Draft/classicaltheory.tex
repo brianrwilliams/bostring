@@ -42,13 +42,12 @@ We have four kinds of fields:
 \begin{array}{ccccc}
 \text{field} & -1 & 0 & 1 & 2\\
 \hline
-\gamma & & \Omega^{0,0}(\Sigma) \otimes V^{} & \Omega^{0,1}(\Sigma) \otimes V & \\
+\gamma & & \Omega^{0,0}(\Sigma) \otimes V \;\; & \Omega^{0,1}(\Sigma) \otimes V & \\
 \beta & & \Omega^{1,0}(\Sigma) \otimes V^\vee & \Omega^{1,1}(\Sigma) \otimes V^\vee & \\
 c & \Omega^{0,0}(\Sigma, T^{1,0}_\Sigma) & \Omega^{0,1}(\Sigma, T^{1,0}_\Sigma) & \\
 b & & & \Omega^{1,0}(\Sigma, T^{1,0 }_\Sigma) & \Omega^{1,1}(\Sigma, T^{1,0}_\Sigma)
 \end{array}
 \]
-\owen{Eugene pointed out that columns 0 and 1 aren't lined up, which is annoying once you see it}
 More accurately, we have eight different kinds of fields, 
 but we view each row as constituting a single type 
 since each given row consists of the Dolbeault forms of a holomorphic vector bundle.
@@ -110,7 +109,6 @@ Similarly, one can identify the anomaly already at the level of the free theory.
 This viewpoint of arriving at the bosonic string as a deformation of a free CFT is central to the analysis of the string in the physics literature. 
 See, for instance, Chapter 3 of \cite{GSW1}, Chapter 2 of \cite{polchinski},
 or~\cite{Scherk}. 
-\owen{Did I pick the right chapter of GSW?}
 \end{rmk}
 
 \begin{rmk}
@@ -345,18 +343,19 @@ The remaining theory splits as the direct sum of the free $\beta\gamma$ system w
 At the level of fields, the original field $\varphi$ corresponds to $\gamma + \Bar{\gamma}$ in the first order description,
 and $B$ corresponds to~$\beta+\Bar{\beta}$. 
 
-Of the remaining terms on the first line of the action, only the $D_1$ term survives in this infinite volume limit. 
-Furthermore, the metric $g_0$ determines an injective map
-\ben
-\Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma) \oplus \Omega^{1,0}(\Sigma ; T^{0,1}_\Sigma) \hookrightarrow \Sym^2(T_\Sigma) .
-\een
-Restricting the term $\int_\Sigma h(\varphi, D_1(\alpha) \varphi)$ to the image,
-\owen{Eugene writes "why?" perhaps to mean why do we do this?}
-we obtain a term whose infinite volume limit~is
+Of the remaining terms in the part of the action only involving the physical fields, only the $D_1$ term survives in this infinite volume limit. 
+This term, $\int_\Sigma h(\varphi, D_1(\alpha) \varphi)$, becomes
 \ben
 \int_\Sigma \<\beta , [c, \gamma]\>_V + \int_\Sigma \<\Bar{\beta} , [\Bar{c}, \bar{\gamma}]\>_V.
 \een
-This first term is precisely the third term in the holomorphic string action functional~(\ref{bosaction}), which describes how deformations of complex structure couple to the fields of the $\sigma$-model. 
+where $c$ and $\Bar{c}$ are the $\Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma)$ and $\Omega^{1,0}(\Sigma ; T^{0,1}_\Sigma)$ components of $\alpha$ with respect to the embedding
+\ben
+\Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma) \oplus \Omega^{1,0}(\Sigma ; T^{0,1}_\Sigma) \hookrightarrow \Sym^2(T_\Sigma)
+\een
+defined by the fixed metric $g_0$. 
+Note that the off-diagonal terms $\Omega^{0,1}(\Sigma ; T^{0,1}_\Sigma)$ and $\Omega^{1,0}(\Sigma ; T^{1,0}_\Sigma)$ do not appear which reflects the fact that the theory is conformal. 
+
+This first term above is precisely the third term in the holomorphic string action functional~(\ref{bosaction}), which describes how deformations of complex structure couple to the fields of the $\sigma$-model. 
 
 In the infinite volume limit, the term $S'(f, X, \alpha)$ recovers the terms
 \[

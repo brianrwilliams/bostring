@@ -78,29 +78,56 @@ We will identify {\em which} line bundle we get after examining the global obser
 
 The cohomology of the global observables $\Obs^\q(\Sigma)$ of the holomorphic string on a closed surface~$\Sigma$ is also surprisingly easy to compute.
 
-Consider the filtration on the quantum observables induced by the polynomial degree of the functional. 
-\owen{Eugene: This is not a filtration, since BV Laplacian lowers symmetric degree. Perhaps use homological perturbation lemma?}
-\brian{Instead of a spectral sequence, let's use the harmonic representative for the factorization homology. The interaction restricts to the harmonic subcomplex and I think for degree reasons can't do anything to the cohomology.}
-\owen{I think you're implicitly using a spectral sequence argument then. We should discuss this point.}
-There is a spectral sequence abutting to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_1$ page given by the cohomology of the global observables of the free $bc\beta \gamma$ system which we have already computed:
-\bestar
-E_2 & \cong & \det\left(H^*(\Sigma ; T_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
-& \cong & \det \left(H^1(\Sigma ; T_\Sigma) \right) \tensor \det \left(H^0(\Sigma ; T_\Sigma)\right)^{-1} \tensor \det \left(H^0(\Sigma ; K_{\Sigma}) \right)^{-13}
-\eestar
-where we have used the fact that $H^0(\Sigma ; \cO) \cong \CC$ for any $\Sigma$. 
-Since this page is concentrated in a single line, we see that the spectral sequence degenerates at this page.
-
-Let $\Sigma_{g}$ be a surface of genus $g$. 
-For $g=1$, the above expression simplifies to
+\begin{prop} \label{prop interacting obs} The observables of the holomorphic string on a closed Riemann surface $\Sigma_g$, where $g$ is the genus, are isomorphic to the observables of the free $bc\beta\gamma$ system on $\Sigma_g$ with target $\CC^{13}$. 
+In particular, when $g=1$ the cohomology $H^*\Obs^\q(\Sigma_1)$ is
 \ben
-\det \left(H^1(\Sigma_1 ; T_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-14} .
+\det \left(H^1(\Sigma_1 ; T_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-14} , 
 \een 
-For $g \geq 2$, one has
+and for $g > 1$ the cohomology $H^*\Obs^\q(\Sigma_g)$ is 
 \ben
 \det \left(H^1(\Sigma_1 ; T_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-13} .
 \een
-Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
+\end{prop}
+
+\brian{I wrote this argument pretty quickly and know it needs to be fixed. Just wanted to get it down so we can discuss tomorrow. For instance, I know we need to be careful of using the completion for Obs.}
+
 Compare these formulas to Witten's analysis of the bosonic string in Section 2.1 of~\cite{WitString}.
+To prove this result we take advantage of two filtrations present in the complex of observables. 
+
+Recall that the quantum observables are a module for the ring $\CC[[\hbar]]$.
+Filter $\Obs^\q(\Sigma)$ by saying the $k$th filtered piece $F^k \Obs^\q (\Sigma)$ consists of all observables that vanish modulo $\hbar^k$. 
+The $E_1$ page of the induced spectral sequence is isomorphic to the cohomology of the associated graded which is given by the cohomology of the classical observables tensor the ring $\CC[[\hbar]]$
+\ben
+E_1 = H^*(\Obs^{\cl}(\Sigma)) \tensor_\CC \CC[[\hbar]] .
+\een 
+This spectral sequence abuts to the cohomology of the quantum observables $H^*(\Obs^\q(\Sigma))$. 
+
+To show that this cohomology agrees with the cohomology of the free theory we consider another filtration on the classical observables $\Obs^{\cl}(\Sigma)$.
+Recall, the underlying graded vector space of classical observables is a symmetric algebra. 
+The $i$th filtered piece is defined by $\Sym^{\geq i}$. 
+Tensoring with $\CC[[\hbar]]$, this spectral sequence abuts to the cohomology $H^*(\Obs^{\cl}(\Sigma)) \tensor \CC[[\hbar]]$ and hence to the $E_1$ page of the $\hbar$-dependent spectral sequence above. 
+
+The $E_1$-page of the spectral sequence coming from $\Sym$-degree is equal to the cohomology of the graded symmetric algebra with respect to $\dbar$. 
+Thus, this is the cohomology of the classical observables of the free theory $H^*(\Obs^{\cl}_{free})$. 
+The $E_2$ page is obtained by computing the cohomology with respect to bracketing with the classical interaction $\{I,-\}$. 
+Now, the $\dbar$ cohomology of the classical observables computes the symmetric algebra of the sheaf cohomology of some (graded) holomorphic vector bundle.
+Since the interaction $\{I,-\}$ involves a first-order differential operator on the Riemann surface we see that it vanishes identically on this cohomology. 
+
+Thus, the $E_1$ page of the $\hbar$-dependent spectral sequence is isomorphic to $H^*(\Obs^{\cl}_{free}(\Sigma)) \tensor_\CC \CC[[\hbar]]$. 
+Since the $E_2$ page of the spectral sequence only involves the BV Laplacian, we see that this spectral sequence must converge to the cohomology of the quantum observables of the {\em free} theory. 
+This completes the proof of Proposition \ref{prop interacting obs}.
+
+%Consider the filtration on the quantum observables induced by the polynomial degree of the functional. 
+%\owen{Eugene: This is not a filtration, since BV Laplacian lowers symmetric degree. Perhaps use homological perturbation lemma?}
+%\brian{Instead of a spectral sequence, let's use the harmonic representative for the factorization homology. The interaction restricts to the harmonic subcomplex and I think for degree reasons can't do anything to the cohomology.}
+%\owen{I think you're implicitly using a spectral sequence argument then. We should discuss this point.}
+%There is a spectral sequence abutting to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_1$ page given by the cohomology of the global observables of the free $bc\beta \gamma$ system which we have already computed:
+%\bestar
+%E_2 & \cong & \det\left(H^*(\Sigma ; T_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
+%& \cong & \det \left(H^1(\Sigma ; T_\Sigma) \right) \tensor \det \left(H^0(\Sigma ; T_\Sigma)\right)^{-1} \tensor \det \left(H^0(\Sigma ; K_{\Sigma}) \right)^{-13}
+%\eestar
+%where we have used the fact that $H^0(\Sigma ; \cO) \cong \CC$ for any $\Sigma$. 
+%Since this page is concentrated in a single line, we see that the spectral sequence degenerates at this page.
 
 \subsection{Identifying the determinant lines}
 
