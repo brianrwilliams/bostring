@@ -11,14 +11,20 @@ The weight of A gives the functional we called $F[L]$, and the weight of B gives
 
 We will utilize the following version of Wick expansion to evaluate the integrals below. 
 
-\begin{lem}\label{lem wick} Let $\Phi$ be a smooth compactly supported function on $\CC$ and suppose $\tau > 0$. 
+\begin{lem}
+\label{lem wick} 
+Let $\Phi$ be a smooth compactly supported function on $\CC$ and let $\tau > 0$. 
 Then
 \ben
-\int_{\xi \in \CC} \Phi(\xi) e^{-\tau |\xi|^2/4} \d^2 \xi  = 4 \pi \cdot \tau^{-1} \left(\exp\left(\tau^{-1} \frac{\partial}{\partial \xi} \frac{\partial}{\partial \xi} \Phi\right)_{\xi = 0}\right) .
+\int_{\xi \in \CC} \Phi(\xi) e^{-\tau |\xi|^2/4}  = 4 \pi  \tau^{-1} \left(\exp\left(\tau^{-1} \frac{\partial}{\partial \xi} \frac{\partial}{\partial \xi} \Phi\right)_{\xi = 0}\right) .
 \een
 \end{lem}
 
-We start with the weight of diagram A. 
+Note that we suppress the term $\d^2 \xi$ from the integral, for brevity's sake.
+As we are integrating over vector spaces here, 
+one can recover the integrand by taking the Lebesgue measure for the variable labeled under the integral sign (e.g., $z \in \CC$ corresponds to~$\d^2 z$).
+
+We now turn to the weight of diagram A. 
 Use coordinates $z,w$ to denote the coordinates at each of the vertices.
 Denote the inputs of the weight by the compactly supported vector fields $f(z) \partial_z$ and $g(w) \d \wbar \partial_w$.
 (Note that the diagram is only nonzero if the total degree of the elements is $+1$.)
@@ -55,41 +61,41 @@ Applying Lemma \ref{lem wick} to the $\xi$-integral we see that this simplifies 
 where the terms $O(\ell)$ are of order $\ell$ so are zero in the limit $\ell \to 0$. 
 On the other hand, we can evaluate the remaining $t$-integral and see that in the limit $\ell \to 0$ Line I becomes
 \ben
-\lim_{\ell \to 0} \; {\rm I} = \frac{1}{4 \pi} \frac{1}{12} \int_{w\in \CC} \partial^3_w f(w) g(w) \d^2 w .
+\lim_{\ell \to 0} \; {\rm I} = \frac{1}{4 \pi} \frac{1}{12} \int_{w\in \CC} \partial^3_w f(w) g(w) .
 \een 
 
 We evaluate II, III, and IV in a similar fashion.
 
 After changing coordinates and performing the Wick type integral we obtain
 \ben
-{\rm II} = \frac{1}{4 \pi} \int_{w \in \CC} \partial^3_w f(w) g(w) \d^2 w \int_{t = \ell}^L \frac{\ell t}{(\ell + t)^3} \d t+ O(\ell) .
+{\rm II} = \frac{1}{4 \pi} \int_{w \in \CC} \partial^3_w f(w) g(w) \, \int_{t = \ell}^L \frac{\ell t}{(\ell + t)^3} + O(\ell) .
 \een
 Evaluating the remaining $t$ integral and taking $\ell \to 0$ this becomes 
 \ben
-\lim_{\ell \to 0} {\rm II} = \frac{1}{4 \pi} \frac{3}{8} \int_{w\in \CC} \partial^3_w f(w) g(w) \d^2 w .
+\lim_{\ell \to 0} {\rm II} = \frac{1}{4 \pi} \frac{3}{8} \int_{w\in \CC} \partial^3_w f(w) g(w) .
 \een 
 
 Integral III is given by 
 \ben
-\frac{1}{4\pi} \int_{w \in \CC} \partial_w^3 f(w) g(w) \d^2 w \int_{t= \ell}^L \frac{\epsilon^2}{(\epsilon + t)^3} \d t + O(\ell) .
+\frac{1}{4\pi} \int_{w \in \CC} \partial_w^3 f(w) g(w)\, \int_{t= \ell}^L \frac{\epsilon^2}{(\epsilon + t)^3}  + O(\ell) .
 \een
 In the limit $\ell \to 0$ we obtain
 \ben
-\lim_{\ell \to 0} \; {\rm III} = \frac{1}{4\pi} \frac{1}{8} \int_{w \in \CC}  \partial^3 f(w) g(w) \d^2 w .
+\lim_{\ell \to 0} \; {\rm III} = \frac{1}{4\pi} \frac{1}{8} \int_{w \in \CC}  \partial^3 f(w) g(w)  .
 \een
 
 Finally, integral IV is
 \ben
-\frac{1}{4\pi} \int_{w \in \CC} \partial_w^3 f(w) g(w) \d^2 w \int_{t= \ell}^L \frac{\epsilon}{(\epsilon + t)^2} \d t + O(\ell) .
+\frac{1}{4\pi} \int_{w \in \CC} \partial_w^3 f(w) g(w) \, \int_{t= \ell}^L \frac{\epsilon}{(\epsilon + t)^2}  + O(\ell) .
 \een
 In the limit $\ell \to 0$ we obtain
 \ben
-\lim_{\ell \to 0} \; {\rm IV} = \frac{1}{4\pi} \frac{1}{2} \int_{w \in \CC}  \partial^3_w f(w) g(w) \d^2 w .
+\lim_{\ell \to 0} \; {\rm IV} = \frac{1}{4\pi} \frac{1}{2} \int_{w \in \CC}  \partial^3_w f(w) g(w) .
 \een
 
 In total, the functional $F[L]$ applied to $(f(z) \partial_z, g(w) \d \wbar \partial_w)$ is given by
 \ben
-F[L] (f(z) \partial_z, g(w) \d \wbar \partial_w) = - \frac{1}{4 \pi} \frac{13}{12} \int_{w \in \CC}  \partial^3_w f(w) g(w) \d^2 w .
+F[L] (f(z) \partial_z, g(w) \d \wbar \partial_w) = - \frac{1}{4 \pi} \frac{13}{12} \int_{w \in \CC}  \partial^3_w f(w) g(w)  .
 \een
 Note that this functional is independent of $L$. 
 
@@ -97,6 +103,6 @@ Diagram B is similar to A, except the internal edges are labeled by the $\beta\g
 Applied to the input vector fields $(f(z) \partial_z, g(w) \d \wbar \partial_w)$ the weight is given by the dimension of $V$ times the integral we computed in $I$.
 Thus
 \ben
-G[L](f(z) \partial_z, g(w) \d \wbar \partial_w) = \frac{1}{4 \pi} \frac{1}{12} \int_{w\in \CC} \partial^3_w f(w) g(w) \d^2 w .
+G[L](f(z) \partial_z, g(w) \d \wbar \partial_w) = \frac{1}{4 \pi} \frac{1}{12} \int_{w\in \CC} \partial^3_w f(w) g(w)  .
 \een
 The proposition follows.
