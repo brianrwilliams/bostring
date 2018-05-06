@@ -1,0 +1,68 @@
+\documentclass{conm-p-l}
+
+\usepackage{macros}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
+
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+\def\owen{\textcolor{red}{OG: }\textcolor{red}}
+
+\renewcommand{\contentsname}{}
+
+\begin{document}
+
+\title{The holomorphic bosonic string}
+
+\author{Owen Gwilliam}
+\address{Max Planck Institute for Mathematics, Bonn, Germany}
+\email{gwilliam@mpim-bonn.mpg.de}
+%\thanks{}
+
+\author{Brian Williams}
+\address{Department of Mathematics, Northwestern University, Evanston, IL}
+\subjclass[2010]{Primary 81T30, 81T70, Secondary 58D27, 17B69}
+
+\date{}
+
+\begin{abstract}
+\owen{I modestly rewrote. Let me know what you think.}
+We describe and analyze a holomorphic version of the bosonic string in the formalism of quantum field theory developed by Costello and collaborators, which provides a powerful combination of renormalization theory and the Batalin-Vilkovisky formalism. Our focus here is on the case in which the target space-time is a vector space. We identify the critical dimension as an obstruction to satisfying the quantum master equation, and when the obstruction vanishes, we construct a one-loop exact quantization. Moreover, we show how the factorization algebra of observables recovers the BRST cohomology of the string and use this perspective to give a new construction of its Gerstenhaber structure. Finally, we show how the factorization homology along closed manifolds encodes the determinant line bundle over the moduli space of Riemann surfaces.
+An auxiliary goal of this paper is to give an exposition of this QFT formalism with the holomorphic bosonic string theory as the running example.
+\end{abstract}
+
+\maketitle
+
+
+%\section*{Contents}
+\setcounter{tocdepth}{1}
+
+\tableofcontents
+
+
+\input{bvoverview}
+\input{classicaltheory}
+\input{moduli}
+\input{quantization}
+\input{vertexalgebra}
+\input{conformalblock}
+\input{curvedtargets}
+\input{calc}
+
+\bibliographystyle{amsalpha}
+
+\bibliography{string}
+
+\end{document}
