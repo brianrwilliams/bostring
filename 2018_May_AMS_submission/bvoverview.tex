@@ -1,0 +1,171 @@
+
+\section{Introduction}
+
+Two intertwined goals govern this paper.
+\owen{Can't quite get this first sentence right ...}
+First, we want to describe a two-dimensional field theory,
+which we view as a holomorphic version of bosonic string theory,
+and its perturbative quantization.
+We'll see this theory encodes the chiral sector of a bosonic string with linear target space,
+justifying our interpretation.
+Second, we want to use this theory as the running example for key ideas and techniques in the formalism for quantum field theory developed by Costello and collaborators \cite{CosBook, CG1,CG2, LL1, GG1, GLL, LiVA}.
+We hope to give readers a feel for how to use this formalism by exhibiting it with a beautiful theory.
+
+Our focus is thus on narrative rather than detailed argumentation.
+That is, we work systematically in the natural order of the formalism. 
+Along the way we emphasize the motivations behind each step rather than the nitty-gritty computations. 
+Precedence is given to communicating the essence of an argument, over spelling everything out.
+We do give detailed citations where such arguments can found in the literature,
+but we defer some not-yet-extant details to a forthcoming work on this theory with curved target space~\cite{GWcurved}.
+
+None of the results here about string theory is new, 
+as the bosonic string has been under intensive study for several decades,
+but this formalism recovers them in a single, systematic process,
+often giving a novel argument or perspective.
+It is compelling to have a direct path from the action functional to such sophisticated constructions as the semi-infinite cohomology of a vertex algebra.
+In fact, since so many of these results are familiar,
+the reader may see more clearly what's distinctive and illuminating about this approach to field theory.
+
+There are many references on the bosonic string that have influenced us.
+In the physics literature there are the classic sources \cite{GSW1, GSW2, polchinski} that explain perturbative string theory. 
+In addition, there is an extensive mathematically-oriented treatment of perturbative string theory in \cite{DP}, as well as D'Hoker's notes in Volume II of \cite{IAScourse}.
+Our approach, while intimately related, starts with a ``first-order" description of the bosonic string. 
+
+Given the vastness of the string theory literature,
+it should not be a surprise that there is already work along these lines,
+notably by Losev, Marshakov, and Zeitlin \cite{LMZ}.
+One could view this paper as attempting to communicate many of their insights to those with an intuition growing out of homotopical algebra and the functorial approach to geometry.
+Again, we note that the formalism of Costello provides a mathematical articulation and verification of many ideas long known to physicists, such as the Wilsonian view of renormalization and the Batalin-Vilkovisky (BV) approach to gauge and gravity theories.\footnote{We also note that given the literature's size,
+and our relative and unfortunate ignorance of much of it,
+we have chosen to mention a reference when we feel its description is particularly useful for us, 
+even if it is not the original or standard reference for a given result.}
+This machinery allows us to revisit such prior work in a manner particularly amenable to mathematicians.
+
+\subsection{Overview} \label{sec:bvoverview}
+
+The central figure of this paper is a holomorphic analogue of the bosonic string.
+We proceed, as usual in physics, from the classical to the quantum.
+
+Hence, we begin by introducing the classical theory, 
+expressed both in the BV formalism and also in terms of an action functional.
+We take some time to identify this theory as the chiral sector of a limit of the bosonic string,
+where the K\"{a}hler metric of the target is made very large. 
+We also interpret the theory in the language of derived geometry.
+
+We then turn to analyzing the deformations of this classical theory,
+which by Costello's work admits a nice description in terms of a type of Gelfand-Fuks cohomology.
+This perspective naturally leads to a discussion of string backgrounds.
+
+With a firm grip on the classical theory, we turn to constructing the perturbative quantization.
+We first work with a disk or $\CC$ as the source manifold,
+and we review relevant features of Costello's approach to renormalization.
+The usual dimensional Weyl anomaly appears as an obstruction to satisfying the quantum master equation,
+a key condition in the BV formalism.
+At this stage, the anomaly appears as a computation with Feynman diagrams.
+
+The next section describes the vertex algebra of the quantized theory,
+using the machinery of factorization algebras of \cite{CG1, CG2}.
+We find this piece of the formalism particularly illuminating,
+as it lets a mathematician understand how to read off the OPE from path integral manipulations.
+
+We then turn to the case of a compact Riemann surface as the source manifold.
+Here we discuss how the formalism relates to the global approach to computing anomalies using, for instance, the Grothendieck-Riemann-Roch formula.
+We also discuss conformal blocks in this formalism.
+
+Finally, we sketch how to modify the approach here to allow a complex manifold as the target.
+This paper can be viewed as an expository precursor to future work,
+which pushes into new territory (particularly in describing the vertex algebra).
+
+\subsection{Lessons to bear in mind}
+
+Before turning to our example,
+we want to expound some key ideas of the Costello formalism so that the reader is alert to them when proceeding through the text.
+That is, we wish to articulate here the structural features of this BV/renormalization package that make the arguments below conceptual.
+
+For instance, in a gauge theory we know that connections provide the ``naive'' fields and that one must identify connections that are gauge-equivalent.
+A mathematician would say the true fields are a {\em stacky} quotient of the naive fields.
+Similarly, the critical locus of the action functional $S$ is the zero locus of its differential $\d S$ (ignoring some subtleties of the variational set-up),
+which is the intersection of $\d S$ with the zero section of the cotangent space of the fields.
+But in mathematics it is better to take {\em derived} intersections.
+
+\begin{lesson}[Part 1, \cite{CG2}]
+The classical BV formalism is a method for computing the derived critical locus of the action functional on the derived stack of fields.
+Ghosts appear to describe the direction along which one quotients---the stacky direction---while the antifields appear to describe the direction along which one intersects---the derived direction.
+\end{lesson}
+
+We will describe our theory in the usual way, involving fields and ghosts, 
+but we will also sketch its meaning in terms of global derived geometry,
+which we find illuminates the deep connections between string theory and algebraic geometry.
+
+Path integral quantization amounts to trying to put a kind of measure or volume form on the derived stack of fields.
+When the fields form a linear space, 
+there is a natural quantization that is translation-invariant along the fields,
+which is the analogue of the Lebesgue measure on an ordinary vector space.
+
+\begin{lesson}[\cite{GH}]
+Linear BV quantization is functorial, and it behaves much like a determinant functor.
+Hence, when one takes the fiberwise quantization of a family of linear theories,
+one typically obtains a determinant line bundle over the base.
+\end{lesson}
+
+This situation is relevant to us because the theory we study arises from a simple free theory,
+the free $\beta\gamma$ system, which lives on any Riemann surface.
+Hence the quantization of the free $\beta\gamma$ system makes sense over the moduli of Riemann surfaces and naturally produces a line bundle.
+
+To be more specific, our classical theory of interest arises by gauging the natural action of holomorphic vector fields on the free $\beta\gamma$ system.
+As holomorphic vector fields are infinitesimal biholomorphisms, 
+one can say that we couple the $\beta\gamma$ system to holomorphic gravity.
+But then we recognize a natural consequence of our prior lessons.
+
+\begin{lesson}[\S 5.11, \cite{CosBook}]
+Gauging a classical theory corresponds to taking a stacky quotient of the original fields. 
+To quantize the gauged theory corresponds to descending the quantization to the quotient.
+Hence, an anomaly that prevents quantization should be understood as an obstruction to descent.
+\end{lesson}
+
+The formalism of Costello makes this relationship manifest, 
+as the anomaly that appears in trying to produce a BV quantization---which is a Feynman diagram construction---is a cocycle in a dg Lie algebra determined by the classical field theory.
+Thus, the anomaly determines an element of a natural Lie algebra cohomology group (in this case, Gelfand-Fuks cohomology),
+whose descent-theoretic meaning is typically easy to recognize. 
+Here we will discover the famed Weyl, or conformal, anomaly, which requires the target space to be real 26-dimensional. 
+
+Anomalies are often characteristic classes, and this BV/renormalization package offers a structural explanation.
+Most classical field theories---at least most of broad interest---make sense on a class of manifolds,
+and so the anomaly ought to be determined by the local geometry of this class.
+In more mathematical language we have the following.
+
+\begin{lesson}[\cite{GGW}]
+If a classical theory determines a sheaf on some site of manifolds (such as the site of Riemann surfaces and local biholomorphisms), 
+then to quantize the theory over the whole site, 
+it suffices to check on a generating cover (typically given by disks with geometric structure) but compatibly with all automorphisms.
+\end{lesson}
+
+In particular, the BV anomaly is a cocycle for the Lie algebra of automorphisms of the {\em formal} disk equipped with such geometric structures.
+In other words, it lives in some kind of Gelfand-Fuks cohomology, which gives deep and informative connections with foliation theory and topology.
+
+So far, everything we have mentioned is well-known in field theory, 
+albeit often expressed in a different dialect of mathematics.
+We now turn to the main new notion of this framework:
+factorization algebras, which provide an efficient and powerful way to organize the local-to-global structure of the observables of a field theory.
+
+\begin{lesson}[\cite{CG1,CG2}]
+Every BV theory produces a factorization algebra. 
+The local structure encodes the OPE algebra, so that for a chiral CFT, one recovers a vertex algebra. 
+On compact manifolds, the global structure often has finite-dimensional cohomology because solutions to the equations of motion are typically finite-dimensional.
+For a chiral CFT, one recovers the conformal blocks in this way.
+\end{lesson}
+
+A technical result of \cite{CG1} gives a precise articulation of this lesson,
+and we will apply it to identify the vertex algebra arising from our holomorphic version of the bosonic string.
+
+\subsection{Acknowledgements}
+
+We learned this approach to perturbative field theory as students of Kevin Costello.
+He guided us towards this theory of the holomorphic string,  
+and he pointed out key results and features visible through this BV/renormalization formalism. 
+OG spent some time on this theory in graduate school,
+partly in collaboration with Yuan Shen,
+whom he thanks for illuminating discussions and computations.
+The authors also wish to thank Si Li for his typical incisive comments and insight on CFT,
+which clarified some of the trickier technical aspects.
+
