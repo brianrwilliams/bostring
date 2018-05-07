@@ -1,0 +1,46 @@
+\section{Looking ahead: curved targets}
+\label{sec:curved}
+
+In this section we briefly advertise our future work, which is to provide a complete analysis of the bosonic string with an interesting (i.e., ``curved'') complex manifold as the target. 
+Our approach is a modification of our treatment \cite{GGW} of the corresponding curved $\beta\gamma$ system.
+The main idea there was to consider the $\beta\gamma$ system with target a formal disk $\hD^n$. 
+Then, in the style of Gelfand and Kazhdan's treatment of formal geometry, we show how working equivariantly for formal automorphisms allows us to globalize this theory to a complex manifold. 
+In general, we find an obstruction to doing this, which is measured by the second component of the Chern character of the tangent bundle of the complex manifold. 
+The appearance of the characteristic class is expected from the theory of chiral differential operators.
+In fact, we show that the factorization algebra of observables descends to the sheaf of chiral differential operators on the target manifold. 
+
+We will give a similar argument for the bosonic string. 
+The key difference to the $\beta\gamma$ system is that even in the case of a flat target, the bosonic string is an interacting theory.
+Nevertheless, the theory of BV quantization that is equivariant for formal automorphisms can still be applied and we arrive at the following result. 
+
+\begin{thm}[\cite{GWcurved}] 
+Consider the holomorphic bosonic string with target a complex manifold $X$. 
+There exists a one-loop exact quantization if and only if
+\begin{itemize}
+\item[(1)] $\dim_\CC X = 13$,
+
+\item[(2)] $\ch_2(T_X) = 0$, and
+
+\item[(3)] $c_1(T_X) = 0$.
+\end{itemize}
+Moreover, if the conditions above hold, 
+the space of all quantizations is a torsor for the abelian group
+\ben
+H^1(X , \Omega^2_{cl}) \oplus H^0(X, \Omega^1) .
+\een
+(The notation $\Omega^1$ refers to the sheaf of holomorphic $1$-forms, and $\Omega^2_{cl}$ refers to holomorphic $2$-forms that are closed under $\partial$, the holomorphic de Rham operator.)
+\end{thm}
+
+This theorem matches nicely with one's expectations from the usual bosonic string.
+The quantized theory only exists for a 13-dimensional Calabi-Yau complex manifold admitting a complex String structure,
+and a quantization depends upon picking a holomorphic volume form and a trivialization of $\ch_2(T_X)$ (the complex version of a String structure).
+
+There are two further directions we hope to address in future work.
+\begin{itemize}
+\item[(1)] We have seen that the local observables for the case of a flat target recover the semi-infinite BRST cohomology of the $\beta\gamma$ vertex algebra. 
+We expect that in the case of a curved target, the local observables produce a sheafy refinement of semi-infinite cohomology. 
+This construction should produce a sensitive invariant of the target manifold and give a variant of quantum sheaf cohomology. 
+\item[(2)] The partition function of the curved $\beta\gamma$ system on elliptic curves is known to produce the Witten genus of the target manifold~\cite{wg2}. 
+For flat space, the partition function of the string is given by the Mumford form~\cite{BM}. 
+We propose that the partition function for the curved string produces an invariant of the target manifold analogous to the Witten genus. 
+\end{itemize}

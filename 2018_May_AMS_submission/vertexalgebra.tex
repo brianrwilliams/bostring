@@ -1,69 +1,30 @@
 \section{OPE and the string vertex algebra}
 
-
 Vertex algebras are mathematical objects that axiomatize the behavior of local observables 
 (i.e., point-like observables) of a chiral conformal field theory (CFT),
 such as the $bc\beta\gamma$ system or the holomorphic bosonic string.
-In particular, the operator product expansion (OPE) for these local observables---which is of paramount importance in understanding a chiral CFT---is encoded by the vertex operator of the vertex algebra of the CFT.
+The vertex operator of a vertex algebras encodes the operator product expansions (OPE) for local observables,
+which is of central interest in understanding a chiral CFT.
 (We will not review vertex algebras here
-as there are many nice expositions~\cite{FHL, BZF}.)
+as there are many nice expositions \cite{FHL, BZF}.)
 
 In this section we will explain how to extract the vertex algebra of the holomorphic bosonic string,
-using machinery developed in \cite{CG1,LiVA,GGW}.
+using machinery developed in~\cite{CG1,LiVA,GGW}.
 The answer we recover is precisely the chiral sector of the usual bosonic string.
-
-\subsection{Some context}
-
-In the BV formalism one constructs a cochain complex of observables,
-for both the classical and the quantized theory, if it exists.
-The cochain complexes are local on the source manifold of a theory:
-on each open set $U$ in that manifold~$\Sigma$,
-one can pick out the observables with support in~$U$ by asking for the observables that vanish on fields with support outside~$U$.
-Furthermore, you can combine observables that have support on disjoint open sets.
-It is the central result of~\cite{CG1,CG2} that the observables also satisfy a local-to-global property,
-akin to the sheaf gluing axiom.
-Such a structure is known as a {\em factorization algebra} on~$\Sigma$.
-
-We will not need that general notion here.
-Instead, we will use vertex algebras.
-Theorem~5.2.3.1 of~\cite{CG1} explains how a factorization algebra~$F$ on $\Sigma = \CC$
-yields a vertex algebra~$\Vert(F)$, under natural hypotheses on~$F$. 
-It assures us that the observables of a chiral CFT determine a vertex algebra.
-
-In particular, Section~5.3 of~\cite{CG1} examines the free $\beta\gamma$ system in great detail.
-Its main result is that the well-known $\beta\gamma$ vertex algebra $\cV_{\beta\gamma}$ is recovered by the two-step process of BV quantization, which yields a factorization algebra, and then the extraction of a vertex algebra.
-The exact same arguments apply to the free $bc$ system,
-recovering the vertex algebra~$\cV_{bc}$;
-and of course, the exact same arguments apply to the free $bc\beta\gamma$ system.
-
-Let $V$ denote the vector space appearing in the $\beta\gamma$ contribution of the holomorphic bosonic string theory, as introduced in Section~\ref{sec:classical}.
-Let $\Obs^\q_{free}$ denote the observables of this theory on $\Sigma = \CC$.
-As a quantization of a free field theory, it is a factorization algebra valued in the category of $\CC [\hbar]$-modules.
-In particular, the associated vertex algebra $\Vert(\Obs^\q_{free})$ is also valued in $\CC[\hbar]$-modules.
-Putting the claims together, we have the following.
-
-\begin{prop}\label{prop: bcbg vertex}
-For $n = \dim_{\CC}(V)$, 
-there is an isomorphism of vertex algebras
-\ben
-\Vert(\Obs^{\q}_{free})_{\hbar = 2 \pi i} \cong \cV_{bc} \tensor \cV_{\beta\gamma}^{\tensor n} 
-\een 
-where on the left-hand side we have set~$\hbar = 2\pi i$.
-\end{prop}
 
 \subsection{A reminder on the chiral algebra of the string}\label{subsec: string vert}
 
-We now provide a brief review of the vertex algebra for the chiral sector of the bosonic string. 
-For a detailed reference we refer the reader to \cite{LZ1,LZ2}. 
-The construction builds a {\em differential graded vertex algebra}, 
-which is simply a vertex algebra in the category of cochain complexes. 
-The underlying graded vertex algebra has a state space of the form
+We provide a brief background on the vertex algebra for the chiral sector of the bosonic string. 
+For a detailed reference we refer the reader to the series of papers \cite{LZ1,LZ2}. 
+It is easiest to introduce this as a {\em differential graded vertex algebra}. 
+This is simply a vertex algebra internal to the category of chain complexes. 
+The underlying graded vertex algebra has state space of the form
 \ben
-\cV_{\beta \gamma}^{\tensor 13} \tensor \cV_{bc},
+\cV_{\beta \gamma}^{\tensor 13} \tensor \cV_{bc}
 \een
 where $\cV_{\beta\gamma}$ and $\cV_{bc}$ are the $\beta\gamma$ and $bc$ vertex algebras, respectively. 
-The $\beta$ and $\gamma$ generators are in grading degree zero, the $c$ generator is in grading degree~$-1$, and the $b$ is in grading degree~$1$. 
-In the physics literature it is referred to as the {\em BRST} grading or {\em ghost number}.
+The $\beta$ and $\gamma$ generators are in grading degree zero, the $c$ generator is in grading degree $-1$, and the $b$ is in grading degree $+1$. 
+In the physics literature this is referred to as the {\em BRST} grading.
 
 Forgetting the cohomological (or BRST) grading, this vertex algebra is a conformal vertex algebra of central charge zero (by construction). 
 In particular, this means that the vertex algebra has a stress-energy tensor. 
@@ -95,13 +56,47 @@ Note that the cohomology of a dg vertex algebra is an ordinary (graded) vertex a
 The cohomology of the string vertex algebra is called the {\em BRST cohomology} of the bosonic string. 
 In the remainder of this section we will show how we recover the string vertex algebra from the quantization of the holomorphic bosonic string.
 
+\subsection{Some context}
+
+In the BV formalism one constructs a cochain complex of observables,
+for both the classical and the quantized theory, if it exists.
+The cochain complexes are local on the source manifold of a theory:
+on each open set $U$ in that manifold~$\Sigma$,
+one can pick out the observables with support in~$U$ by asking for the observables that vanish on fields with support outside~$U$.
+It is the central result of~\cite{CG1,CG2} that the observables also satisfy a local-to-global property,
+akin to the sheaf gluing axiom,
+and hence form a {\em factorization algebra} on~$\Sigma$.
+
+We will not need that general notion here.
+Instead, we will use vertex algebras.
+Theorem~5.2.3.1 of~\cite{CG1} explains how a factorization algebra~$F$ on $\Sigma = \CC$
+yields a vertex algebra~$\Vert(F)$, under natural hypotheses on~$F$. 
+It assures us that the observables of a chiral CFT determine a vertex algebra.
+
+In particular, Section~5.3 of~\cite{CG1} examines the free $\beta\gamma$ system in great detail.
+Its main result is that the well-known $\beta\gamma$ vertex algebra is recovered by the two-step process of BV quantization, which yields a factorization algebra, and then the extraction of a vertex algebra.
+
+The exact same arguments apply to the free $bc\beta\gamma$ system,
+where the $\beta\gamma$ sector is valued in a vector space $V$, as we introduced in Section~\ref{sec:classical}.
+Let $\Obs^\q_{free}$ denote the observables of this theory on $\Sigma = \CC$.
+As a quantization of a free field theory, it is a factorization algebra valued in the category of $\CC [\hbar]$-modules.
+In particular, the associated vertex algebra $\Vert(\Obs^\q_{free})$ is also valued in $\CC[\hbar]$-modules.
+
+\begin{prop}\label{prop: bcbg vertex}
+Let $n = \dim_{\CC}(V)$. Then, there is an isomorphism of vertex algebras
+\ben
+\Vert(\Obs^{\q}_{free})_{\hbar = 2 \pi i} \cong \cV_{bc} \tensor \cV_{\beta\gamma}^{\tensor n} 
+\een 
+where on the left-hand side we have set $\hbar = 2\pi i$.
+\end{prop}
+
 \subsection{The case of the string}
 
 The holomorphic bosonic string is a chiral CFT and so the machinery of~\cite{CG1} applies to it.
-One can extract a vertex algebra directly by this method, as one does with the free $bc\beta\gamma$ theory.
+One can extract a vertex algebra directly by this method.
 
 But there is a slicker approach, using Li's work~\cite{LiVA},
-which studies chiral deformations of {\em free} chiral BV theories such as the free $bc\beta\gamma$ system.
+which studies chiral deformations of {\em free} chiral BV theories such as the $bc\beta\gamma$ system.
 Recall that a deformation of a classical field theory is given by a local functional. 
 We have seen that this is essentially the data of a Lagrangian density, which is a density valued multilinear functional that depends on (arbitrarily high order) jets of the fields. 
 In other words, for a field $\varphi$, a Lagrangian density is of the form
@@ -117,30 +112,19 @@ Thus, a {\em translation-invariant chiral deformation} is a local functional of 
 \ben
 I(\varphi) = \sum \int (\partial^{k_1}_z \varphi) \cdots (\partial^{k_m} \varphi) \d^2 z .
 \een
-Such a deformation stays within the class of chiral CFTs.
 
 One of Li's main results is that for a free chiral BV theory with action $S_{\rm free}$ and associated vertex algebra $\cV_{\rm free}$, one has the following:
 \begin{itemize}
-\item For any chiral interaction~$I$, the action $S = S_{\rm free} + I$ yields a renormalized action functional $I[L] = \lim_{\ell \to 0} W(P_\ell^L, I)$
-that requires no counterterms. 
-That is, the weights of all Feynman diagrams are finite (compare to Proposition \ref{prop: no counterterms}),
-\item If the renormalized action $\{I[L]\}$ satisfies the quantum master equation, 
+\item For any chiral interaction~$I$, the action $S_{\rm free} + I$ needs no counterterms, 
+and yields a renormalized interaction~$\{S [L]\}$.
+\item If the renormalized action $\{S [L]\}$ satisfies the quantum master equation,
 then it determines a vertex algebra derivation $D_I$ of~$\cV_{\rm free}$ of the form
 \ben
-D_I = \oint I^q\, \d z
+D_I = \oint I^q \d z
 \een
-that is square-zero and of cohomological degree one.
-Here, $I^q = \lim_{L \to 0} I[L]$, where $I[L]$ is the renormalized action functional.
-Modulo~$\hbar$, it agrees with the chiral interaction $I$, but it has $\hbar$-dependent terms that provide the ``quantum corrections'' to the classical action.
+of cohomological degree one, where $I^q = \lim_{L \to 0} I[L]$.
 \item The dg vertex algebra $\cV_I$ for such an action $\{I[L]\}$ has the same underlying graded vertex algebra $\cV_{\rm free}$ but it is equipped with the differential $\oint I^q \d z$. 
 \end{itemize}
-This construction significantly reduces the work of constructing the vertex algebra for the chiral deformation, as one need not analyze the factorization algebra directly.
-
-%One way to understand how $D_I = \oint I^\q \d z$ acts on the vertex algebra is as follows. 
-%We can think of $\oint I^\q \d z$ as an operator supported on a circle, or really, a thickened annulus. 
-%Recall, the state space of the vertex algebra is what the factorization algebra assigns to a disk. 
-%There is a factorization product map corresponding to a disk that is disjointly nested inside an annulus, including inside of a bigger disk. 
-%This structure map tells us how the annular observable $\oint I^\q \d z$ acts on the vertex algebra.
 
 \begin{rmk} The fact that $I$ satisfies the quantum master equation implies that one has a map, for each open set $U \subset \CC$, from the free factorization algebra evaluated on $U$ to the factorization algebra of the deformed theory evaluated on $U$:
 \ben
@@ -153,23 +137,21 @@ This isomorphism is {\em not} compatible with the factorization product, so we d
 \end{rmk}
 
 The holomorphic bosonic string with target $V=\CC^{13}$ provides a concrete example of this situation.
-The free theory is the $bc\beta\gamma$ system,
-the holomorphic bosonic string is a chiral deformation of it, 
-and we have seen that the renormalized action of the string satisfies the QME.
+The free theory is the $bc\beta\gamma$ system, 
+and we have seen that the renormalized action satisfies the QME.
 Hence we obtain the following.
 
-\begin{prop} 
-\label{prop: fact is vert}
+\begin{prop} \label{prop: fact is vert}
 Let $\Obs^\q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. 
 Let $\Vert(\Obs^q_{\rm string})$ be the dg vertex algebra (defined over $\CC[\hbar]$) obtained via Li's construction. 
 There is an isomorphism of vertex algebras $\cV_{\rm string} \cong \Vert(\Obs^q_{\rm string})_{\hbar = 2 \pi i}$.
 Moreover, this vertex algebra is isomorphic to the chiral sector of the bosonic string as in Section~\ref{subsec: string vert}.
 \end{prop}
 
-The factorization algebra $\Obs^\q_{\rm string}$ is also a quantization of the factorization algebra $\Obs^{\cl}_{\rm string}$ of classical observables.
+The factorization algebra $\Obs^\q_{\rm string}$ is a quantization of the factorization algebra $\Obs^{\cl}_{\rm string}$ of classical observables of the free $bc\beta\gamma$ system.
 We have noted that the classical observables of any theory has the structure of a $P_0$ factorization algebra, and the $\hbar \to 0$ limit of $\Obs^\q_{\rm string}$ is isomorphic to $\Obs^{\cl}_{\rm string}$ as $P_0$ factorization algebras.
 By definition, the classical observables are simply functions on the solutions to the classical equations of motion.
-The $P_0$ structure is induced from the symplectic pairing of degree -1 on the fields. 
+The $P_0$ structure is induced from the symplectic pairing of degree $(-1)$ on the fields. 
 The classical factorization algebra still has enough structure to determine a vertex algebra $\Vert(\Obs^\cl_{\rm string})$.
 Moreover, the $P_0$ bracket on the classical observables determines the structure of a {\em Poisson vertex algebra} on $\Vert(\Obs^{\cl}_{\rm string})$. 
 
@@ -178,10 +160,16 @@ Moreover, the $P_0$ bracket on the classical observables determines the structur
 
 \begin{proof}[Proof of Proposition \ref{prop: fact is vert}] By Proposition \ref{prop: bcbg vertex} we know that the vertex algebra of the associated free theory is identified with the $bc\beta\gamma$ vertex algebra. 
 The thing we need to check is that the differential induced from the quantization of the holomorphic string agrees with the differential of the string vertex algebra. 
-In fact, we observe that the induced differential $\oint I \,\d z$ from the classical interaction of the holomorphic bosonic string agrees with the BRST charge in Equation (\ref{brst}). 
+In fact, we observe that the induced differential $\oint I \d z$ from the classical interaction of the holomorphic bosonic string agrees with the BRST charge in Equation (\ref{brst}). 
 To see that this persists at the quantum level we need to check that there are no quantum corrections. 
 Indeed, this follows from the fact that the quantum master equation holds identically (as opposed to holding up to an exact term in the deformation complex) provided $\dim_\CC V = 13$. 
 \end{proof}
+
+%\brian{remark about semi infinite cohomology}
+
+%\subsection{Relation to semi-infinite cohomology}
+
+%\brian{O to take a crack at this}
 
 \subsection{The $E_2$ algebra and descent}
 
@@ -189,23 +177,22 @@ In this section we highlight a remarkable feature of the vertex algebra associat
 At first glance, the theory we have constructed is far from being topological.
 Indeed, the classical theory depends delicately on the complex structure of the two-dimensional source. 
 Nevertheless, the local observables of the bosonic string behave like the observables of a {\em topological} field theory (TFT). 
-In particular, as noted perhaps first by \cite{Getzler}, the observables of a 2-dimensional TFT have the structure of a {\em Gerstenhaber algebra}.
+In particular, it was discovered that the observables of a 2-dimensional TFT have the structure of a {\em Gerstenhaber algebra} \cite{Getzler,LZ1}.
 In this section we provide two equivalent methods for extracting this algebra.
 The first is intuitive from the point of view of factorization algebras, but has the disadvantage of not giving a concrete description of the algebra. 
-The second approach gives an explicit formula for the bracket and is based on the formalism of ``descent" for local operators. 
+The second approach gives an explicit formula for bracket and is based on the formalism of ``descent" for local operators. 
 
 \subsubsection{First method: the $E_2$ algebra}
 
 We continue to consider the theory on the Riemann surface $\Sigma = \CC$. 
 In this section we show how to produce, from the point of view of factorization algebras, the structure of a Gerstenhaber algebra on the BRST cohomology of the bosonic string. 
 
-Recall that a Gerstenhaber algebra is equivalent to an algebra over the operad given by the homology of the little 2-disk operad.
+Recall that a Gerstenhaber algebra is equivalent to an algebra over the homology of the little 2-disk operad.
 Hence, our approach is to see why the factorization algebra naturally exhibits the structure of a algebra of little 2-disks.
-Here we use an important result of Lurie (namely Theorem 5.4.5.9 of~\cite{Lurie}): 
+Here we use an important result of Lurie \cite{Lurie}: 
 a {\em locally constant} factorization algebra on $\RR^n$ is equivalent to an algebra over the little $n$-disks operad, i.e., an $E_n$-algebra. 
 
 \begin{prop} 
-\label{prop: obs is e2}
 The factorization algebra $\Obs^\q_{\rm string}$ is locally constant, 
 and hence it determines an $E_2$ algebra.
 \end{prop}
@@ -224,9 +211,9 @@ In this sense, at least, the holomorphic bosonic string determines a functorial 
 \end{rmk}
 
 \begin{proof} 
-We need to show that for any inclusion of open disks $D \hookrightarrow D'$, the natural map
+We need to show that for any inclusion of open disks $D \hookrightarrow D'$ that natural map
 \ben
-\Obs^\q_{\rm string}(D) \to \Obs^\q_{\rm string}(D')
+\Obs^\q_{\rm string}(U) \to \Obs^\q_{\rm string}(U')
 \een
 is a quasi-isomorphism. 
 
@@ -243,11 +230,11 @@ which is a generic phenomenon in the BV formalism.)
 The dg Lie algebra $\Omega^{0,*}(\Sigma ; \cT_\Sigma)$ is simply a sheaf-theoretic resolution of holomorphic vector fields, with the usual Lie bracket.
 Our large dg Lie algebra is a square-zero extension of $\Omega^{0,*}(\Sigma ; \cT_\Sigma)$, 
 by the dg module inside the parentheses.
-The vector fields act by the Lie derivative on the space
+The vector fields act by the Lie derivative on 
 \[
 \Omega^{0,*}(\Sigma; V)[-1] \oplus \Omega^{1,*}(\Sigma;V^*)[-1] \oplus \Omega^{1,*}(\Sigma ; \cT_\Sigma^*)[-2],
 \]
-which is simply a copy of the $\beta\gamma$ system with target vector space~$V$, plus the $b$-field part of the classical theory.
+which are simply a copy of the $\beta\gamma$ system with target vector space~$V$.
  
 For simplicity, we write $\cL = \Omega^{0,*}(\Sigma ; \cT_\Sigma)$ and write $\cM$ for the module inside the parentheses.
 In this language, the space of classical observables supported on an open set $U \subset \Sigma$ is the Chevalley-Eilenberg cochain complex
@@ -287,8 +274,8 @@ The inclusion $D \hookrightarrow D'$ then yields a commutative diagram
 }
 \een
 By Lemma \ref{lem: gf} (and an analogous result for polynomial vector fields),
-the complexes $\clie^*({\rm W}_1 ; \cM)$ and $\clie^*({\rm W}^{\rm poly}_1; \cM)$ are quasi-isomorphic to the subcomplex of conformal dimension zero elements---in this case, to the constants. 
-As the conformal dimension zero subcomplex does not depend on the size of the disk, we conclude that vertical arrows on the outside of the commutative diagram are quasi-isomorphisms. 
+the complexes $\clie^*({\rm W}_1 ; \cM)$ and $\clie^*({\rm W}^{\rm poly}_1; \cM)$ are quasi-isomorphic to the subcomplex of conformal dimension zero element, in this case, to the constants. 
+As the conformal zero subcomplex does not depend on the size of the disk, we conclude that vertical arrows on the outside of the commutative diagram are quasi-isomorphisms. 
 It follows that the middle vertical arrow is as well, 
 thus showing that $\Obs^{\cl}_{\rm string}(D) \to \Obs^{\cl}_{\rm string}(D')$ is a quasi-isomorphism, as desired. 
 
@@ -307,7 +294,7 @@ Hence, $\Obs^{\q}_{\rm string}(D) \to \Obs^\q_{\rm string}(D')$ is also a quasi-
 In \cite{WittenTop}, where the notion of a TFT was introduced,
 Witten characterized a topological field theory
 as a theory whose stress-energy tensor is (homotopy) trivial. 
-We now verify that property of the holomorphic bosonic string.
+We now verify that the holomorphic bosonic string possesses this property.
 That is, we want to show that the translation symmetries of the holomorphic bosonic string act trivially on the cohomology of the observables.
 
 As a first step, consider the action of the differential operators $\frac{\d}{\d z}$ and $\frac{\d}{\d \zbar}$ on the Dolbeault complex $\Omega^{0,*}(\CC)$. 
@@ -316,6 +303,7 @@ By Noether's theorem any symmetry of a theory determines classical observables:
 for these symmetries, these are simply the $zz$ and $\zbar \zbar$ components of the stress-energy tensor $T_{zz}$, $T_{\zbar \zbar}$. 
 In the case of the bosonic string, we will now show that the stress-energy tensor is cohomologically trivial on the quantum observables.
 (Similar but simpler arguments apply to the classical case.)
+%This property is, in fact, the general definition of a topological theory given in \cite{WittenTop}.
 
 For each open $U \subset \CC$, the differential operators lift to cochain maps on the quantum level
 \ben
@@ -349,25 +337,35 @@ The operator $\frac{\d}{\d \zbar}$ acts homotopically trivial on $\Obs^\q_{\rm s
 \end{lem}
 
 This fact ensures that the stress-energy tensor vanishes in the $\zbar\zbar$ direction.
-
 We now turn to~$\d/\d z$.
-View this vector field $\frac{\d}{\d z}$ as a constant $c$-field. 
+
+We can view the vector field $\frac{\d}{\d z}$ as a constant $c$-field. 
 Consider the linear local functional of cohomological degree $-2$:
 \ben
 O_{\frac{\d}{\d z}}(\beta,\gamma,b,c) = \int \<b, \frac{\d}{\d z}\>,
 \een
 It only depends on the $b$-field.
 Note that for this integral to be nonzero, 
-we must have $b \in \Omega^{1,1}(\Sigma , T_\Sigma^{1,0*})$
-(also, in fact, compactly supported for the integral to be well-defined). 
+we must have $b \in \Omega^{1,1}(\Sigma , T_\Sigma^{1,0*})$. 
 Using the BV bracket, we obtain a derivation of the factorization algebra 
 \ben
 \eta = \{O_{\frac{\d}{\d z}}, -\}
 \een
 of cohomological degree~$-1$. 
-It might help to draw this bracket diagrammatically, 
-so one can see that it is a derivation that acts linearly on the generators
-(i.e., linear functionals on the fields).
+
+%Recall that the $b$-fields of the bosonic string are concentrated in degree $1$ and $2$. 
+%In degree $1$ a $b$-field has the form 
+%\[
+%f(z,\zbar) \d z^{\tensor 2} \in \Omega^{1,0}(\Sigma, T_\Sigma^{1,0*}).
+%\] 
+%For any open $U \subset \CC$ containing the origin, consider the linear observable
+%\ben
+%b_{-1}(f(z,\zbar) \d z^{\tensor 2})= f(0),
+%\een 
+%which vanishes on all fields besides the degree $1$ component of the $b$-fields.
+%This observable $b_{-1}$ is a closed element of degree $-1$ in $\Obs^\q_{\rm string}(U)$. 
+%Given any other cochain-level observable $O \in \Obs^{\q}_{\rm string}(U)$,
+%we define the observable $b_{-1} \cdot O$, since the underlying cochain complex has the structure of a symmetric algebra.
 
 \begin{lem} 
 The derivation $\eta$ satisfies 
@@ -377,7 +375,7 @@ The derivation $\eta$ satisfies
 \end{lem}
 \begin{proof}
 The derivation $\eta$ commutes with both $\dbar$ and $\Delta$. 
-Thus, the left-hand side reduces~to
+Thus, the left-hand side is 
 \[
 [\{I, -\}, \eta] = \{ \{I, O_{\frac{\d}{\d z}}\}, -\}.
 \]
@@ -385,8 +383,7 @@ The only part of the interaction that contributes is $\int \<\beta, c \cdot \gam
 \ben
 \{I, O_{\frac{\d}{\d z}}\} = \int \<\beta, \partial_z \gamma\> + \int\<b, [\partial_z, c]\> .
 \een
-Bracketing with this local functional encodes applying $\frac{\d}{\d z}$ to the inputs, as desired.
-(In diagrammatic terms, this feature is almost immediately visible.)
+Bracketing with this local functional is precisely $\frac{\d}{\d z}$, as desired.
 \end{proof}
 
 Together these two lemmas ensure that translations act trivially on the cohomological observables.
@@ -397,7 +394,7 @@ We'd like to sketch an important consequence of the work above.
 As we will see, it gives an approach to the method of descent.
 
 First, since the factorization algebra is locally constant, 
-we can extract from it a local system (in a dg sense).
+we can extract from it a kind of local system, in a dg sense.
 Note that for each point $x \in \CC$,
 the {\em local observables around $x$} is a well-defined notion:
 for any disk $D$ containing $x$, the observables $\Obs^\q_{\rm string} (D)$ are quasi-isomorphic by construction.
@@ -405,12 +402,12 @@ We let
 \[
 \sO{\rm bs}_x = \lim_{x \in D} \Obs^\q_{\rm string} (D).
 \]
-We let $\sO{\rm bs} \to \CC$ denote the associated dg vector bundle (of infinite rank). 
+We use $\sO{\rm bs} \to \CC$ to denote the associated dg vector bundle (of infinite rank). 
 Alternatively, we can consider the dg vector bundle whose fiber over every point is simply the global observables $\Obs^\q_{\rm string} (\CC)$.
 Via the structure maps of $\Obs^\q_{\rm string}$, 
 these two dg vector bundles are quasi-isomorphic.
 
-This quasi-isomorphism also explains why we have a dg local system:
+This quasi-isomorphism also explains in what sense we have a dg local system:
 for any two points, there is a zigzag of quasi-isomorphisms between their fibers,
 passing through the global observables.
 In other words, we know how to do ``transport up to quasi-isomorphism.''
@@ -430,22 +427,23 @@ In this way, we can identify smooth sections of $\sO{\rm bs}$ with elements of
 \[
 C^\infty(\CC) \otimes \sO{\rm bs}_0.
 \]
-But we also know how $\d/\d z$ and $\d/\d\zbar$ act, and that they act homotopically trivially.
+But we also know how $\d/\d z$ and $\d/\d\zbar$ act.
 In short, we have the following.
 
+%We seemed to believe the trivializations also played a role but can't quite pin down a clear statement about what role they play
+
 \begin{cor} 
-The trivializations $\eta$ and $\Bar{\eta}$ equip $\sO{\rm bs}$ with a flat connection. 
-Thus, the vector bundle $\sO{\rm bs}$ is a local system on $\CC$.
+The vector bundle $\sO{\rm bs}$ has a natural flat connection on~$\CC$.
 \end{cor}
 
-This local system gives us yet another method for producing observables of the theory.
-Given a compactly-supported de Rham form with values in $\sO{\rm bs}$
-\[
-\widetilde{O} = \widetilde{O}_0 + \widetilde{O}_z \d z + \widetilde{O}_{\zbar} \d\zbar + \widetilde{O}_{z\zbar} \d z\, \d\zbar \in \Omega^*_c(U,\sO{\rm bs}),
-\]
-it can be viewed as determining an element of $\Obs^\q_{\rm string}(U)$ by integration over $U$.
-At the classical level this identification is particularly clear:
-we simply evaluate $\widetilde{O}_{z\zbar} \d z\, \d\zbar$ on a field, producing a top form, and then integrating.
+%This local system gives us yet another method for producing observables of the theory.
+%Given a compactly-supported de Rham form with values in $\sO{\rm bs}$
+%\[
+%\widetilde{O} = \widetilde{O}_0 + \widetilde{O}_z \d z + \widetilde{O}_{\zbar} \d\zbar + \widetilde{O}_{z\zbar} \d z\, \d\zbar \in \Omega^*_c(U,\sO{\rm bs}),
+%\]
+%it can be viewed as determining an element of $\Obs^\q_{\rm string}(U)$ by integration over $U$.
+%At the classical level this identification is particularly clear:
+%we simply evaluate $\widetilde{O}_{z\zbar} \d z\, \d\zbar$ on a field, producing a top form, and then integrating.
 
 We now explain the method of ``descent" for local observables using this framework. 
 Expositions of this construction as related to two-dimensional gravity can be found in \cite{WittenDescent,Dijk}.
@@ -462,7 +460,8 @@ The 1-form part $\Tilde{O}^1$ is
 \d z \; (\eta O) + \d \zbar \; (\Bar{\eta} O),
 \een
 where, for instance, $\eta O$ denotes the image of $O$ under the map $\eta$.
-Similarly, the 2-form part is 
+(This form is constant over $\CC$ as well.)
+The 2-form part is 
 \[
 \Tilde{O}^2 = \d z \,\d \zbar\, \eta \Bar{\eta} O.
 \] 
@@ -472,99 +471,68 @@ then
 \Tilde{O} = \Tilde{O}^{0} + \Tilde{O}^1 + \Tilde{O}^2 
 \]
 satisfies $(\d_{dR} + \d^\q) \Tilde{O} = 0$. 
-This relationship implies that for any $\d^\q$-closed observable $O$ and for any tubular neighborhood $N_C$ of a closed submanifold $C \subset \Sigma$, 
-we obtain a cocycle in the observables on $N_C$ via
+This relationship implies that for any $\d^\q$-closed observable $O$ and for any closed submanifold $C \subset \Sigma$, 
+we obtain a cocycle in the observables via
 \ben
-\int_{C} \Tilde{O} \in \Obs^\q(N_C) .
+\int_C \Tilde{O} \in \Obs^\q(C) .
 \een
 If $O$ has cohomological degree $k$ and $C$ is of dimension $l$, 
 then $\int_C \Tilde{O}$ has degree $k - l$. 
 \end{construction}
 
-This construction can be understood in a different way. 
-Given any local system $\sL$ on $\CC$, 
-there is a natural quasi-isomorphism
-\[
-\sL \overset{\simeq}{\hookrightarrow} \Omega^*(\CC, \sL)
-\]
-identifying a section of the system with a horizontal section in  its de Rham complex.
-%\owen{This is a little sloppy because we're conflating the sheaf with the vector bundle.}
-In our case, this ``flat section" map 
-\ben
-\Obs^\q_{\rm string}(\CC) \to \Omega^*(\CC , \sO{\rm bs})
-\een
-sends a closed observable $O$ to the $(\d_{dR} + \d^\q)$-closed differential form-valued observable~$\Tilde{\sO}$. 
+%\begin{rmk}
+%{\it A priori} the factorization algebra is only well-defined on open sets $U \subset \Sigma$. 
+%One can define the value on a closed submanifold $C \subset \Sigma$ by taking the (homotopy)  limit over open submanifolds containing~$C$. 
+%\end{rmk} 
 
-We now put this construction to use.
+This construction can be understood in a different way:
+we have described a ``horizontal/flat section" map 
+\ben
+\Obs^\q_{\rm string}(\CC) \simeq \sO{\rm bs}^\q_0 \to \Omega^*(\CC , \sO{\rm bs})
+\een
+that sends a closed observable $O$ to the $(\d_{dR} + \d^\q)$-closed differential form-valued observable~$\Tilde{\sO}$. 
+
+We now put this construction to use in understanding the Gerstenhaber structure concretely.
+
+%\begin{proof} 
+%Both $\dbar$ and $\Delta$ commute with $\eta$, by direct computation. 
+%Thus, it suffices to show that $[\{I^\q, -\}, \eta] = \frac{\d}{\d z}$. 
+%Consider the observable 
+%\[
+%O_{\gamma,0}(\gamma) = \gamma (0),
+%\] 
+%which we can write as the residue $O_{\gamma,0} = \oint \frac{\gamma(z)}{z}$. 
+%The only part of the interaction that contributes is $\int \<\beta, c \cdot \gamma\>$ and 
+%\ben
+%[\{\int \<\beta, c \cdot \gamma\> , -\}, \eta] O_{\gamma, 0} = \{\int \<\beta, \partial_z \gamma\>, O_{\gamma,0}\} = \oint \frac{\partial_z \gamma}{z} \d z = \frac{\d}{\d z} O_{\gamma,0} .
+%\een
+%The calculation is similar for a general linear observable. 
+%To get the result for an arbitrary observable, we use the fact that the bracket is a derivation. 
+%%\brian{I tried to come up with a more conceptual proof by interpreting $\{I,-\}$ as the Chevalley-Eilenberg differential for vector fields, but failed.}
+%\end{proof}
 
 \subsubsection{Second method: descent}
 
 A Gerstenhaber algebra is a graded commutative algebra with a Lie bracket of cohomological degree $-1$ that is a graded biderivation for the product. 
-In this section we show how to explicitly write down the product and bracket on the local observables (i.e., the observables on any disk) and compare our answer to the work of Lian-Zuckerman~\cite{LZ1}.
+In this section we show how to explicitly write down the product and bracket on the local observables (i.e., the observables on any disk) and compare our answer to the work of Lian-Zuckerman \cite{LZ1}.
 
-As explained just before Proposition~\ref{prop: obs is e2}, 
-the Gerstenhaber operad is the operad $H_*(E_2)$ arising by taking homology of the $E_2$ operad.
-Recall that $E_2(2)$ parametrizes the space of binary operations as the configuration space of disjoint two disks in the unit disk in $\RR^2$.
-This space deformation retracts onto $S^1$.
-Hence 
-\[
-Gerst(2) = H_*(E_2(2)) \cong H_*(S^1). 
-\]
-(Note that we view homology of spaces as concentrated in nonpositive degrees,
-since it is viewed as the linear dual to cohomology.)
-The degree zero operation---corresponding to a commutative product---matches with a zero-dimensional cycle of $S^1$,
-and the degree -1 operation---corresponding to the shifted Poisson bracket---matches with a one-dimensional cycle of~$S^1$. 
-
-Thus, to obtain the commutative product on $H^*\Obs^\q$, 
-we need only pick an embedding of two disjoint disks inside a larger disk,
-which is precisely such a zero-cycle in $E_2(2)$.
-Then the factorization product
+The product of the Gerstenhaber algebra is simply given by the factorization product of two disjoint disks including into a larger disk:
 \ben
-\Obs^\q(D) \tensor \Obs^\q(D') \to \Obs^\q(D'') .
+\cdot : \Obs^\q(D) \tensor \Obs^\q(D') \to \Obs^\q(D'') .
 \een 
-induces the commutative product
-\[
-\cdot: H^*\Obs^\q \otimes H^*\Obs^\q \to H^*\Obs^\q.
-\]
-Since this configuration space $E_2(2)$ is connected, 
-we could use any other choice of embeddings and get the same answer at the level of cohomology.
-In particular, we could have put $D'$ on the opposite side of $D$,
-which is why the product must be commutative.
-(A topologist would call this the Eckmann-Hilton argument,
-as it is the same argument one uses to show that the homotopy group $\pi_2(X)$ is always abelian.)
+At the level of cohomology, this product is commutative by the Eckmann-Hilton argument,
+as we can just move one disk around the other.
 
-To construct the shifted Poisson bracket, 
-we need to pick a one-cycle in the configuration space $E_2(2)$.
-To describe the associated binary operation, we use descent along this one-cycle.
-
-\owen{We could include pictures to make the geometry clearer.}
-\brian{will do this tonight}
-
-Hence, let $O,O'$ be closed observables on disks $D \subset D'$, respectively,
-where the closure of $D$ is strictly contained in $D'$. 
-Let $C = \partial D'$, and let $N_C$ be a small tubular neighborhood (i.e., annulus).
-We can define $\int_C \Tilde{O}' \in \Obs^\q (N_C)$ via the descent procedure from above. 
-Finally, for $D''$ another disk containing $D$ and $N_C$, 
-let $\mu : \Obs^\q(D) \tensor \Obs^\q (N_C) \to \Obs^\q(D'')$ denote this factorization product.
-We then define
+To construct the shifted Poisson bracket, we use descent.
+Suppose $O,O'$ are closed observables on disks $D,D'$, respectively.
+For simplicity, we assume that the closure of $D$ is strictly contained in $D'$. 
+If $C = \partial D'$, we can define $\int_C \Tilde{O}'$ as above. 
+Finally, for $D''$ another disk containing $D$ and $C$, 
+consider the factorization product $\star : \Obs^\q(D) \tensor \Obs^\q (C) \to \Obs^\q(D'')$ and define
 \ben
-\{O,O'\}_{\rm Ger} := \mu \left(O, \int_C \Tilde{O}' \in \Obs^\q (D'')\right) .
+\{O,O'\}_{\rm Ger} := O \star \int_C \Tilde{O}' \in \Obs^\q (D'') .
 \een 
-Note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$, 
-so we obtain a bracket of the correct degree.
-
-\owen{We don't actually show it's a bracket, but I don't think we need to, although I'm sure it would be more convincing if we did!}
-
-\owen{Also, I added this remark. Is it clear and helpful?}
-
-\begin{rmk}
-This construction manifestly involves picking a 1-cycle---here $C$---to exhibit the bracket, 
-and it should be clear geometrically how we could relate to any other choice~$C'$.
-If $C$ and $C'$ do not intersect, they bound an annulus and hence determine cohomologous observables.
-(One may have to shrink $D$ in the construction, but that is no issue by local constancy.)
-If they do intersect, one can choose a $C''$ that does not intersect either, and then one has a pair of cohomologous terms.
-As the terms are cohomologous, they induce the same brackets at the level of cohomology.
-\end{rmk}
+We note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$. 
 
 Let $V$ denote the cohomology $H^* \cV_{\rm string}$ of the dg vertex algebra $\cV_{\rm string}$.
 
@@ -589,4 +557,5 @@ Thus, as commutative algebras, the algebras coincide.
 
 The brackets coincide by noting that the derivation $\eta$ trivializing $\d / \d z$ agrees with Lian-Zuckerman's trivialization.
 \end{proof}
+%\brian{Should we prove this or just argue that the bracket and product above agree with what Lian-Zuckerman get.}
 

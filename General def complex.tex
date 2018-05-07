@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage{macros}
+
+\usepackage{tikz,tikz-cd}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{trees}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc,through}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{pgffor}
+
+\title{Deformations of the holomorphic string}
+\author{}
+\date{2018-4-19}
+\begin{document}
+\maketitle
+
+In this section $\fg$ will denote an arbitrary curved $L_\infty$ algebra defined over a dg ring $R$.
+
+\begin{prop}
+Let $\Sigma$ be a Riemann surface and $\fg$ any curved $L_\infty$ algebra.
+Then, there is a quasi-isomorphism of sheaves on $\Sigma$,
+\ben
+\cloc^*(\sT_\Sigma \ltimes \fg_\Sigma) \simeq \Omega^*_\Sigma \tensor \left(\CC[-1] \oplus \Omega^2_{cl}(B \fg)[1] \oplus \Omega^1(B \fg) \oplus \Omega^1_{cl}(B \fg)[-1]\right).
+\een
+\end{prop}
+
+\begin{proof}
+\ben
+\cloc^*(\sT_\Sigma \ltimes \fg_\Sigma) \simeq \Omega^*\left(\Sigma , \cred^*(J \sT_\Sigma \ltimes J \fg_\Sigma)\right)[2]
+\een
+The right-hand side is quasi-isomorphic to the de Rham complex
+\ben
+\Omega^* \left(\Sigma, \cred^*(J^{hol} T^{1,0} \Sigma \ltimes J^{hol}(\ul{\CC}_\Sigma \tensor \fg)\right)[2] .
+\een
+
+\begin{lem}
+There is a quasi-isomorphism between the local cohomology of $\sT_\Sigma \ltimes \fg_\Sigma$ and (a shift of) the Gelfand-Kazhdan descent of the $(\W_1, \CC^\times)$-module $\cred^*(\W_1 \ltimes \fg[[z]])$,
+\ben
+\cloc^*(\sT_\Sigma \ltimes \fg_\Sigma) \simeq \bdesc_X \left( \cred^*(\W_1 \ltimes \fg[[z]]) \right)[2] .
+\een
+\end{lem}
+
+We compute the Gelfand-Fuks cohomology in the following lemma.
+
+\begin{lem}
+There is a quasi-isomorphism
+\ben
+\cred^*({\rm W}_1 \ltimes \fg[[z]]) \simeq \cred^*({\rm W}_1) \oplus \Omega^{2}_{cl}(B \fg)[-1] \oplus \Omega^1(B \fg)[-2] \oplus \Omega^1_{cl}(B \fg) [-3] .
+\een
+In the case $\fg = \fg_n$ the quasi-isomorphism still holds provided we replace $\Omega^i(B \fg)$ by the formal de Rham forms $\hOmega^i_n$.
+Moreover, in this case the quasi-isomorphism is $(\Vect, \GL_n)$-equivariant.
+\end{lem}
+
+\begin{proof}
+
+Note that we can rewrite 
+\ben
+\cred^*(\W_1 \ltimes \fg[[z]]) \cong \cred^*(\W_1) \oplus \clie^*(\W_1 ; \cred^*(\fg[[z]])) .
+\een
+We will invoke the following special result about the cohomology of $\W_1$ with coefficients in any module.
+Recall that the vector field $L_0 = z \frac{\partial}{\partial z} \in \W_1$ determines a grading by conformal dimension on $\W_1$ and any $\W_1$-module.
+Indeed, if $m \in M$, we say that $m$ has {\em conformal dimension} $k$ if $L_0 m = k m$. 
+ 
+\begin{lem} Let $M$ be any $\W_1$-module. 
+Then, the inclusion of the dimension zero subcomplex
+\ben
+\begin{tikzcd}
+\clie^*(\W_1 ; M)^{(0)} \arrow[r,hook,"\simeq"] & \clie^*(\W_1 ; M)
+\end{tikzcd}
+\een
+is a quasi-isomorphism.
+\end{lem}
+
+\end{proof}
+
+Finally, to finish the proof of the proposition we observe the following fact.
+
+\begin{lem}
+Suppose $M$ is any $\fg$-module.
+Then, the $\fg$-module structure on the Chevalley-Eilenberg complex $\clie^*(\fg ; M)$ is homotopically trivial.
+\end{lem}
+
+\end{proof}
+
+\end{document}
+

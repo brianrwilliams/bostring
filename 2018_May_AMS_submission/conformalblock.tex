@@ -1,0 +1,210 @@
+\section{The holomorphic string on closed Riemann surfaces} 
+\label{sec: conformalblock}
+
+%First, consider the elliptic complex
+%\ben
+%\Omega^{0,*}(\Sigma ; \cV)
+%\een
+%of $(0,*)$-forms with values in $\cV$. The differential is simply the $\dbar$ operator. We consider its shift $\Omega^{0,*}(\Sigma ; \cV)[-1]$ as an abelian local dg Lie algebra. In this way, the associated cotangent theory of the elliptic complex is defined as 
+%\ben
+%T^{*}[-1] (\Omega^{0,*}(\Sigma ; \cV)) = \Omega^{0,*}(\Sigma ; V) \oplus \Omega^{1,*}(\Sigma ; T_\Sigma^{1,0}) \Omega^{1,*}(\Sigma ; \cV^\vee) \oplus \ .
+%\een 
+%We write the fields as $\gamma \in \Omega^{0,*}(\Sigma ; \cV)$ for the base direction and $\beta \in \Omega^{1,*}(\Sigma ; \cV^\vee)$ for the fiber direction. With this notation, the action functional is defined as
+%\ben
+%S (\beta, \gamma) = \int_\Sigma \<\beta, \dbar \gamma\>_\cV
+%\een
+%where $\<-,-\>_\cV$ denotes the evaluation pairing between $\cV$ and its dual. This theory is called the $\beta\gamma$ (or sometimes $\beta \gamma-bc$ \owen{what are the $bc$ fields?}) system with values in $\cV$. This is a free field theory and hence has a natural quantization. We will denote the factorization algebra of quantum observables on $\Sigma$ by $\Obs^{q}_{\cV}$. 
+
+Thus far we have discussed the local behavior of the holomorphic string,
+such as its quantization on a disk and the concomitant vertex algebra.
+Now we turn to its global behavior, 
+particularly the observables on a closed Riemann surface,
+and the relationship with certain natural holomorphic vector bundles on the moduli space of Riemann surfaces.
+This local-to-global transition is where the BV/factorization package really shines.
+On the one hand, the theory of factorization algebras provides a conceptual characterization of the local-to-global relationship,
+much like the understanding of sheaf cohomology as the derived functor of global sections.
+On the other hand, the examples from BV quantization provide computable, convenient models for the global sections,
+much as the de Rham or Dolbeault complexes do for the cohomology of sheaves that arise naturally in differential or complex geometry.
+
+As we will explain, the answers we recover for the holomorphic string can be related quite cleanly to natural determinant lines on the moduli of Riemann surfaces,
+hence providing a bridge from the Feynman diagrammatic anomaly computations to the index-theoretic computations.
+
+\subsection{The free case}
+
+% Let $\Sigma$ denote a Riemann surface. 
+
+Before jumping to the holomorphic string, 
+we will work out the global observables in the simpler case of the $bc\beta\gamma$ system,
+introduced in Remark \ref{rmk:bcbg}. 
+The global {\it classical}\/ observables on a Riemann surface $\Sigma$ are given by the symmetric algebra on the continuous linear dual to the fields,
+\[
+\Sym\left(\Omega^{0,*}(\Sigma,V)^\vee \oplus \Omega^{1,*}(\Sigma,V^\vee)^\vee \oplus \Omega^{0,*}(\Sigma,T[1])^\vee \oplus \Omega^{1,*}(\Sigma,T^*_\Sigma[-2])^\vee \right),
+\]
+with the differential $\dbar$ extended as a derivation.
+Hence the cohomology is
+\[
+\Sym\left(H^*(\Sigma,V)^\vee \oplus H^*(\Sigma,\omega \otimes V^\vee)^\vee \oplus H^*(\Sigma,T[1])^\vee \oplus H^*(\Sigma,\omega^{\otimes 2}[-2])^\vee\right),
+\]
+where $\omega$ denotes the canonical bundle.
+Although this expression might look complicated, 
+it can be readily unpacked in the setting of algebraic geometry, 
+particularly when $\Sigma$ is closed.
+In that case, this graded commutative algebra is a symmetric algebra on a finite-dimensional graded vector space,
+which encodes the derived tangent space of the moduli of Riemann surfaces at $\Sigma$ and of holomorphic functions to~$V$.
+
+As this theory is free, it admits a canonical BV quantization.
+Denote by $\Obs^{\q}_{free}$ be the corresponding factorization algebra.
+One can compute its global sections on $\Sigma$ by using a spectral sequence whose first page is the global classical observables.
+The result of Theorem 8.1.4.1 of \cite{CG1} states that the cohomology of this free theory along a closed Riemann surface with values in {\em any} line bundle is one-dimensional concentrated in a certain cohomological degree. 
+In our case, it the calculation implies that we get a shifted determinant of the cohomology of the fields:
+\ben
+H^*\left(\Obs^\q_{free}(\Sigma)\right) \cong \det \left(H^*(\Sigma ; \sO_\Sigma) \right)^{\tensor \dim(V)} \tensor \det \left(H^*(\Sigma ; T_\Sigma^{1,0})\right)^{-1} [d(\Sigma)] 
+\een
+where 
+\ben
+d(\Sigma) = \dim (V)  \left(\dim H^0(\Sigma ; \sO_\Sigma) + \dim H^1(\Sigma ; \sO_\Sigma)\right) + \dim(H^0(\Sigma ; T_\Sigma^{1,0})) - \dim(H^1(\Sigma ; T_\Sigma^{1,0})).
+\een
+
+\begin{rmk}
+The shift $d(\Sigma)$ here likely looks funny.
+In this case at least, the meaning can be unpacked pretty straightforwardly. 
+The BV complex for an ordinary finite-dimensional vector space is equivalent to the de Rham complex shifted down by the dimension of the vector space, 
+so that the top forms are in degree 0.
+(Abstracting this situation is one way to ``invent'' the BV formalism.)
+For the $\sigma$-model, the global solutions to the equations of motion are $H^0(\Sigma,\sO) \otimes V$ for the $\gamma$ fields and $H^0(\Sigma,\omega) \otimes V^\vee$ for the $\beta$ fields.
+For $\Sigma$ closed, these are finite-dimensional, and thus we get the shift
+\[
+ \dim (V)  \left(\dim H^0(\Sigma ; \sO_\Sigma) + \dim H^1(\Sigma ; \sO_\Sigma)\right).
+\]
+For the ghost system (the $bc$ fields), 
+the BV complex recovers the Euler characteristic 
+\[
+\dim(H^0(\Sigma ; T_\Sigma^{1,0})) - \dim(H^1(\Sigma ; T_\Sigma^{1,0}))
+\]
+as it encodes the de Rham complex on the formal quotient stack $B\fg = \ast/\fg$ for the Lie algebra of symmetries~$\fg$.
+\end{rmk}
+
+The computation here works for any Riemann surface $\Sigma$ and, indeed, for any family of Riemann surfaces.
+Hence it implies that the global observables of the free $bc\beta\gamma$ system determine a determinant line bundle on the moduli $\cM$ of Riemann surfaces.
+
+We can work out the first Chern class of this determinant line bundle using the Grothendieck-Riemann-Roch (GRR) theorem as follows.
+Consider the universal Riemann surface $\pi \colon C \to \cM$ over the moduli space, 
+and consider the bundles $\sO_C \otimes V$ and $\sT_\pi = \sT_{C/\cM}$,
+which one can view the universal $\gamma$ fields and $c$ fields, respectively.
+The first Chern class of the derived pushforward $R\pi_*(\sO_C \otimes V)$ is given by the first Chern class of $\det(H^*(\sO_C \otimes V)) \cong \det(\sO_C)^{\otimes \dim V}$, 
+since the first Chern class of a vector bundle is the first Chern class of its determinant bundle.
+The Grothendieck-Riemann-Roch theorem states that for a complex of coherent sheafs $\cF = \cF^*$ on $C$, 
+the Chern character $\ch(R\pi_* \cF)$ of its derived pushforward $R\pi_* \cF$  is given by 
+\def\Td{{\rm Td}}
+\begin{align*}
+\pi_*( \ch(\cF) \Td(T_\pi)) &= \pi_*\left( \left(\sum_{i} (-1)^i \ch (\cF^i) \right) \Td(T_\pi)\right) \\
+&= \pi_*\left( \left(\sum_i (-1)^i ({\rm rk}(\cF^i) + c_1(\cF^i) + \frac{1}{2}(c_1(\cF^i)^2) + \cdots)\right) (1 +\frac{1}{2}c_1(T_\pi) + \frac{1}{12} c_1(T_\pi)^2)\right)
+\end{align*}
+where $T_\pi$ denotes the relative tangent bundle along $\pi$,
+which is here just the tangent line bundle of a Riemann surface.
+The first Chern class is the component of cohomological degree 2.
+For instance, when $\cF = \cF^0$ is concentrated in degree zero, the above simplifies to:
+\ben
+\frac{1}{12} {\rm rk}(\cF) c_1(T_\pi)^2 + \frac{1}{2} c_1(\cF) c_1(T_\pi) + \frac{1}{2} c_1(\cF)^2 .
+\een  
+When $\cF = T^{\tensor n}_{\pi} [1]$, the expression for the first Chern class is $-\frac{1 + 6n + 6n^2}{12} c_1(T_\pi)^2$.
+When $\cF = \cO \tensor V$ we simply get $\dim(V)$. 
+
+Hence, when $\cF = T[1] \oplus \cO \tensor V$, for the determinant line of global observables $H^*\left(\Obs^\q_{free}(C)\right)$ as a bundle over $C$ we obtain
+\[
+c_1\left(H^*\left(\Obs^\q_{free}(\Sigma)\right)\right) = \frac{1}{12} (\dim(V) - 13) c_1(T_\pi)^2 .
+\]
+
+%\begin{lem}[\cite{fact1} Proposition 8.1.4.1]
+%\label{lem bg global obs} 
+%Let $b_i = \dim H^i (\Sigma ; \cV)$. The cohomology of the global observables of the $\beta\gamma$ system with values in $\cV$ is given by
+%\ben
+%H^*\left(\Obs^q_{\cV}(\Sigma)\right) \cong \det \left(H^*(\Sigma ; \cV) \right) [d(\cV)] 
+%\een
+%where $d(\cV) = -b_0 - b_1$. 
+%\end{lem}
+
+It is worthwhile to point out that the above argument based on GRR for identifying the first Chern class of this determinant line bundle resonates with our computation of the anomaly of the bosonic string on the disk. Indeed, this is a manifestation of ``Virasoro uniformization.'' 
+Also, notice that the above calculation assumed that there was no deformation, so that we were working with a free theory. 
+However, deforming the action from free $bc\beta\gamma$ system to holomorphic bosonic string doesn't affect the line bundles, since those are continuous parameters and Chern classes are discrete.
+
+\subsection{The anomaly and moduli of quantizations on an arbitrary Riemann surface}
+
+We have already seen that the holomorphic string {\it on a disk} admits a BV quantization if and only if the target is a complex vector space of dimension 13.
+Here we will explain why this anomaly calculation is actually enough to show the existence of a quantization on an {\it arbitrary} Riemann surface. 
+An argument using GRR was given in the above section. 
+In this section we give a proof using only the perspective of BV quantization.
+One can view this as giving a proof of the Grothendieck-Riemann-Roch theorem using Feynman diagrams (and will be the topic of future work). 
+
+Our diagrammatic arguments showed that only wheels with $c$ legs appear in the anomaly,
+and these arguments did not depend on the choice of $\Sigma$. 
+Hence the anomaly will be purely a functional on the $c$ fields.
+So we restrict ourselves to the piece of the deformation complex only involving such fields.
+By arguments analogous to those in Section~\ref{sec: moduli}, 
+when $\Sigma$ is a disk,
+this deformation complex for the $c$-fields is quasi-isomorphic to $\cred^*(W_1)[2]$,
+but
+\[
+H^*_{\rm red}(W_1)[2] = \CC[-1].
+\]
+As shown in Proposition 5.3 of \cite{BWvir}, this situation generalizes:
+on arbitrary $\Sigma$, 
+the deformation complex is a sheaf of cochain complexes quasi-isomorphic to the constant sheaf $\CC_\Sigma[-1]$ concentrated in degree~$1$. 
+\owen{Ref seems to want a little more explanation of this assertion. I'm not sure how much we should say, but I think it might be worthwhile to comment explicitly that this cocycle is the usual Gelfand-Fuks jobby, and maybe even write it!}
+
+The construction of BV quantization is manifestly {\em local-to-global} on spacetime. 
+In particular, anomalies inherit this property: the anomaly computed on an open set $U \subset \Sigma$ is equal to the anomaly of the theory on $\Sigma$ restricted to $U$. 
+In our case, the anomaly on some Riemann surface $\Sigma$ must match with the anomaly we have already computed if we take $U$ to be a disk in $\Sigma$.
+This global anomaly is a 1-cocycle for the derived global sections of the shifted constant sheaf, 
+and hence, because of the shift, this cocycle is determined by a constant function on $\Sigma$.
+Thus, it suffices to compute the anomaly on an arbitrary open, 
+in particular, it suffices to compute it on a flat disk. 
+But this is precisely the context in which we computed the anomaly in Section~\ref{sec: quantization}, 
+so we know the anomaly is simply the dimension of the target vector space.
+Thus, a quantization of the holomorphic string exists on any Riemann surface provided $\dim_{\CC}(V) = 13$. 
+
+Now we ask how many such quantizations are possible,
+i.e., what is the moduli of theories.
+By the calculation in Section \ref{sec: moduli}, 
+we know that, up to BV equivalence, 
+the possible one-loop terms in the quantized action functional are parametrized by
+\ben
+H^0(\Sigma) \tensor \Omega^1(V) \oplus H^1(\Sigma) \tensor \Omega^2_{cl}(V).
+\een 
+(That is, these vector spaces are the first cohomology group of the relevant deformation complex.)
+This space of deformations corresponds to continuous parameters we can vary in the action functional.
+%\owen{such as [now we spell out what they are]}. 
+As the isomorphism classes of line bundles form a discrete set, 
+varying these continuous parameters will not change the class of the line bundle of global observables. 
+In conclusion, no matter what one-loop quantization we choose, 
+the cohomology of the global observables will be the same.
+%\owen{On the other hand, it does affect the flat connection on this line bundle, aka partition function. Should we mention that here?} 
+
+%\owen{It might be worth noting that the second direct summand is invisible except in genus $>0$, but they are relevant if you're trying to define a theory that makes sense on all Riemann surfaces.}
+
+\subsection{Global observables for the holomorphic string}
+
+Now, let us consider the global observables of the holomorphic string $\Obs^\q(\Sigma)$. 
+Consider the filtration on the quantum observables induced by the polynomial degree of the functional. 
+There is a spectral sequence abutting to the cohomology of the global observables $H^*\Obs^\q(\Sigma)$ with $E_1$ page given by the cohomology of the global observables of the free $bc\beta \gamma$ system which we have already computed:
+\bestar
+E_2 & \cong & \det\left(H^*(\Sigma ; T_\Sigma[1])\right) \tensor \det \left(H^*(\Sigma ; \cO_\Sigma)^{\oplus 13}\right) \\
+& \cong & \det \left(H^1(\Sigma ; T_\Sigma) \right) \tensor \det \left(H^0(\Sigma ; T_\Sigma)\right)^{-1} \tensor \det \left(H^0(\Sigma ; K_{\Sigma}) \right)^{-13}
+\eestar
+where we have used the fact that $H^0(\Sigma ; \cO) \cong \CC$ for any $\Sigma$. 
+Since this page is concentrated in a single line, we see that the spectral sequence degenerates at this page.
+
+%\owen{We should cite Witten, since that's why you're using this notation. We could also unpack what these lines are in terms of the "central charge" (meaning what power we get of the canonical line on the moduli of Riemann surfaces.}
+
+Let $\Sigma_{g}$ be a surface of genus $g$. Then for $g=1$ the above simplifies to
+\ben
+\det \left(H^1(\Sigma_1 ; T_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-14} .
+\een 
+%\owen{You can simplify further: these are trivial lines!}
+If $g \geq 2$ one has
+\ben
+\det \left(H^1(\Sigma_1 ; T_{\Sigma_1})\right) \tensor \det \left(H^0(\Sigma_1 ; K) \right)^{-13} .
+\een
+%\owen{Again, I think you can trivialize further and identify these with a line bundle on the moduli space of Riemann surfaces.}
+Thus the above expressions give the global observables for the holomorphic string for genus $g =1$ and $g \geq 2$, respectively. 
+Compare these formulas to Witten's analysis of the bosonic string in \cite{WitString}.

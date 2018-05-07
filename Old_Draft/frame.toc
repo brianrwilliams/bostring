@@ -28,7 +28,7 @@
 \contentsline {subsection}{\tocsubsection {}{5.1}{Some context}}{27}{subsection.5.1}
 \contentsline {subsection}{\tocsubsection {}{5.2}{A reminder on the chiral algebra of the string}}{28}{subsection.5.2}
 \contentsline {subsection}{\tocsubsection {}{5.3}{The case of the string}}{29}{subsection.5.3}
-\contentsline {subsection}{\tocsubsection {}{5.4}{The $E_2$ algebra and descent}}{31}{subsection.5.4}
+\contentsline {subsection}{\tocsubsection {}{5.4}{The $E_2$ algebra and descent}}{30}{subsection.5.4}
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.1}{First method: the $E_2$ algebra}}{31}{subsubsection.5.4.1}
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.2}{The stress-energy tensor}}{33}{subsubsection.5.4.2}
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.3}{A local system of observables}}{34}{subsubsection.5.4.3}
@@ -40,4 +40,4 @@
 \contentsline {subsection}{\tocsubsection {}{6.4}{The anomaly and moduli of quantizations on an arbitrary Riemann surface}}{41}{subsection.6.4}
 \contentsline {section}{\tocsection {}{7}{Looking ahead: curved targets}}{42}{section.7}
 \contentsline {section}{\tocsection {Appendix}{A}{Calculation of the anomaly}}{43}{appendix.A}
-\contentsline {section}{\tocsection {Appendix}{}{References}}{45}{section*.2}
+\contentsline {section}{\tocsection {Appendix}{}{References}}{44}{section*.2}
