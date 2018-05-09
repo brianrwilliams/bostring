@@ -33,10 +33,10 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.2}{The stress-energy tensor}}{33}{subsubsection.5.4.2}
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.3}{Descent for local operators}}{35}{subsubsection.5.4.3}
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.4}{Formula for the Gerstenhaber bracket}}{37}{subsubsection.5.4.4}
-\contentsline {section}{\tocsection {}{6}{The holomorphic string on closed Riemann surfaces}}{38}{section.6}
+\contentsline {section}{\tocsection {}{6}{The holomorphic string on closed Riemann surfaces}}{39}{section.6}
 \contentsline {subsection}{\tocsubsection {}{6.1}{The free case}}{39}{subsection.6.1}
 \contentsline {subsection}{\tocsubsection {}{6.2}{The anomaly and moduli of quantizations on an arbitrary Riemann surface}}{41}{subsection.6.2}
 \contentsline {subsection}{\tocsubsection {}{6.3}{Global observables for the holomorphic string}}{42}{subsection.6.3}
-\contentsline {section}{\tocsection {}{7}{Looking ahead: curved targets}}{42}{section.7}
-\contentsline {section}{\tocsection {Appendix}{A}{Calculation of anomaly}}{43}{appendix.A}
+\contentsline {section}{\tocsection {}{7}{Looking ahead: curved targets}}{43}{section.7}
+\contentsline {section}{\tocsection {Appendix}{A}{Calculation of anomaly}}{44}{appendix.A}
 \contentsline {section}{\tocsection {Appendix}{}{References}}{45}{section*.1}

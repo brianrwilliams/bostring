@@ -403,7 +403,10 @@ as well as another explicit description of the $E_2$ algebra associated to the q
 The key role here is played by observables that are local,
 in the sense discussed in Section~\ref{sec: moduli},
 where they appeared in our description of the deformation complex, 
-but we revisit the main idea.
+but we revisit now the main idea in a more useful form for our current purposes.
+We will focus first on the classical theory, 
+where the constructions manifestly make sense,
+before discussing what needs to be modified in the quantum setting.
 
 Let $J E_{\rm string}$ denote the $\infty$-jet bundle of the classical fields of the holomorphic bosonic string. 
 Concretely, a fiber of $J E_{\rm string}$ at a point $x$ corresponds to all the possible Taylor series at $x$ of fields of the bosonic string.
@@ -439,7 +442,7 @@ since the construction is parallel to the BV bracket.
 We will restrict our attention from hereon to $\Sigma = \CC$,
 on which $\d^2 z$ determines a natural volume form.
 The classical action functional $S$ thus determines a Lagrangian (simply divide by this volume form) that we will abusively denote $S$ as well.
-The operator $\{S,-\}$---known as the BRST operator in physics---is square-zero by construction.
+The operator $\{S,-\}$, known as the BRST operator in physics, is square-zero by construction.
 Hence, we obtain a commutative dg algebra 
 \ben
 \left(\sO(J E_{\rm string}), \{S,-\}\right)
@@ -447,6 +450,7 @@ Hence, we obtain a commutative dg algebra
 in left $D$-modules,
 where a flat connection is inherited by the dual bundle and hence by the symmetric powers.
 
+\owen{I did not understand the following paragraph, so I continue below as if it were not included. Please feel free to reincorporate this material as you see fit.}
 We consider now the origin $0 \in \Sigma = \CC$ as a preferred point. 
 The BRST operator $\{S,-\}$ restricts to a differential on the fiber of $\sO(J E_{\rm string})$ at zero which is the same as $\sO(J_0 E_{\rm string})$.
 These are functions of formal germs of sections of $E$ near $0 \in \CC$. 
@@ -458,13 +462,29 @@ Furthermore, there is a map of complexes given by evaluating at zero:
 The existence of the homotopies $\eta, \Bar{\eta}$ tell us that this map is a {\em quasi-isomorphism}. 
 In fact, they provide a homotopy inverse for $\pi_0$.
 This is our interpretation of {\em descent} in the sense of physics, which we summarize in the following construction. 
+\owen{I resume here.}
 
-Consider now the de Rham complex of this $D$-module
+Elements of $\left(\sO(J E_{\rm string}), \{S,-\}\right)$ are not observables of the classical theory,
+since they are just Lagrangians.
+There is, however, a natural way to produce observables from Lagrangians.
+Essentially, a Lagrangian can be multiplied by a de Rham current;
+for instance, evaluating a delta function with a Lagrangian produces a pointlike observable,
+or local operator in the terminology of physics.
+In more formal terms, consider the de Rham complex of our $D$-module
 \ben
-\Omega^*(\Sigma , \sO(J E_{\rm string}))
+\Omega^*(\CC , \sO(J E_{\rm string}))
 \een
 equipped with the total differential $\nabla^{jet} + \{S, -\}$. 
-\owen{Continue \dots}
+It consists of smooth de Rham forms with values in Lagrangians.
+
+Consider now the compactly supported, distributional completion 
+\[
+\overline{\Omega}^*_c(\CC , \sO(J E_{\rm string})),
+\]
+consisting of compactly supported de Rham currents with values in Lagrangians.
+It determines, of course, a cosheaf of cochain complexes.
+Moreover, \owen{I think this is not a necessary direction right now.}
+
 
 \begin{construction} 
 Given any local observable $O \in \sO(J_0 E_{\rm string})$, the relations (\ref{d/dzbar}) and (\ref{d/dz}) allow us to define a differential form-valued observable $\Tilde{O} \in \Omega^*(X, \sO(JE_{\rm string})) $ as follows. 
@@ -480,7 +500,7 @@ Using the homotopies $\eta,\Bar{\eta}$ we define the 1-form part $\Tilde{O}^1$ a
 \Tilde{O}^{1} = \d z \; (\eta \Tilde{O}^{0}) + \d \zbar \; (\Bar{\eta} \Tilde{O}^{0}),
 \een
 where, for instance, $\eta O$ denotes the image of $O$ under the map $\eta$.
-\owen{To be pedantic, it seems like the tilde should happen last, so $\Tilde{(\eta O)}^0$}
+\owen{To be pedantic, it seems like the tilde should happen last, so $\Tilde{\eta O}^0$}
 Similarly, the 2-form part is 
 \[
 \Tilde{O}^2 = \d z \,\d \zbar\, \eta \Bar{\eta} O.
@@ -574,14 +594,10 @@ Finally, for $D''$ another disk containing $D$ and $N_C$,
 let $\mu : \Obs^\q(D) \tensor \Obs^\q (N_C) \to \Obs^\q(D'')$ denote this factorization product.
 We then define
 \ben
-\{O,O'\}_{\rm Ger} := \mu \left(O, \int_C \Tilde{O}' \in \Obs^\q (D'')\right) .
+\{O,O'\}_{\rm Ger} := \mu \left(O, \int_C \Tilde{O}' \right) .
 \een 
 Note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$, 
 so we obtain a bracket of the correct degree.
-
-%\owen{We don't actually show it's a bracket, but I don't think we need to, although I'm sure it would be more convincing if we did!}
-
-%\owen{Also, I added this remark. Is it clear and helpful?}
 
 \begin{rmk}
 This construction manifestly involves picking a 1-cycle---here $C$---to exhibit the bracket, 
