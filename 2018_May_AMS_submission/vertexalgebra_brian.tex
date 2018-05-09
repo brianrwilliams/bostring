@@ -194,7 +194,7 @@ In this section we provide two equivalent methods for extracting this algebra.
 The first is intuitive from the point of view of factorization algebras, but has the disadvantage of not giving a concrete description of the algebra. 
 The second approach gives an explicit formula for the bracket and is based on the formalism of ``descent" for local operators. 
 
-\subsubsection{First method: the $E_2$ algebra}
+\subsubsection{The $E_2$ algebra}
 
 We continue to consider the theory on the Riemann surface $\Sigma = \CC$. 
 In this section we show how to produce, from the point of view of factorization algebras, the structure of a Gerstenhaber algebra on the BRST cohomology of the bosonic string. 
@@ -392,135 +392,175 @@ Bracketing with this local functional encodes applying $\frac{\d}{\d z}$ to the 
 
 Together these two lemmas ensure that translations act trivially on the cohomological observables.
 
-\subsubsection{A local system of observables}
+\subsubsection{Descent for local operators}
 
 We'd like to sketch an important consequence of the work above.
 As we will see, it gives an approach to the method of descent, and another explicit description of the $E_2$ algebra that the quantum observables of the bosonic string define.
 
-First, we will see how to extract a local system (in the derived sense) from the observables on $\Sigma = \CC$. 
-To define this, we will take advantage of the symmetry by the group $S^1$ on the quantum theory induced by rotations on $\CC$.
+%First, we will see how to extract a local system (in the derived sense) from the observables on $\Sigma = \CC$. 
+For this, we will look at an important class of observables that are {\em local}. 
+We have already encountered local functionals in our description of the deformation complex in Section \ref{sec: moduli}, but we recall the main idea.
 
-Let $D_0 \subset \CC$ be a disk centered at the origin $0 \in \CC$.
-Then, the action of $S^1$ on the quantum theory induces one on the cochain complex of observables supported on $D$: $\Obs^{\q}_{\rm string}(D)$. 
-Let
+Let $J E_{\rm string}$ denote the $\infty$-jet bundle of the classical fields of the holomorphic bosonic string. 
+This is a $D$-module on the Riemann surface, equipped with the usual flat Grothendieck connection $\nabla^{jet}$. 
+The classical action functional equips functionals on the $\infty$-jet bundle
 \ben
-\Obs^{\q}_{\rm string}(D_0)^{(k)} \subset \Obs^\q_{\rm string}(D_0)
+\left(\sO(J E_{\rm string}), \{S,-\}\right) = \left(\prod_{k \geq 0} \Sym^k(J E_{\rm string})^\vee, \{S,-\}\right)
 \een
-be the subcomplex consisting of those elements for which $\lambda \in S^1$ acts by multiplication by $\lambda^k$. 
-Taking the direct sum over all $k \in \ZZ$ we define the subcomplex
+with the structure of a commutative dg algebra in $D$-modules.
+
+Consider now the de Rham complex of this $D$-module
 \ben
-\sO{\rm bs}_0 = \bigoplus_{k \in \ZZ} \Obs^{\q}_{\rm string} (D_0)^{(k)} .
+\Omega^*(\Sigma , \sO(J E_{\rm string}))
 \een
-
-In the classical limit, there is an isomorphism
+equipped with the total differential $\nabla^{jet} + \{S, -\}$. 
+We consider now the origin $0 \in \Sigma = \CC$ as a preferred point. 
+The BRST operator $\{S,-\}$ restricts to a differential on the fiber of $\sO(J E_{\rm string})$ at zero which is the same as $\sO(J_0 E_{\rm string})$.
+These are functions of formal germs of sections of $E$ near $0 \in \CC$. 
+In the physics terminology, these are precisely the {\em local operators} at the origin. 
+Furthermore, there is a map of complexes given by evaluating at zero:
 \ben
-\sO{\rm bs}_0 \mod \hbar \; \; \cong \; \; \left(\Sym((J_0 \sE_{\rm string})^\vee), \{S,-\}\right)
+\pi_0 : \Omega^*(\Sigma , \sO(J E_{\rm string})) \to \sO(J_0 E_{\rm string}) .
 \een
-where $J_0\sE_{\rm string}$ is the fiber at $0 \in \CC$ of the bundle of $\infty$-jets of the fields, and $S$ is the classical action functional.
+The existence of the homotopies $\eta, \Bar{\eta}$ tell us that this map is a {\em quasi-isomorphism}. 
+In fact, they provide a homotopy inverse for $\pi_0$.
+This is our interpretation of {\em descent} in the sense of physics, which we summarize in the following construction. 
 
-\brian{I want to say that we can do this over each point to get a vector bundle whose fiber looks like jets at that point, so we inherits a natural D-module structure. 
-Then, the calculation above says that the flat connection is actually trivializable, so that we can perform descent.}
+%To define this, we will take advantage of the symmetry by the group $S^1$ on the quantum theory induced by rotations on $\CC$.
 
-Note that for each point $x \in \CC$,
-the {\em local observables around $x$} is a well-defined notion:
-for any disk $D$ containing $x$, the observables $\Obs^\q_{\rm string} (D)$ are quasi-isomorphic by construction.
-We let 
-\[
-\sO{\rm bs}_x = \lim_{x \in D} \Obs^\q_{\rm string} (D).
-\]
-We let $\sO{\rm bs} \to \CC$ denote the associated dg vector bundle (of infinite rank). 
-Alternatively, we can consider the dg vector bundle whose fiber over every point is simply the global observables $\Obs^\q_{\rm string} (\CC)$.
-Via the structure maps of $\Obs^\q_{\rm string}$, 
-these two dg vector bundles are quasi-isomorphic.
+%Let $D_0 \subset \CC$ be a disk centered at the origin $0 \in \CC$.
+%Then, the action of $S^1$ on the quantum theory induces one on the cochain complex of observables supported on $D$: $\Obs^{\q}_{\rm string}(D)$. 
+%Let
+%\ben
+%\Obs^{\q}_{\rm string}(D_0)^{(k)} \subset \Obs^\q_{\rm string}(D_0)
+%\een
+%be the subcomplex consisting of those elements for which $\lambda \in S^1$ acts by multiplication by $\lambda^k$. 
+%Taking the direct sum over all $k \in \ZZ$ we define the subcomplex
+%\ben
+%\sO{\rm bs}_0 = \bigoplus_{k \in \ZZ} \Obs^{\q}_{\rm string} (D_0)^{(k)} .
+%\een
+%
+%In the classical limit, there is an isomorphism
+%\ben
+%\sO{\rm bs}_0 \mod \hbar \; \; \cong \; \; \left(\Sym((J_0 \sE_{\rm string})^\vee), \{S,-\}\right)
+%\een
+%where $J_0\sE_{\rm string}$ is the fiber at $0 \in \CC$ of the bundle of $\infty$-jets of the fields, and $S$ is the classical action functional.
 
-This quasi-isomorphism also explains why we have a dg local system:
-for any two points, there is a zigzag of quasi-isomorphisms between their fibers,
-passing through the global observables.
-In other words, we know how to do ``transport up to quasi-isomorphism.''
-This description is, however, rather indirect.
+%Note that for each point $x \in \CC$,
+%the {\em local observables around $x$} is a well-defined notion:
+%for any disk $D$ containing $x$, the observables $\Obs^\q_{\rm string} (D)$ are quasi-isomorphic by construction.
+%We let 
+%\[
+%\sO{\rm bs}_x = \lim_{x \in D} \Obs^\q_{\rm string} (D).
+%\]
+%We let $\sO{\rm bs} \to \CC$ denote the associated dg vector bundle (of infinite rank). 
+%Alternatively, we can consider the dg vector bundle whose fiber over every point is simply the global observables $\Obs^\q_{\rm string} (\CC)$.
+%Via the structure maps of $\Obs^\q_{\rm string}$, 
+%these two dg vector bundles are quasi-isomorphic.
 
-Our analysis of translations provides another approach to the local system.
-Note that the local observables at every point are explicitly isomorphic under macroscopic translations.
-That is, if $\tau_z: \CC \to \CC$ is the translation sending $w$ to $w+z$,
-then there is a natural isomorphism between $\Obs^\q_{\rm string}$ and the pushforward $(\tau_z)_* \Obs^\q_{\rm string}$,
-induced by pullback of fields along the translation.
-This isomorphism induces an isomorphism of fibers
-\[
-\sO{\rm bs}_z \cong \sO{\rm bs}_0,
-\]
-by taking limits of isomorphisms between disks around those points.
-In this way, we can identify smooth sections of $\sO{\rm bs}$ with elements of
-\[
-C^\infty(\CC) \otimes \sO{\rm bs}_0.
-\]
-But we also know how $\d/\d z$ and $\d/\d\zbar$ act, and that they act homotopically trivially.
-In short, we have the following.
-
-\begin{cor} 
-The trivializations $\eta$ and $\Bar{\eta}$ equip $\sO{\rm bs}$ with a flat connection. 
-Thus, the vector bundle $\sO{\rm bs}$ is a local system on $\CC$.
-\end{cor}
-
-This local system gives us yet another method for producing observables of the theory.
-Given a compactly-supported de Rham form with values in $\sO{\rm bs}$
-\[
-\widetilde{O} = \widetilde{O}_0 + \widetilde{O}_z \d z + \widetilde{O}_{\zbar} \d\zbar + \widetilde{O}_{z\zbar} \d z\, \d\zbar \in \Omega^*_c(U,\sO{\rm bs}),
-\]
-it can be viewed as determining an element of $\Obs^\q_{\rm string}(U)$ by integration over $U$.
-At the classical level this identification is particularly clear:
-we simply evaluate $\widetilde{O}_{z\zbar} \d z\, \d\zbar$ on a field, producing a top form, and then integrating.
-
-We now explain the method of ``descent" for local observables using this framework. 
-Expositions of this construction as related to two-dimensional gravity can be found in \cite{WittenDescent,Dijk}.
-The basic idea is the following.
-If $O$ is a local observable that is closed for the quantum differential, 
-we can use the trivializations of translation to promote $O$ to a {\em non-local} observable supported on any closed submanifold of the Riemann surface. 
+%This quasi-isomorphism also explains why we have a dg local system:
+%for any two points, there is a zigzag of quasi-isomorphisms between their fibers,
+%passing through the global observables.
+%In other words, we know how to do ``transport up to quasi-isomorphism.''
+%This description is, however, rather indirect.
+%
+%Our analysis of translations provides another approach to the local system.
+%Note that the local observables at every point are explicitly isomorphic under macroscopic translations.
+%That is, if $\tau_z: \CC \to \CC$ is the translation sending $w$ to $w+z$,
+%then there is a natural isomorphism between $\Obs^\q_{\rm string}$ and the pushforward $(\tau_z)_* \Obs^\q_{\rm string}$,
+%induced by pullback of fields along the translation.
+%This isomorphism induces an isomorphism of fibers
+%\[
+%\sO{\rm bs}_z \cong \sO{\rm bs}_0,
+%\]
+%by taking limits of isomorphisms between disks around those points.
+%In this way, we can identify smooth sections of $\sO{\rm bs}$ with elements of
+%\[
+%C^\infty(\CC) \otimes \sO{\rm bs}_0.
+%\]
+%But we also know how $\d/\d z$ and $\d/\d\zbar$ act, and that they act homotopically trivially.
+%In short, we have the following.
+%
+%\begin{cor} 
+%The trivializations $\eta$ and $\Bar{\eta}$ equip $\sO{\rm bs}$ with a flat connection. 
+%Thus, the vector bundle $\sO{\rm bs}$ is a local system on $\CC$.
+%\end{cor}
+%
+%This local system gives us yet another method for producing observables of the theory.
+%Given a compactly-supported de Rham form with values in $\sO{\rm bs}$
+%\[
+%\widetilde{O} = \widetilde{O}_0 + \widetilde{O}_z \d z + \widetilde{O}_{\zbar} \d\zbar + \widetilde{O}_{z\zbar} \d z\, \d\zbar \in \Omega^*_c(U,\sO{\rm bs}),
+%\]
+%it can be viewed as determining an element of $\Obs^\q_{\rm string}(U)$ by integration over $U$.
+%At the classical level this identification is particularly clear:
+%we simply evaluate $\widetilde{O}_{z\zbar} \d z\, \d\zbar$ on a field, producing a top form, and then integrating.
+%
+%We now explain the method of ``descent" for local observables using this framework. 
+%Expositions of this construction as related to two-dimensional gravity can be found in \cite{WittenDescent,Dijk}.
+%The basic idea is the following.
+%If $O$ is a local observable that is closed for the quantum differential, 
+%we can use the trivializations of translation to promote $O$ to a {\em non-local} observable supported on any closed submanifold of the Riemann surface. 
 
 \begin{construction} 
-Given any local observable $O \in \sO{\rm bs}_0$, the relations (\ref{d/dzbar}) and (\ref{d/dz}) allow us to define a differential form-valued observable $\Tilde{O}$ as follows. 
-The 0-form part $\Tilde{O}^{0}$ is just the observable $O$,
-viewed as a constant section over $\CC$. 
-The 1-form part $\Tilde{O}^1$ is 
+Given any local observable $O \in \sO(J_0 E_{\rm string})$, the relations (\ref{d/dzbar}) and (\ref{d/dz}) allow us to define a differential form-valued observable $\Tilde{O} \in \Omega^*(X, \sO(JE_{\rm string})) $ as follows. 
+Let $\tau_z: \CC \to \CC$ be the translation sending a point $w$ to $w+z$.
+This acts on fields, as well as the jets of fields in the obvious way.
+Translation invariance allows us to define the $0$-form part
 \ben
-\d z \; (\eta O) + \d \zbar \; (\Bar{\eta} O),
+\Tilde{O}^{0} (z) = \tau_z O .
+\een
+\brian{this is continuous since we have a continuous action by translations}
+Using the homotopies $\eta,\Bar{\eta}$ we define the 1-form part $\Tilde{O}^1$ as
+\ben
+\Tilde{O}^{1} = \d z \; (\eta \Tilde{O}^{0}) + \d \zbar \; (\Bar{\eta} \Tilde{O}^{0}),
 \een
 where, for instance, $\eta O$ denotes the image of $O$ under the map $\eta$.
 Similarly, the 2-form part is 
 \[
 \Tilde{O}^2 = \d z \,\d \zbar\, \eta \Bar{\eta} O.
 \] 
-A straightforward calculation shows that if $O$ is closed for the quantum differential $\d^\q = \dbar + \hbar \Delta + \{I^\q, -\}$, 
+A straightforward calculation shows that if $O$ is closed for the classical differential $\{S,-\}$
 then 
 \[
 \Tilde{O} = \Tilde{O}^{0} + \Tilde{O}^1 + \Tilde{O}^2 
 \]
-satisfies $(\d_{dR} + \d^\q) \Tilde{O} = 0$. 
-This relationship implies that for any $\d^\q$-closed observable $O$ and for any tubular neighborhood $N_C$ of a closed submanifold $C \subset \Sigma$, 
-we obtain a cocycle in the observables on $N_C$ via
+satisfies $(\d_{dR} + \{S,-\}) \Tilde{O} = 0$.
+\end{construction}
+
+This construction allows us to define the following ``non-local" observables that are supported on closed submanifolds.
+Suppose that $N_C$ is a tubular neighborhood of a closed submanifold $C \subset \CC$.
+Integration along $C$ determines a map of cochain complexes
 \ben
-\int_{C} \Tilde{O} \in \Obs^\q(N_C) .
+\int_C : \Omega^*(\CC , \sO(J E_{\rm string})) \to \Obs^{\cl}_{\rm string}(N_C) .
+\een
+Using the construction above, if $O \sO(J_0 E_{\rm string})$ is a local operator we can integrate along $C$ to define the observable
+\ben
+\int_{C} \Tilde{O} \in \Obs^\cl_{\rm string} (N_C) .
 \een
 If $O$ has cohomological degree $k$ and $C$ is of dimension $l$, 
 then $\int_C \Tilde{O}$ has degree $k - l$. 
-\end{construction}
 
-This construction can be understood in a different way. 
-Given any local system $\sL$ on $\CC$, 
-there is a natural quasi-isomorphism
-\[
-\sL \overset{\simeq}{\hookrightarrow} \Omega^*(\CC, \sL)
-\]
-identifying a section of the system with a horizontal section in  its de Rham complex.
-%\owen{This is a little sloppy because we're conflating the sheaf with the vector bundle.}
-In our case, this ``flat section" map 
-\ben
-\Obs^\q_{\rm string}(\CC) \to \Omega^*(\CC , \sO{\rm bs})
-\een
-sends a closed observable $O$ to the $(\d_{dR} + \d^\q)$-closed differential form-valued observable~$\Tilde{\sO}$. 
+\brian{Now say what happens for quantum observables? Help! Do I want to take the symmetric algebra on $\Omega^*(\CC , \sO(J E_{\rm string}))$? I'm confused with reproducing the construction we talked about earlier. 
+At worst, we can at least discuss how to recover the formula for the Gerstenhaber bracket between two local observables, which is all we really do in the next section. This would allow us to avoid introducing the ''multi-local" version of the above, but maybe it's not so bad...}
+
+
+%This construction can be understood in a different way. 
+%Given any local system $\sL$ on $\CC$, 
+%there is a natural quasi-isomorphism
+%\[
+%\sL \overset{\simeq}{\hookrightarrow} \Omega^*(\CC, \sL)
+%\]
+%identifying a section of the system with a horizontal section in  its de Rham complex.
+%%\owen{This is a little sloppy because we're conflating the sheaf with the vector bundle.}
+%In our case, this ``flat section" map 
+%\ben
+%\Obs^\q_{\rm string}(\CC) \to \Omega^*(\CC , \sO{\rm bs})
+%\een
+%sends a closed observable $O$ to the $(\d_{dR} + \d^\q)$-closed differential form-valued observable~$\Tilde{\sO}$. 
 
 We now put this construction to use.
 
-\subsubsection{Second method: descent}
+\subsubsection{Formula for the Gerstenhaber bracket}
 
 A Gerstenhaber algebra is a graded commutative algebra with a Lie bracket of cohomological degree $-1$ that is a graded biderivation for the product. 
 In this section we show how to explicitly write down the product and bracket on the local observables (i.e., the observables on any disk) and compare our answer to the work of Lian-Zuckerman~\cite{LZ1}.
@@ -560,9 +600,6 @@ To construct the shifted Poisson bracket,
 we need to pick a one-cycle in the configuration space $E_2(2)$.
 To describe the associated binary operation, we use descent along this one-cycle.
 
-\owen{We could include pictures to make the geometry clearer.}
-\brian{will do this tonight}
-
 Hence, let $O,O'$ be closed observables on disks $D \subset D'$, respectively,
 where the closure of $D$ is strictly contained in $D'$. 
 Let $C = \partial D'$, and let $N_C$ be a small tubular neighborhood (i.e., annulus).
@@ -576,9 +613,9 @@ We then define
 Note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$, 
 so we obtain a bracket of the correct degree.
 
-\owen{We don't actually show it's a bracket, but I don't think we need to, although I'm sure it would be more convincing if we did!}
+%\owen{We don't actually show it's a bracket, but I don't think we need to, although I'm sure it would be more convincing if we did!}
 
-\owen{Also, I added this remark. Is it clear and helpful?}
+%\owen{Also, I added this remark. Is it clear and helpful?}
 
 \begin{rmk}
 This construction manifestly involves picking a 1-cycle---here $C$---to exhibit the bracket, 
