@@ -395,20 +395,57 @@ Together these two lemmas ensure that translations act trivially on the cohomolo
 
 \subsubsection{Descent for local operators}
 
-We'd like to sketch an important consequence of the work above.
-As we will see, it gives an approach to the method of descent, and another explicit description of the $E_2$ algebra that the quantum observables of the bosonic string define.
+We will now sketch an important consequence of the work above.
+As we will see, it gives both an approach to the method of descent 
+(expositions of this method, as related to two-dimensional gravity, can be found in \cite{WittenDescent,Dijk})
+as well as another explicit description of the $E_2$ algebra associated to the quantum observables of the bosonic string.
 
-%First, we will see how to extract a local system (in the derived sense) from the observables on $\Sigma = \CC$. 
-For this, we will look at an important class of observables that are {\em local}. 
-We have already encountered local functionals in our description of the deformation complex in Section \ref{sec: moduli}, but we recall the main idea.
+The key role here is played by observables that are local,
+in the sense discussed in Section~\ref{sec: moduli},
+where they appeared in our description of the deformation complex, 
+but we revisit the main idea.
 
 Let $J E_{\rm string}$ denote the $\infty$-jet bundle of the classical fields of the holomorphic bosonic string. 
-This is a $D$-module on the Riemann surface, equipped with the usual flat Grothendieck connection $\nabla^{jet}$. 
-The classical action functional equips functionals on the $\infty$-jet bundle
+Concretely, a fiber of $J E_{\rm string}$ at a point $x$ corresponds to all the possible Taylor series at $x$ of fields of the bosonic string.
+In consequence, the $\infty$-jet of a $\gamma$ field determines a section of $J E_{\rm string}$, 
+as does the $\infty$-jet of any other field in the theory.
+This bundle $J E_{\rm string}$ is equipped with a canonical flat connection $\nabla^{jet}$ 
+such that horizontal sections are precisely the $\infty$-jets of classical fields;
+and so $J E_{\rm string}$ is a left $D$-module on the Riemann surface, 
+where $D$ means the sheaf of smooth differential operators.
+(See the appendix of \cite{GGLA} for expository background oriented toward the approach here.)
+
+\owen{I rearranged things a little, since I find Kevin's notation with jets a tad confusing. (Rather, it's unconventional and hence deserves a little discussion.) I also switched to polynomials, since I think that's easier to understand.}
+
+Lagrangians can be expressed naturally in terms of $J E_{\rm string}$ using this setting, 
+as sections of the bundle
+\[
+\Sym(J E_{\rm string}^\vee) = \bigoplus_{k \geq 0}\Sym^k(J E_{\rm string}^\vee),
+\]
+where $J E_{\rm string}^\vee$ denotes the appropriate dual vector bundle. 
+(Some care is required here because $J E_{\rm string}$ is a pro-finite rank vector bundle.)
+To unpack this assertion a little, note that a smooth section $\lambda$ of $J E_{\rm string}^\vee$ can be evaluated on the $\infty$-jet of a field to obtain a smooth function on the Riemann surface.
+Hence a polynomial in such $\lambda$ determines a functional on fields with values in smooth functions,
+in other words, a Lagrangian.
+If we multiply against a density, then we obtain a Lagrangian density and hence a local functional.
+
+Note that sections of $\Sym(J E_{\rm string}^\vee)$ naturally form a graded-commutative algebra, 
+since polynomials can be multiplied.
+We denote it by~$\sO(J E_{\rm string})$.
+The shifted pairing on fields determines a shifted Poisson bracket on $\sO(J E_{\rm string})$,
+which we will denote $\{-,-\}$,
+since the construction is parallel to the BV bracket.
+
+We will restrict our attention from hereon to $\Sigma = \CC$,
+on which $\d^2 z$ determines a natural volume form.
+The classical action functional $S$ thus determines a Lagrangian (simply divide by this volume form) that we will abusively denote $S$ as well.
+The operator $\{S,-\}$---known as the BRST operator in physics---is square-zero by construction.
+Hence, we obtain a commutative dg algebra 
 \ben
-\left(\sO(J E_{\rm string}), \{S,-\}\right) = \left(\prod_{k \geq 0} \Sym^k(J E_{\rm string})^\vee, \{S,-\}\right)
+\left(\sO(J E_{\rm string}), \{S,-\}\right)
 \een
-with the structure of a commutative dg algebra in left $D$-modules.
+in left $D$-modules,
+where a flat connection is inherited by the dual bundle and hence by the symmetric powers.
 
 We consider now the origin $0 \in \Sigma = \CC$ as a preferred point. 
 The BRST operator $\{S,-\}$ restricts to a differential on the fiber of $\sO(J E_{\rm string})$ at zero which is the same as $\sO(J_0 E_{\rm string})$.
