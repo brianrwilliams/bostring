@@ -484,7 +484,7 @@ fix a tubular neighborhood $N_C$.
 Integration along $C$ then determines a map of cochain complexes
 \begin{equation*}
 \label{eqn: int over C}
-\int_C : \Omega^*(\CC , \sO(J E_{\rm string})) \to \Obs^{\cl}_{\rm string}(N_C) \tag{$\dagger$}.
+\int_C : \Omega^*(N_C , \sO(J E_{\rm string})) \to \Obs^{\cl}_{\rm string}(N_C) \tag{$\dagger$}.
 \end{equation*}
 \owen{We assert but don't prove that. Hope that's not an issue.}
 Many of the most familiar observables arise in this fashion.
@@ -494,7 +494,14 @@ F(\gamma,\beta,b,c) = \frac{1}{2\pi i}\int_C \gamma(z) \frac{\d z}{z^{n+1}}.
 \]
 For ``on-shell'' $\gamma$ fields---i.e., when $\gamma \in C^\infty(\CC)$ is holomorphic)---this observable $F$ returns the coefficient of $z^n$ in the Taylor expansion around the origin.
 
-We now finally turn to describing descent.
+This concrete example exhibits a compelling virtue of this process for producing observables: 
+it encompasses the elements typically discussed in physics, 
+particularly in conformal field theories.
+In this case it is straightforward to show that the entire vertex algebra $\cV_{\rm string}$ is realized by the image of the map~(\ref{eqn: int over C}).
+\owen{I really want the {\em classical} VA here. Do we have such a notation?}
+
+After this lengthy build-up of notions and notations, 
+we now finally turn to describing descent.
 Our interpretation is that it is a process for promoting pointlike operators to more general observables.
 
 \begin{dfn}
@@ -538,7 +545,7 @@ is closed as well:
 \[
 (\d_{dR} + \{S,-\}) \Tilde{O} = 0.
 \]
-We call $\Tilde{O}$ the local functional {\em descended} from the pointlike operator~$O$.
+We say $\Tilde{O}$ is {\em descended} from the pointlike operator~$O$.
 \owen{OK terminology?}
 \end{construction}
 
@@ -552,8 +559,13 @@ then $\int_C \Tilde{O}$ has degree~$k - l$.
 \brian{Now say what happens for quantum observables? Help! Do I want to take the symmetric algebra on $\Omega^*(\CC , \sO(J E_{\rm string}))$? I'm confused with reproducing the construction we talked about earlier. 
 At worst, we can at least discuss how to recover the formula for the Gerstenhaber bracket between two local observables, which is all we really do in the next section. This would allow us to avoid introducing the ''multi-local" version of the above, but maybe it's not so bad...}
 
+Extending this whole package to quantum observables is nontrivial. 
+The main issue is that one cannot define a BV Laplacian on $\sO(J E_{\rm string})$
+\owen{I'm not sure that's really true \dots} 
+and so the map~(\ref{eqn: int over C}) does not extend immediately, as a cochain map, to the quantum observables.
+\owen{It still make sense as a linear map, however, and by special features of our situation, these observables are enough to identify the Gerstenhaber bracket, etc.}
 
-We now put this construction to use.
+We now put these ideas to use.
 
 \subsubsection{Formula for the Gerstenhaber bracket}
 
@@ -595,6 +607,7 @@ To construct the shifted Poisson bracket,
 we need to pick a one-cycle in the configuration space $E_2(2)$.
 To describe the associated binary operation, we use descent along this one-cycle.
 
+\owen{The following paragraph no longer makes sense since we can't take such elements $O,O'$ as inputs.}
 Hence, let $O,O'$ be closed observables on disks $D \subset D'$, respectively,
 where the closure of $D$ is strictly contained in $D'$. 
 Let $C = \partial D'$, and let $N_C$ be a small tubular neighborhood (i.e., annulus).
@@ -617,10 +630,11 @@ If they do intersect, one can choose a $C''$ that does not intersect either, and
 As the terms are cohomologous, they induce the same brackets at the level of cohomology.
 \end{rmk}
 
-Let $V$ denote the cohomology $H^* \cV_{\rm string}$ of the dg vertex algebra $\cV_{\rm string}$.
+We now connect our constructions with well-known approaches.
 
 \begin{prop} 
-The bracket $\{-,-\}_{\rm Ger}$ together with the product $\cdot$ determine the structure of a Gerstenhaber algebra on $V$. 
+The bracket $\{-,-\}_{\rm Ger}$ together with the product $\cdot$ determine the structure of a Gerstenhaber algebra on $H^* \cV_{\rm string}$, 
+the cohomology of the dg vertex algebra $\cV_{\rm string}$. 
 This Gerstenhaber structure is isomorphic to the one found by Lian-Zuckerman~\cite{LZ1}.
 \end{prop}
 
@@ -629,12 +643,12 @@ The vertex algebra construction of \cite{CG1} extracts $\cV_{\rm string}$ as the
 where $D$ is a disk centered at the origin and we take weight space for the rotation action of $S^1$ on $\CC$.
 The bracket and product restrict to this subspace of $\Obs^\q(D)$,
 manifestly playing nicely with this eigenspace decomposition. 
-Hence they descend to the cohomology $V$ of~$\cV_{\rm string}$.
+Hence they descend to the cohomology of~$\cV_{\rm string}$.
 
 Let $V_{LZ}$ be the Gerstenhaber algebra considered by Lian-Zuckerman.
-As vector spaces, both $V$ and $V_{LZ}$ are isomorphic to the state space of the $\beta\gamma$ vertex algebra.
+As vector spaces, both $H^* \cV_{\rm string}$ and $V_{LZ}$ are isomorphic to the state space of the $\beta\gamma$ vertex algebra.
 
-According to the construction of a vertex algebra from a holomorphic factorization algebra in Chapter 6 of \cite{CG1}, the factorization product of two disks is what defines the operator product map $Y(-,z) : V \tensor V \to V ((z))$ of the vertex algebra.
+According to the construction of a vertex algebra from a holomorphic factorization algebra in Chapter 6 of \cite{CG1}, the factorization product of two disks is what defines the operator product map $Y(-,z) : V \tensor V \to V ((z))$ of a vertex algebra.
 It is this operator product that Lian-Zuckerman use to define the commutative product.
 Thus, as commutative algebras, the algebras coincide. 
 
