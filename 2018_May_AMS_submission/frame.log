@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 MAY 2018 11:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 MAY 2018 12:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1107,22 +1107,21 @@ al vec-tor fields), these com-plexes $C[]\OT1/zplm/m/n/10 (\OT1/ppl/m/n/10 W[];
 LaTeX Warning: Citation `GGLA' on page 35 undefined on input line 419.
 
 [35] [36] [37] [38]
-Overfull \hbox (13.21217pt too wide) in paragraph at lines 632--633
+Overfull \hbox (13.21217pt too wide) in paragraph at lines 641--642
 []\OT1/ppl/m/n/10 The brack-ets co-in-cide by not-ing that the deriva-tion $\OM
 L/zplm/m/it/10 ^^Q$ \OT1/ppl/m/n/10 triv-i-al-iz-ing $d\OT1/zplm/m/n/10 /\OT1/p
 pl/m/n/10 d\OML/zplm/m/it/10 z$ \OT1/ppl/m/n/10 agrees with Lian-Zuckerman's
  []
 
-) (./conformalblock.tex [39]
+) (./conformalblock.tex [39] [40]
 Overfull \hbox (38.61545pt too wide) in paragraph at lines 102--102
 [] 
  []
 
-[40] [41]) (./curvedtargets.tex [42]) (./calc.tex [43] [44]) (./frame.bbl
+[41] [42]) (./curvedtargets.tex [43]) (./calc.tex [44]) (./frame.bbl
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 13.
-
-[45]
+ [45]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [46])
@@ -1133,7 +1132,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
 Package rerunfilecheck Info: File `frame.out' has not changed.
-(rerunfilecheck)             Checksum: E3B29D4A0EEB6D309340A8452D9A35A3;645.
+(rerunfilecheck)             Checksum: D73B17E68EE77562D3FDEAB9FFF5A4FE;645.
 
 
 LaTeX Warning: There were undefined references.
@@ -1144,10 +1143,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 25217 strings out of 493089
- 497657 string characters out of 6134842
- 664426 words of memory out of 5000000
- 27760 multiletter control sequences out of 15000+600000
+ 25220 strings out of 493089
+ 497687 string characters out of 6134842
+ 664477 words of memory out of 5000000
+ 27761 multiletter control sequences out of 15000+600000
  40766 words of font info for 129 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  62i,16n,80p,3238b,974s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1169,10 +1168,10 @@ mf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2015/texmf-dist/fonts
 /type1/public/xypic/xycmat10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
 1/public/xypic/xycmbt10.pfb>
-Output written on frame.pdf (47 pages, 343785 bytes).
+Output written on frame.pdf (47 pages, 344851 bytes).
 PDF statistics:
- 623 PDF objects out of 1000 (max. 8388607)
- 551 compressed objects within 6 object streams
- 190 named destinations out of 1000 (max. 500000)
+ 626 PDF objects out of 1000 (max. 8388607)
+ 554 compressed objects within 6 object streams
+ 192 named destinations out of 1000 (max. 500000)
  85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

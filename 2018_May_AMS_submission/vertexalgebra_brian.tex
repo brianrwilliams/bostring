@@ -360,8 +360,8 @@ O_{\frac{\d}{\d z}}(\beta,\gamma,b,c) = \int \<b, \frac{\d}{\d z}\>,
 \een
 It only depends on the $b$-field.
 Note that for this integral to be nonzero, 
-we must have $b \in \Omega^{1,1}(\Sigma , T_\Sigma^{1,0*})$
-(also, in fact, compactly supported for the integral to be well-defined). 
+the field $b$ must live in $\Omega^{1,1}(\Sigma , T_\Sigma^{1,0*})$.
+(In fact, $b$ must also be compactly supported for the integral to be well-defined.) 
 Using the BV bracket, we obtain a derivation of the factorization algebra 
 \ben
 \eta = \{O_{\frac{\d}{\d z}}, -\}
@@ -468,81 +468,90 @@ Elements of $\left(\sO(J E_{\rm string}), \{S,-\}\right)$ are not observables of
 since they are just Lagrangians.
 There is, however, a natural way to produce observables from Lagrangians.
 Essentially, a Lagrangian can be multiplied by a de Rham current;
-for instance, evaluating a delta function with a Lagrangian produces a pointlike observable,
-or local operator in the terminology of physics.
-In more formal terms, consider the de Rham complex of our $D$-module
+for instance, evaluating a delta function with a Lagrangian produces a pointlike observable
+(or local operator in the terminology of physics).
+
+We choose to encode this idea in the following formal terms.
+Consider the de Rham complex of our $D$-module
 \ben
 \Omega^*(\CC , \sO(J E_{\rm string}))
 \een
 equipped with the total differential $\nabla^{jet} + \{S, -\}$. 
 It consists of smooth de Rham forms with values in Lagrangians.
-
-Consider now the compactly supported, distributional completion 
+These determine observables supported on closed submanifolds, as follows.
+For a closed submanifold $C \subset \CC$, 
+fix a tubular neighborhood $N_C$.
+Integration along $C$ then determines a map of cochain complexes
+\begin{equation*}
+\label{eqn: int over C}
+\int_C : \Omega^*(\CC , \sO(J E_{\rm string})) \to \Obs^{\cl}_{\rm string}(N_C) \tag{$\dagger$}.
+\end{equation*}
+\owen{We assert but don't prove that. Hope that's not an issue.}
+Many of the most familiar observables arise in this fashion.
+For instance, take $C$ to be the unit circle and consider
 \[
-\overline{\Omega}^*_c(\CC , \sO(J E_{\rm string})),
+F(\gamma,\beta,b,c) = \frac{1}{2\pi i}\int_C \gamma(z) \frac{\d z}{z^{n+1}}.
 \]
-consisting of compactly supported de Rham currents with values in Lagrangians.
-It determines, of course, a cosheaf of cochain complexes.
-Moreover, \owen{I think this is not a necessary direction right now.}
+For ``on-shell'' $\gamma$ fields---i.e., when $\gamma \in C^\infty(\CC)$ is holomorphic)---this observable $F$ returns the coefficient of $z^n$ in the Taylor expansion around the origin.
 
+We now finally turn to describing descent.
+Our interpretation is that it is a process for promoting pointlike operators to more general observables.
 
-\begin{construction} 
-Given any local observable $O \in \sO(J_0 E_{\rm string})$, the relations (\ref{d/dzbar}) and (\ref{d/dz}) allow us to define a differential form-valued observable $\Tilde{O} \in \Omega^*(X, \sO(JE_{\rm string})) $ as follows. 
+\begin{dfn}
+A {\em pointlike operator} is an element of $\Sym(J E_{\rm string}^\vee)_0$, 
+the fiber at the origin $0 \in \CC$ of the bundle $\Sym(J E_{\rm string}^\vee)$.
+\end{dfn}
+
+Equivalently, it is an element of the algebra $\Sym((J_0E_{\rm string})^*)$ of polynomial functions on the fiber at $0$ of $J E_{\rm string}$.
+Since our theory is translation-invariant, 
+any point in the plane would serve as well as the origin.
+Note that this definition is equivalent to our earlier, heuristic notion.
+
+\begin{construction}[Descent] 
+Given any pointlike operator $O$, 
+the relations (\ref{d/dzbar}) and (\ref{d/dz}) allow us to define a differential form-valued observable $\Tilde{O} \in \Omega^*(X, \sO(JE_{\rm string}))$ as follows. 
 Let $\tau_z: \CC \to \CC$ be the translation sending a point $w$ to $w+z$.
 This operator naturally acts on fields by pullback, and so the jets of fields as well.
 Translation invariance allows us to define the $0$-form part
 \ben
-\Tilde{O}^{0} (z) = \tau_z O .
+\Tilde{O}^{0} (z) = \tau_z O,
 \een
-\brian{this is continuous since we have a continuous action by translations}
-Using the homotopies $\eta,\Bar{\eta}$ we define the 1-form part $\Tilde{O}^1$ as
+which is continuous because we have a continuous action by translations.
+Using the homotopies $\eta,\Bar{\eta}$, 
+we define the 1-form part $\Tilde{O}^1$ as
 \ben
 \Tilde{O}^{1} = \d z \; (\eta \Tilde{O}^{0}) + \d \zbar \; (\Bar{\eta} \Tilde{O}^{0}),
 \een
-where, for instance, $\eta O$ denotes the image of $O$ under the map $\eta$.
+where $\eta O$ denotes the image of $O$ under the map $\eta$.
 \owen{To be pedantic, it seems like the tilde should happen last, so $\Tilde{\eta O}^0$}
 Similarly, the 2-form part is 
 \[
 \Tilde{O}^2 = \d z \,\d \zbar\, \eta \Bar{\eta} O.
 \] 
-By construction, if $O$ is closed for the classical differential $\{S,-\}$,
+By construction \owen{is this totally obvious?}, 
+if $O$ is closed for the classical differential $\{S,-\}$,
 then the total form
 \[
 \Tilde{O} = \Tilde{O}^{0} + \Tilde{O}^1 + \Tilde{O}^2 
 \]
-is closed as well: $(\d_{dR} + \{S,-\}) \Tilde{O} = 0$.
+is closed as well: 
+\[
+(\d_{dR} + \{S,-\}) \Tilde{O} = 0.
+\]
+We call $\Tilde{O}$ the local functional {\em descended} from the pointlike operator~$O$.
+\owen{OK terminology?}
 \end{construction}
 
-This construction allows us to define the following ``non-local" observables that are supported on closed submanifolds.
-Suppose that $N_C$ is a tubular neighborhood of a closed submanifold $C \subset \CC$.
-Integration along $C$ determines a map of cochain complexes
-\ben
-\int_C : \Omega^*(\CC , \sO(J E_{\rm string})) \to \Obs^{\cl}_{\rm string}(N_C) .
-\een
-Using the construction above, if $O \sO(J_0 E_{\rm string})$ is a local operator we can integrate along $C$ to define the observable
+Combining the construction with the map~(\ref{eqn: int over C}), we find that a pointlike operator $O$ and a closed submanifold $C$ determine an observable
 \ben
 \int_{C} \Tilde{O} \in \Obs^\cl_{\rm string} (N_C) .
 \een
 If $O$ has cohomological degree $k$ and $C$ is of dimension $l$, 
-then $\int_C \Tilde{O}$ has degree $k - l$. 
+then $\int_C \Tilde{O}$ has degree~$k - l$. 
 
 \brian{Now say what happens for quantum observables? Help! Do I want to take the symmetric algebra on $\Omega^*(\CC , \sO(J E_{\rm string}))$? I'm confused with reproducing the construction we talked about earlier. 
 At worst, we can at least discuss how to recover the formula for the Gerstenhaber bracket between two local observables, which is all we really do in the next section. This would allow us to avoid introducing the ''multi-local" version of the above, but maybe it's not so bad...}
 
-
-%This construction can be understood in a different way. 
-%Given any local system $\sL$ on $\CC$, 
-%there is a natural quasi-isomorphism
-%\[
-%\sL \overset{\simeq}{\hookrightarrow} \Omega^*(\CC, \sL)
-%\]
-%identifying a section of the system with a horizontal section in  its de Rham complex.
-%%\owen{This is a little sloppy because we're conflating the sheaf with the vector bundle.}
-%In our case, this ``flat section" map 
-%\ben
-%\Obs^\q_{\rm string}(\CC) \to \Omega^*(\CC , \sO{\rm bs})
-%\een
-%sends a closed observable $O$ to the $(\d_{dR} + \d^\q)$-closed differential form-valued observable~$\Tilde{\sO}$. 
 
 We now put this construction to use.
 
