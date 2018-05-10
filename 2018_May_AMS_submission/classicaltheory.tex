@@ -10,7 +10,8 @@ In our holomorphic setting,
 the nonlinear $\sigma$-model picks out holomorphic maps from a Riemann surface to a complex manifold.
 One then quotients the space of fields (and solutions to the equations of motion) with respect to reparametrization.
 In the usual bosonic string,
-one quotients by diffeomorphisms and Weyl scalings, which can thus change the metric on the source.
+one quotients by diffeomorphisms and Weyl rescalings (i.e., multiplying the metric by a positive real function), 
+which can thus change the metric on the source.
 In our setting, we quotient by biholomorphisms, which act on the complex structure on the source.
 
 In this section we begin by describing our theory in the BV formalism.
@@ -209,7 +210,7 @@ The notation $\Delta_g$ denotes the Laplace-Beltrami operator on~$\Sigma$.
 
 Note that $S^{naive}_{Poly}$ is invariant under the diffeomorphism group ${\rm Diff}(\Sigma)$ and under rescalings of the metric
 (i.e., the theory is classically conformal).
-Typically we express rescaling as $g \mapsto e^{f} g$ with $f \in~C^\infty(\Sigma)$.
+Typically we express these Weyl rescalings as $g \mapsto e^{f} g$ with $f \in~C^\infty(\Sigma)$.
 As we are interested in a string theory, we want to gauge these symmetries.
 In geometric language, we want to think about the quotient stack 
 obtained by taking solutions to the equations of motion and quotienting by these symmetry groups.
@@ -337,21 +338,28 @@ The remaining theory splits as the direct sum of the free $\beta\gamma$ system w
 At the level of fields, the original field $\varphi$ corresponds to $\gamma + \Bar{\gamma}$ in the first order description,
 and $B$ corresponds to~$\beta+\Bar{\beta}$. 
 
-We now consider the remaining terms in the first line of the action. 
-We work in holomorphic coordinates with the complex structure that the background metric $g_0$ determines. 
+We now consider the remaining terms in the first line of the action (\ref{polyakov bv}). 
+Note that this action only depends on the conformal class of the metric, 
+i.e., on the metric up to Weyl rescaling.
+Hence this feature remains true in the infinite volume limit,
+which simplifies the situation considerably.
+
+It is convenient to work in holomorphic coordinates for the complex structure determined by the background metric $g_0$. 
 With respect to this complex structure, the tensor square of the cotangent bundle splits as
 \ben
-T^* \tensor T^* = T^*{0,1}\tensor T^{1,0} \oplus T^{*1,0} \tensor T^{0,1} \oplus T^{*1,0} \tensor T*^{0,1} \oplus T^{*0,1} \tensor T^{*1,0} .
+T^* \tensor T^* = T^{*0,1}\tensor T^{1,0} \oplus T^{*1,0} \tensor T^{0,1} \oplus T^{*1,0} \tensor T^{*0,1} \oplus T^{*0,1} \tensor T^{*1,0} .
 \een
 Sitting inside of this bundle is the symmetric square, where the field $\alpha$ lives. 
-With respect to this splitting we will write sections as $\alpha = c^{0,1} + \Bar{c}^{1,0} + f g_0$, where $f \in C^\infty(\Sigma)$. 
-By performing a Weyl rescaling, we see that the action functional only depends on $\mu, \Bar{\mu}$. 
-This is essentially due to the fact that the ordinary Riemannian $\sigma$-model only depends on the conformal class, equivalently complex structure, of the Riemann surface. 
-In the first-order formalism we introduced in the preceding paragraph, we find that the remaining terms in the first line of (\ref{polyakov bv}) read 
+With respect to this splitting, we write sections as $\alpha = c + \Bar{c} + f g_0$, where $f \in C^\infty(\Sigma)$. 
+But since the action only depends on the conformal class of the metric, 
+only the fields $c$ and $\Bar{c}$ are relevant.
+In the first-order formalism of the preceding paragraph, 
+we thus find that the remaining terms in the first line of (\ref{polyakov bv}) read 
 \ben
 \int_\Sigma \<\beta , [c^{0,1}, \gamma]\>_V + \int_\Sigma \<\Bar{\beta} , [\Bar{c}^{1,0}, \bar{\gamma}]\>_V.
 \een
-This first term is precisely the third term in the holomorphic string action functional (\ref{bosaction}), which describes how deformations of complex structure couple to the fields of the $\sigma$-model. 
+This first term is precisely the third term in the holomorphic string action functional (\ref{bosaction}), 
+which describes how deformations of complex structure couple to the fields of the $\sigma$-model. 
 
 In the infinite volume limit, the term $S'(f, X, \alpha)$ recovers the terms
 \[
