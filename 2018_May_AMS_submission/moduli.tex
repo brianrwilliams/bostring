@@ -169,13 +169,6 @@ between the weight 0, translation-invariant deformation complex
 and natural complexes related to the geometry of the target.
 \end{lem}
 
-%In particular, the one-loop interactions terms that can appear---up to equivalences of BV theories---are
-%\[
-%H^1(V,\Omega^2_{cl}) \oplus \Omega^1(V).
-%\]
-%As $V$ is a vector space, the first term is trivial, but for a curved target it would survive \owen{and contribute a WHAT KIND of field.}
-%The second term is a choice of \owen{potential?} on the target and contributes a term \owen{???} to the action. \brian{Does it make more sense to include interpretations of all the background fields in the last subsection of this section? Or did you want to get rid of that and just include that here?}
-
 Before explaining the key steps of the proof, 
 we remark that there is another, more structural way to see that only weight zero local functionals should be relevant.
 A quick physical argument would say that we want the path integral measure $\exp(-S/\hbar)$ to be weight zero,
@@ -190,40 +183,11 @@ As the BV Laplacian has weight -1 because it is determined by the bracket,
 we must give $\hbar$ weight 1 to ensure the total differential has weight zero.
 Again the one-loop interaction is forced to have weight zero.
 
-%\owen{I think we should explain this choice: it's because we want the overall differential to have weight zero, and $\Delta$ should have weight $-1$.}
-%The weight of the parameter $\hbar$ is also one with respect to the scaling by $\CC^\times_{\rm cot}$.
-%Thus, for quantum corrections at one loop we consider local functionals that are of weight zero for this $\CC^\times_{\rm cot}$-action.
-%Put simply, these are local functionals that only depend on the base of the shifted cotangent bundle. 
-%On a Riemann surface $\Sigma$ the $\CC^\times_{\rm cot}$-invariant local functionals are of the form
-%\ben
-%\left(\Oloc\left(\Omega^{0,*}(\Sigma, V) \oplus \Omega^{0,*}(\Sigma, T^{1,0})[1] \Omega^{1,*}(\Sigma ; V) \oplus \Omega^{1,*}(\Sigma, T^{1,0*})[-1] \right), \{S, -\}\right) .
-%\een
-
 \subsubsection{Sketch of proof}
-
-%The fields (rather, their shift up by one) form a dg Lie algebra
-%\[
-%\Omega^{0,*}(\CC ; T^{1,0} \ltimes (V[-1] \oplus \d z \,V^*[-1] \oplus \d z \,T^{1,0 *}).
-%\]
-%The jets at $0 \in \CC$ of this Lie algebra is quasi-isomorphic to the Lie algebra
-%\be\label{jet lie}
-%\wone \ltimes (V [[z]] [-1] \oplus \d z V^*[[z]] [-1] \oplus \hOmega^1_1 [-2]),
-%\ee
-%where $\wone = \CC [[z]] \partial_z$ is the Lie algebra of formal vector fields in one variable and $\hOmega^1_1 = \CC [[z]] \d z$ is the space of formal one-forms. 
-%The Lie bracket comes from bracket on $\wone$ and the natural action of $\wone$ on $\CC [[z]]$ and $\hOmega^1_1$. 
-
-%The weight $\CC^\times_{\rm cot}$-weight zero sub-Lie algebra of the Lie algebra (\ref{jet lie}) is simply $W_1 \ltimes V [[z]] [-1]$, where the semi-direct product comes from the natural action of formal vector fields on formal power series.
-%Thus, we have reduced the calculation of the $\CC^\times_{\rm cot}$-weight zero piece of the local deformation complex to calculating the Chevalley-Eilenberg complex of this Lie algebra:
-%\ben
-%\cred^* \left(\wone \ltimes V [[z]] [-1] \right) .
-%\een
-%This splits into two terms $\cred^* (\wone) \oplus \clie^*(W_1 ;  \Sym^{\geq 1} (V [[z]])^\vee)$. 
-
 We have already seen in Lemma \ref{lem: gf} that we can identify the full translation-invariant deformation complex with a certain Gelfand-Fuks cohomology. 
 In terms of this Gelfand-Fuks cohomology we see that the cotangent weight zero piece is identified with the subcomplex
 \ben
 \Def_{\rm string}(\CC)^{\CC, \wt(0)} = \cred^*\left(\wone ; \Sym(V^\vee[z^\vee]) \right) [2]. 
-%\subset \Def_{\rm string}(\CC)^{\CC} .
 \een 
 We will drop the overall shift by $2$ until the end of the proof. 
 
@@ -275,13 +239,11 @@ The underlying graded vector space of this conformal dimension zero subcomplex s
 \be\label{splitting}
 \clie^{\#}(\wone)^{\wt(0)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee \right)^{\wt(0)} \oplus \clie^{\#}(\wone)^{\wt(1)} \tensor \left(\Sym^{\geq 1}\left(V [[z]]\right)^\vee\right)^{\wt(-1)}
 \ee
-In the first component, the purely dimension zero part of the reduced symmetric algebra is simply $\Sym^{\geq 1}(V^\vee)$, i.e., power series %\owen{Do you want power series? You wrote polynomials earlier} 
+In the first component, the purely dimension zero part of the reduced symmetric algebra is simply $\Sym^{\geq 1}(V^\vee)$, i.e., power series 
 on $V$ with no constant term.
 We denote this algebra concisely as $\cO_{red}(V)$, for reduced functions on $V$.
-%which is identified $\GL(V)$-equivariantly with $\cO_{red}(V)$. 
 Similarly, in the second component, 
-the dimension one part of $\Sym^{\geq 1}\left(V[[z]]\right)^\vee$ is of the form ${\rm Sym}(V^\vee) \tensor z^\vee V^\vee$, which is naturally identified %$\GL(V)$-equivariantly 
-with~$\Omega^1(V)$. 
+the dimension one part of $\Sym^{\geq 1}\left(V[[z]]\right)^\vee$ is of the form ${\rm Sym}(V^\vee) \tensor z^\vee V^\vee$, which is naturally identified with~$\Omega^1(V)$. 
 
 The differential in this Gelfand-Fuks complex has the form
 \[
@@ -305,21 +267,6 @@ which, in turn, is identified with $\Omega^{2}_{cl}(V)[-1] \oplus \Omega^1(V)[-2
 After accounting for the overall shift by $2$, 
 we arrive at the identification of the $\CC_{\rm cot}^\times$-weight zero component of the translation-invariant deformation complex.
 
-%\subsubsection{The $\CC^\times_{\rm cot}$-weight one piece}
-%
-%The $\CC^\times_{\rm cot}$-weight one part of the Lie algebra (\ref{jet Lie}) is $\d z V^\vee [[z]] [-1] \oplus \d z \hOmega^1_{1} [-2]$.
-%
-%A totally analogous calculation as in the weight zero case yields the following. 
-%
-%\begin{prop} There is a $\GL(V)$-equivariant quasi-isomorphism
-%\ben
-%\clie^*\left(W_1 ; \Sym \left(V [[z]]\right)^\vee \tensor (\d z V^*[[z]] \oplus \hOmega^{1\tensor 2}_1[-1])^\vee \right) \simeq T_V [-1]
-%\een
-%where $T_V$ denotes the adjoint representation which as a vector space is $T_V = \Sym(V^*) \tensor V$. 
-%\end{prop}
-%
-%This result implies the second part of Proposition \ref{prop: def complex}. 
-
 \subsection{Interpretation as string backgrounds}
 
 We now discuss, in light of the calculations above, how to interpret string backgrounds in our approach. 
@@ -327,7 +274,6 @@ Since $V$ is flat,
 we will see that the following deformations will be trivializable. 
 Note that this trivializations will {\em not} be equivariant for the obvious $\GL(V)$ action (or for non-flat targets, general diffeomorphisms of the target). 
 Thus, these deformations are relevant for the case of a curved target, and we can give an interpretation of them in terms of the usual perspective of {\em string backgrounds}. 
-%\owen{So now lets add some words providing such an interpretation.}
 
 We have already mentioned that we should think of the $\CC^\times_{\rm cot}$ weight $1$ local functionals as deformations of the classical theory as a cotangent theory.
 The cohomological degree zero deformations of the weight one deformations is $H^1(V ; T_V)$. 
