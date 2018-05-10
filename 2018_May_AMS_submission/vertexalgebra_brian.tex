@@ -162,7 +162,11 @@ Hence we obtain the following.
 \label{prop: fact is vert}
 Let $\Obs^\q_{\rm string}$ be the factorization algebra on $\Sigma = \CC$ of the holomorphic bosonic string with target~$V = \CC^{13}$. 
 Let $\Vert(\Obs^q_{\rm string})$ be the dg vertex algebra (defined over $\CC[\hbar]$) obtained via Li's construction. 
-There is an isomorphism of vertex algebras $\cV_{\rm string} \cong \Vert(\Obs^q_{\rm string})_{\hbar = 2 \pi i}$.
+There is an isomorphism  
+\[
+\cV_{\rm string} \cong \Vert(\Obs^q_{\rm string})\big|_{\hbar = 2 \pi i}
+\]
+of dg vertex algebras.
 Moreover, this vertex algebra is isomorphic to the chiral sector of the bosonic string as in Section~\ref{subsec: string vert}.
 \end{prop}
 
@@ -173,7 +177,11 @@ The $P_0$ structure is induced from the symplectic pairing of degree -1 on the f
 The classical factorization algebra still has enough structure to determine a vertex algebra $\Vert(\Obs^\cl_{\rm string})$.
 Moreover, the $P_0$ bracket on the classical observables determines the structure of a {\em Poisson vertex algebra} on $\Vert(\Obs^{\cl}_{\rm string})$. 
 
-\begin{cor} In the classical limit, there is an isomorphism of Poisson vertex algebras~$\Vert(\Obs^{\cl}_{\rm string}) \cong {\rm Gr} \; \cV_{\rm string}$.
+\begin{cor} In the classical limit, there is an isomorphism 
+\[
+\Vert(\Obs^{\cl}_{\rm string}) \cong {\rm Gr} \; \cV_{\rm string}
+\]
+of Poisson vertex algebras.
 \end{cor}
 
 \begin{proof}[Proof of Proposition \ref{prop: fact is vert}] By Proposition \ref{prop: bcbg vertex} we know that the vertex algebra of the associated free theory is identified with the $bc\beta\gamma$ vertex algebra. 
@@ -418,19 +426,18 @@ and so $J E_{\rm string}$ is a left $D$-module on the Riemann surface,
 where $D$ means the sheaf of smooth differential operators.
 (See the appendix of \cite{GGLA} for expository background oriented toward the approach here.)
 
-\owen{I rearranged things a little, since I find Kevin's notation with jets a tad confusing. (Rather, it's unconventional and hence deserves a little discussion.) I also switched to polynomials, since I think that's easier to understand.}
-
-Lagrangians can be expressed naturally in terms of $J E_{\rm string}$ using this setting, 
+Lagrangians can be expressed naturally in terms of $J E_{\rm string}$, 
 as sections of the bundle
 \[
 \Sym(J E_{\rm string}^\vee) = \bigoplus_{k \geq 0}\Sym^k(J E_{\rm string}^\vee),
 \]
 where $J E_{\rm string}^\vee$ denotes the appropriate dual vector bundle. 
 (Some care is required here because $J E_{\rm string}$ is a pro-finite rank vector bundle.)
-To unpack this assertion a little, note that a smooth section $\lambda$ of $J E_{\rm string}^\vee$ can be evaluated on the $\infty$-jet of a field to obtain a smooth function on the Riemann surface.
-Hence a polynomial in such $\lambda$ determines a functional on fields with values in smooth functions,
-in other words, a Lagrangian.
-If we multiply against a density, then we obtain a Lagrangian density and hence a local functional.
+To unpack this assertion a little, note that a smooth section $\lambda$ of $J E_{\rm string}^\vee$ can be evaluated on the $\infty$-jet of a field to obtain a smooth function on the Riemann surface;
+it thus determines a linear functional of fields with values in functions on the surface.
+Similarly, a polynomial in such $\lambda$ determines a nonlinear functional on fields with values in smooth functions.
+In other words, it is a Lagrangian.
+If we multiply it against a density, then we obtain a Lagrangian density and hence a local functional.
 
 Note that sections of $\Sym(J E_{\rm string}^\vee)$ naturally form a graded-commutative algebra, 
 since polynomials can be multiplied.
@@ -450,20 +457,6 @@ Hence, we obtain a commutative dg algebra
 in left $D$-modules,
 where a flat connection is inherited by the dual bundle and hence by the symmetric powers.
 
-\owen{I did not understand the following paragraph, so I continue below as if it were not included. Please feel free to reincorporate this material as you see fit.}
-We consider now the origin $0 \in \Sigma = \CC$ as a preferred point. 
-The BRST operator $\{S,-\}$ restricts to a differential on the fiber of $\sO(J E_{\rm string})$ at zero which is the same as $\sO(J_0 E_{\rm string})$.
-These are functions of formal germs of sections of $E$ near $0 \in \CC$. 
-In the physics terminology, these are precisely the {\em local operators} at the origin. 
-Furthermore, there is a map of complexes given by evaluating at zero:
-\ben
-\pi_0 : \Omega^*(\Sigma , \sO(J E_{\rm string})) \to \sO(J_0 E_{\rm string}) .
-\een
-The existence of the homotopies $\eta, \Bar{\eta}$ tell us that this map is a {\em quasi-isomorphism}. 
-In fact, they provide a homotopy inverse for $\pi_0$.
-This is our interpretation of {\em descent} in the sense of physics, which we summarize in the following construction. 
-\owen{I resume here.}
-
 Elements of $\left(\sO(J E_{\rm string}), \{S,-\}\right)$ are not observables of the classical theory,
 since they are just Lagrangians.
 There is, however, a natural way to produce observables from Lagrangians.
@@ -471,42 +464,45 @@ Essentially, a Lagrangian can be multiplied by a de Rham current;
 for instance, evaluating a delta function with a Lagrangian produces a pointlike observable
 (or local operator in the terminology of physics).
 
-We choose to encode this idea in the following formal terms.
-Consider the de Rham complex of our $D$-module
-\ben
-\Omega^*(\CC , \sO(J E_{\rm string}))
-\een
+We choose to encode this idea in the following way.
+Consider the de Rham complex $\Omega^*(\CC , \sO(J E_{\rm string}))$ of our $D$-module,
 equipped with the total differential $\nabla^{jet} + \{S, -\}$. 
 It consists of smooth de Rham forms with values in Lagrangians.
 These determine observables supported on closed submanifolds, as follows.
 For a closed submanifold $C \subset \CC$, 
 fix a tubular neighborhood $N_C$.
-Integration along $C$ then determines a map of cochain complexes
-\begin{equation*}
+Integration along $C$ then determines a map 
+\begin{equation}
 \label{eqn: int over C}
-\int_C : \Omega^*(N_C , \sO(J E_{\rm string})) \to \Obs^{\cl}_{\rm string}(N_C) \tag{$\dagger$}.
-\end{equation*}
-\owen{We assert but don't prove that. Hope that's not an issue.}
+\int_C : \Omega^*(N_C , \sO(J E_{\rm string})) \to \Obs^{\cl}_{\rm string}(N_C) 
+\end{equation}
+of cochain complexes.
+
 Many of the most familiar observables arise in this fashion.
 For instance, take $C$ to be the unit circle and consider
 \[
 F(\gamma,\beta,b,c) = \frac{1}{2\pi i}\int_C \gamma(z) \frac{\d z}{z^{n+1}}.
 \]
 For ``on-shell'' $\gamma$ fields---i.e., when $\gamma \in C^\infty(\CC)$ is holomorphic)---this observable $F$ returns the coefficient of $z^n$ in the Taylor expansion around the origin.
+It is easy here to factor $F$ into a Lagrangian term and a de Rham form term: 
+the Lagrangian is the linear functional that simply returns the function $\gamma$, 
+and the form is~$(1/2\pi i)\d z/z^{n+1}$.
 
 This concrete example exhibits a compelling virtue of this process for producing observables: 
 it encompasses the elements typically discussed in physics, 
 particularly in conformal field theories.
-In this case it is straightforward to show that the entire vertex algebra $\cV_{\rm string}$ is realized by the image of the map~(\ref{eqn: int over C}).
-\owen{I really want the {\em classical} VA here. Do we have such a notation?}
+In this case it is straightforward to show that the entire vertex algebra $\Gr \cV_{\rm string}$ is realized by the image of the map~(\ref{eqn: int over C}).
+(Such an argument is given in Part III of \cite{GGW} for the free $\beta\gamma$ system.)
 
 After this lengthy build-up of notions and notations, 
 we now finally turn to describing descent.
 Our interpretation is that it is a process for promoting pointlike operators to more general observables.
+We will soon apply it to give an explanation for the Gerstenhaber structure on $H^* \cV_{\rm string}$,
+identified by Lian-Zuckerman.
 
 \begin{dfn}
 A {\em pointlike operator} is an element of $\Sym(J E_{\rm string}^\vee)_0$, 
-the fiber at the origin $0 \in \CC$ of the bundle $\Sym(J E_{\rm string}^\vee)$.
+the fiber at the origin $0 \in \CC$ of the bundle~$\Sym(J E_{\rm string}^\vee)$.
 \end{dfn}
 
 Equivalently, it is an element of the algebra $\Sym((J_0E_{\rm string})^*)$ of polynomial functions on the fiber at $0$ of $J E_{\rm string}$.
@@ -515,57 +511,60 @@ any point in the plane would serve as well as the origin.
 Note that this definition is equivalent to our earlier, heuristic notion.
 
 \begin{construction}[Descent] 
-Given any pointlike operator $O$, 
-the relations (\ref{d/dzbar}) and (\ref{d/dz}) allow us to define a differential form-valued observable $\Tilde{O} \in \Omega^*(X, \sO(JE_{\rm string}))$ as follows. 
-Let $\tau_z: \CC \to \CC$ be the translation sending a point $w$ to $w+z$.
-This operator naturally acts on fields by pullback, and so the jets of fields as well.
-Translation invariance allows us to define the $0$-form part
+\label{constr: descent}
+Any pointlike operator $O$ {\em descends} to an element 
+\[
+\Tilde{O} = \Tilde{O}^{0} + \Tilde{O}^1 + \Tilde{O}^2 
+\] 
+in $\Omega^*(\CC, \sO(JE_{\rm string}))$.
+We construct it as follows. 
+First, because our theory is translation-invariant,
+there is a natural trivialization of the bundle $\Sym(J E_{\rm string}^\vee)$,
+and hence there is a canonical element $\Tilde{O}^0 \in C^\infty(\CC, \sO(JE_{\rm string}))$,
+given by a constant section whose value at the origin is $O$.
+In formulas, we write 
 \ben
 \Tilde{O}^{0} (z) = \tau_z O,
 \een
-which is continuous because we have a continuous action by translations.
+where $\tau_z: \CC \to \CC$ is the translation sending a point $w$ to $w+z$.
+(This operator acts on fields by pullback, and so on the jets of fields as well.)
 Using the homotopies $\eta,\Bar{\eta}$, 
-we define the 1-form part $\Tilde{O}^1$ as
+we define the 1-form part as
 \ben
-\Tilde{O}^{1} = \d z \; (\eta \Tilde{O}^{0}) + \d \zbar \; (\Bar{\eta} \Tilde{O}^{0}),
+\Tilde{O}^{1} = \d z \; \Tilde{(\eta O)}^0 + \d \zbar \; \Tilde{(\Bar\eta O)}^0,
 \een
 where $\eta O$ denotes the image of $O$ under the map $\eta$.
-\owen{To be pedantic, it seems like the tilde should happen last, so $\Tilde{\eta O}^0$}
 Similarly, the 2-form part is 
 \[
-\Tilde{O}^2 = \d z \,\d \zbar\, \eta \Bar{\eta} O.
+\Tilde{O}^2 = \d z \,\d \zbar\, \Tilde{(\eta \Bar{\eta} O)}^0.
 \] 
-By construction \owen{is this totally obvious?}, 
+By construction, 
 if $O$ is closed for the classical differential $\{S,-\}$,
-then the total form
+then 
 \[
-\Tilde{O} = \Tilde{O}^{0} + \Tilde{O}^1 + \Tilde{O}^2 
+(\d_{dR} + \{S,-\}) \Tilde{O} = 0,
 \]
-is closed as well: 
-\[
-(\d_{dR} + \{S,-\}) \Tilde{O} = 0.
-\]
-We say $\Tilde{O}$ is {\em descended} from the pointlike operator~$O$.
-\owen{OK terminology?}
+so the total form $\Tilde{O}$ is closed as well.
 \end{construction}
 
-Combining the construction with the map~(\ref{eqn: int over C}), we find that a pointlike operator $O$ and a closed submanifold $C$ determine an observable
+Combining the construction with the map~(\ref{eqn: int over C}), 
+we find that a pointlike operator $O$ and a closed submanifold $C$ determine an observable
 \ben
 \int_{C} \Tilde{O} \in \Obs^\cl_{\rm string} (N_C) .
 \een
-If $O$ has cohomological degree $k$ and $C$ is of dimension $l$, 
+Note that if $O$ has cohomological degree $k$ and $C$ is of dimension $l$, 
 then $\int_C \Tilde{O}$ has degree~$k - l$. 
-
-\brian{Now say what happens for quantum observables? Help! Do I want to take the symmetric algebra on $\Omega^*(\CC , \sO(J E_{\rm string}))$? I'm confused with reproducing the construction we talked about earlier. 
-At worst, we can at least discuss how to recover the formula for the Gerstenhaber bracket between two local observables, which is all we really do in the next section. This would allow us to avoid introducing the ''multi-local" version of the above, but maybe it's not so bad...}
+We remark that every element of $\Gr \cV_{\rm string}$ can be realized by fixing a circle $C$ and applying descent to the pointlike operators.
+\owen{We could fix a point or a circle. I'm at an impasse.}
 
 Extending this whole package to quantum observables is nontrivial. 
-The main issue is that one cannot define a BV Laplacian on $\sO(J E_{\rm string})$
-\owen{I'm not sure that's really true \dots} 
-and so the map~(\ref{eqn: int over C}) does not extend immediately, as a cochain map, to the quantum observables.
-\owen{It still make sense as a linear map, however, and by special features of our situation, these observables are enough to identify the Gerstenhaber bracket, etc.}
-
-We now put these ideas to use.
+The map~(\ref{eqn: int over C}) makes sense at the level of graded vector spaces,
+but it is not easy to equip $\sO(J E_{\rm string})$ with a BV Laplacian 
+in such a way that the map~(\ref{eqn: int over C}) intertwines with the differential on the quantum observables.
+For linear observables, however, no such issues arise
+({\em cf.} Part III of \cite{GGW}), 
+and those are sufficient to identify the Gerstenhaber bracket,
+the problem to which we now turn.
 
 \subsubsection{Formula for the Gerstenhaber bracket}
 
@@ -605,21 +604,46 @@ as it is the same argument one uses to show that the homotopy group $\pi_2(X)$ i
 
 To construct the shifted Poisson bracket, 
 we need to pick a one-cycle in the configuration space $E_2(2)$.
-To describe the associated binary operation, we use descent along this one-cycle.
+To describe the associated binary operation, 
+we use descent along this one-cycle.
 
-\owen{The following paragraph no longer makes sense since we can't take such elements $O,O'$ as inputs.}
-Hence, let $O,O'$ be closed observables on disks $D \subset D'$, respectively,
+As remarked just after Construction~\ref{constr: descent},
+the underlying vector space of the vertex algebra $\cV_{\rm string}$ is generated by pointlike operators.
+We now use that process to define the Gerstenhaber bracket.
+
+Let $O$ and $O'$ be two pointlike operators. 
+Fix disks $D \subset D'$, 
 where the closure of $D$ is strictly contained in $D'$. 
-Let $C = \partial D'$, and let $N_C$ be a small tubular neighborhood (i.e., annulus).
-We can define $\int_C \Tilde{O}' \in \Obs^\q (N_C)$ via the descent procedure from above. 
-Finally, for $D''$ another disk containing $D$ and $N_C$, 
-let $\mu : \Obs^\q(D) \tensor \Obs^\q (N_C) \to \Obs^\q(D'')$ denote this factorization product.
-We then define
+Let $C$ be a loop inside a disk $D$, and let $C'$ be a loop in $D'\setminus D$ that wraps around $D$.
+Then we have observables $\int_C \Tilde{O}$ in $\Obs^\q(D)$ and $\int_{C'} \Tilde{O'}$ in $\Obs^\q(D')$.
+We suppose that they are cocycles,
+which lets us identify them with elements $[O]$ and $[O']$ of the vertex algebra.
+
+Fix now a tubular neighborhood $C' \subset N_{C'} \subset D'$  that is disjoint from $D$.
+Note that $\int_{C'} \Tilde{O'}$ also determines an observable in $\Obs^\q(N_{C'})$.
+Let 
+\[
+\mu : \Obs^\q(D) \tensor \Obs^\q (N_{C'}) \to \Obs^\q(D')
+\] 
+denote this factorization product.
+We define a bracket by 
 \ben
-\{O,O'\}_{\rm Ger} := \mu \left(O, \int_C \Tilde{O}' \right) .
+\{[O],[O']\}_{\rm Ger} := \mu \left( \int_C \Tilde{O}, \int_{C'} \Tilde{O}' \right) .
 \een 
-Note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{O,O'\}_{\rm Ger}) = k+k' -1$, 
+Note that if ${\rm deg}(O) = k$ and ${\rm deg}(O') = k'$, then ${\rm deg}(\{[O],[O']\}_{\rm Ger}) = k+k' -1$, 
 so we obtain a bracket of the correct degree.
+\owen{Those degrees aren't correct, as I used a circle for both observables. If I did a point for $O$ and a circle for $O'$, they'd be OK. I'm not sure what's the easiest thing to do \dots}
+
+\brian{The bracket only involves one circle. 
+The factorization map we use is the annulus multiplying a disk to a disk, that's why it's a an operation on the vertex algebra.
+The thing you should do is look at the two pointlikes $O,O'$ as you did above.
+Think of $O$ as a disk observable (no descent) and consider 
+\ben
+\{[O], [O']\}_{Ger} = \mu(O, \int_C O') .
+\een
+We haven't checked that this is a bracket (graded antisymmetry, Jacobi,...) but I don't think we should do that now.
+The thing that you did (which as you say has different cohomological degree) recovers the usual ''annular algebra" of the vertex algebra (which gives the Lie bracket of a Weyl type algebra). 
+}
 
 \begin{rmk}
 This construction manifestly involves picking a 1-cycle---here $C$---to exhibit the bracket, 

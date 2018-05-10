@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 MAY 2018 23:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 MAY 2018 23:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1094,30 +1094,34 @@ LaTeX Font Info:    Try loading font information for U+eus on input line 291.
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 ) 4x2 184>
 <xymatrix 4x2 75> [16]) (./quantization.tex [17] [18] [19] [20] [21] [22]
-[23] [24] [25] [26]) (./vertexalgebra_brian.tex [27] [28] [29]
+[23] [24] [25] [26]) (./vertexalgebra_brian.tex [27] [28]
 
-LaTeX Warning: Reference `prop: no counterterms' on page 30 undefined on input 
+LaTeX Warning: Reference `prop: no counterterms' on page 29 undefined on input 
 line 126.
 
-[30] [31] [32] <xymatrix 3x2 264>
-Overfull \hbox (6.21574pt too wide) in paragraph at lines 289--296
+[29] [30] [31] [32] <xymatrix 3x2 264>
+Overfull \hbox (6.21574pt too wide) in paragraph at lines 297--304
 \OT1/ppl/m/n/10 By Lemma [][]3.5[][] (and an anal-o-gous re-sult for poly-no-mi
 al vec-tor fields), these com-plexes $C[]\OT1/zplm/m/n/10 (\OT1/ppl/m/n/10 W[];
  \OMS/zplm/m/n/10 M\OT1/zplm/m/n/10 )$
  []
 
-[33] [34]
+[33] [34] [35]
+Overfull \hbox (16.81776pt too wide) in paragraph at lines 467--475
+[]\OT1/ppl/m/n/10 We choose to en-code this idea in the fol-low-ing way. Con-si
+der the de Rham com-plex $\OT1/zplm/m/n/10 
+[](\U/fplmbb/m/n/10 C\OT1/ppl/m/n/10 , \U/eus/m/n/10 O\OT1/zplm/m/n/10 (\OML/zp
+lm/m/it/10 JE[]\OT1/zplm/m/n/10 ))$
+ []
 
-LaTeX Warning: Citation `GGLA' on page 35 undefined on input line 419.
-
-[35] [36] [37] [38]
-Overfull \hbox (13.21217pt too wide) in paragraph at lines 655--656
+[36] [37] [38]
+Overfull \hbox (13.21217pt too wide) in paragraph at lines 679--680
 []\OT1/ppl/m/n/10 The brack-ets co-in-cide by not-ing that the deriva-tion $\OM
 L/zplm/m/it/10 ^^Q$ \OT1/ppl/m/n/10 triv-i-al-iz-ing $d\OT1/zplm/m/n/10 /\OT1/p
 pl/m/n/10 d\OML/zplm/m/it/10 z$ \OT1/ppl/m/n/10 agrees with Lian-Zuckerman's
  []
 
-[39]) (./conformalblock.tex [40]
+) (./conformalblock.tex [39] [40]
 Overfull \hbox (38.61545pt too wide) in paragraph at lines 102--102
 [] 
  []
@@ -1137,7 +1141,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
 Package rerunfilecheck Info: File `frame.out' has not changed.
-(rerunfilecheck)             Checksum: D73B17E68EE77562D3FDEAB9FFF5A4FE;645.
+(rerunfilecheck)             Checksum: E3B29D4A0EEB6D309340A8452D9A35A3;645.
 
 
 LaTeX Warning: There were undefined references.
@@ -1148,11 +1152,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
  ) 
 Here is how much of TeX's memory you used:
- 25318 strings out of 492995
- 500287 string characters out of 6132704
+ 25321 strings out of 492995
+ 500327 string characters out of 6132704
  663904 words of memory out of 5000000
- 27922 multiletter control sequences out of 15000+600000
- 40766 words of font info for 129 fonts, out of 8000000 for 9000
+ 27923 multiletter control sequences out of 15000+600000
+ 41023 words of font info for 130 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  62i,16n,80p,3238b,956s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1173,10 +1177,10 @@ mf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017/texmf-dist/fonts
 /type1/public/xypic/xycmat10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
 1/public/xypic/xycmbt10.pfb>
-Output written on frame.pdf (48 pages, 349315 bytes).
+Output written on frame.pdf (48 pages, 349945 bytes).
 PDF statistics:
- 640 PDF objects out of 1000 (max. 8388607)
- 567 compressed objects within 6 object streams
- 196 named destinations out of 1000 (max. 500000)
+ 643 PDF objects out of 1000 (max. 8388607)
+ 570 compressed objects within 6 object streams
+ 197 named destinations out of 1000 (max. 500000)
  85 words of extra memory for PDF output out of 10000 (max. 10000000)
 
