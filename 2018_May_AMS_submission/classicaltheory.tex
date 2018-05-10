@@ -84,7 +84,6 @@ The other equations then amount to solving for holomorphic sections (of the rele
 For instance, the equation in $\gamma$ picks out holomorphic maps from $\Sigma$,
 with the $c$-deformed complex structure, to~$V$.
 
-\owen{Tell me what you think.}
 The field $b$ can be understood as an ``antifield" to the ghost field $c$; in other words, it is an {\em antighost}.
 In that sense, $b$ does not have any intrinsic, physical meaning by itself.  
 
@@ -307,6 +306,10 @@ Moreover, the operator $\dbar$ is replaced by the holomorphic Dolbeault operator
 Another way of saying this is that $\Bar{S}$ is the holomorphic string on $\Bar{\Sigma}$, which is the conjugate complex structure to $\Sigma$. 
 \end{rmk}
 
+\begin{rmk}
+For original physics references that study the holomorphic splitting of the Polyakov action (and more general conformal field theories) we refer to the sources \cite{Belavin, Laz}.
+\end{rmk}
+
 \begin{proof}[Outline of proof] 
 There are two things that may cause alarm in the statement of the claim. 
 First, the space of fields of the Polyakov string (in the BV language) and those of the holomorphic bosonic string do not match up. 
@@ -333,18 +336,19 @@ The remaining theory splits as the direct sum of the free $\beta\gamma$ system w
 At the level of fields, the original field $\varphi$ corresponds to $\gamma + \Bar{\gamma}$ in the first order description,
 and $B$ corresponds to~$\beta+\Bar{\beta}$. 
 
-Of the remaining terms on the first line of the action, 
-only the $D_1$ term survives in this infinite volume limit. 
-%\owen{Is there some way to see this from the concrete computation of $D_1$ above?}
-\owen{Ref suggests we indicate why.}
-Furthermore, the metric $g_0$ determines an injective map
+We now consider the remaining terms in the first line of the action. 
+We work in holomorphic coordinates with the complex structure that the background metric $g_0$ determines. 
+With respect to this complex structure, the tensor square of the cotangent bundle splits as
 \ben
-\Omega^{0,1}(\Sigma ; T^{1,0}_\Sigma) \oplus \Omega^{1,0}(\Sigma ; T^{0,1}_\Sigma) \hookrightarrow \Sym^2(T_\Sigma) .
+T^* \tensor T^* = T^*{0,1}\tensor T^{1,0} \oplus T^{*1,0} \tensor T^{0,1} \oplus T^{*1,0} \tensor T*^{0,1} \oplus T^{*0,1} \tensor T^{*1,0} .
 \een
-Restricting the term $\int_\Sigma h(\varphi, D_1(\alpha) \varphi)$ to the image,
-we obtain a term whose infinite volume limit~is
+Sitting inside of this bundle is the symmetric square, where the field $\alpha$ lives. 
+With respect to this splitting we will write sections as $\alpha = c^{0,1} + \Bar{c}^{1,0} + f g_0$, where $f \in C^\infty(\Sigma)$. 
+By performing a Weyl rescaling, we see that the action functional only depends on $\mu, \Bar{\mu}$. 
+This is essentially due to the fact that the ordinary Riemannian $\sigma$-model only depends on the conformal class, equivalently complex structure, of the Riemann surface. 
+In the first-order formalism we introduced in the preceding paragraph, we find that the remaining terms in the first line of (\ref{polyakov bv}) read 
 \ben
-\int_\Sigma \<\beta , [c, \gamma]\>_V + \int_\Sigma \<\Bar{\beta} , [\Bar{c}, \bar{\gamma}]\>_V.
+\int_\Sigma \<\beta , [c^{0,1}, \gamma]\>_V + \int_\Sigma \<\Bar{\beta} , [\Bar{c}^{1,0}, \bar{\gamma}]\>_V.
 \een
 This first term is precisely the third term in the holomorphic string action functional (\ref{bosaction}), which describes how deformations of complex structure couple to the fields of the $\sigma$-model. 
 

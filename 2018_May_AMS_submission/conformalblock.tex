@@ -132,7 +132,7 @@ However, deforming the action from free $bc\beta\gamma$ system to holomorphic bo
 
 We have already seen that the holomorphic string {\it on a disk} admits a BV quantization if and only if the target is a complex vector space of dimension 13.
 Here we will explain why this anomaly calculation is actually enough to show the existence of a quantization on an {\it arbitrary} Riemann surface. 
-An argument using GRR was given in the above section. 
+An argument using the Grothendieck-Riemann-Roch theorem was given in the above section. 
 In this section we give a proof using only the perspective of BV quantization.
 One can view this as giving a proof of the Grothendieck-Riemann-Roch theorem using Feynman diagrams (and will be the topic of future work). 
 
@@ -140,17 +140,21 @@ Our diagrammatic arguments showed that only wheels with $c$ legs appear in the a
 and these arguments did not depend on the choice of $\Sigma$. 
 Hence the anomaly will be purely a functional on the $c$ fields.
 So we restrict ourselves to the piece of the deformation complex only involving such fields.
-By arguments analogous to those in Section~\ref{sec: moduli}, 
-when $\Sigma$ is a disk,
-this deformation complex for the $c$-fields is quasi-isomorphic to $\cred^*(W_1)[2]$,
-but
+A corollary of the calculation of the general deformation complex in Section~\ref{sec: moduli}, 
+is that when $\Sigma$ is a disk,
+this deformation complex for the $c$-fields is quasi-isomorphic to $\cred^*(W_1)[2]$.
+A classical calculation of Gelfand and Fuks shows that the reduced cohomology $H^*(W_1)$ of formal vector fields is one-dimensional concentrated in degree $3$.
+Thus, the cohomology of the deformation complex is 
 \[
 H^*_{\rm red}(W_1)[2] = \CC[-1].
 \]
+The generator of this cohomology can be taken to be $\lambda_{-1} \lambda_0 \lambda_1$, where $\lambda_i$ is dual to the formal vector field $z^{i+1} \partial_z$. 
 As shown in Proposition 5.3 of \cite{BWvir}, this situation generalizes:
-on arbitrary $\Sigma$, 
-the deformation complex is a sheaf of cochain complexes quasi-isomorphic to the constant sheaf $\CC_\Sigma[-1]$ concentrated in degree~$1$. 
-\owen{Ref seems to want a little more explanation of this assertion. I'm not sure how much we should say, but I think it might be worthwhile to comment explicitly that this cocycle is the usual Gelfand-Fuks jobby, and maybe even write it!}
+on an arbitrary Riemann surface $\Sigma$, the deformation complex is equivalent to the derived global sections of the constant sheaf on $\Sigma$.
+In particular, the cohomology of the deformation complex is equal to the shift of the de Rham cohomology $H^*(\Sigma)[-1]$. 
+When $\Sigma$ is connected, there is a unique class, up to scale, in the degree $+1$ piece of the deformation complex where the anomaly lives.
+One can locally express the formula for this anomaly cocycle using the usual expression for the generator of $H^3(W_1)$, but since this depends on the choice of a coordinate it glues over the Riemann surface in an interesting way, see Section 5 of \cite{BWvir}. 
+Moreover, when evaluated on $1$-cycles on the Riemann surface, it is shown how this local cocycle recovers the usual central extension defining the Virasoro Lie algebra. 
 
 The construction of BV quantization is manifestly {\em local-to-global} on spacetime. 
 In particular, anomalies inherit this property: the anomaly computed on an open set $U \subset \Sigma$ is equal to the anomaly of the theory on $\Sigma$ restricted to $U$. 

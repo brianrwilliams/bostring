@@ -8,6 +8,10 @@
 \providecommand{\href}[2]{#2}
 \begin{thebibliography}{CFMP85}
 
+\bibitem[BK86]{Belavin}
+A.A. Belavin and V.G. Knizhnik, \emph{Algebraic geometry and the geometry of
+  quantum strings}, Physics Letters B \textbf{168} (1986), no.~3, 201 -- 206.
+
 \bibitem[BlM86]{BM}
 A.~A. Be\u\i~linson and Yu.~I. Manin, \emph{The {M}umford form and the
   {P}olyakov measure in string theory}, Comm. Math. Phys. \textbf{107} (1986),
@@ -117,6 +121,11 @@ Michael~B. Green, John~H. Schwarz, and Edward Witten, \emph{Superstring theory.
 \bibitem[GW]{GWcurved}
 Owen Gwilliam and Brian Williams, \emph{{T}he holomorphic bosonic string,
   {I}{I}: the case of a curved target}, to appear.
+
+\bibitem[KLS91]{Laz}
+M.~Knecht, S.~Lazzarini, and R.~Stora, \emph{On holomorphic factorization for
+  free conformal fields}, Phys. Lett. B \textbf{262} (1991), no.~1, 25--31.
+  \MR{1114271}
 
 \bibitem[Li]{LiVA}
 Si~Li, \emph{Vertex algebras and quantum master equation}, available at
