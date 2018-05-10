@@ -10,7 +10,7 @@
 \contentsline {subsection}{\tocsubsection {}{3.1}{Deformations for the classical theory}}{12}{subsection.3.1}
 \contentsline {subsection}{\tocsubsection {}{3.2}{Dilating cotangent fibers}}{13}{subsection.3.2}
 \contentsline {subsection}{\tocsubsection {}{3.3}{Interaction terms that appear at one loop}}{14}{subsection.3.3}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.3.1}{Sketch of proof}}{14}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.3.1}{Sketch of proof}}{15}{subsubsection.3.3.1}
 \contentsline {subsection}{\tocsubsection {}{3.4}{Interpretation as string backgrounds}}{16}{subsection.3.4}
 \contentsline {section}{\tocsection {}{4}{Quantizing the holomorphic bosonic string on a disk}}{17}{section.4}
 \contentsline {subsection}{\tocsubsection {}{4.1}{The Feynman diagrams}}{18}{subsection.4.1}
@@ -32,11 +32,11 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.1}{The $E_2$ algebra}}{31}{subsubsection.5.4.1}
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.2}{The stress-energy tensor}}{33}{subsubsection.5.4.2}
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.3}{Descent for local operators}}{35}{subsubsection.5.4.3}
-\contentsline {subsubsection}{\tocsubsubsection {}{5.4.4}{Formula for the Gerstenhaber bracket}}{37}{subsubsection.5.4.4}
+\contentsline {subsubsection}{\tocsubsubsection {}{5.4.4}{Formula for the Gerstenhaber bracket}}{38}{subsubsection.5.4.4}
 \contentsline {section}{\tocsection {}{6}{The holomorphic string on closed Riemann surfaces}}{39}{section.6}
 \contentsline {subsection}{\tocsubsection {}{6.1}{The free case}}{40}{subsection.6.1}
-\contentsline {subsection}{\tocsubsection {}{6.2}{The anomaly and moduli of quantizations on an arbitrary Riemann surface}}{41}{subsection.6.2}
-\contentsline {subsection}{\tocsubsection {}{6.3}{Global observables for the holomorphic string}}{42}{subsection.6.3}
+\contentsline {subsection}{\tocsubsection {}{6.2}{The anomaly and moduli of quantizations on an arbitrary Riemann surface}}{42}{subsection.6.2}
+\contentsline {subsection}{\tocsubsection {}{6.3}{Global observables for the holomorphic string}}{43}{subsection.6.3}
 \contentsline {section}{\tocsection {}{7}{Looking ahead: curved targets}}{43}{section.7}
 \contentsline {section}{\tocsection {Appendix}{A}{Calculation of anomaly}}{44}{appendix.A}
 \contentsline {section}{\tocsection {Appendix}{}{References}}{46}{section*.1}
