@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 MAY 2018 23:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 MAY 2018 09:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1115,13 +1115,13 @@ lm/m/it/10 JE[]\OT1/zplm/m/n/10 ))$
  []
 
 [36] [37] [38]
-Overfull \hbox (13.21217pt too wide) in paragraph at lines 679--680
+Overfull \hbox (13.21217pt too wide) in paragraph at lines 693--694
 []\OT1/ppl/m/n/10 The brack-ets co-in-cide by not-ing that the deriva-tion $\OM
 L/zplm/m/it/10 ^^Q$ \OT1/ppl/m/n/10 triv-i-al-iz-ing $d\OT1/zplm/m/n/10 /\OT1/p
 pl/m/n/10 d\OML/zplm/m/it/10 z$ \OT1/ppl/m/n/10 agrees with Lian-Zuckerman's
  []
 
-) (./conformalblock.tex [39] [40]
+[39]) (./conformalblock.tex [40]
 Overfull \hbox (38.61545pt too wide) in paragraph at lines 102--102
 [] 
  []
@@ -1177,7 +1177,7 @@ mf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017/texmf-dist/fonts
 /type1/public/xypic/xycmat10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
 1/public/xypic/xycmbt10.pfb>
-Output written on frame.pdf (48 pages, 349945 bytes).
+Output written on frame.pdf (48 pages, 350514 bytes).
 PDF statistics:
  643 PDF objects out of 1000 (max. 8388607)
  570 compressed objects within 6 object streams
