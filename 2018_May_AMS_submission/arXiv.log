@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 MAY 2018 15:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 MAY 2018 15:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**frame.tex
-(./frame.tex
+**arXiv.tex
+(./arXiv.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amscls/amsart.cls
@@ -732,28 +732,14 @@ s/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarydecorations.footprints.code.tex
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarydecorations.code.tex
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
-s.code.tex
-\pgfdecoratedcompleteddistance=\dimen270
-\pgfdecoratedremainingdistance=\dimen271
-\pgfdecoratedinputsegmentcompleteddistance=\dimen272
-\pgfdecoratedinputsegmentremainingdistance=\dimen273
-\pgf@decorate@distancetomove=\dimen274
-\pgf@decorate@repeatstate=\count146
-\pgfdecorationsegmentamplitude=\dimen275
-\pgfdecorationsegmentlength=\dimen276
-)
-\tikz@lib@dec@box=\box44
-)
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
-brarydecorations.footprints.code.tex))
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarydecorations.markings.code.tex
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
-brarydecorations.markings.code.tex))
+s/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+code.tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen270
+))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
@@ -805,84 +791,76 @@ File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
 shapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
 
-\pgfnodepartlowerbox=\box45
-\pgfnodeparttwobox=\box46
-\pgfnodepartthreebox=\box47
-\pgfnodepartfourbox=\box48
-\pgfnodeparttwentybox=\box49
-\pgfnodepartnineteenbox=\box50
-\pgfnodeparteighteenbox=\box51
-\pgfnodepartseventeenbox=\box52
-\pgfnodepartsixteenbox=\box53
-\pgfnodepartfifteenbox=\box54
-\pgfnodepartfourteenbox=\box55
-\pgfnodepartthirteenbox=\box56
-\pgfnodeparttwelvebox=\box57
-\pgfnodepartelevenbox=\box58
-\pgfnodeparttenbox=\box59
-\pgfnodepartninebox=\box60
-\pgfnodeparteightbox=\box61
-\pgfnodepartsevenbox=\box62
-\pgfnodepartsixbox=\box63
-\pgfnodepartfivebox=\box64
+\pgfnodepartlowerbox=\box44
+\pgfnodeparttwobox=\box45
+\pgfnodepartthreebox=\box46
+\pgfnodepartfourbox=\box47
+\pgfnodeparttwentybox=\box48
+\pgfnodepartnineteenbox=\box49
+\pgfnodeparteighteenbox=\box50
+\pgfnodepartseventeenbox=\box51
+\pgfnodepartsixteenbox=\box52
+\pgfnodepartfifteenbox=\box53
+\pgfnodepartfourteenbox=\box54
+\pgfnodepartthirteenbox=\box55
+\pgfnodeparttwelvebox=\box56
+\pgfnodepartelevenbox=\box57
+\pgfnodeparttenbox=\box58
+\pgfnodepartninebox=\box59
+\pgfnodeparteightbox=\box60
+\pgfnodepartsevenbox=\box61
+\pgfnodepartsixbox=\box62
+\pgfnodepartfivebox=\box63
 )))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibraryarrows.code.tex
-File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
-
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
-code.tex
-File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen277
-)) (./tikz-feynman.sty
-Package: tikz-feynman 2016/02/05v1.1.0Feynman diagrams with TikZ
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/pgfopts/pgfopts.sty
-Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-\pgfopts@list@add@a@toks=\toks50
-\pgfopts@list@add@b@toks=\toks51
+s/tikzlibrarytrees.code.tex
+File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 )
-(./tikzlibraryfeynman.code.tex
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
-meta.code.tex
-File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
-\pgfarrowinset=\dimen278
-\pgfarrowlength=\dimen279
-\pgfarrowwidth=\dimen280
-\pgfarrowlinewidth=\dimen281
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarythrough.code.tex
+File: tikzlibrarythrough.code.tex 2008/02/03 v3.0.1a (rcs-revision 1.1)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex
+\pgfdecoratedcompleteddistance=\dimen271
+\pgfdecoratedremainingdistance=\dimen272
+\pgfdecoratedinputsegmentcompleteddistance=\dimen273
+\pgfdecoratedinputsegmentremainingdistance=\dimen274
+\pgf@decorate@distancetomove=\dimen275
+\pgf@decorate@repeatstate=\count146
+\pgfdecorationsegmentamplitude=\dimen276
+\pgfdecorationsegmentlength=\dimen277
+)
+\tikz@lib@dec@box=\box64
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarydecorations.pathmorphing.code.tex
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathmorphing.code.tex))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarydecorations.pathreplacing.code.tex
+s/tikzlibrarydecorations.markings.code.tex
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
-brarydecorations.pathreplacing.code.tex))
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/graphs/tikzlibrarygraphs.code.tex
-File: tikzlibrarygraphs.code.tex 2015/06/05 v3.0.1a (rcs-revision 1.44)
-\tikz@lib@auto@number=\count147
-\tikz@qnode@count=\count148
-)
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarypatterns.code.tex
-File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.1a (rcs-revision 1.2)
-
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibrarypattern
-s.code.tex
-File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
-))
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
-) (./tikzfeynman.keys.code.tex)))
-\c@thm=\count149
-\c@dfn/lem=\count150
+brarydecorations.markings.code.tex))
+\c@thm=\count147
+\c@dfn/lem=\count148
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/carlisle/slashed.sty
 Package: slashed 1997/01/16 v0.01 Feynman Slashed Character Notation (DPC)
@@ -894,19 +872,7 @@ Package: parskip 2001/04/09 non-zero parskip adjustments
 LaTeX Warning: Command \@starttoc  has changed.
                Check if current package is valid.
 
-)
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarytrees.code.tex
-File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
-)
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarymatrix.code.tex
-File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
-)
-(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
-s/tikzlibrarythrough.code.tex
-File: tikzlibrarythrough.code.tex 2008/02/03 v3.0.1a (rcs-revision 1.1)
-) (./frame.aux
+) (./arXiv.aux
 
 LaTeX Warning: Label `lem: def complex wt zero' multiply defined.
 
@@ -914,7 +880,7 @@ LaTeX Warning: Label `lem: def complex wt zero' multiply defined.
 LaTeX Warning: Label `lem: gf' multiply defined.
 
 )
-\openout1 = `frame.aux'.
+\openout1 = `arXiv.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
@@ -977,17 +943,17 @@ Package xypdf Info: Line width: 0.4pt on input line 54.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count151
-\scratchdimen=\dimen282
+\scratchcounter=\count149
+\scratchdimen=\dimen278
 \scratchbox=\box65
-\nofMPsegments=\count152
-\nofMParguments=\count153
-\everyMPshowfont=\toks52
-\MPscratchCnt=\count154
-\MPscratchDim=\dimen283
-\MPnumerator=\count155
-\makeMPintoPDFobject=\count156
-\everyMPtoPDFconversion=\toks53
+\nofMPsegments=\count150
+\nofMParguments=\count151
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count152
+\MPscratchDim=\dimen279
+\MPnumerator=\count153
+\makeMPintoPDFobject=\count154
+\everyMPtoPDFconversion=\toks51
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1047,51 +1013,45 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count157
+\c@section@level=\count155
 )
 LaTeX Info: Redefining \ref on input line 54.
 LaTeX Info: Redefining \pageref on input line 54.
 LaTeX Info: Redefining \nameref on input line 54.
 
-(./frame.out) (./frame.out)
+(./arXiv.out) (./arXiv.out)
 \@outlinefile=\write5
-\openout5 = `frame.out'.
+\openout5 = `arXiv.out'.
 
  ABD: EveryShipout initializing macros
-
-Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices a
-utomatically placed. You can disable this warning by setting /tikzfeynman/warn 
-luatex=false on input line 54.
-
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 74.
-(./frame.toc)
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 76.
+ (./arXiv.toc)
 \tf@toc=\write6
-\openout6 = `frame.toc'.
+\openout6 = `arXiv.toc'.
 
- (./bvoverview.tex [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap
-/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 61.
+(./bvoverview.tex [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/
+pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 60.
 
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [2] [3]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 121.
+)
+[2] [3]
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 120.
 
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsppl.fd
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 121.
- [4])
-(./classicaltheory.tex
-Underfull \vbox (badness 1755) has occurred while \output is active []
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 120.
+
+[4]) (./classicaltheory.tex
+Underfull \vbox (badness 4096) has occurred while \output is active []
 
  [5]
 [6] [7] [8] [9] [10] [11]) (./moduli.tex [12] [13] [14] [15] <xymatrix
-LaTeX Font Info:    Try loading font information for U+eus on input line 291.
+LaTeX Font Info:    Try loading font information for U+eus on input line 253.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
@@ -1106,14 +1066,14 @@ LaTeX Warning: Reference `prop: no counterterms' on page 30 undefined on input
 line 126.
 
 [30] [31] [32] <xymatrix 3x2 264>
-Overfull \hbox (6.21574pt too wide) in paragraph at lines 297--304
+Overfull \hbox (6.21574pt too wide) in paragraph at lines 291--298
 \OT1/ppl/m/n/10 By Lemma [][]3.5[][] (and an anal-o-gous re-sult for poly-no-mi
 al vec-tor fields), these com-plexes $C[]\OT1/zplm/m/n/10 (\OT1/ppl/m/n/10 W[];
  \OMS/zplm/m/n/10 M\OT1/zplm/m/n/10 )$
  []
 
 [33] [34] [35]
-Overfull \hbox (16.81776pt too wide) in paragraph at lines 467--475
+Overfull \hbox (16.81776pt too wide) in paragraph at lines 461--469
 []\OT1/ppl/m/n/10 We choose to en-code this idea in the fol-low-ing way. Con-si
 der the de Rham com-plex $\OT1/zplm/m/n/10 
 [](\U/fplmbb/m/n/10 C\OT1/ppl/m/n/10 , \U/eus/m/n/10 O\OT1/zplm/m/n/10 (\OML/zp
@@ -1121,18 +1081,18 @@ lm/m/it/10 JE[]\OT1/zplm/m/n/10 ))$
  []
 
 [36] [37] [38] [39]
-Overfull \hbox (13.21217pt too wide) in paragraph at lines 677--678
+Overfull \hbox (13.21217pt too wide) in paragraph at lines 671--672
 []\OT1/ppl/m/n/10 The brack-ets co-in-cide by not-ing that the deriva-tion $\OM
 L/zplm/m/it/10 ^^Q$ \OT1/ppl/m/n/10 triv-i-al-iz-ing $d\OT1/zplm/m/n/10 /\OT1/p
 pl/m/n/10 d\OML/zplm/m/it/10 z$ \OT1/ppl/m/n/10 agrees with Lian-Zuckerman's
  []
 
 ) (./conformalblock.tex [40]
-Overfull \hbox (38.61545pt too wide) in paragraph at lines 102--102
+Overfull \hbox (38.61545pt too wide) in paragraph at lines 86--86
 [] 
  []
 
-[41] [42] [43]) (./curvedtargets.tex [44]) (./calc.tex [45]) (./frame.bbl
+[41] [42] [43]) (./curvedtargets.tex [44]) (./calc.tex [45]) (./arXiv.bbl
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 13.
 
@@ -1141,12 +1101,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [47])
 [48]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
- (./frame.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
-Package rerunfilecheck Info: File `frame.out' has not changed.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
+ (./arXiv.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
+Package rerunfilecheck Info: File `arXiv.out' has not changed.
 (rerunfilecheck)             Checksum: E3B29D4A0EEB6D309340A8452D9A35A3;645.
 
 
@@ -1155,16 +1115,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 25320 strings out of 492995
- 500311 string characters out of 6132704
- 664837 words of memory out of 5000000
- 27922 multiletter control sequences out of 15000+600000
+ 23814 strings out of 492995
+ 453263 string characters out of 6132704
+ 588776 words of memory out of 5000000
+ 26449 multiletter control sequences out of 15000+600000
  41023 words of font info for 130 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 62i,16n,80p,3238b,956s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,16n,69p,3238b,961s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -1183,10 +1143,10 @@ mf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist
 /fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017/texmf-dist/fonts
 /type1/public/xypic/xycmat10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
 1/public/xypic/xycmbt10.pfb>
-Output written on frame.pdf (48 pages, 348675 bytes).
+Output written on arXiv.pdf (48 pages, 348395 bytes).
 PDF statistics:
- 644 PDF objects out of 1000 (max. 8388607)
- 571 compressed objects within 6 object streams
- 197 named destinations out of 1000 (max. 500000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 569 compressed objects within 6 object streams
+ 196 named destinations out of 1000 (max. 500000)
  85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

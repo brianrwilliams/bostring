@@ -91,17 +91,17 @@ Owen Gwilliam and Ryan Grady, \emph{One-dimensional {C}hern-{S}imons theory and
 
 \bibitem[GG18]{GGLA}
 Ryan Grady and Owen Gwilliam, \emph{Lie algebroids as ${L}_{\infty}$ spaces},
-  Journal of the Institute of Mathematics of Jussieu (2018), 1?49.
+  Journal of the Institute of Mathematics of Jussieu (2018), 1--49.
 
 \bibitem[GGW]{GGW}
 Owen Gwilliam, Vassily Gorbounov, and Brian Williams, \emph{{C}hiral
   differential operators via {B}atalin-{V}ilkovisky quantization}, available at
   \url{https://arxiv.org/abs/1610.09657}.
 
-\bibitem[GH]{GH}
-Owen Gwilliam and Rune Haugseng, \emph{{L}inear {B}atalin-{V}ilkovisky
-  quantization as a functor of $\infty$-categories}, available at
-  \url{https://arxiv.org/abs/1608.01290}.
+\bibitem[GH18]{GH}
+Owen Gwilliam and Rune Haugseng, \emph{Linear {B}atalin--{V}ilkovisky
+  quantization as a functor of {$\infty $}-categories}, Selecta Math. (N.S.)
+  \textbf{24} (2018), no.~2, 1247--1313. \MR{3782422}
 
 \bibitem[GJF]{GJF}
 Owen Gwilliam and Theo Johnson-Freyd, \emph{How to derive feynman diagrams for
@@ -182,11 +182,7 @@ Brian Williams, \emph{The {V}irasoro vertex algebra and factorization algebras
 Edward Witten, \emph{Topological quantum field theory}, Comm. Math. Phys.
   \textbf{117} (1988), no.~3, 353--386. \MR{953828}
 
-\bibitem[Wit15a]{WittenFeynman}
-\bysame, \emph{The {F}eynman {$i\epsilon$} in string theory}, J. High Energy
-  Phys. (2015), no.~4, 055, front matter+24. \MR{3351314}
-
-\bibitem[Wit15b]{WitString}
+\bibitem[Wit15]{WitString}
 \bysame, \emph{Notes on holomorphic string and superstring theory measures of
   low genus}, Analysis, complex geometry, and mathematical physics: in honor of
   {D}uong {H}. {P}hong, Contemp. Math., vol. 644, Amer. Math. Soc., Providence,

@@ -176,7 +176,6 @@ For instance, here we see $H^0(\Sigma_c,T_{\Sigma_c})$ appear in degree -1,
 since a holomorphic vector field is an infinitesimal automorphism of a complex curve.
 These negative directions are called ``ghosts'' (or ghosts for ghosts, and so on) in physics.
 The positive degree cohomology detects infinitesimal relations (and relations of relations, and so on).
-%For instance, here we see $H^1(\Sigma_c,V)$, the cokernel of~$\dbar+c$. 
 \end{rmk}
 
 Note that the underlying graded spaces of this tangent complex are the $c$ and $\gamma$ fields from the BV theory described above.
@@ -272,7 +271,6 @@ S'(f,X,\alpha) = \int_\Sigma \<\alpha^\vee, L_X (g_0 + \alpha) + f (g_0 + \alpha
 The first term encodes how vector fields and Weyl transformations act on the perturbed metric $g_0 + \alpha$ and the remaining terms are required to ensure the gauge symmetry is consistent (satisfies the classical master equation). 
 
 An explicit formula for $D_n(\alpha,\ldots,\alpha)$ is a rather involved exercise (and not needed here).
-%can be derived from the power series expansion of the Laplace-Beltrami operator in terms of the metric. 
 For instance, if we are working locally on $\Sigma = \RR^2$ with the $g_0$ the flat metric, 
 then the operator $D_1(\alpha)$ is sum of a first-order and a second-order differential operator
 \ben
@@ -380,42 +378,3 @@ In the BV formalism this amounts to choosing a certain deformation parameter, wh
 Note that to deform the metric on the target we leave the world of ``holomorphic field theory" as the deformation involves both $z$ and $\zbar$ dependent terms. 
 It would be interesting to study how to formulate the theory with finite target metric in the BV formalism.
 \end{rmk}
-
-%***********
-%
-%In this section we start with a description of the classical Polyakov model for the bosonic string as a classical BV theory. 
-%This is the ordinary $\sigma$-model of maps $\Sigma \to V$ coupled to a metric on $\Sigma$. 
-%More precisely, this is a perturbative model for the Polyakov string, since we only look at deformations of the fixed metric $g_0$. We will show that after a reparametrization of the space of fields that it makes sense to take a certain ``infinite volume limit" as $h \to \infty$. In this limit we will show that the Polyakov model splits into a certain holomorphic theory plus its complex conjugate. The holomorphic theory is what we call the {\em holomorphic bosonic string}.
-%
-%\begin{rmk} 
-%A similar analysis has appeared in \cite{GGW} where one does not consider deformations of the metric: the infinite volume limit of the bare $\sigma$-model of maps $\Sigma \to V$ splits into the free $\beta\gamma$ system plus its complex conjugate. In the case of the string we find an interacting theory that can be thought of as a deformation of a $\beta\gamma$ system. 
-%\end{rmk}
-%
-%\owen{Give explanation of what this section will be about: writing down a holomorphic theory that appears as the chiral part of a large volume limit of the usual bosonic string. We should advertise that we start with conventional ways of writing a theory and explain the algorithm by which one extracts a BV action.}
-%
-%
-%We recall the most familiar form of the classical Polyakov string and show how to write it down in terms of a classical BV theory. The fields of the Polyakov model consist of a $C^\infty$ function $\varphi : \Sigma \to V$ and a metric $g$ on $\Sigma$. Since we are doing perturbation theory, we assume that $g$ is infinitesimally close to the fixed metric $g_0$ in the space of all metrics on $\Sigma$. There is an identification of the tangent space of the space of all metrics $T_{[g_0]} {\rm Met}(\Sigma) \cong \Sym^2(T_\Sigma)$. Thus, we can take the metric $g$ to be of the form $g = g_0 + \alpha$ where $\alpha \in \Sym^2(T_\Sigma)$. \owen{Should we include comments about "formal (derived) spaces"?}
-% In the definition of a classical BV theory we must prescribe the data of a $(-1)$-shifted symplectic pairing on the BRST complex together with an interaction which is a local functional on the complex. The pairing can be described as follows. If $\varphi \in \Omega^0(\Sigma ; V)$ and $\psi \in \Omega^2(\Sigma ; V)$ then
-%\ben
-%\<\varphi, \psi \> = \int h(\varphi, \psi) .
-%\een 
-%The fields $(X, f) \in \Vect(\Sigma) \oplus C^\infty(\Sigma)$ pair with the conjugate fields $(X', f') \in  \Omega^2(\Sigma ; T^*_\Sigma) \oplus \Omega^2(\Sigma)$ via
-%\ben
-%\<(X,f), (X',f')\> = \int \ev(X, X') + \int f f' 
-%\een
-%where $\ev$ denotes the evaluation pairing between the tangent and cotangent bundles. 
-%
-%\brian{Start with Polyakov action and explain how the chiral theory emerges in the infinite volume limit. There should also be an explanation for the theory we write down as a twist of 2d supergravity (in the same way that CDO's are a twist of a $(0,2)$ theory), not sure if you want to get into that.}
-%\owen{I don't know anything about the supergravity thing you mention. It sounds interesting.}
-%
-%\owen{When we write out the whole BV shebang, we should point out how it relates to the usual physics description. Namely, the physicists do the following:
-%\begin{itemize}
-%\item write a free $bc\beta\gamma$ system as a $\ZZ/2$-graded theory
-%\item lift to a $\ZZ$-grading such that the $bc$ fields are ghosts/antighosts for holomorphic vector fields (with no action on $\beta\gamma$ fields or themselves)
-%\item deform the action to encode the action of vector fields on functions etc.
-%\end{itemize}
-%We should then see our BV action on the nose.
-%(I think this is correct, but we should double-check, of course.)
-%One nice thing about this observation is that it verifies the identification with semi-infinite homology, which is often explained in these kinds of terms. 
-%(See the nice, short, readable Voronov note I've put in our folder.)}
-
