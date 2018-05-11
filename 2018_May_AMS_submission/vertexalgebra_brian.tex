@@ -201,7 +201,7 @@ The second approach gives an explicit formula for the bracket and is based on th
 We continue to consider the theory on the Riemann surface $\Sigma = \CC$. 
 In this section we show how to produce, from the point of view of factorization algebras, the structure of a Gerstenhaber algebra on the BRST cohomology of the bosonic string. 
 
-Recall that a Gerstenhaber algebra is equivalent to an algebra over the operad given by the homology of the little 2-disk operad.
+Recall that a Gerstenhaber algebra is another name for an algebra over the operad given by the homology of the little 2-diska operad.
 Hence, our approach is to see why the factorization algebra naturally exhibits the structure of a algebra of little 2-disks.
 Here we use an important result of Lurie (namely Theorem 5.4.5.9 of~\cite{Lurie}): 
 a {\em locally constant} factorization algebra on $\RR^n$ is equivalent to an algebra over the little $n$-disks operad, i.e., an $E_n$-algebra. 
@@ -213,6 +213,7 @@ and hence it determines an $E_2$ algebra.
 \end{prop}
 
 In particular, the cohomology $H^*(\Obs^\q_{\rm string})$ is an algebra over the cohomology of the $E_2$ operad and hence a Gerstenhaber algebra.
+See Section~\ref{sec: gerstenhaber} for more discussion of this point.
 
 \begin{rmk}
 When a topological field theory arises from an action functional (e.g., Chern-Simons theories),
@@ -500,8 +501,9 @@ In our situation it is straightforward to show that the entire vertex algebra $\
 
 After this lengthy build-up of notions and notations, 
 we now finally turn to describing descent.
-Our interpretation is that it is a process for promoting pointlike operators to more general observables.
-We will soon apply it to give an explanation for the Gerstenhaber structure on $H^* \cV_{\rm string}$,
+Our interpretation is that it is a process for promoting pointlike operators to more general observables,
+available for any translation-invariant theory.
+We will describe it for this theory and then apply it to give an explanation for the Gerstenhaber structure on $H^* \cV_{\rm string}$,
 identified by Lian-Zuckerman.
 
 \begin{dfn}
@@ -554,9 +556,11 @@ so the total form $\Tilde{O}$ is closed as well.
 \begin{rmk}
 The terminology ``descent" is due to Witten \cite{WittenTop}.
 Our construction above is a method of solving what he refers to as the topological descent equations. 
-Mathematically, we are performing a zig-zag in the double complex given by the de Rham complex of the flat vector bundle of Lagrangians. 
+Mathematically, we start with a constant, BRST-invariant Lagrangian and then construct a cocycle in the double complex given by the de Rham complex of the flat vector bundle of Lagrangians,
+by a zigzag or staircase process well-known in homological algebra. 
 In the horizontal direction, the Lagrangians are equipped with the BRST operator $\{S,-\}$.
-In the vertical direction there is the differential induced from the flat connection. 
+In the vertical direction there is the differential induced from the flat connection,
+and we use an explicit homotopy retract of the flat connection to ``descend'' in the direction opposite the vertical differential. 
 \end{rmk}
 
 Combining the construction with the map~(\ref{eqn: int over C}), 
@@ -578,6 +582,7 @@ and those are sufficient to identify the Gerstenhaber bracket,
 the problem to which we now turn.
 
 \subsubsection{Formula for the Gerstenhaber bracket}
+\label{sec: gerstenhaber}
 
 A Gerstenhaber algebra is a graded commutative algebra with a Lie bracket of cohomological degree $-1$ that is a graded biderivation for the product. 
 In this section we show how to explicitly write down the product and bracket on the local observables (i.e., the observables on any disk) and compare our answer to the work of Lian-Zuckerman~\cite{LZ1}.
