@@ -34,7 +34,7 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.3}{Descent for local operators}}{28}{subsubsection.5.4.3}
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.4}{Formula for the Gerstenhaber bracket}}{31}{subsubsection.5.4.4}
 \contentsline {section}{\tocsection {}{6}{The holomorphic string on closed Riemann surfaces}}{32}{section.6}
-\contentsline {subsection}{\tocsubsection {}{6.1}{The free case}}{32}{subsection.6.1}
+\contentsline {subsection}{\tocsubsection {}{6.1}{The free case}}{33}{subsection.6.1}
 \contentsline {subsection}{\tocsubsection {}{6.2}{The anomaly and moduli of quantizations on an arbitrary Riemann surface}}{34}{subsection.6.2}
 \contentsline {subsection}{\tocsubsection {}{6.3}{Global observables for the holomorphic string}}{35}{subsection.6.3}
 \contentsline {section}{\tocsection {}{7}{Looking ahead: curved targets}}{35}{section.7}

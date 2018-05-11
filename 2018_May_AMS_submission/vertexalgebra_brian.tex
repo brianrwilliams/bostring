@@ -514,7 +514,7 @@ Since our theory is translation-invariant,
 any point in the plane would serve as well as the origin.
 Note that this definition is equivalent to our earlier, heuristic notion.
 
-\begin{construction}[Descent] 
+\begin{construction}[Method of "descent"] 
 \label{constr: descent}
 Any pointlike operator $O$ {\em descends} to an element 
 \[
@@ -551,6 +551,14 @@ then
 so the total form $\Tilde{O}$ is closed as well.
 \end{construction}
 
+\begin{rmk}
+The terminology ``descent" is due to Witten \cite{WittenTop}.
+Our construction above is a method of solving what he refers to as the topological descent equations. 
+Mathematically, we are performing a zig-zag in the double complex given by the de Rham complex of the flat vector bundle of Lagrangians. 
+In the horizontal direction, the Lagrangians are equipped with the BRST operator $\{S,-\}$.
+In the vertical direction there is the differential induced from the flat connection. 
+\end{rmk}
+
 Combining the construction with the map~(\ref{eqn: int over C}), 
 we find that a pointlike operator $O$ and a closed submanifold $C$ determine an observable
 \ben
@@ -575,7 +583,7 @@ A Gerstenhaber algebra is a graded commutative algebra with a Lie bracket of coh
 In this section we show how to explicitly write down the product and bracket on the local observables (i.e., the observables on any disk) and compare our answer to the work of Lian-Zuckerman~\cite{LZ1}.
 
 As explained just before Proposition~\ref{prop: obs is e2}, 
-the Gerstenhaber operad is the operad $H_*(E_2)$ arising by taking homology of the $E_2$ operad.
+the Gerstenhaber operad $Gerst$ is the operad $H_*(E_2)$ arising by taking homology of the $E_2$ operad.
 Recall that $E_2(2)$ parametrizes the space of binary operations as the configuration space of disjoint two disks in the unit disk in $\RR^2$.
 This space deformation retracts onto $S^1$.
 Hence 
