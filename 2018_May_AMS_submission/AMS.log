@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 MAY 2018 23:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 MAY 2018 23:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1037,7 +1037,7 @@ File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 [2]
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 120.
- [3]) (./classicaltheory.tex [4] [5] [6] [7] [8]) (./moduli.tex [9] [10]
+ [3]) (./classicaltheory.tex [4] [5] [6] [7] [8] [9]) (./moduli.tex [10]
 Overfull \hbox (3.4239pt too wide) in paragraph at lines 108--114
  \OT1/ppl/b/n/10 3.2.Dilating cotan-gent fibers.[] \OT1/ppl/m/n/10 We have al-r
 eady seen how to think of the holo-mor-phic bosonic
@@ -1066,12 +1066,7 @@ der the de Rham com-plex $\OT1/zplm/m/n/10
 lm/m/it/10 JE[]\OT1/zplm/m/n/10 ))$
  []
 
-[29] [30] [31]) (./conformalblock.tex [32]
-Overfull \hbox (38.61545pt too wide) in paragraph at lines 86--86
-[] 
- []
-
-[33]
+[29] [30] [31]) (./conformalblock.tex [32] [33]
 Overfull \hbox (8.88953pt too wide) in paragraph at lines 97--98
 []\OT1/ppl/m/n/10 Hence, when $\OMS/zplm/m/n/10 F \OT1/zplm/m/n/10 = \OML/zplm/
 m/it/10 T\OT1/zplm/m/n/10 [\OT1/ppl/m/n/10 1\OT1/zplm/m/n/10 ] \OMS/zplm/m/n/10
@@ -1101,7 +1096,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
 Here is how much of TeX's memory you used:
  23786 strings out of 492995
  452654 string characters out of 6132704
- 591668 words of memory out of 5000000
+ 592226 words of memory out of 5000000
  26428 multiletter control sequences out of 15000+600000
  43796 words of font info for 136 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1125,7 +1120,7 @@ xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/201
 onts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
 ype1/public/xypic/xycmat10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 public/xypic/xycmbt10.pfb>
-Output written on AMS.pdf (39 pages, 354270 bytes).
+Output written on AMS.pdf (39 pages, 354351 bytes).
 PDF statistics:
  611 PDF objects out of 1000 (max. 8388607)
  546 compressed objects within 6 object streams
